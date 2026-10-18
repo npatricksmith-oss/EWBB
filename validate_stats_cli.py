@@ -1,18 +1,27 @@
 #!/usr/bin/env python3
 """
 CLI Statistical Engine Benchmark & Validation Runner for Earl Weaver Baseball (1987).
-Executes `src/engine/statsValidator.js` in headless Chrome across a 162-game season
-and prints a formatted comparison table of Simulated vs. Historical game data.
+Executes `src/engine/statsValidator.js` across a 162-game season (directly in Node.js when
+available, otherwise in headless Chrome) and prints a formatted comparison table of Simulated vs. Historical game data.
 """
 import http.server
 import threading
 import json
 import os
+import shutil
 import subprocess
 import sys
 
-def main():
-    num_games = int(sys.argv[1]) if len(sys.argv) > 1 else 162
+def run_in_node(num_games):
+    # The engine is pure JS with no DOM dependencies, so Node can import it directly (no server/browser,
+    # which also lets it run inside agent sandboxes that block sockets)
+    js = f'const m = await import("./src/engine/statsValidator.js"); console.log(JSON.stringify(m.runStatisticalValidation({num_games})));'
+    proc = subprocess.run(["node", "--input-type=module", "-e", js], capture_output=True, text=True)
+    if proc.returncode != 0:
+        return {"error": proc.stderr.strip()}
+    return json.loads(proc.stdout)
+
+def run_in_chrome(num_games):
     result_data = None
     done_event = threading.Event()
 
@@ -63,6 +72,11 @@ def main():
     )
     done_event.wait(timeout=30)
     proc.terminate()
+    return result_data
+
+def main():
+    num_games = int(sys.argv[1]) if len(sys.argv) > 1 else 162
+    result_data = run_in_node(num_games) if shutil.which("node") else run_in_chrome(num_games)
 
     if not result_data or "error" in result_data:
         print("ERROR:", result_data)

@@ -1,0 +1,7 @@
+# Codex: run without approval prompts, but confined by the OS sandbox.
+# Commands can write only inside this project (plus temp dirs) and have no network.
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = false

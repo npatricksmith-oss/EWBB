@@ -21,6 +21,11 @@ This repository is developed collaboratively by multiple AI coding agents (**Ant
    - Update [`ARCHITECTURE.md`](file:///var/home/natex/Projects/EWBB/ARCHITECTURE.md) whenever adding or updating modules, exports, or data structures.
 6. **Use Low-Cost Workhorse Models for Terminal Agents (`claude` & `codex`):**
    - Whenever delegating tasks to **Claude Code (`claude`)** or **OpenAI Codex CLI (`codex`)** in the terminal, always specify low-cost, high-efficiency workhorse models (e.g. `claude -p --model haiku` or `claude -p --model sonnet`, and `codex exec -m gpt-5.1-codex-mini` or `o4-mini`) rather than heavyweight frontier reasoning tiers.
+7. **Work Inside the `ewbb` Toolbox & Agent Sandboxes:**
+   - Run agents from inside the Fedora `ewbb` toolbox (`toolbox enter ewbb`), which provides `python3`, `node`, `git`, `bubblewrap`, and `socat`. Install new dev tools there with `sudo dnf install`, never on the host.
+   - Shell commands run inside each agent's OS sandbox: writes are limited to this project and temp dirs, and there is **no network access**. Commands that need the network or files outside the project will fail; report what you need instead of working around it.
+   - Run the stats validator with `python3 validate_stats_cli.py [numGames]`. When `node` is available it imports `src/engine/statsValidator.js` directly (works in the sandbox); otherwise it falls back to headless Flatpak Chrome.
+   - Commit work to git in small, descriptive commits so changes can be reviewed and reverted.
 
 ---
 
