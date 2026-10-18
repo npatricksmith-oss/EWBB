@@ -1,7 +1,13 @@
 {
   "permissions": {
     "defaultMode": "acceptEdits",
-    "allow": ["WebSearch", "WebFetch"]
+    "allow": [
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Edit(/.codex/**)"
+    ]
   },
   "sandbox": {
     "enabled": true,
@@ -9,9 +15,23 @@
     "failIfUnavailable": true,
     "credentials": {
       "files": [
-        { "path": "~/.ssh", "mode": "deny" },
-        { "path": "~/.gemini", "mode": "deny" },
-        { "path": "~/.codex", "mode": "deny" }
+        {
+          "path": "~/.ssh",
+          "mode": "deny"
+        },
+        {
+          "path": "~/.gemini",
+          "mode": "deny"
+        },
+        {
+          "path": "~/.codex",
+          "mode": "deny"
+        }
+      ]
+    },
+    "filesystem": {
+      "denyWrite": [
+        "/var/home/natex/Projects/EWBB/.codex"
       ]
     }
   }

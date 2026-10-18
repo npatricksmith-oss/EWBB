@@ -1,9 +1,22 @@
 # Codex: run without approval prompts, but confined by the OS sandbox.
 # Commands can write only inside this project (plus temp dirs) and have no network.
 approval_policy = "never"
-sandbox_mode = "workspace-write"
 # The model's own web search tool runs on OpenAI's side, so research works while shell commands stay offline
 web_search = "live"
+default_permissions = "ewbb"
 
-[sandbox_workspace_write]
-network_access = false
+[permissions.ewbb]
+extends = ":workspace"
+
+# Keep agent credentials out of reach of sandboxed commands
+[permissions.ewbb.filesystem]
+"/var/home/natex/.ssh" = "deny"
+"/var/home/natex/.gemini" = "deny"
+"/var/home/natex/.claude" = "deny"
+"/var/home/natex/.claude.json" = "deny"
+
+# Agent configs are read-only, so one agent can't loosen another's sandbox
+[permissions.ewbb.filesystem.":workspace_roots"]
+"." = "write"
+".claude" = "read"
+".codex" = "read"
