@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earl Weaver Baseball — Visual Style & Tech Stack Comparison</title>
+  <style>
+    :root {
+      --bg: #0f141c;
+      --card: #18202c;
+      --border: #2c3a4f;
+      --gold: #f5b942;
+      --green: #2d8a4e;
+      --turf: #1e6b38;
+      --dirt: #b87333;
+      --text: #e6edf3;
+      --muted: #9ba8b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    .header {
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+    }
+    .header h1 { color: var(--gold); font-size: 28px; margin-bottom: 8px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .card.recommended {
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 20px rgba(245, 185, 66, 0.15);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .screenshots figure {
+      margin: 0;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .screenshots img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      display: block;
+      image-rendering: pixelated;
+    }
+    .screenshots figcaption {
+      font-size: 11px;
+      color: var(--muted);
+      padding: 6px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    canvas {
+      width: 100%;
+      height: 210px;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      image-rendering: pixelated;
+    }
+    ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
+    li { margin-bottom: 6px; }
+    li strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>⚾ Earl Weaver Baseball — Visual Styles Comparison</h1>
+    <p>Original archival screenshots from <code>research/images/</code> paired with live HTML5 Canvas mockups of the 3 visual options.</p>
+  </div>
+
+  <div class="grid">
+    <!-- OPTION 1 -->
+    <div class="card">
+      <span class="badge" style="background:#58a6ff;">Style A: 1987 Amiga EWB 1.0 Classic</span>
+      <h2>Classic Split-Screen Pixel Art</h2>
+      <p>Faithful recreation of Eddie Dombrower's signature 1987 Amiga layout: 2/3 isometric diamond on the left + 1/3 behind-the-plate pitcher/batter duel on the right.</p>
+      <div class="screenshots">
+        <figure>
+          <img src="images/ewb_1987_amiga_gameplay.jpg" alt="Amiga 1987 Split Screen at Fenway" />
+          <figcaption>1987 Amiga Split-Screen (Fenway Park)</figcaption>
+        </figure>
+        <figure>
+          <img src="images/amiga_01.jpg" alt="Amiga 1987 Ball in Play Full Field" />
+          <figcaption>1987 Amiga Full-Field Ball in Play</figcaption>
+        </figure>
+      </div>
+      <canvas id="canvasStyleA" width="320" height="200"></canvas>
+      <ul>
+        <li><strong>Pros:</strong> Maximum 1987 nostalgia; shows baserunners & pitch break simultaneously.</li>
+        <li><strong>Look:</strong> 32-color Amiga palette, chunky pixel fonts, scoreboard ticker at bottom.</li>
+      </ul>
+    </div>
+
+    <!-- OPTION 2 -->
+    <div class="card">
+      <span class="badge" style="background:#bc8cff;">Style B: 1991 EWB II VGA Broadcast</span>
+      <h2>EWB II TV-Camera + Multi-Deck Stadium</h2>
+      <p>The 1991 256-color VGA sequel look: close-up over-the-shoulder pitcher/batter view that cuts to a zoomed-out multi-deck stadium when the ball is hit.</p>
+      <div class="screenshots">
+        <figure>
+          <img src="images/ewb2_02.jpg" alt="EWB II Close-Up Pitch View" />
+          <figcaption>1991 EWB II Close-Up Duel View</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ewb2_04.jpg" alt="EWB II Full Stadium View" />
+          <figcaption>1991 EWB II Multi-Deck Stadium View</figcaption>
+        </figure>
+      </div>
+      <div class="screenshots">
+        <figure>
+          <img src="images/ewb2_06.jpg" alt="EWB II Edit Managers" />
+          <figcaption>EWB II Manager Strategy Editor</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ewb2_07.jpg" alt="EWB II Edit Parks" />
+          <figcaption>EWB II Ballpark Dimensions Editor</figcaption>
+        </figure>
+      </div>
+      <ul>
+        <li><strong>Pros:</strong> Larger batter/pitcher sprites; detailed upper-deck stadium backdrops.</li>
+        <li><strong>Cons:</strong> Loses the simultaneous diamond view during the pitch (harder to watch base stealers).</li>
+      </ul>
+    </div>
+
+    <!-- OPTION 3 -->
+    <div class="card recommended">
+      <span class="badge">★ Recommended — Style C: Modern Retro-Pro Hybrid</span>
+      <h2>Crisp High-DPI 1987 Split-Screen + Modern Dashboard</h2>
+      <p>Combines the beloved 1987 Amiga split-screen field + Fenway/Wrigley custom ballpark walls with razor-sharp box scores, pitch-by-pitch log, and "Ask Earl" strategy cards.</p>
+      <canvas id="canvasStyleC" width="480" height="260" style="height:260px;"></canvas>
+      <ul>
+        <li><strong>Best of Both Worlds:</strong> Preserves Dombrower's iconic split-screen diamond + batter box while giving you crisp, readable stat tables, live win-probability/platoon splits, and smooth 60fps ball physics & shadows.</li>
+        <li><strong>Why TypeScript + HTML5 Canvas wins here:</strong> Canvas renders the 2D ballpark, wall heights, ball flight shadow, and pixel/vector players at 60fps, while HTML/CSS renders ultra-clean Commissioner's Disk stat tables and "Ask Earl" dialogs.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Draw Style A mockup (320x200 Amiga style)
+    const ctxA = document.getElementById('canvasStyleA').getContext('2d');
+    ctxA.fillStyle = '#2d8a4e';
+    ctxA.fillRect(0, 0, 210, 165);
+    // Outfield wall (Green Monster)
+    ctxA.fillStyle = '#144526';
+    ctxA.fillRect(10, 15, 190, 22);
+    ctxA.fillStyle = '#e6edf3';
+    ctxA.font = '8px monospace';
+    ctxA.fillText('315', 16, 30);
+    ctxA.fillText('379', 95, 30);
+    // Infield dirt
+    ctxA.fillStyle = '#c67d3b';
+    ctxA.beginPath();
+    ctxA.moveTo(105, 65);
+    ctxA.lineTo(155, 110);
+    ctxA.lineTo(105, 150);
+    ctxA.lineTo(55, 110);
+    ctxA.closePath();
+    ctxA.fill();
+    // Grass diamond inside
+    ctxA.fillStyle = '#2d8a4e';
+    ctxA.beginPath();
+    ctxA.moveTo(105, 80);
+    ctxA.lineTo(138, 110);
+    ctxA.lineTo(105, 136);
+    ctxA.lineTo(72, 110);
+    ctxA.closePath();
+    ctxA.fill();
+    // Right 1/3 split screen (Pitch/Bat duel)
+    ctxA.fillStyle = '#c67d3b';
+    ctxA.fillRect(212, 0, 108, 165);
+    ctxA.strokeStyle = '#ffffff';
+    ctxA.lineWidth = 2;
+    ctxA.beginPath();
+    ctxA.moveTo(212, 0);
+    ctxA.lineTo(212, 165);
+    ctxA.stroke();
+    // Strike zone & home plate
+    ctxA.fillStyle = '#ffffff';
+    ctxA.fillRect(256, 130, 20, 12);
+    ctxA.strokeRect(252, 85, 28, 35);
+    // Bottom scoreboard bar
+    ctxA.fillStyle = '#0000aa';
+    ctxA.fillRect(0, 165, 320, 35);
+    ctxA.fillStyle = '#ffff55';
+    ctxA.font = '10px monospace';
+    ctxA.fillText('AL EAST   1 2 3 4 5 6 7 8 9  R H E', 8, 179);
+    ctxA.fillStyle = '#ffffff';
+    ctxA.fillText('BOSTON    0 1 0 2 0 0 0 0 0  3 7 0', 8, 193);
+
+    // Draw Style C mockup (Modern Retro-Pro Hybrid)
+    const ctxC = document.getElementById('canvasStyleC').getContext('2d');
+    // Left field area
+    ctxC.fillStyle = '#1e6b38';
+    ctxC.fillRect(0, 0, 310, 205);
+    // Mow stripes
+    ctxC.fillStyle = '#257a42';
+    for (let i = 0; i < 310; i += 28) {
+      ctxC.fillRect(i, 35, 14, 170);
+    }
+    // Custom Ballpark Fence with distance markers
+    ctxC.fillStyle = '#0f381e';
+    ctxC.fillRect(0, 0, 310, 36);
+    ctxC.strokeStyle = '#f5b942';
+    ctxC.lineWidth = 2;
+    ctxC.beginPath();
+    ctxC.moveTo(0, 36);
+    ctxC.lineTo(310, 36);
+    ctxC.stroke();
+    ctxC.fillStyle = '#f5b942';
+    ctxC.font = 'bold 10px monospace';
+    ctxC.fillText('LF 310 (37ft)', 12, 24);
+    ctxC.fillText('CF 402 (12ft)', 120, 24);
+    ctxC.fillText('RF 302', 250, 24);
+    // Infield dirt
+    ctxC.fillStyle = '#b87333';
+    ctxC.beginPath();
+    ctxC.moveTo(155, 72);
+    ctxC.lineTo(220, 130);
+    ctxC.lineTo(155, 185);
+    ctxC.lineTo(90, 130);
+    ctxC.closePath();
+    ctxC.fill();
+    // Inner turf
+    ctxC.fillStyle = '#1e6b38';
+    ctxC.beginPath();
+    ctxC.moveTo(155, 92);
+    ctxC.lineTo(198, 130);
+    ctxC.lineTo(155, 166);
+    ctxC.lineTo(112, 130);
+    ctxC.closePath();
+    ctxC.fill();
+    // Ball trajectory & ground shadow
+    ctxC.strokeStyle = 'rgba(0,0,0,0.5)';
+    ctxC.beginPath();
+    ctxC.moveTo(155, 166);
+    ctxC.lineTo(80, 55);
+    ctxC.stroke();
+    ctxC.strokeStyle = '#ffffff';
+    ctxC.beginPath();
+    ctxC.moveTo(155, 166);
+    ctxC.quadraticCurveTo(100, 60, 80, 55);
+    ctxC.stroke();
+    // Right HUD + Pitcher/Batter Duel + Ask Earl Panel
+    ctxC.fillStyle = '#141b24';
+    ctxC.fillRect(310, 0, 170, 205);
+    ctxC.strokeStyle = '#2c3a4f';
+    ctxC.strokeRect(310, 0, 170, 205);
+    // Duel mini-viewport
+    ctxC.fillStyle = '#2c1d11';
+    ctxC.fillRect(320, 10, 150, 105);
+    ctxC.strokeStyle = '#f5b942';
+    ctxC.strokeRect(375, 45, 40, 48);
+    ctxC.fillStyle = '#f5b942';
+    ctxC.font = '10px monospace';
+    ctxC.fillText('PITCH: 94 MPH FB', 328, 25);
+    // Ask Earl card
+    ctxC.fillStyle = '#1f2937';
+    ctxC.fillRect(320, 125, 150, 70);
+    ctxC.fillStyle = '#f5b942';
+    ctxC.font = 'bold 10px monospace';
+    ctxC.fillText('⚾ ASK EARL:', 328, 140);
+    ctxC.fillStyle = '#e6edf3';
+    ctxC.font = '9px monospace';
+    ctxC.fillText('"Play Run & Hit here.', 328, 156);
+    ctxC.fillText('Boggs rarely misses', 328, 168);
+    ctxC.fillText('against RHP."', 328, 180);
+    // Bottom crisp scoreboard + platoon bar
+    ctxC.fillStyle = '#0b0f16';
+    ctxC.fillRect(0, 205, 480, 55);
+    ctxC.fillStyle = '#f5b942';
+    ctxC.font = 'bold 11px monospace';
+    ctxC.fillText('BOS 3   BAL 2   |  BOT 8TH  |  1 OUT  |  RUNNER ON 1ST  |  WIND: 11 MPH -> LF', 12, 224);
+    ctxC.fillStyle = '#9ba8b8';
+    ctxC.font = '10px monospace';
+    ctxC.fillText('BAT: C. Ripken (.282 / 27 HR vs RHP)   PIT: R. Clemens (96 MPH, Fatigue: 82%)', 12, 244);
+  </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+by
+Johnny Wilson
+As an incorrigible Cubs and Angels fan, I'm not
+sure that the hilarious, albeit racist, line immortalized by Garrett Morris' Saturday Night Live character applies to me. "Bezbol," hasn't always "been
+berry, berry good to me." It has always been of
+great importance to me, however. Like the protagonist of Sinclair Lewis' Babbitt and the great line
+which summarized his value system ("They were of
+eternal importance, like baseball and the Republican Party."), baseball has always been a tremendous
+symbol of hope reborn and hope deferred. Each
+trade, each "meaningless" spring training game, each
+extra inning victory, and each second-guess
+brought new hope and new life into the daily routine. It may have been a barbaric day at work, but
+a victory by the Cubs could redeem it. There have
+been times when I would have been willing to
+make the same deal as portrayed in "Damn Yankees" if only the Mets would fall apart.
+Fortunately, the computer age has enabled me to
+experience new hope (and new anguish) with regard
+to baseball. The emergence of statistics-based
+games has enabled me to replay those extra-inning
+losses and often, turn those frustrations into triumphs. In fact, participation in a computer baseball
+league has allowed me to function as both manager
+and general manager. So what if my Angels lose
+tonight? They can redeem themselves by winning
+on my computer screen with any year's stats. So
+what if I don't like Shawn Dunston's excessive
+number of strike outs? I can always trade him to
+some other team.
+Here is a brief survey some of the computer
+baseball games which are currently on the market.
+The present article will not mention Full Count
+Baseball which will be covered in our next issue.
+Instead, it seems best to begin with some of the
+newer programs which have hit the market, then
+we will attempt to summarize some of the older
+programs which were reviewed in the June-July
+1985 (5.3) issue.
+EARL WEAVER BASEBALL
+(Electronic Arts, available for Amiga; soon for
+IBM; later for the Apple IIgs).
+Undoubtedly the most exciting sports simulation
+to be released in years, Earl Weaver Baseball (EW)
+has it all. Although it is a statistics-based game, the
+graphics and animation are superb. The fluid ani-
+
+mation of the players is kinetically correct. Of
+course, one would expect this from Eddie Dombrower of Mirage Graphics who did the first computer dance notation program for microcomputers.
+Eddie uses a split-screen approach (a la television
+and his own Intellivision product, World Series
+Baseball) in order to show pitching and batting in
+detail and fielding by means of an overview. The
+
+pitcher even differentiates between the full windup and the stretch. Further, you can actually see
+the ball curve when a breaking pitch is thrown.
+That's not all! The sound is magnificent from the
+opening Sousa march to the digitized speech of Earl
+Weaver coming out to argue with the umpire. Teri
+Mason, a flutist herself, is a specialist in sound and
+made certain that even the crack of the bat was
+
+authentic aurally. Of course, the big difference in
+this program is provided by Earl Weaver himself
+(see the interview published in this issue). The
+strategy comes from a series of meetings with
+Weaver throughout a full season. The computer will
+even set up a lineup based on Weaver's percentages
+and has an "Ask Earl" tutorial which is of some interest to those unfamiliar with Earl Weaver on
+Strategy, his authoritative book on the subject.
+The chrome included with the game includes: 1)
+the ability to design and save your own stadium; 2)
+the ability to choose and save your team colors (for
+both road and home uniforms); 3) a general manager function for ease of trading, complete with
+player with suitcase icon; 4) the capacity for instant
+replay and slow motion instant replay; 5) the ability
+to print out lineups using Earl's system; and 6) a
+stat compiler for league play that even allows trading during the season. In addition to all of this, the
+algorithms are not strictly based on statistics. Dombrower has an extensive knowledge of physics and
+has developed a matrix modified by physical laws
+to determine where the ball is likely to land within
+(or beyond) the confines of the stadium. A typical
+play, for example, might go like this: Don Mattingly is at bat against Oil Can Boyd at Fenway
+Park. Boyd pitches. The random number generator
+picks a number which is compared to the combined
+stat matrix formed by the interaction of Mattingly's
+and Boyd's stats. The computer determines that the
+
+result is a double. The program then looks at a
+doubles table to randomly determine what kind of
+double it is (some of the possibilities here might be,
+grounder down the third base line, line drive to
+right center, ground rule double to right, fly ball
+off the left field wall, etc.). The program determines that this particular double is a line drive
+smash down the left field line. Once the ball leaves
+the bat, physics and distances take over. The distance to the wall, the wind, the position of the left
+fielder and his speed all interact to determine how
+soon he is able to field the ball. In the case of
+Fenway park the ball gets to the short left field
+wall very quickly. What may be a double in any
+other park in the league turns out in this case to be
+a long single.
+Not only does the added physics bring more realism to the game, it also adds much to the appearance and enjoyment of the game. A deep fly to
+center may or may not be out. You can't be sure
+until the ball actually comes down. It's exciting!
+The stadium design option is fascinating. You
+can choose: what the color of your stadium will be;
+distances down the lines, to the power alleys, and
+to straight-away center; height of the fences,
+whether your stadium is indoor (with no wind effects) or outdoor; if you will have a pitchers' park
+with lots of foul ground or a hitters' park with very
+little; and whether it will have artificial or natural
+turf.
+If you prefer you can use one of the 32 stadiums
+already on the disk which include some of the
+current parks as well as many classic parks of the
+past. [such as the Polo Grounds, Ebbetts Field, The
+LA Coliseum (with it's left field screen), old
+Yankee Stadium (with the Grand Canyon center
+field and Babe Ruth inspired right field short deck)
+and many many others].
+The general manager option facilitates trading
+and compilation of statistics for league play, as well
+as allows you to edit the players' names so that the
+speech synthesizer can pronounce them.
+The game itself can be played strictly as a
+statistics based game or as a statistics modified arcade game ("Play & Manage" mode). The latter
+mode allows play under four different sets of rules
+(Major, Minor, Semi-Pro, or Sandlot) and the
+player can choose to play where one pitch represents the entire at bat or take the full at bat. In the
+last mentioned mode, one has the chance to use op-
+
+Bezbol (cont.)
+
+tions like "Swing Away" or "Take Pitch," which are
+not relevant to the "One Pitch" mode.
+Most important to armchair managers, however,
+are the actual offensive and defensive options
+which they have to work with. EW is full of options, including specific steal orders (steal of second, third, home, or double steal), differentiation
+between a bunt and a squeeze play, and consistent
+with Earl's strategy, the ability to call for the "Run
+and Hit" play over the "Hit and Run" (although
+both options are present in the game. Weaver contends that the "Hit and Run" is the worst play in
+baseball because it both takes the bat out of the
+batter's hand and has a tendency to hang the runner
+out to dry. The "Run and Hit," however, tells the
+runner to try to steal and the batter only swings if
+he has a good pitch, not just to protect the runner.
+EW allows you to try either one. Rest assured that
+the game itself is not statistically biased against the
+hit and run even though Earl hates the play. Likewise, bunting is statistically accurate even though
+Earl dislikes the sacrifice bunt as a general rule.
+On the defensive side, DV really spices up the
+game. In addition to standard orders like "Visit
+Mound," "Guard Lines," and "Hold Runner," the
+program allows you to shift both the infield and
+the outfield to the left and right according to the
+placement you wish, not some basic formula. The
+program also allows you to ad just the outfield and
+infield depth according to your needs. Further, the
+program allows for pitch outs in steal situations, as
+well as pitching around a dangerous hitter. In bunt
+situations, one has the option of charging from first
+and/or third. In short, EW really gives you the
+chance to think like a manager.
+Finally, in the Commissioner mode you have
+everything you need to set up your own league
+with up to 32 teams in up to four divisions. EW
+will compile stats, print league leaders in all stat
+categories, maintain standings, compile team stats.
+In short, give you everything you need to run a
+league without spending all of your free time calculating averages and standings.
+MAJOR LEAGUE MANAGER
+(Spinnaker Software, available for IBM).
+This is a new incarnation of Pro Manager
+(originally published by Avalon Hill). As noted by
+
+Bill Oxner in a previous baseball survey (CGW 5.3,
+p. 26), this game is tremendous in its stat-handling
+ability. The program still allows the manager to
+"profile" any player (getting a statistical picture of
+his previous performances), compile the stats of
+league leaders in rank order, derive standings from
+won/loss records, and print out all league stats.
+This game isn't simply a repackaged Pro Manager,
+however, because it's been tweaked up quite a bit.
+It is now easier to make trades, create teams, or
+key in a player with your own stats. The description of each play is somewhat more colorful and
+the addition of music adds to the play (but may be
+toggled off, if the player doesn't care for it or
+wants to speed up play). One piece of chrome that
+executives may find interesting is the "Executive
+Pause." This command clears the screen and allows
+you to type anything you wish without affecting
+the game. To return to the game, you simply hit
+the F10 key. This is handy for playing the game at
+work. [Ed.: So that's what you've been doing in the
+afternoons! And I thought you were editing!]
+Unfortunately, the game isn't nearly as rich in
+managerial options as some of the other games
+covered in this article. For example, there are only
+five offensive options (pinch hit, pinch run, bunt
+for a sacrifice, steal with all runners unless there is
+a first and third situation, and hit and run). Defensively, there are five basic choices (defensive or
+pitching change, infield in, guard lines, pitch
+around, and walk). Of these basic choices,
+the first allows replacement of the
+pitcher or any fielder, as well as
+exchanging the positions of two
+players. Major League
+Manager probably
+plays the
+quickest
+of the
+products
+reviewed in
+this article, but I
+can't help feeling
+that this is because
+you can't make as
+many decisions in
+order to affect the
+outcome as you can
+in the other games.
+
+Defensive options are also divided into two
+consecutive menus. The first menu consists of four
+options for the pitcher. These are: 1) pitch aggressively; 2) pitch around the batter; 3) intentionally
+walk the batter; and 4) pitch out. The second menu
+consists of five options for the fielders. These are:
+1) infield in; 2) in at the corners; 3) guard the line;
+4) play aggressively in the outfield; and 5) play behind the runner.
+Another nice touch of Pure-Stat Baseball is the
+availability of three different stadiums (Yankee,
+Dodger and subLogic) which are part of the basic
+game and the stadium disk which contains several
+more. No matter which stadium is used, however,
+the graphics can be disorienting, at first. It seems
+that the entire stadium layout flip-flops on the
+screen, depending on the handedness of the batter.
+Hence, a left-handed batter is seen on the right
+lower corner of the screen, while a right-handed
+Continued on pg. 42
+
+PURE-STAT BASEBALL
+(SubLogic, available for C-64/128 and Apple).
+Although the graphics are reminiscent of Micro
+League Baseball, the managerial choices of this
+subLogic program are far superior. The game is
+playable as a solitaire, two player, or computer only
+contest. It is statistically based and comes with a
+1985 Team Data Disk, as well as the eight great
+past teams which come on the game disk itself.
+Players are rated on defensive range and throwing
+ability, as well as base running ability, bunting and
+sacrifice capability on the offensive side.
+Offensive options are divided into two menus
+presented consecutively. The first menu offers
+seven choices for the batter: 1) hit and run; 2) bunt
+for hit; 3) swing aggressively; 4) bat cautiously; 5)
+sacrifice bunt; 6) hit behind the runners; and 7)
+squeeze bunt. The second menu compliments the
+first with seven choices for the runner: 1) steal second; 2) steal third; 3) steal home; 4) run aggressively; 5) run aggressively if hit to left field; 6) run
+aggressively if hit to center field; and 7) run aggressively if hit to right field. Those latter choices
+are facilitated by the inclusion of the throwing
+ratings for each fielder on the same screen.
+
+

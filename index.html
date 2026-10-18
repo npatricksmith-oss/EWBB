@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earl Weaver Baseball (1987 EWB 1.0) — Retro-Pro Hybrid Edition & Commissioner's Disk</title>
+  <style>
+    :root {
+      --bg-deep: #0b0f16;
+      --bg-panel: #131b26;
+      --bg-card: #1a2433;
+      --border: #2c3a4f;
+      --gold: #f5b942;
+      --gold-dim: rgba(245, 185, 66, 0.16);
+      --orioles: #f58220;
+      --redsox: #bd3039;
+      --green: #247a3d;
+      --text: #e6edf3;
+      --muted: #9ba8b8;
+      --danger: #ef4444;
+      --blue: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "JetBrains Mono", monospace;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* Top Header & Matchup Bar */
+    .ewb-topbar {
+      background: linear-gradient(180deg, #16202e 0%, #0f1621 100%);
+      border-bottom: 2px solid var(--gold);
+      padding: 10px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: var(--gold);
+      color: #000;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-title h1 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--gold);
+      letter-spacing: 0.4px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .matchup-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ewb-select, .ewb-input-num {
+      background: #0b1018;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 5px 8px;
+      font-size: 12px;
+      font-family: inherit;
+    }
+
+    .ewb-input-num {
+      width: 68px;
+      text-align: right;
+    }
+
+    .ewb-btn {
+      background: #1f2b3d;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      font-family: inherit;
+    }
+
+    .ewb-btn:hover:not(:disabled) {
+      border-color: var(--gold);
+      background: #28374d;
+    }
+
+    .ewb-btn:disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+    }
+
+    .ewb-btn.gold {
+      background: var(--gold);
+      color: #0b0f16;
+      border-color: var(--gold);
+      font-weight: 800;
+    }
+
+    .ewb-btn.gold:hover:not(:disabled) {
+      background: #ffc95c;
+    }
+
+    .ewb-btn.earl {
+      background: var(--orioles);
+      color: #0b0f16;
+      border-color: #ffa04d;
+      font-weight: 800;
+    }
+
+    .ewb-btn.active-toggle {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Navigation Tabs */
+    .ewb-nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      background: #0e141f;
+      padding: 6px 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ewb-nav-tabs button {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid transparent;
+      border-bottom: none;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .ewb-nav-tabs button.active {
+      background: var(--bg-panel);
+      color: var(--gold);
+      border-color: var(--border);
+    }
+
+    .ewb-tab-section {
+      display: none;
+      padding: 14px 18px 28px;
+    }
+
+    .ewb-tab-section.active {
+      display: block;
+    }
+
+    /* Scoreboard Strip */
+    .scoreboard-banner {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .linescore-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+    }
+
+    .linescore-table th, .linescore-table td {
+      border: 1px solid #253246;
+      padding: 4px 7px;
+      text-align: center;
+    }
+
+    .linescore-table th {
+      background: #0d131d;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .linescore-table .team-col {
+      text-align: left;
+      min-width: 85px;
+      font-weight: 700;
+    }
+
+    .team-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .linescore-table .tot-col {
+      background: #182334;
+      font-weight: 700;
+      min-width: 32px;
+    }
+
+    .linescore-table .score-r {
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .linescore-table .cur-inn, .linescore-table .cur-cell {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .hud-situation-cluster {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .hud-box {
+      background: #0d131d;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 6px 10px;
+      text-align: center;
+      min-width: 78px;
+    }
+
+    .hud-box .lbl {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .hud-box .val {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .out-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #253246;
+      margin: 2px 3px 0;
+      border: 1px solid #475569;
+    }
+
+    .out-dot.on {
+      background: var(--danger);
+      border-color: #fca5a5;
+      box-shadow: 0 0 6px var(--danger);
+    }
+
+    /* Base Occupancy Mini-Diamond */
+    .base-diamond-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0d131d;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 6px 12px;
+    }
+
+    .mini-diamond {
+      position: relative;
+      width: 38px;
+      height: 38px;
+    }
+
+    .mini-base {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: #263347;
+      border: 1px solid #64748b;
+      transform: rotate(45deg);
+    }
+
+    .mini-base.occupied {
+      background: var(--gold);
+      border-color: #ffffff;
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    #base2B { top: 2px; left: 13px; }
+    #base3B { top: 14px; left: 1px; }
+    #base1B { top: 14px; left: 25px; }
+
+    /* Main 2-Column Gameplay Workspace */
+    .gameplay-workspace {
+      display: grid;
+      grid-template-columns: minmax(600px, 1.65fr) minmax(340px, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    @media (max-width: 1120px) {
+      .gameplay-workspace {
+        grid-template-columns: 1fr;
+      }
+      .scoreboard-banner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .canvas-stage-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    #canvasViewportWrap {
+      position: relative;
+      width: 100%;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #canvasViewportWrap.crt-scanlines::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.22) 0px,
+        rgba(0, 0, 0, 0.22) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    }
+
+    #ewbCanvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 960 / 500;
+    }
+
+    /* Earl Live Strategy Ticker */
+    .earl-ticker-bar {
+      margin-top: 8px;
+      background: #191510;
+      border: 1px solid var(--orioles);
+      border-radius: 4px;
+      padding: 7px 12px;
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .gold-hl {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* Dugout Tactical Controls */
+    .dugout-controls-grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .strategy-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .strategy-group select {
+      width: 100%;
+    }
+
+    .action-buttons-row {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+
+    .action-buttons-row .primary-pitch-btn {
+      flex: 1.4;
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+
+    /* Substitutions Bar */
+    .subs-bar {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: #101722;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    .sub-control {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .sub-control select {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Right Column: Earl's 3x5 Matchup Index Card, Telemetry & Play Log */
+    .right-sidebar-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .weaver-index-card {
+      background: #1c2430;
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      padding: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    .index-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      border-bottom: 1px dashed #3b4c66;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-tag {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--orioles);
+      letter-spacing: 0.6px;
+      display: block;
+    }
+
+    .index-card-header h4 {
+      margin: 2px 0 0;
+      font-size: 15px;
+      color: var(--gold);
+    }
+
+    .index-card-header h4 small {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .platoon-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .platoon-badge.adv {
+      background: rgba(36, 122, 61, 0.35);
+      color: #4ade80;
+      border: 1px solid #22c55e;
+    }
+
+    .platoon-badge.same {
+      background: rgba(96, 165, 250, 0.2);
+      color: #93c5fd;
+      border: 1px solid #3b82f6;
+    }
+
+    .splits-mini-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    .splits-mini-table th, .splits-mini-table td {
+      padding: 4px 6px;
+      border: 1px solid #2d3c52;
+      text-align: right;
+    }
+
+    .splits-mini-table th:first-child, .splits-mini-table td:first-child {
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .splits-mini-table th {
+      background: #111823;
+      color: var(--muted);
+    }
+
+    .splits-mini-table .active-split-row {
+      background: var(--gold-dim);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .splits-mini-table .hi-oba {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .ratings-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .ratings-strip span {
+      background: #0e141e;
+      border: 1px solid #2b394d;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .ratings-strip span b {
+      color: var(--gold);
+    }
+
+    .pitcher-card-strip {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #3b4c66;
+    }
+
+    .pitcher-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .pitch-count-pill {
+      font-size: 11px;
+      background: #111823;
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .pitch-count-pill.tired {
+      background: rgba(239, 68, 68, 0.22);
+      border-color: var(--danger);
+      color: #fca5a5;
+      font-weight: 700;
+    }
+
+    /* 3D Physics Telemetry Box */
+    .telemetry-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+
+    .telemetry-card h4 {
+      margin: 0 0 6px;
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .phys-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+    }
+
+    .phys-grid .lbl {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* Play-by-Play Log */
+    .playlog-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+
+    .playlog-card h4 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .playlog-scroll {
+      max-height: 255px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 12px;
+    }
+
+    .log-entry {
+      padding: 5px 8px;
+      border-radius: 4px;
+      background: #0e1520;
+      border-left: 3px solid #3b4c66;
+      display: flex;
+      gap: 8px;
+    }
+
+    .log-entry.log-hr {
+      border-left-color: var(--gold);
+      background: rgba(245, 185, 66, 0.14);
+    }
+
+    .log-entry.log-hit {
+      border-left-color: #22c55e;
+    }
+
+    .log-entry.log-out {
+      border-left-color: var(--danger);
+    }
+
+    .log-entry.log-walk, .log-entry.log-steal {
+      border-left-color: var(--blue);
+    }
+
+    .log-meta {
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 28px;
+    }
+
+    /* Box Score & Commissioner's Disk Layouts */
+    .box-grid-2col, .park-editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 16px;
+    }
+
+    .box-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px;
+    }
+
+    .box-card h3, .box-card h4 {
+      margin-top: 0;
+      color: var(--gold);
+    }
+
+    .ewb-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+    }
+
+    .ewb-data-table th, .ewb-data-table td {
+      border: 1px solid #273549;
+      padding: 5px 7px;
+      text-align: right;
+    }
+
+    .ewb-data-table th:nth-child(1),
+    .ewb-data-table td:nth-child(1),
+    .ewb-data-table th:nth-child(2),
+    .ewb-data-table td:nth-child(2) {
+      text-align: left;
+    }
+
+    .ewb-data-table th {
+      background: #0d131c;
+      color: var(--muted);
+    }
+
+    .comm-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .comm-header-row h3 {
+      margin: 0 0 4px;
+      color: var(--gold);
+    }
+
+    .muted-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .comm-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      align-items: center;
+    }
+
+    .sliders-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .slider-row {
+      display: grid;
+      grid-template-columns: 185px 1fr 58px;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .slider-row strong {
+      text-align: right;
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    /* Ask Earl Modal */
+    .earl-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 8, 14, 0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .earl-modal-backdrop.open {
+      display: flex;
+    }
+
+    .earl-modal-card {
+      background: #161f2c;
+      border: 2px solid var(--orioles);
+      border-radius: 8px;
+      max-width: 640px;
+      width: 100%;
+      padding: 18px 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .earl-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .earl-modal-header h3 {
+      margin: 0;
+      color: var(--orioles);
+      font-size: 18px;
+    }
+
+    .earl-headline-banner {
+      background: rgba(245, 130, 32, 0.16);
+      border-left: 4px solid var(--orioles);
+      padding: 8px 12px;
+      font-weight: 800;
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .earl-telemetry-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    .earl-telemetry-chips span {
+      background: #0d131c;
+      border: 1px solid var(--border);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .earl-quote-box {
+      background: #0e141d;
+      border-left: 3px solid var(--gold);
+      padding: 10px 12px;
+      font-style: italic;
+      color: #cbd5e1;
+      margin: 12px 0;
+    }
+
+    .archive-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .archive-gallery figure {
+      margin: 0;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .archive-gallery img {
+      width: 100%;
+      height: 170px;
+      object-fit: contain;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    .archive-gallery figcaption {
+      padding: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP MATCHUP & CONFIG BAR -->
+  <header class="ewb-topbar">
+    <div class="brand-title">
+      <span class="brand-badge">1987 EWB 1.0</span>
+      <div>
+        <h1>⚾ EARL WEAVER BASEBALL</h1>
+        <div class="brand-sub">Don Daglow &amp; Eddie Dombrower's Two-Stage Stats Matrix + 3D Ballfield Physics Engine</div>
+      </div>
+    </div>
+
+    <div class="matchup-controls">
+      <label>Away:
+        <select id="selectAwayTeam" class="ewb-select">
+          <option value="boston" selected>Boston Red Sox (McNamara)</option>
+          <option value="baltimore">Baltimore Orioles (Weaver)</option>
+        </select>
+      </label>
+      <label>Home:
+        <select id="selectHomeTeam" class="ewb-select">
+          <option value="baltimore" selected>Baltimore Orioles (Weaver)</option>
+          <option value="boston">Boston Red Sox (McNamara)</option>
+        </select>
+      </label>
+      <label>Ballpark:
+        <select id="selectPark" class="ewb-select">
+          <option value="fenway" selected>Fenway Park (37-ft Monster)</option>
+          <option value="memorial">Memorial Stadium (Baltimore)</option>
+          <option value="wrigley">Wrigley Field (Windy Ivy)</option>
+          <option value="metrodome">H.H.H. Metrodome (Fast Turf)</option>
+        </select>
+      </label>
+      <button id="btnNewGame" class="ewb-btn gold">⚾ New Game</button>
+      <button id="btnToggleCRT" class="ewb-btn">📺 1987 CRT: OFF</button>
+      <button id="btnToggleSound" class="ewb-btn active-toggle">🔊 SFX: ON</button>
+    </div>
+  </header>
+
+  <!-- NAVIGATION TABS -->
+  <nav class="ewb-nav-tabs">
+    <button class="active" data-tab-target="tab-play">⚾ 1987 Split-Screen &amp; Full-Field Play</button>
+    <button data-tab-target="tab-boxscore">📋 Box Score &amp; Lineup Cards</button>
+    <button data-tab-target="tab-comm-parks">🏟️ Commissioner's Disk: Edit Parks</button>
+    <button data-tab-target="tab-comm-managers">🧠 Commissioner's Disk: Edit Managers</button>
+    <button data-tab-target="tab-comm-teams">📇 Commissioner's Disk: Edit Teams</button>
+    <button data-tab-target="tab-stats-lab">📊 Stats Lab: Validate Engine</button>
+    <button data-tab-target="tab-archive">📚 1987 Amiga Archive &amp; Interviews</button>
+  </nav>
+
+  <!-- TAB 1: MAIN 1987 PLAYABLE GAME -->
+  <section id="tab-play" class="ewb-tab-section active">
+    <!-- Line Scoreboard & Situation HUD -->
+    <div class="scoreboard-banner">
+      <div style="overflow-x:auto;">
+        <table class="linescore-table">
+          <thead>
+            <tr id="sbInningHeaders"></tr>
+          </thead>
+          <tbody>
+            <tr id="sbAwayRow"></tr>
+            <tr id="sbHomeRow"></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hud-situation-cluster">
+        <div class="hud-box">
+          <span class="lbl">INNING</span>
+          <span id="hudInning" class="val">▲ TOP 1</span>
+        </div>
+        <div class="hud-box">
+          <span class="lbl">COUNT (B-S)</span>
+          <span id="hudCount" class="val">0 - 0</span>
+        </div>
+        <div class="hud-box">
+          <span class="lbl">OUTS</span>
+          <div id="hudOuts"></div>
+        </div>
+        <div class="base-diamond-wrap">
+          <div class="mini-diamond">
+            <div id="base2B" class="mini-base"></div>
+            <div id="base3B" class="mini-base"></div>
+            <div id="base1B" class="mini-base"></div>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--muted);">BASERUNNERS (SPD)</div>
+            <div id="hudBasesText" style="font-size:11px;font-weight:700;color:var(--gold);">BASES EMPTY</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main 2-Column Workspace: Left = 1987 Split/Full Canvas + Dugout Controls; Right = Weaver 3x5 Card + Play Log -->
+    <div class="gameplay-workspace">
+      <div class="canvas-stage-card">
+        <div id="canvasViewportWrap">
+          <canvas id="ewbCanvas" width="960" height="500"></canvas>
+        </div>
+
+        <div id="earlLiveTicker" class="earl-ticker-bar"></div>
+
+        <!-- Tactical Manager Dugout Controls -->
+        <div class="dugout-controls-grid">
+          <div class="strategy-group">
+            <label for="selectOffensePlay">⚡ Offensive Manager Call</label>
+            <select id="selectOffensePlay" class="ewb-select">
+              <option value="NORMAL">Swing Away (Normal)</option>
+              <option value="RUN_AND_HIT">Run &amp; Hit (Earl Weaver's Signature Call!)</option>
+              <option value="HIT_AND_RUN">Hit &amp; Run (Protect Runner)</option>
+              <option value="STEAL">Straight Steal</option>
+              <option value="TAKE_PITCH">Take Pitch (Work Count)</option>
+              <option value="SACRIFICE_BUNT">Sacrifice Bunt (Earl Hates This!)</option>
+              <option value="BUNT_FOR_HIT">Drag Bunt for Base Hit</option>
+              <option value="SQUEEZE_BUNT">Suicide / Safety Squeeze Bunt</option>
+            </select>
+          </div>
+
+          <div class="strategy-group">
+            <label for="selectDefensePlay">🛡️ Defensive Manager Positioning &amp; Pitch Call</label>
+            <select id="selectDefensePlay" class="ewb-select">
+              <option value="NORMAL">Standard Alignment / Pitch Normally</option>
+              <option value="HOLD_RUNNER">Hold Runner at 1st Base</option>
+              <option value="INFIELD_IN">Bring Infield In (Cut Off Run at Home)</option>
+              <option value="GUARD_LINES">Guard the Foul Lines (No Doubles)</option>
+              <option value="CHARGE_BUNT">Corners Charge Bunt</option>
+              <option value="OUTFIELD_DEEP">Play Outfield Deep</option>
+              <option value="PITCH_AROUND">Pitch Around (Nibble Corners)</option>
+              <option value="PITCH_OUT">Pitch Out (Catch Base Stealer)</option>
+              <option value="INTENTIONAL_WALK">Issue Intentional Walk (IBB)</option>
+            </select>
+          </div>
+
+          <div class="action-buttons-row">
+            <button id="btnThrowPitch" class="ewb-btn gold primary-pitch-btn">⚾ THROW PITCH (SPACE)</button>
+            <button id="btnAskEarl" class="ewb-btn earl">🧢 ASK EARL! (E)</button>
+            <button id="btnInstantReplay" class="ewb-btn" disabled>⏪ INSTANT REPLAY (R)</button>
+            <button id="btnSimAtBat" class="ewb-btn" title="Headless simulate current plate appearance">⚡ Sim PA</button>
+            <button id="btnSimHalfInning" class="ewb-btn" title="Headless simulate rest of half-inning">⏩ Sim ½ Inning</button>
+            <button id="btnSimFullGame" class="ewb-btn" title="Eddie Dombrower's instant 9-inning headless simulator">🚀 Sim Game</button>
+          </div>
+        </div>
+
+        <!-- Platoon Pinch-Hitter & Bullpen Substitution Bar -->
+        <div class="subs-bar">
+          <div class="sub-control">
+            <select id="selectPinchHitter" class="ewb-select"></select>
+            <button id="btnExecutePinchHit" class="ewb-btn">🃏 Pinch-Hit</button>
+          </div>
+          <div class="sub-control">
+            <select id="selectReliever" class="ewb-select"></select>
+            <button id="btnExecutePitcherChange" class="ewb-btn">🔄 Call Bullpen</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Earl's 3x5 L/R Matchup Card, 3D Physics Telemetry & Play-by-Play -->
+      <div class="right-sidebar-stack">
+        <div id="weaverIndexCard" class="weaver-index-card"></div>
+
+        <div class="telemetry-card">
+          <h4>📐 Stage 2 Virtual Ballfield 3D Physics Telemetry</h4>
+          <div id="physicsTelemetryBox"></div>
+        </div>
+
+        <div class="playlog-card">
+          <h4>📻 Play-by-Play Broadcast Ticker</h4>
+          <div id="playByPlayList" class="playlog-scroll"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: FULL BOX SCORE & LINEUP CARDS -->
+  <section id="tab-boxscore" class="ewb-tab-section">
+    <div id="boxScoreContainer"></div>
+  </section>
+
+  <!-- TAB 3: COMMISSIONER'S DISK — EDIT BALLPARKS -->
+  <section id="tab-comm-parks" class="ewb-tab-section">
+    <div id="parkEditorContainer"></div>
+  </section>
+
+  <!-- TAB 4: COMMISSIONER'S DISK — EDIT MANAGERS -->
+  <section id="tab-comm-managers" class="ewb-tab-section">
+    <div id="managerEditorContainer"></div>
+  </section>
+
+  <!-- TAB 5: COMMISSIONER'S DISK — EDIT TEAMS & PLATOON SPLITS -->
+  <section id="tab-comm-teams" class="ewb-tab-section">
+    <div id="teamEditorContainer"></div>
+  </section>
+
+  <!-- TAB 6: STATISTICAL ENGINE VALIDATION LAB -->
+  <section id="tab-stats-lab" class="ewb-tab-section">
+    <div id="statsLabContainer"></div>
+  </section>
+
+  <!-- TAB 7: 1987 ARCHIVE & DEVELOPER INTERVIEWS -->
+  <section id="tab-archive" class="ewb-tab-section">
+    <div class="box-card">
+      <h3>📚 1987 Earl Weaver Baseball — Historical Research &amp; Original Amiga Screenshots</h3>
+      <p>
+        Built from primary sources in <a href="research/visual_styles.html" target="_blank" style="color:var(--gold);">research/visual_styles.html</a>,
+        the April 1987 <em>Computer Gaming World</em> (#36) interview with <strong>Earl Weaver</strong>, <strong>Don Daglow</strong>,
+        <strong>Eddie Dombrower</strong>, and <strong>Teri Mason</strong>, and the 2024 SABR interview with Eddie Dombrower.
+      </p>
+      <div class="archive-gallery">
+        <figure>
+          <img src="research/images/ewb_1987_amiga_gameplay.jpg" alt="1987 Amiga Split Screen at Fenway Park" />
+          <figcaption>1987 Amiga Split-Screen at Fenway Park (37-ft Green Monster)</figcaption>
+        </figure>
+        <figure>
+          <img src="research/images/amiga_01.jpg" alt="1987 Amiga Full Field Ball in Play" />
+          <figcaption>1987 Amiga Full-Field Isometric View (Ball in Play)</figcaption>
+        </figure>
+        <figure>
+          <img src="research/images/ewb2_06.jpg" alt="Edit Managers 19 Sliders" />
+          <figcaption>Edit Managers Screen (19 Tactical Strategy Parameters)</figcaption>
+        </figure>
+        <figure>
+          <img src="research/images/ewb2_07.jpg" alt="Edit Ballparks 10 Distances 9 Heights" />
+          <figcaption>Edit Parks Screen (10 Fence Distances &amp; 9 Wall Heights)</figcaption>
+        </figure>
+        <figure>
+          <img src="research/images/ewb2_08.jpg" alt="Edit Teams L/R Platoon Splits" />
+          <figcaption>Edit Teams Screen (T/L/R Platoon Splits &amp; 1–10 Ratings)</figcaption>
+        </figure>
+        <figure>
+          <img src="research/images/ewb_1987_dos_cover.jpg" alt="1987 EA Album Sleeve Cover" />
+          <figcaption>Original 1987 Electronic Arts Album Sleeve Box Cover</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK EARL MODAL -->
+  <div id="askEarlModal" class="earl-modal-backdrop">
+    <div class="earl-modal-card">
+      <div class="earl-modal-header">
+        <h3>🧢 ASK EARL WEAVER — DUGOUT STRATEGY &amp; INDEX CARD</h3>
+        <button id="btnCloseEarlModal" class="ewb-btn">✕ Close</button>
+      </div>
+      <div id="askEarlModalBody"></div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:14px;">
+        <button id="btnApplyEarlAdvice" class="ewb-btn gold">✅ Apply Earl's Tactical Call</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/ui/app.js"></script>
+</body>
+</html>

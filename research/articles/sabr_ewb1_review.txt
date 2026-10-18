@@ -1,0 +1,272 @@
+This is the eighth entry in a series focusing on computer baseball simulations to supplement the chapter “
+Play Retro Baseball Video Games In Your Browser
+” from my
+Hardball Retroactive
+book along with the corresponding post at
+Hardball Retro
+. The series focuses on baseball simulations – games in which the primary emphasis is on managerial strategy and the ability to replay entire seasons with a degree of realism. Baseball video games that are strictly arcade representations of baseball (based solely on reflex and hand-eye coordination) are excluded.
+Amiga version:
+IBM version:
+Publisher
+– Electronic Arts
+Release Year
+– 1987
+Platforms
+– Amiga, Apple ][, IBM PC, Macintosh
+Credits
+Design:
+Don Daglow & Eddie Dombrower
+Programming/Graphics/Animation:
+Eddie Dombrower
+Music & Sound Effects:
+Teri Mason
+Strategy:
+Earl Weaver
+Programming (IBM PC version):
+Eddie Dombrower, Mark Whittlesey, Bob Dietz, Brian Bender
+Art & Animation (IBM PC version):
+Eddie Dombrower and Robin Lynch
+Programming (Apple ][ version):
+Eddie Dombrower, Mark Whittlesey, Larry Rice, John Heitmann
+Programming (Macintosh version):
+Eddie Dombrower, Mark Whittlesey, Bill Rommerdahl, William Buckley
+Review
+Earl Weaver Baseball represented a transformation in the computer baseball gaming experience from a text-based or minimally animated exercise into an authentic re-creation of America’s Pastime. From the realism of the statistical engine to the striking audio and visual effects, EWB signified a tremendous leap forward in sports simulations and set an extremely high bar that most challengers in the past 3 decades have failed to achieve. When I first cast my gaze upon the Amiga version, I was captivated by the sound effects, speech and graphics. After playing a few series I discovered that the variety of strategic options, ability to create ballparks and the accurate game outcomes contributed to a remarkable product unlike anything I had seen before. Many years later, I purchased an Amiga 500 for the sole purpose of playing this game. However in 1987 I had to settle for the Apple ][ version (which omitted several key features due to memory constraints). I regrettably sold my Apple ][e Enhanced system in the early Nineties. Although I currently have the Amiga and IBM versions, I’m using emulation for the sake of convenience. In order to provide an objective comparison of the versions I scheduled a series against Earl using both the IBM (PC / MS-DOS) edition and Amiga games.
+The
+IBM
+series featured the teams that lost the 1982 AL and NL Championship matchups in a what-if World Series – Atlanta Braves vs. California Angels. I managed the Angels squad while “Earl” skippered the Bravos. After selecting the teams and game options, I was prompted to enter my season ticket number from the wheel of copy protection:
+After selecting the starting pitchers and lineups, Game 1 was underway. Geoff Zahn (18-8, 3.73) took the mound for the home team against veteran knuckleballer Phil Niekro (17-4, 3.61). Claudell Washington split the defenders in left-center field gap and the ball rolled all the way to the wall. Fred Lynn retrieved the ball but Washington raced around the bases and beat the relay throw for an inside-the-park homer! Zahn settled in and retired the next 3 Braves in order. Brian Downing laced a flutterball into the right field corner for a two-bagger to lead off the bottom of the first for the Halos. Rod Carew walked and was promptly erased on a fielder’s choice grounder to shortstop as Reggie Jackson safely reached base. With runners on the corners and one away, Fred Lynn drew a walk to load the bases. Don Baylor ripped a two-hopper to Rafael Ramirez at short, forcing Lynn at second. Baylor beat the relay to first as Downing crossed home plate, knotting the score at 1-1. Doug DeCinces hit into a 6-4 force at second base for the final out. In the home third, Carew and Jackson blooped successive singles in front of Washington to set up a first-and-third situation for Lynn with one down. Hubbard scooped up Lynn’s slow roller and flipped to Ramirez for the second out, but the relay was too late allowing Carew to cruise home as the Angels took a 2-1 lead. Braves’ third baseman Jerry Royster sparked a rally in the fifth with a single and a pair of stolen bases. Glenn Hubbard’s dribbler up the third base line was slow enough to score Royster with the tying run. Jackson and Lynn delivered back-to-back opposite-field doubles in the home half of the frame to re-take the lead. Atlanta roared back in the top of the sixth when Ramirez legged out an infield hit to third and Bob Horner lashed a two-base knock up the right-center field gap. Bob Watson tagged a long fly ball over the center field fence, giving Atlanta a 5-3 advantage. I gave the signal for the right-hander Don Aase as Zahn marched slowly to the dugout. Aase whiffed Terry Harper and Royster to end the inning. Bobby Grich smacked a double down the right-field line to open the bottom of the sixth and Tim Foli followed with a base hit to left, cutting the Braves’ lead to 5-4 as Foli advanced to second base on the throw home. Earl visited the mound but elected to leave Niekro in the game to face the #9 hitter, Bob Boone. California evened the score at 5 runs apiece when Boone delivered a solid single to left. Harper gobbled it up and fired home but Foli evaded the tag. Atlanta rallied again in the seventh when Hubbard singled up the middle and Aase plunked Bruce Benedict. Luis Sanchez entered the contest after Washington flied out to right and Hubbard tagged up to put runners on the corners with one out. Ramirez tripled to right-center, plating Hubbard and Benedict with the go-ahead runs. Sanchez issued an intentional pass to Dale Murphy. Horner followed with a ground-rule double to left and Watson supplied a sacrifice fly as the Braves tacked on two more runs. Earl brought Steve Bedrosian into the match in the bottom of the seventh as Atlanta had a four-run cushion. The Angels threatened when DeCinces cracked a double off the left field wall with one away, placing runners on second and third. “Bedrock” doused the blaze by striking out Grich and inducing pinch-hitter Ron Jackson to lift a harmless fly ball to right. Dave Goltz hurled a scoreless eighth for the Halos. Boone and Downing started the bottom of the frame with successive safeties to left. Carew tapped a slow roller towards first. Watson wheeled and fired to second base but Downing beat the throw. Jackson stepped to the dish with the sacks full and nobody out. He took a mighty cut but hit a three-hopper towards Hubbard, who shoveled to Ramirez to get the lead runner (Carew). Earl stormed from the dugout when the first-base umpire called Jackson safe on the relay throw. Boone crossed home plate on the play to bring California within 3 runs at 9-6. The subsequent play yielded another 4-6 fielder’s choice with Lynn safe at first and Downing scoring. Bedrosian struck out Baylor and the Braves retained a 9-7 lead. In the ninth, Grich coaxed a one-out walk and pinch-hitter Juan Beniquez knocked Bedrosian out of the game with a long double to left. Earl called upon Gene Garber to close out the contest.  Boone greeted Garber with a medium fly towards left-center. Grich and Beniquez tagged up on the play and witnessed a collision between Murphy and Harper. Murphy scrambled to recover the ball as Grich raced home and Beniquez scooted to third. On Murphy’s throw home, the potential winning run (Boone) tiptoed into second. The side-arming Garber whiffed Downing for the second out. Earl gestured towards his battery that he wanted to intentionally walk Carew. Garber and Benedict complied, bringing “Mr. October” to the plate in a bases loaded, 2 out, bottom of the ninth confrontation. Jackson’s patience paid off as Garber issued a base on balls to force in the tying run. Lynn drilled a hard grounder to Royster who fired down to Hubbard, sending the game into extra innings. Bruce Kison gave up back-to-back base hits to Harper and Royster to start the top of the tenth. Hubbard hit into a 4-6-3 double play with Harper advancing to third base. Benedict grounded out to Rob Wilfong at shortstop to suppress the threat.  Garber retired the Angels in order in the home half of the tenth and Kison returned the favor in the visitor’s eleventh. Beniquez sent Garber to the showers with a ground-rule double that one-hopped the right-center field fence. Earl summoned the left-hander Al Hrabosky to pitch to the veteran backstop Boone. “The Mad Hungarian” had trouble finding the plate and Boone drew a walk. Downing’s slow roller up the middle evaded Hrabosky’s glove and the Braves were only able to secure the out at second. Carew strolled to the dish with one out and runners at the corners. “Hungo” walked the perennial All-Star on four pitches. Wilfong lashed a line drive to right as the Angels walked off with a 10-9 victory!
+Rick Mahler (9-10, 4.21) squared off against Ken Forsch (13-11, 3.87) in Game 2. Chris Chambliss lifted a fly ball to Reggie Jackson leading off the top of the second. The ball glanced off Jackson’s glove for a two-base error. Chambliss advanced to third on a fly out to right off the bat of Glenn Hubbard, then tagged up and scored on a sacrifice fly by Larry Whisenton. California loaded the bases with two outs in the bottom of the second inning on a fielder’s choice, an errant throw by Rafael Ramirez and a walk. Dale Murphy raced into foul territory to snare Brian Downing’s sky-high pop up to extricate Mahler.  In the third, Rod Carew flicked an opposite field two-base hit into the left field corner. “Mr. October” launched Mahler’s next offering into the right-center field bleachers for a 2-run jack. Fred Lynn legged out an infield hit and came all the way around from first when Don Baylor drilled a double up the gap in right-center. Doug DeCinces reached on Ramirez’s second error of the inning. Baylor scooted home on a Tim Foli groundout to increase the Angels’ advantage to 4-1. The Halos resumed their offensive barrage in the fourth. Downing led off with a single to center and Jackson drew a one-out walk. Lynn lofted a can of corn towards the right field line. Claudell Washington lost it in the sun and the ball bounced over the wall for a two-base error with Downing scored. Earl replaced Mahler with Pascual Perez. DeCinces drew a base on balls with two away but Grich grounded into a fielder’s choice to end the frame. Atlanta got a run back in the top of the fifth. Bruce Benedict lined a shot off Forsch’s hip. Forsch recovered but threw the ball past Carew for an error. Brett Butler hit a frozen rope to right-center sending Benedict to third, but Jackson cut down Butler when he tried to stretch a single into a double. Washington knocked in the Braves’ backstop with a three-hopper to second. Atlanta crept closer in the visitor’s sixth. DeCinces booted a hot smash off the bat of Bob Horner. Both runners were safe on a slow grounder by Chris Chambliss. After a walk to Whisenton loaded the bases with one out, Benedict beat the relay on a potential double-play ball to extend the inning and allow Horner to cross the plate. Butler batted into a 6-4 force with the Angels clinging to a 5-3 lead. California came storming back in the bottom half of the sixth. Carew and Jackson supplied back-to-back singles, then Lynn absolutely crushed a moon-shot to straightaway center. Earl grimaced and cussed at no one in particular as his favorite weapon, the 3-run homer, effectively extended the Angels advantage to 8-3. The Braves scratched a run across against Andy Hassler in the eighth when Benedict doubled into the right-field corner to knock in Chambliss. Washington skied a sacrifice fly to right to bring the Braves within 3 runs. Ramirez walloped reliever Doug Corbett’s sinker to the left field wall, but the sure-handed Downing gloved it to retire the side. In the top of the ninth, Corbett clipped Chambliss with a changeup then yielded a two-out double to Hubbard. Luis Sanchez relieved Corbett and induced pinch-hitter Jerry Royster to hit a slow roller towards the third base line. DeCinces fielded the ball and made a diving stab at Hubbard, who avoided the tag to keep the inning alive. Rufino Linares smacked a fly ball to medium center where Lynn corralled it for the final out. The Angels boarded a plane bound for Atlanta holding a 2-0 advantage in the Series.
+A pair of young right-handers got the call in Game 3 as sophomore Mike Witt (8-6, 3.50) prepared for his first post-season assignment versus Bob Walk (11-9, 4.87). Atlanta handed the Halos a cheap run in the first when Walk failed to get out of the way on Don Baylor’s pop-up to the infield, resulting in a collision with Glenn Hubbard. The ball dropped untouched allowing Reggie Jackson to score from second base. Claudell Washington commenced the bottom of the first with a ringing double into the right field corner. Rafael Ramirez followed with an infield hit. Mike Witt struck out Dale Murphy with a knee-buckling curve, but he issued a free pass to Bob Horner to load the bases. The Braves tied the game on a wild pitch to Chris Chambliss as Washington scurried home. California put ducks on the pond in the top of the second after successive singles by Bobby Grich and Tim Foli. Bob Boone bunted the ball towards Walk who wheeled and fired to Horner at third base, but Grich avoided the tag. Brett Butler snagged Brian Downing’s long fly to center as Grich tagged and tallied the Angels’ second run. Rod Carew rapped a clean single past Horner and into left field to knock in Foli. Jackson whiffed then Fred Lynn walked to re-load the bases for Baylor. “Groove” took a healthy hack but fouled it high in the air behind home plate. Biff Pocoroba whipped off his catcher’s mask, ran back towards the screen and made a fancy sliding catch, eliciting cheers from the hometown crowd. Washington whacked a clean single to right, stole second and came around on a base hit to center by Murphy. Horner knotted the score at 3-3 with a bullet off the left field wall. Earl relieved Walk with two down in the fourth and two runners on base. Gene Garber struck out DeCinces to conclude the frame. Washington sliced a three-base hit up the left-center field gap with two away in the bottom of the fourth. Ramirez lined one sharply over Foli’s head to plate Washington with the go-ahead run. Murphy dunked a bloop double that hugged the left field line, advancing Ramirez to third. Witt delivered four consecutive balls to Horner. Down 4-3 with the sacks full of Braves, I brought Steve Renko in to face Chambliss. Foli flawlessly fielded Chambliss’ bounding ball to short and flipped to Grich for the force at second. Facing Al Hrabosky to start the top of the eighth, Foli cracked a two-bagger that one-hopped the left field wall. Pinch-hitter Ron Jackson and Downing hit consecutive groundouts that prevented Foli from advancing. Carew drew a walk, bringing Jackson to the plate with the tying run in scoring position. “Mr. October” served a soft single to center and Foli zipped home to tie the game at 4-4. “Hungo” rebounded to strike out Lynn. Ken Dayley relieved Hrabosky in the top of the ninth. Baylor led off with a screaming liner towards right-center that Washington misplayed into a three-base error. The Angels immediately capitalized when DeCinces thumped a low liner back through the box and into center for a base hit. Baylor trotted home as California took the 5-4 lead. Grich’s fourth hit of the contest sailed into the left field seats to endow the visitors with a 3-run cushion. Joe Ferguson left the yard with a solo shot to left-center, prompting Earl to call down to the pen for another arm. Rick Camp jogged to the mound to face the top of the order. Downing hit a high chopper behind third. Horner fielded the ball and airmailed it into the first-base stands for a 2-base error. Camp retired Carew on an easy two-hopper to short, then yielded to southpaw Carlos Diaz. Luis Sanchez closed out the ninth, allowing only a two-out single to Chambliss. The Braves fell behind 3 games to none in the Series, setting the stage for a possible sweep by the visiting club.
+Geoff Zahn and Phil Niekro opposed each other in a rematch of Game 1 starters. Rod Carew and Reggie Jackson generated back-to-back safeties to place runners on the corners with one away in the opening frame, but “Knucksie” escaped the jam without conceding a run. Claudell Washington walked, swiped second and scored on a triple by Rafael Ramirez. An infield hit to deep short by Dale Murphy plated Ramirez with the Braves’ second run. Chris Chambliss rocked a two-base hit into the right field corner and Atlanta led 3-0. Brian Downing swatted an opposite field big-fly leading off the visitor’s third. Two-out safeties by Fred Lynn and Doug DeCinces followed by a base on balls to Bobby Grich provided a golden opportunity to Don Baylor. Niekro presented another Houdini act as “Groove” lofted an innocuous fly to Rufino Linares in left field, who camped under it and made the catch for the final out. Ramirez beat out a dribbler to DeCinces, pilfered second and recorded a tally on a double to right-center by third-sacker Bob Horner. Bob Watson slashed a two-bagger with two outs to extend the Atlanta advantage to 5-1. California rallied in the top of the fifth. Jackson registered an infield single and Lynn pounded a double down the line in right. A sacrifice fly to left by DeCinces brought the Angels within 3 runs. Grich grounded out to Ramirez allowing Lynn to score. Dave Goltz relieved Zahn to commence the bottom of the fifth with the Angels trailing 5-3. Ramirez laced his third base hit to right and Murphy walked. Horner put a charge into a Goltz fastball but Lynn flagged it down in deep center as Ramirez tagged up and cruised into third. Watson’s looping liner evaded Tim Foli’s outstretched glove, increasing the Atlanta lead to 6-3. Niekro issued a free pass to Jackson to open the seventh. Lynn thumped a sharp single to center, bringing DeCinces to the dish as the potential tying run. The wily veteran held the Halos at bay once again, provoking a weak fly ball to right by DeCinces and a two-hopper by Grich to his opposite number (Glenn Hubbard). Baylor opened the eighth with a base hit to left. Al Hrabosky relieved Niekro and promptly served up a single to pinch-hitter Juan Beniquez. Baylor scored when Ron Jackson bounced a high chopper behind third for an infield hit. Downing batted into a tailor-made 6-4-3 double play, with Beniquez advancing to third. Carew rapped a base hit up the middle, cutting the Braves’ lead to a lone run. Jackson tied the game when his long blast to center sailed over Murphy’s head and one-hopped the wall as Carew dashed around the bases. Lynn drew a walk but DeCinces struck out to quash the rally. Doug Corbett allowed a two-out double to Bruce Benedict, then pinch-hitter Jerry Royster ripped a single to center to knock in the go-ahead run. Earl called upon Pascual Perez in the top of the ninth. Beniquez and “Papa Jack” supplied consecutive two-out singles, placing runners on first and third. Steve Bedrosian entered the match to face Downing. The Halos pulled even at 7-7 when a laser beam off the bat of Downing pierced the left field wall. A subsequent bloop hit to center by Carew tallied 2 more runs for the visiting squad. Earl came out to argue the call at home plate, kicking up a severe dust storm in the process. Bruce Kison shut down the hometown Braves in the final frame as Watson flew out to Downing to end the Series. California claimed the World Championship with a 4-game sweep!
+Using the 1988 Team Disk for the
+Amiga
+series, I elected to match up the worst teams in the American League (Mariners vs. Orioles) in the Battle for the Basement. Flamethrower Mark Langston (15-11, 3.34) faced off against junkballer Jeff Ballard (8-12, 4.40) in Game 1. Bill Ripken rocked a one-out double to the base of the center field wall at the Kingdome with one out in the opening frame. Langston settled down and retired Cal Ripken Jr. and Eddie Murray to end the inning. Alvin Davis scorched a changeup off the right field fence for a long single leading off the bottom of the second. Ballard set down the next 6 Mariners in order until Henry Cotto dialed long distance in home half of the fourth. Successive singles by Fred Lynn and Rick Schu gave the O’s a first-and-third situation with one away in the fifth. Langston escaped the jam when Rene Gonzales and Pete Stanicek lofted shallow flies to left. Glenn Wilson dove headfirst into the bag to sneak in safely with a two-base hit under Bill Ripken’s tag. Harold Reynolds’ soft liner to left barely evaded the reach of the “Iron Man”. Wilson was running at the crack of the bat with two outs and scored easily while Reynolds sprinted into second on the throw home. Steve “Bye-Bye” Balboni hammered a deep drive down the left field line which crashed into the second deck, extending the M’s lead to 3-0 with 2 outs in the bottom of the sixth. Baltimore rallied with 3 straight safeties off the bats of Rene Gonzales, Pete Stanicek and Bill Ripken to open the eighth. Michael Jackson came on to duel Cal Ripken in relief of Langston. “Rip” took a mighty cut and struck out swinging on a slider. Murray belted Jackson’s next pitch towards right-center but Wilson made the catch. Gonzales tagged up and scurried homeward to put the O’s on the board. Wilson camped under Mickey Tettleton’s fly ball to close out the inning with the Mariners holding a 3-1 advantage. Mickey Brantley drilled a two-bagger off the base of the center field wall. Earl visited the mound and opted for Doug Sisk to replace Ballard. Davis walked on four pitches. Balboni delivered an insurance run with a ringing single to left-center. Scott Bradley batted for Dave Valle and Earl countered with the lefty Mark Thurmond. Bradley lobbed a soft liner to left, scoring Davis. Another pitching change ensued as Tom Niedenfuer trotted in from the pen. Wilson hit a weak grounder to second and the Ripken brothers completed the force play. Mike Schooler entered the game in a non-save situation. Lynn flied out to the warning track in right and pinch-hitter Joe Orsulak whiffed, but Reynolds dropped an infield fly off the bat of Larry Sheets to keep the Orioles’ hopes alive. Gonzales whacked a sizzling three-hopper to short which was scooped up by Rey Quiñones and fired to Reynolds covering second base for the final out.
+Rookie right-hander Jose J. Bautista (6-15, 4.30) headed to the mound for the Orioles in Game 2 to face veteran Mike Moore (9-15, 3.78). Baltimore set up a potential scoring opportunity in the top of the second when Larry Sheets doubled to deep center after Eddie Murray led off the frame with a sharp single to right. Fred Lynn plated “Steady Eddie” with a ringing single over the outstretched glove of Harold Reynolds. Moore avoided further damage with a shallow pop fly and a pair of strikeouts. Larry Sheets laced an opposite-field single down the left field line to knock in Brady Anderson in the top of the third with the O’s second run. Bautista worked around a single, a balk and a walk in the fourth to maintain the 2-0 advantage. Murray belted a 2-run round-tripper to left-center, doubling the Orioles’ lead to 4-0. Seattle got on the board when Henry Cotto rapped a two-base hit and came around to score on a Bill Ripken throwing error. Alvin Davis brought the M’s within one, crushing a 2-run shot to right off Bautista with one out in the bottom of the sixth. In the seventh, Reynolds rapped a double down the left field line but the third base coach wisely held Jim Presley at third. Bautista buckled down and retired Cotto on a medium fly to Lynn in left field. Brady Anderson opened the top of the eighth with a double to center off M’s reliever Jerry Reed. Anderson took off for third base on a stolen base attempt and Scott Bradley’s errant throw sailed past Presley into left field. Anderson quickly rose to his feet and scampered home to add a run to Baltimore’s tally. Reed got into further trouble by walking Murray and plunking Sheets. Bill Wilkinson entered the contest and induced Lynn to hit into a fielder’s choice. With two outs, Kennedy punched a routine grounder to short that Rey Quiñones booted as Murray glided home. Seattle went quietly in the ninth as Bautista completed an eight-hit, 6-3 victory to even the Series at one game apiece.
+Both teams hopped on cross-country flights bound for Baltimore. The Series resumed one day later at Memorial Stadium where Scott Bankhead (7-9, 3.07) prepared to oppose Jay Tibbs (4-15, 5.39). A solo blast to right-center by Bill Ripken put the home team on the board in the bottom of the third. Neither team mustered any offensive threats until the top of the ninth. Tibbs was masterful through eight scoreless frames, limiting the Seattle lumberjacks to 3 singles. Henry Cotto, pinch-hitting for Bruce Fields to start the visitor’s half of the ninth, doubled up the right-center field gap. Earl signaled for right-hander Tom Niedenfuer to succeed Tibbs on the mound. The crowd roared and Tibbs tipped his cap as he walked off the mound. Mickey Brantley timed Niedenfuer’s heater perfectly and smoked a single past Cal Ripken Jr. Cotto raced towards home and deftly maneuvered around Terry Kennedy’s swipe tag to tie the game at 1-1. Clearly agitated by the turn of events, Earl bolted out of the dugout and yanked Niedenfuer in favor of Doug Sisk. Alvin Davis delivered a safety up the middle, moving the go-ahead run into scoring position with nobody out. Steve Balboni lashed a long single to left-center off southpaw Mark Thurmond as Brantley came around to give the Mariners a 2-1 lead. Pinch-hitter Jay Buhner grounded into a fielder’s choice but beat the relay throw to first. Earl chewed out the first base umpire, then called upon his fourth reliever of the inning, Don Aase. Jim Presley pulled the ball through the hole between short and third, extending the M’s advantage to 3-1. Mike Schooler entered the contest to do battle against the heart of the O’s order in the bottom of the ninth. He plunked Ripken in the ribs with a slider. Eddie Murray hit into a fielder’s choice and Jim Traber flew out to right field. Fred Lynn drilled a line drive to right but Mike Kingery snared it as the Mariners reclaimed the Series lead at 2 games to 1.
+Mark Langston and Jeff Ballard toed the rubber in a rematch of Game 1 starters. Harold Reynolds led off with a sharp single to left and promptly stole second. Ballard issued a one-out walk to Mickey Brantley, then Alvin Davis plated Reynolds on a low liner to right field. Brantley scored on a sacrifice fly off the bat of Steve Balboni to give the Mariners a 2-0 lead. Baltimore rallied in the bottom of the fourth when Mickey Tettleton blasted a two-bagger off the warning track in center field, scoring Cal Ripken Jr. to cut the M’s lead in half. In the bottom of the seventh, Tettleton coaxed a base on balls. Fred Lynn, batting for Larry Sheets, surprised everyone with a two-strike bunt down the third base line for an infield hit. Rene Gonzales drove Langston’s heater down towards the left field corner. Brantley quickly cut off the ball and relayed it back to the infield, but “Froot Loops” easily cruised home with the tying run. Stanicek drew a walk to load the bases, but Bill Ripken lifted a routine fly ball which settled into Brantley’s glove to end the inning. Reynolds started the eighth with a base hit back through the box and swiped second. Ballard retired the next 3 Mariners in order to maintain the 2-2 tie. Mike Jackson hurled a clean inning for the M’s as Langston headed for the showers after 7 solid innings. Steve Balboni took a free pass to commence the ninth frame. Ballard’s 0-2 changeup struck Dave Valle in the left elbow, moving pinch-runner Mike Kingery into scoring position. None of which mattered when Jay Buhner connected on a mammoth 3-run home run that cleared the left-center field bleachers! Mike Schooler struck out 2 of the 3 batters that he faced to notch the save in Seattle’s 5-2 victory.
+Baltimore attempted to stave off elimination as Seattle held a convincing 3 games to 1 advantage heading into Game 5. Mike Moore finished his pre-game bullpen session while rookie right-hander Oswaldo Peraza (5-7, 5.55) fired his warm-up tosses. The umpire bellowed “Play Ball!” and Harold Reynolds stepped into the batter’s box. Peraza set the M’s down in order. Joe Orsulak led off the bottom of the first with a one-hop double against the right-center field wall. He moved to third on a grounder to second off the bat of Brady Anderson. Cal Ripken Jr. delivered a sacrifice fly to right, allowing Orsulak to tag up and score effortlessly. Mickey Tettleton rocked a two-base hit over Glenn Wilson’s head following an Eddie Murray single, setting up a second-and-third with two outs situation for Fred Lynn. I held an impromptu conference on the mound to settle Moore down. Lynn hit a hot smash towards third but Jim Presley smothered it and threw over to first to minimize the damage. Presley walloped a Peraza fastball off the center field scoreboard, knotting the score at 1-1. Seattle loaded the bases with a hit batsmen (Rey Quiñones) and consecutive singles by Reynolds and Cotto to open the sixth. Mickey Brantley’s chopper was fielded cleanly by Peraza, who flipped the ball to Terry Kennedy for the out at home plate. Alvin Davis slapped a slow grounder up the middle and the Ripken brothers got the force at second, but Reynolds raced home for the go-ahead run. Bill Wilkinson, Jerry Reed, Mike Jackson and Mike Schooler each hurled scoreless frames in relief of Moore to clinch the Series as the Mariners edged the Orioles in the finale, 2 to 1.
+Ratings
+Graphics – [5]
+As the pitcher delivers the ball towards home plate, we are treated to a split-screen view with the playing field on two-thirds of the display (left side) and the batter-pitcher matchup in the rightmost section (the view of the right fielder is obscured). The scoreboard is positioned at the top of the screen, indicating the total runs, hits and errors for both teams along with the inning, number of outs and the ball-strike count on the present batter. In the batter-pitcher segment, the current hitter’s actual batting average, home runs and RBI are posted as well as his runner (speed) rating while the hurler’s ERA, won-loss record and fatigue rating are revealed. Once the ball is put into play or another event results in baserunner movement, the split screen disappears in favor of a full field view. The animation of the players is very fluid and smooth. Umpires signal out or safe, baserunners slide and fielders move their gloves into position at the last second. The close-up batter-pitcher confrontation is lifelike, a great achievement giving the state of personal computer graphics in mid-Eighties. The Instant Replay option allows you to review the previous play in real-time or slow motion (frame-by-frame).
+Sound – [5]
+The Amiga and IBM versions perform John Philip Sousa’s “The Stars and Stripes Forever” during the introduction and as the batter rounds the bases during a home run trot. The music in the IBM game is a series of bleeps and bloops while the Amiga edition faithfully emulates the actual instruments. Similarly the IBM sound effects are fairly minimal in contrast to sweet resonances emanating from the Amiga such as the authentic crack of the bat, roar of the crowd or a ball nestling in a glove. Additionally the Amiga incorporates speech synthesis from the umpire’s calls to the enunciation of player names prior to each at-bat.
+Strategy –
+[
+4
+]
+You can get fairly granular when adjusting your fielders’ depth and position. You cannot shift an infielder beyond the second base bag (i.e. no extreme shifts with 3 infielders on one side of the infield). As a manager, you have the ability to pitch around a hitter, have one or both corner infielders charge on a bunt attempt and determine baserunner aggressiveness. The squeeze play is an option and you can tell one or more baserunners to attempt a stolen base.
+Artificial Intelligence – [4]
+Earl essentially made appropriate decisions with regards to batter and pitcher substitutions. The computer manager applied suitable in-game strategies such as when to bunt, hit-and-run and steal on offense or fielder positioning and intentional walks on defense.
+Box Score –
+[4]
+The upper half of the post-game screen depicts the line score including innings, time, attendance, double plays and game-winning RBI along with the pitchers credited with the win, loss and save (if applicable). The lower-left corner allows the user to select the visitor or home sections of the box scores (batting and pitching) while the lower-right offers the ability to toggle output between the screen, printer or disk, view an instant or slow-motion replay from the final play of the game, Update Players Stats and/or Update W/L Records. The batting box score is enumerated in the correct order. However first names (or initials) are absent, making it difficult to differentiate between players with the same last name. The omission of defensive positions in the box score is an unfortunate oversight. The standard offensive statistics are compiled along with sacrifice hits, caught stealing, errors and passed balls while hit batsmen, wild pitches and balks are recorded with the conventional pitching data.
+Rosters –
+[3]
+– Each team is permitted a 25-man roster. You can enter split statistics for batters and pitchers to indicate how they fare against righties and lefties. Each player is rated in several categories on a 1 (poor) to 10 (excellent) scale. Batter ratings include Power, Hit & Run, Bunt, Runs, Range and Arm while pitchers are graded on Speed (Velocity), Control, Fatigue, Bunt and Fielding ability. Players can be drafted, traded and cloned. In the Amiga version only, you can modify the phonemes for each player to tweak the pronunciation of their first and last name.
+Statistics – [4] –
+Upon conclusion of a “League” game, the user has the ability to Update Players Stats and/or Update W/L Records. You can display actual and accumulated stats and standings using the main program. The optional (but highly recommended) Commissioner’s Disk affords the end-user with additional enhancements to the main Earl Weaver Baseball software. You can modify split and total statistics for any player using the Advanced Stats Editor. View and print the actual or accumulated statistics by individuals and teams, change the sort method (overall or by position) and specify minimum at-bats or innings pitched via the Advanced Stats Display. Accumulated statistics are merged into a single file using the Combine Accumulated Stats option. You may bestow days off to entire divisions, teams or individual players with Grant Days Off. This allows you to simulate travel days or modify injury status. Teams, divisions and league names can be modified via the League/Division Editor. Schedules can be created and sent to a printer, disk or the screen. With the exception of the IBM version, Earl Weaver Baseball does not adhere to generated schedules within the game program – this option simply allows you to generate a schedule that you will need to track manually. Create A Brand New League and Draft A League permit the creation of new leagues from scratch and the selection of players from an existing team disk. This utility allows you to trade, sign and cut players from a team’s roster.
+Usage/Injuries/Ejections
+–
+[4]
+– Injuries can occur during the game (the user can toggle this feature on or off). Injured and fatigued players are denoted prior to each contest with the number of games that they are unavailable. This can be modified using the “Grant Days Off” option. The manager will argue an umpire’s call on occasion but I don’t believe players or managers can be ejected from the game.
+Ballparks / Park Factors – [5] –
+32 ballparks are included with the game – the 26 parks that were utilized in the late Eighties along with the Polo Grounds and 5 imaginary stadiums. The Commissioner’s Disk includes Advanced Ball Park Editor. You can fine-tune park factors (wind direction and speed), stadium dimensions (distance to fences, wall height and color, number of decks, foul ball area), capacity and turf type.
+Commentary – [4]
+–
+The announcer in the Amiga version keeps us informed through the built-in speech synthesis with regards to the current batter (“At bat.. Cal Ripken”) as well as any player substitutions (“Now pitching.. Lee Smith”). When the computer manager calls down to the bullpen, the human manager is notified: “Earl’s got.. Kent Tekulve.. throwing in the pen”. During a pitching change – “Earl’s taking out.. Ron Guidry… Dave Righetti .. is now in the game.” In the Apple and IBM editions, the commentary scrolls across the center of the screen before any action takes place.
+Scale:  Ratings from 1 (worst) to 5 (best)
+Total Score:
+42 out of 50
+Observations
+Earl Weaver Baseball offers an engaging computer baseball game that will stimulate your mind and your senses. Despite evolutions in console and computer processing power in addition to sound and graphics capabilities over the past 30+ years, I consistently find myself returning to EWB. Other games have come close and even surpassed EWB in certain respects, but this game just feels like baseball to me.
+There are several key differences between the Amiga, IBM and Apple versions of EWB. The Amiga game utilizes the built-in speech synthesis and features the best graphics, sound and music. The Apple edition only comes with 2 teams (AL 00-30 and NL 00-30) and the game manual enumerates a number of glitches that were present at the time of release. The bugs include issues with the recording of strikes, errors and hit types along with several visual anomalies (fielders running through walls, balls rolling off the screen). I’m not sure if a patch was released to correct any of those flaws. With regards to the IBM version, I have EWB 1.5 and the manual references versions 1.0 and 1.1. According to designer and programmer Eddie Dombrower, version 1.1 addressed “several minor bug fixes” while 1.5 provided “some additional graphics and audio enhancements (like newer/additional sound card support) and possibly even an additional graphics resolution update”.
+In the process of researching this article, I stumbled upon several references and a video of a
+prototype of Earl Weaver Baseball for the Sega Genesis
+. According to Mr. Dombrower, “While we were working on EWB 2, we were working on a Genesis version of EWB which, for reasons I cannot recall, never got finished and/or released.” The video confirms a 1991 copyright date and the EWB computer versions received many accolades, so I can’t imagine why Electronic Arts cancelled this project. EA whiffed on that decision!
+Please add a comment below if you spent a significant amount of time and/or have any recollections of Earl Weaver Baseball.
+Screenshots
+Earl Weaver Baseball (Amiga version)
+Earl Weaver Baseball (IBM version)
+Articles in the Series
+Retro Computer Baseball Game Review – SSI Computer Baseball
+Retro Computer Baseball Game Review –Computer Statis Pro Baseball
+Retro Computer Baseball Game Review – MicroLeague Baseball
+Retro Computer Baseball Game Review – Avalon Hill Pro Manager / Major League Manager
+Retro Computer Baseball Game Review – Pure-Stat Baseball
+Retro Computer Baseball Game Review – Monday Morning Manager
+Retro Computer Baseball Game Review – Radio Baseball
+Retro Computer Baseball Game Review – Earl Weaver Baseball
+Retro Computer Baseball Game Review – Full Count Baseball
+Retro Computer Baseball Game Review – MicroLeague Baseball II – III – IV
+Retro Computer Baseball Game Review – Tony La Russa’s Ultimate Baseball
+Retro Computer Baseball Game Review – Earl Weaver Baseball II
+Retro Computer Baseball Game Review – APBA Baseball
+Retro Computer Baseball Game Review – Tony La Russa Baseball II
+Retro Computer Baseball Game Review – Front Page Sports Baseball ’94 – ’96 – ’98
+Retro Computer Baseball Game Review – ESPN Baseball Tonight
+Retro Computer Baseball Game Review – Hardball 3-4-5-6
+Retro Computer Baseball Game Review – Pursue the Pennant – Diamond Mind Baseball
+Retro Computer Baseball Game Review – Pro League Baseball
+Retro Computer Baseball Game Review – Tony La Russa Baseball 3 – 4 – Old Time Baseball
+Additional Links
+Play Earl Weaver Baseball in your browser! –
+https://archive.org/details/msdos_Earl_Weaver_Baseball_1987
+*-copy protection code wheel required
+Playthroughs – Hardball Retro
+https://youtu.be/L0W6JmyShdo
+https://youtu.be/4Bz4GCzUeco
+Computer Chronicles – “Games” episode (1987) – Eddie Dombrower demonstrates Earl Weaver Baseball on an Amiga 1000 (14:50 – 19:45).
+https://youtu.be/L4MZEoYtET0?t=889
+SeasonToo
+l utility by Daniel Guenther – for use with one of the older (pre-2005) versions of the
+Lahman Baseball database
+(comma-delimited file) to import 1901-2005 seasons into EWB 1.5. Just follow the instructions in the SeasonTool readme file! ->
+http://www.jtc-ufo.com/ewb/
+Connor, Peter. “Screen Test – Earl Weaver Baseball.” Advanced Computer Entertainment. October 1987, Issue 1, p68-69.
+https://archive.org/details/ACE_Issue_01_1987-10_Future_Publishing_GB/page/n67
+Dombrower, Eddie. Text message to author. 27 Dec. 2019 and 2 Jan. 2020.
+Jago, Francis. “Baseball Head to Head.” Commodore User. October 1987, Issue 49, p86-87.
+https://archive.org/details/commodore-user-magazine-49/page/n85
+Kendall, Mark. “Putting Bytes into the Old Ball Game.” Pomona College Magazine. June 26, 2013.
+https://magazine.pomona.edu/2013/summer/putting-bytes-into-the-old-ball-game/
+Leeds, Matthew. “Software Reviews – Earl Weaver Baseball.” May 1987, Issue 5, p48-49.
+https://archive.org/details/05-commodore-magazine/page/n49
+Lesser, Hartley and Patricia Lesser. “The Role of Computers.” Dragon Magazine. Issue 126, p84.
+https://archive.org/stream/DragonMagazine260_201801/DragonMagazine126#page/n85/mode/1up
+Lesser, Hartley and Patricia Lesser. “The Role of Computers.” Dragon Magazine. Issue 127, p78, 80.
+https://archive.org/stream/DragonMagazine260_201801/DragonMagazine127#page/n79/mode/1up
+Lesser, Hartley and Patricia Lesser. “The Role of Computers.” Dragon Magazine. Issue 132, p83.
+https://archive.org/stream/DragonMagazine260_201801/DragonMagazine132#page/n84/mode/1up
+McLean, Mickey. “Fast Looks – Earl Weaver Baseball 1.5” Compute! Issue 113, October 1989, p114.
+https://archive.org/details/1989-10-compute-magazine/page/n116
+Randall, Neil. “Reviews – Earl Weaver Baseball.” Compute! Issue 93, February 1988, p49-50.
+https://archive.org/stream/1988-02-compute-magazine/Compute_Issue_093_1988_Feb#page/n49/mode/1up
+Sipe, Russell and Johnny Wilson. “An Interview With Earl Weaver.” Computer Gaming World. Volume 36,
+April 1987, p36-39.
+http://www.cgwmuseum.org/galleries/issues/cgw_36.pdf
+Wilson, Johnny. “Bezbol Been Berry, Berry Good To Me!” Computer Gaming World. Volume 36,
+April 1987, p6-8.
+http://www.cgwmuseum.org/galleries/issues/cgw_36.pdf
+Wyss, Tony. “Hall of Fame – Earl Weaver Baseball.” SportPlanet.
+https://web.archive.org/web/20050904184735/http://www.sportplanet.com/features/articles/ewb
+Shot97. “Earl Weaver Baseball Review.” AmigaLove. October 9, 2021.
+https://www.amigalove.com/viewtopic.php?t=2010
+FAQ –
+https://gamefaqs.gamespot.com/pc/564318-earl-weaver-baseball/faqs/21689
+https://amigalove.com/games.php?game_id=22
+https://www.mobygames.com/game/earl-weaver-baseball
+https://www.youtube.com/watch?v=IKp_fP06f0Q&t=7s
+(Earl Weaver Baseball – Amiga gameplay video by TheBaldingChimp)
+https://www.youtube.com/watch?v=RWDHbPgc4ck
+(Earl Weaver Baseball – Apple ][ gameplay video by TheVideogameDatabase)
+https://www.youtube.com/watch?v=9s3Gq8d-X7o
+(Earl Weaver Baseball – IBM PC gameplay video by Squakenet)
+https://www.youtube.com/watch?v=_s2LDanhlz4
+(Earl Weaver Baseball – Sega Genesis prototype video by azn3349)
+About the Author
+I am a New Jersey native with a passion for baseball, statistics, computers and video games who enjoys spending quality time with his family.
+“
+Hardball Architects – Volume 1 (American League)
+“,
+published in July 2020 and
+“
+H
+ardball Architects – Volume
+2 (National League)
+”,
+published in April 2022, examine the trades, free agent acquisitions, draft picks and other transactions for the 30 Major League Baseball franchises, divided into a 2-volume set. Both books are available in paperback and digital (Kindle) format at Amazon.com. All key moves are scrutinized for every team and Sabermetric principles are applied to the roster construction throughout the lifetime of the organization to encapsulate the hits and misses by front office executives. Team performances are analyzed based on transaction type with graphs depicting the WAR (Wins Above Replacement) in every decade. Individual results for each player-transaction is charted over the duration of their stint with the franchise. Every team chapter includes All-Time Rosters and Single-Season Leaders based on transaction type. The Team Trade Record chronicles the WAR and WS (Win Shares) accumulated by players acquired in comparison to those traded to opposing teams. The opening chapter is devoted to the Evolution of the General Manager and incorporates a discussion with former Dodgers GM Fred Claire (along with former Angels and Red Sox GM Mike Port and current Reds GM Nick Krall in Volume 2) on a variety of front office topics.
+“
+Hardball Retroactive”,
+published in June 2018, is available in
+paperback
+and digital (
+Kindle
+) format at Amazon.com.
+Hardball Retroactive is a modest collection of selected articles that I have written for Seamheads.com along with my Baseball Analytics blog since 2010. Exclusive content includes the chapter on “Minors vs. Majors” which assesses every franchise’s minor league successes and failures in relation to their major league operations.
+“Hardball Retrospective”
+is available in
+paperback
+and digital (
+Kindle
+) format at Amazon.com.
+Supplemental Statistics, Charts and Graphs
+along with a discussion forum are offered at
+TuataraSoftware.com
+. In Hardball Retrospective, I placed every ballplayer in the modern era (from 1901-present) on their original teams. Using a variety of advanced statistics and methods, I generated revised standings for each season based entirely on the performance of each team’s “original” players. I discuss every team’s “original” players and seasons at length along with organizational performance with respect to the Amateur Draft (or First-Year Player Draft), amateur free agent signings and other methods of player acquisition. Season standings, WAR and Win Shares totals for the “original” teams are compared against the real-time or “actual” team results to assess each franchise’s scouting, development and general management skills.
+Don Daglow (Intellivision World Series Major League Baseball, Earl Weaver Baseball, Tony LaRussa Baseball) contributed the foreword for Hardball Retrospective. The foreword and preview of my book are accessible
+here
+.
+“Hardball Retrospective – Addendum 2014 to 2016”
+supplements my research for Hardball Retrospective, providing retroactive standings based on Wins Above Replacement (WAR) and Win Shares (WS) for each “original” team over the past three seasons (2014-2016). Team totals from 2010 – 2013 are included for reference purposes. “Addendum” is available in
+paperback
+and digital (
+Kindle
+) format at Amazon.com.
+NOTE: Original article posted on the
+Hardball Retro
+website, January 7, 2020.
+
+=== IMAGES ===
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_2.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_IBM_1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_2.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_code_wheel.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_3.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_Amiga_4.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_5.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_Amiga_6.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_7.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_8.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_Amiga_9.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_10.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_11.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_12.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_13.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_14.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_15.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_16.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_17.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_18.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_Amiga_19.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_IBM_3.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_4.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_5.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_6.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_7.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_8.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_9.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_10.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_11.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_12.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_13.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_14.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_15.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_16.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_17.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_18.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_19.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_20.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_IBM_21.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_IBM_22.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/ssi_computer_baseball1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/computer_statis_pro_baseball4.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/microleague_baseball5.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/avalonhill_pro_manager1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/pure-stat_baseball2a.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/monday_morning_manager1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/Radio_Baseball1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_Amiga_2.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/full_count_baseball1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/microleague_baseball_iv_ibm.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/tony_larussa_ultimate_baseball_1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/earl_weaver_baseball_ii_2.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/apba_bbw1.png
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/TLBB2_1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/FPSBB94_1.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/ESPN_Baseball_Tonight1b.jpg
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/hardball6_2.png
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/PTP_6.png
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/PLB_2.png
+https://sabrbaseballgaming.com/wp-content/uploads/2024/02/Oldtime2.png

@@ -1,0 +1,601 @@
+EARL WEAVER BASEBALL
+AN INTERVIEW WITH EARL WEAVER
+
+CGW: What can you get it up to?
+Dombrower: Well, there's always a
+random chance you could make him a .70C
+hitter for a short period of time, but you
+really won't keep that because the difference between a .200 hitter and .300 hitter
+involves other things. The power of the
+hitter and his running speed figure in.
+Daglow: The way you need to think of
+it is that the better you get at the timing
+of the game, the better you fulfill the potential of that player.
+
+In January of this year CGW
+editor Russell Sipe and Assistant
+Editor Johnny Wilson interviewed
+Earl Weaver concerning his new
+baseball game, Earl Weaver
+Baseball (EWB) from Electronic
+Arts. Also interviewed were, Eddie Dombrower (game designer),'
+Don Daglow (Electronic Arts
+Producer), and Teri Mason
+(sound and music designer).
+
+CGW: Earl, we have seen a lot of
+products that are closely associated with a
+famous person (Arthur C. Clarke and the
+computer version of Rendezvous With
+Rama for example). The fact is, the famous person in question rarely has any involvement with the development of the
+product. That was the first thing that
+came to our minds when we were told that
+your name was connected with this product. Electronic Arts has told us, however,
+that you were very much involved in the
+design. Could you describe your involvement?
+Weaver: Well, Electronic Arts contacted me about doing a baseball game. I
+was interested because, when I was a kid,
+we were looking for any kind of baseball
+game that you can play. You know, roll
+the dice and move your man and if a certain die came up, you could get him to
+second base. I don't know how many different baseball games that I played as I
+was growing up.And then there was
+football. I don't know if you remember the
+football games where you placed your men
+on the football field and turned on the
+motor to watch the play while it vibrated?
+I thought that was great. But now, when
+something like this (i.e. stat-based sports
+games) comes along and you can make the
+plays yourself, it's great! My son is into
+these stat-based computer games. He's 36
+years old and lives in Atlanta.
+CGW: So, you've played these games
+on his computer?
+Weaver: Not a baseball game. All he
+had was golf and bowling. Whenever I'd go
+visit him, we'd play golf, but we'd never
+play baseball. I didn't even know there
+was one out until Electronic Arts con-
+
+CGW: In the "Play and Manage" mode
+(i.e. arcade mode) how big an affect can
+you have on the batter and his stats?
+Dombrower: You can drive a batter's
+average down quite a bit. You can make
+him a zero hitter, real fast.
+
+tacted me. When they did, I was very interested. I flew out to San Francisco to
+meet with them. What a day that was!
+Now, I've been asked baseball questions
+before, but never like this. And I'm sure
+you CGW fellows could wear me out as
+well. I could only answer a third of their
+questions accurately. But, they kept asking me and they kept asking me. So I got a
+blackboard. I put people in position, told
+
+what they do, where they should be, how
+deep they should be, when you should
+bring the infield in, etc. They asked every
+question that could be answered and they
+asked questions that I couldn't answer,
+after thirty years of involvement with
+baseball !
+CGW: We noticed that in the Play
+and Manage mode of EWB, there is a
+strong arcade element. Does this arcade
+element also play a role if you want to
+play the game as a stat-only game?
+Dombrower: No. In the stat-only mode
+(that is, our "manage" mode) you can only
+affect the actual pitching and hitting by
+ordering a 'pitch out' or a 'pitch around'.
+
+CGW: Let's get back to the algorithms
+in the game. For example how did you arrive at a formula that would determine if a
+player such as Alan Wiggins would successfully steal second against Lance Parrish?
+Dombrower: Well, we go to kind of a
+mixed medium because of my programming background is not in sports, but in
+real world modeling. What we've done is
+rate the players. Lance Parrish's arm is
+rated and Wiggins' speed is rated and his
+lead-off will be somewhat random. The
+time he breaks is somewhat random. Those
+are four variables. There's also the speed
+of the pitch variable (in the arcade mode
+that is). Those things affect the outcome
+of the play. They've just been adjusted
+through manual adjustments. We've taken
+the formulas and tweak them until they
+work. We started out with basically what
+we thought was going to be the model and
+each time, I guess it was five times, now,
+Earl has seen the game, and he would say,
+"This needs to be a little faster. This needs
+to be a little different." He's helped us balance and fine tune it. We've seen things in
+the current playtest version of EWB [Ed.:
+this interview was conducted in January]
+that need to be changed. For example,
+Earl coming out to argue with the umpire!
+CGW: Yeah, we've played the game.
+Earl argues with the umpire, too
+much.(laughter).
+Weaver: Way too much, but you've
+got to realize, it's the other manager coming out to argue half of the time. (more
+laughter).
+CGW: Okay, so let's return to the algorithm that determines if Wiggins is safe
+or out.
+Dombrower: Well, part of it is based
+on the reality of the situation. He runs in a
+real number of feet per second. Now, Par-
+
+rish throws in a real number of feet per
+second. And those two factors more than
+anything affect this.
+CGW: You mean, you go in for physics
+and trigonometry? It's not just percentages?!
+Dombrower: Everything in this game is
+really based on the fact that the ball falls
+at 32 feet per second.
+CGW: Are you serious?
+Dombrower: Oh, yes.
+
+CGW: This is totally different than
+any other stat game. Any other stat game
+is totally based on the percentage chance
+of Wiggins stealing in that situation. This
+is based on physics?
+Dombrower: Well, EWB still uses
+percentages. But physics are used to modify the basic play result called for by the
+statistical matrix. For example, an astro
+turf bounce is totally different than a natural field.
+CGW: Where did you get this approach?
+Dombrower: Well, I have a degree in
+math. A lot of this stuff comes from my
+college education.
+
+CGW: The rest of it?
+Dombrower: I don't know. A lot of it
+you just go to the library and look it up, if
+you have to.
+CGW: While we're talking about
+modeling, this brings up another question
+and this is directly to Earl. In your book
+Weaver On Strategy you give examples of
+charting pitchers. You mention that you
+had on index cards, references to every
+player that had come to bat against the
+Orioles in major league play.
+Weaver: Actually, they cover all baseball, now. In spring training we look at the
+players and see how they hit against us in
+the past. Now, if a guy hit .189 and we
+look at the chart and it says that we
+pitched him down and in, then, he'll primarily see slow breaking stuff, down and
+in and we'd stay with it. If a guy had a
+successful year against us, then, we'd have
+to look at where we'd got him out and
+
+then, we'd go to those spots. Now, a typical example was Sal Bando, who hit us
+just about every other year. We'd get him
+out on the inside part of the plate in 1974,
+and he'd hit .180 against us. Well, Bando
+had his own book and he'd say, "They got
+me out on the inside part of the plate." So,
+the first time we'd see him the next season,
+he'd back off of the plate a little bit and
+whack, now he's hittin' it. So, we have to
+change. Now, you can't do that on a machine. That's the manager and Bando was
+a pretty smart player.
+CGW: Did EA had access to your data
+in working on this project.
+Weaver: Well, yeah!
+
+CGW: They saw your cards?
+Daglow: Yes, he took us into his office
+and let us study them.
+Weaver: Yes, that was in Oakland.
+CGW: Did you actually use this data
+to create the algorithms?
+Dombrower: No, they were a little too
+sophisticated.
+CGW: Earl, did you use a computer to
+keep track of this data?
+Weaver: No. It just wasn't that complicated. As far as my hitters against the
+opposition, I'll tell you what I did against
+Catfish Hunter. Al Bumbry just wore him
+out. Now, I had a sheet on Catfish Hunter
+
+and it would say "Bumbry - .423" and,
+who was on the team with Bumbry, well,
+Brooks [Robinson] was there, .289. You
+know, this helped me decide when to bunt
+and when to swing away. Now, when Ripken plays, there's a couple of guys where
+he's 1 for 33, already. Against a couple of
+these guys, I put on the bunt for the base
+hit. Get one or two guys on and Ripken is
+liable to bunt in the first inning. But,
+there's not that many guys he's 1 for 33
+against.
+Daglow: Earl took us back into the
+clubhouse and had us look at those cards
+so we could figure out how he does it..
+CGW: When you saw those cards, how
+did you use them?
+Daglow: We saw how he fixed them.
+We didn't get the actual data off of the
+cards.
+CGW: Okay, but did Earl's pitching
+cards influence the game design in any
+way?
+Daglow: Yes, it helped us decide how
+computer Earl picks his lineup in the machine, the way he substitutes players,
+pinch hits, etc.
+
+CGW: Let me return to the Wiggins
+example. So, you're dealing with physics,
+here. How fast he is, how fast the ball
+travels, and that. How does the program
+determine how fast he is? It has to use a
+statistic.
+Daglow: The speed rating translates
+into a figure. We use Project Scoresheet to
+detail those ratings. They are located in
+Chicago and publish new statistical analyses on baseball. They're headed up by a
+guy who used to be an insurance actuary
+and programmer. They are the biggest
+baseball research lab and staff in the
+country.
+
+CGW: So, you work with them on your
+subjective ratings?
+Daglow: Yes. But, there is one other
+feature which we have in our game and
+that is, that you can edit the stats. If you
+find that we've done something wrong, you
+can always change it yourself.
+CGW: Let's explore another area.
+Please describe a typical design session on
+EWB.
+Weaver: The first design session was
+
+took place during the off season. It was
+something like ten hours long. It was a
+blackboard session of everything that I
+knew about baseball that I could tell Eddie and the EA people in a ten hour session. From that meeting Eddie developed
+the first draft of the game. Later in the
+year, in Oakland, we played the game for
+the first time. I made suggestions. For example I might say: "this is wrong" or "the
+cut-off man is too deep" or "the runners
+are running too fast." We had two or three
+more sessions like that.
+CGW: Eddie, How did you come onto
+the EA Baseball project?
+Dombrower: I worked on a similar
+project at Mattel for the Intellivision
+called "World Series Baseball". The
+'producer' of EWB was Don Daglow. Don
+was my boss at Mattel before he joined
+EA.
+Daglow: The Intellivision was so much
+more limited than the Amiga but Eddie
+had done such a phenomenal job in the
+physical modeling in "World Series Baseball" that we knew he could do great
+things with the Amiga. Our goal at EA
+was to do the greatest baseball game ever
+
+done; we wanted to emulate the greatest
+manager of all time, and we got our first
+choice on that one, Earl. So when Earl was
+brought on board, I asked Eddie to work
+with us.
+CGW: How much of "World Series
+Baseball" ended up in EWB?
+Dombrower: Well physics are physics.
+A baseball falls at 32 feet per second. Any
+program based on baseball physics is going
+to emulate that. But I did not incorporate
+anything specific to "World Series Baseball" into EWB. Mostly what I took from
+that project was what NOT to do. One
+thing I discovered was that the TV like
+viewpoint in "World Series Baseball" does
+not work. The TV view uses a lot of inferred information. In "World Series Baseball" the basic view was from the centerfield camera, looking over the pitcher's
+shoulder. That perspective is worthless for
+the batter. On the other hand, the pitcher
+does not need the centerfield view in order
+to select his pitch. So the more optimum
+view would be from behind the batter and
+home plate umpire. Obviously this has
+more relevance in the 'play and manage'/arcade mode than in a strictly stat
+
+replay mode. Additionally if you cover up
+any of the bases during the pitching you
+place the players at an additional loss. The
+eye can't readjust quickly to a new screen
+that again shows the bases. Therefore
+EWB has a set view of the field on the left
+side of the screen with a pitching overlay
+on the right side of the screen.
+Daglow: Just for a point of history.
+Eddie was the first designer to use a split
+view in a sports game. After "World Series
+Baseball" and the promotion of that game
+on TV with George Plimpton pushing it,
+everyone began to copy it. But Eddie was
+the first one to do that and no one ever
+gives him credit for that.
+CGW: Well, we'll straighten that out
+[Ed.: Consider it done.].
+CGW: Moving along, the music in
+EWB is great [Ed.: Teri Mason is a professional musician; it shows in the EWB
+music] and the sound effects are SO realistic. Teri, how did you accomplish getting
+such great sound effects?
+Mason: Most of the sounds are digitized. We would take a tape recorder to
+the ball park (Anaheim Stadium) and get
+
+right behind the batting cage. The sound
+
+of the bat crack in EWB comes from actually batted balls during batting practice.
+The sounds of the ball being caught come
+from players playing catch in front of the
+dugout.
+CGW: We are out of time here, but we
+want to ask Earl a question about last
+season. The Angels were one strike away
+from going to the World Series and went
+on to lose the playoffs. Then the Red Sox
+were one strike away from winning the
+World Series and went on to lose. How do
+you rate last year's playoffs and World
+Series?
+Weaver: How do I rate them? They
+were among the greatest! They had to be
+two of the most exciting series in the last
+two to three decades.
+[Ed.: That is, until my Tehachapi
+Steamers repeat as the CGW Baseball
+League World Series Champions this year.]
+Postscript: We were so impressed with
+EWB when we saw it in January that our
+Computer Gaming World Baseball League
+(see CGW #28) not only became involved
+in beta-testing EWB, we also adopted it
+for our league this year!
+
+THE MAIL PLANE BLUES
+or Why haven't I got my turn
+results?
+by Johnny L. Wilson
+Believe it or not, I've got a few friends
+who don't have computers. We still have
+the age-old problem, however, when and
+where to play a strategy game. We've tried
+numerous methods. We've tried
+play-by-mail with one gamemaster trying to do all
+the adjudicating by hand. This works for a
+while, but we usually finish only about one
+in three games. We've tried
+play-by-phone, but none of us are rich and we
+certainly are spread out all over the country. There is, however, a solution. That
+solution is computer-moderated
+play-by-mail.
+Rick Loomis of Flying Buffalo, Inc.
+takes (and rightly so) a lot of the credit for
+such a phenomenon. When he started his
+Nuclear Destruction play-by-mail in 1970,
+the only alternatives were Avalon Hill's
+pbm kits and pbm Diplomacy.
+Loomis began by soliciting players
+from the pbm ads in The General and
+ended up trying to keep up with 200
+players. This was quite difficult to do
+without help, so he asked Steve McGregor
+to write an adjudication program for the
+game and they ended up renting time on a
+Control Data computer in order to keep up
+with the game. In 1972, Steve and Rick
+pooled $14,000 in order to purchase a
+Raytheon 704 (with a measly 4K!) and
+Flying Buffalo ushered in a new era of
+computer games. The Raytheon is now
+28K (and still in use). In the succeeding
+years other companies appeared and the
+computer moderated play-by-mail game
+became a vital part of the gaming hobby.
+The following discussion is a brief survey
+of some of the computer-moderated
+play-by-mail games which CGW is aware of.
+
+of chrome, and lots to think about. The
+results sheet gives a tongue-in-cheek report on how each of your orders fared;
+details the number of blocks your gang
+controls; updates notoriety and morale;
+delineates the demographics for each of
+your blocks and the ones you've scouted
+(for example, 46% derelict, 2% restaurants,
+9% entertainment); accounts for income
+and expenses; and informs you of each
+block's defense level. It gives you a list of
+the "City's Most Notorious Gangs" and
+allows you to find out what the "Barf
+Bags," "Crypt Rats," "Strassekindern," and
+the like are up to. Finally, you get the
+New York City Post reports on the most
+interesting events taking place in the city.
+Your yellow post card begets at least 3
+pages of information. One of the players
+had a unique experience. He heard on the
+street that a movie studio was filming
+"Karate Kid III" on one of his controlled
+blocks. His gang hired on as extras so that
+Pat Morita would teach them karate. I
+particularly liked the turn result where my
+"Skull Busters" took control of the block
+after shaving the heads of two bus drivers.
+Naturally, game players are wondering
+what you can do on that yellow post card.
+Orders involve: ambushing other gangs
+and its counterpart, defending against
+other gangs; spreading your gang's influence by controlling new blocks; enlisting
+recruits in order to build your gang's
+strength; firebombing buildings in order to
+bring down a block's defense level and
+make it easier to control; mugging defenseless victims; pushing drugs; committing armed robbery; spying on other gangs;
+using dope; purchasing weapons or drugs;
+and acting tough. The game mechanics are
+simple but allow for a multiplicity of options.
+The rule book and first two turns for
+It's A Crime are free. After that, each turn
+is $1.50. In the world of PBM, that's a
+bargain. This game is highly recommended, especially (but not exclusively)
+for your first PBM effort.
+
+It's A Crime!
+
+Fleet Maneuvers
+
+It's no accident that I begin with Adventures By Mail's (Box 436, Cohoes, NY
+12047-0436) It's A Crime. Of all the PBM
+games I've played and seen, it seems to be
+the easiest to get into, afford and keep up
+with. I have friends who don't even care
+for PBM that have tried It's A Crime and
+think it's great. It's A Crime puts you in
+the role of an inner city gang leader who is
+trying to take over control of a city which
+consists of almost 10,000 blocks
+(coordinates). You name your gang, scout
+up to four blocks, and issue up to four orders (more on that, later) for each turn.
+Your move can be written in 10 minutes
+on a yellow post card provided by ABM,
+but the detailed report which is returned
+to you provides numerous details, plenty
+
+If you can imagine a multi-player version of Star Fleet I where you are interacting with other captains of a your fleet
+(as well as human opponents in the enemy
+fleets), you have an initial handle on Fleet
+Maneuvers (FM). I say "initial handle"
+because the game is more complex than
+the computer game, even without considering the variables involved when playing
+with other humans (humanoids?). The use
+of the X and Y coordinates on a two dimensional Cartesian plane is similar to the
+computer game, but allows room for more
+intricate maneuvering. Further, players
+have to be concerned with three different
+enemies, rather than the two in Star Fleet.
+FM allows you to be a member of the Alliance (the good guys, roughly equivalent
+
+to the Federation in Star Trek), the Confederacy (an imperialistic splinter group
+from the Alliance), the Donna (A small in
+stature, peace-loving race of incredible engineers, these one meter tall beings are
+deadly when they are threatened.), and
+the dreaded Krell (These are a cross between Klingons and Romulans in Star
+Trek and Krellan and Zaldron in Star
+Fleet I, being both culturally bellicose and
+having a cloaking device.). FM demands
+that its captains make judicious use of
+energy units by making command decisions regarding allocation of energy for
+weapons, shields, life support, command
+control, and sensor scans. Then, if the
+original game isn't complex enough for
+you, the company runs two addition games
+with expanded rules (Fleet Maneuvers 3:
+The Next Dimension, where a Z axis is
+added to create a three-dimensional
+cartesian plane and allow considerations
+like roll, pitch and yaw to be factored in,
+and Fleet Maneuvers 3: The Final Exam,
+where the player attempts to command a
+fighter-type Krell Cub Escort - a highly
+maneuverable "throw-away" ship). Fantastic Simulations (P.O. Box 24566, Denver, CO 80224) is a classy company which
+features professionally printed rules;
+maintains a BBS to assist players with
+
+questions, record turns, and provide a forum for helpful interactive communication;
+and uses the most attractive turn sheet of
+the lot. The rule books have extremely
+helpful diagrams and examples and the
+advanced games have some beautiful
+transparencies available for keeping track
+of defense points, targeting points, and
+maneuvers. The company also publishes a
+professional looking newsletter, CommLink, which contains updates on all the
+games, lists individual player's rankings,
+sponsors contests, and clarifies rules. Rule
+books are free and turns cost $2.50 per
+turn.
+
+Uncovering An "Illuminated"
+Conspiracy
+Though Flying Buffalo, Inc. (P. 0.
+Box 1467, Scottsdale, AZ 85252) runs two
+of the longest running PBM games (Heroic
+Fantasy and Starweb), one of their current
+best is Illuminati, a PBM version of the
+Steve Jackson table top game which really
+enables the fiction to shine. After all, Illuminati is supposed to be based on covert
+operations and paranoia. You don't know
+anything without infiltrating, subverting,
+probing, or controlling these conspiratorial
+organizations. Game play is similar to the
+table game, but seems to be more in tune
+with the fiction when you have to wonder
+who is controlling what than when you can
+see their entire structure laid out on the
+table. You can not only add to your
+power, influence, and wealth, but you can
+corrupt, neutralize, or destroy other
+groups, as well as assassinate other leaders.
+What more could you ask? I've always
+wanted to control the "Morticians" and
+"Radio Evangelists." Now's my chance.
+This game features the best turn sheet
+which FBI has published, yet. The game
+mechanics are easier to get into than either Heroic Fantasy or Starweb and the
+open-ended due dates increase the playability. Turns cost $4.00.
+
+Feudal Lords and Futile strategies
+One of the most interesting and educational games available at the present is
+Feudal Lords (Graaf Simulations, 27530
+Harper, St. Clair Shores, MI 48081 - also
+available through Flying Buffalo). This is
+an incredibly sophisticated simulation of
+ruling a fiefdom in the England of the feudal age. What's so remarkable about the
+game is that it isn't just another conquer
+the world (or galaxy) game. It is a simulation that is actually concerned with the
+"way it was." The barons must provide for
+the peasants and the general economy
+through a series of economic, as well as
+diplomatic, decisions. The baron who sim-
+
+ply goes charging off to conquer other fiefs
+is going to be very disappointed in the
+outcome of this game. Feudal Lords is a
+game system which has such a thorough
+understanding of the Middle Ages that
+even members of the Society for Creative
+Anachronism should be impressed. Food,
+Population, Trade, Natural Resources, and
+Diplomacy are even more important than
+training knights at arms in this game
+(although you should never be at home
+without them, either). Each turn consists
+of up to twelve possible actions, ranging
+from the mundane (mining and agricultural research) to the sublime (a campaign
+for conquest). The rules and turns cost
+$2.50 each and the company recommends
+that you keep $10.00 in your account.
+Some middle schools and high schools are
+using this game as an educational tool to
+introduce life in the Middle Ages to their
+students.
+That's all the room we have for now,
+but I hope to update our readers on these
+games and talk about C2 Simulations' New
+Order (a soon to be released game of space
+conquest and colonization from a new
+company), Flying Buffalo's Heroic Fantasy
+and Starweb, Graaf Simulations' Spiral
+Arm, and Reality Simulations'
+DuelMasters in a future article.
+
+

@@ -1,0 +1,2017 @@
+This is the twelfth entry in a series focusing on computer baseball simulations to supplement the chapter “
+Play Retro Baseball Video Games In Your Browser
+” from my
+Hardball Retroactive
+book along with the corresponding post at
+Baseball Analytics
+. The series focuses on baseball simulations – games in which the primary emphasis is on managerial strategy and the ability to replay entire seasons with a degree of realism. Baseball video games that are strictly arcade representations of baseball (based solely on reflex and hand-eye coordination) are excluded.
+IBM version:
+Publisher
+– Electronic Arts
+Release Year
+– 1991
+Platforms
+– IBM PC
+Credits
+Game Design:
+Eddie Dombrower
+Strategy:
+Earl Weaver
+Programming:
+Eddie Dombrower, Bill Rommerdahl, Robert J. M. Dietz,   Mike Burton, Kenneth C. Dullea III, W. Mark Whittlesey
+Art:
+Bob Trupe, Eddie Dombrower
+Music:
+Nathan Wang
+Music Arrangement:
+Dave Warhol, David Hayes
+Sound Effects:
+Michael Sanders, Eddie Dombrower
+Review
+Earl Weaver Baseball II augmented numerous elements that were pioneered in the
+original masterwork
+. Although the sequel suffered from several flaws, I found myself compelled to tinker with the copious options with the main program and the Commissioners Disk II utility. Spending time with the abundant editing modules gave me a newfound appreciation for the amount of effort that went into the creation of this series.
+The Earl Weaver Baseball II: Commemorative Edition, released a few months after the main EWB II game, included the 256-color VGA edition of the game along with the Commissioner’s Disk II, MLBPA Player Stats and Manager Profiles and a copy of the book “Weaver on Strategy”.
+Eddie Dombrower (the game’s designer) later acquired the rights to the code from Electronic Arts and subsequently ported it to a Windows version (I Got It Baseball) in 2001 and an iPhone release (EWB Baseball) in 2009.
+I Got It Baseball (Windows)
+EWB Baseball (iPhone)
+I planned to simulate an entire season using the Old-Timer League provided with the game which included All-Star seasons from the best players in the history of the game through the 1975 season, divided into American and National Leagues in 15-year segments. However, I commenced an update of the league structure to incorporate 6 new teams from the past 45 seasons. I entered split stats for all players and adjusted their ratings, tweaked the Old-Timer rosters and lineups, and added 15 reserves per team. The resulting
+“All-Time”
+league is available for download
+here
+. Once the league configuration was completed, I selected the Create/View Schedule option from Commissioner’s Disk II. I generated a 162-game schedule with a 16-team league (8 AL and 8 NL All-Time Teams), choosing to play 98 games within the division (14 games x 7 teams) and 64 games against the other division (8 games x 8 teams). The DH rule was used in all games along with 5-man rotations, injuries enabled, starting pitchers allowed to pitch in relief, 4 maximum rest days and starter’s rest days based on the number of innings pitched in their previous appearance. The entire season took approximately 11 hours to simulate in Super Fast mode with the Auto-Accumulate Box Scores and Save Box Scores To Disk options selected. The process displays a line score for the current game in progress. The Play Schedule screen allows you to simulate part of a schedule if you wish and you’re able to adjust the options for viewing or participating in specific games. You can elect to manage games for one or more teams and have the computer simulate the remaining matches. The AI made substitutions for injured players during the season but it did not utilize the reserved players. The
+final standings
+,
+team-by-team statistics
+and
+league leaders
+are revealed later in the article.
+I reached out to the game’s designer, Eddie Dombrower, to discuss the artificial intelligence and philosophy behind the creation of this innovative series.
+DB: I’m having a blast updating the All-Time Great Teams while implementing 6 new ball clubs in order to create a 16-team All-Star league for this review. I revised the original “Oldtime” players using their split stats, tweaked the rosters a bit and added reserves. Using the 15-year grouping as a guideline, I created AL and NL teams for 1976-1990, 1991-2005 and 2006-2020. One of my favorite aspects of the EWB series is the ability and ease in which one can edit teams, ballparks and managerial traits.
+ED:  Part of the ethos of EWB was the flexibility and expandability of the experience for the users.  Don Daglow and I were both inspired by the Strat-O-Matic and APBA games where you could get a yearly updated set of players, trade, them etc. Since we were thinking in terms of what computers had to offer, the ability to manage this at any time by giving the user tools was an easy leap for us.  We wanted the game to not just be a moment in time, but a “tool” that users could enjoy to create the experience they wanted – whenever they wanted to do it. I think this was a pretty big departure for other computer/video games of the era. In addition, the decision to make the computer simulation based on a virtual ballfield (this was envisioned and implemented in 1983 when I built Intellivision World Series Baseball… 4 years before the term Virtual Reality was coined!) led to the same philosophy about the physical environment of the gameplay model. With artificial turf, strong prevailing winds (no waterfront cities will be mentioned by me here!) and, of course, green monsters, porches, weirdly shaped foul ground, and other irregular configurations, it was necessary to allow US to configure the stadiums, so allowing users to do it was a pretty easy step to consider. So, EWB became as much a “system” as a game… this is why, in some respects, the game took so long to create!
+DB: How much effort is involved with the implementation and testing of the physics model given the expansive possibilities for ballpark dimensions?
+ED: It was a pretty large effort.  As you can imagine, with virtually unlimited combinations, we had to take approaches that would allow us to look for patterns… primarily patterns that were non-sensical.
+So, in a similar set of ideas and decisions, we designed and built features for US that ended up being features for players:  Instant replay was built as a debugging tool (including the freeze frame, slow motion and, in the EWB II version, changing camera angles. It turned out to be a popular feature.  “Sharing” plays was created so the team in Redwood City could save a play and email it to me when they saw something odd (or cool!) I could then load it up, replay that saved play and, if need be debug it.  Because it was a virtual simulator, the game never relied on the screen’s drawings/pixels to determine the outcome of a play… In fact, displaying the 10-12 frames per second really slowed down the gameplay… We realized we could play the games without the graphics; a game would play in seconds. So, using the scheduler tool (again, we had to build for our own QA usage), we could play partial or complete seasons in very short order. Then, building a suite of comprehensive reporting tools allowed the team at EA and other alpha and beta test users (especially the folks at Computer Gaming World), to run series of games in all kinds of configurations looking for anomalies… We then had to figure out if the anomalies made sense or required adjustments to the model.
+Yet another process was the auto-lineup feature… depending on what you did to your team, you could end up with all kinds of oddball lineups, so the Ask Earl feature was as much about debugging the system as it was a user feature.
+After a while, as with any complex piece of software, the team (big shout out to Happy Keller and Dave Maynard) began to know what to look for and would set up situations that would tax the simulator to be sure it was doing “baseball” things and not inexplicable computer things.
+DB: What features did you want to enhance from the original EWB when you began work on EWB II? Did you consider attempting to implement speech similar to the Amiga version of EWB in the IBM products or was this simply not feasible at the time?
+ED:  Our main focus on EWB II was really trying to get the large animation/TV style effect that Don had envisioned and told me about the day he hired me at Mattel!  There was a little discussion about the play-by-play but the technology and the amount of memory we had to restrict ourselves to precluded spending much, if any, effort on that. It’s really too bad in retrospect as the Amiga experience was just so much better with the great audio design (based, again, on what we did at Intellivision).
+Another feature was allowing Mods to the program so that users/other programmers could leverage the EWB engine to do other things… hardly anyone knew about this because it wasn’t really part of gaming yet (it was inspired, in fact, by the plug-ins that design software of that time allowed).
+In fact, we did work with Bitwise software to build a product that leveraged this. I don’t recall what it was called, but, in conjunction with Stats Inc., we took their 15 minute delayed feed from the ballparks and replayed the REAL games that they were tracking. So, if someone hit a double in the right field gap that scored a runner from first, but the batter was thrown out trying to stretch it into a triple, we would have that data from Stats Inc. 15 minutes after the fact, then show it on your computer using the EWB II graphics.
+Another feature was the programmable managers… So, the default AI was based on Earl, but you could modify the behavior of the manager on your team so he would make different choices in the simulation. We modeled a base set of selectable managers from the famous managers of the day and from history.
+We also tried to simplify the flow of the pre-game… it became more of a wizard than a choose-your-own-adventure.
+Music was original rather than Sousa’s Stars and Stripes. It was written by Nathan Wang who is an academy award music nominee and has been writing film and TV scores since the mid ’80s.
+Background photography was added to give a more video/photo feel to get around a more animated style that most everyone else was doing. This was based on the original Ask Earl graphics from the Amiga version.
+The commissioner’s disk was greatly expanded with new tools and reports including an import/export system to work with Stats Inc.
+And, my favorite feature that was beta tested with Tony Hernandez (a local LA sportscaster at the time), was the daily simulation season. In this version of the game, you would manage your team’s roster and starting lineups, program your manager and design your field, Then every night we would download the game stats and play the next set of games on EWB using only the last game’s stats for each player… a radically different approach to Fantasy baseball that is truly addictive when you’re playing it… Each morning he would “post” the results as a telephone message reading the EWB box scores and game highlights.
+Again, from the above, I hope it’s obvious that we were going more for a system than just a yearly game.
+DB: What products did you consider as your main competition? In what respects did EWB or EWB II outperform your competitors, and which of their innovations or features impressed you?
+ED: From the beginning, Hardball was always one of games most in our sights. Though EWB wasn’t only an action game, that was the game we started competing against. As the video game systems came back from the Atari/Mattel crash of the mid 80’s, we kept an eye towards the video game baseball games, but frankly, I can’t remember their names.
+Honestly, as EWB was a hybrid, I think it had some trouble competing with the action-only games. Also, because of its complexity as a simulator, we gave up a lot of processing power to having to do both the simulation and the graphics which made the ill-fated Sega version never make it to market as I recall.
+On a high end PC, I think you catch glimmers of how EWB II was way ahead of the trend in terms of looking like real baseball. Electronic Arts was working on other projects that attempted to do similar things at the time, but not inside a complete simulator. However, we really didn’t have the kinks worked out or the speed to have the bigger players and cameras working on more average computers.
+I know that there were many innovations on the fielding aspect of the action games.  If I recall, Don’s Tony LaRussa Baseball really led the competition in the action of the game.  Also, if I recall, they didn’t try to make graphics that were beyond the typical home computer of the day and, in that, they made some great visual advances that were “between” the EWB overview and the over-reaching EWB II tv-style graphics. I’m sure there were many other competitors, but I really don’t recall.
+Again, the EWB/EWB II systems were still, IMHO, way ahead of anything at the time.  Out of the Park and others that were more focused on non-graphical/limited graphical simulation may have had similar capabilities…
+EWB had the stats+physics model which I think, in those days, still gave EWB a different, hopefully, realistic feel that we didn’t see in a lot of other games.
+Finally, career mode may have just been invented when we decided to part ways (my company and EA), but it was the one major feature that would have been great to have added that has since become an important part of the genre.
+DB: Are there any features that had to be cut from EWB II due to time constraints? I understand that there was an unreleased patch for EWB II, along with a third iteration of EWB (Baseball ’93) that Electronic Arts failed to publish.
+ED: Yes, you have that right. The stats-testing was not as good in EWB II which was a disappointment and ended up costing us a lot in the product’s reputation. We did put together a beta testers group AFTER the release that helped fill this gap and then helped get us ready for the update/patch.  I do not recall why EA never released it/promoted it. It was, frankly, a pretty large disappointment.
+Also, the time didn’t allow us to better tune the “director” to make a better visual experience.  I think we should have figured out a better way to make EWB II a better visual experience for the average computer and not released with the BIG tv closeups as the default for everyone.
+Even the crowd graphics never got completely implemented.
+The EWB ’93 project may have been the live “delayed broadcast” version. I’m pretty sure it is, but by then, EA seemed to be focused on EA Sports with new executives and no one really managing our relationship. We did make a deal and we did provide a) the design for the first EA Sports baseball game and b) all the EWB code that was going to be used for the basis of that game to be built internally under Earnest Adams. But the new producers had other plans and approaches that never melded with leveraging the EWB engine which was a disappointment to me.
+DB: Do you have any plans to revive the I Got It Baseball project? Around the release date of the EWB Baseball – iPhone game, you posted about plans to implement internet play.
+ED:  I would love to, but it would require someone to help me with the funding as we’d need to update the graphics and rebuild some of the code to work on modern machines… Someday with the right partners!
+The updated All-Time rosters with lineups and schedule are available here ->
+https://www.mediafire.com/folder/jhfkfloqwkfo4/EarlWeaverBaseball2
+I decided against managing through a normal playoff series in favor of a single-elimination tournament in order to experience all of the rosters that I created or edited. I simulated two seasons using the All-Time League. I encountered a few issues based on oversights with manager profile selections on several teams along with several (since corrected) data-entry errors in the split stats. I applied the results below from the first simulated season for the purposes of the Tournament Seeding and included the complete results of the second season later in the article. A brief synopsis of every Tournament game is provided below along with the box score.
+All-Time (Simulated Season, First Attempt)
+AL Greats
+W   L   %
+AL1991-05  92  70 .567
+AL1946-60  88  74 .543
+AL1931-45  87  75 .537
+AL1976-90  78  84 .481
+AL1916-30  76  86 .469
+AL1961-75  76  86 .469
+AL1901-15  73  89 .450
+AL2006-20  60 102 .370
+NL Greats
+W   L   %
+NL1991-05 105  57 .648
+NL2006-20  99  63 .611
+NL1901-15  98  65 .601
+NL1916-30  82  80 .506
+NL1976-90  80  82 .493
+NL1961-75  72  90 .444
+NL1946-60  68  94 .419
+NL1931-45  63 100 .386
+Tournament Seeding
+1.  NL1991-05
+2.  NL2006-20
+3.  NL1901-15
+4.  AL1991-05
+5.  AL1946-60
+6.  AL1931-45
+7.  NL1916-30
+8.  NL1976-90
+9.  AL1976-90
+10. AL1916-30
+11. AL1961-75
+12. AL1901-15
+13. NL1961-75
+14. NL1946-60
+15. NL1931-45
+16. AL2006-20
+Round 1
+16 @ 1 – AL2006-20 @ NL1991-05
+Greg Maddux took the mound in the tournament’s opening tilt against Justin Verlander at the friendly confines of Wrigley Field. Mookie Betts led off the game with a single and advanced to third on a throwing error by Chipper Jones (with Miguel Cabrera safe at first). Maddux obviated the threat when he converted a David Ortiz comebacker into a 1-6-3 double play. With two outs in the home half of the first, Barry Bonds clubbed a 460-foot solo blast over the right-field bleachers to give the home team a 1-0 advantage. In the third frame, Jones lined a solid base knock that dropped in front of right fielder Mookie Betts. Bonds stepped to the dish and absolutely demolished a high heater from “JV” for a 500-foot long distance dedication that cleared the scoreboard in center field! Maddux continued to put up goose eggs into the seventh. Robinson Cano reached on a bounding single up the middle. Pinch-runner Jose Altuve scored all the way from first on a long single off the right-center field wall by catcher Joe Mauer. Maddux induced a double-play grounder to short off the bat of Derek Jeter to extinguish the rally. Francisco J. Rodriguez replaced Verlander in the seventh and promptly retired the side in order. After Mookie Betts walked on four pitches with one down in the top of the eighth, the skipper decided to bring in a fresh arm. John Wetteland jogged in from the ‘pen to face Mike Trout. Wetteland’s errant pick-off attempt sailed over Jeff Bagwell’s head and down the right field line, allowing Betts to move up one base. Trout coaxed a base on balls, and the NL manager elected to bring in Eric Gagne to oppose Miguel Cabrera. Gagne tried twice to pick Betts off of second base to no avail and then he proceeded to whiff “Miggy” on 3 pitches. “Big Papi” struck out and Gagne pumped his fist in elation! Zack Britton came into the contest following a one-out infield hit by Craig Biggio. He retired Jones on a fielder’s choice and then issued an intentional pass to Bonds. Joe Nathan came into the contest to face Mark McGwire. “Big Mac” swung through Nathan’s slider, and the NL 1991-2005 squad clung to a 3-1 lead entering the ninth inning. “Hell’s Bells” blared out over the PA system as Trevor Hoffman strolled in from the bullpen. Hoffman plunked pinch-hitter Chris Davis, providing an ominous start to the frame. Altuve and Mauer were retired on fly balls, bringing Jeter to the plate with two away and pinch-runner Evan Longoria hugging the first-base bag. “The Captain” went down swinging as he was fooled by a change-up from Hoffman.
+AL2006-20  vs   NL1991-05
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL2006-20 0 0 0 0 0 0 1 0 0   1  4  0
+NL1991-05 1 0 2 0 0 0 0 0 x   3  7  3
+WP:Maddux                           DPs V: 1
+LP:Verlander                            H: 2
+SV:Hoffman                           Time: 3:37.20
+GWRBI:   Bonds
+Wind in from center at  3 mph
+How They Scored...
+Bottom of 1st
+With Verlander  Pitching, 2 out,
+Bonds hits a 460 ft Home Run.  Score  0 -  1
+Bottom of 3rd
+With 1 out,
+Bonds hits a 500 ft Home Run
+scoring Jones from 1st.  Score  0 -  3
+Top of 7th
+With Maddux Pitching, 1 out,
+Mauer singles
+scoring Altuve from 1st.  Score  1 -  3
+Fielders                   AL2006-20
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+M. Betts,RF          3  0  0  0  0  0   0  0  1  1  0  0   0  0
+M. Trout,CF          3  0  0  0  0  0   0  0  1  3  0  0   0  0
+M. Cabrera,3B        4  0  0  0  0  0   0  0  0  1  0  0   0  0
+D. Ortiz,DH          4  0  0  0  0  0   0  0  0  2  0  0   0  0
+J. Abreu,1B          3  0  0  0  0  0   0  0  0  0  0  0   0  0
+C. Davis,1B          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+E. Longoria,1B       0  0  0  0  0  0   0  0  0  0  0  0   0  0
+R. Cano,2B           3  0  2  0  0  0   0  0  0  0  0  0   0  0
+J. Altuve,2B         1  1  0  0  0  0   0  0  0  0  0  0   0  0
+J. Mauer,C           3  0  2  0  0  0   1  0  1  0  0  0   0  0
+D. Jeter,SS          4  0  0  0  0  0   0  0  0  1  0  0   0  0
+C. Crawford,LF       3  0  0  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               31  1  4  0  0  0   1  0  3  9  0  0   0  0
+Pitchers                   AL2006-20
+IP  H  R ER HR BB SO WP HB BK
+J. Verlander ,L  6.0  6  3  3  2  0  5  0  0  0
+F. Rodriguez     1.1  1  0  0  0  0  2  0  0  0
+Z. Britton       0.1  0  0  0  0  1  0  0  0  0
+J. Nathan        0.1  0  0  0  0  0  1  0  0  0
+TOTAL            8.0  7  3  3  2  1  8  0  0  0
+Fielders                   NL1991-05
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+C. Biggio,2B         4  0  2  0  0  0   0  0  0  0  0  0   0  0
+C. Jones,3B          4  1  1  0  0  0   0  0  0  1  0  0   2  0
+B. Bonds,LF          3  2  2  0  0  2   3  0  1  0  0  0   0  0
+M. McGwire,DH        4  0  0  0  0  0   0  0  0  2  0  0   0  0
+S. Sosa,RF           3  0  0  0  0  0   0  0  0  2  0  0   0  0
+J. Bagwell,1B        3  0  0  0  0  0   0  0  0  1  0  0   0  0
+M. Piazza,C          3  0  1  0  0  0   0  0  0  0  0  0   0  0
+J. Edmonds,CF        3  0  1  0  0  0   0  0  0  1  0  0   0  0
+B. Larkin,SS         3  0  0  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               30  3  7  0  0  2   3  0  1  8  0  0   2  0
+Pitchers                   NL1991-05
+IP  H  R ER HR BB SO WP HB BK
+G. Maddux,W      7.1  4  1  1  0  2  6  1  0  0
+J. Wetteland     0.0  0  0  0  0  1  0  0  0  0
+E. Gagne         0.2  0  0  0  0  0  2  0  0  0
+T. Hoffman,S     1.0  0  0  0  0  0  1  0  1  0
+TOTAL            9.0  4  1  1  0  3  9  1  1  0
+15 @ 2 – NL1931-45 @ NL2006-20
+“King” Carl Hubbell began to warm up for the NL1931-45 club as Jacob deGrom and the NL 2006-20 crew trotted out to their positions at Dodger Stadium. Arky Vaughan drew a leadoff walk but he was promptly erased on a 6-4-3 double play grounder off the bat of Paul Waner. Hubbell had trouble finding the plate in the bottom of the first. He walked Bryce Harper on four pitches and then drilled Hanley Ramirez in the ribs with a tailing fastball. Albert Pujols laced a line drive single to center but Wally Berger cut down Harper at the plate with a laser throw. Hubbell extracted himself from the jam when he induced Giancarlo Stanton to smack a hot grounder to Vaughan, who initiated a beautiful 6-4-3 double play. In the home half of the second, Hubbell plunked David Wright and gave up a single to center by Andrew McCutchen. Chase Utley dribbled a slow roller down the first base line. Dolph Camilli charged in and exercised poor judgment when he attempted to turn a 3-6-3 double play. All runners were safe resulting in a bases loaded situation with Buster Posey due up. Fortunately for Camilli, his teammates pulled off a DP on a bounding ball by Posey to retire the side. Ernie Lombardi sustained an injury to his right hand when attempting to corral a pitch in the dirt from Hubbell with two outs in the fifth inning. He was replaced by Harry Danning. Billy Herman broke up deGrom’s no-hit bid in the visitor’s sixth with two away on a clean single up the middle. Pujols reached on a two-base error by Vaughan to commence the bottom of the sixth. “The Machine” scored the first run of the game on a long single to left field by Stanton. Joe Medwick doubled into the right-field corner leading off the top of the eighth. After a brief mound visit, deGrom settled in to strike out Camilli. He enticed Danning and Pepper Martin to ground out as the NL 2006-20 team held onto their one-run lead. Craig Kimbrel was on the bump to start the ninth after 8 brilliant innings from deGrom. Augie Galan, batting for Billy Herman, scalded a one-hopper to Utley who calmly flipped to Pujols for one out. Vaughan ripped Kimbrel’s offering towards the hole between first and second, but “Prince Albert” smoothly fielded the shot and scampered over to first for out #2. Waner tapped a little dribbler up the first base line. Pujols raced in, grabbed it and touched the bag for the final out to secure the 1-0 victory.
+NL1931-45  vs   NL2006-20
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1931-45 0 0 0 0 0 0 0 0 0   0  2  1
+NL2006-20 0 0 0 0 0 1 0 0 x   1  4  0
+WP:deGrom                           DPs V: 3
+LP:Hubbell                              H: 2
+SV:Kimbrel                           Time: 0:52.43
+GWRBI:   Stanton
+Wind in from right-center at  2 mph
+Ernie Lombardi was injured. Out  3 games
+How They Scored...
+Bottom of 6th
+With Hubbell Pitching, nobody out,
+Stanton singles
+scoring Pujols from 2nd.  Score  0 -  1
+Fielders                   NL1931-45
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+A. Vaughan,SS        3  0  0  0  0  0   0  0  1  0  0  0   1  0
+P. Waner,RF          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+W. Berger,CF         3  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Ott,DH            3  0  0  0  0  0   0  0  0  1  0  0   0  0
+J. Medwick,LF        3  0  1  1  0  0   0  0  0  0  0  0   0  0
+D. Camilli,1B        3  0  0  0  0  0   0  0  0  1  0  0   0  0
+H. Danning,C         2  0  0  0  0  0   0  0  0  0  0  0   0  0
+E. Lombardi,C        0  0  0  0  0  0   0  0  1  0  0  0   0  0
+P. Martin,3B         3  0  0  0  0  0   0  0  0  0  0  0   0  0
+B. Herman,2B         2  0  1  0  0  0   0  0  0  0  0  0   0  0
+A. Galan,2B          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               27  0  2  1  0  0   0  0  2  2  0  0   1  0
+Pitchers                   NL1931-45
+IP  H  R ER HR BB SO WP HB BK
+C. Hubbell,L     8.0  4  1  0  0  4  3  0  2  0
+TOTAL            8.0  4  1  0  0  4  3  0  2  0
+Fielders                   NL2006-20
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+B. Harper,RF         3  0  1  0  0  0   0  0  1  1  0  0   0  0
+H. Ramirez,SS        3  0  0  0  0  0   0  0  0  0  0  0   0  0
+A. Pujols,1B         3  1  1  0  0  0   0  0  1  0  0  0   0  0
+G. Stanton,DH        3  0  1  0  0  0   1  0  1  1  0  0   0  0
+C. Yelich,LF         4  0  0  0  0  0   0  0  0  0  0  0   0  0
+D. Wright,3B         2  0  0  0  0  0   0  0  0  0  0  0   0  0
+A. McCutchen ,CF     2  0  1  0  0  0   0  0  1  1  0  0   0  0
+C. Utley,2B          3  0  0  0  0  0   0  0  0  0  0  0   0  0
+B. Posey,C           3  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               26  1  4  0  0  0   1  0  4  3  0  0   0  0
+Pitchers                   NL2006-20
+IP  H  R ER HR BB SO WP HB BK
+J. deGrom,W      8.0  2  0  0  0  2  2  0  0  0
+C. Kimbrel,S     1.0  0  0  0  0  0  0  0  0  0
+TOTAL            9.0  2  0  0  0  2  2  0  0  0
+14 @ 3 – NL1946-60 @ NL1901-15
+Christy Mathewson toed the rubber for the NL 1901-15 ball club at the Polo Grounds while opposing hurler Robin Roberts prepared to face a formidable foe. Jackie Robinson delivered a ringing double down the left field line to commence the contest, but “Matty” left him stranded at second base with successive strikeouts of Ernie Banks and Duke Snider. The game remained scoreless until the top of the fourth when “Big Six” grooved a 3-2 fastball which Banks deposited into the right-field stands for a round tripper. Jesse Burkett’s two-bagger knocked in Gavvy Cravath with the tying run in the home half of the fourth. The pitcher’s duel extended into the ninth frame as Mathewson and Roberts continued to hold the opposition in check. “Laughing” Larry Doyle launched a long drive to left field with one out in the bottom of the ninth, easily clearing the wall for a walk-off four-ply swat!
+NL1946-60 vs NL1901-15
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1946-60 0 0 0 1 0 0 0 0 0   1  4  1
+NL1901-15 0 0 0 1 0 0 0 0 1   2  8  1
+WP:Mathewson                        DPs V: 1
+LP:Roberts                              H: 2
+Time: 0:51.22
+GWRBI:   Doyle
+Wind out to left-center at 11 mph
+How They Scored...
+Top of 4th
+With Mathewson  Pitching, nobody out,
+Banks hits a 316 ft Home Run.  Score  1 -  0
+Bottom of 4th
+With Roberts Pitching, 2 out,
+Doyle doubles
+scoring Cravath from 2nd.  Score  1 -  1
+Bottom of 9th
+With 1 out,
+Doyle hits a 360 ft Home Run.  Score  1 -  2
+Fielders                   NL1946-60
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+J. Robinson,2B       4  0  1  1  0  0   0  0  0  0  0  0   0  0
+S. Musial,RF         4  0  0  0  0  0   0  0  0  0  0  0   0  0
+E. Banks,SS          4  1  1  0  0  1   1  0  0  1  0  0   0  0
+D. Snider,CF         4  0  0  0  0  0   0  0  0  1  0  0   0  0
+R. Kiner,LF          2  0  0  0  0  0   0  0  1  0  0  0   0  0
+E. Mathews,3B        3  0  0  0  0  0   0  0  0  0  0  0   1  0
+R. Campanella,C      3  0  0  0  0  0   0  0  0  1  0  0   0  0
+J. Mize,DH           3  0  1  0  0  0   0  0  0  0  0  0   0  0
+R. Ashburn,DH        0  0  0  0  0  0   0  0  0  0  0  0   0  0
+G. Hodges,1B         3  0  1  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               30  1  4  1  0  1   1  0  1  3  0  0   1  0
+Pitchers                   NL1946-60
+IP  H  R ER HR BB SO WP HB BK
+R. Roberts,L     8.1  8  2  1  1  0  1  0  1  0
+TOTAL            8.1  8  2  1  1  0  1  0  1  0
+Fielders                   NL1901-15
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+J. Sheckard,LF       4  0  2  0  0  0   0  0  0  0  0  0   0  0
+C. Seymour,CF        4  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Wagner,SS         4  0  0  0  0  0   0  0  0  0  0  0   0  0
+T. Leach,DH          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+G. Cravath,DH        4  1  2  1  0  0   0  0  0  1  0  0   0  0
+H. Zimmerman ,3B     4  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Burkett,RF        4  0  0  0  0  0   0  0  0  0  0  0   0  0
+L. Doyle,2B          3  1  2  1  0  1   2  0  0  0  0  0   0  0
+R. Bresnahan ,C      3  0  1  0  0  0   0  0  0  0  0  0   0  0
+F. Chance,1B         3  0  1  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               33  2  8  2  0  1   2  0  0  1  0  0   0  0
+Pitchers                   NL1901-15
+IP  H  R ER HR BB SO WP HB BK
+C. Mathewson ,W  9.0  4  1  1  1  1  3  0  0  0
+TOTAL            9.0  4  1  1  1  1  3  0  0  0
+13 @ 4 – NL1961-75 @ AL1991-05
+Pedro J. Martinez got the call for the AL 1991-2005 crew, primed to square off against a starting lineup featuring Willie Mays, Hank Aaron and 3 members of the Big Red Machine. The NL 1961-1975 stars were eager to take their hacks against “Petey” while their ace left-hander Sandy Koufax got loose in the bullpen at old Comiskey Park. Joe Morgan and the “Say Hey Kid” supplied back-to-back safeties with one down in the first, but Aaron rapped into a 6-4-3 twin-killing. In the top of the second, Willie McCovey destroyed an inside fastball from Martinez as he cleared the roof! Later in the frame, Albert Belle misplayed a scorched shot down the left field line by Roberto Clemente into a three-base hit. The Senior Circuit failed to push across any more runs as Maury Wills grounded out weakly to Frank E. Thomas. The Americans tied the game in the bottom of the second when Manny Ramirez blooped a double down the right field line to drive in Ken Griffey Jr., who had reached on a hit by pitch leading off the inning. Koufax got into a bases loaded jam in the fifth inning with two outs. Frank E. Thomas drew a base on balls to force in the go-ahead run and the bullpen began to stir. Griffey whiffed to quell the uprising. Aaron knotted the score at 2-2 with an opposite-field 506-foot clout into the upper tank in right-center. Don Drysdale relieved Koufax to start the bottom of the sixth. “Big D” issued a free pass to Manny Ramirez to start the seventh and then Ichiro Suzuki laced a two-bagger into the left field corner. Mike G. Marshall came on in relief with a pair of runners in scoring position and only one out. With the infield drawn in, Roberto Alomar barely got a piece of Marshall’s screwball and tapped it weakly in front of home plate. Johnny Bench scrambled to retrieve the ball, but his only play was to throw down to first base to get Alomar as pinch-runner Rafael Palmeiro streaked home to give the AL squad a 3-2 lead. Martinez exited the match after twirling 7 1/3 innings. Joe L. Morgan greeted reliever Roberto M. Hernandez with an infield hit and promptly pilfered second. “Little Joe” wreaked more havoc on the bases, advancing to third on an errant pick-off attempt by Hernandez. With the infield playing halfway, Mays hit a little dribbler past the mound towards short. Alex Rodriguez gunned the ball home but Morgan slid under Ivan Rodriguez’s tag to tie the game at 3-3. After Aaron coaxed a base on balls, the skipper had seen enough. He stomped out to the mound, took the ball from Hernandez, and handed over to Keith Foulke. Jim Thome made a heads-up play on McCovey’s grounder as he beat Mays to the bag at third for out #2. Dick Allen skied out to left to retire the side. Bench beat out a slow roller towards shortstop to start the top of the ninth. Pinch-runner Lou Brock swiped second. Clemente hit into a fielder’s choice with Brock moving up 90 feet. Jose Mesa entered the game and Billy L. Williams batted for Wills. Mesa intentionally walked “Sweet Swingin’ Billy”, electing to face Pete Rose with runners at the corners and one away. Rose made him pay for that slight, belting a single to right as Brock effortlessly ambled homeward. Morgan tacked on another run with a sharp single to center. Kevin Appier, the third pitcher of the frame for the American League, got Mays to hit into an odd 6-4-5 double play. “A-Rod” dropped Mays’ line drive, threw to second for the force and then Rose was tagged out in a controversial play at third which resulted in a heated argument between the NL skipper and the third-base ump. Marshall set down the side in order to seal the victory in the ninth.
+NL1961-75 vs AL1991-05
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1961-75 0 1 0 0 0 1 0 1 2   5 10  0
+AL1991-05 0 1 0 0 1 0 1 0 0   3  2  1
+WP:Marshall                         DPs V: 1
+LP:Foulke                               H: 2
+Time: 2:99.53
+GWRBI:   Rose
+Wind out to right at 19 mph
+How They Scored...
+Top of 2nd
+With Martinez Pitching, nobody out,
+McCovey hits a 570 ft Home Run.  Score  1 -  0
+Bottom of 2nd
+With Koufax Pitching, 2 out,
+Ramirez doubles
+scoring Griffey from 2nd.  Score  1 -  1
+Bottom of 5th
+With 2 out,
+Thomas walks
+scoring Ramirez from 3rd.  Score  1 -  2
+Top of 6th
+With 2 out,
+Aaron hits a 506 ft Home Run.  Score  2 -  2
+Bottom of 7th
+With Marshall Pitching, 1 out,
+Alomar grounds out
+scoring Palmeiro from 3rd.  Score  2 -  3
+Top of 8th
+With Hernandez  Pitching, 1 out,
+Mays hits into a fielder's choice
+scoring Morgan from 3rd.  Score  3 -  3
+Top of 9th
+With Mesa Pitching, 1 out,
+Rose singles
+scoring Brock from 3rd.  Score  4 -  3
+Morgan singles
+scoring Williams from 2nd.  Score  5 -  3
+Fielders                   NL1961-75
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+P. Rose,LF           5  0  1  0  0  0   1  0  0  0  0  0   0  0
+J. Morgan,2B         5  1  3  0  0  0   1  0  0  0  1  0   0  0
+W. Mays,CF           4  0  1  0  0  0   1  0  1  0  0  0   0  0
+H. Aaron,DH          3  1  1  0  0  1   1  0  1  1  0  0   0  0
+W. McCovey,1B        4  1  1  0  0  1   1  0  0  1  0  0   0  0
+D. Allen,3B          4  0  0  0  0  0   0  0  0  1  0  0   0  0
+L. Brock,C           0  1  0  0  0  0   0  0  0  0  1  0   0  0
+J. Bench,C           4  0  1  0  0  0   0  0  0  0  0  0   0  0
+R. Clemente,RF       4  0  2  0  1  0   0  0  0  1  0  0   0  0
+M. Wills,SS          3  0  0  0  0  0   0  0  0  0  0  0   0  0
+B. Williams,SS       0  1  0  0  0  0   0  0  1  0  0  0   0  0
+TOTAL               36  5 10  0  1  2   5  0  3  4  2  0   0  0
+Pitchers                   NL1961-75
+IP  H  R ER HR BB SO WP HB BK
+S. Koufax        5.0  1  2  1  0  4  8  0  1  0
+D. Drysdale      1.1  1  1  1  0  1  0  0  0  0
+M. Marshall,W    2.2  0  0  0  0  1  1  0  0  0
+TOTAL            9.0  2  3  2  0  6  9  0  1  0
+Fielders                   AL1991-05
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+I. Suzuki,RF         4  0  1  1  0  0   0  0  0  1  0  0   0  0
+R. Alomar,2B         3  0  0  0  0  0   1  0  1  1  0  0   0  0
+F. Thomas,1B         3  0  0  0  0  0   1  0  1  2  0  0   0  0
+K. Griffey,CF        3  1  0  0  0  0   0  0  0  2  0  0   0  0
+A. Belle,LF          2  0  0  0  0  0   0  0  2  1  0  0   0  0
+A. Rodriguez ,SS     4  0  0  0  0  0   0  0  0  1  0  0   0  0
+J. Thome,3B          4  0  0  0  0  0   0  0  0  1  0  0   0  0
+M. Ramirez,DH        1  1  1  1  0  0   1  0  2  0  0  0   0  0
+R. Palmeiro,DH       1  1  0  0  0  0   0  0  0  0  0  0   0  0
+I. Rodriguez ,C      4  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               29  3  2  2  0  0   3  0  6  9  0  0   0  0
+Pitchers                   AL1991-05
+IP  H  R ER HR BB SO WP HB BK
+P. Martinez      7.1  6  2  2  2  1  4  0  0  0
+R. Hernandez     0.0  1  1  0  0  1  0  0  0  0
+K. Foulke,L      1.0  1  1  1  0  0  0  0  0  0
+J. Mesa          0.0  2  1  1  0  1  0  0  0  0
+K. Appier        0.2  0  0  0  0  0  0  0  0  0
+TOTAL            9.0 10  5  4  2  3  4  0  0  0
+12 @ 5 – AL1901-15 @ AL1946-60
+Bob Feller opposed Walter Johnson in a bout of American League squads at old Yankee Stadium. “Shoeless” Joe Jackson crushed “Rapid Robert’s” high heat into deep center field and raced around the bases for an inside-the-park home run to lead off the game! Nap Lajoie walloped a towering solo shot into the left-center field bleachers with two outs in the top of the first to give his club a 2-0 lead. Larry Doby’s screaming line drive one-hopped the right field wall leading off the bottom of the frame but Jackson fielded the carom and relayed quickly to the infield, holding Doby to a single. “The Big Train” nearly yielded a game-tying circuit clout to Ted Williams, but Jackson hauled it in with his back against the right-field wall. Yogi Berra reached “Barney” in the bottom of the second with an opposite-field swat to reduce the AL 1901-1915 advantage to 2-1. George S. Davis and Jackson supplied back-to-back safeties in the top of the third inning. With two outs, Lajoie lofted a single into center to plate Davis. Lajoie stole second but Jackson was nabbed at the dish on a delayed steal of home. Doby drilled a two-bagger to right-center and Williams singled to shallow center with two outs in the bottom of the third. Al Rosen tapped a little roller towards shortstop. Everyone was safe and Doby scored. Johnson, clinging to a 3-2 lead, worked himself into deeper distress when Berra slapped a sharp single to left field, loading the bases for Rocky Colavito. After a brief mound visit, Johnson issued a free pass to force in a run and knot the score at 3-3. Rosen sprinted homeward on a passed ball charged to Ted Easterly and the AL 1946-1960 crew assumed the lead. Joe Gordon halted the rally when he flied out to Jackson in deep right field. Feller allowed a pair of singles and a walk to Davis with two away in the visitor’s fifth to load the bases. Jackson promptly whacked a two-run base hit into center field as AL 1901-15 reclaimed the advantage. After Eddie Collins coaxed a walk to reload the bags, the skipper had seen enough. Satchel Paige induced Cobb to ground out weakly to first base. Reb Russell relieved the “Big Train” in the home seventh. He pitched a scoreless frame, working around a one-out single by “The Splendid Splinter”. Joe Page entered the contest after George R. Stone slapped a single to left with two down in the eighth, only the second safety permitted by Paige in four scoreless innings. Pinch-hitter Sam Crawford flied out to left and the score remained 5-4 after 7 ½ innings. Ed Walsh ambled to the mound, attempting to preserve the lead and potential rack up a six-out save, but he immediately got into hot water when Colavito hammered a ground-rule double to right-center field. Gordon’s patience paid off with a base on balls. Pinch-runners Dom DiMaggio and Nellie Fox taunted Walsh as he prepared to face Mickey Vernon while the manager quickly got “Smoky” Joe Wood and Jack Coombs up in the ‘pen. Vernon hit a high chopper to third for an infield hit. Minnie Minoso, batting for Phil Rizzuto with the sacks juiced, pounded a worm-killer up the middle. The shortstop, George S. Davis, fielded and heaved the horsehide to home plate but “The Little Professor” evaded the tag. Nellie Fox dashed home on a wild pitch as the AL 1946-60 club recaptured the lead, 6-5! Doby produced a sacrifice fly to right, plating Vernon while Walsh finally recorded an out. Wood’s arm was finally loose and the skipper made his move, but the damage had already been done. Kaline welcomed Wood with a loud base knock that dropped in front of Jackson and allowed Minoso to amble home. Wiliams rapped into a 4-6-3 double play and the inning mercifully ended. Page capped the winning effort with a 1-2-3 ninth inning.
+AL1901-15 vs AL1946-60
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL1901-15 2 0 1 2 0 0 0 0 0   5 10  0
+AL1946-60 0 1 3 0 0 0 0 4 x   8 10  0
+WP:Page                             DPs V: 1
+LP:Walsh                                H: 0
+Time: 3:57.45
+Wind out to center at  4 mph
+How They Scored...
+Top of 1st
+With Feller Pitching, nobody out,
+Jackson triples.  Jackson scores.  Score  1 -  0
+With 2 out,
+Lajoie hits a 428 ft Home Run.  Score  2 -  0
+Bottom of 2nd
+With Johnson Pitching, nobody out,
+Berra hits a 358 ft Home Run.  Score  2 -  1
+Top of 3rd
+With 2 out,
+Lajoie singles
+scoring Davis from 2nd.  Score  3 -  1
+Bottom of 3rd
+Rosen hits into a fielder's choice
+scoring Doby from 3rd.  Score  3 -  2
+Colavito walks
+scoring Williams from 3rd.  Score  3 -  3
+the catcher allows a passed ball
+scoring Rosen from 3rd.  Score  3 -  4
+Top of 4th
+With 2 out,
+Jackson singles
+scoring Stone from 3rd and Easterly from 2nd.  Score  5 -  4
+Bottom of 8th
+With Walsh Pitching, nobody out,
+Minoso hits into a fielder's choice
+scoring DiMaggio from 3rd.  Score  5 -  5
+Walsh throws a wild pitch
+scoring Fox from 3rd.  Score  5 -  6
+Doby hits a sacrifice fly
+scoring Vernon from 3rd.  Score  5 -  7
+With Wood Pitching, 1 out,
+Kaline singles
+scoring Minoso from 3rd.  Score  5 -  8
+Fielders                   AL1901-15
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+J. Jackson,RF        5  1  3  0  0  1   3  0  0  0  0  1   0  0
+E. Collins,2B        4  0  0  0  0  0   0  0  1  1  0  0   0  0
+T. Cobb,CF           4  0  0  0  0  0   0  0  0  0  0  0   0  0
+N. Lajoie,DH         4  1  2  0  0  1   2  0  0  0  1  0   0  0
+H. Baker,3B          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Davis,1B          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+G. Stone,LF          4  1  2  0  0  0   0  0  0  0  0  0   0  0
+J. Clarke,C          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+T. Easterly,C        3  1  1  0  0  0   0  0  0  1  0  0   0  1
+S. Crawford,C        1  0  0  0  0  0   0  0  0  0  0  0   0  0
+S. McInnis,SS        1  0  0  0  0  0   0  0  0  0  0  0   0  0
+G. Davis,SS          2  1  2  0  0  0   0  0  1  0  0  0   0  0
+TOTAL               36  5 10  0  0  2   5  0  2  2  1  1   0  1
+Pitchers                   AL1901-15
+IP  H  R ER HR BB SO WP HB BK
+W. Johnson       6.0  6  4  3  1  2  2  0  0  0
+R. Russell       1.0  1  0  0  0  0  0  0  0  0
+E. Walsh,L       0.1  2  4  3  0  1  0  1  0  0
+J. Wood          0.2  1  0  0  0  0  0  0  0  0
+TOTAL            8.0 10  8  6  1  3  2  1  0  0
+Fielders                   AL1946-60
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+L. Doby,CF           4  1  2  1  0  0   2  1  0  1  0  0   0  0
+A. Kaline,RF         5  0  1  0  0  0   1  0  0  0  0  0   0  0
+T. Williams,LF       5  1  3  0  0  0   0  0  0  0  0  0   0  0
+J. Pesky,SS          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+A. Rosen,3B          4  1  0  0  0  0   1  0  0  0  0  0   0  0
+Y. Berra,C           4  1  2  0  0  1   1  0  0  0  0  0   0  0
+D. DiMaggio,DH       0  1  0  0  0  0   0  0  0  0  0  0   0  0
+R. Colavito,DH       2  0  1  0  0  0   1  0  2  0  0  0   0  0
+J. Gordon,2B         3  0  0  0  0  0   1  0  1  0  0  0   0  0
+N. Fox,2B            0  1  0  0  0  0   0  0  0  0  0  0   0  0
+M. Vernon,1B         4  1  1  0  0  0   0  0  0  1  0  0   0  0
+M. Minoso,LF         1  1  0  0  0  0   1  0  0  0  0  0   0  0
+P. Rizzuto,SS        3  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               35  8 10  1  0  1   8  1  3  2  0  0   0  0
+Pitchers                   AL1946-60
+IP  H  R ER HR BB SO WP HB BK
+B. Feller        3.2  8  5  5  2  2  1  0  0  0
+S. Paige         4.0  2  0  0  0  0  0  0  0  0
+J. Page,W        1.1  0  0  0  0  0  1  0  0  0
+TOTAL            9.0 10  5  5  2  2  2  0  0  0
+11 @ 6 – AL1961-75 @ AL1931-45
+On a bright and blustery day in Boston, Hal Newhouser sauntered out to the mound and warmed up while his counterpart Gaylord Perry stretched out in the visitor’s bullpen at Fenway Park. “Prince Hal” set down the side in order. With two outs in the bottom of the first, Jimmie Foxx banged a two-base knock high off the Green Monster near the left field foul pole. Hank Greenberg lofted a deep fly to center field but Mickey Mantle tracked it down just shy of the warning track. In the third inning, Newhouser yielded 3 consecutive base hits to Carl Yastrzemski, Frank Robinson and Roger Maris, with hometown hero “Yaz” notching the first tally of the game. “Joltin’” Joe DiMaggio led off the bottom of the frame with a ground ball single to right. The “Yankee Clipper” advanced to second on a passed ball by Elston Howard. Perry threw a fastball high and outside to Harlond Clift. The ball travelled 540 feet into the right field stands for a two-run blast as the AL 1931-1945 crew snatched the lead. Newhouser ran into some trouble in the fifth when he loaded the bases on a single by Howard followed by a pair of walks. “Yaz” tied the game with a sacrifice fly as Howard beat the throw home from Jeff Heath. The rally ended when “The Judge” swung and missed at a breaking ball from “Prince Hal”. Joe A. Berry relieved Newhouser after Maris coaxed a base on balls to commence the sixth inning. He generated a 6-4-3 double play off the bat of Harmon Killebrew and a harmless comebacker by Brooks Robinson. Schoolboy Rowe trotted in from the ‘pen to start the seventh. Howard belted his third hit down the left field line but Charlie Keller held him to a long single. Rod Carew bunted him over to second. Rico Petrocelli was retired on a grounder into the hole at short, but Luke Appling pulled a calf muscle on the play and had to exit the game. Mantle tested Appling’s replacement Lou Boudreau with a slow three-hopper which he flawlessly fielded to complete the inning. Dick Radatz assumed Perry’s position on the bump in the bottom of the seventh and “The Monster” proceeded to retire the side in order. With one out in the top of the eighth, Bill Dickey suffered a lacerated ring finger on his throwing hand attempting to block a ball in the dirt. Rick Ferrell substituted for Dickey and Wally Moses replaced Jeff Heath as the right fielder as the skipper shuffled his lineup. Radatz allowed a base hit by Moses and then plunked Clift with two outs in the ninth. The manager headed out to the mound and signaled for the left-hander, John Hiller. Ferrell lofted a can of corn to right, sending the contest into extra innings. Dean Chance entered the match with two outs and two runners on base in the bottom of the tenth. DiMaggio bounced out to third to end the threat. Moses split the gap in right-center for a two-base knock to start the home half of the eleventh. After Keller’s slow roller to third failed to advance Moses, Chance intentionally walked Clift to get to Ferrell. The backup backstop won the game with a line-drive base hit into the left field corner as Moses scored without a throw.
+AL1961-75 vs AL1931-45
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL1961-75 0 0 0 1 1 0 0 0 0 0 2  7  0
+AL1931-45 0 0 0 2 0 0 0 0 0 1 3  9  0
+WP:Rowe                             DPs V: 0
+LP:Chance                               H: 1
+Time: 1:20.45
+GWRBI:   Ferrell
+Innings:11   Wind out to left at  6 mph
+Luke Appling was injured. Out  2 games
+Bill Dickey was injured. Out  3 games
+How They Scored...
+Top of 4th
+With Newhouser  Pitching, 1 out,
+Maris singles
+scoring Yastrzmski from 2nd.  Score  1 -  0
+Bottom of 4th
+With Perry Pitching, 2 out,
+Clift hits a 540 ft Home Run
+scoring DiMaggio from 2nd.  Score  1 -  2
+Top of 5th
+With 1 out,
+Yastrzmski hits a sacrifice fly
+scoring Howard from 3rd.  Score  2 -  2
+Bottom of 11th
+With Chance Pitching, 1 out,
+Ferrell singles
+scoring Moses from 2nd.  Score  2 -  3
+Fielders                   AL1961-75
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+R. Carew,2B          4  0  0  0  0  0   0  1  0  0  0  0   0  0
+R. Petrocelli,SS     4  0  0  0  0  0   0  0  1  0  0  0   0  0
+M. Mantle,CF         4  0  0  0  0  0   0  0  1  1  0  0   0  0
+C. Yastrzmski,LF     4  1  2  0  0  0   1  1  0  0  0  0   0  0
+F. Robinson,RF       5  0  1  0  0  0   0  0  0  2  0  0   0  0
+R. Maris,DH          4  0  1  0  0  0   1  0  1  1  0  0   0  0
+H. Killebrew ,1B     5  0  0  0  0  0   0  0  0  1  0  0   0  0
+B. Robinson,3B       3  0  0  0  0  0   0  0  1  0  0  0   0  0
+E. Howard,C          4  1  3  0  0  0   0  0  0  0  0  0   0  1
+TOTAL               37  2  7  0  0  0   2  2  4  5  0  0   0  1
+Pitchers                   AL1961-75
+IP  H  R ER HR BB SO WP HB BK
+G. Perry         6.0  5  2  2  1  2  1  0  0  0
+D. Radatz        2.2  1  0  0  0  0  2  0  1  0
+J. Hiller        1.0  1  0  0  0  1  0  0  0  0
+D. Chance,L      0.2  2  1  1  0  1  0  0  0  0
+TOTAL           10.1  9  3  3  1  4  3  0  1  0
+Fielders                   AL1931-45
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+L. Appling,SS        2  0  0  0  0  0   0  0  1  0  0  0   0  0
+L. Boudreau,SS       2  0  0  0  0  0   0  0  0  0  0  0   0  0
+C. Gehringer ,2B     5  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Foxx,1B           5  0  2  1  0  0   0  0  0  1  0  0   0  0
+H. Greenberg ,DH     4  0  0  0  0  0   0  0  1  0  0  0   0  0
+J. DiMaggio,CF       5  1  1  0  0  0   0  0  0  0  0  0   0  0
+B. Dickey,C          3  0  2  0  0  0   0  0  0  0  0  0   0  0
+W. Moses,RF          2  1  2  1  0  0   0  0  0  0  0  0   0  0
+C. Keller,LF         5  0  0  0  0  0   0  0  0  1  0  0   0  0
+H. Clift,3B          2  1  1  0  0  1   2  0  2  0  0  0   0  0
+R. Ferrell,C         2  0  1  0  0  0   1  0  0  0  0  0   0  0
+J. Heath,RF          3  0  0  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               40  3  9  2  0  1   3  0  4  3  0  0   0  0
+Pitchers                   AL1931-45
+IP  H  R ER HR BB SO WP HB BK
+H. Newhouser     5.0  5  2  2  0  4  3  0  0  0
+J. Berry         1.0  0  0  0  0  0  0  0  0  0
+S. Rowe,W        5.0  2  0  0  0  0  2  0  0  0
+TOTAL           11.0  7  2  2  0  4  5  0  0  0
+10 @ 7 – AL1916-30 @ NL1916-30
+A battle between clubs featuring stars from the Roaring Twenties commenced at Braves Field in Boston with “Old” Pete Alexander taking the hill for the hometown National League representatives while the Americans countered with Eddie “Knuckles” Cicotte. “Gorgeous” George Sisler walked, went to second on a wild pick-off attempt, and came around on a single to right by Lou Gehrig. The “Iron Horse” repeated the feat in the top of the fifth, plating Tris Speaker on a long single into the right field corner. Cicotte cruised into the fifth, when a pair of mental errors resulted in ducks on the pond. Following a loud single to center by Chuck Klein, Gabby Hartnett dribbled a slow roller towards third. Ossie Bluege tried for the force at second but Klein beat the throw. The next batter, Zack Wheat, tapped one down the line to Gehrig. Instead of stepping on the bag and taking the sure out at first, “Laruppin’ Lou” tried for the 3-6-3 twin-killing. His throw was slightly off-target allowing Hartnett to sneak into second. With the infield playing halfway in, Cicotte induced a 6-4-3 double play off the bat of Max Carey as Klein crossed the plate. Frankie Frisch delivered a base knock to right field, driving in Hartnett to tie the score at 2-all. In the top of the sixth, the Americans reclaimed the lead on a double down the left field line by Tony Lazerri and a subsequent safety by Mickey Cochrane. The skipper called upon southpaw Eppa Rixey to oppose the four consecutive lefties at the top of the AL batting order. “Jephtha” responded with a clean frame in the top of the seventh. Carey started a two-out rally in the home seventh with a base hit and then the “Fordham Flash” drew a walk. “Knuckles” served up a game-tying double to right-center by pinch-hitter Jim Bottomley, who was batting for shortstop Dave Bancroft. The manager bolted out the dugout and called for the right-hander, Firpo Mayberry, to pitch to Rogers Hornsby. “Rajah” promptly supplied a single through the hole between first and second to drive in the go-ahead run. Bill Terry’s soft grounder was fielded cleanly by Gehrig to retire the side. The Americans rallied with two down in the ninth. Rixey issued back-to-back free passes to pinch-hitter Harry Heilmann and the “Grey Eagle”. Charlie Root entered the match and Sisler greeted him with an opposite-field bingo as pinch-runner Willie Kamm scurried home to knot the score at 4-4. Ruth smashed a solid two-hopper to second-sacker Hornsby, who flipped to Bottomley for the final out. Marberry twirled a scoreless frame to send the contest into extra innings. Ray Kremer relieved Root with two out and two runners on base in the top of the tenth. He got Joe Cronin on a high chopper to second. Bottomley reached on a two-base throwing error by Lazzeri to open the bottom of the tenth. Marberry elected to issue a free pass to Hornsby, preferring to pitch to Art Fletcher. The NL skipper sent Kiki Cuyler up to bat for Fletcher, but the move failed to produce the desired result as Cuyler struck out swinging. Hack Wilson grounded into a fielder’s choice, leaving the National League squad with runners at the corners and two outs. The AL manager brought in the left-hander, Garland Braxton, to gain the platoon advantage against Klein. The slugger slapped a worm-killer through the hole between short and third as Bottomley scampered home with the winning run!
+AL1916-30 vs NL1916-30
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL1916-30 1 0 0 0 1 1 0 0 1 0 4 11  1
+NL1916-30 0 0 0 0 2 0 2 0 0 1 5  8  0
+WP:Kremer                           DPs V: 3
+LP:Marberry                             H: 1
+Time: 1:31.42
+GWRBI:   Klein
+Innings:10   Wind in from right at  6 mph
+How They Scored...
+Top of 1st
+With Alexander  Pitching, 2 out,
+Gehrig singles
+scoring Sisler from 2nd.  Score  1 -  0
+Top of 5th
+With 2 out,
+Gehrig singles
+scoring Speaker from 2nd.  Score  2 -  0
+Bottom of 5th
+With Cicotte Pitching, nobody out,
+Carey grounds out
+scoring Klein from 3rd.  Score  2 -  1
+With 2 out,
+Frisch singles
+scoring Hartnett from 3rd.  Score  2 -  2
+Top of 6th
+With nobody out,
+Cochrane singles
+scoring Lazzeri from 2nd.  Score  3 -  2
+Bottom of 7th
+With 2 out,
+Bottomley  doubles
+scoring Carey from 2nd.  Score  3 -  3
+With Marberry Pitching,
+Hornsby singles
+scoring Frisch from 3rd.  Score  3 -  4
+Top of 9th
+With Root Pitching, 2 out,
+Sisler singles
+scoring Kamm from 2nd.  Score  4 -  4
+Bottom of 10th
+With Braxton Pitching, 2 out,
+Klein singles
+scoring Bottomley  from 3rd.  Score  4 -  5
+Fielders                   AL1916-30
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+T. Speaker,CF        4  1  1  0  0  0   0  0  1  0  0  0   0  0
+G. Sisler,DH         4  1  3  0  0  0   1  0  1  0  2  0   0  0
+B. Ruth,RF           5  0  0  0  0  0   0  0  0  0  0  0   0  0
+L. Gehrig,1B         4  0  2  0  0  0   2  0  1  0  0  0   0  0
+A. Simmons,LF        5  0  1  0  0  0   0  0  0  0  0  0   0  0
+T. Lazzeri,2B        5  1  1  1  0  0   0  0  0  0  0  0   1  0
+M. Cochrane,C        5  0  2  0  0  0   1  0  0  0  0  0   0  0
+J. Cronin,SS         5  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Heilmann,3B       0  0  0  0  0  0   0  0  1  0  0  0   0  0
+O. Bluege,3B         3  0  1  0  0  0   0  0  0  0  0  0   0  0
+W. Kamm,3B           0  1  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               40  4 11  1  0  0   4  0  4  0  2  0   1  0
+Pitchers                   AL1916-30
+IP  H  R ER HR BB SO WP HB BK
+E. Cicotte       6.2  5  4  4  0  2  1  0  0  0
+F. Marberry,L    3.0  2  1  0  0  1  1  0  0  0
+G. Braxton       0.0  1  0  0  0  0  0  0  0  0
+TOTAL            9.2  8  5  4  0  3  2  0  0  0
+Fielders                   NL1916-30
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+R. Hornsby,2B        4  0  1  0  0  0   1  0  1  0  0  0   0  0
+K. Cuyler,SS         1  0  0  0  0  0   0  0  0  1  0  0   0  0
+B. Terry,1B          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+A. Fletcher,SS       0  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Wilson,DH         4  0  1  0  0  0   0  0  1  0  0  0   0  0
+C. Klein,RF          5  1  3  0  0  0   1  0  0  0  0  0   0  0
+G. Hartnett,C        4  1  0  0  0  0   0  0  0  1  0  0   0  0
+Z. Wheat,LF          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Carey,CF          4  1  1  0  0  0   0  0  0  0  0  0   0  0
+F. Frisch,3B         3  1  1  0  0  0   1  0  1  0  0  0   0  0
+D. Bancroft,SS       2  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Bottomley ,1B     2  1  1  1  0  0   1  0  0  0  0  0   0  0
+TOTAL               37  5  8  1  0  0   4  0  3  2  0  0   0  0
+Pitchers                   NL1916-30
+IP  H  R ER HR BB SO WP HB BK
+P. Alexander     6.0  9  3  3  0  1  0  0  0  0
+E. Rixey         2.2  0  1  1  0  2  0  0  0  0
+C. Root          1.0  2  0  0  0  1  0  0  0  0
+R. Kremer,W      0.1  0  0  0  0  0  0  0  0  0
+TOTAL           10.0 11  4  4  0  4  0  0  0  0
+9 @ 8 – AL1976-90 @ NL1976-90
+Flame-throwing right-handers Dwight Gooden and Roger Clemens squared off at Jarry Park in Montreal. Ryne Sandberg roped a two-base hit off the base of the center field wall with one out in the bottom of the first. “Ryno” moved to third on a groundout to first and then dashed home on a wild pitch by the “Rocket”. The National Leaguers increased their lead to 3-0 when George Foster followed a walk to Mike Schmidt with a 516-foot bomb to straightaway center field. In the bottom of the third, Sandberg hit an innocuous chopper back to the mound, but Clemens’ throw sailed over Eddie Murray’s outstretched glove and into right field for a two-base error. He managed to escape the inning without incident but he encountered further trouble in the fourth. Darryl Strawberry singled and stole second. Andre Dawson belted a 448-foot blast to center, extending the NL advantage to 5-0. Gary Carter ripped a base hit down the left field line. Clemens retired Ozzie Smith and Tony Gwynn, but “Ryno” turned around an inside fastball for a 2-run jack. The AL skipper finally gave Clemens the hook in favor of submarine side-armer Mark Eichhorn. In the top of the seventh, the Americans finally got to “Dr. K”. Jose Canseco and Reggie Jackson coaxed back-to-back walks. Cal Ripken Jr. laced a base hit to right field, driving in “The Chemist” to break up Gooden’s shutout. Murray drew another walk, loading the bases for Jim Rice. Lee Smith jogged in from the ‘pen and proceeded to retire Rice on a short fly ball to right, forcing “Mr. October” to hold up at third. Carlton Fisk skied to medium right field for the final out of the frame. Rollie Fingers hurled a scoreless seventh for the Junior Circuit. Rich Gossage got the call with two runners on base in the bottom of the eighth. “Goose” got “Straw” on a lazy fly to left, “Hawk” on a long fly to center, and pinch-hitter Will “The Thrill” Clark on a three-hopper to second. Bill Caudill strolled out to the mound in the top of the ninth. The “Inspector” pitched a clean frame to secure victory for the NL crew. AL1976-90 vs NL1976-90
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL1976-90 0 0 0 0 0 0 1 0 0   1  4  1
+NL1976-90 3 0 0 4 0 0 0 0 x   7  7  0
+WP:Gooden                           DPs V: 0
+LP:Clemens                              H: 0
+Time: 1:00.35
+Wind swirling  at  8 mph
+How They Scored...
+Bottom of 1st
+With Clemens Pitching, 2 out,
+Clemens throws a wild pitch
+scoring Sandberg from 3rd.  Score  0 -  1
+Foster hits a 516 ft Home Run
+scoring Schmidt from 1st.  Score  0 -  3
+Bottom of 4th
+With nobody out,
+Dawson hits a 448 ft Home Run
+scoring Strawberry from 2nd.  Score  0 -  5
+With 2 out,
+Sandberg hits a 396 ft Home Run
+scoring Carter from 1st.  Score  0 -  7
+Top of 7th
+With Gooden Pitching, 1 out,
+Ripken singles
+scoring Canseco from 2nd.  Score  1 -  7
+Fielders                   AL1976-90
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+R. Henderson ,CF     4  0  0  0  0  0   0  0  0  1  0  0   0  0
+W. Randolph,2B       3  0  1  0  0  0   0  0  0  0  0  1   0  0
+L. Whitaker,2B       0  0  0  0  0  0   0  0  0  0  0  0   0  0
+W. Boggs,2B          0  0  0  0  0  0   0  0  1  0  0  0   0  0
+G. Brett,3B          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Canseco,RF        3  1  1  0  0  0   0  0  1  1  0  0   0  0
+R. Jackson,DH        3  0  1  0  0  0   0  0  1  1  0  0   0  0
+C. Ripken,SS         4  0  1  0  0  0   1  0  0  0  0  0   0  0
+E. Murray,1B         2  0  0  0  0  0   0  0  1  1  0  0   0  0
+D. Mattingly ,1B     1  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Rice,LF           3  0  0  0  0  0   0  0  0  0  0  0   0  0
+C. Fisk,C            3  0  0  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               30  1  4  0  0  0   1  0  4  5  0  1   0  0
+Pitchers                   AL1976-90
+IP  H  R ER HR BB SO WP HB BK
+R. Clemens,L     3.2  6  7  7  3  2  2  1  0  0
+M. Eichhorn      2.1  0  0  0  0  0  5  0  0  0
+R. Fingers       1.0  1  0  0  0  1  0  0  0  0
+R. Gossage       1.0  0  0  0  0  0  0  0  0  0
+TOTAL            8.0  7  7  7  3  3  7  1  0  0
+Fielders                   NL1976-90
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+T. Gwynn,RF          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+R. Sandberg,2B       4  2  2  1  0  1   2  0  0  0  0  0   0  0
+K. Hernandez ,1B     4  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Schmidt,3B        2  1  0  0  0  0   0  0  2  2  0  0   0  0
+G. Foster,LF         4  1  2  0  0  1   2  0  0  1  0  0   0  0
+T. Raines,LF         0  0  0  0  0  0   0  0  0  0  0  0   0  0
+D. Strawberry,DH     3  1  1  0  0  0   0  0  1  1  1  0   0  0
+A. Dawson,CF         4  1  1  0  0  1   2  0  0  2  0  0   0  0
+G. Carter,C          3  1  1  0  0  0   0  0  0  0  0  0   0  0
+B. Santiago,C        0  0  0  0  0  0   0  0  0  0  0  0   0  0
+W. Clark,C           1  0  0  0  0  0   0  0  0  0  0  0   0  0
+O. Smith,SS          3  0  0  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               32  7  7  1  0  3   6  0  3  7  1  0   0  0
+Pitchers                   NL1976-90
+IP  H  R ER HR BB SO WP HB BK
+D. Gooden,W      6.1  4  1  1  0  3  3  0  0  0
+L. Smith         1.2  0  0  0  0  1  1  0  0  0
+B. Caudill       1.0  0  0  0  0  0  1  0  0  0
+TOTAL            9.0  4  1  1  0  4  5  0  0  0
+Round 2
+8 @ 1 – NL1976-90 @ NL1991-05
+The second round matchups kicked off at Wrigley Field with Randy D. Johnson opposing Tom Seaver. Tony Gwynn led off with a two-bagger and tallied the first run on a single to center by Ryne Sandberg, who advanced to second on the throw home. The “Big Unit” compounded his problems with a wild pick-off toss which allowed “Ryno” to score! Johnson whiffed the next two batters and escaped without any further damage. Pedro Guerrero, subbing for the left-handed swinging Darryl Strawberry, demolished one of Johnson’s fastballs. The 440-foot bomb left the yard and landed on Waveland Avenue. In the visitor’s third, Gary Carter hit into a fielder’s choice with the bases loaded but everyone was safe. Another fielder’s choice followed by a wild pitch, and the NL 1976-90 held a 6-0 advantage after three turns at-bat. “Tom Terrific” got himself into a bases loaded jam in the bottom of the frame but Eric Davis camped under Barry Bonds’ fly ball to left-center to extinguish the fire. Jose Rijo replaced Johnson to start the fourth inning. Seaver pitched shutout ball into the eighth when he finally tired. Barry Larkin coaxed a leadoff walk. Chipper Jones belted a 509-foot round-tripper over the scoreboard in center, cutting the lead to 6-2. The manager called down to the bullpen and Tug McGraw made his entrance. Bonds slashed a single that landed into front of Eric Davis but Mark McGwire grounded into a twin-killing to quash the rally. Billy Wagner trotted in to replace Rijo, who had thrown 5 scoreless innings in relief of Johnson. “Billy The Kid” allowed a safety to Ozzie Smith but kept the score intact. Bruce Sutter came on to get the final 3 outs. He yielded a 444-foot long distance dedication to Jeff Bagwell with one out but struck out Jim Edmonds to end the game. A shocker in Chi-Town as the eighth-best team based on the regular season standings progressed to the next round while knocking out the top seed in the process!
+NL1976-90 vs NL1991-05
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1976-90 2 1 3 0 0 0 0 0 0   6  9  0
+NL1991-05 0 0 0 0 0 0 0 2 1   3  7  1
+WP:Seaver                           DPs V: 2
+LP:Johnson                              H: 2
+Time: 0:58.34
+GWRBI:   Sandberg
+Wind in from left at 15 mph
+How They Scored...
+Top of 1st
+With Johnson Pitching, nobody out,
+Sandberg singles
+scoring Gwynn from 3rd.  Score  1 -  0
+Hernandez  reaches on an error by Johnson
+scoring Sandberg from 2nd.  Score  2 -  0
+Top of 2nd
+With nobody out,
+Guerrero hits a 440 ft Home Run.  Score  3 -  0
+Top of 3rd
+With 1 out,
+Carter hits into a fielder's choice
+scoring Schmidt from 3rd.  Score  4 -  0
+Smith hits into a fielder's choice
+scoring Davis from 3rd.  Score  5 -  0
+With 2 out,
+Johnson throws a wild pitch
+scoring Guerrero from 3rd.  Score  6 -  0
+Bottom of 8th
+With Seaver Pitching, 1 out,
+Jones hits a 508 ft Home Run
+scoring Larkin from 1st.  Score  6 -  2
+Bottom of 9th
+With Sutter Pitching, 1 out,
+Bagwell hits a 444 ft Home Run.  Score  6 -  3
+Fielders                   NL1976-90
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+T. Gwynn,RF          5  1  1  0  1  0   0  0  0  0  0  0   0  0
+R. Sandberg,2B       4  1  1  0  0  0   1  0  1  0  0  0   0  0
+K. Hernandez ,1B     5  0  0  0  0  0   1  0  0  2  0  0   0  0
+M. Schmidt,3B        4  1  1  0  0  0   0  0  0  2  0  0   0  0
+G. Foster,DH         3  0  0  0  0  0   0  0  1  0  0  0   0  0
+E. Davis,CF          3  1  0  0  0  0   0  0  1  2  0  0   0  0
+T. Raines,LF         0  0  0  0  0  0   0  0  0  0  0  0   0  0
+P. Guerrero,LF       4  2  2  0  0  1   1  0  0  0  0  0   0  0
+G. Carter,C          3  0  2  0  0  0   1  0  0  0  0  0   0  0
+B. Santiago,C        0  0  0  0  0  0   0  0  0  0  0  0   0  0
+D. Strawberry,C      1  0  0  0  0  0   0  0  0  0  0  0   0  0
+O. Smith,SS          4  0  2  0  0  0   1  0  0  0  0  0   0  0
+TOTAL               36  6  9  0  1  1   5  0  3  6  0  0   0  0
+Pitchers                   NL1976-90
+IP  H  R ER HR BB SO WP HB BK
+T. Seaver,W      7.1  5  2  2  1  3  6  0  0  0
+T. McGraw        0.2  1  0  0  0  0  0  0  0  0
+B. Sutter        1.0  1  1  1  1  0  1  0  0  0
+TOTAL            9.0  7  3  3  2  3  7  0  0  0
+Fielders                   NL1991-05
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+C. Biggio,2B         4  0  0  0  0  0   0  0  0  1  0  0   0  0
+C. Jones,3B          4  1  2  0  0  1   2  0  0  0  0  0   0  0
+B. Bonds,LF          3  0  1  0  0  0   0  0  1  0  0  0   0  0
+M. McGwire,DH        4  0  0  0  0  0   0  0  0  1  0  0   0  0
+S. Sosa,RF           4  0  0  0  0  0   0  0  0  3  0  0   0  0
+J. Bagwell,1B        3  1  1  0  0  1   1  0  1  1  0  0   0  0
+M. Piazza,C          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Edmonds,CF        4  0  2  0  0  0   0  0  0  1  0  0   0  0
+B. Larkin,SS         2  1  1  0  0  0   0  0  1  0  0  0   0  0
+TOTAL               32  3  7  0  0  2   3  0  3  7  0  0   0  0
+Pitchers                   NL1991-05
+IP  H  R ER HR BB SO WP HB BK
+R. Johnson,L     3.0  6  6  4  1  3  3  1  0  0
+J. Rijo          5.0  2  0  0  0  0  3  0  0  0
+B. Wagner        1.0  1  0  0  0  0  0  0  0  0
+TOTAL            9.0  9  6  4  1  3  6  1  0  0
+7 @ 2 – NL1916-30 @ NL2006-20
+Clayton Kershaw climbed the hill for the NL 2006-2020 squad at Dodger Stadium as he was pitted against Dolf Luque and the NL1916-1930 crew. Hack Wilson swatted a 536-foot big fly to right field in the top of the fourth. In the home half of the fourth, Bryce Harper rapped a clean single to right and advanced to third on a line-drive double to center off the bat of Hanley Ramirez. “The Pride of Havana” elected to walk Albert Pujols to set up a force at any base. Giancarlo Stanton mauled his next offering, lacing a base hit between third and short which plated a pair of baserunners. Christian Yelich bounced into a 6-4-3 double play, with Pujols moving to third. Luque whiffed David Wright to end the inning. Harper singled again to begin the fifth frame and scooted over to third on a base knock by Stanton with two away. Yelich sliced a ground-rule double into the left field corner, driving “Bam-Bam” in to extend the NL2006-2020 lead to 3-1. Luque received a breather when Wright lined out to third. Burleigh Grimes entered the game in the seventh and pitched two scoreless innings. Kershaw went the distance with a three-hitter as the NL2006-2020 club earned the victory in a low-scoring affair. NL1916-30 vs NL2006-20
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1916-30 0 0 0 1 0 0 0 0 0   1  3  1
+NL2006-20 0 0 0 2 0 1 0 0 x   3  7  0
+WP:Kershaw                          DPs V: 1
+LP:Luque                                H: 2
+Time: 0:30.04
+GWRBI:   Stanton
+Wind in from left-center at  6 mph
+How They Scored...
+Top of 4th
+With Kershaw Pitching, 1 out,
+Wilson hits a 538 ft Home Run.  Score  1 -  0
+Bottom of 4th
+With Luque Pitching, nobody out,
+Stanton singles
+scoring Harper from 3rd and Ramirez from 2nd.  Score  1 -  2
+Bottom of 6th
+With 2 out,
+Yelich singles
+scoring Harper from 3rd.  Score  1 -  3
+Fielders                   NL1916-30
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+R. Hornsby,2B        4  0  0  0  0  0   0  0  0  1  0  0   0  0
+B. Terry,1B          4  0  1  0  0  0   0  0  0  0  0  0   0  0
+H. Wilson,DH         3  1  1  0  0  1   1  0  0  0  0  0   0  0
+K. Cuyler,RF         3  0  0  0  0  0   0  0  0  0  0  0   0  0
+G. Hartnett,C        2  0  0  0  0  0   0  0  1  0  0  0   0  0
+Z. Wheat,LF          3  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Carey,CF          3  0  0  0  0  0   0  0  0  1  0  0   0  0
+F. Frisch,3B         3  0  0  0  0  0   0  0  0  0  0  0   0  0
+F. Lindstrom ,SS     1  0  0  0  0  0   0  0  0  0  0  0   0  0
+A. Fletcher,SS       2  0  1  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               28  1  3  0  0  1   1  0  1  2  0  0   0  0
+Pitchers                   NL1916-30
+IP  H  R ER HR BB SO WP HB BK
+D. Luque,L       6.0  6  3  3  0  1  4  0  0  0
+B. Grimes        2.0  1  0  0  0  0  1  0  0  0
+TOTAL            8.0  7  3  3  0  1  5  0  0  0
+Fielders                   NL2006-20
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+B. Harper,RF         4  2  3  0  0  0   0  0  0  1  0  0   0  0
+H. Ramirez,SS        4  1  1  1  0  0   0  0  0  0  0  0   0  0
+A. Pujols,1B         3  0  0  0  0  0   0  0  1  0  0  0   0  0
+G. Stanton,DH        4  0  2  0  0  0   2  0  0  2  0  0   0  0
+C. Yelich,LF         3  0  1  0  0  0   1  0  0  0  0  0   0  0
+D. Wright,3B         3  0  0  0  0  0   0  0  0  1  0  0   0  0
+A. McCutchen ,CF     3  0  0  0  0  0   0  0  0  1  0  0   0  0
+C. Utley,2B          3  0  0  0  0  0   0  0  0  0  0  0   0  0
+Y. Molina,C          3  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               30  3  7  1  0  0   3  0  1  5  0  0   0  0
+Pitchers                   NL2006-20
+IP  H  R ER HR BB SO WP HB BK
+C. Kershaw,W     9.0  3  1  1  1  1  2  0  0  0
+TOTAL            9.0  3  1  1  1  1  2  0  0  0
+6 @ 3 – AL1931-45 @ NL1901-15
+The visitors scrambled to recall injury replacements for Luke Appling and Bill Dickey after boarding a train bound from Boston to the Big Apple. Eventually the skipper got a hold of reserves Cecil Travis and Frankie Hayes and told them to meet the club at the Polo Grounds. When game time arrived, both players were suited up and in the lineup preparing to face “Iron Man” Joe McGinnity, while they were planning to counter with Lefty Grove. Charlie Keller put the visiting team on the scoreboard in the top of the second with a mammoth 530-foot blast to left field after a base hit off the bat of Joe DiMaggio. Travis scored on a single by Hank Greenberg in the third frame and the “Yankee Clipper” delivered another safety to put ducks on the pond for “King Kong” with only one out. Charlie Gehringer evaded the tag on Keller’s sacrifice fly, extending the AL1931-1945 advantage to 4-0. Harlond Clift laced a solid single to left, plating another run. McGinnity got the hook after issuing an intentional pass to Jeff Heath as the NL skipper elected to bring George McQuillan in from the bullpen. Hayes had a chance to put the game out of reach, but he bounced out to shortstop, bringing the rally to an abrupt end. Grove toiled through the third inning. He opened the frame with a walk to Johnny Evers and then yielded consecutive singles to Johnny Kling and Jimmy Sheckard to load the bases. Cy Seymour smacked a hard grounder between the hole at first and second, plating two runs for the National Leaguers. Honus Wagner thrashed a base hit to left, plating Sheckard. “Cactus” Gavvy Cravath rapped into a 6-4-3 double play to suppress the uprising. Ed Konetchy whacked a two-out solo shot into the left-center field bleachers in the fourth, trimming the Americans lead to 5-4. Grove averted potential disaster in the fifth after loading the bases with a single, fielder’s choice and an intentional pass to Wagner with one away. Cravath hit a one-hop bullet back to the box. Grove fired home for the force play, and Hayes relayed to first in plenty of time to complete the 1-2-3 double play! Mel Harder entered the contest in relief of Grove to begin the sixth inning. McQuillan and Harder matched zeroes into the ninth frame. Larry Doyle, batting for Johnny Evers, grounded out to second base for the final out as the AL 1931-1945 squad claimed the win by a one-run margin. In the defeat, McQuillan hurled 6 1/3 innings of 1-hit ball.
+AL1931-45 vs NL1901-15
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL1931-45 0 2 3 0 0 0 0 0 0   5  8  0
+NL1901-15 0 0 3 1 0 0 0 0 0   4  7  2
+WP:Grove                            DPs V: 2
+LP:McGinnity                            H: 3
+SV:Harder                            Time: 4:21.26
+GWRBI:   Keller
+Wind out to left at  3 mph
+How They Scored...
+Top of 2nd
+With McGinnity  Pitching, nobody out,
+Keller hits a 530 ft Home Run
+scoring DiMaggio from 1st.  Score  2 -  0
+Top of 3rd
+With 1 out,
+Greenberg  singles
+scoring Travis from 2nd.  Score  3 -  0
+Keller hits a sacrifice fly
+scoring Gehringer  from 3rd.  Score  4 -  0
+With 2 out,
+Clift singles
+followed by an error by Sheckard
+scoring Greenberg  from 2nd.  Score  5 -  0
+Bottom of 3rd
+With Grove Pitching, 1 out,
+Seymour singles
+scoring Evers from 3rd and Kling from 2nd.  Score  5 -  2
+Wagner singles
+scoring Sheckard from 3rd.  Score  5 -  3
+Bottom of 4th
+With 2 out,
+Konetchy hits a 450 ft Home Run.  Score  5 -  4
+Fielders                   AL1931-45
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+C. Travis,SS         4  1  1  0  0  0   0  0  0  0  0  0   0  0
+C. Gehringer ,2B     4  1  0  0  0  0   0  0  0  0  0  0   0  0
+J. Foxx,1B           4  0  0  0  0  0   0  0  0  1  0  0   0  0
+H. Greenberg ,DH     3  1  1  0  0  0   1  0  0  1  0  0   0  0
+J. DiMaggio,CF       4  1  2  0  0  0   0  0  0  0  0  0   0  0
+C. Keller,LF         3  1  1  0  0  1   3  1  0  0  0  0   0  0
+H. Clift,3B          4  0  3  0  0  0   1  0  0  0  0  0   0  0
+J. Heath,RF          3  0  0  0  0  0   0  0  1  1  0  0   0  0
+E. Averill,C         1  0  0  0  0  0   0  0  0  0  0  0   0  0
+F. Hayes,C           3  0  0  0  0  0   0  0  0  0  0  0   0  0
+R. Ferrell,C         0  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               33  5  8  0  0  1   5  1  1  3  0  0   0  0
+Pitchers                   AL1931-45
+IP  H  R ER HR BB SO WP HB BK
+L. Grove,W       5.0  6  4  4  1  2  0  0  0  0
+M. Harder,S      4.0  1  0  0  0  0  1  0  0  0
+TOTAL            9.0  7  4  4  1  2  1  0  0  0
+Fielders                   NL1901-15
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+J. Sheckard,LF       4  1  1  0  0  0   0  0  0  0  0  0   1  0
+C. Seymour,CF        4  0  1  0  0  0   2  0  0  0  0  0   0  0
+H. Wagner,SS         3  0  2  0  0  0   1  0  1  0  1  0   0  0
+G. Cravath,DH        4  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Zimmerman ,3B     4  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Burkett,RF        4  0  0  0  0  0   0  0  0  0  0  0   0  0
+E. Konetchy,1B       4  1  1  0  0  1   1  0  0  0  0  0   0  0
+L. Doyle,2B          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Evers,2B          2  1  0  0  0  0   0  0  1  0  0  0   1  0
+J. Kling,C           3  1  2  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               33  4  7  0  0  1   4  0  2  1  1  0   2  0
+Pitchers                   NL1901-15
+IP  H  R ER HR BB SO WP HB BK
+J. McGinnity ,L  2.2  7  5  5  1  1  2  0  0  0
+G. McQuillan     6.1  1  0  0  0  0  1  0  1  0
+TOTAL            9.0  8  5  5  1  1  3  0  1  0
+13 @ 5 – NL1961-75 @ AL1946-60
+The NL 1961-1975 crew jumped on Early Wynn for 3 runs in the opening frame of their second round contest. Joe L. Morgan reached on a fielding error by Al Rosen and then pilfered second and third. Hank Aaron drew a two-out walk. Willie McCovey lifted a towering fly ball down the right field line which settled just inside the foul pole and into the third row at old Yankee Stadium for a 322-foot four-bagger. Bob Gibson started the contest for the National Leaguers, staked to a 3-0 lead. “Little Joe” ignited a rally in the top of the third with a single followed by a two-base knock to deep left off the bat of Willie Mays. “Hammerin’ Hank” laced an opposite-field single to drive in Morgan and “Stretch” lofted a sacrifice fly to right, scoring the “Say Hey Kid”. Wynn recovered to strike out Dick Allen but the Nationals extended their advantage to 5-0. Ted Williams served a base hit into left field leading off the bottom of the fourth, which broke up “Gibby’s” no-hit bid. In the fifth frame, “Hammer” blasted a 2-run shot over the center field wall to pad the National Leaguers already comfortable lead to 7-zip. Ellis Kinder sauntered in to relieve Wynn in the top of the sixth. “Hoot” was cruising along with a one-hit shutout through the sixth, but he injured his index finger fielding a comebacker off the bat of “Teddy Ballgame”. Ted W. Abernathy got loose in the bullpen and entered the match in the seventh in Gibson’s place. Abernathy fashioned two scoreless innings and Phil “The Vulture” Regan closed out the game with a 1-2-3 ninth inning as the National Leaguers held the AL 1946-1960 squad to one safety.
+NL1961-75 vs AL1946-60
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1961-75 3 0 2 0 2 0 0 0 0   7  7  0
+AL1946-60 0 0 0 0 0 0 0 0 0   0  1  2
+WP:Gibson                           DPs V: 1
+LP:Wynn                                 H: 1
+Time: 2:28.26
+GWRBI:   McCovey
+Wind out to right at  7 mph
+Bob Gibson was injured. Out  6 games
+How They Scored...
+Top of 1st
+With Wynn Pitching, 2 out,
+McCovey hits a 322 ft Home Run
+scoring Morgan from 3rd and Aaron from 1st.  Score  3 -  0
+Top of 3rd
+With 1 out,
+Aaron singles
+scoring Morgan from 3rd.  Score  4 -  0
+McCovey hits a sacrifice fly
+scoring Mays from 3rd.  Score  5 -  0
+Top of 5th
+With 2 out,
+Aaron hits a 494 ft Home Run
+scoring Morgan from 2nd.  Score  7 -  0
+Fielders                   NL1961-75
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+P. Rose,LF           4  0  0  0  0  0   0  0  0  0  0  0   0  0
+D. Groat,SS          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Morgan,2B         4  3  2  0  0  0   0  0  0  0  2  0   0  0
+W. Mays,CF           4  1  1  1  0  0   0  0  0  0  0  0   0  0
+H. Aaron,DH          3  2  2  0  0  1   3  0  1  0  0  0   0  0
+W. McCovey,1B        3  1  1  0  0  1   4  1  0  0  0  0   0  0
+D. Allen,3B          3  0  0  0  0  0   0  0  1  1  0  0   0  0
+J. Torre,C           1  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Bench,C           3  0  1  0  0  0   0  0  0  1  0  0   0  0
+R. Clemente,RF       4  0  0  0  0  0   0  0  0  1  0  0   0  0
+O. Cepeda,LF         1  0  0  0  0  0   0  0  0  1  0  0   0  0
+M. Wills,SS          2  0  0  0  0  0   0  0  0  0  0  0   0  0
+L. Brock,LF          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               34  7  7  1  0  2   7  1  2  4  2  0   0  0
+Pitchers                   NL1961-75
+IP  H  R ER HR BB SO WP HB BK
+B. Gibson,W      6.0  1  0  0  0  2  3  0  0  0
+T. Abernathy     2.0  0  0  0  0  0  1  0  0  0
+P. Regan         1.0  0  0  0  0  0  0  0  0  0
+TOTAL            9.0  1  0  0  0  2  4  0  0  0
+Fielders                   AL1946-60
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+L. Doby,CF           4  0  0  0  0  0   0  0  0  0  0  0   0  0
+A. Kaline,RF         4  0  0  0  0  0   0  0  0  1  0  0   0  0
+T. Williams,LF       3  0  1  0  0  0   0  0  1  0  0  0   0  0
+A. Rosen,3B          3  0  0  0  0  0   0  0  0  0  0  0   1  0
+Y. Berra,C           3  0  0  0  0  0   0  0  0  0  0  0   0  0
+R. Colavito,DH       3  0  0  0  0  0   0  0  0  2  0  0   0  0
+J. Gordon,2B         1  0  0  0  0  0   0  0  1  1  0  0   0  0
+N. Fox,2B            1  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Vernon,1B         3  0  0  0  0  0   0  0  0  0  0  0   0  0
+P. Rizzuto,SS        2  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Pesky,SS          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               28  0  1  0  0  0   0  0  2  4  0  0   1  0
+Pitchers                   AL1946-60
+IP  H  R ER HR BB SO WP HB BK
+E. Wynn,L        5.0  7  7  4  2  1  2  0  0  0
+E. Kinder        3.0  0  0  0  0  0  0  0  0  0
+M. Parnell       1.0  0  0  0  0  1  2  0  0  0
+TOTAL            9.0  7  7  4  2  2  4  0  0  0
+Round 3
+13 @ 8 – NL1961-75 @ NL1976-90
+Hall of Famers Steve Carlton and Fergie Jenkins took their warm-up tosses at Jarry Park as the third round of the tournament commenced. The visitors placed runners on first and second on base knocks by Pete Rose and Willie Mays in the opening inning, but “Lefty” induced a 6-4-3 double play off the bat of Hank Aaron to quash the threat. Willie McCovey started the second inning off with a bang as he belted a mammoth 537-foot homer beyond the swimming pool over the right field fence. Gary Carter clobbered an off-speed delivery from “Fly” to knot the score at 1-all in the third. Andre “The Hawk” Dawson had to exit the contest after a tailing fastball from Jenkins plunked him in the ribcage with two away in the fifth. Pinch-runner Eric Davis immediately moved into scoring position when he stole second, but Carter grounded out to short and the score remained tied at 1-1. Carlton walked Johnny Bench to start the seventh and Clemente reached on a fielder’s choice when “Lefty” fielded a comebacker but threw late to second base in an attempt to force Bench. Bill Caudill jogged in from the bullpen to extinguish a two-on, no out situation. Willie “Pops” Stargell, batting for Dick Groat, gave Caudill’s heater a good ride but Tony Gwynn flagged it down near the warning track. Rose flew out to Gwynn near the right field line for out #2, leaving the job to Joe L. Morgan. “Little Joe” hit a sharp single between third and short but George Foster quickly retrieved the ball so Bench had to hold up at third. Sacks juiced for the “Say Hey Kid”… Caudill threw four wide to force in the go-ahead run! The skipper called upon Lee Smith and he retired Aaron on a grounder to first base. In the bottom of the eighth, Ozzie Smith legged out an infield hit and Tony Gwynn bounced one towards Orlando Cepeda at first. “Baby Bull” tried to get the lead runner but the “Wizard” slid safely under the tag. Mike G. Marshall got the call with two runners on and two away. Keith Hernandez slapped a hard ground ball to the shortstop, Maury Wills, who fielded and fired in plenty of time to end the threat. Tug McGraw worked around an infield hit to Morgan in the visitor’s ninth. Marshall walked Strawberry with two down in the bottom of the ninth, but pinch-hitter Pedro Guerrero hit an easy two-hopper to Morgan to close out the contest. The #13 seed advanced to the Finals!
+NL1961-75 vs NL1976-90
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1961-75 0 1 0 0 0 0 1 0 0   2  7  0
+NL1976-90 0 0 1 0 0 0 0 0 0   1  3  0
+WP:Jenkins                          DPs V: 0
+LP:Carlton                              H: 2
+SV:Marshall                          Time: 7:22.57
+GWRBI:   Mays
+Wind swirling  at  8 mph
+Andre Dawson was injured. Out  2 games
+How They Scored...
+Top of 2nd
+With Carlton Pitching, nobody out,
+McCovey hits a 536 ft Home Run.  Score  1 -  0
+Bottom of 3rd
+With Jenkins Pitching, 1 out,
+Carter hits a 418 ft Home Run.  Score  1 -  1
+Top of 7th
+With Caudill Pitching, 2 out,
+Mays walks
+scoring Bench from 3rd.  Score  2 -  1
+Fielders                   NL1961-75
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+P. Rose,LF           4  0  1  0  0  0   0  0  0  1  0  0   0  0
+M. Wills,SS          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Morgan,2B         5  0  2  0  0  0   0  0  0  0  0  0   0  0
+W. Mays,CF           4  0  2  0  0  0   1  0  1  0  0  0   0  0
+H. Aaron,DH          4  0  0  0  0  0   0  0  0  0  0  0   0  0
+W. McCovey,1B        3  1  1  0  0  1   1  0  1  2  0  0   0  0
+O. Cepeda,1B         0  0  0  0  0  0   0  0  0  0  0  0   0  0
+L. Brock,1B          0  0  0  0  0  0   0  0  0  0  1  0   0  0
+D. Allen,3B          2  0  0  0  0  0   0  0  2  1  0  0   0  0
+J. Bench,C           3  1  0  0  0  0   0  0  1  0  0  0   0  0
+R. Clemente,RF       4  0  1  0  0  0   0  0  0  0  0  0   0  0
+D. Groat,SS          2  0  0  0  0  0   0  0  0  0  0  0   0  0
+W. Stargell,LF       2  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               34  2  7  0  0  1   2  0  5  4  1  0   0  0
+Pitchers                   NL1961-75
+IP  H  R ER HR BB SO WP HB BK
+F. Jenkins,W     7.1  3  1  1  1  1  4  0  1  0
+M. Marshall,S    1.2  0  0  0  0  1  1  0  0  0
+TOTAL            9.0  3  1  1  1  2  5  0  1  0
+Fielders                   NL1976-90
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+T. Gwynn,RF          4  0  1  0  0  0   0  0  0  0  0  0   0  0
+R. Sandberg,2B       4  0  0  0  0  0   0  0  0  1  0  0   0  0
+K. Hernandez ,1B     4  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Schmidt,3B        3  0  0  0  0  0   0  0  1  2  0  0   0  0
+G. Foster,LF         4  0  0  0  0  0   0  0  0  0  0  0   0  0
+D. Strawberry,DH     3  0  0  0  0  0   0  0  1  1  0  0   0  0
+A. Dawson,CF         1  0  0  0  0  0   0  0  0  0  0  0   0  0
+E. Davis,CF          1  0  0  0  0  0   0  0  0  1  1  0   0  0
+P. Guerrero,CF       1  0  0  0  0  0   0  0  0  0  0  0   0  0
+G. Carter,C          3  1  1  0  0  1   1  0  0  0  0  0   0  0
+O. Smith,SS          3  0  1  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               31  1  3  0  0  1   1  0  2  5  1  0   0  0
+Pitchers                   NL1976-90
+IP  H  R ER HR BB SO WP HB BK
+S. Carlton,L     6.0  5  2  2  1  3  3  0  0  1
+B. Caudill       0.2  1  0  0  0  1  0  0  0  0
+L. Smith         1.1  0  0  0  0  1  1  0  0  0
+T. McGraw        1.0  1  0  0  0  0  0  0  0  0
+TOTAL            9.0  7  2  2  1  5  4  0  0  1
+6 @ 2 – AL1931-45 @ NL2006-20
+Roy Halladay earned the starting assignment against Dizzy Trout in the semifinal matchup at Dodger Stadium. “Doc” allowed a leadoff single to Cecil Travis and subsequently walked Charlie Gehringer, bringing up the heart of the AL1931-1945 batting order in the top of the first. Jimmie Foxx grounded into a 6-4-3 twin-killing and Hank Greenberg skied out to center to avert the potential for a big inning. In the home half of the first, Hanley Ramirez ripped a ground ball single to left with one out. Albert Pujols hit into a fielder’s choice and then Trout issued free passes to Giancarlo Stanton and Christian Yelich to load the bases with two outs. David Wright took an inside curve off the left elbow, forcing in a run. Andrew McCutchen drove a long fly into the left field corner, but Charlie Keller settled under it for the final out. Jeff Heath singled to start the visitor’s third, and he scored all the way from first on a double up the left-center field gap by Travis. Clint Brown entered the match after Trout walked Utley leading off the bottom of the seventh. He struck out pinch-hitter Cody Bellinger then induced a 6-4-3 double play off the bat of Bryce Harper to maintain the tie score. Aroldis Chapman relieved Halladay following a pinch-hit single to center by Earl Averill. Bobby Doerr, batting for Travis, flew out to right-center field. Gehringer hit a slow roller to first which Pujols scooped up and touched the bag to retire the side. Brown served up a gopher ball into the left field bleachers with two outs in the eighth as Stanton golfed a low fastball out of the yard. Joe A. Berry jogged in from the ‘pen and got Yelich to pop up to the catcher, but the NL2006-2020 squad took a 2-1 lead into the ninth. Kenley Jansen trotted in to face Foxx, Greenberg and Joe DiMaggio. “Double X” started the rally with a long single to center and he promptly replaced by pinch-runner Wally Moses. “Hammerin’ Hank” sliced a one-hopper to Pujols who initiated a 3-6-3 double play. “The Yankee Clipper” was thrown out by Hanley Ramirez from deep shortstop on a bang-bang play at first.
+AL1931-45 vs NL2006-20
+1 2 3 4 5 6 7 8 9 x R  H  E
+AL1931-45 0 0 1 0 0 0 0 0 0   1  6  0
+NL2006-20 1 0 0 0 0 0 0 1 x   2  5  0
+WP:Chapman                          DPs V: 2
+LP:Brown                                H: 3
+SV:Jansen                            Time: 0:52.15
+GWRBI:   Stanton
+Wind out to left at  3 mph
+How They Scored...
+Bottom of 1st
+With Trout Pitching, 2 out,
+Wright is hit by a pitch
+scoring Pujols from 3rd.  Score  0 -  1
+Top of 3rd
+With Halladay Pitching, 1 out,
+Travis doubles
+scoring Heath from 1st.  Score  1 -  1
+Bottom of 8th
+With Brown Pitching, 2 out,
+Stanton hits a 344 ft Home Run.  Score  1 -  2
+Fielders                   AL1931-45
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+C. Travis,SS         3  0  2  1  0  0   1  0  0  0  0  0   0  0
+B. Doerr,2B          1  0  0  0  0  0   0  0  0  0  0  0   0  0
+R. Ferrell,C         0  0  0  0  0  0   0  0  0  0  0  0   0  0
+C. Gehringer ,2B     3  0  0  0  0  0   0  0  1  0  0  0   0  0
+J. Foxx,1B           4  0  1  0  0  0   0  0  0  0  0  0   0  0
+W. Moses,1B          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Greenberg ,DH     4  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. DiMaggio,CF       4  0  0  0  0  0   0  0  0  0  0  0   0  0
+C. Keller,LF         2  0  1  0  0  0   0  0  0  0  0  0   0  0
+H. Clift,3B          3  0  0  0  0  0   0  0  0  1  0  0   0  0
+J. Heath,RF          3  1  1  0  0  0   0  0  0  0  0  0   0  0
+E. Averill,C         1  0  1  0  0  0   0  0  0  0  0  0   0  0
+L. Boudreau,SS       0  0  0  0  0  0   0  0  0  0  0  0   0  0
+F. Hayes,C           2  0  0  0  0  0   0  0  0  0  0  0   0  0
+TOTAL               30  1  6  1  0  0   1  0  1  1  0  0   0  0
+Pitchers                   AL1931-45
+IP  H  R ER HR BB SO WP HB BK
+D. Trout         6.0  4  1  0  0  4  3  0  1  0
+C. Brown,L       1.2  1  1  1  1  0  1  0  0  0
+J. Berry         0.1  0  0  0  0  0  0  0  0  0
+TOTAL            8.0  5  2  1  1  4  4  0  1  0
+Fielders                   NL2006-20
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+B. Harper,RF         4  0  0  0  0  0   0  0  0  0  0  0   0  0
+H. Ramirez,SS        4  0  2  0  0  0   0  0  0  0  0  0   0  0
+A. Pujols,1B         4  1  0  0  0  0   0  0  0  0  0  0   0  0
+G. Stanton,DH        2  1  1  0  0  1   1  0  2  0  0  0   0  0
+C. Yelich,LF         3  0  0  0  0  0   0  0  1  0  0  0   0  0
+D. Wright,3B         2  0  2  0  0  0   1  0  0  0  1  0   0  0
+A. McCutchen ,CF     3  0  0  0  0  0   0  0  0  1  0  0   0  0
+C. Utley,2B          2  0  0  0  0  0   0  0  1  0  0  0   0  0
+B. Posey,C           2  0  0  0  0  0   0  0  0  2  0  0   0  0
+Y. Molina,C          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+C. Bellinger ,C      1  0  0  0  0  0   0  0  0  1  0  0   0  0
+TOTAL               27  2  5  0  0  1   2  0  4  4  1  0   0  0
+Pitchers                   NL2006-20
+IP  H  R ER HR BB SO WP HB BK
+R. Halladay      7.1  5  1  1  0  1  1  0  1  0
+A. Chapman,W     0.2  0  0  0  0  0  0  0  0  0
+K. Jansen,S      1.0  1  0  0  0  0  0  0  0  0
+TOTAL            9.0  6  1  1  0  1  1  0  1  0
+Round 4
+13 @ 2 – NL1961-75 @ NL2006-20
+Jacob deGrom and Sandy Koufax were called upon to secure the final victory for their respective teams as the crowd filed into Dodger Stadium. The NL 2006-2020 squad put ducks on the pond against “The Left Arm of God” in the bottom of the second, but he escaped unscathed when Willie McCovey fielded Chase Utley’s hot smash and fired home for a force out followed by a strikeout of Buster Posey. “Stretch” was drilled by a deGrom slider in the fourth inning, knocking the potential tournament MVP out of the contest. To that point, McCovey clubbed three home runs in 10 at-bats while driving in 6 runs. Pujols aka “The Machine” crushed a 492-foot long ball over the wall in left-center to put deGrom and Company ahead by one. In the top of the fifth, Johnny Bench rocked a long two-base hit off the center field fence. Roberto Clemente stroked one of his 4 singles on the day to score Bench with the tying run. Both deGrom and Koufax showed signs of fatigue and they were replaced after seven frames. Craig Kimbrel whiffed two of the three batters that he faced in the top of the eighth. Phil “The Vulture” Regan entered the match in the bottom of the inning and he was greeted by a titanic 484-foot clout, a no-doubter by Kris Bryant to surrender the go-ahead run. Aroldis Chapman came on to close out the game in the ninth. Lou Brock pinch-ran after Clemente slapped a two-out safety to right, but Buster Posey gunned him down attempting to swipe second to seal the 2-1 victory! Jacob deGrom (15 IP, 1 ER) and Willie McCovey (3 HR, 6 RBI) shared Most Valuable Player honors.
+NL1961-75 vs NL2006-20
+1 2 3 4 5 6 7 8 9 x R  H  E
+NL1961-75 0 0 0 0 1 0 0 0 0   1  7  0
+NL2006-20 0 0 0 1 0 0 0 1 x   2  5  0
+WP:Kimbrel                          DPs V: 0
+LP:Regan                                H: 2
+SV:Chapman                           Time: 0:23.46
+GWRBI:   Bryant
+Wind in from left-center at 10 mph
+Willie McCovey was injured. Out  2 games
+How They Scored...
+Bottom of 4th
+With Koufax Pitching, nobody out,
+Pujols hits a 492 ft Home Run.  Score  0 -  1
+Top of 5th
+With deGrom Pitching, nobody out,
+Clemente singles
+scoring Bench from 2nd.  Score  1 -  1
+Bottom of 8th
+With Regan Pitching, nobody out,
+Bryant hits a 484 ft Home Run.  Score  1 -  2
+Fielders                   NL1961-75
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+P. Rose,LF           3  0  0  0  0  0   0  0  0  0  0  0   0  0
+D. Groat,SS          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+J. Morgan,2B         4  0  1  0  0  0   0  0  0  1  0  0   0  0
+W. Mays,CF           4  0  0  0  0  0   0  0  0  2  0  0   0  0
+H. Aaron,DH          3  0  0  0  0  0   0  0  1  0  0  0   0  0
+W. McCovey,1B        0  0  0  0  0  0   0  0  1  0  0  0   0  0
+O. Cepeda,1B         2  0  1  0  0  0   0  0  0  1  0  0   0  0
+D. Allen,3B          4  0  0  0  0  0   0  0  0  2  0  0   0  0
+J. Bench,C           4  1  1  1  0  0   0  0  0  0  0  0   0  0
+R. Clemente,RF       4  0  4  0  0  0   1  0  0  0  0  0   0  0
+L. Brock,RF          0  0  0  0  0  0   0  0  0  0  0  1   0  0
+J. Torre,LF          0  0  0  0  0  0   0  0  0  0  0  0   0  0
+M. Wills,SS          2  0  0  0  0  0   0  0  0  1  0  1   0  0
+B. Williams,LF       0  0  0  0  0  0   0  0  1  0  0  0   0  0
+TOTAL               30  1  7  1  0  0   1  0  3  7  0  2   0  0
+Pitchers                   NL1961-75
+IP  H  R ER HR BB SO WP HB BK
+S. Koufax        7.0  4  1  1  1  3  7  0  0  0
+P. Regan,L       1.0  1  1  1  1  0  0  0  0  0
+TOTAL            8.0  5  2  2  2  3  7  0  0  0
+Fielders                   NL2006-20
+AB  R  H 2B 3B HR RBI SH BB SO SB CS ERR PB
+B. Harper,RF         3  0  0  0  0  0   0  0  1  0  0  0   0  0
+H. Ramirez,SS        4  0  0  0  0  0   0  0  0  0  0  0   0  0
+K. Bryant,3B         4  1  2  1  0  1   1  0  0  1  0  0   0  0
+A. Pujols,1B         3  1  1  0  0  1   1  0  1  1  0  0   0  0
+G. Stanton,DH        3  0  0  0  0  0   0  0  1  1  0  0   0  0
+C. Yelich,LF         4  0  0  0  0  0   0  0  0  2  0  0   0  0
+A. McCutchen ,CF     3  0  1  0  0  0   0  0  0  0  0  0   0  0
+C. Utley,2B          3  0  1  0  0  0   0  0  0  0  0  0   0  0
+B. Posey,C           3  0  0  0  0  0   0  0  0  2  0  0   0  0
+TOTAL               30  2  5  1  0  2   2  0  3  7  0  0   0  0
+Pitchers                   NL2006-20
+IP  H  R ER HR BB SO WP HB BK
+J. deGrom        7.0  6  1  1  0  3  4  0  2  0
+C. Kimbrel,W     1.0  0  0  0  0  0  2  0  0  0
+A. Chapman,S     1.0  1  0  0  0  0  1  0  0  0
+TOTAL            9.0  7  1  1  0  3  7  0  2  0
+Ratings
+Graphics – [4]
+Earl Weaver Baseball II introduced the ability to view the game from innumerable camera angles. The user can choose to zoom in/out, focus on the ball or a specific fielder and adjust the camera angle or position. Alternatively you can turn the Director off which limits the view to the behind the plate / full-batter view (with no runners on base) along with three preset overview cameras. The game features fully animated and fairly representative depictions of the pitchers, fielders, batters and baserunners performing their various tasks. Sliding baserunners kick up dirt, the seams on the ball are visible when the pitch is delivered, umpires signal safe or out. On the downside, the player sizes are sometimes distorted based on the play type or camera angle. In particular I noticed that the catcher emerged in front of home plate on a bunt or slow-moving infield chopper, he appeared to be half the height of the batter-runner. When a fielder attempts to scoop a low throw, they also appear to be smaller than the baserunner. My recollection is that the fielders remain upright on all plays (no diving stops in the infield or all-out attempts to snare drives in the outfield).  The pitcher’s last name, actual ERA and number of pitches thrown appear in the upper-half of the screen upon the start of each at-bat while the batter’s last name, batting average and run rating are displayed at the same time in the lower section.  Then the game status is presented briefly along the bottom of the screen prior to the pitch, consisting of the current score, inning, number of outs, and the ball-strike count. Between innings, the scoreboard appears along with the batters due up in the next half-inning.
+Sound – [3]
+The ballpark organist ripped through “Charge!” and a series of ballpark favorites between innings and during appropriate lulls in the action. A hit batsman provokes a “bonk” sound effect immediately followed by chirping birds. Other in-game sound effects encompass the crack of the bat, ball hitting the glove and umpire calls. Crowd noise is noticeably absent.
+Strategy –
+[4]
+The manager(s) can toggle the following options on or off through the use of the strategy menu: offense – aggressive baserunning, bunt, hit & run, run & hit, take (don’t swing), leadoff, steal second, steal third, steal home, double steal, squeeze, run (on contact from) third; defense – confer (visit mount), guard (the lines), hold, infield shift, infield depth, outfield shift, outfield depth, pitch around, pitch out, charge first, charge third, give run. You can also “Ask Earl” for advice about the current situation or switch to the lineup screen where you select pinch-hitters, pinch-runners, defensive replacements and relievers. You can warm-up relief pitchers and check their status here as well. I found it necessary to manually keep track of my substitutions as I was not prompted between innings if one of my pinch-hitters or pinch-runners were about to play out of position. It is also essential to monitor status of your bullpen as your relievers can become fatigued if you allow them to warm up indefinitely.
+Artificial Intelligence – [5]
+Based on the additional teams that I constructed for my “All-Time” league, I created 8 new manager profiles. The user can modify any of the 19 managerial tendencies utilizing the “quick” and/or “zoom in” options. The quick edit offers a scale of 6 choices: Never, Rarely, Sometimes, Average, Often, Very Often. Zoom-in editing permits more granular selections based on a percentage, inning or rating although I found that Zoom-In caused the game to crash within my DosBox session. The game comes with built-in profiles for several classic managers. The list below indicates the managers that I selected for each All-Time Team and an asterisk denotes the skippers that had pre-configured profiles within EWB II.
+American League All-Time Division
+National League All-Time Division
+AL 1901-1915 – Connie Mack*
+NL 1901-1915 – Fred Clarke
+AL 1916-1930 – Miller Huggins
+NL 1916-1930 – John McGraw*
+AL 1931-1945 – Joe McCarthy*
+NL 1931-1945 – Charlie Grimm*
+AL 1946-1960 – Casey Stengel*
+NL 1946-1960 – Leo Durocher*
+AL 1961-1975 – Al Lopez
+NL 1961-1975 – Walter Alston*
+AL 1976-1990 – Earl Weaver*
+NL 1976-1990 – Davey Johnson
+AL 1991-2005 – Joe Torre
+NL 1991-2005 – Bobby Cox
+AL 2006-2020 – Joe Girardi
+NL 2006-2020 – Tony La Russa
+During my review of the simulated season stats, I noted the over-use of the bullpen staff on several teams, particularly in the teams from the last 5 decades. However it is possible that this trend could be at least partially due to the pitch counts selected in the manager profiles as I configured the managers of the contemporary squads with the setting to remove pitchers after 110 pitches. Moreover I limited most of the active rosters to 4 relievers, thereby restricting the ability of the computer manager to rest his bullpen arms during the course of the season. The All-Time League also utilized the designated hitter in all contests, reducing the need to deploy pinch-hitters.
+Box Score –
+[4]
+The first page encompasses the team names and line score for the contest along with the winning/losing/saving pitchers, double plays, game-winning RBI, time of game, wind speed and direction. A “how they scored” summary shows the inning, event, home run distance (if applicable) and the score of the game after each event occurred. The box score includes all of the standard categories. The offense is listed in their proper batting order. I noticed that pinch-hitters and pinch-runners that are replaced prior to taking the field on defense are incorrectly listed in the defensive position of the player that they substituted for, instead of “PH” or “PR”. Pitchers are enumerated in the order in which they appeared in the ball game as well. Team totals appear at the bottom of each batting and pitching statistical column.
+Rosters –
+[5]
+– Each team has a 25-man active roster and there are no specified rules regarding the number of position players vs. pitchers that you can carry. EWB II incorporates a reserve list for every team with no limits and each league has a free agent pool in which you can add or drop players. The computer managers do not access the reserve list to my knowledge, so adjusting your league rosters to accommodate injuries and ineffective players is a manual process. The user can configure one or two leagues containing one or two divisions with up to 8 teams per division. Players can be traded among teams and a draft function is included as well.
+Statistics – [5] –
+Users have the option to modify their player’s name, primary and secondary positions, batting hand, skin tone, year, ID # and salary. The standard batting, pitching and fielding statistics are adjustable and you may auto-generate or assign various ratings to each player. The ratings are scaled from 1 (worst) to 10 (best) comprising Power, Hit & Run, Bunt, Runs, Range, Arm and Durability for batters while pitchers are evaluated on Speed, Control, Fatigue, Bunt, Hold and Durability. Player’s status can be set to Active, Reserve, Disabled List (DL), Farm, AAA, AA or Free. You have the ability to enter split stats (vs. left-handers and vs. right-handers) to further enhance the realism of simulated seasons. The player editor displays both historical and accumulated statistics for the individual that you’re currently viewing or modifying. Team nicknames can be revised and you may assign a manager and ballpark to specific teams.  The Commissioner’s Disk provides a utility to view or print a variety of reports. You can specify minimum # of at-bats, innings pitched, list length and sort order. Several season disks were available for purchase from Electronic Arts. .
+Usage/Injuries/Ejections
+–
+[4]
+– Players can be injured during the course of the game (based on their injury rating) and fatigue is also a factor for pitchers. Injured players are listed in the lineup screen as “Out for ## Games” while fatigued players are “Resting for ## Games”. You can opt to allow resting and/or injured players to be available through the Ground Rules or Schedule Settings screens. The Durability and Fatigue ratings figure heavily in the number of games each player may be unavailable. The manager will come out to argue close plays, resulting in an animated discussion with the umpire but the skipper and his players cannot be ejected from a ball game. The computer manager will substitute a healthy player from the bench. However the game does not recall players from the reserve list for an extended injury. If you’re so inclined, you will need to monitor and manipulate the extended (reserve) roster while tracking injuries on your own.
+Ballparks / Park Factors – [5] –
+30 current and old-time ballparks come with the game along with 2 fantasy stadiums (Homer Heaven and Weaver Stadium). One of my favorite aspects of the EWB series is the ability to modify the existing parks or create your own park from scratch. This utility allows the user to assign a stadium name, determine if the field is natural grass or artificial turf, indoor (domed) or outdoor construction, alter the fence heights and distances, allocate the dimensions of foul territory, primary color, and the wind characteristics (speed, percentage and prevailing direction). Although park factors are not specifically mentioned in the manual, the physics model does take the dimensions, turf type and wind factors into account.
+Commentary – [1]
+–
+Commentary is limited to the umpire’s calls such as “Ball”, “Strike”, “Out!” and “Outta There!”
+Scale:  Ratings from 1 (worst) to 5 (best)
+Total Score:
+40
+out of 50
+Observations
+Despite the variety of enhancements to its predecessor, EWB II falls a bit short of the extremely high bar set by the original. The resulting effort still has plenty to offer and I highly recommend tracking down this game if you don’t already have it in your software library!
+Please add a comment below if you spent a significant amount of time and/or have any recollections of Earl Weaver Baseball II.
+Screenshots
+Articles in the Series
+Retro Computer Baseball Game Review – Tony La Russa Baseball 3 – 4 – Old Time Baseball
+Retro Computer Baseball Game Review – SSI Computer Baseball
+Retro Computer Baseball Game Review –Computer Statis Pro Baseball
+Retro Computer Baseball Game Review – MicroLeague Baseball
+Retro Computer Baseball Game Review – Avalon Hill Pro Manager / Major League Manager
+Retro Computer Baseball Game Review – Pure-Stat Baseball
+Retro Computer Baseball Game Review – Monday Morning Manager
+Retro Computer Baseball Game Review – Radio Baseball
+Retro Computer Baseball Game Review – Earl Weaver Baseball
+Retro Computer Baseball Game Review – Full Count Baseball
+Retro Computer Baseball Game Review – MicroLeague Baseball II – III – IV
+Retro Computer Baseball Game Review – Tony La Russa’s Ultimate Baseball
+Retro Computer Baseball Game Review – Earl Weaver Baseball II
+Retro Computer Baseball Game Review – APBA Baseball
+Retro Computer Baseball Game Review – Tony La Russa Baseball II
+Retro Computer Baseball Game Review – Front Page Sports Baseball ’94 – ’96 – ’98
+Retro Computer Baseball Game Review – ESPN Baseball Tonight
+Retro Computer Baseball Game Review – Hardball 3-4-5-6
+Retro Computer Baseball Game Review – Pursue the Pennant – Diamond Mind Baseball
+Retro Computer Baseball Game Review – Pro League Baseball
+Additional Links
+Playthrough – HardballRetro
+https://youtu.be/Gh84PQ_NlAc
+SABR Stay at Home – Eddie Dombrower
+https://youtu.be/XEhreQZwOmQ
+Download Derek’s All-Time Rosters for Earl Weaver Baseball II –
+http://www.mediafire.com/folder/jhfkfloqwkfo4/EarlWeaverBaseball2
+Play Earl Weaver Baseball II in your browser! –
+https://archive.org/details/msdos_Earl_Weaver_Baseball_II_1991
+Murray, Rink. “386 Down the Power Alleys: Baseball Simulations Emerge From Spring Training.” PC Magazine. April 28, 1992, p493.
+https://books.google.com/books?id=HERlo0BgpGYC&pg=PT475&dq=pc+magazine+386+apba+baseball+simulation&hl=en&sa=X&ved=2ahUKEwiZipuBgZjoAhUCc98KHcOkDqoQ6AEwAHoECAEQAg#v=onepage&q=pc%20magazine%20386%20apba%20baseball%20simulation&f=false
+Poho, Seth. “Earl Weaver and the Greatest Baseball Game of All-Time.” RO Baseball. January 5, 2017.
+https://medium.com/ro-baseball/earl-weaver-and-the-greatest-baseball-game-of-all-time-e000bd94a92a
+Rogers, Win. “Field of (Weird) Dreams.” Computer Gaming World. Volume 89, December 1991, p16, 18, 20.
+http://www.cgwmuseum.org/galleries/issues/cgw_89.pdf
+https://www.mobygames.com/game/dos/earl-weaver-baseball-ii/
+https://www.youtube.com/watch?v=r2qdhUNkl7E
+Earl Weaver Baseball II, video by Squakenet
+About the Author
+I am a New Jersey native with a passion for baseball, statistics, computers and video games who enjoys spending quality time with his family.
+“
+Hardball Architects – Volume 1 (American League)
+“,
+published in July 2020 and “
+H
+ardball Architects – Volume
+2 (National League)
+”,
+published in April 2022, examine the trades, free agent acquisitions, draft picks and other transactions for the 30 Major League Baseball franchises, divided into a 2-volume set. Both books are available in paperback and digital (Kindle) format at Amazon.com. All key moves are scrutinized for every team and Sabermetric principles are applied to the roster construction throughout the lifetime of the organization to encapsulate the hits and misses by front office executives. Team performances are analyzed based on transaction type with graphs depicting the WAR (Wins Above Replacement) in every decade. Individual results for each player-transaction is charted over the duration of their stint with the franchise. Every team chapter includes All-Time Rosters and Single-Season Leaders based on transaction type. The Team Trade Record chronicles the WAR and WS (Win Shares) accumulated by players acquired in comparison to those traded to opposing teams. The opening chapter is devoted to the Evolution of the General Manager and incorporates a discussion with former Dodgers GM Fred Claire (along with former Angels and Red Sox GM Mike Port and current Reds GM Nick Krall in Volume 2) on a variety of front office topics.
+“
+Hardball Retroactive”,
+published in June 2018, is available in
+paperback
+and digital (
+Kindle
+) format at Amazon.com.
+Hardball Retroactive is a modest collection of selected articles that I have written for Seamheads.com along with my Baseball Analytics blog since 2010. Exclusive content includes the chapter on “Minors vs. Majors” which assesses every franchise’s minor league successes and failures in relation to their major league operations.
+“Hardball Retrospective”
+is available in
+paperback
+and digital (
+Kindle
+) format at Amazon.com.
+Supplemental Statistics, Charts and Graphs
+along with a discussion forum are offered at
+TuataraSoftware.com
+. In Hardball Retrospective, I placed every ballplayer in the modern era (from 1901-present) on their original teams. Using a variety of advanced statistics and methods, I generated revised standings for each season based entirely on the performance of each team’s “original” players. I discuss every team’s “original” players and seasons at length along with organizational performance with respect to the Amateur Draft (or First-Year Player Draft), amateur free agent signings and other methods of player acquisition. Season standings, WAR and Win Shares totals for the “original” teams are compared against the real-time or “actual” team results to assess each franchise’s scouting, development and general management skills.
+Don Daglow (Intellivision World Series Major League Baseball, Earl Weaver Baseball, Tony LaRussa Baseball) contributed the foreword for Hardball Retrospective. The foreword and preview of my book are accessible
+here
+.
+“Hardball Retrospective – Addendum 2014 to 2016”
+supplements my research for Hardball Retrospective, providing retroactive standings based on Wins Above Replacement (WAR) and Win Shares (WS) for each “original” team over the past three seasons (2014-2016). Team totals from 2010 – 2013 are included for reference purposes. “Addendum” is available in
+paperback
+and digital (
+Kindle
+) format at Amazon.com.
+All-Time League – Final Standings (Simulated Season, Second Attempt)
+AL Greats
+W   L   %
+AL1916-30  96  66 .592
+AL1901-15  85  77 .524
+AL1931-45  80  82 .493
+AL1991-05  79  83 .487
+AL2006-20  78  84 .481
+AL1976-90  77  85 .475
+AL1961-75  74  88 .456
+AL1946-60  69  93 .425
+NL Greats
+W   L   %
+NL2006-20  99  63 .611
+NL1991-05  98  64 .604
+NL1916-30  92  70 .567
+NL1976-90  88  74 .543
+NL1901-15  86  76 .530
+NL1961-75  72  90 .444
+NL1946-60  70  92 .432
+NL1931-45  53 109 .327
+All-Time League, Team-by-Team Statistics
+AL1901-15        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+T. Easterly,C *  .244   122  398   40   97   7   0   3   45   18   31   8
+J. Clarke,C *    .178    64  169   13   30   2   3   1   12   15   24   0
+H. Davis,1B      .220   162  592   46  130  17   3   5   73   23   70  15
+S. McInnis,1B    .231    20   13    2    3   0   0   0    2    2    0   0
+N. Lajoie,2B     .340   161  645   83  219  20   6   8  118    8   13  17
+E. Collins,2B*   .288   162  618   95  178   9   5   5   74  103   30  42
+H. Baker,3B*     .277   162  599   62  166  20   2   9   89   58   44  18
+B. Bradley,3B    .344    31   32    5   11   3   1   0    5    2    5   0
+J. Collins,3B    .308    12   13    0    4   1   0   0    2    3    1   1
+G. Davis,SS#     .242   117  359   50   87   3   1   0   24   62   26  21
+D. Bush,SS#      .253    52  166   16   42   3   0   1   10   24   18  10
+T. Cobb,CF*      .350   162  649  106  227  14   9   6  111   51   54  59
+J. Jackson,RF*   .309   162  674  107  208  11   6   5   63   53   55  50
+S. Crawford,RF*  .400    54   60   10   24   0   1   1    4    4    2   1
+G. Stone,LF*     .320   162  607   64  194  13   0   3   52   27   35  40
+E. Flick,CF*     .154    15   13    2    2   0   0   0    1    1    1   0
+M. McIntyre,LF*  .000     3    3    1    0   0   0   0    0    1    0   0
+Total Stats         .289  1623 5610  702 1622 123  37  47  685  455  409 282
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+W. Johnson      16  12   0  3.13    250.0  33  238   87  22   85  150
+J. Chesbro      11  11   0  2.96    243.0  33  231   80  24   99  118
+C. Young        11  12   0  3.41    242.2  32  251   92  27   61   81
+R. Waddell *    14   9   0  3.16    236.0  32  247   83  23   89  149
+J. Coombs       13  10   1  3.12    238.2  31  218   83  31  121  128
+J. Wood          2   7   5  3.77     59.2   1   68   25   8   24   46
+E. Walsh        12  10  10  3.47     98.1   0  106   38  14   39   46
+R. Russell *     6   6  10  3.51    105.0   0  111   41  14   47   40
+Total Stats        85  77  26  3.23   1473.1 162 1470  529 163  565  758
+AL1976-90        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+C. Fisk,C        .226   162  557   55  126   6   0  18   49   54   99   1
+L. Parrish,C     .333     4    3    0    1   0   0   0    1    0    0   0
+D. Mattingly     .316    14   19    1    6   0   0   1    3    0    1   0
+E. Murray,1B#    .261   162  563   63  147   8   1  13   57   80   81   0
+L. Whitaker,2B*  .400    26   20    6    8   0   0   0    3    1    1   0
+W. Randolph,2B   .252   162  635   81  160  11   0   5   61   98   77  15
+B. Grich,2B      .000     1    1    0    0   0   0   0    0    0    1   0
+G. Brett,3B*     .283   162  626   77  177  23   2  13   95   66   34  10
+W. Boggs,3B*     .227    21   22    3    5   0   0   0    0    4    1   0
+R. Yount,SS      .364     9   11    3    4   0   0   0    2    0    2   1
+A. Trammell,SS   .250    17   16    8    4   0   0   2    5    1    3   0
+C. Ripken,SS     .276   162  653   64  180  12   2  17   73   30  111   0
+J. Canseco,RF    .273   162  615   81  168  16   1  22  114   70  145  24
+R. Henderson     .244   162  660  106  161   5   0  15   49   89   70  45
+J. Rice,LF       .238   162  596   57  142   7   2  22   65   38  131   1
+R. Jackson,RF*   .207   162  603   69  125   4   1  29   79   75  137   0
+Total Stats         .253  1550 5600  674 1414  92   9 157  656  606  894  97
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+R. Clemens      10  19   0  4.28    203.2  33  214   97  32  104  116
+R. Guidry *     15  12   1  2.93    233.0  33  208   76  26   83  156
+B. Saberhagen    9  12   0  3.93    187.1  32  195   82  26   58   99
+F. Viola *       8  10   0  3.81    184.0  31  186   78  29   57  100
+D. Stieb         8  11   0  4.49    186.1  31  221   93  29   96   89
+M. Eichhorn      6   7   6  2.91    179.1   2  162   58  28   61  124
+D. Quisenbrry    6   5  13  2.96     91.0   0   89   30   9   38   39
+R. Gossage       6   3   4  4.15     86.2   0   86   40  12   44   47
+R. Fingers       9   6   3  2.09    124.2   0   97   29  11   38   47
+Total Stats        77  85  27  3.55   1476.0 162 1458  583 202  579  817
+AL1931-45        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+B. Dickey,C *    .269   162  554   72  149   3   1  22   68   48   29   0
+R. Ferrell,C     .310    26   42    4   13   0   0   1    1    2    3   0
+J. Foxx,1B       .304   162  611  107  186  11   3  54  122   91  118   0
+H. Greenberg     .237   162  600   76  142   9   1  33   94   78  127   0
+C. Gehringer     .266   162  635   74  169  12   1   4   52   77   37   0
+B. Doerr,2B      .250    13    8    2    2   0   0   0    0    0    0   0
+H. Clift,3B      .269   162  516   75  139   4   1  28   67   91   69   0
+R. Rolfe,3B*     .231    11   13    2    3   0   0   0    1    1    0   0
+L. Appling,SS    .248   162  660   55  164   7   2   2   50   71   35   0
+L. Boudreau,SS   .211    21   19    3    4   1   0   0    2    1    1   0
+J. DiMaggio,CF   .246   162  610   66  150   7   2  21   68   39   42   0
+E. Averill,CF*   .393    25   28    3   11   3   0   0    4    3    0   0
+J. Heath,RF*     .275   162  550   69  151  16   0  17   74   42   84   4
+B. Johnson,LF    .273    26   11    5    3   0   0   0    0    4    1   0
+C. Keller,LF*    .199   162  539   62  107   4   1  21   59   79   73   1
+W. Moses,RF*     .333    18    6    2    2   1   0   0    0    0    0   0
+Total Stats         .258  1598 5402  677 1395  78  12 203  662  627  619   5
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+H. Newhouser    16  10   0  2.27    233.2  33  225   59   9   98  116
+L. Grove *      12  11   0  3.52    196.2  32  204   77  18   69   86
+D. Trout        11  14   0  3.44    216.2  32  238   83  15   91   91
+L. Gomez *      14   7   0  2.67    208.1  32  206   62  15   84   93
+W. Ferrell       9  20   0  5.12    191.1  32  235  109  25   80   75
+M. Harder        4   7  17  4.84    117.0   1  151   63  23   43   56
+S. Rowe          2   2   4  4.82     50.1   0   82   27   6   24   30
+C. Brown         2   0   1  6.35     17.0   0   22   12   2    8    6
+J. Berry        10  11   9  3.44    206.1   0  200   79  16   74   87
+Total Stats        80  82  31  3.58   1437.1 162 1563  571 129  571  640
+AL1991-05        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+I. Rodriguez     .240   162  570   53  137   7   0  14   55    9   68   5
+J. Posada,C #    .350    10   20    0    7   0   0   0    2    4    4   0
+F. Thomas,1B     .229   162  616   74  141   6   2  26   81   92  111   0
+J. Giambi,1B*    .400     3    5    0    2   0   0   0    1    0    1   0
+R. Palmeiro,1B*  .000    15    2    0    0   0   0   0    0    0    1   1
+R. Alomar,2B#    .278   162  634   91  176  10   3  16   70   96  124  15
+C. Baerga,2B#    .000     3    0    1    0   0   0   0    0    0    0   0
+T. Glaus,3B      .000    13    7    2    0   0   0   0    0    1    4   0
+J. Thome,3B*     .223   162  543   72  121   5   1  18   55  100  174   0
+A. Rodriguez     .262   162  625   80  164  12   1  30   82   39  118  35
+M. Tejada,SS     .000     2    0    0    0   0   0   0    0    0    0   0
+K. Griffey,CF*   .240   162  638   84  153   9   2  40  100   57  145   2
+A. Belle,LF      .234   162  633   75  148   6   0  39   91   49  112   0
+M. Ramirez,RF    .250   162  551   63  138   6   1  27   73   71  172   0
+E. Martinez,DH   .000     0    0    0    0   0   0   0    0    0    0   0
+I. Suzuki,RF*    .312   162  709   73  221   4   0   8   50   28   65  10
+Total Stats         .254  1504 5553  668 1408  65  10 218  660  546 1099  68
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+P. Martinez      4  15   0  4.08    200.2  33  214   91  36   56  135
+J. Santana *    13  11   0  3.43    183.2  33  175   70  27   68  116
+M. Mussina      16  11   0  3.86    205.0  32  215   88  21   68   91
+P. Hentgen      11  13   0  4.02    192.1  32  202   86  32   80   95
+K. Appier       12  13   0  4.40    184.0  32  180   90  25   96   96
+M. Rivera       12   7  25  2.66    209.0   0  186   62  22   72  144
+R. Hernandez     3   4   1  3.30     92.2   0   89   34  13   48   61
+K. Foulke        5   2   2  3.11     98.1   0   83   34  13   25   66
+J. Mesa          3   7   3  3.85     93.1   0  109   40  16   41   56
+Total Stats        79  83  31  3.67   1459.0 162 1453  595 205  554  860
+AL1946-60        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+Y. Berra,C *     .308   162  634   70  195   8   7  17   87   41   16   0
+S. Lollar,C      .217    15   23    1    5   0   0   0    2    1    1   0
+M. Vernon,1B*    .286   162  581   61  166   9   2   4   44   44   72   1
+F. Fain,1B*      .571    11   14    2    8   0   0   0    1    1    0   0
+J. Gordon,2B     .210   162  599   67  126   6   2  22   54   47   82   0
+N. Fox,2B*       .333    26   15    2    5   0   0   0    1    2    1   0
+A. Rosen,3B      .279   162  645   84  180   5   0  40  105   69   54   0
+G. Kell,3B       .100     6   10    0    1   0   0   0    0    0    0   0
+P. Rizzuto,SS    .279   162  551   69  154   5   4   7   50   65   55   0
+J. Pesky,SS*     .111    14    9    0    1   0   0   0    0    1    2   0
+T. Williams,LF*  .274   162  588   87  161   5   1  33   97  115   62   0
+R. Colavito,RF   .230   162  601   65  138   4   1  30   80   60  137   0
+M. Minoso,LF     .238    35   21    5    5   1   0   0    2    2    1   0
+L. Doby,CF*      .251   162  645   97  162   9   3  27   97   89  104   0
+A. Kaline,RF     .283   162  682   79  193   5   3  11   54   64   87   0
+D. DiMaggio,CF   .217    25   23    2    5   0   0   0    0    1    4   0
+Total Stats         .267  1590 5641  691 1505  57  23 191  674  602  678   1
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+B. Feller       10  15   0  3.97    231.0  33  241  102  26  119  125
+E. Wynn          5  16   0  4.33    197.1  33  208   95  30   99   98
+M. Parnell *    11  13   0  3.42    215.2  32  208   82  24  103  103
+B. Pierce *     11  12   0  4.49    202.1  32  224  101  30   94  108
+B. Shantz *     11  11   0  3.32    219.1  32  213   81  23   85  107
+J. Bunning       2   3   1  4.55     59.1   0   74   30   7   32   19
+E. Kinder        4   9   9  4.63     87.1   0   88   45  10   51   28
+J. Page *        6  10  13  4.98    104.2   0  111   58  13   72   61
+S. Paige         9   4   7  4.27    151.2   0  152   72  16   91   99
+Total Stats        69  93  30  4.08   1468.2 162 1519  666 179  746  748
+AL2006-20        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+J. Mauer,C *     .297   162  535   68  159   6   1  10   52   68   58   0
+Y. Gomes,C       .171    27   41    4    7   1   0   1    5    3   11   0
+D. Ortiz,1B*     .208   162  606   83  126   5   0  39   95   91  144   0
+C. Davis,1B*     .222    13    9    3    2   1   0   0    1    1    4   0
+J. Abreu,1B      .268   162  641   70  172   8   1  25   79   40  162   0
+J. Altuve,2B     .288    61   52    9   15   0   0   1    5    5    7   0
+R. Cano,2B*      .278   162  615   67  171   6   1  12   50   49   68   0
+M. Cabrera,3B    .284   162  666   74  189  11   0  30  103   43  147   0
+J. Donaldson     .200     6    5    1    1   0   0   1    2    1    2   0
+E. Longoria,3B   .273    22   11    4    3   0   0   1    2    0    1   0
+D. Jeter,SS      .261   162  547   73  143  10   4   9   56   50  104   9
+C. Correa,SS     .261    17   23    3    6   0   0   0    0    3    6   0
+M. Betts,RF      .266   162  665   91  177  16   1  31  100   63  126   8
+J. Bautista,RF   .222    58   54    8   12   0   0   2    7    7   13   0
+M. Trout,CF      .261   162  631   97  165   9   3  21   71   99  180   4
+C. Crawford,LF*  .287   162  550   62  158  14   3   9   77   28  104  10
+Total Stats         .267  1662 5651  717 1506  87  14 192  705  551 1137  31
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+J. Verlander    11  12   0  3.82    185.2  33  191   79  29   75   92
+C. Kluber       10  16   0  5.11    170.2  33  192   97  35   80  109
+Z. Greinke       9   9   0  3.65    172.1  32  188   70  19   81  103
+C. Lee *        11  12   0  3.07    190.0  32  196   65  25   50  111
+G. Cole          9  11   0  5.68    153.2  32  168   97  44   75  112
+Z. Britton *     5   7   8  3.89    141.0   0  141   61  12   52  104
+F. Rodriguez     8   6   1  7.19     76.1   0   91   61  12   53   54
+J. Nathan        6   6   3  2.26    194.2   0  154   49  18   79  156
+J. Papelbon      9   5  14  2.67    168.0   0  152   50  11   50  113
+Total Stats        78  84  26  3.90   1452.1 162 1473  629 205  595  954
+AL1916-30        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+M. Cochrane,C *  .276   122  442   27  122   9   0   3   48   41   22   0
+W. Schang,C #    .252    49  151   20   38   3   1   2   17   25   11   0
+L. Gehrig,1B*    .319   162  611  102  195  11   0  39  157   94   81   0
+G. Sisler,1B*    .360   162  684  137  246  22   2   7   90   56   18  36
+T. Lazzeri,2B    .311   162  621   69  193  15   4  15   86   54   62   0
+D. Pratt,2B      .999     3    1    2    1   0   0   0    0    0    0   0
+W. Kamm,3B       .270    44  148   24   40   3   1   2   15   19   19   1
+O. Bluege,3B     .217   120  433   51   94   7   1   0   22   29   24   2
+J. Cronin,SS     .291   162  609   69  177  10   2   9   69   49   35   0
+J. Sewell,SS*    .000     3    2    0    0   0   0   0    0    0    0   0
+B. Ruth,RF*      .303   162  617  127  187   9   1  50  149  110  111   0
+A. Simmons,LF    .239   162  633   84  151  14   1  32  114   38   47   1
+H. Heilmann,RF   .769    13   13    7   10   0   0   1    2    0    0   0
+T. Speaker,CF*   .310   162  675  129  209  19   4  14   69   83   20   0
+G. Goslin,LF*    .167    14   18    1    3   1   0   0    2    1    1   0
+H. Manush,LF*    .571    11   14    5    8   0   0   0    5    0    0   0
+E. Combs,CF*     .500    11    6    2    3   0   0   1    4    0    0   0
+Total Stats         .295  1524 5678  856 1677 123  17 175  849  599  451  40
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+E. Cicotte      20   7   0  2.85    236.1  33  226   75  23   98  128
+R. Faber        21   8   0  2.94    238.2  33  235   78  23   88   86
+G. Uhle         14  10   0  4.33    224.1  32  246  108  21  101  104
+J. Bagby        10  12   0  3.60    202.0  32  218   81  26   77   53
+S. Coveleski    13  13   0  3.37    229.1  32  236   86  23   89   76
+F. Marberry      3   5   6  3.24     94.1   0   96   34  10   30   32
+G. Braxton *     8   8  13  2.98     99.1   0   93   33   9   39   63
+D. Danforth *    7   3  12  3.61    122.0   0  117   49  11   53   61
+Total Stats        96  66  31  3.39   1446.1 162 1467  544 146  575  603
+AL1961-75        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+E. Howard,C      .314    54  159   14   50   1   2   6   17    9   19   0
+T. Munson,C      .295   121  424   52  125   1   0   7   24   12   43   0
+N. Cash,1B*      .316   123  437   82  138   6   3  15   67   97   67   0
+B. Powell,1B*    .200     5    5    0    1   0   0   0    0    1    0   0
+R. Carew,2B*     .307   162  693  113  213   9   1  17   57   67   57  15
+H. Killebrew     .211    53  142   19   30   1   0   7   22   39   20   0
+B. Robinson,3B   .246   162  589   60  145   7   2  19   57   38   69   0
+R. Petrocelli    .240   162  596   79  143   5   2  36   91   73   79   0
+B. Campaneris    .000    17    3    1    0   0   0   0    0    0    1   0
+M. Mantle,CF#    .205   162  599   87  123   7   2  32  100  113  158   1
+F. Robinson,RF   .255   162  599   84  153   9   1  34  114   70   91   0
+C. Yastrzmski    .276   162  612   87  169   9   1  31  118   79   85   0
+T. Oliva,RF*     .000     9    8    1    0   0   0   0    0    1    1   0
+R. Maris,RF*     .201   162  587   79  118   3   0  34   85   71   67   0
+R. White,LF#     .100    21   10    1    1   0   0   0    0    1    1   0
+P. Blair,CF      .000     8    3    1    0   0   0   0    0    0    0   0
+Total Stats         .258  1545 5466  760 1409  58  14 238  752  671  758  16
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+G. Perry        14  11   0  4.44    235.0  33  254  116  32  100  100
+J. Palmer        9  16   0  4.37    228.1  32  251  111  46   63  110
+D. McLain       16  10   0  3.60    227.1  32  223   91  34   72  119
+B. Blyleven      6  18   0  4.72    196.1  32  247  103  36   87  118
+S. McDowell *   11  19   0  5.01    204.2  32  213  114  41   92  138
+D. Chance        4   2   4  2.91     89.2   0   68   29   8   34   55
+D. Radatz        5   3   1  3.91     62.0   0   67   27   8   31   45
+R. Perranoski    5   2   5  3.14    108.2   0  103   38   5   50   55
+J. Hiller *      4   7  15  3.53     84.0   1   89   33  13   35   61
+Total Stats        74  88  25  4.15   1436.0 162 1515  662 223  564  801
+NL1961-75        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+J. Bench,C       .266   162  593   79  158  10   1  30   79   37  104   0
+W. McCovey,1B*   .252   162  556   87  140  10   0  29   81  120   98   0
+O. Cepeda,1B     .220    47   41    4    9   0   0   2    6    2    8   0
+J. Morgan,2B*    .263   162  619  101  163  19   0   9   60  101   83  27
+J. Torre,3B      .043    23   23    1    1   0   0   0    0    3    3   0
+R. Santo,3B      .174    25   23    2    4   0   0   1    2    3    8   0
+D. Allen,3B      .248   162  625   62  155   9   3  23   66   38  140   0
+M. Wills,SS#     .266   124  376   43  100   6   0   1   28   19   32  23
+D. Groat,SS      .302    75  182   14   55   2   1   0   12   12   15   0
+W. Mays,CF       .252   162  634   83  160   6   1  38  116   67  106   0
+H. Aaron,RF      .245   162  608   82  149   6   3  31   99   62   93   0
+W. Stargell,LF*  .267    11   15    3    4   0   0   2    6    0    2   0
+B. Williams,LF*  .417    12   12    2    5   0   0   1    4    2    1   0
+R. Clemente,RF   .334   162  580   63  194   8   4  19   74   31  108   0
+L. Brock,LF*     .200    47   35    5    7   0   0   0    0    3    9   2
+P. Rose,LF#      .307   162  678   73  208   7   0   7   55   47   39   0
+Total Stats         .270  1660 5600  704 1512  83  13 193  688  547  849  52
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+S. Koufax *      9  10   0  3.47    184.0  33  168   71  23   72  137
+B. Gibson       11  12   0  3.56    192.0  33  195   76  27   62  118
+F. Jenkins       8  14   0  6.15    146.1  32  195  100  27   60   93
+J. Marichal     11  10   0  3.56    176.2  32  193   70  18   66   84
+D. Drysdale     11  14   0  4.54    160.1  32  186   81  19   61   92
+M. Marshall      3   5   8  4.37     92.2   0   97   45  14   51   63
+T. Abernathy    12   8  12  2.90    251.1   0  222   81  27  133  139
+D. Selma         1  11   9  4.97     97.2   0  108   54  13   62   65
+P. Regan         6   6   8  3.78    150.0   0  162   63  18   43   70
+Total Stats        72  90  37  3.98   1451.0 162 1526  641 186  610  861
+NL1901-15        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+R. Bresnahan     .229   128  402   35   92   6   0   1   49   47   77  26
+J. Kling,C       .260    55  146   21   38   0   0   3   16   13   17   8
+F. Chance,1B     .241   135  386   52   93   5   2   0   29   57   45  43
+E. Konetchy,1B   .223    60  157   16   35   3   0   4   18   13   19   4
+L. Doyle,2B*     .267   162  562   55  150  18   3   5   50   54   53  44
+J. Evers,2B*     .265    27   34    1    9   0   0   0    2    1    1   2
+H. Zimmerman     .274   162  649   62  178  12   1   9   67   22   97  26
+A. Devlin,3B     .294    15   17    1    5   0   0   0    0    1    2   4
+H. Wagner,SS     .314   162  649   65  204  23   4   8   94   40   37  60
+J. Tinker,SS     .182     8   11    2    2   0   0   0    2    0    1   1
+C. Seymour,CF*   .255   162  652   75  166  12   4   4   79   34   45  37
+J. Burkett,LF*   .310   162  574   58  178   7   5   5   60   47   93  26
+J. Sheckard,LF*  .272   162  622   99  169   6   4   8   64   75   69  89
+S. Magee,LF      .271    52   59   10   16   0   0   1    7    8    3   5
+H. Lumley,RF     .212    30   33    1    7   0   0   0    4    0   10   1
+G. Cravath,RF    .195   162  579   64  113  10   1   9   61   75  119   3
+T. Leach,CF      .250    11    8    2    2   0   0   0    2    1    1   1
+Total Stats         .263  1655 5540  619 1457 102  24  57  604  488  689 380
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+C. Mathewson    16  11   0  2.60    259.1  33  247   75  33   73  164
+J. McGinnity     6  15   0  4.29    226.1  33  261  108  36   99  111
+J. Taylor       16  10   0  2.80    263.1  32  241   82  33   76   88
+N. Hahn *       19   9   0  3.25    252.0  32  253   91  25   88   69
+G. McQuillan     3  10  11  3.92    149.0   2  155   65  11   63   45
+B. James         1   0   0  4.86     16.2   0   21    9   4   10    7
+B. Adams *      14  14   0  3.01    221.0  30  209   74  23   66  100
+M. Brown        11   7  13  2.29     98.0   0   93   25   6   42   48
+Total Stats        86  76  24  3.20   1485.2 162 1480  529 171  517  632
+NL1931-45        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+E. Lombardi,C    .306   122  431   49  132  10   1  11   53   23   13   0
+H. Danning,C     .223    62  175    8   39   1   0   0    6    3   23   0
+D. Camilli,1B*   .209   162  569   61  119   5   0  22   57   86  154   0
+E. Fletcher,1B*  .217    31   23    2    5   0   0   1    4    5    6   0
+B. Herman,2B     .270   162  564   58  152  14   0   3   58   23   25   0
+L. Frey,2B*      .348    37   23    5    8   0   0   0    0    5    1   0
+P. Martin,3B     .278   162  586   71  163  16   1   6   47   35   44   3
+S. Hack,3B*      .304    47   46    8   14   0   0   1    2    3    7   0
+A. Vaughan,SS*   .296   162  636   93  188  10   2  16   67   92   21   0
+D. Bartell,SS    .320    30   25    4    8   1   0   1    1    3    3   0
+J. Medwick,LF    .267   162  648   64  173  17   2  15   68   20   67   1
+M. Ott,RF*       .279   161  591   87  165   5   3  30  103   90   33   1
+P. Waner,RF*     .312   162  658   78  205  14   8   5   75   69   23   0
+P. Reiser,CF*    .229    66   48    3   11   2   0   0    8    2   10   0
+W. Berger,CF     .203   162  650   59  132   9   1  24   85   29  103   0
+A. Galan,LF*     .250    18   12    2    3   1   0   0    3    1    0   0
+Total Stats         .267  1708 5685  652 1517 105  18 135  637  489  533   5
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+C. Hubbell *    10  16   0  4.25    234.2  33  283  111  24   73  100
+B. Walters      10  18   0  3.93    258.2  33  262  113  35  123  115
+D. Dean          5  17   0  5.16    188.1  32  243  108  31   81   99
+B. Lee           6  20   0  3.62    203.2  31  209   82  34   79   79
+L. Warneke       6  22   1  5.81    235.1  31  301  152  32   94   99
+W. Hoyt          2   4   3  4.84     52.0   2   66   28   7   17   32
+C. Davis         1   2   2  4.71     76.1   0   95   40  14   39   38
+A. Adams         6   5   0  5.13    128.0   0  158   73  25   63   52
+A. Karl          7   5   7  4.17     77.2   0  105   36  11   31   34
+Total Stats        53 109  13  4.60   1454.2 162 1722  743 213  600  648
+NL1946-60        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+R. Campanella    .239   162  545   61  130   7   0  29   78   59   74   0
+W. Cooper,C      .244    55   41    9   10   1   0   1    3    2    4   0
+T. Kluszewski    .333    14   12    2    4   0   0   1    4    0    1   0
+J. Mize,1B*      .234   162  560   62  131   6   0  30   77   47   39   0
+G. Hodges,1B     .222   162  531   54  118   4   1  26   66   48   72   0
+J. Robinson,2B   .283   162  660  109  187   6   2  11   33   72   28   0
+R. Schndienst    .429     9    7    0    3   0   0   0    0    0    1   0
+E. Mathews,3B*   .263   162  578   88  152   8   0  40   83   69   86   0
+B. Elliott,3B    .545    16   11    2    6   0   0   0    1    3    1   0
+E. Banks,SS      .244   162  671   83  164  15   1  43  110   36  129   0
+P. Reese,SS      .300    18   10    2    3   0   0   0    0    0    1   0
+S. Musial,RF*    .295   162  672  102  198  16   1  31   98   54   30   0
+D. Snider,LF*    .252   162  592   73  149   9   2  30   90   59  108   0
+R. Kiner,LF      .224   162  548   73  123   3   1  28   73   94   72   0
+R. Ashburn,CF*   .302    66   43    8   13   0   0   2    4    9    8   0
+E. Slaughter     .355    43   31    3   11   1   0   0    2    4    1   0
+Total Stats         .254  1679 5512  731 1402  76   8 272  722  556  655   0
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+R. Roberts       7  13   0  4.27    202.0  33  241   96  29   64   80
+W. Spahn *      15  11   0  4.32    216.1  33  236  104  20   83   99
+H. Brecheen     16  10   0  3.75    225.1  32  238   94  28   87  117
+J. Sain          4  20   0  5.02    177.1  32  224   99  28   91   71
+E. Blackwell    10  15   1  5.00    206.2  31  246  115  34   94  132
+H. Wilhelm       9   3  10  3.45     93.2   0   91   36  13   28   54
+J. Konstanty     1  14   1  5.47    113.1   0  140   69  21   60   44
+L. McDaniel      4   2   6  2.66     91.1   0   79   27   8   36   58
+R. Face          4   4   9  3.26    115.2   1  121   42  17   39   83
+Total Stats        70  92  27  4.26   1441.2 162 1616  682 198  582  738
+NL1976-90        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+B. Santiago,C    .174    23   23    2    4   0   0   1    3    0    4   0
+G. Carter,C      .185   162  523   48   97   6   0  10   57   52   79   0
+K. Hernandez     .315   162  639   87  201  12   5   9   78   76   94   0
+W. Clark,1B*     .133    19   15    2    2   0   0   1    2    2    5   0
+R. Sandberg,2B   .236   162  685   74  162  20   2  10   77   46  166  22
+M. Schmidt,3B    .209   162  612   84  128  14   3  31  109   62  145   0
+O. Smith,SS#     .286   162  500   73  143   5   2   2   44   63   35   5
+D. Concepcion    .150    24   20    0    3   0   0   0    0    0    7   0
+E. Davis,CF      .234    75  175   28   41   0   1  12   23   21   53   8
+D. Strawberry    .216   162  547   81  118   9   1  24   64   94  143  20
+G. Foster,LF     .309   162  632   77  195  11   1  30  103   46  111   2
+T. Gwynn,RF*     .341   162  671   88  229   8   4   4   70   64   50  29
+P. Guerrero,LF   .222    35   36    5    8   2   0   2    9    1    6   0
+T. Raines,LF#    .306    55   49    4   15   1   0   0    0    9    8   4
+A. Dawson,CF     .276   129  453   51  125  12   5  11   50   14   98  20
+Total Stats         .264  1656 5580  704 1471 100  24 147  689  550 1004 110
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+D. Gooden        7  17   0  4.05    222.0  33  214  100  36   78  142
+T. Seaver       16  12   0  3.37    216.0  32  218   81  33  101  119
+S. Carlton *    16   8   0  3.53    221.1  33  210   87  18   96  143
+O. Hershiser    11  12   0  3.39    209.1  32  212   79  31   93  113
+P. Niekro        3   0   2  1.82     24.2   0   10    5   1    7   21
+M. Scott        13  10   0  3.09    209.1  32  186   72  23   85  121
+B. Caudill       0   0   0  7.94      5.2   0    7    5   1    2    3
+B. Sutter        6  11  18  3.60    129.2   0  137   52  21   55   96
+L. Smith         8   1   7  3.36     88.1   0   93   33  11   44   54
+T. McGraw *      8   3   7  3.24    138.2   0  140   50  17   49   73
+Total Stats        88  74  34  3.46   1465.0 162 1427  564 192  610  885
+NL1991-05        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+M. Piazza,C      .300   162  590   92  177   5   2  30   82   58   94   0
+J. Kendall,C     .385    35   39    6   15   1   0   0    4    2    6   0
+J. Bagwell,1B    .264   162  602   96  159   9   0  29   70   57  113   4
+M. McGwire,1B    .235   161  592   99  139   4   0  49  131  123  204   0
+T. Helton,1B*    .222    16    9    1    2   0   0   1    3    4    3   0
+J. Kent,2B       .345    22   29    3   10   3   0   0    4    3    7   0
+C. Biggio,2B     .271   162  709   90  192  23   3  13   93   57  157  17
+C. Jones,3B#     .272   162  651  113  177  11   0  26   97  105  110   3
+K. Caminiti,3B#  .000    11    9    2    0   0   0   0    0    0    3   0
+M. Williams,3B   .286     8    7    0    2   0   0   0    0    0    2   0
+B. Larkin,SS     .225   162  537   91  121   9   2  10   48   84   59  12
+B. Bonds,LF*     .228   162  593  123  135   3   1  61  135  142  116   0
+S. Sosa,RF       .237   162  628   97  149   8   1  48  123   72  174   0
+J. Edmonds,CF*   .253   162  561   84  142  12   0  38   99   81  172   0
+A. Jones,CF      .000     7    6    1    0   0   0   0    0    1    3   0
+Total Stats         .255  1556 5562  898 1420  88   9 305  889  789 1223  36
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+G. Maddux       21   5   0  2.15    225.1  33  191   54  20   56  128
+R. Johnson *    15   8   0  3.27    203.1  33  192   74  31   71  147
+C. Schilling    14  13   0  4.64    178.1  31  196   92  32   64  123
+K. Brown        10   8   0  5.13    185.2  32  226  106  30   70  112
+J. Rijo         13  11   0  4.68    169.0  32  181   88  27   66  114
+E. Gagne         6   5  11  3.21    227.0   1  200   81  22   79  189
+B. Lidge         2   2   0  3.49     28.1   0   25   11   2    9   15
+J. Wetteland     7   4   4  2.56    101.2   0   98   29   7   45   79
+B. Wagner *      4   1   1  2.90     40.1   0   37   13   2   17   35
+T. Hoffman       6   7  20  2.35    111.0   0   84   29   6   40   84
+Total Stats        98  64  36  3.53   1470.0 162 1430  577 179  517 1026
+NL2006-20        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+B. Posey,C       .248   162  533   66  132  11   0  11   74   70  112   1
+Y. Molina,C      .100    17   30    1    3   0   0   0    0    0    5   0
+A. Pujols,1B     .257   162  641   97  165  16   1  28   98   97   75   0
+J. Votto,1B*     .000     0    0    0    0   0   0   0    0    0    0   0
+C. Utley,2B*     .238   162  584   84  139   6   0  21   85   67  127   2
+D. Wright,3B     .243   162  596   70  145  14   0  11   50   82  139   7
+K. Bryant,3B     .400     5    5    1    2   0   0   0    0    0    1   0
+H. Ramirez,SS    .289   162  691   96  200  22   0  19   78   57  138   1
+T. Tulowitzki    .200     5    5    0    1   1   0   0    0    0    2   0
+B. Harper,RF*    .292   162  641  123  187   9   0  44  115  120  181   0
+R. Braun,LF      .133    21   15    4    2   1   0   1    3    3    3   0
+C. Yelich,LF*    .292   162  627   97  183   7   1  35  117   60  158   7
+C. Bellinger     .300     8   10    1    3   0   0   0    0    0    2   0
+C. Beltran,CF#   .000     7    5    3    0   0   0   0    0    2    1   0
+A. McCutchen     .310   162  596   94  185   8   1  19   95   64  149   0
+G. Stanton,RF    .208   162  639   95  133   6   1  35  106   75  204   0
+Total Stats         .263  1521 5618  832 1480 101   4 224  821  697 1297  18
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+J. deGrom       15  13   0  3.58    175.2  33  178   70  15   72  123
+C. Kershaw *    14   4   0  2.53    173.2  33  169   49  15   50  130
+R. Halladay     11  15   0  3.49    175.0  32  193   68  25   58  116
+J. Arrieta      13   4   0  3.06    173.0  32  163   59  17   70  107
+M. Scherzer     11  10   0  4.10    155.2  32  183   71  29   42  113
+C. Knebel        3   3   4  2.86     50.1   0   48   16   7   28   56
+A. Chapman *    15   2   6  2.32    201.2   0  152   52  22   84  190
+C. Kimbrel      11   6  24  2.71    159.1   0  113   48  19   63  147
+K. Jansen        6   6   5  3.08    192.2   0  186   66  32   53  151
+Total Stats        99  63  39  3.08   1457.0 162 1385  499 181  520 1133
+NL1916-30        BA     G    AB    R    H  2B  3B  HR  RBI   BB   SO  SB
+G. Hartnett,C    .296   162  631   83  187  10   1  39  108   54   89   0
+B. O'Farrell     .625    14    8    2    5   0   0   1    3    1    0   0
+B. Terry,1B*     .346   162  711  113  246  18   3  15   74   52   56   0
+J. Bottomley     .400    10   10    1    4   0   0   1    2    0    1   0
+R. Hornsby,2B    .329   162  702  129  231  17   4  44  140   56   72   0
+F. Lindstrom     .316    27   19    3    6   0   0   0    2    1    0   0
+F. Frisch,3B#    .289   162  622   87  180  15   3   7   58   27   33  29
+D. Bancroft,SS#  .295   130  417   60  123  11   2   3   58   51   17   0
+A. Fletcher,SS   .286    50  154   15   44   7   1   0   24    0    6   0
+H. Wilson,CF     .316   162  643   98  203  12   2  39  116   84  107   0
+C. Klein,RF*     .317   125  504   62  160  15   1  24  101   27   33   0
+K. Cuyler,RF     .312    73  205   31   64   7   1   3   19   15   20  12
+M. Carey,CF#     .301   162  594   82  179  21   4   6   52   55   20  25
+R. Youngs,RF*    .333    17   15    3    5   0   0   1    1    1    0   0
+Z. Wheat,RF*     .282   162  617   57  174  15   1   8   58   36   30   1
+E. Roush,CF*     .269    27   26    9    7   0   0   0    2    3    1   0
+Total Stats         .309  1607 5878  835 1818 148  23 191  818  463  485  67
+PITCHING        W   L  SV   ERA     IP    GS    H   ER  HR   BB   SO
+P. Alexander    10  14   0  5.02    236.1  33  289  132  42   72  110
+D. Luque        11  15   0  4.12    250.2  33  303  115  29   95  124
+D. Vance        17  10   0  2.41    260.2  32  221   70  23  101  145
+H. Vaughn *     14  13   0  3.20    252.2  32  225   90  30  116  100
+E. Rixey *       9   6   8  3.26    115.2   0  125   42   9   43   56
+B. Grimes       21   5   0  2.70    262.2  32  249   79  29   70  112
+L. Benton        3   3   3  6.25     27.1   0   35   19   6   14   15
+R. Kremer        4   1   3  3.75     24.0   0   30   10   2   11   13
+C. Root          3   3   9  4.20     30.0   0   38   14   3   13   16
+Total Stats        92  70  23  3.52   1460.0 162 1515  571 173  535  691
+All-Time League, Batting Leaders
+Sort By: Batting Avg./By Position/Primary /AB >  500
+Rank Name          Team
+1. Sisler, G.     AL1916-30  .359
+2. Cobb, T.       AL1901-15  .349
+3. Terry, B.      NL1916-30  .345
+4. Gwynn, T.      NL1976-90  .341
+5. Lajoie, N.     AL1901-15  .339
+6. Clemente, R.   NL1961-75  .334
+7. Hornsby, R.    NL1916-30  .329
+8. Gehrig, L.     AL1916-30  .319
+9. Stone, G.      AL1901-15  .319
+10. Klein, C.      NL1916-30  .317
+Sort By: Runs/By Position/Primary /AB >  50
+Rank Name          Team
+1. Sisler, G.     AL1916-30   137
+2. Hornsby, R.    NL1916-30   129
+3. Speaker, T.    AL1916-30   129
+4. Ruth, B.       AL1916-30   127
+5. Harper, B.     NL2006-20   123
+6. Bonds, B.      NL1991-05   123
+7. Terry, B.      NL1916-30   113
+8. Jones, C.      NL1991-05   113
+9. Carew, R.      AL1961-75   113
+10. Robinson, J.   NL1946-60   109
+Sort By: Hits/By Position/Primary /AB >  50
+Rank Name          Team
+1. Terry, B.      NL1916-30   246
+2. Sisler, G.     AL1916-30   246
+3. Hornsby, R.    NL1916-30   231
+4. Gwynn, T.      NL1976-90   229
+5. Cobb, T.       AL1901-15   227
+6. Suzuki, I.     AL1991-05   221
+7. Lajoie, N.     AL1901-15   219
+8. Carew, R.      AL1961-75   213
+9. Speaker, T.    AL1916-30   209
+10. Rose, P.       NL1961-75   208
+Sort By: Doubles/By Position/Primary /AB >  50
+Rank Name          Team
+1. Biggio, C.     NL1991-05    23
+2. Wagner, H.     NL1901-15    23
+3. Brett, G.      AL1976-90    23
+4. Ramirez, H.    NL2006-20    22
+5. Sisler, G.     AL1916-30    22
+6. Carey, M.      NL1916-30    21
+7. Sandberg, R.   NL1976-90    20
+8. Baker, H.      AL1901-15    20
+9. Lajoie, N.     AL1901-15    20
+10. Morgan, J.     NL1961-75    19
+Sort By: Triples/By Position/Primary /AB >  50
+Rank Name          Team
+1. Cobb, T.       AL1901-15     9
+2. Waner, P.      NL1931-45     8
+3. Berra, Y.      AL1946-60     7
+4. Lajoie, N.     AL1901-15     6
+5. Jackson, J.    AL1901-15     6
+6. Dawson, A.     NL1976-90     5
+7. Hernandez, K.  NL1976-90     5
+8. Burkett, J.    NL1901-15     5
+9. Collins, E.    AL1901-15     5
+10. Hornsby, R.    NL1916-30     4
+Sort By: Home Runs/By Position/Primary /AB >  50
+Rank Name          Team
+1. Bonds, B.      NL1991-05    61
+2. Foxx, J.       AL1931-45    54
+3. Ruth, B.       AL1916-30    50
+4. McGwire, M.    NL1991-05    49
+5. Sosa, S.       NL1991-05    48
+6. Hornsby, R.    NL1916-30    44
+7. Harper, B.     NL2006-20    44
+8. Banks, E.      NL1946-60    43
+9. Mathews, E.    NL1946-60    40
+10. Rosen, A.      AL1946-60    40
+Sort By: RBI/By Position/Primary /AB >  50
+Rank Name          Team
+1. Gehrig, L.     AL1916-30   157
+2. Ruth, B.       AL1916-30   149
+3. Hornsby, R.    NL1916-30   140
+4. Bonds, B.      NL1991-05   135
+5. McGwire, M.    NL1991-05   131
+6. Sosa, S.       NL1991-05   123
+7. Foxx, J.       AL1931-45   122
+8. Yastrzmski, C. AL1961-75   118
+9. Lajoie, N.     AL1901-15   118
+10. Yelich, C.     NL2006-20   117
+Sort By: Stolen Bases/By Position/Primary /AB >  50
+Rank Name          Team
+1. Sheckard, J.   NL1901-15    89
+2. Wagner, H.     NL1901-15    60
+3. Cobb, T.       AL1901-15    59
+4. Jackson, J.    AL1901-15    50
+5. Henderson, R.  AL1976-90    45
+6. Doyle, L.      NL1901-15    44
+7. Chance, F.     NL1901-15    43
+8. Collins, E.    AL1901-15    42
+9. Stone, G.      AL1901-15    40
+10. Seymour, C.    NL1901-15    37
+Sort By: On Base Avg./By Position/Primary /AB >  500
+Rank Name          Team
+1. Cash, N.       AL1961-75  .440
+2. Gehrig, L.     AL1916-30  .409
+3. Sisler, G.     AL1916-30  .408
+4. Ruth, B.       AL1916-30  .408
+5. Harper, B.     NL2006-20  .403
+6. Gwynn, T.      NL1976-90  .398
+7. Cobb, T.       AL1901-15  .397
+8. Wilson, H.     NL1916-30  .394
+9. Foxx, J.       AL1931-45  .394
+Sort By: Slugging Avg./By Position/Primary /AB >  500
+Rank Name          Team
+1. Foxx, J.       AL1931-45  .597
+2. Ruth, B.       AL1916-30  .564
+3. Hornsby, R.    NL1916-30  .552
+4. Bonds, B.      NL1991-05  .544
+5. Gehrig, L.     AL1916-30  .528
+6. Wilson, H.     NL1916-30  .522
+7. Harper, B.     NL2006-20  .511
+8. Hartnett, G.   NL1916-30  .500
+9. Klein, C.      NL1916-30  .494
+10. McGwire, M.    NL1991-05  .489
+All-Time League, Pitching Leaders
+Sort By: ERA/By Position/Primary /IP >  100
+Rank Name          Team
+1. Fingers, R.    AL1976-90  2.09
+2. Maddux, G.     NL1991-05  2.15
+3. Nathan, J.     AL2006-20  2.26
+4. Newhouser, H.  AL1931-45  2.27
+5. Chapman, A.    NL2006-20  2.32
+6. Hoffman, T.    NL1991-05  2.35
+7. Vance, D.      NL1916-30  2.41
+8. Kershaw, C.    NL2006-20  2.53
+9. Wetteland, J.  NL1991-05  2.56
+10. Mathewson, C.  NL1901-15  2.60
+Sort By: Wins/By Position/Primary /IP >  10
+Rank Name          Team
+1. Grimes, B.     NL1916-30    21
+2. Maddux, G.     NL1991-05    21
+3. Faber, R.      AL1916-30    21
+4. Cicotte, E.    AL1916-30    20
+5. Hahn, N.       NL1901-15    19
+6. Vance, D.      NL1916-30    17
+7. Carlton, S.    NL1976-90    16
+8. Seaver, T.     NL1976-90    16
+9. Brecheen, H.   NL1946-60    16
+10. Taylor, J.     NL1901-15    16
+Sort By: Saves/By Position/Primary /IP >  10
+Rank Name          Team
+1. Rivera, M.     AL1991-05    25
+2. Kimbrel, C.    NL2006-20    24
+3. Hoffman, T.    NL1991-05    20
+4. Sutter, B.     NL1976-90    18
+5. Harder, M.     AL1931-45    17
+6. Hiller, J.     AL1961-75    15
+7. Papelbon, J.   AL2006-20    14
+8. Brown, M.      NL1901-15    13
+9. Braxton, G.    AL1916-30    13
+10. Page, J.       AL1946-60    13
+Sort By: Games Started/By Position/Primary /IP >  10
+Rank Name          Team
+1. Alexander, P.  NL1916-30    33
+2. Luque, D.      NL1916-30    33
+3. Kershaw, C.    NL2006-20    33
+4. deGrom, J.     NL2006-20    33
+5. Johnson, R.    NL1991-05    33
+6. Maddux, G.     NL1991-05    33
+7. Carlton, S.    NL1976-90    33
+8. Gooden, D.     NL1976-90    33
+9. Spahn, W.      NL1946-60    33
+10. Roberts, R.    NL1946-60    33
+Sort By: Innings Pitched/By Position/Primary /IP >  10
+Rank Name          Team
+1. Taylor, J.     NL1901-15 263.1
+2. Grimes, B.     NL1916-30 262.2
+3. Vance, D.      NL1916-30 260.2
+4. Mathewson, C.  NL1901-15 259.1
+5. Walters, B.    NL1931-45 258.2
+6. Vaughn, H.     NL1916-30 252.2
+7. Hahn, N.       NL1901-15 252.0
+8. Abernathy, T.  NL1961-75 251.1
+9. Luque, D.      NL1916-30 250.2
+10. Johnson, W.    AL1901-15 250.0
+Sort By: Strike Outs/By Position/Primary /IP >  10
+Rank Name          Team
+1. Chapman, A.    NL2006-20   190
+2. Gagne, E.      NL1991-05   189
+3. Mathewson, C.  NL1901-15   164
+4. Nathan, J.     AL2006-20   156
+5. Guidry, R.     AL1976-90   156
+6. Jansen, K.     NL2006-20   151
+7. Johnson, W.    AL1901-15   150
+8. Waddell, R.    AL1901-15   149
+9. Kimbrel, C.    NL2006-20   147
+10. Johnson, R.    NL1991-05   147
+
+=== IMAGES ===
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_2.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_3.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl-weaver-baseball-ii-ce-dos-front-cover.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/igiball_4.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/EWB-Baseball-iPhone.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_4.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_5.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_6.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_7.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_8.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_9.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_r1g1_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_r1g1_2.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_r1g1_3.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_r1g1_4.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_r1g1_5.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_r1g1_6.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/igiball_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/igiball_2.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/igiball_3.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/Oldtime2.png
+http://www.tuatarasoftware.com/images/retro_reviews/ssi_computer_baseball1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/computer_statis_pro_baseball4.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/microleague_baseball5.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/avalonhill_pro_manager1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/pure-stat_baseball2a.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/monday_morning_manager1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/Radio_Baseball1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_Amiga_2.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/full_count_baseball1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/microleague_baseball_iv_ibm.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/tony_larussa_ultimate_baseball_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/earl_weaver_baseball_ii_2.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/apba_bbw1.png
+http://www.tuatarasoftware.com/images/retro_reviews/TLBB2_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/FPSBB94_1.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/ESPN_Baseball_Tonight1b.jpg
+http://www.tuatarasoftware.com/images/retro_reviews/hardball6_2.png
+http://www.tuatarasoftware.com/images/retro_reviews/PTP_6.png
+http://www.tuatarasoftware.com/images/retro_reviews/PLB_2.png
