@@ -320,7 +320,9 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     ballSteps.push({ t, x, y, z, vx, vy, vz, bounceCount, hitWall, isHomeRun: false });
 
     // Integrate next step dt
-    if (z > 0.05 || vz > 0) {
+    // Stay airborne until the ball actually reaches the ground (z <= 0) so every landing runs the bounce
+    // below; a near-ground cutoff here let low descending balls skip the bounce and roll at full speed
+    if (z > 0 || vz > 0) {
       // Airborne flight with aerodynamic drag, wind drift, and Magnus lift
       const relVx = vx - wx * 0.38;
       const relVy = vy - wy * 0.38;
@@ -357,6 +359,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     } else {
       // Rolling along the grass or artificial turf
       z = 0;
+      vz = 0;
       const groundSpeed = Math.hypot(vx, vy);
       if (groundSpeed <= 0.5) {
         vx = 0;
@@ -521,6 +524,13 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     }
   }
 
+  // The pre-pass keeps integrating past the catch/pickup, so measure distance only up to the interception;
+  // otherwise caught flies and fielded grounders report (and score) their hypothetical roll
+  let playDistanceFt = 0;
+  for (let i = 0; i <= interceptedStepIndex && i < ballSteps.length; i++) {
+    playDistanceFt = Math.max(playDistanceFt, Math.hypot(ballSteps[i].x, ballSteps[i].y));
+  }
+
   // Only count wall hit if the ball actually reached the wall prior to being fielded/intercepted
   const hitWallBeforeIntercept = Boolean(hitWall && wallCaromPoint && wallCaromPoint.t <= interceptTimeSec + 0.02);
   hitWall = hitWallBeforeIntercept;
@@ -541,7 +551,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     runsScored = 1 + bases.filter(Boolean).length;
   } else if (caughtInAir) {
     outsRecorded = 1;
-    if (contactType === 'POP_UP' || peakDistanceFt < 145) {
+    if (contactType === 'POP_UP' || playDistanceFt < 145) {
       outcome = 'OUT_POP';
     } else if (contactType === 'LINE_DRIVE' && launchAngleDeg < 21) {
       outcome = 'OUT_LINE';
@@ -550,7 +560,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     }
 
     // Check Sacrifice Fly when runner is on 3rd with < 2 outs and fly ball is deep enough (>= 225 ft)
-    if (outs < 2 && bases[2] && peakDistanceFt >= 225) {
+    if (outs < 2 && bases[2] && playDistanceFt >= 225) {
       const runner3BSpeed = getRunnerSpeedFps(bases[2]);
       const tagUpRunTime = 90 / (runner3BSpeed * 1.03);
       const throwDistToHome = Math.hypot(interceptPoint.x, interceptPoint.y);
@@ -641,7 +651,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
         Math.abs(sprayAngleDeg) >= 36;
       const turnAndTransferSec = hitWallBeforeIntercept
         ? (wallInfo.heightFt >= 25 && wallInfo.distanceFt <= 325 ? 0.85 : 1.35)
-        : isGapOrLine && peakDistanceFt >= 240
+        : isGapOrLine && playDistanceFt >= 240
         ? 1.15
         : 0.42;
 
@@ -651,13 +661,13 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
       const intended = launchVector.intendedResult;
 
       if (
-        (intended === 'TRIPLE' && peakDistanceFt >= 275) ||
-        (intended === 'HOME_RUN' && hitWallBeforeIntercept && peakDistanceFt >= 355 && batterRunnerSpeedFps >= 28.5 && Math.random() < 0.18)
+        (intended === 'TRIPLE' && playDistanceFt >= 240) ||
+        (intended === 'HOME_RUN' && hitWallBeforeIntercept && playDistanceFt >= 355 && batterRunnerSpeedFps >= 28.5 && Math.random() < 0.18)
       ) {
         outcome = 'TRIPLE';
         basesReached = 3;
       } else if (
-        (intended === 'DOUBLE' && peakDistanceFt >= 200 && !(hitWallBeforeIntercept && wallInfo.heightFt >= 25 && wallInfo.distanceFt <= 320 && batterRunnerSpeedFps < 26.8 && Math.random() < 0.28)) ||
+        (intended === 'DOUBLE' && playDistanceFt >= 200 && !(hitWallBeforeIntercept && wallInfo.heightFt >= 25 && wallInfo.distanceFt <= 320 && batterRunnerSpeedFps < 26.8 && Math.random() < 0.28)) ||
         (intended === 'HOME_RUN' && hitWallBeforeIntercept)
       ) {
         outcome = 'DOUBLE';
@@ -1007,7 +1017,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     });
   }
 
-  const roundedDistanceFt = Math.round(peakDistanceFt);
+  const roundedDistanceFt = Math.round(playDistanceFt);
   const description = buildPlayByPlayDescription({
     batter,
     primaryFielder,

@@ -321,10 +321,11 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
   const bipPerAb = Math.max(0.55, 1 - soPerAb);
 
   // Calibrate BIP sub-table probabilities to account for Stage 2 defensive plays, wall caroms, and ground-ball singles
+  // (the OUT sub-table converts only ~1% of balls into hits now that every landing bounces, so the hit tiers carry ~97%)
   const hrPerBip = Math.min(0.16, ((matchup.combinedHrPerAb || 0.03) / bipPerAb) * 0.98);
   const triplePerBip = Math.min(0.04, ((matchup.combined3BPerAb || 0.005) / bipPerAb) * 0.72);
   const doublePerBip = Math.min(0.18, ((matchup.combined2BPerAb || 0.05) / bipPerAb) * 0.91);
-  const totalHitPerBip = Math.min(0.54, ((matchup.combinedAvg || 0.275) / bipPerAb) * 0.75);
+  const totalHitPerBip = Math.min(0.54, ((matchup.combinedAvg || 0.275) / bipPerAb) * 0.97);
   const singlePerBip = Math.max(0.03, totalHitPerBip - hrPerBip - triplePerBip - doublePerBip);
 
   const pullSign = matchup.effectiveBatterHand === 'L' ? 1 : -1;
@@ -354,7 +355,7 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
     // 2. DEEP GAP / ALLEY TRIPLE SUB-TABLE
     contactType = 'LINE_DRIVE';
     intendedResult = 'TRIPLE';
-    launchAngleDeg = 11.5 + Math.random() * 3.0; // Low screaming liner that bounces at ~205 ft and rolls to 350+ ft alley
+    launchAngleDeg = 11.5 + Math.random() * 3.0; // Low screaming liner that bounces at ~205 ft and skips past the outfielders into the 240+ ft alley
     exitVelocityMph = 99.0 + Math.random() * 5.0;
     const alleySign = Math.random() < 0.58 ? 1 : -1;
     sprayAngleDeg = alleySign * (17.5 + Math.random() * 3.5);
