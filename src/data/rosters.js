@@ -687,6 +687,8 @@ export function cloneTeamRoster(teamId) {
   // Ensure convenience references for both 9-man active batting order and 4-man bench
   cloned.starters = cloned.lineup.slice(0, 9);
   cloned.bench = cloned.lineup.slice(9);
+  // Per batting-order slot: the starter followed by any pinch-hitters, in order of entry
+  cloned.slotHistory = cloned.starters.map((p) => [p]);
 
   return cloned;
 }

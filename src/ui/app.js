@@ -659,14 +659,16 @@ class EWBAppController {
 
     const gs = this.gameState;
     const buildTeamBox = (team) => {
-      const batters = team.starters || team.lineup.slice(0, 9);
-      const rows = batters
-        .map((b, idx) => {
+      // Each batting slot lists its starter, then any pinch-hitters (indented) so lifted players keep their line
+      const slots = team.slotHistory || (team.starters || team.lineup.slice(0, 9)).map((p) => [p]);
+      const rows = slots
+        .flatMap((slot, idx) => slot.map((b, subIdx) => ({ b, idx, subIdx })))
+        .map(({ b, idx, subIdx }) => {
           const st = b.gameStats || { AB: 0, R: 0, H: 0, d2B: 0, d3B: 0, HR: 0, RBI: 0, BB: 0, SO: 0, SB: 0 };
           return `
             <tr>
-              <td>${idx + 1}</td>
-              <td><strong>${b.name}</strong> <small>(${b.bats})</small></td>
+              <td>${subIdx === 0 ? idx + 1 : ''}</td>
+              <td>${subIdx === 0 ? '' : '&nbsp;&nbsp;↳ <small>PH</small> '}<strong>${b.name}</strong> <small>(${b.bats})</small></td>
               <td>${b.pos}</td>
               <td>${st.AB}</td>
               <td>${st.R}</td>

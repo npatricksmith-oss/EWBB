@@ -163,12 +163,12 @@ export class EWBGameState {
     const newPlayer = team.bench[benchIdx];
     if (!oldPlayer || !newPlayer) return false;
 
-    // Inherit defensive position if needed
+    // Inherit defensive position; the lifted player leaves the game for good (no re-entry)
     newPlayer.pos = oldPlayer.pos;
     team.starters[starterSlotIdx] = newPlayer;
-    team.bench[benchIdx] = oldPlayer;
-    team.lineup[starterSlotIdx] = newPlayer;
-    team.lineup[9 + benchIdx] = oldPlayer;
+    team.bench.splice(benchIdx, 1);
+    // Keep every player who has batted in this slot so the box score retains the lifted starter's line
+    team.slotHistory[starterSlotIdx].push(newPlayer);
 
     this.logPlay(
       `🃏 Platoon Move: ${team.city} sends up ${newPlayer.name} (${newPlayer.bats}HB) to pinch-hit for ${oldPlayer.name} at ${newPlayer.pos}!`,
@@ -381,7 +381,7 @@ export class EWBGameState {
   }
 
   resolveStealAttempt(pitchStep) {
-    const catcher = this.fieldingTeam.lineup.find((p) => p.pos === 'C') || { ratings: { arm: 6 } };
+    const catcher = (this.fieldingTeam.starters || this.fieldingTeam.lineup).find((p) => p.pos === 'C') || { ratings: { arm: 6 } };
     const pitchOutBonus = this.defensePlay === 'PITCH_OUT' ? 0.35 : 0;
 
     // Attempt steal of 2nd if runner on 1st and 2nd is empty
