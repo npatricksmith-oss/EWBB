@@ -16,6 +16,7 @@
 
 import { getWallAtAngle } from '../data/ballparks.js';
 import { normalizeOffensePlay, normalizeDefensePlay } from './statsMatrix.js';
+import { getLastName } from '../data/rosters.js';
 
 const GRAVITY_FPS2 = 32.174;
 const DT = 1 / 60;
@@ -926,7 +927,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     runnerSnapshot.push({
       id: batter.id || batter.name || 'batter',
       name: batter.name || 'Batter',
-      label: (batter.name || 'BAT').split(' ').pop().slice(0, 3).toUpperCase(),
+      label: getLastName(batter.name || 'BAT').slice(0, 3).toUpperCase(),
       startBase: 0,
       targetBase: basesReached,
       x: batterCoords.x,
@@ -977,7 +978,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
       runnerSnapshot.push({
         id: r.id || r.name || `runner_${startBaseNum}`,
         name: r.name || `Runner ${startBaseNum}B`,
-        label: (r.name || `R${startBaseNum}`).split(' ').pop().slice(0, 3).toUpperCase(),
+        label: getLastName(r.name || `R${startBaseNum}`).slice(0, 3).toUpperCase(),
         startBase: startBaseNum,
         targetBase: maxTargetBase,
         x: rCoords.x,

@@ -13,7 +13,7 @@
 
 import { BALLPARKS, getWallAtAngle } from '../data/ballparks.js';
 import { MANAGERS } from '../data/managers.js';
-import { TEAMS } from '../data/rosters.js';
+import { TEAMS, getLastName } from '../data/rosters.js';
 import { getEffectivePlatoonMatchup } from '../engine/statsMatrix.js';
 import { askEarlAdvisor } from '../engine/earlAI.js';
 import { EWBGameState } from '../engine/gameState.js';
@@ -382,8 +382,8 @@ class EWBAppController {
 
     if (headerRow && awayRow && homeRow) {
       let hHtml = '<th class="team-col">CLUB (MGR)</th>';
-      let aHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.awayTeam.primaryColor}"></span>${gs.awayTeam.abbrev} <small style="color:var(--muted)">(${gs.awayManager.name.split(' ').pop()})</small></td>`;
-      let bHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.homeTeam.primaryColor}"></span>${gs.homeTeam.abbrev} <small style="color:var(--muted)">(${gs.homeManager.name.split(' ').pop()})</small></td>`;
+      let aHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.awayTeam.primaryColor}"></span>${gs.awayTeam.abbrev} <small style="color:var(--muted)">(${getLastName(gs.awayManager.name)})</small></td>`;
+      let bHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.homeTeam.primaryColor}"></span>${gs.homeTeam.abbrev} <small style="color:var(--muted)">(${getLastName(gs.homeManager.name)})</small></td>`;
 
       for (let i = 0; i < maxInnings; i++) {
         const isCurrent = !gs.isGameOver && gs.inning === i + 1;
@@ -433,9 +433,9 @@ class EWBAppController {
 
     if (elBaseNames) {
       const occ = [];
-      if (gs.bases[0]) occ.push(`1B: ${gs.bases[0].name.split(' ').pop()} (${gs.bases[0].ratings.runs})`);
-      if (gs.bases[1]) occ.push(`2B: ${gs.bases[1].name.split(' ').pop()} (${gs.bases[1].ratings.runs})`);
-      if (gs.bases[2]) occ.push(`3B: ${gs.bases[2].name.split(' ').pop()} (${gs.bases[2].ratings.runs})`);
+      if (gs.bases[0]) occ.push(`1B: ${getLastName(gs.bases[0].name)} (${gs.bases[0].ratings.runs})`);
+      if (gs.bases[1]) occ.push(`2B: ${getLastName(gs.bases[1].name)} (${gs.bases[1].ratings.runs})`);
+      if (gs.bases[2]) occ.push(`3B: ${getLastName(gs.bases[2].name)} (${gs.bases[2].ratings.runs})`);
       elBaseNames.textContent = occ.length ? occ.join(' | ') : 'BASES EMPTY';
     }
   }

@@ -23,6 +23,7 @@
 
 import { getWallAtAngle } from '../data/ballparks.js';
 import { getInitialFielderPositions } from '../engine/physicsEngine.js';
+import { getLastName } from '../data/rosters.js';
 
 // ---------------------------------------------------------------------------
 // Pixel-art sprites for the isometric field (fielders, runners, coaches, umpires).
@@ -942,7 +943,7 @@ export class FieldRenderer1987 {
           pose: 'READY',
           stridePhase: 0,
           hasGlove: false,
-          label: runner.name.split(' ').pop().slice(0, 3).toUpperCase(),
+          label: getLastName(runner.name).slice(0, 3).toUpperCase(),
           showLabel: true,
           scale: 0.96
         });
@@ -1671,8 +1672,8 @@ export class FieldRenderer1987 {
     ctx.lineWidth = 1.5;
     ctx.strokeRect(vp.x + 1, vp.y + 1, vp.w - 2, boxH - 2);
 
-    const bLast = batter ? batter.name.split(' ').pop() : 'Batter';
-    const pLast = pitcher ? pitcher.name.split(' ').pop() : 'Pitcher';
+    const bLast = batter ? getLastName(batter.name) : 'Batter';
+    const pLast = pitcher ? getLastName(pitcher.name) : 'Pitcher';
     const pHand = pitcher?.throws === 'L' ? 'L' : 'R';
     const bSplit = batter?.splits?.[pHand] || batter?.splits?.T || { BA: 0.285, HR: 18, RBI: 70 };
     const bAvgStr = (Number(bSplit.BA) || 0.285).toFixed(3).replace(/^0/, '');

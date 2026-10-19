@@ -657,6 +657,19 @@ export const TEAMS = {
 };
 
 /**
+ * Returns a player's surname for scoreboard/canvas labels, skipping generational suffixes
+ * ('Cal Ripken Jr.' -> 'Ripken', not 'Jr.').
+ *
+ * @param {string} name - Full player or manager name
+ * @returns {string} Surname
+ */
+export function getLastName(name) {
+  const parts = String(name || '').trim().split(/\s+/);
+  while (parts.length > 1 && /^(jr|sr|ii|iii|iv)\.?$/i.test(parts[parts.length - 1])) parts.pop();
+  return parts[parts.length - 1];
+}
+
+/**
  * Deep-clones a team roster by ID ('baltimore' | 'boston') so in-game substitutions,
  * pinch-hitting, pitch counts, and Commissioner's Disk edits never mutate the base schema.
  *
