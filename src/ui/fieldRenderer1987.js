@@ -7,11 +7,13 @@
  *    - Left 67% viewport: Isometric ballpark diamond with custom 10-point fence distances,
  *      9-segment wall heights (e.g. Fenway's 37-ft Green Monster), speckled stadium crowd,
  *      curved infield dirt cutouts, 4 umpires, 2 base coaches, 9 articulated fielders, and baserunners.
- *    - Right 33% viewport: Over-the-umpire Pitcher vs. Batter duel featuring:
- *      • 5-Stage Pitcher Kinetics (Full Windup with high leg kick vs. The Stretch with runner check)
- *      • Batter Kinetics (Continuous pre-pitch bat waggle, stride, hip rotation, elliptical bat swing, follow-through)
- *      • Foreground Catcher & Home Plate Umpire crouched in the slot
+ *    - Right 33% viewport: catcher's-eye Pitcher vs. Batter duel featuring:
+ *      • Large side-on batter beside the plate (stance waggle, stride, swing, follow-through)
+ *      • Small front-on pitcher against the batter's eye (full windup vs. the stretch)
+ *      • Pitch flight in depth perspective with late break, catcher's mitt or contact flash
  *      • Authentic 1987 Amiga top-right Batter/Pitcher stat box
+ *    - Figures use dithered shading like the original EGA/Amiga art; field players are
+ *      pixel-art sprites, duel figures are keyframed limbs with dithered shadow sides.
  * 2. FULL-FIELD MODE (Ball in Play & Instant Replay):
  *    - Expands the isometric ballpark across 100% of the canvas (matching amiga_01.jpg)
  *      tracking 3D ball flight (x, y, z), ground shadow (x, y, 0), wall caroms,
@@ -21,6 +23,302 @@
 
 import { getWallAtAngle } from '../data/ballparks.js';
 import { getInitialFielderPositions } from '../engine/physicsEngine.js';
+
+// ---------------------------------------------------------------------------
+// Pixel-art sprites for the isometric field (fielders, runners, coaches, umpires).
+// Drawn facing right; mirrored when a player moves left.
+//   c cap        b brim/belt     s skin        w uniform      g uniform shade (dithered)
+//   j team color m glove (skin when no glove) h ball in hand (skin when empty)
+//   o cleats     B bat           n umpire coat d umpire slacks
+// ---------------------------------------------------------------------------
+const PIXEL_SPRITES = {
+  READY: [
+    '....ccc....',
+    '...ccccc...',
+    '...bbbbbb..',
+    '....sss....',
+    '....sss....',
+    '..jjwwwjj..',
+    '.jjwwwwwgj.',
+    '.jwwwwwwgj.',
+    '.swwwwwwgm.',
+    '.s.wwwwg.m.',
+    '.s.bbbbb.m.',
+    '.swwwgwwgm.',
+    '.wwg...wgg.',
+    '.ww.....gg.',
+    '.jj.....jj.',
+    'ooo.....ooo'
+  ],
+  RUN_A: [
+    '....ccc....',
+    '...ccccbb..',
+    '....sss....',
+    '....sss....',
+    '....jjw....',
+    '...jwwwj...',
+    '..s.wwwj.m.',
+    '..s.wwwg.m.',
+    '....wwgg...',
+    '....bbbb...',
+    '...wwwggg..',
+    '..www..gg..',
+    '.ww.....gg.',
+    '.w.......g.',
+    'jj.......jj',
+    'oo.......oo'
+  ],
+  RUN_B: [
+    '....ccc....',
+    '...ccccbb..',
+    '....sss....',
+    '....sss....',
+    '....jjw....',
+    '...jwwwj...',
+    '...swwwj...',
+    '...swwgm...',
+    '....wwgg...',
+    '....bbbb...',
+    '....wwgg...',
+    '...wwwgg...',
+    '.ww...gg...',
+    'jj....gg...',
+    'o.....jj...',
+    '......oo...'
+  ],
+  FIELDING_GROUND: [
+    '...........',
+    '...........',
+    '....ccc....',
+    '...ccccc...',
+    '...bbbbbb..',
+    '....sss....',
+    '..jjwwwjj..',
+    '.jwwwwwwgj.',
+    '.swwwwwwgs.',
+    '.swbbbbbgs.',
+    '.wwss.mmgg.',
+    '.wg.smmm.gg',
+    '.wg..mm..gg',
+    '.ww.....gg.',
+    '.jj.....jj.',
+    'ooo.....ooo'
+  ],
+  FIELDING_AIR: [
+    '........mm.',
+    '........mm.',
+    '....ccc.s..',
+    '...ccccjs..',
+    '...bbbbj...',
+    '....sssj...',
+    '..jjwwwj...',
+    '.s.wwwwg...',
+    '.s.wwwwg...',
+    '..swwwgg...',
+    '...bbbbb...',
+    '...wwwgg...',
+    '...ww.gg...',
+    '...ww.gg...',
+    '...jj.jj...',
+    '...oo.oo...'
+  ],
+  THROWING: [
+    '.h.........',
+    '.s..ccc....',
+    '.s.ccccbb..',
+    '..j.sss....',
+    '..jjsss....',
+    '...jwwwj...',
+    '...wwwwwjm.',
+    '...wwwwg.mm',
+    '....wwgg...',
+    '....bbbb...',
+    '...wwwggg..',
+    '..www..gg..',
+    '.ww.....gg.',
+    '.w.......g.',
+    'jj.......jj',
+    'oo.......oo'
+  ],
+  RECEIVING: [
+    '....ccc....',
+    '...ccccc...',
+    '...bbbbbb..',
+    '....sss.mm.',
+    '....sss.mm.',
+    '..jjwwwjs..',
+    '.jjwwwwwj..',
+    '.s.wwwwg...',
+    '.s.wwwwg...',
+    '..swwwgg...',
+    '...bbbbb...',
+    '...wwwgg...',
+    '..www.ggg..',
+    '..ww...gg..',
+    '..jj...jj..',
+    '..oo...oo..'
+  ],
+  SLIDING: [
+    '.ccc...........',
+    'cccccb.........',
+    '.sss...........',
+    '.jwwwj.........',
+    's.wwwwbwwwwwjoo',
+    '..wggg.ggggjjoo'
+  ],
+  BATTING: [
+    '......B....',
+    '......B....',
+    '..cccB.....',
+    '.ccccBbb...',
+    '..sssB.....',
+    '..ssss.....',
+    '..jwwj.....',
+    '.jwwwwj....',
+    '.wwwwgg....',
+    '.bbbbbb....',
+    '.wwwggg....',
+    'wwg..gg....',
+    'ww....gg...',
+    'jj....jj...',
+    'oo....oo...'
+  ],
+  UMP: [
+    '....nnn....',
+    '...nnnnnb..',
+    '....sss....',
+    '....sss....',
+    '..nnnnnnn..',
+    '.nnnnnnnnn.',
+    '.n.nnnnn.n.',
+    '.s.nnnnn.s.',
+    '...ddddd...',
+    '...dd.dd...',
+    '...dd.dd...',
+    '...dd.dd...',
+    '..ooo.ooo..'
+  ],
+  UMP_SAFE: [
+    '....nnn....',
+    '...nnnnnb..',
+    '....sss....',
+    '....sss....',
+    'snnnnnnnnns',
+    '...nnnnn...',
+    '...nnnnn...',
+    '...nnnnn...',
+    '...ddddd...',
+    '...dd.dd...',
+    '...dd.dd...',
+    '...dd.dd...',
+    '..ooo.ooo..'
+  ],
+  UMP_OUT: [
+    '.........s.',
+    '....nnn..n.',
+    '...nnnnnbn.',
+    '....sss.n..',
+    '....sssn...',
+    '..nnnnnn...',
+    '.nnnnnnn...',
+    '.n.nnnnn...',
+    '.s.nnnnn...',
+    '...ddddd...',
+    '...dd.dd...',
+    '...dd.dd...',
+    '...dd.dd...',
+    '..ooo.ooo..'
+  ]
+};
+
+const SPRITE_OUTLINE = 'rgba(6, 10, 16, 0.7)';
+const FIGURE_OUTLINE = '#0b0f17';
+const SKIN = '#f1c27d';
+
+// ---------------------------------------------------------------------------
+// Duel-view figure keyframes. Units: the batter stands 150 units tall and the
+// pitcher 100, feet at y = 0, up is negative. Batter +x points toward the plate;
+// pitcher (front view, RHP) throws with the arm on the viewer's left.
+// ---------------------------------------------------------------------------
+const BATTER_POSES = {
+  STANCE: {
+    nFoot: [0, 0], fFoot: [28, -10], nKnee: [18, -38], fKnee: [38, -46], pelvis: [8, -70],
+    neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
+    nElbow: [-6, -98], fElbow: [30, -92], hands: [10, -114], batAng: -0.55, batLen: 62, twist: 0
+  },
+  LOAD: {
+    nFoot: [0, 0], fFoot: [38, -12], nKnee: [16, -38], fKnee: [44, -44], pelvis: [6, -69],
+    neck: [16, -114], head: [22, -125], nShoulder: [10, -106], fShoulder: [22, -108],
+    nElbow: [-10, -100], fElbow: [24, -96], hands: [4, -116], batAng: -0.8, batLen: 62, twist: 0
+  },
+  CONTACT: {
+    nFoot: [0, 0], fFoot: [38, -12], nKnee: [24, -36], fKnee: [44, -46], pelvis: [14, -68],
+    neck: [24, -110], head: [32, -120], nShoulder: [22, -101], fShoulder: [34, -105],
+    nElbow: [30, -84], fElbow: [52, -90], hands: [46, -86], batAng: 1.62, batLen: 52, twist: 0.6
+  },
+  FOLLOW: {
+    nFoot: [2, -2], nKnee: [26, -34], fFoot: [38, -12], fKnee: [44, -46], pelvis: [16, -68],
+    neck: [28, -110], head: [36, -120], nShoulder: [30, -102], fShoulder: [22, -104],
+    nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batAng: -1.9, batLen: 58, twist: 1
+  }
+};
+
+const PITCHER_POSES = {
+  SET: {
+    tFoot: [-7, 0], gFoot: [7, 0], tKnee: [-7, -27], gKnee: [7, -27], pelvis: [0, -50],
+    neck: [0, -82], head: [0, -91], headR: 8, tShoulder: [-12, -79], gShoulder: [12, -79],
+    tElbow: [-13, -64], gElbow: [13, -64], tHand: [-2, -63], gHand: [3, -63]
+  },
+  WIND: {
+    tFoot: [-7, 0], gFoot: [7, 0], tKnee: [-7, -27], gKnee: [7, -27], pelvis: [0, -50],
+    neck: [0, -82], head: [0, -91], headR: 8, tShoulder: [-12, -80], gShoulder: [12, -80],
+    tElbow: [-13, -93], gElbow: [13, -93], tHand: [-2, -103], gHand: [3, -103]
+  },
+  KICK: {
+    tFoot: [-4, 0], gFoot: [8, -30], tKnee: [-5, -27], gKnee: [13, -56], pelvis: [-1, -51],
+    neck: [-2, -83], head: [-2, -92], headR: 8, tShoulder: [-14, -80], gShoulder: [10, -80],
+    tElbow: [-12, -71], gElbow: [13, -71], tHand: [0, -70], gHand: [3, -70]
+  },
+  COCK: {
+    tFoot: [-9, 0], gFoot: [12, 6], tKnee: [-9, -24], gKnee: [13, -22], pelvis: [0, -46],
+    neck: [2, -78], head: [2, -87], headR: 8, tShoulder: [-12, -76], gShoulder: [13, -76],
+    tElbow: [-26, -78], gElbow: [24, -72], tHand: [-28, -98], gHand: [20, -66]
+  },
+  RELEASE: {
+    tFoot: [-9, -2], gFoot: [12, 8], tKnee: [-8, -24], gKnee: [12, -20], pelvis: [1, -44],
+    neck: [4, -70], head: [5, -79], headR: 9, tShoulder: [-10, -68], gShoulder: [15, -68],
+    tElbow: [-18, -82], gElbow: [18, -56], tHand: [-8, -90], gHand: [12, -54]
+  },
+  FOLLOW: {
+    tFoot: [-14, -20], gFoot: [12, 8], tKnee: [-8, -28], gKnee: [11, -20], pelvis: [2, -42],
+    neck: [6, -62], head: [7, -70], headR: 9.5, tShoulder: [-6, -62], gShoulder: [17, -60],
+    tElbow: [4, -46], gElbow: [20, -46], tHand: [16, -34], gHand: [14, -44]
+  }
+};
+
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (t) => {
+  const c = Math.max(0, Math.min(1, t));
+  return c * c * (3 - 2 * c);
+};
+
+/** Blends two keyframe poses; point entries are [x, y] pairs, the rest scalars. */
+function blendPose(a, b, t) {
+  const out = {};
+  for (const key of Object.keys(a)) {
+    const va = a[key];
+    const vb = b[key];
+    out[key] = Array.isArray(va) ? [lerp(va[0], vb[0], t), lerp(va[1], vb[1], t)] : lerp(va, vb, t);
+  }
+  return out;
+}
+
+/** Darkens a #rrggbb color by `amt` (0..1). */
+function darken(hex, amt) {
+  const n = parseInt(hex.replace('#', ''), 16);
+  const ch = (s) => Math.round(((n >> s) & 255) * (1 - amt));
+  return `rgb(${ch(16)}, ${ch(8)}, ${ch(0)})`;
+}
 
 export class FieldRenderer1987 {
   /**
@@ -554,6 +852,7 @@ export class FieldRenderer1987 {
         pantsColor: '#f1f5f9',
         pose: 'READY',
         stridePhase: 0,
+        hasGlove: false,
         label: '',
         showLabel: false,
         scale: isFullField ? 0.95 : 0.85
@@ -566,8 +865,10 @@ export class FieldRenderer1987 {
         ? activeFrame.fielders
         : this.getPositionedFielders(gameState.defensePlay, gameState.bases);
 
+    const prevFrame = this.playAnim ? this.playAnim.prevFrame : null;
     for (const [pos, fState] of Object.entries(fielderMap)) {
       const fScreen = this.fieldToScreen(fState.x, fState.y, fState.z || 0, vp);
+      const prevF = prevFrame?.fielders?.[pos];
       this.drawArticulatedFieldPlayer(ctx, fScreen.x, fScreen.y, {
         groundY: fScreen.groundY,
         jerseyColor: fieldingTeam.primaryColor || '#f58220',
@@ -576,6 +877,7 @@ export class FieldRenderer1987 {
         pose: fState.pose || (fState.isMoving ? 'RUNNING' : 'READY'),
         stridePhase: fState.stridePhase || 0,
         hasBall: Boolean(fState.hasBall),
+        facing: this.trackFacing(`F${pos}`, prevF ? fState.x - prevF.x : 0),
         label: pos,
         showLabel: true,
         scale: isFullField ? 1.12 : 0.96
@@ -592,8 +894,10 @@ export class FieldRenderer1987 {
         jerseyColor: battingTeam.primaryColor || '#bd3039',
         capColor: battingTeam.secondaryColor || '#0c2340',
         pantsColor: '#e2e8f0',
-        pose: 'READY',
+        pose: 'BATTING',
         stridePhase: 0,
+        hasGlove: false,
+        facing: bSide === 'R' ? 1 : -1,
         label: '',
         showLabel: false,
         scale: 0.92
@@ -601,19 +905,22 @@ export class FieldRenderer1987 {
     }
 
     if (activeFrame && activeFrame.runners) {
-      for (const r of activeFrame.runners) {
+      activeFrame.runners.forEach((r, idx) => {
         const rScreen = this.fieldToScreen(r.x, r.y, 0, vp);
+        const prevR = prevFrame?.runners?.find((pr) => pr.label === r.label) || prevFrame?.runners?.[idx];
         this.drawArticulatedFieldPlayer(ctx, rScreen.x, rScreen.groundY, {
           jerseyColor: battingTeam.primaryColor || '#bd3039',
           capColor: '#f5b942',
           pantsColor: '#e2e8f0',
           pose: r.isSliding ? 'SLIDING' : r.isMoving ? 'RUNNING' : 'READY',
           stridePhase: r.stridePhase || 0,
+          hasGlove: false,
+          facing: this.trackFacing(`R${r.label || idx}`, prevR ? r.x - prevR.x : 0),
           label: r.label || 'RUN',
           showLabel: isFullField,
           scale: isFullField ? 1.12 : 0.96
         });
-      }
+      });
     } else if (gameState.bases) {
       const isStealOrRunHit =
         gameState.offensePlay === 'STEAL' ||
@@ -634,6 +941,7 @@ export class FieldRenderer1987 {
           pantsColor: '#e2e8f0',
           pose: 'READY',
           stridePhase: 0,
+          hasGlove: false,
           label: runner.name.split(' ').pop().slice(0, 3).toUpperCase(),
           showLabel: true,
           scale: 0.96
@@ -783,78 +1091,132 @@ export class FieldRenderer1987 {
   }
 
   /**
-   * Draws an articulated 1987 Amiga Umpire Sprite with dynamic SAFE / OUT signal animations
+   * Builds (and caches) a pixel sprite at device resolution with a soft dark outline,
+   * so figures stay crisp on HiDPI screens and cost one drawImage per frame.
+   */
+  getPixelSprite(name, colors, facing, unitDev) {
+    const key = [
+      name, facing, unitDev, colors.cap, colors.jersey, colors.pants,
+      colors.hasGlove ? 1 : 0, colors.hasBall ? 1 : 0
+    ].join('|');
+    this._spriteCache = this._spriteCache || new Map();
+    const cached = this._spriteCache.get(key);
+    if (cached) return cached;
+
+    const rows = PIXEL_SPRITES[name] || PIXEL_SPRITES.READY;
+    const h = rows.length;
+    const w = Math.max(...rows.map((r) => r.length));
+    const shade = colors.shade || '#8b95a5';
+    const palette = {
+      c: colors.cap,
+      b: '#1b2333',
+      s: SKIN,
+      w: colors.pants,
+      j: colors.jersey,
+      m: colors.hasGlove ? '#7a3b12' : SKIN,
+      h: colors.hasBall ? '#ffffff' : SKIN,
+      o: '#0b0f17',
+      B: '#e2b866',
+      n: '#18202f',
+      d: '#2b3445'
+    };
+
+    const cellAt = (r, c) => {
+      if (r < 0 || r >= h || c < 0 || c >= w) return '.';
+      const src = facing < 0 ? w - 1 - c : c;
+      return rows[r][src] || '.';
+    };
+
+    const off = document.createElement('canvas');
+    off.width = (w + 2) * unitDev;
+    off.height = (h + 2) * unitDev;
+    const o = off.getContext('2d');
+
+    // Outline pass: every empty cell touching a filled one
+    o.fillStyle = SPRITE_OUTLINE;
+    for (let r = -1; r <= h; r++) {
+      for (let c = -1; c <= w; c++) {
+        if (cellAt(r, c) !== '.') continue;
+        if (cellAt(r - 1, c) !== '.' || cellAt(r + 1, c) !== '.' || cellAt(r, c - 1) !== '.' || cellAt(r, c + 1) !== '.') {
+          o.fillRect((c + 1) * unitDev, (r + 1) * unitDev, unitDev, unitDev);
+        }
+      }
+    }
+
+    for (let r = 0; r < h; r++) {
+      for (let c = 0; c < w; c++) {
+        const ch = cellAt(r, c);
+        if (ch === '.') continue;
+        // 'g' alternates uniform and shade in a checkerboard, like EGA/Amiga dithering
+        o.fillStyle = ch === 'g' ? ((r + c) % 2 ? shade : colors.pants) : palette[ch] || colors.pants;
+        o.fillRect((c + 1) * unitDev, (r + 1) * unitDev, unitDev, unitDev);
+      }
+    }
+
+    const sprite = { canvas: off, cellsW: w + 2, cellsH: h + 2 };
+    this._spriteCache.set(key, sprite);
+    return sprite;
+  }
+
+  /**
+   * Blits a pixel sprite with its feet at (x, footY), snapped to whole device pixels.
+   */
+  drawPixelSprite(ctx, name, x, footY, unit, colors, facing = 1) {
+    // Whole device pixels per cell keep the art crisp; below 2 that would shrink the
+    // sprite badly, so build it at 2 and scale down to the true size instead.
+    const wantDev = unit * this.dpr;
+    const unitDev = Math.max(2, Math.round(wantDev));
+    const drawUnit = wantDev < 1.75 ? wantDev : unitDev;
+    const sprite = this.getPixelSprite(name, colors, facing, unitDev);
+    const m = ctx.getTransform();
+    const w = sprite.cellsW * drawUnit;
+    const h = sprite.cellsH * drawUnit;
+    const devX = Math.round(m.a * x + m.e - w / 2);
+    const devY = Math.round(m.d * footY + m.f - h + drawUnit);
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.imageSmoothingEnabled = drawUnit !== unitDev;
+    ctx.drawImage(sprite.canvas, devX, devY, w, h);
+    ctx.restore();
+  }
+
+  /**
+   * Remembers which way a moving figure faces so it keeps facing that way when it stops.
+   */
+  trackFacing(key, dx) {
+    this._facing = this._facing || {};
+    if (Math.abs(dx) > 0.05) this._facing[key] = dx > 0 ? 1 : -1;
+    return this._facing[key] || 1;
+  }
+
+  /**
+   * Draws a pixel-art umpire with SAFE / OUT signals
    */
   drawUmpireSprite(ctx, x, y, callSignal, isFullField) {
     ctx.save();
-    // Ground shadow
     ctx.fillStyle = 'rgba(0,0,0,0.45)';
     ctx.beginPath();
-    ctx.ellipse(x, y + 2, 5.5, 2.5, 0, 0, Math.PI * 2);
+    ctx.ellipse(x, y + 1, 6, 2.5, 0, 0, Math.PI * 2);
     ctx.fill();
 
-    // Legs (charcoal slacks)
-    ctx.strokeStyle = '#1e293b';
-    ctx.lineWidth = 2.4;
-    ctx.beginPath();
-    ctx.moveTo(x - 2.5, y - 6);
-    ctx.lineTo(x - 3.5, y + 1);
-    ctx.moveTo(x + 2.5, y - 6);
-    ctx.lineTo(x + 3.5, y + 1);
-    ctx.stroke();
+    const name = callSignal === 'SAFE' ? 'UMP_SAFE' : callSignal === 'OUT' ? 'UMP_OUT' : 'UMP';
+    this.drawPixelSprite(ctx, name, x, y, isFullField ? 1.6 : 1.4, { cap: '#18202f', jersey: '#18202f', pants: '#2b3445' });
 
-    // Black/Navy Umpire Coat
-    ctx.fillStyle = '#0f172a';
-    ctx.beginPath();
-    ctx.roundRect(x - 5, y - 14, 10, 9, 2);
-    ctx.fill();
-
-    // Arms (Signaling SAFE, OUT, or Ready)
-    ctx.strokeStyle = '#0f172a';
-    ctx.lineWidth = 2.4;
-    ctx.beginPath();
-    if (callSignal === 'SAFE') {
-      // Both arms spread wide horizontally ("SAFE!")
-      ctx.moveTo(x - 11, y - 12);
-      ctx.lineTo(x + 11, y - 12);
-    } else if (callSignal === 'OUT') {
-      // Right arm raised in emphatic hammer punch-out ("YER OUT!")
-      ctx.moveTo(x - 5, y - 12);
-      ctx.lineTo(x - 7, y - 7);
-      ctx.moveTo(x + 4, y - 12);
-      ctx.lineTo(x + 10, y - 19);
-    } else {
-      ctx.moveTo(x - 5, y - 12);
-      ctx.lineTo(x - 6, y - 7);
-      ctx.moveTo(x + 5, y - 12);
-      ctx.lineTo(x + 6, y - 7);
-    }
-    ctx.stroke();
-
-    // Head & Black Cap
-    ctx.fillStyle = '#f1c27d';
-    ctx.beginPath();
-    ctx.arc(x, y - 16.5, 3, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = '#020617';
-    ctx.fillRect(x - 3.5, y - 19.5, 7, 2.5);
-
-    // Floating Call Bubble when signaling
     if (callSignal && isFullField) {
       const isOut = callSignal === 'OUT';
       ctx.fillStyle = isOut ? '#dc2626' : '#16a34a';
-      ctx.fillRect(x - 18, y - 34, 36, 12);
+      ctx.fillRect(x - 18, y - 36, 36, 12);
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 9px monospace';
       ctx.textAlign = 'center';
-      ctx.fillText(isOut ? 'OUT!' : 'SAFE!', x, y - 25);
+      ctx.fillText(isOut ? 'OUT!' : 'SAFE!', x, y - 27);
     }
     ctx.restore();
   }
 
   /**
-   * Draws an articulated 6-state 1987 Amiga Field Player / Baserunner Sprite:
-   * States: 'READY' | 'RUNNING' | 'FIELDING_GROUND' | 'FIELDING_AIR' | 'THROWING' | 'SLIDING' | 'RECEIVING'
+   * Draws a pixel-art field player / baserunner.
+   * Poses: 'READY' | 'RUNNING' | 'FIELDING_GROUND' | 'FIELDING_AIR' | 'THROWING' | 'SLIDING' | 'RECEIVING' | 'BATTING'
    */
   drawArticulatedFieldPlayer(ctx, x, y, opts = {}) {
     const {
@@ -865,6 +1227,8 @@ export class FieldRenderer1987 {
       pose = 'READY',
       stridePhase = 0,
       hasBall = false,
+      hasGlove = true,
+      facing = 1,
       label = '',
       showLabel = true,
       scale = 1.0
@@ -872,148 +1236,48 @@ export class FieldRenderer1987 {
 
     ctx.save();
 
-    // Ground shadow at groundY
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    // Ground shadow at groundY (shrinks as the player leaves the ground)
+    const lift = Math.max(0, groundY - y);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
     ctx.beginPath();
-    ctx.ellipse(x, groundY + 2, 6.5 * scale, 2.8 * scale, 0, 0, Math.PI * 2);
+    ctx.ellipse(x, groundY + 1, Math.max(3, 7 - lift * 0.15) * scale, 2.6 * scale, 0, 0, Math.PI * 2);
     ctx.fill();
-
-    ctx.translate(x, y);
-    ctx.scale(scale, scale);
 
     if (pose === 'SLIDING') {
-      // Horizontal feet-first slide into the bag with dirt plume puffs!
+      // Dirt plume kicked up behind the slide
       ctx.fillStyle = 'rgba(184, 115, 56, 0.72)';
       ctx.beginPath();
-      ctx.arc(-9, -2, 5, 0, Math.PI * 2);
-      ctx.arc(-14, -5, 4, 0, Math.PI * 2);
+      ctx.arc(x - facing * 12 * scale, y - 3 * scale, 5 * scale, 0, Math.PI * 2);
+      ctx.arc(x - facing * 17 * scale, y - 6 * scale, 4 * scale, 0, Math.PI * 2);
       ctx.fill();
-
-      // Sliding legs & torso
-      ctx.strokeStyle = pantsColor;
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(-2, -2);
-      ctx.lineTo(9, -1);
-      ctx.moveTo(-2, -5);
-      ctx.lineTo(7, -4);
-      ctx.stroke();
-
-      ctx.fillStyle = jerseyColor;
-      ctx.beginPath();
-      ctx.roundRect(-10, -7, 9, 5, 2);
-      ctx.fill();
-
-      ctx.fillStyle = '#f1c27d';
-      ctx.beginPath();
-      ctx.arc(-11, -7, 2.8, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = capColor;
-      ctx.fillRect(-14, -10, 6, 2.5);
-      ctx.restore();
-      return;
     }
 
-    // Compute leg scissor & arm swing from stridePhase
-    const legSwing = pose === 'RUNNING' ? Math.sin(stridePhase) * 5.2 : 0;
-    const armSwing = pose === 'RUNNING' ? Math.cos(stridePhase) * 4.5 : 0;
-    const crouchDrop = pose === 'FIELDING_GROUND' ? 4.5 : pose === 'READY' ? 1.5 : 0;
-
-    // 1. Articulated Legs (Pants + Stirrups + Cleats)
-    ctx.strokeStyle = pantsColor;
-    ctx.lineWidth = 2.6;
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-    // Left leg
-    ctx.moveTo(-2.5, -7 + crouchDrop);
-    ctx.lineTo(-3.5 - legSwing * 0.4, -3 + crouchDrop * 0.5);
-    ctx.lineTo(-3.5 - legSwing, 0);
-    // Right leg
-    ctx.moveTo(2.5, -7 + crouchDrop);
-    ctx.lineTo(3.5 + legSwing * 0.4, -3 + crouchDrop * 0.5);
-    ctx.lineTo(3.5 + legSwing, 0);
-    ctx.stroke();
-
-    // Cleats
-    ctx.fillStyle = '#0f172a';
-    ctx.fillRect(-5 - legSwing, -1, 3, 2);
-    ctx.fillRect(2 + legSwing, -1, 3, 2);
-
-    // 2. Torso / Jersey with Belt
-    ctx.fillStyle = jerseyColor;
-    ctx.beginPath();
-    ctx.roundRect(-4.8, -15.5 + crouchDrop, 9.6, 8.8, 2.5);
-    ctx.fill();
-    ctx.fillStyle = '#1e293b';
-    ctx.fillRect(-4.5, -7.5 + crouchDrop, 9, 1.3);
-
-    // 3. Articulated Arms & Leather Fielding Glove
-    ctx.strokeStyle = jerseyColor;
-    ctx.lineWidth = 2.3;
-    let gloveX = -6.5;
-    let gloveY = -10 + crouchDrop;
-
-    ctx.beginPath();
-    if (pose === 'FIELDING_GROUND') {
-      // Both arms reaching down to scoop ball in the dirt
-      ctx.moveTo(-4, -13 + crouchDrop);
-      ctx.lineTo(-3, -2);
-      ctx.moveTo(4, -13 + crouchDrop);
-      ctx.lineTo(2, -2);
-      gloveX = -3;
-      gloveY = -1.5;
-    } else if (pose === 'FIELDING_AIR') {
-      // Leaping / high glove reach overhead
-      ctx.moveTo(-4, -14);
-      ctx.lineTo(-6, -23);
-      ctx.moveTo(4, -14);
-      ctx.lineTo(6, -10);
-      gloveX = -6.5;
-      gloveY = -24;
-    } else if (pose === 'THROWING') {
-      // Throwing whip extension
-      ctx.moveTo(-4, -14);
-      ctx.lineTo(-8, -11);
-      ctx.moveTo(4, -14);
-      ctx.lineTo(9, -19);
-      gloveX = -8.5;
-      gloveY = -11;
-    } else {
-      // Running or Ready stance
-      ctx.moveTo(-4, -14 + crouchDrop);
-      ctx.lineTo(-6.5, -9.5 + crouchDrop + armSwing);
-      ctx.moveTo(4, -14 + crouchDrop);
-      ctx.lineTo(6.5, -9.5 + crouchDrop - armSwing);
-      gloveX = -6.8;
-      gloveY = -9.2 + crouchDrop + armSwing;
+    let spriteName = pose;
+    if (pose === 'RUNNING') {
+      // Four-step cycle: stride, pass, stride, pass
+      const step = Math.floor((((stridePhase % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2)) / (Math.PI / 2));
+      spriteName = step % 2 === 0 ? 'RUN_A' : 'RUN_B';
     }
-    ctx.stroke();
+    if (!PIXEL_SPRITES[spriteName]) spriteName = 'READY';
 
-    // Brown leather mitt on glove hand
-    ctx.fillStyle = '#7c2d12';
-    ctx.beginPath();
-    ctx.arc(gloveX, gloveY, 2.4, 0, Math.PI * 2);
-    ctx.fill();
+    this.drawPixelSprite(ctx, spriteName, x, y, 1.45 * scale, {
+      cap: capColor,
+      jersey: jerseyColor,
+      pants: pantsColor,
+      hasGlove,
+      hasBall
+    }, facing);
 
-    // White baseball visible if player currently holds ball
-    if (hasBall) {
+    // Ball held in the glove (the throwing sprite shows it in the raised hand)
+    if (hasBall && pose !== 'THROWING') {
       ctx.fillStyle = '#ffffff';
+      ctx.strokeStyle = '#0b0f17';
+      ctx.lineWidth = 0.8;
       ctx.beginPath();
-      ctx.arc(pose === 'THROWING' ? 9 : gloveX, pose === 'THROWING' ? -19 : gloveY, 2, 0, Math.PI * 2);
+      ctx.arc(x + facing * 6 * scale, y - 12 * scale, 1.9, 0, Math.PI * 2);
       ctx.fill();
+      ctx.stroke();
     }
-
-    // 4. Head, Neck & Visored Cap
-    ctx.fillStyle = '#f1c27d';
-    ctx.beginPath();
-    ctx.arc(0, -18 + crouchDrop, 3.3, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.fillStyle = capColor;
-    ctx.beginPath();
-    ctx.arc(0, -19.2 + crouchDrop, 3.5, Math.PI, 0);
-    ctx.fill();
-    ctx.fillRect(-4.2, -19.5 + crouchDrop, 8.4, 1.8);
 
     ctx.restore();
 
@@ -1030,8 +1294,80 @@ export class FieldRenderer1987 {
   }
 
   /**
-   * Draws the Right 1/3 Split-Screen Viewport:
-   * Over-the-Umpire Pitcher vs. Batter Duel (matching `ewb_1987_amiga_gameplay.jpg` & `amiga_02.jpg`)
+   * Returns a 2x2 checkerboard fill of two colors, locked to device pixels so the
+   * dither stays crisp under any transform (mirroring, scaling).
+   */
+  getDitherPattern(ctx, a, b) {
+    const cell = Math.max(1, Math.round(1.25 * this.dpr));
+    const key = `${a}|${b}|${cell}`;
+    this._ditherCache = this._ditherCache || new Map();
+    let pat = this._ditherCache.get(key);
+    if (!pat) {
+      const off = document.createElement('canvas');
+      off.width = off.height = cell * 2;
+      const o = off.getContext('2d');
+      o.fillStyle = a;
+      o.fillRect(0, 0, cell * 2, cell * 2);
+      o.fillStyle = b;
+      o.fillRect(0, 0, cell, cell);
+      o.fillRect(cell, cell, cell, cell);
+      pat = ctx.createPattern(off, 'repeat');
+      this._ditherCache.set(key, pat);
+    }
+    pat.setTransform(ctx.getTransform().inverse());
+    return pat;
+  }
+
+  /**
+   * Strokes a jointed limb: outline pass for every segment, then the fill pass,
+   * so joints read as one shape. `segs` is [[from, to, width], ...].
+   */
+  strokeLimb(ctx, segs, fill) {
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    for (const [a, b, w] of segs) {
+      ctx.lineWidth = w + 2.4;
+      ctx.beginPath();
+      ctx.moveTo(a[0], a[1]);
+      ctx.lineTo(b[0], b[1]);
+      ctx.stroke();
+    }
+    ctx.strokeStyle = fill;
+    for (const [a, b, w] of segs) {
+      ctx.lineWidth = w;
+      ctx.beginPath();
+      ctx.moveTo(a[0], a[1]);
+      ctx.lineTo(b[0], b[1]);
+      ctx.stroke();
+    }
+  }
+
+  /**
+   * Lays a dithered shadow strip along one side of each limb segment.
+   * `side` picks which perpendicular (+1 / -1) faces away from the light.
+   */
+  shadeLimb(ctx, segs, pattern, side = 1) {
+    ctx.lineCap = 'butt';
+    ctx.strokeStyle = pattern;
+    for (const [a, b, w] of segs) {
+      const dx = b[0] - a[0];
+      const dy = b[1] - a[1];
+      const len = Math.hypot(dx, dy) || 1;
+      const ox = (-dy / len) * w * 0.27 * side;
+      const oy = (dx / len) * w * 0.27 * side;
+      ctx.lineWidth = w * 0.46;
+      ctx.beginPath();
+      ctx.moveTo(a[0] + ox, a[1] + oy);
+      ctx.lineTo(b[0] + ox, b[1] + oy);
+      ctx.stroke();
+    }
+  }
+
+  /**
+   * Draws the Right 1/3 Split-Screen Viewport: the Pitcher vs. Batter duel seen from
+   * catcher's-eye height behind home plate. The batter fills the foreground beside the
+   * plate; the pitcher stands small on the mound against the batter's eye.
    */
   drawDuelViewport(ctx, vp, gameState) {
     ctx.save();
@@ -1044,150 +1380,263 @@ export class FieldRenderer1987 {
     const fieldingTeam = gameState.half === 'TOP' ? gameState.homeTeam : gameState.awayTeam;
     const battingTeam = gameState.half === 'TOP' ? gameState.awayTeam : gameState.homeTeam;
     const hasRunnersOnBase = Boolean(gameState.bases && gameState.bases.some(Boolean));
-
-    // 1. Authentic 1987 Amiga Green Turf Background with subtle raster scanlines (NOT a brown trapezoid!)
     const isTurf = gameState.park?.surface === 'Artificial Turf';
-    ctx.fillStyle = isTurf ? '#126e5e' : '#1b7d36';
-    ctx.fillRect(vp.x, vp.y, vp.w, vp.h);
-
-    ctx.fillStyle = isTurf ? '#157a68' : '#208b3d';
-    for (let sy = vp.y; sy < vp.y + vp.h; sy += 8) {
-      ctx.fillRect(vp.x, sy, vp.w, 4);
-    }
-
-    // 2. Top-Right 1987 Amiga Retro Stat Card (`amiga_02.jpg` layout)
-    this.drawAmigaDuelStatBox(ctx, vp, gameState, batter, pitcher);
 
     const cx = vp.x + vp.w * 0.5;
-    const moundY = vp.y + vp.h * 0.43;
-    const plateY = vp.y + vp.h * 0.825;
+    const standsTop = vp.y + 104;
+    const lowerStandsTop = vp.y + 262;
+    const wallTop = vp.y + 316;
+    const grassTop = vp.y + 334;
+    const dirtTop = vp.y + 404;
+    const moundY = vp.y + 366;
+    const plateY = vp.y + 428;
+    const batterFootY = vp.y + 474;
 
-    // 3. Pitcher's Mound Dirt Oval & Rubber Slab
-    const moundGrad = ctx.createRadialGradient(cx, moundY, 8, cx, moundY + 4, vp.w * 0.44);
-    moundGrad.addColorStop(0, '#c27135');
-    moundGrad.addColorStop(1, '#8c4b1c');
-    ctx.fillStyle = moundGrad;
+    // 1. Upper stands: speckled crowd, slightly dimmed so the players pop
+    ctx.fillStyle = this.getCrowdPattern(ctx);
+    ctx.fillRect(vp.x, standsTop, vp.w, lowerStandsTop - standsTop);
+    ctx.fillStyle = 'rgba(8, 12, 20, 0.55)';
+    ctx.fillRect(vp.x, standsTop, vp.w, lowerStandsTop - standsTop);
+
+    // 2. Lower boxes: darker band cut by aisle stairways that fan out in perspective
+    ctx.fillStyle = this.getCrowdPattern(ctx);
+    ctx.fillRect(vp.x, lowerStandsTop, vp.w, wallTop - lowerStandsTop);
+    ctx.fillStyle = 'rgba(4, 7, 12, 0.6)';
+    ctx.fillRect(vp.x, lowerStandsTop, vp.w, wallTop - lowerStandsTop);
+    ctx.fillStyle = '#cbd5e1';
+    ctx.fillRect(vp.x, lowerStandsTop, vp.w, 2);
+    ctx.strokeStyle = '#05070b';
+    ctx.lineWidth = 3.5;
+    for (const frac of [0.06, 0.27, 0.73, 0.94]) {
+      const bx = vp.x + vp.w * frac;
+      const tx = cx + (bx - cx) * 1.18;
+      ctx.beginPath();
+      ctx.moveTo(bx, wallTop);
+      ctx.lineTo(tx, lowerStandsTop + 2);
+      ctx.stroke();
+    }
+
+    // Batter's eye: dark backdrop behind the pitcher
+    ctx.fillStyle = '#070b12';
+    ctx.fillRect(cx - 42, lowerStandsTop + 6, 84, wallTop - lowerStandsTop - 6);
+
+    // 3. Outfield wall pad, warning track
+    ctx.fillStyle = '#14532d';
+    ctx.fillRect(vp.x, wallTop, vp.w, 14);
+    ctx.fillStyle = '#f5b942';
+    ctx.fillRect(vp.x, wallTop, vp.w, 2);
+    ctx.fillStyle = isTurf ? '#6b5a44' : '#a0612c';
+    ctx.fillRect(vp.x, wallTop + 14, vp.w, grassTop - wallTop - 14);
+
+    // 4. Grass with mowing stripes that widen toward the camera
+    const grassA = isTurf ? '#157a68' : '#1f8a3e';
+    const grassB = isTurf ? '#126e5e' : '#1b7d36';
+    let sy = grassTop;
+    let stripeH = 3;
+    let stripe = 0;
+    while (sy < dirtTop) {
+      ctx.fillStyle = stripe++ % 2 ? grassB : grassA;
+      ctx.fillRect(vp.x, sy, vp.w, Math.min(stripeH, dirtTop - sy) + 0.5);
+      sy += stripeH;
+      stripeH *= 1.22;
+    }
+
+    // Pitcher's mound and rubber
+    ctx.fillStyle = '#a65f2a';
     ctx.beginPath();
-    ctx.ellipse(cx, moundY + 6, vp.w * 0.44, 28, 0, 0, Math.PI * 2);
+    ctx.ellipse(cx, moundY - 1, 44, 8, 0, 0, Math.PI * 2);
     ctx.fill();
-
-    // White Pitcher's Rubber
+    ctx.fillStyle = '#c27a3e';
+    ctx.beginPath();
+    ctx.ellipse(cx, moundY - 3, 26, 4, 0, 0, Math.PI * 2);
+    ctx.fill();
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(cx - 16, moundY + 8, 32, 4);
+    ctx.fillRect(cx - 7, moundY - 3, 14, 2);
 
-    // 4. Home Plate Dirt Circle, Chalk Batter's Boxes & Pentagon Home Plate
-    ctx.fillStyle = '#9c5624';
+    // 5. Home plate dirt
+    ctx.fillStyle = isTurf ? '#8b6a4a' : '#a65f2a';
+    ctx.fillRect(vp.x, dirtTop, vp.w, vp.y + vp.h - dirtTop);
+    ctx.fillStyle = 'rgba(255, 220, 170, 0.07)';
     ctx.beginPath();
-    ctx.ellipse(cx, plateY + 2, vp.w * 0.48, 42, 0, 0, Math.PI * 2);
+    ctx.ellipse(cx, plateY + 30, vp.w * 0.45, 46, 0, 0, Math.PI * 2);
     ctx.fill();
 
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.88)';
+    // Foul lines running off to either side, then the batter's boxes in perspective
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(cx - 22, plateY - 2);
+    ctx.lineTo(vp.x, dirtTop + 10);
+    ctx.moveTo(cx + 22, plateY - 2);
+    ctx.lineTo(vp.x + vp.w, dirtTop + 10);
+    ctx.stroke();
+
     ctx.lineWidth = 1.8;
-    // Left-handed & Right-handed batter's boxes in perspective
-    ctx.strokeRect(cx - 72, plateY - 20, 44, 34);
-    ctx.strokeRect(cx + 28, plateY - 20, 44, 34);
+    for (const s of [-1, 1]) {
+      ctx.beginPath();
+      ctx.moveTo(cx + s * 25, plateY - 10);
+      ctx.lineTo(cx + s * 60, plateY - 10);
+      ctx.lineTo(cx + s * 94, plateY + 50);
+      ctx.lineTo(cx + s * 31, plateY + 50);
+      ctx.closePath();
+      ctx.stroke();
+      // Catcher's box lines trailing toward the camera
+      ctx.beginPath();
+      ctx.moveTo(cx + s * 31, plateY + 50);
+      ctx.lineTo(cx + s * 36, vp.y + vp.h);
+      ctx.stroke();
+    }
 
-    // Home plate pentagon with black beveled rubber edge (just like amiga_02.jpg)
+    // Home plate seen from behind: point toward the camera, black rubber bevel
     ctx.fillStyle = '#111827';
-    ctx.fillRect(cx - 14, plateY - 6, 28, 9);
+    ctx.beginPath();
+    ctx.moveTo(cx - 19, plateY - 3);
+    ctx.lineTo(cx + 19, plateY - 3);
+    ctx.lineTo(cx + 19, plateY + 3);
+    ctx.lineTo(cx, plateY + 9);
+    ctx.lineTo(cx - 19, plateY + 3);
+    ctx.closePath();
+    ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
-    ctx.moveTo(cx - 12, plateY - 5);
-    ctx.lineTo(cx + 12, plateY - 5);
-    ctx.lineTo(cx + 12, plateY + 1);
-    ctx.lineTo(cx, plateY + 7);
-    ctx.lineTo(cx - 12, plateY + 1);
+    ctx.moveTo(cx - 17, plateY - 4);
+    ctx.lineTo(cx + 17, plateY - 4);
+    ctx.lineTo(cx + 17, plateY + 1);
+    ctx.lineTo(cx, plateY + 6);
+    ctx.lineTo(cx - 17, plateY + 1);
     ctx.closePath();
     ctx.fill();
 
-    // Subtle Strike Zone Reference Frame
-    const szW = 36;
-    const szH = 44;
+    // Faint strike-zone frame above the plate
+    const szW = 34;
+    const szH = 56;
     const szX = cx - szW / 2;
-    const szY = plateY - 56;
-    ctx.strokeStyle = 'rgba(245, 185, 66, 0.35)';
+    const szY = plateY - 54;
+    ctx.strokeStyle = 'rgba(245, 185, 66, 0.3)';
+    ctx.lineWidth = 1;
     ctx.setLineDash([4, 4]);
     ctx.strokeRect(szX, szY, szW, szH);
     ctx.setLineDash([]);
 
-    // 5. 5-Stage Kinetically Choreographed Pitcher on the Mound
+    // 6. Pitcher on the mound
     const pitchProg = this.pitchAnim ? this.pitchAnim.progress : 0;
-    this.drawDuelPitcher(ctx, cx, moundY + 8, fieldingTeam, pitcher, pitchProg, hasRunnersOnBase);
+    const isLeftyP = pitcher && pitcher.throws === 'L';
+    this.drawDuelPitcher(ctx, cx, moundY, fieldingTeam, pitcher, pitchProg, hasRunnersOnBase, fieldingTeam === gameState.homeTeam);
 
-    // 6. Kinetically Choreographed Batter in the Box (with continuous bat waggle & multi-phase swing)
+    // 7. Pitch flight. Depth runs from the release point (~55 ft out) to the plate, so the ball
+    //    creeps out of the windup, then grows fast and breaks late, as it does from behind the plate.
+    const outcome = this.pitchAnim?.outcome;
+    const wasHit = Boolean(this.pitchAnim?.swung) && (outcome === 'IN_PLAY' || outcome === 'FOUL');
+    let target = null;
+    if (this.pitchAnim) {
+      const normZ = ((this.pitchAnim.plateZ ?? 2.5) - 1.55) / 2.0;
+      target = {
+        x: cx + (this.pitchAnim.plateX || 0) * (szW * 0.64),
+        y: szY + szH * (1 - Math.max(-0.35, Math.min(1.35, normZ)))
+      };
+    }
+
+    if (this.pitchAnim && pitchProg >= 0.42) {
+      const t = Math.min(1, (pitchProg - 0.42) / 0.5);
+      const d0 = 55;
+      const d1 = 10;
+      const ballAt = (tt) => {
+        const d = d0 + (d1 - d0) * tt;
+        const s = (1 / d - 1 / d0) / (1 / d1 - 1 / d0);
+        const startX = cx + (isLeftyP ? 6 : -6);
+        const startY = moundY - 60;
+        const bx = (this.pitchAnim.breakX || 0) * 14;
+        const bz = (this.pitchAnim.breakZ || 0) * 12;
+        return {
+          x: lerp(startX, target.x - bx, s) + bx * s * s,
+          y: lerp(startY, target.y + bz, s) - bz * s * s,
+          s
+        };
+      };
+
+      const contactReached = wasHit && t >= 0.97;
+      if (!contactReached) {
+        // Ghost trail
+        for (let i = 3; i >= 1; i--) {
+          const g = ballAt(Math.max(0, t - i * 0.035));
+          ctx.fillStyle = `rgba(255, 255, 255, ${0.12 * (4 - i)})`;
+          ctx.beginPath();
+          ctx.arc(g.x, g.y, lerp(1.2, 5, g.s), 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        const b = ballAt(t);
+        const radius = lerp(1.3, 5.5, b.s);
+        const shadowY = lerp(moundY, plateY, b.s);
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+        ctx.beginPath();
+        ctx.ellipse(b.x, shadowY, radius, radius * 0.4, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.strokeStyle = '#0b0f17';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        if (radius > 3) {
+          ctx.strokeStyle = '#dc2626';
+          ctx.lineWidth = 0.9;
+          ctx.beginPath();
+          ctx.arc(b.x - radius * 0.9, b.y, radius * 0.6, -0.9, 0.9);
+          ctx.arc(b.x + radius * 0.9, b.y, radius * 0.6, Math.PI - 0.9, Math.PI + 0.9);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // 8. Batter in the box, filling the foreground
     let batterSide = batter ? batter.bats : 'R';
     if (batterSide === 'S') {
       batterSide = pitcher && pitcher.throws === 'L' ? 'R' : 'L';
     }
-    const batterX = batterSide === 'R' ? cx - 48 : cx + 48;
+    const batterX = batterSide === 'R' ? cx - 86 : cx + 86;
     this.drawDuelBatter(
       ctx,
       batterX,
-      plateY - 2,
+      batterFootY,
       battingTeam,
       batterSide,
       pitchProg,
-      Boolean(this.pitchAnim && this.pitchAnim.swung)
+      Boolean(this.pitchAnim && this.pitchAnim.swung),
+      battingTeam === gameState.homeTeam
     );
 
-    // 7. Animated Pitch Flight & Curve Break (starts at pitcher release p = 0.42 -> arrives at plate p = 0.92)
-    if (this.pitchAnim && pitchProg >= 0.40) {
-      const flightProg = Math.min(1, (pitchProg - 0.40) / 0.52);
-      const isLeftyP = pitcher && pitcher.throws === 'L';
-      const startX = cx + (isLeftyP ? 14 : -14);
-      const startY = moundY - 38;
-
-      const normZ = ((this.pitchAnim.plateZ ?? 2.5) - 1.55) / 2.0;
-      const targetX = cx + (this.pitchAnim.plateX || 0) * (szW * 0.64);
-      const targetY = szY + szH * (1 - Math.max(-0.35, Math.min(1.35, normZ)));
-
-      const curveArc = Math.sin(flightProg * Math.PI);
-      const curX = startX + (targetX - startX) * flightProg + (this.pitchAnim.breakX || 0) * 15 * curveArc;
-      const curY = startY + (targetY - startY) * flightProg - (this.pitchAnim.breakZ || 0) * 13 * curveArc;
-      const radius = 3.2 + flightProg * 4.2;
-
-      // Ground shadow of the pitched ball racing toward home plate
-      const shadowY = (moundY + 8) + (plateY - (moundY + 8)) * flightProg;
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
-      ctx.beginPath();
-      ctx.ellipse(curX, shadowY, radius * 0.9, radius * 0.45, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Pitch break ribbon trail
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(startX, startY);
-      ctx.quadraticCurveTo(
-        (startX + targetX) / 2 + (this.pitchAnim.breakX || 0) * 15,
-        (startY + targetY) / 2 - (this.pitchAnim.breakZ || 0) * 13,
-        curX,
-        curY
-      );
-      ctx.stroke();
-
-      // Baseball with red seams
-      ctx.fillStyle = '#ffffff';
-      ctx.strokeStyle = '#dc2626';
-      ctx.lineWidth = 1.3;
-      ctx.beginPath();
-      ctx.arc(curX, curY, radius, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.stroke();
-
-      if (flightProg >= 0.96) {
-        ctx.strokeStyle = this.pitchAnim.isStrike ? '#fde047' : '#60a5fa';
-        ctx.lineWidth = 2.2;
+    // 9. Contact flash, or the catcher's mitt popping up to receive the pitch
+    if (this.pitchAnim && target && pitchProg >= 0.9) {
+      if (wasHit) {
+        const flash = 1 - Math.min(1, (pitchProg - 0.9) / 0.1) * 0.6;
+        ctx.strokeStyle = `rgba(253, 224, 71, ${flash})`;
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.arc(targetX, targetY, 7, 0, Math.PI * 2);
+        for (let i = 0; i < 8; i++) {
+          const a = (i / 8) * Math.PI * 2;
+          ctx.moveTo(target.x + Math.cos(a) * 5, target.y + Math.sin(a) * 5);
+          ctx.lineTo(target.x + Math.cos(a) * 13, target.y + Math.sin(a) * 13);
+        }
         ctx.stroke();
+      } else {
+        this.drawDuelCatcherMitt(ctx, target.x, target.y, pitchProg >= 0.92);
+        if (pitchProg >= 0.94) {
+          ctx.strokeStyle = this.pitchAnim.isStrike ? '#fde047' : '#60a5fa';
+          ctx.lineWidth = 2.2;
+          ctx.beginPath();
+          ctx.arc(target.x, target.y, 13, 0, Math.PI * 2);
+          ctx.stroke();
+        }
       }
     }
 
-    // 8. Foreground Catcher & Home Plate Umpire Silhouetted in the Slot (authentic 1987 Amiga perspective!)
-    this.drawDuelBatteryForeground(ctx, cx, vp.y + vp.h, fieldingTeam, this.pitchAnim);
+    // 10. Batter/Pitcher stat box over the stands
+    this.drawAmigaDuelStatBox(ctx, vp, gameState, batter, pitcher);
 
-    // 9. Pitch Call Banner when pitch finishes
+    // 11. Pitch call banner when the pitch finishes
     if (this.pitchAnim && pitchProg >= 0.85) {
       const boxW = vp.w - 24;
       const boxX = vp.x + 12;
@@ -1267,430 +1716,404 @@ export class FieldRenderer1987 {
   }
 
   /**
-   * Eddie Dombrower's 5-Stage Kinetic Pitcher Choreography (`drawDuelPitcher`):
-   * Differentiates between Full Windup (bases empty) and The Stretch (runners on base).
-   * - Stage 0 (Idle): Breathing stance on the rubber; if in Stretch, glances toward 1st base.
-   * - Stage 1 (0.00 - 0.18): Rocker step / hands come set at chest or overhead.
-   * - Stage 2 (0.18 - 0.36): High knee lift tucked to chest (or quick slide-step in Stretch) & hip coil.
-   * - Stage 3 (0.36 - 0.46): Power stride down the mound & throwing arm cocked in external rotation.
-   * - Stage 4 (0.46 - 0.65): Whip arm release & torso extension over front knee.
-   * - Stage 5 (0.65 - 1.00): Follow-through back leg kick & defensive fielding finish.
+   * Pitcher on the mound, seen front-on from behind the plate.
+   * Full windup (bases empty) raises the hands overhead; the stretch (runners on) keeps
+   * them at the chest and uses a shorter leg lift.
+   * - 0.00–0.18 hands rise (windup) or come set (stretch)
+   * - 0.18–0.36 leg kick
+   * - 0.36–0.42 stride, throwing arm cocked
+   * - 0.42–0.50 release (ball leaves the hand at 0.42)
+   * - 0.50–1.00 follow-through, back leg kicks up
    */
-  drawDuelPitcher(ctx, x, footY, team, pitcher, progress, isStretch = false) {
-    ctx.save();
+  drawDuelPitcher(ctx, x, footY, team, pitcher, progress, isStretch = false, isHome = true) {
+    const P = PITCHER_POSES;
     const isLefty = pitcher && pitcher.throws === 'L';
-    const dir = isLefty ? -1 : 1; // +1 for RHP (throwing arm on viewer's left), -1 for LHP
     const primary = team?.primaryColor || '#f58220';
     const secondary = team?.secondaryColor || '#1e293b';
-    const idleBreath = progress === 0 ? Math.sin(performance.now() * 0.004) * 1.2 : 0;
+    const uni = isHome ? '#f4f5f7' : '#c4cad3';
+    const uniShade = isHome ? '#97a0ae' : '#7a8391';
 
-    // Determine kinetic phase variables
-    let strideY = 0;
-    let kneeLift = 0;
-    let torsoTilt = 0;
-    let throwArmAngle = 0.3 * dir;
-    let gloveArmAngle = -0.3 * dir;
-    let headTurnX = 0;
-
+    const windPose = isStretch ? blendPose(P.SET, P.KICK, 0.15) : P.WIND;
+    const kickPose = isStretch ? blendPose(P.SET, P.KICK, 0.55) : P.KICK;
+    let pose;
     if (progress === 0) {
-      if (isStretch) {
-        // Runner check glance toward 1st base
-        headTurnX = Math.sin(performance.now() * 0.003) > 0.4 ? -2.5 : 0;
-      }
+      pose = { ...P.SET };
+      const breath = Math.sin(performance.now() * 0.004) * 0.8;
+      pose.neck = [0, -82 + breath];
+      pose.head = [isStretch && Math.sin(performance.now() * 0.003) > 0.4 ? 3 : 0, -91 + breath];
     } else if (progress < 0.18) {
-      // Stage 1: Rocker step & hands raise
-      const p = progress / 0.18;
-      throwArmAngle = dir * (0.2 - p * (isStretch ? 0.4 : 1.1));
-      gloveArmAngle = -dir * (0.2 - p * (isStretch ? 0.4 : 1.1));
+      pose = blendPose(P.SET, windPose, smooth(progress / 0.18));
     } else if (progress < 0.36) {
-      // Stage 2: High Leg Kick & Hip Coil (compact in Stretch)
-      const p = (progress - 0.18) / 0.18;
-      const liftFactor = Math.sin(p * Math.PI);
-      kneeLift = (isStretch ? 8 : 17) * liftFactor;
-      torsoTilt = -dir * 0.12 * liftFactor;
-      throwArmAngle = dir * (isStretch ? -0.5 : -1.2);
-      gloveArmAngle = -dir * 0.6;
-    } else if (progress < 0.48) {
-      // Stage 3: Stride Down the Mound & Arm Cocked High
-      const p = (progress - 0.36) / 0.12;
-      strideY = p * 11;
-      kneeLift = (1 - p) * 6;
-      throwArmAngle = dir * (-2.35 + p * 0.4); // arm cocked high behind head
-      gloveArmAngle = -dir * 1.1; // glove pointing at batter
+      pose = blendPose(windPose, kickPose, smooth((progress - 0.18) / 0.18));
+    } else if (progress < 0.42) {
+      pose = blendPose(kickPose, P.COCK, smooth((progress - 0.36) / 0.06));
+    } else if (progress < 0.5) {
+      pose = blendPose(P.COCK, P.RELEASE, smooth((progress - 0.42) / 0.08));
     } else {
-      // Stage 4 & 5: Whip Release & Follow-Through
-      const p = Math.min(1, (progress - 0.48) / 0.42);
-      strideY = 11;
-      torsoTilt = dir * 0.22 * p;
-      throwArmAngle = dir * (-1.95 + p * 3.1); // whips across body
-      gloveArmAngle = -dir * (1.1 - p * 0.7);
+      pose = blendPose(P.RELEASE, P.FOLLOW, smooth((progress - 0.5) / 0.28));
     }
 
-    const baseFootY = footY + strideY;
-
-    // Ground shadow under pitcher
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.48)';
+    const k = 0.66;
+    ctx.save();
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
     ctx.beginPath();
-    ctx.ellipse(x, baseFootY + 2, 13, 5, 0, 0, Math.PI * 2);
+    ctx.ellipse(x, footY, 13, 3.5, 0, 0, Math.PI * 2);
     ctx.fill();
 
-    const hipY = baseFootY - 22 + (strideY > 4 ? 3 : 0) + idleBreath;
+    ctx.translate(x, footY);
+    ctx.scale(isLefty ? -k : k, k);
+    const shade = this.getDitherPattern(ctx, uni, uniShade);
+    const sleeveShade = this.getDitherPattern(ctx, primary, darken(primary, 0.45));
 
-    // 1. Pivot Leg & Lead Stride/Kick Leg (White/Gray Uniform Pants with Team Piping & Stirrups)
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+    // Legs, cleats and team stirrups
+    const pelvisT = [pose.pelvis[0] - 6, pose.pelvis[1]];
+    const pelvisG = [pose.pelvis[0] + 6, pose.pelvis[1]];
+    const tLeg = [[pelvisT, pose.tKnee, 12], [pose.tKnee, pose.tFoot, 10]];
+    const gLeg = [[pelvisG, pose.gKnee, 12], [pose.gKnee, pose.gFoot, 10]];
+    for (const [leg, foot, knee] of [[tLeg, pose.tFoot, pose.tKnee], [gLeg, pose.gFoot, pose.gKnee]]) {
+      this.strokeLimb(ctx, leg, uni);
+      this.shadeLimb(ctx, leg, shade, 1);
+      const sx = lerp(foot[0], knee[0], 0.4);
+      const sy = lerp(foot[1], knee[1], 0.4);
+      this.strokeLimb(ctx, [[[sx, sy], foot, 7]], primary);
+      ctx.fillStyle = FIGURE_OUTLINE;
+      ctx.beginPath();
+      ctx.ellipse(foot[0], foot[1] + 1, 6, 3.2, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
 
-    // Pivot leg (stays anchored near rubber, then kicks up in follow-through)
-    const pivotFootX = x - dir * 5;
-    const pivotFootY = progress > 0.52 ? footY - 6 : footY;
-    ctx.strokeStyle = '#f1f5f9';
-    ctx.lineWidth = 5.5;
+    // Torso: tapered jersey with dithered shadow side, team lettering and belt
+    const [tsx, tsy] = pose.tShoulder;
+    const [gsx, gsy] = pose.gShoulder;
+    const [px, py] = pose.pelvis;
+    ctx.fillStyle = uni;
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 2.2;
     ctx.beginPath();
-    ctx.moveTo(x - dir * 4, hipY);
-    ctx.lineTo(x - dir * 5, (hipY + pivotFootY) * 0.5);
-    ctx.lineTo(pivotFootX, pivotFootY);
+    ctx.moveTo(tsx - 2, tsy);
+    ctx.lineTo(gsx + 2, gsy);
+    ctx.lineTo(px + 9, py + 1);
+    ctx.lineTo(px - 9, py + 1);
+    ctx.closePath();
     ctx.stroke();
-
-    // Lead leg (lifts up to chest during windup Stage 2, then plants down mound)
-    const leadKneeX = x + dir * (kneeLift > 2 ? 2 : 5);
-    const leadKneeY = hipY + 9 - kneeLift;
-    const leadFootX = x + dir * 6;
-    const leadFootY = baseFootY - kneeLift * 0.85;
-
-    ctx.strokeStyle = '#f8fafc';
-    ctx.lineWidth = 5.5;
-    ctx.beginPath();
-    ctx.moveTo(x + dir * 4, hipY);
-    ctx.lineTo(leadKneeX, leadKneeY);
-    ctx.lineTo(leadFootX, leadFootY);
-    ctx.stroke();
-
-    // Stirrup socks & black cleats
-    ctx.fillStyle = primary;
-    ctx.fillRect(pivotFootX - 2.5, pivotFootY - 6, 5, 5);
-    ctx.fillRect(leadFootX - 2.5, leadFootY - 6, 5, 5);
-    ctx.fillStyle = '#0f172a';
-    ctx.fillRect(pivotFootX - 3.5, pivotFootY - 2, 7, 3);
-    ctx.fillRect(leadFootX - 3.5, leadFootY - 2, 7, 3);
-
-    // 2. Articulated Torso / Jersey
-    ctx.save();
-    ctx.translate(x, hipY);
-    ctx.rotate(torsoTilt);
-
-    // Belt
-    ctx.fillStyle = '#0f172a';
-    ctx.fillRect(-8, -2, 16, 3);
-
-    // Jersey torso with team trim
-    ctx.fillStyle = '#f8fafc';
-    ctx.beginPath();
-    ctx.roundRect(-9.5, -21, 19, 20, 4);
     ctx.fill();
-
-    // Colored jersey shoulders / chest stripe
-    ctx.fillStyle = primary;
-    ctx.fillRect(-9.5, -20, 19, 6);
-    ctx.fillRect(-2, -20, 4, 18);
-
-    // 3. Pitching Arm & Glove Arm
-    const shoulderY = -16;
-    // Glove Arm
-    ctx.save();
-    ctx.translate(dir * 9, shoulderY);
-    ctx.rotate(gloveArmAngle);
+    ctx.fillStyle = shade;
+    ctx.beginPath();
+    ctx.moveTo((tsx + gsx) / 2 + 4, (tsy + gsy) / 2);
+    ctx.lineTo(gsx + 2, gsy);
+    ctx.lineTo(px + 9, py + 1);
+    ctx.lineTo(px + 3, py + 1);
+    ctx.closePath();
+    ctx.fill();
     ctx.strokeStyle = primary;
-    ctx.lineWidth = 4.2;
+    ctx.lineWidth = 3;
     ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(dir * 4, 11);
+    const chestY = lerp(tsy, py, 0.3);
+    ctx.moveTo(lerp(tsx, px, 0.3) + 3, chestY + 1);
+    ctx.lineTo(lerp(gsx, px, 0.3) - 3, chestY - 1);
     ctx.stroke();
-    // Leather Pitcher's Glove
-    ctx.fillStyle = '#78350f';
-    ctx.beginPath();
-    ctx.arc(dir * 4, 13, 4.5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
+    ctx.fillStyle = '#1b2333';
+    ctx.fillRect(px - 9, py - 3, 18, 4);
 
-    // Throwing Arm
-    ctx.save();
-    ctx.translate(-dir * 9, shoulderY);
-    ctx.rotate(throwArmAngle);
-    ctx.strokeStyle = primary;
-    ctx.lineWidth = 4.2;
+    // Glove arm, then head and cap, then the throwing arm on top
+    const gArm = [[pose.gShoulder, pose.gElbow, 8.5], [pose.gElbow, pose.gHand, 7.5]];
+    this.strokeLimb(ctx, gArm, primary);
+    this.shadeLimb(ctx, gArm, sleeveShade, 1);
+    ctx.fillStyle = '#7a3b12';
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 1.6;
     ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(-dir * 3, 12);
-    ctx.stroke();
-    // Hand & Baseball (before release at progress < 0.42)
-    ctx.fillStyle = '#f1c27d';
-    ctx.beginPath();
-    ctx.arc(-dir * 3, 13, 2.8, 0, Math.PI * 2);
+    ctx.ellipse(pose.gHand[0] + 1, pose.gHand[1], 6, 7, 0.3, 0, Math.PI * 2);
     ctx.fill();
+    ctx.stroke();
+
+    const [hx, hy] = pose.head;
+    const hr = pose.headR;
+    this.strokeLimb(ctx, [[pose.neck, [hx, hy + hr * 0.5], 6]], SKIN);
+    ctx.fillStyle = SKIN;
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(hx, hy, hr, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fill();
+    ctx.fillStyle = secondary;
+    ctx.beginPath();
+    ctx.arc(hx, hy - 1, hr + 0.8, Math.PI * 1.02, Math.PI * 1.98);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = darken(secondary, 0.3);
+    ctx.fillRect(hx - hr - 2, hy - 2.5, hr * 2 + 4, 3);
+    ctx.fillStyle = FIGURE_OUTLINE;
+    ctx.fillRect(hx - 4, hy + 1, 2, 2);
+    ctx.fillRect(hx + 2, hy + 1, 2, 2);
+
+    const tArm = [[pose.tShoulder, pose.tElbow, 8.5], [pose.tElbow, pose.tHand, 7.5]];
+    this.strokeLimb(ctx, tArm, primary);
+    ctx.fillStyle = SKIN;
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(pose.tHand[0], pose.tHand[1], 3.6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
     if (progress > 0 && progress < 0.42) {
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
-      ctx.arc(-dir * 3, 14.5, 2.8, 0, Math.PI * 2);
+      ctx.arc(pose.tHand[0], pose.tHand[1] - 2.5, 3.2, 0, Math.PI * 2);
       ctx.fill();
+      ctx.stroke();
     }
-    ctx.restore();
 
-    // 4. Head, Facial Features & Team Cap
-    ctx.fillStyle = '#f1c27d';
-    ctx.beginPath();
-    ctx.arc(headTurnX, -26, 5.5, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.fillStyle = secondary;
-    ctx.beginPath();
-    ctx.arc(headTurnX, -27.5, 5.8, Math.PI, 0);
-    ctx.fill();
-    ctx.fillStyle = primary;
-    ctx.fillRect(headTurnX - 6.5, -28, 13, 2.5);
-
-    ctx.restore();
     ctx.restore();
   }
 
   /**
-   * Eddie Dombrower's Kinetic Batter Choreography (`drawDuelBatter`):
-   * - Pre-Pitch (Idle / Early Delivery): Rhythmic bat waggle behind shoulder, coiled athletic knees.
-   * - Stride (0.42 - 0.62): Front foot steps toward mound; hands stay loaded back.
-   * - Hip Rotation & Swing Plane (0.62 - 0.88): Hips snap open, bat sweeps elliptically across the plate with motion blur.
-   * - Follow-Through (0.88 - 1.00): Two-handed high finish over lead shoulder; back heel pivots.
+   * Batter in the box, side-on from behind the plate and filling the foreground.
+   * - Before release: crouched stance, bat cocked over the rear shoulder, rhythmic waggle.
+   * - 0.42–0.72 load: front foot strides, hands drift back.
+   * - Swing: 0.72–0.90 hips open and the bat drives through the zone; 0.90–1.00 wraps
+   *   into a high follow-through. A take eases back toward the stance instead.
    */
-  drawDuelBatter(ctx, x, footY, team, side, pitchProg, didSwing) {
-    ctx.save();
-    const dir = side === 'R' ? 1 : -1; // +1 for RHB (stands on left of plate, faces right toward plate)
+  drawDuelBatter(ctx, x, footY, team, side, pitchProg, didSwing, isHome = false) {
+    const B = BATTER_POSES;
+    const f = side === 'R' ? 1 : -1; // RHB stands left of the plate and faces right
     const primary = team?.primaryColor || '#bd3039';
     const secondary = team?.secondaryColor || '#0c2340';
+    const uni = isHome ? '#f4f5f7' : '#c4cad3';
+    const uniShade = isHome ? '#97a0ae' : '#7a8391';
 
-    // Continuous rhythmic bat waggle before swing
-    const waggle = Math.sin(performance.now() * 0.0085) * 0.14;
-    const strideProg = pitchProg > 0.35 ? Math.min(1, (pitchProg - 0.35) / 0.25) : 0;
-    const swingProg = didSwing && pitchProg > 0.58 ? Math.min(1, (pitchProg - 0.58) / 0.32) : 0;
+    const poseAt = (p) => {
+      if (p < 0.42) {
+        const waggle = Math.sin(performance.now() * 0.0085);
+        const pose = { ...B.STANCE };
+        pose.batAng = B.STANCE.batAng + waggle * 0.12;
+        pose.hands = [B.STANCE.hands[0] + waggle * 1.5, B.STANCE.hands[1] + waggle];
+        return pose;
+      }
+      if (p < 0.72) return blendPose(B.STANCE, B.LOAD, smooth((p - 0.42) / 0.3));
+      if (!didSwing) return blendPose(B.LOAD, B.STANCE, smooth((p - 0.72) / 0.28) * 0.6);
+      if (p < 0.9) return blendPose(B.LOAD, B.CONTACT, smooth((p - 0.72) / 0.18));
+      return blendPose(B.CONTACT, B.FOLLOW, smooth((p - 0.9) / 0.1));
+    };
+    const pose = poseAt(pitchProg);
+    const batTip = (pz) => [pz.hands[0] + Math.sin(pz.batAng) * pz.batLen, pz.hands[1] - Math.cos(pz.batAng) * pz.batLen];
 
-    // Ground shadow
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-    ctx.beginPath();
-    ctx.ellipse(x + dir * 2, footY + 3, 15, 5.5, 0, 0, Math.PI * 2);
-    ctx.fill();
-
-    const backFootX = x - dir * 8;
-    const backFootY = footY + 2;
-    const frontFootX = x + dir * 6 + dir * strideProg * 4;
-    const frontFootY = footY - 7 - strideProg * 4;
-    const hipX = x + dir * (strideProg * 2 + swingProg * 3);
-    const hipY = footY - 23;
-
-    // 1. Articulated Batter Legs (Crouched knees & hip pivot)
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-
-    // Front (lead) leg
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 6.2;
-    ctx.beginPath();
-    ctx.moveTo(hipX + dir * 2, hipY);
-    ctx.lineTo(frontFootX + dir * 2, (hipY + frontFootY) * 0.52);
-    ctx.lineTo(frontFootX, frontFootY);
-    ctx.stroke();
-
-    // Back leg (pivots knee inward on swing — "squishing the bug")
-    const backKneeX = backFootX + dir * (4 + swingProg * 7);
-    const backKneeY = (hipY + backFootY) * 0.54;
-    ctx.strokeStyle = '#f8fafc';
-    ctx.lineWidth = 6.5;
-    ctx.beginPath();
-    ctx.moveTo(hipX - dir * 2, hipY);
-    ctx.lineTo(backKneeX, backKneeY);
-    ctx.lineTo(backFootX, backFootY);
-    ctx.stroke();
-
-    // Team pants piping & cleats
-    ctx.strokeStyle = primary;
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(hipX - dir * 2, hipY);
-    ctx.lineTo(backKneeX, backKneeY);
-    ctx.lineTo(backFootX, backFootY);
-    ctx.stroke();
-
-    ctx.fillStyle = '#0f172a';
-    ctx.fillRect(backFootX - 4, backFootY - 2, 8, 3.5);
-    ctx.fillRect(frontFootX - 4, frontFootY - 2, 8, 3.5);
-
-    // 2. Torso / Jersey (Coiled then rotating open toward pitcher on swing)
-    const shoulderX = hipX + dir * (swingProg * 2);
-    const shoulderY = hipY - 20;
-
-    ctx.fillStyle = '#f8fafc';
-    ctx.beginPath();
-    ctx.roundRect(hipX - 9, shoulderY, 18, 21, 5);
-    ctx.fill();
-
-    // Team jersey sleeves, belt & trim
-    ctx.fillStyle = primary;
-    ctx.fillRect(hipX - 9, shoulderY + 1, 18, 7);
-    ctx.fillStyle = '#0f172a';
-    ctx.fillRect(hipX - 8.5, hipY - 2, 17, 3);
-
-    // 3. Head & Ear-Flap Batting Helmet (matching amiga_02.jpg)
-    const headX = shoulderX + dir * 1;
-    const headY = shoulderY - 6;
-    ctx.fillStyle = '#f1c27d';
-    ctx.beginPath();
-    ctx.arc(headX, headY, 6, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.fillStyle = secondary;
-    ctx.beginPath();
-    ctx.arc(headX, headY - 1.5, 6.8, Math.PI * 0.9, Math.PI * 0.1, false);
-    ctx.fill();
-    // Helmet visor & protective ear-flap facing pitcher
-    ctx.fillRect(headX, headY - 3, dir * 9, 2.5);
-    ctx.beginPath();
-    ctx.arc(headX + dir * 2, headY + 1, 4, 0, Math.PI);
-    ctx.fill();
-
-    // 4. Hands, Arms & Elliptical 3D Bat Swing Arc
-    // Hand anchor moves from behind rear shoulder through the zone to front shoulder
-    let handsX;
-    let handsY;
-    let batTipX;
-    let batTipY;
-
-    if (swingProg === 0) {
-      // Coiled stance with continuous bat waggle
-      handsX = shoulderX - dir * 8;
-      handsY = shoulderY + 4 + Math.sin(waggle * 4) * 1.5;
-      const batAngle = -dir * (0.65 + waggle);
-      batTipX = handsX + Math.sin(batAngle) * 32;
-      batTipY = handsY - Math.cos(batAngle) * 32;
-    } else if (swingProg < 0.55) {
-      // Driving through the hitting zone across home plate
-      const p = swingProg / 0.55;
-      handsX = shoulderX - dir * 8 + dir * p * 22;
-      handsY = shoulderY + 5 + p * 3;
-      const sweepAngle = -dir * 0.65 + dir * p * 2.35;
-      batTipX = handsX + Math.sin(sweepAngle) * 36;
-      batTipY = handsY - Math.cos(sweepAngle) * 24;
-
-      // Motion blur bat-arc smear during peak swing velocity!
-      ctx.fillStyle = 'rgba(253, 224, 71, 0.25)';
-      ctx.beginPath();
-      ctx.moveTo(handsX, handsY);
-      ctx.lineTo(batTipX, batTipY);
-      ctx.lineTo(batTipX - dir * 18, batTipY - 14);
-      ctx.closePath();
-      ctx.fill();
-    } else {
-      // High two-handed follow-through wrapped over front shoulder
-      const p = (swingProg - 0.55) / 0.45;
-      handsX = shoulderX + dir * (14 - p * 8);
-      handsY = shoulderY + 6 - p * 8;
-      batTipX = handsX - dir * (12 + p * 16);
-      batTipY = handsY - 22 - p * 6;
-    }
-
-    // Arms connecting shoulders to hands
-    ctx.strokeStyle = primary;
-    ctx.lineWidth = 4.5;
-    ctx.beginPath();
-    ctx.moveTo(shoulderX - dir * 4, shoulderY + 4);
-    ctx.lineTo(handsX, handsY);
-    ctx.moveTo(shoulderX + dir * 4, shoulderY + 4);
-    ctx.lineTo(handsX, handsY);
-    ctx.stroke();
-
-    // Ash-wood Baseball Bat
-    ctx.strokeStyle = '#fde68a';
-    ctx.lineWidth = 4.2;
-    ctx.beginPath();
-    ctx.moveTo(handsX, handsY);
-    ctx.lineTo(batTipX, batTipY);
-    ctx.stroke();
-
-    // Batting gloves grip
-    ctx.fillStyle = '#ffffff';
-    ctx.beginPath();
-    ctx.arc(handsX, handsY, 3.2, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.restore();
-  }
-
-  /**
-   * Draws the Foreground Catcher & Home Plate Umpire Silhouetted at the Bottom of the Duel View
-   * (Authentic 1987 Amiga perspective from `ewb_1987_amiga_gameplay.jpg` & `amiga_02.jpg`)
-   */
-  drawDuelBatteryForeground(ctx, cx, bottomY, fieldingTeam, pitchAnim) {
     ctx.save();
-    const gloveSnap = pitchAnim && pitchAnim.progress >= 0.88;
-    const targetOffsetX = pitchAnim ? (pitchAnim.plateX || 0) * 14 : 0;
+    ctx.translate(x, footY);
+    ctx.scale(f, 1);
 
-    // 1. Catcher crouched in front of the Umpire
-    const catcherX = cx + targetOffsetX * 0.4;
-    const catcherY = bottomY - 26;
-
-    // Catcher's mitt held up as target
-    ctx.fillStyle = '#78350f';
-    ctx.strokeStyle = '#451a03';
-    ctx.lineWidth = 1.5;
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.42)';
     ctx.beginPath();
-    ctx.arc(catcherX + targetOffsetX * 0.6, catcherY - 24, gloveSnap ? 7.5 : 8.5, 0, Math.PI * 2);
+    ctx.ellipse(16, 0, 40, 8, 0, 0, Math.PI * 2);
     ctx.fill();
-    ctx.stroke();
-    if (gloveSnap && pitchAnim.outcome !== 'IN_PLAY') {
-      ctx.fillStyle = '#ffffff';
+
+    const shade = this.getDitherPattern(ctx, uni, uniShade);
+    const farUni = this.getDitherPattern(ctx, uniShade, uni);
+    const sleeveShade = this.getDitherPattern(ctx, primary, darken(primary, 0.45));
+    const drawFoot = (foot, knee) => {
+      const sx = lerp(foot[0], knee[0], 0.35);
+      const sy = lerp(foot[1], knee[1], 0.35);
+      this.strokeLimb(ctx, [[[sx, sy], [foot[0], foot[1] - 2], 9]], primary);
+      ctx.fillStyle = FIGURE_OUTLINE;
       ctx.beginPath();
-      ctx.arc(catcherX + targetOffsetX * 0.6, catcherY - 24, 3.8, 0, Math.PI * 2);
+      ctx.ellipse(foot[0] + 5, foot[1], 9, 4, 0, 0, Math.PI * 2);
       ctx.fill();
-    }
+      ctx.fillStyle = '#334155';
+      ctx.fillRect(foot[0] - 1, foot[1] - 3, 8, 1.5);
+    };
 
-    // Catcher shoulders & chest protector
-    ctx.fillStyle = fieldingTeam?.primaryColor || '#1e3a8a';
+    // Far (front) leg and far arm sit behind the body, so they get the darker dither
+    const fLeg = [[[pose.pelvis[0] + 4, pose.pelvis[1]], pose.fKnee, 16], [pose.fKnee, pose.fFoot, 12]];
+    this.strokeLimb(ctx, fLeg, uniShade);
+    this.shadeLimb(ctx, fLeg, farUni, 1);
+    drawFoot(pose.fFoot, pose.fKnee);
+
+    const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, pose.hands, 9]];
+    this.strokeLimb(ctx, fArm, darken(primary, 0.25));
+
+    // Torso: spine from pelvis to neck, butt pushed back, chest forward
+    const [px, py] = pose.pelvis;
+    const [nx, ny] = pose.neck;
+    const sl = Math.hypot(nx - px, ny - py) || 1;
+    const ux = (nx - px) / sl;
+    const uy = (ny - py) / sl;
+    const bx = uy; // perpendicular pointing backward (away from the plate)
+    const by = -ux;
+    const backShoulder = [nx + bx * 14 - ux * 5, ny + by * 14 - uy * 5];
+    const backHip = [px + bx * 16 + ux * 2, py + by * 16 + uy * 2];
+    const frontHip = [px - bx * 11, py - by * 11];
+    const frontChest = [nx - bx * 13 - ux * 12, ny - by * 13 - uy * 12];
+    ctx.fillStyle = uni;
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 2.4;
     ctx.beginPath();
-    ctx.roundRect(catcherX - 22, catcherY - 12, 44, 26, 8);
+    ctx.moveTo(nx, ny);
+    ctx.quadraticCurveTo(backShoulder[0] + bx * 3, backShoulder[1] + by * 3, backShoulder[0], backShoulder[1]);
+    ctx.quadraticCurveTo(backHip[0] + bx * 4, (backShoulder[1] + backHip[1]) / 2, backHip[0], backHip[1]);
+    ctx.quadraticCurveTo(px + bx * 4, py + 12, frontHip[0], frontHip[1] + 4);
+    ctx.lineTo(frontChest[0], frontChest[1]);
+    ctx.quadraticCurveTo(frontChest[0] - bx * 2, ny - by * 4, nx, ny);
+    ctx.closePath();
+    ctx.stroke();
     ctx.fill();
 
-    // Catcher helmet & mask back straps
-    ctx.fillStyle = fieldingTeam?.secondaryColor || '#0f172a';
+    // Dithered shadow down the back
+    ctx.fillStyle = shade;
     ctx.beginPath();
-    ctx.arc(catcherX, catcherY - 18, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    // 2. Home Plate Umpire Silhouetted in the Foreground Slot (just like `amiga_02.jpg`!)
-    const umpX = cx - 4;
-    const umpY = bottomY;
-
-    // Broad black umpire coat shoulders with tan/gold collar trim
-    ctx.fillStyle = '#090d16';
-    ctx.beginPath();
-    ctx.moveTo(umpX - 42, umpY);
-    ctx.quadraticCurveTo(umpX - 38, umpY - 28, umpX - 16, umpY - 30);
-    ctx.lineTo(umpX + 16, umpY - 30);
-    ctx.quadraticCurveTo(umpX + 38, umpY - 28, umpX + 42, umpY);
+    ctx.moveTo(backShoulder[0], backShoulder[1]);
+    ctx.lineTo(backHip[0], backHip[1]);
+    ctx.lineTo(backHip[0] - bx * 7, backHip[1] - by * 7);
+    ctx.lineTo(backShoulder[0] - bx * 6, backShoulder[1] - by * 6);
     ctx.closePath();
     ctx.fill();
 
-    ctx.strokeStyle = '#d97706';
-    ctx.lineWidth = 2;
+    // Near (rear) leg with pants piping
+    const nLeg = [[[px - 2, py], pose.nKnee, 18], [pose.nKnee, pose.nFoot, 13]];
+    this.strokeLimb(ctx, nLeg, uni);
+    this.shadeLimb(ctx, nLeg, shade, -1);
+    ctx.strokeStyle = primary;
+    ctx.lineWidth = 1.6;
     ctx.beginPath();
-    ctx.moveTo(umpX - 26, umpY - 26);
-    ctx.quadraticCurveTo(umpX, umpY - 20, umpX + 26, umpY - 26);
+    ctx.moveTo(px - 2 - 6, py + 2);
+    ctx.lineTo(pose.nKnee[0] - 6, pose.nKnee[1]);
+    ctx.lineTo(lerp(pose.nKnee[0], pose.nFoot[0], 0.6) - 5, lerp(pose.nKnee[1], pose.nFoot[1], 0.6));
+    ctx.stroke();
+    drawFoot(pose.nFoot, pose.nKnee);
+
+    // Belt
+    ctx.strokeStyle = '#1b2333';
+    ctx.lineWidth = 4.5;
+    ctx.lineCap = 'butt';
+    ctx.beginPath();
+    ctx.moveTo(px + bx * 15 + ux * 4, py + by * 15 + uy * 4);
+    ctx.lineTo(px - bx * 11 + ux * 4, py - by * 11 + uy * 4);
     ctx.stroke();
 
-    // Umpire head & black cap in foreground
-    ctx.fillStyle = '#d97706';
+    // Bat: tapered ash with a dark outline; motion smear while it whips through
+    const drawBat = () => {
+      const tip = batTip(pose);
+      const dx = tip[0] - pose.hands[0];
+      const dy = tip[1] - pose.hands[1];
+      const len = Math.hypot(dx, dy) || 1;
+      const ax = dx / len;
+      const ay = dy / len;
+      const knob = [pose.hands[0] - ax * 7, pose.hands[1] - ay * 7];
+      const nxp = -ay;
+      const nyp = ax;
+      ctx.fillStyle = '#d9b26a';
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.moveTo(knob[0] + nxp * 1.6, knob[1] + nyp * 1.6);
+      ctx.lineTo(tip[0] + nxp * 3.4, tip[1] + nyp * 3.4);
+      ctx.arc(tip[0], tip[1], 3.4, Math.atan2(nyp, nxp), Math.atan2(-nyp, -nxp));
+      ctx.lineTo(knob[0] - nxp * 1.6, knob[1] - nyp * 1.6);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+      ctx.strokeStyle = '#f3dca0';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(lerp(pose.hands[0], tip[0], 0.35) + nxp, lerp(pose.hands[1], tip[1], 0.35) + nyp);
+      ctx.lineTo(tip[0] + nxp, tip[1] + nyp);
+      ctx.stroke();
+    };
+
+    if (didSwing && pitchProg > 0.74 && pitchProg < 0.97) {
+      const prev = poseAt(Math.max(0.72, pitchProg - 0.05));
+      const p0 = batTip(prev);
+      const p1 = batTip(pose);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
+      ctx.beginPath();
+      ctx.moveTo(prev.hands[0], prev.hands[1]);
+      ctx.lineTo(p0[0], p0[1]);
+      ctx.lineTo(p1[0], p1[1]);
+      ctx.lineTo(pose.hands[0], pose.hands[1]);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    const batInFront = pose.twist > 0.3;
+    if (!batInFront) drawBat();
+
+    // Head: skin, batting helmet with ear flap and brim
+    const [hx, hy] = pose.head;
+    this.strokeLimb(ctx, [[[nx, ny + 2], [hx - 2, hy + 6], 9]], SKIN);
+    ctx.fillStyle = SKIN;
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 2.2;
     ctx.beginPath();
-    ctx.arc(umpX, umpY - 38, 11, 0, Math.PI * 2);
+    ctx.arc(hx, hy, 10, 0, Math.PI * 2);
+    ctx.stroke();
     ctx.fill();
-    ctx.fillStyle = '#090d16';
+    ctx.fillStyle = FIGURE_OUTLINE;
+    ctx.fillRect(hx + 5, hy - 1, 2, 2.2);
+    ctx.fillStyle = secondary;
     ctx.beginPath();
-    ctx.arc(umpX, umpY - 40, 11.5, Math.PI * 1.1, Math.PI * 1.9);
+    ctx.arc(hx - 0.5, hy - 1, 11.5, Math.PI * 0.62, Math.PI * 1.93);
+    ctx.lineTo(hx + 16, hy - 4);
+    ctx.lineTo(hx + 9, hy - 0.5);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(hx - 2, hy + 3, 5.5, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(hx - 1, hy - 2, 8, Math.PI * 1.15, Math.PI * 1.45);
+    ctx.stroke();
+
+    // Near (rear) arm in team undershirt sleeve, batting gloves on the grip
+    const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, pose.hands, 10]];
+    this.strokeLimb(ctx, nArm, primary);
+    this.shadeLimb(ctx, nArm, sleeveShade, 1);
+    ctx.fillStyle = '#f8fafc';
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 1.8;
+    ctx.beginPath();
+    ctx.arc(pose.hands[0], pose.hands[1], 5, 0, Math.PI * 2);
+    ctx.stroke();
     ctx.fill();
 
+    if (batInFront) drawBat();
+
+    ctx.restore();
+  }
+
+  /**
+   * Catcher's mitt rising into the bottom of the duel view to take the pitch.
+   */
+  drawDuelCatcherMitt(ctx, x, y, withBall) {
+    ctx.save();
+    ctx.fillStyle = '#7a3b12';
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(x, y + 2, 12, 13, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fill();
+    ctx.fillStyle = '#5a2a0c';
+    ctx.beginPath();
+    ctx.ellipse(x, y + 1, 7, 7.5, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#c08040';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(x, y + 2, 10, Math.PI * 1.1, Math.PI * 1.9);
+    ctx.stroke();
+    if (withBall) {
+      ctx.fillStyle = '#ffffff';
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.beginPath();
+      ctx.arc(x, y + 1, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    }
     ctx.restore();
   }
 
@@ -1779,8 +2202,10 @@ export class FieldRenderer1987 {
     // Play Instant Replays at 0.85x speed for classic broadcast examination
     const playbackRateFps = isReplay ? 51 : 60;
 
+    this._facing = {};
     this.playAnim = {
       currentFrame: frames[0] || null,
+      prevFrame: null,
       trail: [],
       bannerText: physicsResult.description || physicsResult.outcome
     };
@@ -1810,6 +2235,7 @@ export class FieldRenderer1987 {
           }
         }
         lastProcessedIdx = targetIdx;
+        this.playAnim.prevFrame = frames[Math.max(0, targetIdx - 3)];
         this.playAnim.currentFrame = frames[targetIdx];
         this.render(gameState);
         this._rafId = requestAnimationFrame(stepField);
