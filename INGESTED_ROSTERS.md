@@ -16,8 +16,8 @@ This document provides the complete roster list and statistical summary of all t
 | 8 | `nl_46_60` | **NL 46-60** | `N46` | NL 1946–1960 | 13 | 6 | `wrigley` | `herzog` | Retrosheet / Baseball-Ref |
 | 9 | `al_61_75` | **AL 61-75** | `A61` | AL 1961–1975 | 13 | 6 | `fenway` | `weaver` | Retrosheet / Baseball-Ref |
 | 10 | `nl_61_75` | **NL 61-75** | `N61` | NL 1961–1975 | 13 | 6 | `wrigley` | `herzog` | Retrosheet / Baseball-Ref |
-| 11 | `california` | **California Angels** | `CAL` | 1982 AL West Champions | 13 | 6 | `memorial` | `mcnamara` | Retrosheet / Baseball-Ref |
-| 12 | `atlanta` | **Atlanta Braves** | `ATL` | 1982 NL West Champions | 13 | 6 | `memorial` | `herzog` | Retrosheet / Baseball-Ref |
+| 11 | `california` | **California Angels** | `CAL` | 1982 AL West Champions | 13 | 6 | `anaheim` | `mauch` | Retrosheet / Baseball-Ref |
+| 12 | `atlanta` | **Atlanta Braves** | `ATL` | 1982 NL West Champions | 13 | 6 | `fulton` | `torre` | Retrosheet / Baseball-Ref |
 
 ---
 
@@ -453,8 +453,8 @@ This document provides the complete roster list and statistical summary of all t
 
 - **Abbreviation:** `CAL`
 - **Primary / Secondary Colors:** `#ba0021` / `#003263`
-- **Default Ballpark:** `memorial`
-- **Default Manager:** `mcnamara`
+- **Default Ballpark:** `anaheim`
+- **Default Manager:** `mauch`
 
 ### Starting Lineup (9 Batters)
 
@@ -496,8 +496,8 @@ This document provides the complete roster list and statistical summary of all t
 
 - **Abbreviation:** `ATL`
 - **Primary / Secondary Colors:** `#13274f` / `#ce1141`
-- **Default Ballpark:** `memorial`
-- **Default Manager:** `herzog`
+- **Default Ballpark:** `fulton`
+- **Default Manager:** `torre`
 
 ### Starting Lineup (9 Batters)
 

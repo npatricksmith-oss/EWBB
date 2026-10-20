@@ -187,6 +187,72 @@ export const MANAGERS = {
     relievePitcherAfter: 118,
     chooseHitterBy: 'BA',
     choosePitcherBy: 'W'
+  },
+
+  mauch: {
+    id: 'mauch',
+    name: 'Gene Mauch',
+    team: 'California Angels',
+    bio: 'Master tactician who piloted the 1982 California Angels to 93 wins and the AL West crown. Known as "The Little General", Mauch was an obsessive strategist who emphasized situational execution, manufacturing runs with tactical bunts and the hit-and-run, defensive positioning, and careful bullpen matchups.',
+    quote: 'In winning baseball, you anticipate three innings ahead. Execute the fundamentals, put the ball in play, and make the opponent make the play.',
+    quotes: [
+      'Put the runner in motion with a hit-and-run when you have contact hitters at the plate.',
+      'Anticipate the opponent\'s move: guard the lines late, pitch around the big bat, and trust your bullpen specialist.'
+    ],
+    // 19 EWB Strategy Parameters
+    platoonLineups: true,
+    steal2nd: 4,
+    steal3rd: 2,
+    doubleSteal: 3,
+    sacBunt: 7,
+    buntForHit: 4,
+    squeezeBunt: 4,
+    hitAndRun: 7,
+    runAndHit: 5,
+    pitchOut: 6,
+    pitchAround: 6,
+    intentionalWalk: 7,
+    chargeBunt: 7,
+    guardLines: 7,
+    infieldIn: 6,
+    runAggressively: 5,
+    pinchHitInning: 7,
+    relievePitcherAfter: 105,
+    chooseHitterBy: 'OBA',
+    choosePitcherBy: 'ERA'
+  },
+
+  torre: {
+    id: 'torre',
+    name: 'Joe Torre',
+    team: 'Atlanta Braves',
+    bio: 'Charismatic manager of the 1982 NL West Champion Atlanta Braves who electrified baseball by winning their first 13 consecutive games. Torre combined calm player communication with an aggressive, power-and-speed National League offense anchored by MVP Dale Murphy and Bob Horner, backed by veteran knuckleballer Phil Niekro and closer Gene Garber.',
+    quote: 'Give your players the confidence to be aggressive. Trust Murphy in the middle of the lineup, run aggressively on the bases, and let Garber shut the door.',
+    quotes: [
+      'Let Murphy swing away with runners in scoring position; he will drive them in.',
+      'When you need three outs in the ninth, bring in Gene Garber and let him throw the changeup.'
+    ],
+    // 19 EWB Strategy Parameters
+    platoonLineups: true,
+    steal2nd: 6,
+    steal3rd: 3,
+    doubleSteal: 4,
+    sacBunt: 4,
+    buntForHit: 4,
+    squeezeBunt: 3,
+    hitAndRun: 5,
+    runAndHit: 6,
+    pitchOut: 4,
+    pitchAround: 5,
+    intentionalWalk: 5,
+    chargeBunt: 5,
+    guardLines: 6,
+    infieldIn: 5,
+    runAggressively: 7,
+    pinchHitInning: 7,
+    relievePitcherAfter: 110,
+    chooseHitterBy: 'SA',
+    choosePitcherBy: 'ERA'
   }
 };
 

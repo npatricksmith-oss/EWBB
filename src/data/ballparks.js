@@ -137,6 +137,70 @@ export const BALLPARKS = {
       23, 23, 23 // The 23-foot Right Field "Hefty Bag"
     ],
     description: 'Fast Artificial Turf rockets grounders through the infield and produces high bounces, while the 23-ft right-field bag blocks cheap homers.'
+  },
+
+  anaheim: {
+    id: 'anaheim',
+    name: 'Anaheim Stadium',
+    city: 'Anaheim',
+    surface: 'Grass',
+    environment: 'Outdoor',
+    prevailingWind: 'Out to Center',
+    windPct: 45,
+    avgWindMph: 7,
+    foulGrounds: 'Medium',
+    wallColor: '#003263', // Angels navy blue
+    wallAccent: '#ba0021', // Angels red
+    fenceDistances: [
+      333, // Left Pole
+      350, // Left 2
+      375, // L-C 1
+      386, // L-C 2
+      404, // Center 1
+      404, // Center 2
+      386, // R-C 1
+      375, // R-C 2
+      350, // Right 2
+      333  // Right Pole
+    ],
+    fenceHeights: [
+      8, 8, 8,
+      8, 8, 8,
+      8, 8, 8
+    ],
+    description: 'Home of the 1982 AL West Champion California Angels ("The Big A"). Features symmetrical 333 ft foul poles and gentle Pacific evening breezes.'
+  },
+
+  fulton: {
+    id: 'fulton',
+    name: 'Atlanta-Fulton County Stadium',
+    city: 'Atlanta',
+    surface: 'Grass',
+    environment: 'Outdoor',
+    prevailingWind: 'Out to Right-Center',
+    windPct: 60,
+    avgWindMph: 9,
+    foulGrounds: 'Small',
+    wallColor: '#12284c', // Braves navy
+    wallAccent: '#ba0c2f', // Braves scarlet
+    fenceDistances: [
+      330, // Left Pole
+      345, // Left 2
+      375, // L-C 1
+      385, // L-C 2
+      402, // Center 1
+      402, // Center 2
+      385, // R-C 1
+      375, // R-C 2
+      345, // Right 2
+      330  // Right Pole
+    ],
+    fenceHeights: [
+      9, 9, 9,
+      9, 9, 9,
+      9, 9, 9
+    ],
+    description: 'Famed as "The Launching Pad" due to its 1,050-foot elevation above sea level, producing extra carry for fly balls hit to all fields.'
   }
 };
 

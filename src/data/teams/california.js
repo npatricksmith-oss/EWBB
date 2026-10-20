@@ -14,8 +14,8 @@ export const CALIFORNIA = {
   abbrev: 'CAL',
   primaryColor: '#ba0021',
   secondaryColor: '#003263',
-  defaultParkId: 'memorial',
-  defaultManagerId: 'mcnamara',
+  defaultParkId: 'anaheim',
+  defaultManagerId: 'mauch',
   lineup: [
     {
       id: 'cal_downibr01',

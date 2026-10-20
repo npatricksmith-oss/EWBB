@@ -14,8 +14,8 @@ export const ATLANTA = {
   abbrev: 'ATL',
   primaryColor: '#13274f',
   secondaryColor: '#ce1141',
-  defaultParkId: 'memorial',
-  defaultManagerId: 'herzog',
+  defaultParkId: 'fulton',
+  defaultManagerId: 'torre',
   lineup: [
     {
       id: 'atl_washicl01',
