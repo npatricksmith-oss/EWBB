@@ -1,0 +1,6 @@
+PASS Roster shape
+PASS Batter splits
+PASS Pitcher splits
+PASS Ratings
+PASS IDs and handedness
+

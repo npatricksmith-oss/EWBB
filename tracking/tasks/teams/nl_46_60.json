@@ -1,0 +1,138 @@
+{
+ "id": "nl_46_60",
+ "city": "NL",
+ "name": "46-60",
+ "abbrev": "N46",
+ "league": "NL",
+ "primaryColor": "#005a9c",
+ "secondaryColor": "#ef3e42",
+ "defaultParkId": "wrigley",
+ "defaultManagerId": "herzog",
+ "source": "NL 1946-1960 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "camparo01",
+   "year": 1953,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "hodgegi01",
+   "year": 1954,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "robinja02",
+   "year": 1949,
+   "pos": "2B",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "matheed01",
+   "year": 1953,
+   "pos": "3B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "bankser01",
+   "year": 1958,
+   "pos": "SS",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "musiast01",
+   "year": 1948,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "mayswi01",
+   "year": 1954,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true,
+   "bref": "furilca01",
+   "year": 1953
+  },
+  {
+   "bref": "snidedu01",
+   "year": 1955,
+   "pos": "DH",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "crandde01",
+   "year": 1958,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "schoere01",
+   "year": 1950,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": false
+  },
+  {
+   "bref": "ashburi01",
+   "year": 1958,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": false,
+   "bref": "kinerra01",
+   "year": 1949
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "spahnwa01",
+   "year": 1953,
+   "role": "SP"
+  },
+  {
+   "bref": "roberro01",
+   "year": 1952,
+   "role": "SP"
+  },
+  {
+   "bref": "newcodo01",
+   "year": 1956,
+   "role": "SP"
+  },
+  {
+   "bref": "erskica01",
+   "year": 1953,
+   "role": "SP"
+  },
+  {
+   "bref": "facero01",
+   "year": 1959,
+   "role": "RP"
+  },
+  {
+   "bref": "konstji01",
+   "year": 1950,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "aaronha01 -> furilca01 1953",
+  "robinfr02 -> kinerra01 1949"
+ ]
+}

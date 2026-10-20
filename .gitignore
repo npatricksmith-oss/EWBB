@@ -3,3 +3,4 @@ __pycache__/
 .claude/settings.local.json
 # third-party Windows installers (reference only)
 *.exe
+Screenshot_*.png

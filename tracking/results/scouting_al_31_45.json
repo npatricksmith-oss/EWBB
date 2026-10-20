@@ -1,0 +1,135 @@
+{
+ "dickebi01": {
+  "name": "Bill Dickey",
+  "range": 6,
+  "arm": 7,
+  "durability": 7
+ },
+ "gehrilo01": {
+  "name": "Lou Gehrig",
+  "range": 5,
+  "arm": 5,
+  "durability": 10
+ },
+ "gehrich01": {
+  "name": "Charlie Gehringer",
+  "range": 8,
+  "arm": 7,
+  "durability": 9
+ },
+ "cliftha01": {
+  "name": "Harlond Clift",
+  "range": 7,
+  "arm": 6,
+  "durability": 7
+ },
+ "applilu01": {
+  "name": "Luke Appling",
+  "range": 8,
+  "arm": 7,
+  "durability": 8
+ },
+ "dimagjo01": {
+  "name": "Joe DiMaggio",
+  "range": 9,
+  "arm": 9,
+  "durability": 8
+ },
+ "averiea01": {
+  "name": "Earl Averill",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "foxxji01": {
+  "name": "Jimmie Foxx",
+  "range": 4,
+  "arm": 4,
+  "durability": 9
+ },
+ "ferreri01": {
+  "name": "Rick Ferrell",
+  "range": 5,
+  "arm": 7,
+  "durability": 7
+ },
+ "cronijo01": {
+  "name": "Joe Cronin",
+  "range": 7,
+  "arm": 7,
+  "durability": 8
+ },
+ "manushe01": {
+  "name": "Heinie Manush",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "grovele01": {
+  "name": "Lefty Grove",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "gomezle01": {
+  "name": "Lefty Gomez",
+  "bunt": 3,
+  "fielding": 7,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "fellebo01": {
+  "name": "Bob Feller",
+  "bunt": 2,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "newhoha01": {
+  "name": "Hal Newhouser",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "murphjo04": {
+  "name": "Johnny Murphy",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "troskha01": {
+  "name": "Hal Trosky",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "greenha01": {
+  "name": "Hank Greenberg",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "ruffire01": {
+  "name": "Red Ruffing",
+  "bunt": 6,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ }
+}

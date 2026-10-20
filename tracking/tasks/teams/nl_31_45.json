@@ -1,0 +1,131 @@
+{
+ "id": "nl_31_45",
+ "city": "NL",
+ "name": "31-45",
+ "abbrev": "N31",
+ "league": "NL",
+ "primaryColor": "#5a1414",
+ "secondaryColor": "#e8d5a3",
+ "defaultParkId": "wrigley",
+ "defaultManagerId": "herzog",
+ "source": "NL 1931-1945 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "lombaer01",
+   "year": 1938,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "mizejo01",
+   "year": 1940,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "hermabi01",
+   "year": 1935,
+   "pos": "2B",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "hackst01",
+   "year": 1938,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "vaughar01",
+   "year": 1935,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "medwijo01",
+   "year": 1937,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "moorete01",
+   "year": 1940,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "wanerpa01",
+   "year": 1934,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "ottme01",
+   "year": 1938,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "coopewa01",
+   "year": 1942,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "marioma01",
+   "year": 1944,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "slaugen01",
+   "year": 1942,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "reisepe01",
+   "year": 1941,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "hubbeca01",
+   "year": 1933,
+   "role": "SP"
+  },
+  {
+   "bref": "deandi01",
+   "year": 1934,
+   "role": "SP"
+  },
+  {
+   "bref": "waltebu01",
+   "year": 1939,
+   "role": "SP"
+  },
+  {
+   "bref": "coopemo01",
+   "year": 1942,
+   "role": "SP"
+  },
+  {
+   "bref": "shouncl01",
+   "year": 1939,
+   "role": "RP"
+  },
+  {
+   "bref": "caseyhu01",
+   "year": 1942,
+   "role": "CL"
+  }
+ ]
+}

@@ -40,9 +40,24 @@ class EWBAppController {
     this.activeEditorTeamId = 'baltimore';
     this.activeEditorPlayerIdx = 0;
 
+    this.populateTeamSelectors();
     this.bindEvents();
     this.initCommissionerEditors();
     this.refreshAllUI();
+  }
+
+  /** Fills the Away/Home pickers with every team in `TEAMS`, labeled with its default manager. */
+  populateTeamSelectors() {
+    for (const [selectId, selectedId] of [['selectAwayTeam', 'boston'], ['selectHomeTeam', 'baltimore']]) {
+      const select = document.getElementById(selectId);
+      if (!select) continue;
+      select.innerHTML = Object.values(TEAMS)
+        .map((t) => {
+          const mgr = MANAGERS[t.defaultManagerId] || MANAGERS.weaver;
+          return `<option value="${t.id}" ${t.id === selectedId ? 'selected' : ''}>${t.city} ${t.name} (${getLastName(mgr.name)})</option>`;
+        })
+        .join('');
+    }
   }
 
   bindEvents() {
@@ -220,8 +235,8 @@ class EWBAppController {
     const awayTeamId = document.getElementById('selectAwayTeam')?.value || 'boston';
     const homeTeamId = document.getElementById('selectHomeTeam')?.value || 'baltimore';
     const parkId = document.getElementById('selectPark')?.value || 'fenway';
-    const awayManagerId = awayTeamId === 'baltimore' ? 'weaver' : 'mcnamara';
-    const homeManagerId = homeTeamId === 'baltimore' ? 'weaver' : 'mcnamara';
+    const awayManagerId = TEAMS[awayTeamId]?.defaultManagerId || 'weaver';
+    const homeManagerId = TEAMS[homeTeamId]?.defaultManagerId || 'weaver';
 
     this.gameState.resetGame({
       awayTeamId,
@@ -989,8 +1004,7 @@ class EWBAppController {
         <div class="comm-controls">
           <label>Team:
             <select id="commTeamSelect" class="ewb-select">
-              <option value="baltimore" ${this.activeEditorTeamId === 'baltimore' ? 'selected' : ''}>Baltimore Orioles</option>
-              <option value="boston" ${this.activeEditorTeamId === 'boston' ? 'selected' : ''}>Boston Red Sox</option>
+              ${Object.values(TEAMS).map((t) => `<option value="${t.id}" ${this.activeEditorTeamId === t.id ? 'selected' : ''}>${t.city} ${t.name}</option>`).join('')}
             </select>
           </label>
           <label>Player:

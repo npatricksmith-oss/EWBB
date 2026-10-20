@@ -1,0 +1,137 @@
+{
+ "lombaer01": {
+  "name": "Ernie Lombardi",
+  "range": 4,
+  "arm": 4,
+  "durability": 8
+ },
+ "mizejo01": {
+  "name": "Johnny Mize",
+  "range": 7,
+  "arm": 5,
+  "durability": 8
+ },
+ "hermabi01": {
+  "name": "Billy Herman",
+  "range": 8,
+  "arm": 6,
+  "durability": 8
+ },
+ "hackst01": {
+  "name": "Stan Hack",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "vaughar01": {
+  "name": "Arky Vaughan",
+  "range": 8,
+  "arm": 7,
+  "durability": 8
+ },
+ "medwijo01": {
+  "name": "Ducky Medwick",
+  "range": 4,
+  "arm": 5,
+  "durability": 8
+ },
+ "moorete01": {
+  "name": "Terry Moore",
+  "range": 9,
+  "arm": 7,
+  "durability": 8
+ },
+ "wanerpa01": {
+  "name": "Paul Waner",
+  "range": 7,
+  "arm": 7,
+  "durability": 8
+ },
+ "ottme01": {
+  "name": "Mel Ott",
+  "range": 4,
+  "arm": 4,
+  "durability": 8
+ },
+ "coopewa01": {
+  "name": "Walker Cooper",
+  "range": 4,
+  "arm": 7,
+  "durability": 6
+ },
+ "marioma01": {
+  "name": "Marty Marion",
+  "range": 9,
+  "arm": 7,
+  "durability": 8
+ },
+ "slaugen01": {
+  "name": "Enos Slaughter",
+  "range": 7,
+  "arm": 8,
+  "durability": 8
+ },
+ "reisepe01": {
+  "name": "Pete Reiser",
+  "range": 8,
+  "arm": 6,
+  "durability": 5
+ },
+ "hubbeca01": {
+  "name": "Carl Hubbell",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "deandi01": {
+  "name": "Dizzy Dean",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "waltebu01": {
+  "name": "Bucky Walters",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "coopemo01": {
+  "name": "Mort Cooper",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "shouncl01": {
+  "name": "Clyde Shoun",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "caseyhu01": {
+  "name": "Hugh Casey",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ }
+}

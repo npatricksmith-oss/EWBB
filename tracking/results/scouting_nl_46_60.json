@@ -1,0 +1,138 @@
+{
+ "camparo01": {
+  "name": "Roy Campanella",
+  "range": 6,
+  "arm": 8,
+  "durability": 7
+ },
+ "hodgegi01": {
+  "name": "Gil Hodges",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "robinja02": {
+  "name": "Jackie Robinson",
+  "range": 8,
+  "arm": 7,
+  "durability": 8
+ },
+ "matheed01": {
+  "name": "Eddie Mathews",
+  "range": 7,
+  "arm": 9,
+  "durability": 8
+ },
+ "bankser01": {
+  "name": "Ernie Banks",
+  "range": 7,
+  "arm": 7,
+  "durability": 10
+ },
+ "musiast01": {
+  "name": "Stan Musial",
+  "range": 6,
+  "arm": 7,
+  "durability": 9
+ },
+ "mayswi01": {
+  "name": "Willie Mays",
+  "range": 10,
+  "arm": 10,
+  "durability": 9
+ },
+ "snidedu01": {
+  "name": "Duke Snider",
+  "range": 8,
+  "arm": 6,
+  "durability": 9
+ },
+ "crandde01": {
+  "name": "Del Crandall",
+  "range": 7,
+  "arm": 9,
+  "durability": 7
+ },
+ "schoere01": {
+  "name": "Red Schoendienst",
+  "range": 8,
+  "arm": 6,
+  "durability": 8
+ },
+ "ashburi01": {
+  "name": "Richie Ashburn",
+  "range": 10,
+  "arm": 8,
+  "durability": 9
+ },
+ "spahnwa01": {
+  "name": "Warren Spahn",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "roberro01": {
+  "name": "Robin Roberts",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "newcodo01": {
+  "name": "Don Newcombe",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "erskica01": {
+  "name": "Carl Erskine",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "facero01": {
+  "name": "Roy Face",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Forkball",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "konstji01": {
+  "name": "Jim Konstanty",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Sinker",
+   "Curveball"
+  ]
+ },
+ "furilca01": {
+  "name": "Carl Furillo",
+  "range": 7,
+  "arm": 10,
+  "durability": 8
+ },
+ "kinerra01": {
+  "name": "Ralph Kiner",
+  "range": 4,
+  "arm": 5,
+  "durability": 8
+ }
+}

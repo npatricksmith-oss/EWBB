@@ -1,0 +1,135 @@
+{
+ "id": "nl_61_75",
+ "city": "NL",
+ "name": "61-75",
+ "abbrev": "N61",
+ "league": "NL",
+ "primaryColor": "#c6011f",
+ "secondaryColor": "#0e3386",
+ "defaultParkId": "wrigley",
+ "defaultManagerId": "herzog",
+ "source": "NL 1961-1975 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "benchjo01",
+   "year": 1970,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "mccovwi01",
+   "year": 1969,
+   "pos": "1B",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "morgajo02",
+   "year": 1975,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "santoro01",
+   "year": 1964,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "willsma01",
+   "year": 1962,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "brocklo01",
+   "year": 1967,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "floodcu01",
+   "year": 1963,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "clemero01",
+   "year": 1967,
+   "pos": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "aaronha01",
+   "year": 1971,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "mccarti01",
+   "year": 1967,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "rosepe01",
+   "year": 1973,
+   "pos": "LF",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "willibi01",
+   "year": 1970,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "stargwi01",
+   "year": 1971,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "gibsobo01",
+   "year": 1968,
+   "role": "SP"
+  },
+  {
+   "bref": "koufasa01",
+   "year": 1965,
+   "role": "SP"
+  },
+  {
+   "bref": "carltst01",
+   "year": 1972,
+   "role": "SP"
+  },
+  {
+   "bref": "seaveto01",
+   "year": 1973,
+   "role": "SP"
+  },
+  {
+   "bref": "mcgratu01",
+   "year": 1973,
+   "role": "RP"
+  },
+  {
+   "bref": "marshmi01",
+   "year": 1974,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "Aaron 1971 to DH starter, Stargell to bench; boyerke01 -> rosepe01 1973"
+ ]
+}

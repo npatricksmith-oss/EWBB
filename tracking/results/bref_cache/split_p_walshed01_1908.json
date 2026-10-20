@@ -1,0 +1,36 @@
+{
+ "total": [
+  {
+   "incomplete_split": "",
+   "split_name": "1908 Totals",
+   "G": "66",
+   "PA": "1774",
+   "AB": "1672",
+   "R": "111",
+   "H": "343",
+   "2B": "30",
+   "3B": "13",
+   "HR": "2",
+   "SB": "",
+   "CS": "",
+   "BB": "56",
+   "SO": "271",
+   "strikeouts_per_base_on_balls": "4.84",
+   "batting_avg": ".205",
+   "onbase_perc": ".236",
+   "slugging_perc": ".242",
+   "onbase_plus_slugging": ".478",
+   "TB": "405",
+   "GIDP": "",
+   "HBP": "11",
+   "SH": "35",
+   "SF": "",
+   "IBB": "",
+   "ROE": "",
+   "batting_avg_bip": ".244",
+   "onbase_plus_slugging_vs_total": "100",
+   "onbase_plus_slugging_vs_lg": "65"
+  }
+ ],
+ "url": "https://www.baseball-reference.com/players/split.fcgi?id=walshed01&year=1908&t=p"
+}

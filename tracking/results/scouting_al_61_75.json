@@ -1,0 +1,138 @@
+{
+ "munsoth01": {
+  "name": "Thurman Munson",
+  "range": 5,
+  "arm": 8,
+  "durability": 8
+ },
+ "carewro01": {
+  "name": "Rod Carew",
+  "range": 7,
+  "arm": 6,
+  "durability": 8
+ },
+ "robinbr01": {
+  "name": "Brooks Robinson",
+  "range": 9,
+  "arm": 9,
+  "durability": 9
+ },
+ "aparilu01": {
+  "name": "Luis Aparicio",
+  "range": 9,
+  "arm": 6,
+  "durability": 9
+ },
+ "yastrca01": {
+  "name": "Carl Yastrzemski",
+  "range": 6,
+  "arm": 7,
+  "durability": 9
+ },
+ "blairpa01": {
+  "name": "Paul Blair",
+  "range": 9,
+  "arm": 8,
+  "durability": 8
+ },
+ "marisro01": {
+  "name": "Roger Maris",
+  "range": 6,
+  "arm": 9,
+  "durability": 8
+ },
+ "killeha01": {
+  "name": "Harmon Killebrew",
+  "range": 4,
+  "arm": 5,
+  "durability": 9
+ },
+ "freehbi01": {
+  "name": "Bill Freehan",
+  "range": 6,
+  "arm": 8,
+  "durability": 7
+ },
+ "allendi01": {
+  "name": "Dick Allen",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "olivato01": {
+  "name": "Tony Oliva",
+  "range": 6,
+  "arm": 9,
+  "durability": 6
+ },
+ "jacksre01": {
+  "name": "Reggie Jackson",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "palmeji01": {
+  "name": "Jim Palmer",
+  "bunt": 3,
+  "fielding": 8,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "mclaide01": {
+  "name": "Denny McLain",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider"
+  ]
+ },
+ "hunteca01": {
+  "name": "Catfish Hunter",
+  "bunt": 4,
+  "fielding": 8,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "bluevi01": {
+  "name": "Vida Blue",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "radatdi01": {
+  "name": "Dick Radatz",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "fingero01": {
+  "name": "Rollie Fingers",
+  "bunt": 3,
+  "fielding": 7,
+  "pitches": [
+   "Forkball",
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ },
+ "robinfr02": {
+  "name": "Frank Robinson",
+  "range": 7,
+  "arm": 8,
+  "durability": 8
+ }
+}

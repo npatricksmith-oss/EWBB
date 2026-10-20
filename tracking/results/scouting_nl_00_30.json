@@ -1,0 +1,136 @@
+{
+ "hartnga01": {
+  "name": "Gabby Hartnett",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "terrybi01": {
+  "name": "Bill Terry",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "hornsro01": {
+  "name": "Rogers Hornsby",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "traynpi01": {
+  "name": "Pie Traynor",
+  "range": 8,
+  "arm": 8,
+  "durability": 8
+ },
+ "wagneho01": {
+  "name": "Honus Wagner",
+  "range": 9,
+  "arm": 8,
+  "durability": 8
+ },
+ "wilsoha01": {
+  "name": "Hack Wilson",
+  "range": 3,
+  "arm": 4,
+  "durability": 6
+ },
+ "careyma01": {
+  "name": "Max Carey",
+  "range": 8,
+  "arm": 6,
+  "durability": 8
+ },
+ "kleinch01": {
+  "name": "Chuck Klein",
+  "range": 4,
+  "arm": 7,
+  "durability": 6
+ },
+ "bresnro01": {
+  "name": "Roger Bresnahan",
+  "range": 6,
+  "arm": 7,
+  "durability": 6
+ },
+ "friscfr01": {
+  "name": "Frankie Frisch",
+  "range": 7,
+  "arm": 6,
+  "durability": 8
+ },
+ "roushed01": {
+  "name": "Edd Roush",
+  "range": 7,
+  "arm": 6,
+  "durability": 7
+ },
+ "hafeych01": {
+  "name": "Chick Hafey",
+  "range": 4,
+  "arm": 4,
+  "durability": 5
+ },
+ "mathech01": {
+  "name": "Christy Mathewson",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "alexape01": {
+  "name": "Grover Cleveland Alexander",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "vanceda01": {
+  "name": "Dazzy Vance",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "brownmo01": {
+  "name": "Mordecai Brown",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Curveball",
+   "Sinker"
+  ]
+ },
+ "cranddo01": {
+  "name": "Doc Crandall",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "cuyleki01": {
+  "name": "Kiki Cuyler",
+  "range": 8,
+  "arm": 7,
+  "durability": 8
+ },
+ "grimebu01": {
+  "name": "Burleigh Grimes",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Spitball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

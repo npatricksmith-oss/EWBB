@@ -1,0 +1,134 @@
+{
+ "schalra01": {
+  "name": "Ray Schalk",
+  "range": 7,
+  "arm": 9,
+  "durability": 7
+ },
+ "collied01": {
+  "name": "Eddie Collins",
+  "range": 9,
+  "arm": 7,
+  "durability": 9
+ },
+ "bakerfr01": {
+  "name": "Frank Baker",
+  "range": 7,
+  "arm": 8,
+  "durability": 8
+ },
+ "seweljo01": {
+  "name": "Joe Sewell",
+  "range": 8,
+  "arm": 6,
+  "durability": 10
+ },
+ "simmoal01": {
+  "name": "Al Simmons",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "speaktr01": {
+  "name": "Tris Speaker",
+  "range": 10,
+  "arm": 8,
+  "durability": 8
+ },
+ "ruthba01": {
+  "name": "Babe Ruth",
+  "range": 5,
+  "arm": 7,
+  "durability": 7
+ },
+ "cobbty01": {
+  "name": "Ty Cobb",
+  "range": 8,
+  "arm": 7,
+  "durability": 9
+ },
+ "schanwa01": {
+  "name": "Wally Schang",
+  "range": 6,
+  "arm": 7,
+  "durability": 6
+ },
+ "gosligo01": {
+  "name": "Goose Goslin",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "johnswa01": {
+  "name": "Walter Johnson",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "covelst01": {
+  "name": "Stan Coveleski",
+  "bunt": 5,
+  "fielding": 8,
+  "pitches": [
+   "Spitball",
+   "4-Seam Fastball"
+  ]
+ },
+ "walshed01": {
+  "name": "Ed Walsh",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Spitball",
+   "4-Seam Fastball"
+  ]
+ },
+ "jonessa01": {
+  "name": "Sad Sam Jones",
+  "bunt": 6,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "marbefi01": {
+  "name": "Firpo Marberry",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "sislege01": {
+  "name": "George Sisler",
+  "range": 8,
+  "arm": 7,
+  "durability": 9
+ },
+ "lajoina01": {
+  "name": "Nap Lajoie",
+  "range": 8,
+  "arm": 7,
+  "durability": 8
+ },
+ "jacksjo01": {
+  "name": "Joe Jackson",
+  "range": 7,
+  "arm": 8,
+  "durability": 8
+ },
+ "woodjo02": {
+  "name": "Smoky Joe Wood",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

@@ -1,0 +1,1376 @@
+{
+ "team": "al_46_60",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "a46_berrayo01",
+   "name": "Yogi Berra",
+   "pos": "C",
+   "pos2": "1B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.272,
+     "HR": 27,
+     "RBI": 108,
+     "BB": 60,
+     "SO": 20,
+     "AB": 541,
+     "H": 147,
+     "d2B": 20,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.349,
+     "SA": 0.47
+    },
+    "L": {
+     "BA": 0.262,
+     "HR": 5,
+     "RBI": 33,
+     "BB": 20,
+     "SO": 6,
+     "AB": 149,
+     "H": 39,
+     "d2B": 10,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.355,
+     "SA": 0.456
+    },
+    "R": {
+     "BA": 0.276,
+     "HR": 22,
+     "RBI": 75,
+     "BB": 40,
+     "SO": 14,
+     "AB": 392,
+     "H": 108,
+     "d2B": 10,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.347,
+     "SA": 0.474
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 10,
+    "bunt": 3,
+    "fbPct": 48,
+    "runs": 4,
+    "range": 6,
+    "arm": 8,
+    "durability": 7
+   },
+   "source": {
+    "bref": "berrayo01",
+    "season": 1955,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_fainfe01",
+   "name": "Ferris Fain",
+   "pos": "1B",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.344,
+     "HR": 6,
+     "RBI": 57,
+     "BB": 81,
+     "SO": 20,
+     "AB": 425,
+     "H": 146,
+     "d2B": 30,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 4,
+     "OBA": 0.452,
+     "SA": 0.471
+    },
+    "L": {
+     "BA": 0.269,
+     "HR": 2,
+     "RBI": 15,
+     "BB": 17,
+     "SO": 8,
+     "AB": 108,
+     "H": 29,
+     "d2B": 6,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.373,
+     "SA": 0.38
+    },
+    "R": {
+     "BA": 0.369,
+     "HR": 4,
+     "RBI": 42,
+     "BB": 64,
+     "SO": 12,
+     "AB": 317,
+     "H": 117,
+     "d2B": 24,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 4,
+     "OBA": 0.478,
+     "SA": 0.502
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 10,
+    "bunt": 6,
+    "fbPct": 32,
+    "runs": 5,
+    "range": 6,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "fainfe01",
+    "season": 1951,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.9
+   }
+  },
+  {
+   "id": "a46_foxne01",
+   "name": "Nellie Fox",
+   "pos": "2B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.306,
+     "HR": 2,
+     "RBI": 70,
+     "BB": 71,
+     "SO": 13,
+     "AB": 624,
+     "H": 191,
+     "d2B": 34,
+     "d3B": 6,
+     "SB": 5,
+     "CS": 6,
+     "OBA": 0.38,
+     "SA": 0.389
+    },
+    "L": {
+     "BA": 0.306,
+     "HR": 1,
+     "RBI": 16,
+     "BB": 13,
+     "SO": 2,
+     "AB": 160,
+     "H": 49,
+     "d2B": 6,
+     "d3B": 1,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.367,
+     "SA": 0.375
+    },
+    "R": {
+     "BA": 0.306,
+     "HR": 1,
+     "RBI": 54,
+     "BB": 58,
+     "SO": 11,
+     "AB": 464,
+     "H": 142,
+     "d2B": 28,
+     "d3B": 5,
+     "SB": 3,
+     "CS": 5,
+     "OBA": 0.385,
+     "SA": 0.394
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 10,
+    "bunt": 8,
+    "fbPct": 27,
+    "runs": 6,
+    "range": 7,
+    "arm": 5,
+    "durability": 9
+   },
+   "source": {
+    "bref": "foxne01",
+    "season": 1959,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_rosenal01",
+   "name": "Al Rosen",
+   "pos": "3B",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.336,
+     "HR": 43,
+     "RBI": 145,
+     "BB": 85,
+     "SO": 48,
+     "AB": 599,
+     "H": 201,
+     "d2B": 27,
+     "d3B": 5,
+     "SB": 8,
+     "CS": 7,
+     "OBA": 0.422,
+     "SA": 0.613
+    },
+    "L": {
+     "BA": 0.335,
+     "HR": 16,
+     "RBI": 57,
+     "BB": 39,
+     "SO": 22,
+     "AB": 257,
+     "H": 86,
+     "d2B": 11,
+     "d3B": 2,
+     "SB": 4,
+     "CS": 2,
+     "OBA": 0.424,
+     "SA": 0.58
+    },
+    "R": {
+     "BA": 0.336,
+     "HR": 27,
+     "RBI": 88,
+     "BB": 46,
+     "SO": 26,
+     "AB": 342,
+     "H": 115,
+     "d2B": 16,
+     "d3B": 3,
+     "SB": 4,
+     "CS": 5,
+     "OBA": 0.419,
+     "SA": 0.637
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 9,
+    "bunt": 4,
+    "fbPct": 58,
+    "runs": 7,
+    "range": 6,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "rosenal01",
+    "season": 1953,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_rizzuph01",
+   "name": "Phil Rizzuto",
+   "pos": "SS",
+   "pos2": "2B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.324,
+     "HR": 7,
+     "RBI": 66,
+     "BB": 92,
+     "SO": 39,
+     "AB": 617,
+     "H": 200,
+     "d2B": 36,
+     "d3B": 7,
+     "SB": 12,
+     "CS": 9,
+     "OBA": 0.418,
+     "SA": 0.439
+    },
+    "L": {
+     "BA": 0.345,
+     "HR": 2,
+     "RBI": 24,
+     "BB": 37,
+     "SO": 13,
+     "AB": 264,
+     "H": 91,
+     "d2B": 16,
+     "d3B": 4,
+     "SB": 7,
+     "CS": 3,
+     "OBA": 0.427,
+     "SA": 0.458
+    },
+    "R": {
+     "BA": 0.309,
+     "HR": 5,
+     "RBI": 42,
+     "BB": 55,
+     "SO": 26,
+     "AB": 353,
+     "H": 109,
+     "d2B": 20,
+     "d3B": 3,
+     "SB": 5,
+     "CS": 6,
+     "OBA": 0.411,
+     "SA": 0.425
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 10,
+    "bunt": 10,
+    "fbPct": 31,
+    "runs": 9,
+    "range": 8,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "rizzuph01",
+    "season": 1950,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.95
+   }
+  },
+  {
+   "id": "a46_willite01",
+   "name": "Ted Williams",
+   "pos": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.388,
+     "HR": 38,
+     "RBI": 87,
+     "BB": 120,
+     "SO": 44,
+     "AB": 420,
+     "H": 163,
+     "d2B": 28,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.527,
+     "SA": 0.731
+    },
+    "L": {
+     "BA": 0.323,
+     "HR": 5,
+     "RBI": 14,
+     "BB": 26,
+     "SO": 15,
+     "AB": 96,
+     "H": 31,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.472,
+     "SA": 0.521
+    },
+    "R": {
+     "BA": 0.407,
+     "HR": 33,
+     "RBI": 73,
+     "BB": 94,
+     "SO": 29,
+     "AB": 324,
+     "H": 132,
+     "d2B": 24,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.542,
+     "SA": 0.793
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 10,
+    "bunt": 2,
+    "fbPct": 65,
+    "runs": 4,
+    "range": 4,
+    "arm": 4,
+    "durability": 6
+   },
+   "source": {
+    "bref": "willite01",
+    "season": 1957,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.97
+   }
+  },
+  {
+   "id": "a46_mantlmi01",
+   "name": "Mickey Mantle",
+   "pos": "CF",
+   "pos2": "RF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.353,
+     "HR": 52,
+     "RBI": 130,
+     "BB": 112,
+     "SO": 100,
+     "AB": 533,
+     "H": 188,
+     "d2B": 22,
+     "d3B": 5,
+     "SB": 10,
+     "CS": 1,
+     "OBA": 0.464,
+     "SA": 0.705
+    },
+    "L": {
+     "BA": 0.375,
+     "HR": 13,
+     "RBI": 31,
+     "BB": 33,
+     "SO": 34,
+     "AB": 176,
+     "H": 66,
+     "d2B": 8,
+     "d3B": 0,
+     "SB": 4,
+     "CS": 0,
+     "OBA": 0.474,
+     "SA": 0.642
+    },
+    "R": {
+     "BA": 0.342,
+     "HR": 39,
+     "RBI": 99,
+     "BB": 79,
+     "SO": 66,
+     "AB": 357,
+     "H": 122,
+     "d2B": 14,
+     "d3B": 5,
+     "SB": 6,
+     "CS": 1,
+     "OBA": 0.459,
+     "SA": 0.737
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 65,
+    "runs": 7,
+    "range": 9,
+    "arm": 8,
+    "durability": 7
+   },
+   "source": {
+    "bref": "mantlmi01",
+    "season": 1956,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_kalinal01",
+   "name": "Al Kaline",
+   "pos": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.34,
+     "HR": 27,
+     "RBI": 102,
+     "BB": 82,
+     "SO": 57,
+     "AB": 588,
+     "H": 200,
+     "d2B": 24,
+     "d3B": 8,
+     "SB": 6,
+     "CS": 8,
+     "OBA": 0.421,
+     "SA": 0.546
+    },
+    "L": {
+     "BA": 0.349,
+     "HR": 6,
+     "RBI": 18,
+     "BB": 27,
+     "SO": 18,
+     "AB": 149,
+     "H": 52,
+     "d2B": 7,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.444,
+     "SA": 0.544
+    },
+    "R": {
+     "BA": 0.337,
+     "HR": 21,
+     "RBI": 84,
+     "BB": 55,
+     "SO": 39,
+     "AB": 439,
+     "H": 148,
+     "d2B": 17,
+     "d3B": 6,
+     "SB": 5,
+     "CS": 6,
+     "OBA": 0.414,
+     "SA": 0.547
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 9,
+    "bunt": 5,
+    "fbPct": 47,
+    "runs": 7,
+    "range": 7,
+    "arm": 9,
+    "durability": 8
+   },
+   "source": {
+    "bref": "kalinal01",
+    "season": 1955,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_minosmi01",
+   "name": "Minnie Minoso",
+   "pos": "DH",
+   "pos2": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.32,
+     "HR": 19,
+     "RBI": 116,
+     "BB": 78,
+     "SO": 46,
+     "AB": 568,
+     "H": 182,
+     "d2B": 29,
+     "d3B": 18,
+     "SB": 18,
+     "CS": 13,
+     "OBA": 0.412,
+     "SA": 0.535
+    },
+    "L": {
+     "BA": 0.299,
+     "HR": 4,
+     "RBI": 34,
+     "BB": 27,
+     "SO": 16,
+     "AB": 187,
+     "H": 56,
+     "d2B": 8,
+     "d3B": 6,
+     "SB": 3,
+     "CS": 5,
+     "OBA": 0.391,
+     "SA": 0.471
+    },
+    "R": {
+     "BA": 0.331,
+     "HR": 15,
+     "RBI": 82,
+     "BB": 51,
+     "SO": 30,
+     "AB": 381,
+     "H": 126,
+     "d2B": 21,
+     "d3B": 12,
+     "SB": 15,
+     "CS": 8,
+     "OBA": 0.422,
+     "SA": 0.567
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 9,
+    "bunt": 8,
+    "fbPct": 41,
+    "runs": 10,
+    "range": 7,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "minosmi01",
+    "season": 1954,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_howarel01",
+   "name": "Elston Howard",
+   "pos": "C",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.314,
+     "HR": 11,
+     "RBI": 66,
+     "BB": 22,
+     "SO": 60,
+     "AB": 376,
+     "H": 118,
+     "d2B": 19,
+     "d3B": 5,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.348,
+     "SA": 0.479
+    },
+    "L": {
+     "BA": 0.379,
+     "HR": 4,
+     "RBI": 32,
+     "BB": 6,
+     "SO": 20,
+     "AB": 116,
+     "H": 44,
+     "d2B": 5,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.403,
+     "SA": 0.56
+    },
+    "R": {
+     "BA": 0.285,
+     "HR": 7,
+     "RBI": 34,
+     "BB": 16,
+     "SO": 40,
+     "AB": 260,
+     "H": 74,
+     "d2B": 14,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.324,
+     "SA": 0.442
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 6,
+    "fbPct": 39,
+    "runs": 6,
+    "range": 5,
+    "arm": 8,
+    "durability": 6
+   },
+   "source": {
+    "bref": "howarel01",
+    "season": 1958,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "a46_martibi02",
+   "name": "Billy Martin",
+   "pos": "2B",
+   "pos2": "SS",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.257,
+     "HR": 15,
+     "RBI": 75,
+     "BB": 42,
+     "SO": 56,
+     "AB": 587,
+     "H": 151,
+     "d2B": 24,
+     "d3B": 6,
+     "SB": 6,
+     "CS": 7,
+     "OBA": 0.313,
+     "SA": 0.395
+    },
+    "L": {
+     "BA": 0.275,
+     "HR": 8,
+     "RBI": 26,
+     "BB": 18,
+     "SO": 31,
+     "AB": 240,
+     "H": 66,
+     "d2B": 10,
+     "d3B": 4,
+     "SB": 2,
+     "CS": 4,
+     "OBA": 0.333,
+     "SA": 0.45
+    },
+    "R": {
+     "BA": 0.245,
+     "HR": 7,
+     "RBI": 49,
+     "BB": 24,
+     "SO": 25,
+     "AB": 347,
+     "H": 85,
+     "d2B": 14,
+     "d3B": 2,
+     "SB": 4,
+     "CS": 3,
+     "OBA": 0.299,
+     "SA": 0.357
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 8,
+    "bunt": 8,
+    "fbPct": 37,
+    "runs": 8,
+    "range": 6,
+    "arm": 5,
+    "durability": 6
+   },
+   "source": {
+    "bref": "martibi02",
+    "season": 1953,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.99
+   }
+  },
+  {
+   "id": "a46_dimagdo01",
+   "name": "Dom DiMaggio",
+   "pos": "CF",
+   "pos2": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.328,
+     "HR": 7,
+     "RBI": 70,
+     "BB": 82,
+     "SO": 68,
+     "AB": 588,
+     "H": 193,
+     "d2B": 30,
+     "d3B": 11,
+     "SB": 15,
+     "CS": 4,
+     "OBA": 0.414,
+     "SA": 0.452
+    },
+    "L": {
+     "BA": 0.36,
+     "HR": 2,
+     "RBI": 20,
+     "BB": 25,
+     "SO": 19,
+     "AB": 203,
+     "H": 73,
+     "d2B": 14,
+     "d3B": 4,
+     "SB": 6,
+     "CS": 2,
+     "OBA": 0.432,
+     "SA": 0.498
+    },
+    "R": {
+     "BA": 0.312,
+     "HR": 5,
+     "RBI": 50,
+     "BB": 57,
+     "SO": 49,
+     "AB": 385,
+     "H": 120,
+     "d2B": 16,
+     "d3B": 7,
+     "SB": 9,
+     "CS": 2,
+     "OBA": 0.404,
+     "SA": 0.429
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 8,
+    "bunt": 9,
+    "fbPct": 31,
+    "runs": 9,
+    "range": 7,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "dimagdo01",
+    "season": 1950,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.93
+   }
+  },
+  {
+   "id": "a46_dobyla01",
+   "name": "Larry Doby",
+   "pos": "RF",
+   "pos2": "CF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.276,
+     "HR": 32,
+     "RBI": 104,
+     "BB": 90,
+     "SO": 111,
+     "AB": 519,
+     "H": 143,
+     "d2B": 26,
+     "d3B": 8,
+     "SB": 5,
+     "CS": 2,
+     "OBA": 0.383,
+     "SA": 0.541
+    },
+    "L": {
+     "BA": 0.266,
+     "HR": 13,
+     "RBI": 46,
+     "BB": 38,
+     "SO": 56,
+     "AB": 192,
+     "H": 51,
+     "d2B": 8,
+     "d3B": 2,
+     "SB": 4,
+     "CS": 1,
+     "OBA": 0.387,
+     "SA": 0.531
+    },
+    "R": {
+     "BA": 0.281,
+     "HR": 19,
+     "RBI": 58,
+     "BB": 52,
+     "SO": 55,
+     "AB": 327,
+     "H": 92,
+     "d2B": 18,
+     "d3B": 6,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.38,
+     "SA": 0.547
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 4,
+    "bunt": 4,
+    "fbPct": 54,
+    "runs": 7,
+    "range": 6,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "dobyla01",
+    "season": 1952,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "a46_fordwh01",
+   "name": "Whitey Ford",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 19,
+     "L": 6,
+     "ERA": 2.47,
+     "GS": 30,
+     "SV": 1,
+     "IP": 225.2,
+     "H": 187,
+     "ER": 62,
+     "HR": 13,
+     "BB": 84,
+     "SO": 141,
+     "WP": 6,
+     "HB": 4,
+     "BALK": 0,
+     "BA": 0.228,
+     "OBA": 0.301,
+     "SA": 0.322
+    },
+    "L": {
+     "AB": 214,
+     "H": 38,
+     "HR": 3,
+     "BB": 22,
+     "SO": 46,
+     "BA": 0.178,
+     "OBA": 0.255,
+     "SA": 0.248,
+     "baMod": 0.781,
+     "hrMod": 0.888,
+     "bbMod": 1.008,
+     "soMod": 1.256
+    },
+    "R": {
+     "AB": 606,
+     "H": 149,
+     "HR": 10,
+     "BB": 62,
+     "SO": 95,
+     "BA": 0.246,
+     "OBA": 0.318,
+     "SA": 0.348,
+     "baMod": 1.079,
+     "hrMod": 1.039,
+     "bbMod": 0.997,
+     "soMod": 0.91
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 7
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "fordwh01",
+    "season": 1956,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "a46_wynnea01",
+   "name": "Early Wynn",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 22,
+     "L": 10,
+     "ERA": 3.17,
+     "GS": 37,
+     "SV": 0,
+     "IP": 255.2,
+     "H": 202,
+     "ER": 90,
+     "HR": 20,
+     "BB": 119,
+     "SO": 179,
+     "WP": 5,
+     "HB": 9,
+     "BALK": 0,
+     "BA": 0.216,
+     "OBA": 0.308,
+     "SA": 0.317
+    },
+    "L": {
+     "AB": 336,
+     "H": 85,
+     "HR": 5,
+     "BB": 58,
+     "SO": 52,
+     "BA": 0.253,
+     "OBA": 0.367,
+     "SA": 0.333,
+     "baMod": 1.171,
+     "hrMod": 0.672,
+     "bbMod": 1.31,
+     "soMod": 0.781
+    },
+    "R": {
+     "AB": 600,
+     "H": 117,
+     "HR": 15,
+     "BB": 61,
+     "SO": 127,
+     "BA": 0.195,
+     "OBA": 0.274,
+     "SA": 0.308,
+     "baMod": 0.903,
+     "hrMod": 1.194,
+     "bbMod": 0.816,
+     "soMod": 1.13
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 5,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 7
+   },
+   "pitches": [
+    "Slider",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "wynnea01",
+    "season": 1959,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "a46_lemonbo01",
+   "name": "Bob Lemon",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 23,
+     "L": 7,
+     "ERA": 2.72,
+     "GS": 33,
+     "SV": 0,
+     "IP": 258.1,
+     "H": 228,
+     "ER": 78,
+     "HR": 12,
+     "BB": 92,
+     "SO": 110,
+     "WP": 6,
+     "HB": 4,
+     "BALK": 1,
+     "BA": 0.237,
+     "OBA": 0.303,
+     "SA": 0.321
+    },
+    "L": {
+     "AB": 392,
+     "H": 87,
+     "HR": 5,
+     "BB": 44,
+     "SO": 47,
+     "BA": 0.222,
+     "OBA": 0.305,
+     "SA": 0.301,
+     "baMod": 0.937,
+     "hrMod": 1.007,
+     "bbMod": 1.156,
+     "soMod": 1.033
+    },
+    "R": {
+     "AB": 568,
+     "H": 141,
+     "HR": 7,
+     "BB": 48,
+     "SO": 63,
+     "BA": 0.248,
+     "OBA": 0.302,
+     "SA": 0.335,
+     "baMod": 1.046,
+     "hrMod": 0.995,
+     "bbMod": 0.89,
+     "soMod": 0.977
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 8,
+    "fatigue": 10,
+    "bunt": 6,
+    "fielding": 7
+   },
+   "pitches": [
+    "Slider",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "lemonbo01",
+    "season": 1954,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "a46_piercbi02",
+   "name": "Billy Pierce",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 20,
+     "L": 9,
+     "ERA": 3.32,
+     "GS": 33,
+     "SV": 1,
+     "IP": 276.1,
+     "H": 261,
+     "ER": 102,
+     "HR": 24,
+     "BB": 100,
+     "SO": 192,
+     "WP": 6,
+     "HB": 3,
+     "BALK": 1,
+     "BA": 0.25,
+     "OBA": 0.317,
+     "SA": 0.371
+    },
+    "L": {
+     "AB": 180,
+     "H": 42,
+     "HR": 5,
+     "BB": 16,
+     "SO": 39,
+     "BA": 0.233,
+     "OBA": 0.296,
+     "SA": 0.344,
+     "baMod": 0.932,
+     "hrMod": 1.224,
+     "bbMod": 0.94,
+     "soMod": 1.193
+    },
+    "R": {
+     "AB": 865,
+     "H": 219,
+     "HR": 19,
+     "BB": 84,
+     "SO": 153,
+     "BA": 0.253,
+     "OBA": 0.321,
+     "SA": 0.377,
+     "baMod": 1.012,
+     "hrMod": 0.954,
+     "bbMod": 1.012,
+     "soMod": 0.96
+    }
+   },
+   "ratings": {
+    "speed": 9,
+    "control": 8,
+    "fatigue": 10,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "piercbi02",
+    "season": 1956,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "a46_wilheho01",
+   "name": "Hoyt Wilhelm",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 15,
+     "L": 11,
+     "ERA": 2.19,
+     "GS": 27,
+     "SV": 0,
+     "IP": 226.0,
+     "H": 178,
+     "ER": 55,
+     "HR": 13,
+     "BB": 77,
+     "SO": 139,
+     "WP": 5,
+     "HB": 10,
+     "BALK": 0,
+     "BA": 0.224,
+     "OBA": 0.299,
+     "SA": 0.307
+    },
+    "L": {
+     "AB": 317,
+     "H": 74,
+     "HR": 7,
+     "BB": 30,
+     "SO": 49,
+     "BA": 0.233,
+     "OBA": 0.31,
+     "SA": 0.328,
+     "baMod": 1.04,
+     "hrMod": 1.362,
+     "bbMod": 0.985,
+     "soMod": 0.892
+    },
+    "R": {
+     "AB": 478,
+     "H": 104,
+     "HR": 6,
+     "BB": 47,
+     "SO": 90,
+     "BA": 0.218,
+     "OBA": 0.292,
+     "SA": 0.293,
+     "baMod": 0.973,
+     "hrMod": 0.763,
+     "bbMod": 1.009,
+     "soMod": 1.071
+    }
+   },
+   "ratings": {
+    "speed": 3,
+    "control": 7,
+    "fatigue": 10,
+    "bunt": 3,
+    "fielding": 6
+   },
+   "pitches": [
+    "Knuckleball",
+    "4-Seam Fastball"
+   ],
+   "source": {
+    "bref": "wilheho01",
+    "season": 1959,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "a46_pagejo01",
+   "name": "Joe Page",
+   "role": "CL",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 14,
+     "L": 8,
+     "ERA": 2.48,
+     "GS": 2,
+     "SV": 17,
+     "IP": 141.1,
+     "H": 105,
+     "ER": 39,
+     "HR": 5,
+     "BB": 72,
+     "SO": 116,
+     "WP": 1,
+     "HB": 1,
+     "BALK": 0,
+     "BA": 0.208,
+     "OBA": 0.307,
+     "SA": 0.273
+    },
+    "L": {
+     "AB": 182,
+     "H": 34,
+     "HR": 1,
+     "BB": 21,
+     "SO": 28,
+     "BA": 0.187,
+     "OBA": 0.275,
+     "SA": 0.247,
+     "baMod": 0.899,
+     "hrMod": 0.568,
+     "bbMod": 0.828,
+     "soMod": 0.685
+    },
+    "R": {
+     "AB": 324,
+     "H": 71,
+     "HR": 4,
+     "BB": 51,
+     "SO": 88,
+     "BA": 0.219,
+     "OBA": 0.325,
+     "SA": 0.287,
+     "baMod": 1.053,
+     "hrMod": 1.235,
+     "bbMod": 1.093,
+     "soMod": 1.171
+    }
+   },
+   "ratings": {
+    "speed": 10,
+    "control": 6,
+    "fatigue": 6,
+    "bunt": 3,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "pagejo01",
+    "season": 1947,
+    "splits": "platoon",
+    "splitCoverage": 0.96
+   }
+  }
+ ]
+}

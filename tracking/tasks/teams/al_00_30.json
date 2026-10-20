@@ -1,0 +1,140 @@
+{
+ "id": "al_00_30",
+ "city": "AL",
+ "name": "00-30",
+ "abbrev": "A00",
+ "league": "AL",
+ "primaryColor": "#1c2841",
+ "secondaryColor": "#c8102e",
+ "defaultParkId": "fenway",
+ "defaultManagerId": "weaver",
+ "source": "AL 1901-1930 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "schalra01",
+   "year": 1917,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "pos": "1B",
+   "isStarter": true,
+   "bref": "sislege01",
+   "year": 1920
+  },
+  {
+   "bref": "collied01",
+   "year": 1914,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "bakerfr01",
+   "year": 1913,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "seweljo01",
+   "year": 1923,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "simmoal01",
+   "year": 1930,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "speaktr01",
+   "year": 1912,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "ruthba01",
+   "year": 1921,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "cobbty01",
+   "year": 1911,
+   "pos": "DH",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "schanwa01",
+   "year": 1917,
+   "pos": "C",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "pos": "2B",
+   "pos2": "1B",
+   "isStarter": false,
+   "bref": "lajoina01",
+   "year": 1910
+  },
+  {
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false,
+   "bref": "jacksjo01",
+   "year": 1911
+  },
+  {
+   "bref": "gosligo01",
+   "year": 1928,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "johnswa01",
+   "year": 1913,
+   "role": "SP"
+  },
+  {
+   "role": "SP",
+   "bref": "woodjo02",
+   "year": 1912
+  },
+  {
+   "bref": "covelst01",
+   "year": 1920,
+   "role": "SP"
+  },
+  {
+   "bref": "walshed01",
+   "year": 1908,
+   "role": "SP"
+  },
+  {
+   "bref": "jonessa01",
+   "year": 1922,
+   "role": "RP"
+  },
+  {
+   "bref": "marbefi01",
+   "year": 1926,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "gehrilo01 -> sislege01 1920",
+  "lazzeto01 -> lajoina01 1910",
+  "ricesa01 -> jacksjo01 1911",
+  "grovele01 -> woodjo02 1912"
+ ]
+}

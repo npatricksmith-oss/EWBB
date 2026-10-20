@@ -1,0 +1,1381 @@
+{
+ "team": "nl_31_45",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "n31_lombaer01",
+   "name": "Ernie Lombardi",
+   "pos": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.342,
+     "HR": 19,
+     "RBI": 95,
+     "BB": 40,
+     "SO": 14,
+     "AB": 489,
+     "H": 167,
+     "d2B": 30,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.391,
+     "SA": 0.524
+    },
+    "L": {
+     "BA": 0.467,
+     "HR": 2,
+     "RBI": 13,
+     "BB": 4,
+     "SO": 4,
+     "AB": 75,
+     "H": 35,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.494,
+     "SA": 0.64
+    },
+    "R": {
+     "BA": 0.319,
+     "HR": 17,
+     "RBI": 82,
+     "BB": 36,
+     "SO": 10,
+     "AB": 414,
+     "H": 132,
+     "d2B": 25,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.373,
+     "SA": 0.502
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 10,
+    "bunt": 3,
+    "fbPct": 43,
+    "runs": 3,
+    "range": 4,
+    "arm": 4,
+    "durability": 8
+   },
+   "source": {
+    "bref": "lombaer01",
+    "season": 1938,
+    "splits": "platoon",
+    "csRecorded": false
+   }
+  },
+  {
+   "id": "n31_mizejo01",
+   "name": "Johnny Mize",
+   "pos": "1B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.314,
+     "HR": 43,
+     "RBI": 137,
+     "BB": 82,
+     "SO": 49,
+     "AB": 579,
+     "H": 182,
+     "d2B": 31,
+     "d3B": 13,
+     "SB": 7,
+     "CS": 2,
+     "OBA": 0.404,
+     "SA": 0.636
+    },
+    "L": {
+     "BA": 0.262,
+     "HR": 14,
+     "RBI": 47,
+     "BB": 19,
+     "SO": 24,
+     "AB": 206,
+     "H": 54,
+     "d2B": 9,
+     "d3B": 3,
+     "SB": 3,
+     "CS": 2,
+     "OBA": 0.336,
+     "SA": 0.539
+    },
+    "R": {
+     "BA": 0.343,
+     "HR": 29,
+     "RBI": 90,
+     "BB": 63,
+     "SO": 25,
+     "AB": 373,
+     "H": 128,
+     "d2B": 22,
+     "d3B": 10,
+     "SB": 4,
+     "CS": 0,
+     "OBA": 0.439,
+     "SA": 0.689
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 8,
+    "bunt": 4,
+    "fbPct": 59,
+    "runs": 7,
+    "range": 7,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "mizejo01",
+    "season": 1940,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.91
+   }
+  },
+  {
+   "id": "n31_hermabi01",
+   "name": "Billy Herman",
+   "pos": "2B",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.341,
+     "HR": 7,
+     "RBI": 85,
+     "BB": 42,
+     "SO": 29,
+     "AB": 666,
+     "H": 227,
+     "d2B": 57,
+     "d3B": 6,
+     "SB": 6,
+     "CS": 5,
+     "OBA": 0.383,
+     "SA": 0.476
+    },
+    "L": {
+     "BA": 0.419,
+     "HR": 5,
+     "RBI": 23,
+     "BB": 8,
+     "SO": 1,
+     "AB": 93,
+     "H": 39,
+     "d2B": 8,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.465,
+     "SA": 0.667
+    },
+    "R": {
+     "BA": 0.328,
+     "HR": 2,
+     "RBI": 62,
+     "BB": 34,
+     "SO": 28,
+     "AB": 573,
+     "H": 188,
+     "d2B": 49,
+     "d3B": 6,
+     "SB": 5,
+     "CS": 5,
+     "OBA": 0.369,
+     "SA": 0.445
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 10,
+    "bunt": 8,
+    "fbPct": 31,
+    "runs": 6,
+    "range": 8,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "hermabi01",
+    "season": 1935,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.95
+   }
+  },
+  {
+   "id": "n31_hackst01",
+   "name": "Stan Hack",
+   "pos": "3B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.32,
+     "HR": 4,
+     "RBI": 67,
+     "BB": 94,
+     "SO": 39,
+     "AB": 609,
+     "H": 195,
+     "d2B": 34,
+     "d3B": 11,
+     "SB": 17,
+     "CS": 15,
+     "OBA": 0.411,
+     "SA": 0.432
+    },
+    "L": {
+     "BA": 0.367,
+     "HR": 1,
+     "RBI": 13,
+     "BB": 17,
+     "SO": 14,
+     "AB": 128,
+     "H": 47,
+     "d2B": 6,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.441,
+     "SA": 0.438
+    },
+    "R": {
+     "BA": 0.308,
+     "HR": 3,
+     "RBI": 54,
+     "BB": 77,
+     "SO": 25,
+     "AB": 481,
+     "H": 148,
+     "d2B": 28,
+     "d3B": 11,
+     "SB": 16,
+     "CS": 13,
+     "OBA": 0.403,
+     "SA": 0.43
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 9,
+    "bunt": 8,
+    "fbPct": 29,
+    "runs": 9,
+    "range": 6,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "hackst01",
+    "season": 1938,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.97
+   }
+  },
+  {
+   "id": "n31_vaughar01",
+   "name": "Arky Vaughan",
+   "pos": "SS",
+   "pos2": "3B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.385,
+     "HR": 19,
+     "RBI": 99,
+     "BB": 97,
+     "SO": 18,
+     "AB": 499,
+     "H": 192,
+     "d2B": 34,
+     "d3B": 10,
+     "SB": 4,
+     "CS": 7,
+     "OBA": 0.49,
+     "SA": 0.607
+    },
+    "L": {
+     "BA": 0.399,
+     "HR": 4,
+     "RBI": 37,
+     "BB": 37,
+     "SO": 7,
+     "AB": 213,
+     "H": 85,
+     "d2B": 9,
+     "d3B": 8,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.494,
+     "SA": 0.573
+    },
+    "R": {
+     "BA": 0.374,
+     "HR": 15,
+     "RBI": 62,
+     "BB": 60,
+     "SO": 11,
+     "AB": 286,
+     "H": 107,
+     "d2B": 25,
+     "d3B": 2,
+     "SB": 4,
+     "CS": 6,
+     "OBA": 0.487,
+     "SA": 0.633
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 10,
+    "bunt": 5,
+    "fbPct": 43,
+    "runs": 6,
+    "range": 8,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "vaughar01",
+    "season": 1935,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.89
+   }
+  },
+  {
+   "id": "n31_medwijo01",
+   "name": "Joe Medwick",
+   "pos": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.374,
+     "HR": 31,
+     "RBI": 153,
+     "BB": 41,
+     "SO": 50,
+     "AB": 633,
+     "H": 237,
+     "d2B": 56,
+     "d3B": 10,
+     "SB": 4,
+     "CS": 5,
+     "OBA": 0.414,
+     "SA": 0.641
+    },
+    "L": {
+     "BA": 0.411,
+     "HR": 8,
+     "RBI": 25,
+     "BB": 8,
+     "SO": 8,
+     "AB": 90,
+     "H": 37,
+     "d2B": 7,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.459,
+     "SA": 0.8
+    },
+    "R": {
+     "BA": 0.368,
+     "HR": 23,
+     "RBI": 128,
+     "BB": 33,
+     "SO": 42,
+     "AB": 543,
+     "H": 200,
+     "d2B": 49,
+     "d3B": 8,
+     "SB": 4,
+     "CS": 4,
+     "OBA": 0.407,
+     "SA": 0.615
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 9,
+    "bunt": 4,
+    "fbPct": 48,
+    "runs": 6,
+    "range": 4,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "medwijo01",
+    "season": 1937,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.96
+   }
+  },
+  {
+   "id": "n31_moorete01",
+   "name": "Terry Moore",
+   "pos": "CF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.304,
+     "HR": 17,
+     "RBI": 64,
+     "BB": 42,
+     "SO": 44,
+     "AB": 537,
+     "H": 163,
+     "d2B": 33,
+     "d3B": 4,
+     "SB": 18,
+     "CS": 7,
+     "OBA": 0.356,
+     "SA": 0.475
+    },
+    "L": {
+     "BA": 0.286,
+     "HR": 6,
+     "RBI": 21,
+     "BB": 16,
+     "SO": 10,
+     "AB": 189,
+     "H": 54,
+     "d2B": 11,
+     "d3B": 0,
+     "SB": 5,
+     "CS": 0,
+     "OBA": 0.348,
+     "SA": 0.439
+    },
+    "R": {
+     "BA": 0.313,
+     "HR": 11,
+     "RBI": 43,
+     "BB": 26,
+     "SO": 34,
+     "AB": 348,
+     "H": 109,
+     "d2B": 22,
+     "d3B": 4,
+     "SB": 13,
+     "CS": 7,
+     "OBA": 0.361,
+     "SA": 0.494
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 8,
+    "bunt": 8,
+    "fbPct": 40,
+    "runs": 9,
+    "range": 9,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "moorete01",
+    "season": 1940,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.92
+   }
+  },
+  {
+   "id": "n31_wanerpa01",
+   "name": "Paul Waner",
+   "pos": "RF",
+   "pos2": "CF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.362,
+     "HR": 14,
+     "RBI": 91,
+     "BB": 68,
+     "SO": 24,
+     "AB": 599,
+     "H": 217,
+     "d2B": 32,
+     "d3B": 16,
+     "SB": 8,
+     "CS": 4,
+     "OBA": 0.429,
+     "SA": 0.539
+    },
+    "L": {
+     "BA": 0.29,
+     "HR": 1,
+     "RBI": 13,
+     "BB": 18,
+     "SO": 6,
+     "AB": 145,
+     "H": 42,
+     "d2B": 5,
+     "d3B": 3,
+     "SB": 5,
+     "CS": 0,
+     "OBA": 0.368,
+     "SA": 0.386
+    },
+    "R": {
+     "BA": 0.385,
+     "HR": 13,
+     "RBI": 78,
+     "BB": 50,
+     "SO": 18,
+     "AB": 454,
+     "H": 175,
+     "d2B": 27,
+     "d3B": 13,
+     "SB": 3,
+     "CS": 4,
+     "OBA": 0.449,
+     "SA": 0.588
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 10,
+    "bunt": 7,
+    "fbPct": 37,
+    "runs": 8,
+    "range": 7,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "wanerpa01",
+    "season": 1934,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.88
+   }
+  },
+  {
+   "id": "n31_ottme01",
+   "name": "Mel Ott",
+   "pos": "DH",
+   "pos2": "RF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.311,
+     "HR": 36,
+     "RBI": 117,
+     "BB": 120,
+     "SO": 47,
+     "AB": 527,
+     "H": 164,
+     "d2B": 23,
+     "d3B": 6,
+     "SB": 2,
+     "CS": 3,
+     "OBA": 0.443,
+     "SA": 0.583
+    },
+    "L": {
+     "BA": 0.353,
+     "HR": 15,
+     "RBI": 49,
+     "BB": 21,
+     "SO": 22,
+     "AB": 153,
+     "H": 54,
+     "d2B": 6,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.434,
+     "SA": 0.712
+    },
+    "R": {
+     "BA": 0.294,
+     "HR": 21,
+     "RBI": 68,
+     "BB": 99,
+     "SO": 25,
+     "AB": 374,
+     "H": 110,
+     "d2B": 17,
+     "d3B": 4,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.447,
+     "SA": 0.529
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 8,
+    "bunt": 3,
+    "fbPct": 57,
+    "runs": 5,
+    "range": 4,
+    "arm": 4,
+    "durability": 8
+   },
+   "source": {
+    "bref": "ottme01",
+    "season": 1938,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.94
+   }
+  },
+  {
+   "id": "n31_coopewa01",
+   "name": "Walker Cooper",
+   "pos": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.281,
+     "HR": 7,
+     "RBI": 65,
+     "BB": 28,
+     "SO": 29,
+     "AB": 438,
+     "H": 123,
+     "d2B": 32,
+     "d3B": 7,
+     "SB": 3,
+     "CS": 1,
+     "OBA": 0.325,
+     "SA": 0.434
+    },
+    "L": {
+     "BA": 0.304,
+     "HR": 4,
+     "RBI": 24,
+     "BB": 11,
+     "SO": 10,
+     "AB": 184,
+     "H": 56,
+     "d2B": 11,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.344,
+     "SA": 0.44
+    },
+    "R": {
+     "BA": 0.264,
+     "HR": 3,
+     "RBI": 41,
+     "BB": 17,
+     "SO": 19,
+     "AB": 254,
+     "H": 67,
+     "d2B": 21,
+     "d3B": 6,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.312,
+     "SA": 0.429
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 9,
+    "bunt": 7,
+    "fbPct": 33,
+    "runs": 6,
+    "range": 4,
+    "arm": 7,
+    "durability": 6
+   },
+   "source": {
+    "bref": "coopewa01",
+    "season": 1942,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.9
+   }
+  },
+  {
+   "id": "n31_marioma01",
+   "name": "Marty Marion",
+   "pos": "SS",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.267,
+     "HR": 6,
+     "RBI": 63,
+     "BB": 43,
+     "SO": 50,
+     "AB": 506,
+     "H": 135,
+     "d2B": 26,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 3,
+     "OBA": 0.324,
+     "SA": 0.362
+    },
+    "L": {
+     "BA": 0.241,
+     "HR": 1,
+     "RBI": 16,
+     "BB": 12,
+     "SO": 9,
+     "AB": 137,
+     "H": 33,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.302,
+     "SA": 0.292
+    },
+    "R": {
+     "BA": 0.276,
+     "HR": 5,
+     "RBI": 47,
+     "BB": 31,
+     "SO": 41,
+     "AB": 369,
+     "H": 102,
+     "d2B": 22,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.333,
+     "SA": 0.388
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 7,
+    "bunt": 7,
+    "fbPct": 31,
+    "runs": 4,
+    "range": 9,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "marioma01",
+    "season": 1944,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.83
+   }
+  },
+  {
+   "id": "n31_slaugen01",
+   "name": "Enos Slaughter",
+   "pos": "RF",
+   "pos2": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.318,
+     "HR": 13,
+     "RBI": 100,
+     "BB": 88,
+     "SO": 30,
+     "AB": 591,
+     "H": 188,
+     "d2B": 31,
+     "d3B": 17,
+     "SB": 9,
+     "CS": 6,
+     "OBA": 0.412,
+     "SA": 0.494
+    },
+    "L": {
+     "BA": 0.25,
+     "HR": 4,
+     "RBI": 27,
+     "BB": 27,
+     "SO": 15,
+     "AB": 180,
+     "H": 45,
+     "d2B": 3,
+     "d3B": 6,
+     "SB": 4,
+     "CS": 1,
+     "OBA": 0.351,
+     "SA": 0.4
+    },
+    "R": {
+     "BA": 0.348,
+     "HR": 9,
+     "RBI": 73,
+     "BB": 61,
+     "SO": 15,
+     "AB": 411,
+     "H": 143,
+     "d2B": 28,
+     "d3B": 11,
+     "SB": 5,
+     "CS": 5,
+     "OBA": 0.438,
+     "SA": 0.535
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 10,
+    "bunt": 7,
+    "fbPct": 36,
+    "runs": 8,
+    "range": 7,
+    "arm": 8,
+    "durability": 8
+   },
+   "source": {
+    "bref": "slaugen01",
+    "season": 1942,
+    "splits": "platoon",
+    "csRecorded": true,
+    "splitCoverage": 0.9
+   }
+  },
+  {
+   "id": "n31_reisepe01",
+   "name": "Pete Reiser",
+   "pos": "CF",
+   "pos2": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.343,
+     "HR": 14,
+     "RBI": 76,
+     "BB": 46,
+     "SO": 71,
+     "AB": 536,
+     "H": 184,
+     "d2B": 39,
+     "d3B": 17,
+     "SB": 6,
+     "CS": 5,
+     "OBA": 0.406,
+     "SA": 0.558
+    },
+    "L": {
+     "BA": 0.283,
+     "HR": 2,
+     "RBI": 20,
+     "BB": 13,
+     "SO": 30,
+     "AB": 159,
+     "H": 45,
+     "d2B": 11,
+     "d3B": 4,
+     "SB": 4,
+     "CS": 2,
+     "OBA": 0.345,
+     "SA": 0.44
+    },
+    "R": {
+     "BA": 0.369,
+     "HR": 12,
+     "RBI": 56,
+     "BB": 33,
+     "SO": 41,
+     "AB": 377,
+     "H": 139,
+     "d2B": 28,
+     "d3B": 13,
+     "SB": 2,
+     "CS": 3,
+     "OBA": 0.432,
+     "SA": 0.607
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 7,
+    "bunt": 8,
+    "fbPct": 38,
+    "runs": 9,
+    "range": 8,
+    "arm": 6,
+    "durability": 5
+   },
+   "source": {
+    "bref": "reisepe01",
+    "season": 1941,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "n31_hubbeca01",
+   "name": "Carl Hubbell",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 23,
+     "L": 12,
+     "ERA": 1.66,
+     "GS": 33,
+     "SV": 5,
+     "IP": 308.2,
+     "H": 256,
+     "ER": 57,
+     "HR": 6,
+     "BB": 47,
+     "SO": 156,
+     "WP": 3,
+     "HB": 3,
+     "BALK": 0,
+     "BA": 0.227,
+     "OBA": 0.26,
+     "SA": 0.281
+    },
+    "L": {
+     "AB": 329,
+     "H": 78,
+     "HR": 2,
+     "BB": 13,
+     "SO": 43,
+     "BA": 0.237,
+     "OBA": 0.266,
+     "SA": 0.295,
+     "baMod": 1.044,
+     "hrMod": 1.143,
+     "bbMod": 0.948,
+     "soMod": 0.945
+    },
+    "R": {
+     "AB": 798,
+     "H": 178,
+     "HR": 4,
+     "BB": 34,
+     "SO": 113,
+     "BA": 0.223,
+     "OBA": 0.257,
+     "SA": 0.276,
+     "baMod": 0.982,
+     "hrMod": 0.941,
+     "bbMod": 1.021,
+     "soMod": 1.023
+    }
+   },
+   "ratings": {
+    "speed": 9,
+    "control": 10,
+    "fatigue": 10,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "Screwball",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "hubbeca01",
+    "season": 1933,
+    "splits": "platoon",
+    "splitCoverage": 0.98
+   }
+  },
+  {
+   "id": "n31_deandi01",
+   "name": "Dizzy Dean",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 30,
+     "L": 7,
+     "ERA": 2.66,
+     "GS": 33,
+     "SV": 7,
+     "IP": 311.2,
+     "H": 288,
+     "ER": 92,
+     "HR": 14,
+     "BB": 75,
+     "SO": 195,
+     "WP": 2,
+     "HB": 6,
+     "BALK": 0,
+     "BA": 0.241,
+     "OBA": 0.289,
+     "SA": 0.343
+    },
+    "L": {
+     "AB": 548,
+     "H": 133,
+     "HR": 10,
+     "BB": 41,
+     "SO": 74,
+     "BA": 0.243,
+     "OBA": 0.299,
+     "SA": 0.356,
+     "baMod": 1.008,
+     "hrMod": 1.542,
+     "bbMod": 1.18,
+     "soMod": 0.819
+    },
+    "R": {
+     "AB": 646,
+     "H": 155,
+     "HR": 4,
+     "BB": 34,
+     "SO": 121,
+     "BA": 0.24,
+     "OBA": 0.281,
+     "SA": 0.331,
+     "baMod": 0.996,
+     "hrMod": 0.532,
+     "bbMod": 0.845,
+     "soMod": 1.156
+    }
+   },
+   "ratings": {
+    "speed": 10,
+    "control": 9,
+    "fatigue": 10,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "deandi01",
+    "season": 1934,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "n31_waltebu01",
+   "name": "Bucky Walters",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 27,
+     "L": 11,
+     "ERA": 2.29,
+     "GS": 36,
+     "SV": 0,
+     "IP": 319.0,
+     "H": 250,
+     "ER": 81,
+     "HR": 15,
+     "BB": 109,
+     "SO": 137,
+     "WP": 8,
+     "HB": 6,
+     "BALK": 3,
+     "BA": 0.22,
+     "OBA": 0.29,
+     "SA": 0.321
+    },
+    "L": {
+     "AB": 485,
+     "H": 118,
+     "HR": 7,
+     "BB": 50,
+     "SO": 42,
+     "BA": 0.243,
+     "OBA": 0.316,
+     "SA": 0.355,
+     "baMod": 1.105,
+     "hrMod": 1.097,
+     "bbMod": 1.078,
+     "soMod": 0.72
+    },
+    "R": {
+     "AB": 653,
+     "H": 132,
+     "HR": 8,
+     "BB": 59,
+     "SO": 95,
+     "BA": 0.202,
+     "OBA": 0.27,
+     "SA": 0.296,
+     "baMod": 0.918,
+     "hrMod": 0.928,
+     "bbMod": 0.942,
+     "soMod": 1.207
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 8,
+    "fatigue": 10,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "Sinker",
+    "Curveball",
+    "4-Seam Fastball"
+   ],
+   "source": {
+    "bref": "waltebu01",
+    "season": 1939,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "n31_coopemo01",
+   "name": "Mort Cooper",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 22,
+     "L": 7,
+     "ERA": 1.78,
+     "GS": 35,
+     "SV": 0,
+     "IP": 278.2,
+     "H": 207,
+     "ER": 55,
+     "HR": 9,
+     "BB": 68,
+     "SO": 152,
+     "WP": 5,
+     "HB": 5,
+     "BALK": 0,
+     "BA": 0.205,
+     "OBA": 0.258,
+     "SA": 0.267
+    },
+    "L": {
+     "AB": 393,
+     "H": 91,
+     "HR": 3,
+     "BB": 39,
+     "SO": 55,
+     "BA": 0.232,
+     "OBA": 0.301,
+     "SA": 0.29,
+     "baMod": 1.132,
+     "hrMod": 0.843,
+     "bbMod": 1.45,
+     "soMod": 0.915
+    },
+    "R": {
+     "AB": 618,
+     "H": 116,
+     "HR": 6,
+     "BB": 29,
+     "SO": 97,
+     "BA": 0.188,
+     "OBA": 0.23,
+     "SA": 0.252,
+     "baMod": 0.917,
+     "hrMod": 1.103,
+     "bbMod": 0.705,
+     "soMod": 1.056
+    }
+   },
+   "ratings": {
+    "speed": 9,
+    "control": 9,
+    "fatigue": 10,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "Sinker",
+    "Curveball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "coopemo01",
+    "season": 1942,
+    "splits": "platoon",
+    "splitCoverage": 0.97
+   }
+  },
+  {
+   "id": "n31_shouncl01",
+   "name": "Clyde Shoun",
+   "role": "RP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 3,
+     "L": 1,
+     "ERA": 3.76,
+     "GS": 2,
+     "SV": 9,
+     "IP": 103.0,
+     "H": 98,
+     "ER": 43,
+     "HR": 4,
+     "BB": 42,
+     "SO": 50,
+     "WP": 1,
+     "HB": 2,
+     "BALK": 1,
+     "BA": 0.249,
+     "OBA": 0.321,
+     "SA": 0.349
+    },
+    "L": {
+     "AB": 136,
+     "H": 26,
+     "HR": 0,
+     "BB": 8,
+     "SO": 21,
+     "BA": 0.191,
+     "OBA": 0.243,
+     "SA": 0.206,
+     "baMod": 0.767,
+     "hrMod": 0.0,
+     "bbMod": 0.566,
+     "soMod": 1.249
+    },
+    "R": {
+     "AB": 257,
+     "H": 72,
+     "HR": 4,
+     "BB": 34,
+     "SO": 29,
+     "BA": 0.28,
+     "OBA": 0.361,
+     "SA": 0.424,
+     "baMod": 1.124,
+     "hrMod": 1.507,
+     "bbMod": 1.22,
+     "soMod": 0.874
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 7,
+    "fatigue": 5,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "shouncl01",
+    "season": 1939,
+    "splits": "platoon",
+    "splitCoverage": 0.87
+   }
+  },
+  {
+   "id": "n31_caseyhu01",
+   "name": "Hugh Casey",
+   "role": "CL",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 6,
+     "L": 3,
+     "ERA": 2.25,
+     "GS": 2,
+     "SV": 13,
+     "IP": 112.0,
+     "H": 91,
+     "ER": 28,
+     "HR": 3,
+     "BB": 44,
+     "SO": 54,
+     "WP": 1,
+     "HB": 2,
+     "BALK": 0,
+     "BA": 0.224,
+     "OBA": 0.302,
+     "SA": 0.305
+    },
+    "L": {
+     "AB": 143,
+     "H": 40,
+     "HR": 2,
+     "BB": 23,
+     "SO": 5,
+     "BA": 0.28,
+     "OBA": 0.38,
+     "SA": 0.399,
+     "baMod": 1.25,
+     "hrMod": 1.824,
+     "bbMod": 1.43,
+     "soMod": 0.253
+    },
+    "R": {
+     "AB": 264,
+     "H": 51,
+     "HR": 1,
+     "BB": 21,
+     "SO": 49,
+     "BA": 0.193,
+     "OBA": 0.258,
+     "SA": 0.254,
+     "baMod": 0.862,
+     "hrMod": 0.525,
+     "bbMod": 0.752,
+     "soMod": 1.43
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 7,
+    "fatigue": 6,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "Curveball",
+    "4-Seam Fastball"
+   ],
+   "source": {
+    "bref": "caseyhu01",
+    "season": 1942,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

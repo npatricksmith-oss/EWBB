@@ -19,6 +19,8 @@
  *    and steal bases using their physical `runs` rating in feet per second.
  */
 
+import { HISTORICAL_TEAMS } from './teams/index.js';
+
 /**
  * @typedef {Object} BatterSplitLine
  * @property {number} BA - Batting Average (e.g. .304)
@@ -81,6 +83,10 @@
  * @property {string[]} pitches - Repertoire of pitches available in the duel view
  */
 
+/**
+ * Hand-built Orioles and Red Sox, followed by the historical EWB 1.0 teams generated into
+ * `src/data/teams/` by `bin/build_team.py`.
+ */
 export const TEAMS = {
   baltimore: {
     id: 'baltimore',
@@ -653,7 +659,9 @@ export const TEAMS = {
         pitches: ['Heavy Sinker', 'Palmball', 'Slider', '4-Seam Fastball']
       }
     ]
-  }
+  },
+
+  ...HISTORICAL_TEAMS
 };
 
 /**
@@ -670,14 +678,14 @@ export function getLastName(name) {
 }
 
 /**
- * Deep-clones a team roster by ID ('baltimore' | 'boston') so in-game substitutions,
+ * Deep-clones a team roster by ID (any key of `TEAMS`) so in-game substitutions,
  * pinch-hitting, pitch counts, and Commissioner's Disk edits never mutate the base schema.
  *
  * Also populates convenience arrays (`starters`, `bench`) derived from `lineup`
  * while preserving the complete 13-player `lineup` array (indices 0..8 = starting 9,
  * indices 9..12 = 4 bench batters).
  *
- * @param {string} teamId - Team identifier ('baltimore' | 'boston')
+ * @param {string} teamId - Team identifier (any key of `TEAMS`)
  * @returns {Object} Deep clone of the team roster
  */
 export function cloneTeamRoster(teamId) {

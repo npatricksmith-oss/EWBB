@@ -1,0 +1,136 @@
+{
+ "id": "atlanta",
+ "city": "Atlanta",
+ "name": "Braves",
+ "abbrev": "ATL",
+ "league": "NL",
+ "primaryColor": "#13274f",
+ "secondaryColor": "#ce1141",
+ "defaultParkId": "memorial",
+ "defaultManagerId": "herzog",
+ "source": "1982 Atlanta Braves (1982 NL West champions); IBM EWB 1.0 exhibition team per SABR review",
+ "batters": [
+  {
+   "bref": "washicl01",
+   "year": 1982,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "ramirra01",
+   "year": 1982,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "murphda05",
+   "year": 1982,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "hornebo01",
+   "year": 1982,
+   "pos": "3B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "chambch01",
+   "year": 1982,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "roystje01",
+   "year": 1982,
+   "pos": "DH",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "linarru01",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "hubbagl01",
+   "year": 1982,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "benedbr01",
+   "year": 1982,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "butlebr01",
+   "year": 1982,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "harpete01",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "watsobo01",
+   "year": 1982,
+   "pos": "1B",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "pocorbi01",
+   "year": 1982,
+   "pos": "C",
+   "pos2": "3B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "niekrph01",
+   "year": 1982,
+   "role": "SP",
+   "ratings": {
+    "speed": 3
+   }
+  },
+  {
+   "bref": "mahleri01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "campri01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "walkbo01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "bedrost01",
+   "year": 1982,
+   "role": "RP"
+  },
+  {
+   "bref": "garbege01",
+   "year": 1982,
+   "role": "CL"
+  }
+ ]
+}

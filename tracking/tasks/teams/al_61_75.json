@@ -1,0 +1,135 @@
+{
+ "id": "al_61_75",
+ "city": "AL",
+ "name": "61-75",
+ "abbrev": "A61",
+ "league": "AL",
+ "primaryColor": "#df4601",
+ "secondaryColor": "#27251f",
+ "defaultParkId": "fenway",
+ "defaultManagerId": "weaver",
+ "source": "AL 1961-1975 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "munsoth01",
+   "year": 1975,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "killeha01",
+   "year": 1969,
+   "pos": "1B",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "carewro01",
+   "year": 1974,
+   "pos": "2B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "robinbr01",
+   "year": 1964,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "aparilu01",
+   "year": 1964,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "yastrca01",
+   "year": 1967,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "blairpa01",
+   "year": 1969,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "marisro01",
+   "year": 1961,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "robinfr02",
+   "year": 1966,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "freehbi01",
+   "year": 1968,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "allendi01",
+   "year": 1972,
+   "pos": "1B",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "olivato01",
+   "year": 1964,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "jacksre01",
+   "year": 1973,
+   "pos": "RF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "palmeji01",
+   "year": 1975,
+   "role": "SP"
+  },
+  {
+   "bref": "mclaide01",
+   "year": 1968,
+   "role": "SP"
+  },
+  {
+   "bref": "hunteca01",
+   "year": 1974,
+   "role": "SP"
+  },
+  {
+   "bref": "bluevi01",
+   "year": 1971,
+   "role": "SP"
+  },
+  {
+   "bref": "radatdi01",
+   "year": 1964,
+   "role": "RP"
+  },
+  {
+   "bref": "fingero01",
+   "year": 1974,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "powelbo01 -> robinfr02 1966 (DH); Killebrew to 1B; Blair 1968 -> 1969"
+ ]
+}

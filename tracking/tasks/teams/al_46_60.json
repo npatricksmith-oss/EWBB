@@ -1,0 +1,143 @@
+{
+ "id": "al_46_60",
+ "city": "AL",
+ "name": "46-60",
+ "abbrev": "A46",
+ "league": "AL",
+ "primaryColor": "#003087",
+ "secondaryColor": "#e4002b",
+ "defaultParkId": "fenway",
+ "defaultManagerId": "weaver",
+ "source": "AL 1946-1960 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "berrayo01",
+   "year": 1955,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "fainfe01",
+   "year": 1951,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "foxne01",
+   "year": 1959,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "pos": "3B",
+   "isStarter": true,
+   "bref": "rosenal01",
+   "year": 1953,
+   "pos2": "1B"
+  },
+  {
+   "bref": "rizzuph01",
+   "year": 1950,
+   "pos": "SS",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "willite01",
+   "year": 1957,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "mantlmi01",
+   "year": 1956,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "kalinal01",
+   "year": 1955,
+   "pos": "RF",
+   "isStarter": true
+  },
+  {
+   "pos": "DH",
+   "pos2": "LF",
+   "isStarter": true,
+   "bref": "minosmi01",
+   "year": 1954
+  },
+  {
+   "bref": "howarel01",
+   "year": 1958,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "martibi02",
+   "year": 1953,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": false
+  },
+  {
+   "bref": "dimagdo01",
+   "year": 1950,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "dobyla01",
+   "year": 1952,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "fordwh01",
+   "year": 1956,
+   "role": "SP"
+  },
+  {
+   "role": "SP",
+   "bref": "wynnea01",
+   "year": 1959
+  },
+  {
+   "bref": "lemonbo01",
+   "year": 1954,
+   "role": "SP"
+  },
+  {
+   "role": "SP",
+   "bref": "piercbi02",
+   "year": 1956
+  },
+  {
+   "role": "RP",
+   "bref": "wilheho01",
+   "year": 1959,
+   "ratings": {
+    "speed": 3
+   }
+  },
+  {
+   "bref": "pagejo01",
+   "year": 1947,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "robinbr01 -> rosenal01 1953",
+  "killeha01 -> minosmi01 1954",
+  "wynneea01 -> wynnea01 1959",
+  "piercbi01 -> piercbi02 1956",
+  "wilhoho01 -> wilheho01 1959"
+ ]
+}

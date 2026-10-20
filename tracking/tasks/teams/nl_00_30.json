@@ -1,0 +1,137 @@
+{
+ "id": "nl_00_30",
+ "city": "NL",
+ "name": "00-30",
+ "abbrev": "N00",
+ "league": "NL",
+ "primaryColor": "#3b2a1a",
+ "secondaryColor": "#d4a017",
+ "defaultParkId": "wrigley",
+ "defaultManagerId": "herzog",
+ "source": "NL 1900-1930 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "hartnga01",
+   "year": 1930,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "terrybi01",
+   "year": 1930,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "hornsro01",
+   "year": 1925,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "traynpi01",
+   "year": 1930,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "wagneho01",
+   "year": 1908,
+   "pos": "SS",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "wilsoha01",
+   "year": 1930,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "careyma01",
+   "year": 1922,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true,
+   "bref": "cuyleki01",
+   "year": 1925
+  },
+  {
+   "bref": "kleinch01",
+   "year": 1930,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "bresnro01",
+   "year": 1905,
+   "pos": "C",
+   "pos2": "CF",
+   "isStarter": false
+  },
+  {
+   "bref": "friscfr01",
+   "year": 1923,
+   "pos": "2B",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "roushed01",
+   "year": 1917,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "hafeych01",
+   "year": 1930,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "mathech01",
+   "year": 1905,
+   "role": "SP"
+  },
+  {
+   "bref": "alexape01",
+   "year": 1915,
+   "role": "SP"
+  },
+  {
+   "bref": "vanceda01",
+   "year": 1924,
+   "role": "SP"
+  },
+  {
+   "bref": "brownmo01",
+   "year": 1906,
+   "role": "SP"
+  },
+  {
+   "role": "RP",
+   "bref": "grimebu01",
+   "year": 1921
+  },
+  {
+   "bref": "cranddo01",
+   "year": 1911,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "ottme01 -> cuyleki01 1925",
+  "northlo01 -> grimebu01 1921"
+ ]
+}

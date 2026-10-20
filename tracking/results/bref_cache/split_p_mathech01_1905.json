@@ -1,0 +1,36 @@
+{
+ "total": [
+  {
+   "incomplete_split": "",
+   "split_name": "1905 Totals",
+   "G": "43",
+   "PA": "1314",
+   "AB": "1227",
+   "R": "85",
+   "H": "252",
+   "2B": "23",
+   "3B": "6",
+   "HR": "4",
+   "SB": "",
+   "CS": "",
+   "BB": "63",
+   "SO": "212",
+   "strikeouts_per_base_on_balls": "3.37",
+   "batting_avg": ".205",
+   "onbase_perc": ".245",
+   "slugging_perc": ".244",
+   "onbase_plus_slugging": ".488",
+   "TB": "299",
+   "GIDP": "",
+   "HBP": "1",
+   "SH": "23",
+   "SF": "",
+   "IBB": "",
+   "ROE": "",
+   "batting_avg_bip": ".245",
+   "onbase_plus_slugging_vs_total": "100",
+   "onbase_plus_slugging_vs_lg": "60"
+  }
+ ],
+ "url": "https://www.baseball-reference.com/players/split.fcgi?id=mathech01&year=1905&t=p"
+}

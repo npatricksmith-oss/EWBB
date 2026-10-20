@@ -1,0 +1,136 @@
+{
+ "id": "california",
+ "city": "California",
+ "name": "Angels",
+ "abbrev": "CAL",
+ "league": "AL",
+ "primaryColor": "#ba0021",
+ "secondaryColor": "#003263",
+ "defaultParkId": "memorial",
+ "defaultManagerId": "mcnamara",
+ "source": "1982 California Angels (1982 AL West champions); IBM EWB 1.0 exhibition team per SABR review",
+ "batters": [
+  {
+   "bref": "downibr01",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "DH",
+   "isStarter": true
+  },
+  {
+   "bref": "carewro01",
+   "year": 1982,
+   "pos": "1B",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "jacksre01",
+   "year": 1982,
+   "pos": "RF",
+   "pos2": "DH",
+   "isStarter": true
+  },
+  {
+   "bref": "lynnfr01",
+   "year": 1982,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "baylodo01",
+   "year": 1982,
+   "pos": "DH",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "decindo01",
+   "year": 1982,
+   "pos": "3B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "grichbo01",
+   "year": 1982,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "boonebo01",
+   "year": 1982,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "foliti01",
+   "year": 1982,
+   "pos": "SS",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "beniqju01",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": false
+  },
+  {
+   "bref": "jacksro02",
+   "year": 1982,
+   "pos": "1B",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "wilforo01",
+   "year": 1982,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": false
+  },
+  {
+   "bref": "fergujo01",
+   "year": 1982,
+   "pos": "C",
+   "pos2": "RF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "zahnge01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "forscke01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "wittmi01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "kisonbr01",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "aasedo01",
+   "year": 1982,
+   "role": "RP"
+  },
+  {
+   "bref": "sanchlu01",
+   "year": 1982,
+   "role": "CL"
+  }
+ ]
+}

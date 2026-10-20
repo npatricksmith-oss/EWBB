@@ -1,0 +1,138 @@
+{
+ "id": "al_31_45",
+ "city": "AL",
+ "name": "31-45",
+ "abbrev": "A31",
+ "league": "AL",
+ "primaryColor": "#0c2340",
+ "secondaryColor": "#b0b7bc",
+ "defaultParkId": "fenway",
+ "defaultManagerId": "weaver",
+ "source": "AL 1931-1945 all-star team, a reconstruction of the EWB 1.0 era team (roster picked by Haiku, reviewed by the coordinator; the original 1987 roster is undocumented)",
+ "batters": [
+  {
+   "bref": "dickebi01",
+   "year": 1936,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "gehrilo01",
+   "year": 1936,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "gehrich01",
+   "year": 1937,
+   "pos": "2B",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "cliftha01",
+   "year": 1936,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "applilu01",
+   "year": 1936,
+   "pos": "SS",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "pos": "LF",
+   "pos2": "1B",
+   "bref": "greenha01",
+   "year": 1940,
+   "isStarter": true
+  },
+  {
+   "bref": "dimagjo01",
+   "year": 1939,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "averiea01",
+   "year": 1936,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "foxxji01",
+   "year": 1938,
+   "pos": "DH",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "ferreri01",
+   "year": 1939,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "cronijo01",
+   "year": 1937,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "manushe01",
+   "year": 1933,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "pos": "1B",
+   "pos2": "LF",
+   "isStarter": false,
+   "bref": "troskha01",
+   "year": 1936
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "grovele01",
+   "year": 1931,
+   "role": "SP"
+  },
+  {
+   "bref": "gomezle01",
+   "year": 1937,
+   "role": "SP"
+  },
+  {
+   "bref": "fellebo01",
+   "year": 1940,
+   "role": "SP"
+  },
+  {
+   "bref": "newhoha01",
+   "year": 1944,
+   "role": "SP"
+  },
+  {
+   "role": "RP",
+   "bref": "ruffire01",
+   "year": 1939
+  },
+  {
+   "bref": "murphjo04",
+   "year": 1941,
+   "role": "CL"
+  }
+ ],
+ "coordinatorEdits": [
+  "greenha01 -> troskha01 1936",
+  "willite01 -> greenha01 1940",
+  "coffmdi01 -> ruffire01 1939"
+ ]
+}

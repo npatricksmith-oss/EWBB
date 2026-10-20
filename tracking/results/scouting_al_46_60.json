@@ -1,0 +1,138 @@
+{
+ "berrayo01": {
+  "name": "Yogi Berra",
+  "range": 6,
+  "arm": 8,
+  "durability": 7
+ },
+ "fainfe01": {
+  "name": "Ferris Fain",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "foxne01": {
+  "name": "Nellie Fox",
+  "range": 7,
+  "arm": 5,
+  "durability": 9
+ },
+ "rizzuph01": {
+  "name": "Phil Rizzuto",
+  "range": 8,
+  "arm": 6,
+  "durability": 7
+ },
+ "willite01": {
+  "name": "Ted Williams",
+  "range": 4,
+  "arm": 4,
+  "durability": 6
+ },
+ "mantlmi01": {
+  "name": "Mickey Mantle",
+  "range": 9,
+  "arm": 8,
+  "durability": 7
+ },
+ "kalinal01": {
+  "name": "Al Kaline",
+  "range": 7,
+  "arm": 9,
+  "durability": 8
+ },
+ "howarel01": {
+  "name": "Elston Howard",
+  "range": 5,
+  "arm": 8,
+  "durability": 6
+ },
+ "martibi02": {
+  "name": "Billy Martin",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "dimagdo01": {
+  "name": "Dom DiMaggio",
+  "range": 7,
+  "arm": 6,
+  "durability": 7
+ },
+ "dobyla01": {
+  "name": "Larry Doby",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "fordwh01": {
+  "name": "Whitey Ford",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "lemonbo01": {
+  "name": "Bob Lemon",
+  "bunt": 6,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "pagejo01": {
+  "name": "Joe Page",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "rosenal01": {
+  "name": "Al Rosen",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "minosmi01": {
+  "name": "Minnie Minoso",
+  "range": 7,
+  "arm": 6,
+  "durability": 8
+ },
+ "wynnea01": {
+  "name": "Early Wynn",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "piercbi02": {
+  "name": "Billy Pierce",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "wilheho01": {
+  "name": "Hoyt Wilhelm",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball"
+  ]
+ }
+}

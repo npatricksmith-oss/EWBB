@@ -1,0 +1,135 @@
+{
+ "benchjo01": {
+  "name": "Johnny Bench",
+  "range": 7,
+  "arm": 10,
+  "durability": 8
+ },
+ "mccovwi01": {
+  "name": "Willie McCovey",
+  "range": 5,
+  "arm": 4,
+  "durability": 7
+ },
+ "morgajo02": {
+  "name": "Joe Morgan",
+  "range": 9,
+  "arm": 6,
+  "durability": 8
+ },
+ "santoro01": {
+  "name": "Ron Santo",
+  "range": 8,
+  "arm": 8,
+  "durability": 8
+ },
+ "willsma01": {
+  "name": "Maury Wills",
+  "range": 7,
+  "arm": 5,
+  "durability": 7
+ },
+ "brocklo01": {
+  "name": "Lou Brock",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "floodcu01": {
+  "name": "Curt Flood",
+  "range": 9,
+  "arm": 6,
+  "durability": 8
+ },
+ "clemero01": {
+  "name": "Roberto Clemente",
+  "range": 9,
+  "arm": 10,
+  "durability": 7
+ },
+ "stargwi01": {
+  "name": "Willie Stargell",
+  "range": 4,
+  "arm": 5,
+  "durability": 8
+ },
+ "mccarti01": {
+  "name": "Tim McCarver",
+  "range": 5,
+  "arm": 6,
+  "durability": 5
+ },
+ "willibi01": {
+  "name": "Billy Williams",
+  "range": 6,
+  "arm": 5,
+  "durability": 10
+ },
+ "aaronha01": {
+  "name": "Hank Aaron",
+  "range": 6,
+  "arm": 7,
+  "durability": 7
+ },
+ "gibsobo01": {
+  "name": "Bob Gibson",
+  "bunt": 5,
+  "fielding": 10,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "koufasa01": {
+  "name": "Sandy Koufax",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "carltst01": {
+  "name": "Steve Carlton",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ },
+ "seaveto01": {
+  "name": "Tom Seaver",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "mcgratu01": {
+  "name": "Tug McGraw",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball"
+  ]
+ },
+ "marshmi01": {
+  "name": "Mike Marshall",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "rosepe01": {
+  "name": "Pete Rose",
+  "range": 6,
+  "arm": 6,
+  "durability": 10
+ }
+}

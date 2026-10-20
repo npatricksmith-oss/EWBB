@@ -1,0 +1,36 @@
+{
+ "total": [
+  {
+   "incomplete_split": "",
+   "split_name": "1906 Totals",
+   "G": "36",
+   "PA": "1057",
+   "AB": "977",
+   "R": "55",
+   "H": "198",
+   "2B": "13",
+   "3B": "2",
+   "HR": "1",
+   "SB": "",
+   "CS": "",
+   "BB": "63",
+   "SO": "143",
+   "strikeouts_per_base_on_balls": "2.27",
+   "batting_avg": ".203",
+   "onbase_perc": ".254",
+   "slugging_perc": ".223",
+   "onbase_plus_slugging": ".477",
+   "TB": "218",
+   "GIDP": "",
+   "HBP": "4",
+   "SH": "13",
+   "SF": "",
+   "IBB": "",
+   "ROE": "",
+   "batting_avg_bip": ".236",
+   "onbase_plus_slugging_vs_total": "100",
+   "onbase_plus_slugging_vs_lg": "58"
+  }
+ ],
+ "url": "https://www.baseball-reference.com/players/split.fcgi?id=brownmo01&year=1906&t=p"
+}
