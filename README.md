@@ -4,6 +4,8 @@ A faithful browser-based recreation of Don Daglow and Eddie Dombrower's landmark
 
 This project delivers a **Modern Retro-Pro Hybrid** presentation that strictly preserves the original **1987 EWB 1.0 split-screen diamond + pitcher/batter duel view** and full-field isometric ball-in-play perspective, paired with high-DPI modern dashboard panels, complete Commissioner's Disk editors, retro audio synthesis, and the Hall of Fame *"Ask Earl"* tactical advisor.
 
+**Play it in your browser:** <https://npatricksmith-oss.github.io/EWBB/>
+
 ---
 
 ## History & Overview
@@ -47,6 +49,8 @@ Released in 1987 for the Commodore Amiga (and later MS-DOS, Apple II, and Macint
 ---
 
 ## How to Run
+
+To play without installing anything, open the live site at <https://npatricksmith-oss.github.io/EWBB/>. GitHub Pages serves it from `main`, so every push updates it.
 
 The game is built with **zero-build native browser ES Modules** (`import` / `export` with `.js` extensions). No bundlers, Node build steps, or package installations are required to run the game in a browser.
 
