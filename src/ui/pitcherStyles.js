@@ -196,7 +196,7 @@ export function getPitcherStyle(pitcher) {
  * limb and joint names the renderer reads: tFoot/gFoot (throwing and glove feet), knees,
  * pelvis, neck, head, headR, shoulders, elbows and hands.
  * @param {Object} style from `getPitcherStyle`
- * @returns {{ SET: Object, WIND: Object, LIFT: Object, STRIDE: Object, COCK: Object, RELEASE: Object, FOLLOW: Object }}
+ * @returns {{ SET: Object, STRETCH: Object, WIND: Object, LIFT: Object, STRIDE: Object, COCK: Object, RELEASE: Object, FOLLOW: Object }}
  */
 export function buildPitcherPoses(style) {
   const { lean, shoulderDrop: d, sink, legKick: k, backKick, headTurn } = style;
@@ -208,23 +208,36 @@ export function buildPitcherPoses(style) {
   });
 
   // Place each upper-body point from its pelvis offset, tilted about the pelvis by `lean`.
+  // `turn` (deg) rotates the shoulders about the spine: 0 faces the plate, 90 is side-on with
+  // the glove shoulder toward the plate, negative brings the throwing shoulder forward.
+  // The shoulders narrow as they turn and the far one draws slightly higher.
+  // `flex` bends the torso toward the plate, shortening it on screen.
   const frame = (f) => {
+    const turn = ((f.turn || 0) * Math.PI) / 180;
+    const w = 0.4 + 0.6 * Math.abs(Math.cos(turn));
+    const twist = ([x, y]) => [x * w, y + 0.15 * x * Math.sin(turn)];
+    const flex = 1 - (f.flex || 0);
+    const bend = ([x, y]) => [x, y * flex];
     const at = (off) => rotate([f.pelvis[0] + off[0], f.pelvis[1] + off[1]], f.pelvis, f.lean);
+    const hipTurn = ((f.hipTurn ?? f.turn ?? 0) * Math.PI) / 180;
     return {
       tFoot: f.tFoot,
       gFoot: f.gFoot,
       tKnee: f.tKnee,
       gKnee: f.gKnee,
       pelvis: f.pelvis,
-      neck: at(f.neck),
-      head: at(f.head),
+      neck: at(bend(f.neck)),
+      head: at(bend(f.head)),
       headR: f.headR,
-      tShoulder: at(f.tSh),
-      gShoulder: at(f.gSh),
+      tShoulder: at(bend(twist(f.tSh))),
+      gShoulder: at(bend(twist(f.gSh))),
       tElbow: at(f.tEl),
       gElbow: at(f.gEl),
       tHand: at(f.tHa),
-      gHand: at(f.gHa)
+      gHand: at(f.gHa),
+      hipW: 0.55 + 0.45 * Math.abs(Math.cos(hipTurn)),
+      // 1 while the throwing arm is behind the body (drawn before the torso)
+      tArmBack: f.tArmBack || 0
     };
   };
 
@@ -234,6 +247,7 @@ export function buildPitcherPoses(style) {
     ...standingLegs,
     pelvis: [0, -50],
     lean: 0,
+    turn: 0,
     neck: style.look === 'skyward' ? [0, -34] : [0, -32],
     head: headLook,
     headR: 8,
@@ -244,7 +258,22 @@ export function buildPitcherPoses(style) {
     gHa: [3, gy]
   };
 
+  // From the stretch the pitcher already stands side-on, hands together at the chest.
+  const stretchFrame = {
+    ...setFrame,
+    turn: 80,
+    tFoot: [-3, 0],
+    gFoot: [9, 2],
+    tKnee: [-4, -27],
+    gKnee: [9, -26],
+    tEl: [-6, -13],
+    tHa: [0, -19],
+    gEl: [8, -13],
+    gHa: [2, -18]
+  };
+
   // Windup arms: overhead for the full windup, chest-high for hidden-ball and drop types.
+  // The rocker step starts the turn toward the pivot.
   const high = style.windup === 'overhead' || style.windup === 'pivot';
   const windArms = high
     ? { tEl: [-14, -44], tHa: [-4, -54], gEl: [12, -42], gHa: [2, -52] }
@@ -252,56 +281,70 @@ export function buildPitcherPoses(style) {
   const windFrame = {
     ...setFrame,
     ...windArms,
+    turn: 20,
     head: [headTurn, -41],
     ...shoulders(0, style.windup === 'pivot' ? 4 : 0)
   };
 
+  // Leg lift: the pitcher pivots side-on (Tiant turns his back to the plate), the knee comes
+  // up and across the body toward the throwing side, and the hands come down to the chest.
+  const kneeY = -50 - 36 * k;
+  const kneeX = 7 - 9 * k;
   const liftFrame = {
     ...windFrame,
-    pelvis: [-1, -51],
-    tFoot: [-4, 0],
-    tKnee: [-7, -26],
-    gKnee: [13, -34 - 26 * k],
-    gFoot: [8 + 3 * k, -20 - 46 * k]
+    turn: style.windup === 'pivot' ? 115 : 88,
+    pelvis: [-1, -52],
+    tFoot: [-3, 0],
+    tKnee: [-5, -27],
+    gKnee: [kneeX, kneeY],
+    gFoot: [kneeX + 6, Math.min(-4, kneeY + 26)],
+    tEl: [-7, -12],
+    tHa: [0, -19],
+    gEl: [8, -12],
+    gHa: [2, -18]
   };
 
-  const strideLegs = { tFoot: [-9, 0], gFoot: [11, 5], tKnee: [-9, -23], gKnee: [11, -22] };
+  // Stride: the front foot lands toward the plate while the shoulders stay closed. The hands
+  // break: the glove reaches toward the plate and the throwing hand swings down behind the hip.
+  const strideLegs = { tFoot: [-9, 0], gFoot: [12, 6], tKnee: [-10, -22], gKnee: [12, -21] };
   const strideFrame = {
     ...strideLegs,
-    pelvis: pelvisAt(0.6),
-    lean: lean * 0.5,
+    pelvis: [0, -46 + sink * 0.6],
+    lean: lean * 0.3,
+    turn: 72,
+    hipTurn: 55,
     neck: [0, -32],
     head: [headTurn, -41],
     headR: 8,
     ...shoulders(d * 0.5),
-    tEl: [-14, -20],
-    tHa: [-6, -22],
-    gEl: [13, -18],
-    gHa: [6, -20]
+    tEl: [-12, -12],
+    tHa: [-15, -2],
+    tArmBack: 1,
+    gEl: [17, -25],
+    gHa: [21, -22]
   };
 
-  // Cocked arm: the hand is drawn back and out, elbow up. Torso tilt is full from here.
-  const cockAngle = 40 + 0.6 * ARM_SLOT_PROFILES[style.armSlot].angle;
+  // Cocked arm: hips have fired but the shoulders are still closed. The elbow is up at
+  // shoulder height and the hand is laid back above and behind the head.
   const sh = shoulders(d);
-  const cockHa = add(sh.tSh, armOffset(cockAngle, lean));
   const cockFrame = {
     ...strideLegs,
-    tFoot: [-9, 0],
-    gFoot: [12, 6],
-    tKnee: [-9, -24],
-    gKnee: [13, -22],
     pelvis: pelvisAt(1),
-    lean,
+    lean: lean * 0.6,
+    turn: 45,
+    hipTurn: 10,
     neck: [0, -32],
     head: [headTurn, -41],
     headR: 8,
     ...sh,
-    tEl: midpoint(sh.tSh, cockHa, -4, 0),
-    tHa: cockHa,
-    gEl: [13, -16],
-    gHa: [14, -14]
+    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 2],
+    tHa: [sh.tSh[0] - 4, sh.tSh[1] - 19],
+    tArmBack: 1,
+    gEl: [15, -20],
+    gHa: [11, -18]
   };
 
+  // Release: shoulders whip square and past, throwing shoulder forward, hand out front.
   const releaseHa = add(sh.tSh, armOffset(style.releaseAngle, lean));
   const releaseFrame = {
     ...cockFrame,
@@ -309,30 +352,40 @@ export function buildPitcherPoses(style) {
     gFoot: [12, 8],
     tKnee: [-8, -24],
     gKnee: [12, -20],
+    lean,
+    turn: -15,
+    hipTurn: -20,
     headR: 9,
     tEl: midpoint(sh.tSh, releaseHa, -3, 1),
     tHa: releaseHa,
+    tArmBack: 0,
     gEl: [13, -14],
-    gHa: [15, -12]
+    gHa: [10, -14]
   };
 
-  const followHa = add(releaseHa, style.followVector);
+  // Follow-through: the arm whips down and across to the glove-side knee, the torso bends
+  // toward the plate and the back leg comes up off the rubber.
+  const followHa = add(releaseHa, style.followVector.map((v) => v * 1.35));
   const followFrame = {
     ...releaseFrame,
-    tFoot: [-14, -16 - 26 * backKick],
+    tFoot: [-14, -20 - 34 * backKick],
     gFoot: [12, 8],
-    tKnee: [-8, -28],
-    gKnee: [11, -20],
-    pelvis: [2, -43 + sink * 0.6],
+    tKnee: [-9, -30],
+    gKnee: [11, -19],
+    pelvis: [2, -42 + sink * 0.6],
+    turn: -40,
+    hipTurn: -35,
+    flex: 0.18,
     headR: 9.5,
-    tEl: midpoint(sh.tSh, followHa, 4, 0),
+    tEl: midpoint(sh.tSh, followHa, 5, -2),
     tHa: followHa,
-    gEl: [13, -12],
-    gHa: [12, -6]
+    gEl: [16, -10],
+    gHa: [14, -4]
   };
 
   return {
     SET: frame(setFrame),
+    STRETCH: frame(stretchFrame),
     WIND: frame(windFrame),
     LIFT: frame(liftFrame),
     STRIDE: frame(strideFrame),

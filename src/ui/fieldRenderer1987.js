@@ -1717,13 +1717,14 @@ export class FieldRenderer1987 {
    * Pitcher on the mound, seen front-on from behind the plate. Each pitcher's arm slot,
    * leg kick, windup and follow-through come from `getPitcherStyle` (pitcherStyles.js).
    * Bases empty: full windup, hands overhead (or hidden at the chest, or a Tiant-style pivot).
-   * Runners on: the stretch keeps the hands at the chest with a shorter leg lift.
-   * - 0.00–0.16 windup: hands rise (stretch: come set at the chest)
-   * - 0.16–0.30 leg lift
-   * - 0.30–0.36 stride, the front foot lands toward the plate
-   * - 0.36–0.42 arm cock, then the whip into the release
+   * Runners on: the pitcher starts side-on in the stretch with a shorter leg lift.
+   * - 0.00–0.14 windup: rocker step, hands rise (stretch: come set at the chest)
+   * - 0.14–0.27 pivot side-on and lift the knee up and across; hands come to the chest
+   * - 0.27–0.33 stride toward the plate; hands break, throwing hand swings down behind the hip
+   * - 0.33–0.385 hips fire and the arm cocks, laid back behind the head
+   * - 0.385–0.42 the shoulders whip square and the arm snaps through to the release
    * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
-   * - 0.42–0.86 follow-through, the back leg lifts on high-kick deliveries
+   * - 0.42–0.70 follow-through across to the glove-side knee, the back leg lifts
    */
   drawDuelPitcher(ctx, x, footY, team, pitcher, progress, isStretch = false, isHome = true) {
     const style = getPitcherStyle(pitcher);
@@ -1734,29 +1735,33 @@ export class FieldRenderer1987 {
     const uni = isHome ? '#f4f5f7' : '#c4cad3';
     const uniShade = isHome ? '#97a0ae' : '#7a8391';
 
-    const windPose = isStretch ? blendPose(P.SET, P.WIND, 0.2) : P.WIND;
-    const liftPose = isStretch ? blendPose(P.SET, P.LIFT, 0.5) : P.LIFT;
+    const setPose = isStretch ? P.STRETCH : P.SET;
+    const windPose = isStretch ? P.STRETCH : P.WIND;
+    const liftPose = isStretch ? blendPose(P.STRETCH, P.LIFT, 0.55) : P.LIFT;
+    const poseAt = (prog) => {
+      if (prog < 0.14) return blendPose(setPose, windPose, smooth(Math.pow(prog / 0.14, style.tempo)));
+      if (prog < 0.27) return blendPose(windPose, liftPose, smooth((prog - 0.14) / 0.13));
+      if (prog < 0.33) return blendPose(liftPose, P.STRIDE, smooth((prog - 0.27) / 0.06));
+      if (prog < 0.385) {
+        const t = (prog - 0.33) / 0.055;
+        return blendPose(P.STRIDE, P.COCK, t * (2 - t));
+      }
+      // The whip runs at full speed through the release instead of easing into it
+      if (prog < 0.42) return blendPose(P.COCK, P.RELEASE, (prog - 0.385) / 0.035);
+      const t = Math.min(1, (prog - 0.42) / 0.28);
+      return blendPose(P.RELEASE, P.FOLLOW, 1 - (1 - t) * (1 - t));
+    };
     let pose;
     if (progress === 0) {
-      pose = { ...P.SET };
+      pose = { ...setPose };
       const breath = Math.sin(performance.now() * 0.004) * 0.8;
-      pose.neck = [P.SET.neck[0], P.SET.neck[1] + breath];
+      pose.neck = [setPose.neck[0], setPose.neck[1] + breath];
       pose.head = [
-        P.SET.head[0] + (isStretch && Math.sin(performance.now() * 0.003) > 0.4 ? 3 : 0),
-        P.SET.head[1] + breath
+        setPose.head[0] + (isStretch && Math.sin(performance.now() * 0.003) > 0.4 ? 3 : 0),
+        setPose.head[1] + breath
       ];
-    } else if (progress < 0.16) {
-      pose = blendPose(P.SET, windPose, smooth(Math.pow(progress / 0.16, style.tempo)));
-    } else if (progress < 0.3) {
-      pose = blendPose(windPose, liftPose, smooth((progress - 0.16) / 0.14));
-    } else if (progress < 0.36) {
-      pose = blendPose(liftPose, P.STRIDE, smooth((progress - 0.3) / 0.06));
-    } else if (progress < 0.39) {
-      pose = blendPose(P.STRIDE, P.COCK, smooth((progress - 0.36) / 0.03));
-    } else if (progress < 0.42) {
-      pose = blendPose(P.COCK, P.RELEASE, smooth((progress - 0.39) / 0.03));
     } else {
-      pose = blendPose(P.RELEASE, P.FOLLOW, smooth((progress - 0.42) / 0.44));
+      pose = poseAt(progress);
     }
 
     const k = DUEL_PITCHER_SCALE;
@@ -1771,9 +1776,44 @@ export class FieldRenderer1987 {
     const shade = this.getDitherPattern(ctx, uni, uniShade);
     const sleeveShade = this.getDitherPattern(ctx, primary, darken(primary, 0.45));
 
+    // Throwing arm: drawn behind the body while it swings back toward second base, on top once it
+    // comes through. A smear trails the hand through the whip.
+    const armBehind = (pose.tArmBack ?? 0) > 0.5;
+    const drawThrowingArm = () => {
+      if (progress > 0.36 && progress < 0.5) {
+        const prev = poseAt(Math.max(0.33, progress - 0.03));
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.moveTo(pose.tShoulder[0], pose.tShoulder[1]);
+        ctx.lineTo(prev.tHand[0], prev.tHand[1]);
+        ctx.lineTo(pose.tHand[0], pose.tHand[1]);
+        ctx.closePath();
+        ctx.fill();
+      }
+      const tArm = [[pose.tShoulder, pose.tElbow, 8.5], [pose.tElbow, pose.tHand, 7.5]];
+      this.strokeLimb(ctx, tArm, primary);
+      this.shadeLimb(ctx, tArm, sleeveShade, -1);
+      ctx.fillStyle = SKIN;
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.arc(pose.tHand[0], pose.tHand[1], 3.6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      if (progress > 0 && progress < 0.42) {
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(pose.tHand[0], pose.tHand[1] - 2.5, 3.2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      }
+    };
+    if (armBehind) drawThrowingArm();
+
     // Legs, cleats and team stirrups
-    const pelvisT = [pose.pelvis[0] - 6, pose.pelvis[1]];
-    const pelvisG = [pose.pelvis[0] + 6, pose.pelvis[1]];
+    const hipW = pose.hipW ?? 1;
+    const pelvisT = [pose.pelvis[0] - 6 * hipW, pose.pelvis[1]];
+    const pelvisG = [pose.pelvis[0] + 6 * hipW, pose.pelvis[1]];
     const tLeg = [[pelvisT, pose.tKnee, 12], [pose.tKnee, pose.tFoot, 10]];
     const gLeg = [[pelvisG, pose.gKnee, 12], [pose.gKnee, pose.gFoot, 10]];
     for (const [leg, foot, knee] of [[tLeg, pose.tFoot, pose.tKnee], [gLeg, pose.gFoot, pose.gKnee]]) {
@@ -1798,8 +1838,8 @@ export class FieldRenderer1987 {
     ctx.beginPath();
     ctx.moveTo(tsx - 2, tsy);
     ctx.lineTo(gsx + 2, gsy);
-    ctx.lineTo(px + 9, py + 1);
-    ctx.lineTo(px - 9, py + 1);
+    ctx.lineTo(px + 9 * hipW, py + 1);
+    ctx.lineTo(px - 9 * hipW, py + 1);
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
@@ -1807,8 +1847,8 @@ export class FieldRenderer1987 {
     ctx.beginPath();
     ctx.moveTo((tsx + gsx) / 2 + 4, (tsy + gsy) / 2);
     ctx.lineTo(gsx + 2, gsy);
-    ctx.lineTo(px + 9, py + 1);
-    ctx.lineTo(px + 3, py + 1);
+    ctx.lineTo(px + 9 * hipW, py + 1);
+    ctx.lineTo(px + 3 * hipW, py + 1);
     ctx.closePath();
     ctx.fill();
     ctx.strokeStyle = primary;
@@ -1819,9 +1859,9 @@ export class FieldRenderer1987 {
     ctx.lineTo(lerp(gsx, px, 0.3) - 3, chestY - 1);
     ctx.stroke();
     ctx.fillStyle = '#1b2333';
-    ctx.fillRect(px - 9, py - 3, 18, 4);
+    ctx.fillRect(px - 9 * hipW, py - 3, 18 * hipW, 4);
 
-    // Glove arm, then head and cap, then the throwing arm on top
+    // Glove arm, then head and cap, then the throwing arm on top unless it is behind the body
     const gArm = [[pose.gShoulder, pose.gElbow, 8.5], [pose.gElbow, pose.gHand, 7.5]];
     this.strokeLimb(ctx, gArm, primary);
     this.shadeLimb(ctx, gArm, sleeveShade, 1);
@@ -1855,22 +1895,7 @@ export class FieldRenderer1987 {
     ctx.fillRect(hx - 4, hy + 1, 2, 2);
     ctx.fillRect(hx + 2, hy + 1, 2, 2);
 
-    const tArm = [[pose.tShoulder, pose.tElbow, 8.5], [pose.tElbow, pose.tHand, 7.5]];
-    this.strokeLimb(ctx, tArm, primary);
-    ctx.fillStyle = SKIN;
-    ctx.strokeStyle = FIGURE_OUTLINE;
-    ctx.lineWidth = 1.6;
-    ctx.beginPath();
-    ctx.arc(pose.tHand[0], pose.tHand[1], 3.6, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.stroke();
-    if (progress > 0 && progress < 0.42) {
-      ctx.fillStyle = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(pose.tHand[0], pose.tHand[1] - 2.5, 3.2, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.stroke();
-    }
+    if (!armBehind) drawThrowingArm();
 
     ctx.restore();
   }
@@ -2063,7 +2088,8 @@ export class FieldRenderer1987 {
       ctx.fill();
     }
 
-    const batInFront = pose.twist > 0.3;
+    // The bat covers the body while its barrel swings on the catcher's side; an upright stance bat stays behind the helmet
+    const batInFront = pose.batDepth < -0.2 && pose.batPitch < 40;
     if (!batInFront) drawBat();
 
     // Head: skin, batting helmet with ear flap and brim
