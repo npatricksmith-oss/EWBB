@@ -24,6 +24,7 @@
 import { getWallAtAngle } from '../data/ballparks.js';
 import { getInitialFielderPositions } from '../engine/physicsEngine.js';
 import { getLastName } from '../data/rosters.js';
+import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses } from './pitcherStyles.js';
 
 // ---------------------------------------------------------------------------
 // Pixel-art sprites for the isometric field (fielders, runners, coaches, umpires).
@@ -261,39 +262,6 @@ const BATTER_POSES = {
     nFoot: [2, -2], nKnee: [26, -34], fFoot: [38, -12], fKnee: [44, -46], pelvis: [16, -68],
     neck: [28, -110], head: [36, -120], nShoulder: [30, -102], fShoulder: [22, -104],
     nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batAng: -1.9, batLen: 58, twist: 1
-  }
-};
-
-const PITCHER_POSES = {
-  SET: {
-    tFoot: [-7, 0], gFoot: [7, 0], tKnee: [-7, -27], gKnee: [7, -27], pelvis: [0, -50],
-    neck: [0, -82], head: [0, -91], headR: 8, tShoulder: [-12, -79], gShoulder: [12, -79],
-    tElbow: [-13, -64], gElbow: [13, -64], tHand: [-2, -63], gHand: [3, -63]
-  },
-  WIND: {
-    tFoot: [-7, 0], gFoot: [7, 0], tKnee: [-7, -27], gKnee: [7, -27], pelvis: [0, -50],
-    neck: [0, -82], head: [0, -91], headR: 8, tShoulder: [-12, -80], gShoulder: [12, -80],
-    tElbow: [-13, -93], gElbow: [13, -93], tHand: [-2, -103], gHand: [3, -103]
-  },
-  KICK: {
-    tFoot: [-4, 0], gFoot: [8, -30], tKnee: [-5, -27], gKnee: [13, -56], pelvis: [-1, -51],
-    neck: [-2, -83], head: [-2, -92], headR: 8, tShoulder: [-14, -80], gShoulder: [10, -80],
-    tElbow: [-12, -71], gElbow: [13, -71], tHand: [0, -70], gHand: [3, -70]
-  },
-  COCK: {
-    tFoot: [-9, 0], gFoot: [12, 6], tKnee: [-9, -24], gKnee: [13, -22], pelvis: [0, -46],
-    neck: [2, -78], head: [2, -87], headR: 8, tShoulder: [-12, -76], gShoulder: [13, -76],
-    tElbow: [-26, -78], gElbow: [24, -72], tHand: [-28, -98], gHand: [20, -66]
-  },
-  RELEASE: {
-    tFoot: [-9, -2], gFoot: [12, 8], tKnee: [-8, -24], gKnee: [12, -20], pelvis: [1, -44],
-    neck: [4, -70], head: [5, -79], headR: 9, tShoulder: [-10, -68], gShoulder: [15, -68],
-    tElbow: [-18, -82], gElbow: [18, -56], tHand: [-8, -90], gHand: [12, -54]
-  },
-  FOLLOW: {
-    tFoot: [-14, -20], gFoot: [12, 8], tKnee: [-8, -28], gKnee: [11, -20], pelvis: [2, -42],
-    neck: [6, -62], head: [7, -70], headR: 9.5, tShoulder: [-6, -62], gShoulder: [17, -60],
-    tElbow: [4, -46], gElbow: [20, -46], tHand: [16, -34], gHand: [14, -44]
   }
 };
 
@@ -1717,44 +1685,52 @@ export class FieldRenderer1987 {
   }
 
   /**
-   * Pitcher on the mound, seen front-on from behind the plate.
-   * Full windup (bases empty) raises the hands overhead; the stretch (runners on) keeps
-   * them at the chest and uses a shorter leg lift.
-   * - 0.00–0.18 hands rise (windup) or come set (stretch)
-   * - 0.18–0.36 leg kick
-   * - 0.36–0.42 stride, throwing arm cocked
-   * - 0.42–0.50 release (ball leaves the hand at 0.42)
-   * - 0.50–1.00 follow-through, back leg kicks up
+   * Pitcher on the mound, seen front-on from behind the plate. Each pitcher's arm slot,
+   * leg kick, windup and follow-through come from `getPitcherStyle` (pitcherStyles.js).
+   * Bases empty: full windup, hands overhead (or hidden at the chest, or a Tiant-style pivot).
+   * Runners on: the stretch keeps the hands at the chest with a shorter leg lift.
+   * - 0.00–0.16 windup: hands rise (stretch: come set at the chest)
+   * - 0.16–0.30 leg lift
+   * - 0.30–0.36 stride, the front foot lands toward the plate
+   * - 0.36–0.42 arm cock, then the whip into the release
+   * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
+   * - 0.42–0.86 follow-through, the back leg lifts on high-kick deliveries
    */
   drawDuelPitcher(ctx, x, footY, team, pitcher, progress, isStretch = false, isHome = true) {
-    const P = PITCHER_POSES;
+    const style = getPitcherStyle(pitcher);
+    const P = getPitcherPoses(style);
     const isLefty = pitcher && pitcher.throws === 'L';
     const primary = team?.primaryColor || '#f58220';
     const secondary = team?.secondaryColor || '#1e293b';
     const uni = isHome ? '#f4f5f7' : '#c4cad3';
     const uniShade = isHome ? '#97a0ae' : '#7a8391';
 
-    const windPose = isStretch ? blendPose(P.SET, P.KICK, 0.15) : P.WIND;
-    const kickPose = isStretch ? blendPose(P.SET, P.KICK, 0.55) : P.KICK;
+    const windPose = isStretch ? blendPose(P.SET, P.WIND, 0.2) : P.WIND;
+    const liftPose = isStretch ? blendPose(P.SET, P.LIFT, 0.5) : P.LIFT;
     let pose;
     if (progress === 0) {
       pose = { ...P.SET };
       const breath = Math.sin(performance.now() * 0.004) * 0.8;
-      pose.neck = [0, -82 + breath];
-      pose.head = [isStretch && Math.sin(performance.now() * 0.003) > 0.4 ? 3 : 0, -91 + breath];
-    } else if (progress < 0.18) {
-      pose = blendPose(P.SET, windPose, smooth(progress / 0.18));
+      pose.neck = [P.SET.neck[0], P.SET.neck[1] + breath];
+      pose.head = [
+        P.SET.head[0] + (isStretch && Math.sin(performance.now() * 0.003) > 0.4 ? 3 : 0),
+        P.SET.head[1] + breath
+      ];
+    } else if (progress < 0.16) {
+      pose = blendPose(P.SET, windPose, smooth(Math.pow(progress / 0.16, style.tempo)));
+    } else if (progress < 0.3) {
+      pose = blendPose(windPose, liftPose, smooth((progress - 0.16) / 0.14));
     } else if (progress < 0.36) {
-      pose = blendPose(windPose, kickPose, smooth((progress - 0.18) / 0.18));
+      pose = blendPose(liftPose, P.STRIDE, smooth((progress - 0.3) / 0.06));
+    } else if (progress < 0.39) {
+      pose = blendPose(P.STRIDE, P.COCK, smooth((progress - 0.36) / 0.03));
     } else if (progress < 0.42) {
-      pose = blendPose(kickPose, P.COCK, smooth((progress - 0.36) / 0.06));
-    } else if (progress < 0.5) {
-      pose = blendPose(P.COCK, P.RELEASE, smooth((progress - 0.42) / 0.08));
+      pose = blendPose(P.COCK, P.RELEASE, smooth((progress - 0.39) / 0.03));
     } else {
-      pose = blendPose(P.RELEASE, P.FOLLOW, smooth((progress - 0.5) / 0.28));
+      pose = blendPose(P.RELEASE, P.FOLLOW, smooth((progress - 0.42) / 0.44));
     }
 
-    const k = 0.66;
+    const k = DUEL_PITCHER_SCALE;
     ctx.save();
     ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
     ctx.beginPath();
