@@ -11,6 +11,8 @@
  *      wind, turf/grass physics, and fielder speeds determine the actual result.
  */
 
+import { shapeBatBallContact } from './batBallContact.js';
+
 const DEG_TO_RAD = Math.PI / 180;
 const MPH_TO_FPS = 1.46667;
 
@@ -271,7 +273,8 @@ function generatePitchDelivery(pitcher = {}, effectiveBatterHand = 'R', count = 
  *   2. Samples a realistic 3D launch vector (`exitVelocityMph`, `launchAngleDeg`, `sprayAngleDeg`)
  *      from that tier's sub-table so Stage 2 (`physicsEngine.js`) resolves the play physically!
  */
-export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchup = {}, pitchDelivery = {}, offPlay = 'NORMAL', defPlay = 'NORMAL') {
+export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchup = {}, pitchDelivery = {}, offPlay = 'NORMAL', defPlay = 'NORMAL', swing = {}) {
+  const batterHand = matchup.effectiveBatterHand || getEffectivePlatoonMatchup(batter, pitcher).effectiveBatterHand;
   const bRatings = batter.ratings || {};
   const power = matchup.powerRating ?? bRatings.power ?? 5;
   const speed = bRatings.runs ?? bRatings.speed ?? 5;
@@ -299,7 +302,7 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
     const exitVelocityFps = buntSpeedMph * MPH_TO_FPS;
     const horizSpeedFps = exitVelocityFps * Math.cos(launchRad);
 
-    return {
+    return shapeBatBallContact({
       contactType: 'BUNT',
       intendedResult: 'BUNT',
       buntType: offPlay,
@@ -311,9 +314,9 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
       vy: Math.round(horizSpeedFps * Math.cos(sprayRad) * 100) / 100,
       vz: Math.round(exitVelocityFps * Math.sin(launchRad) * 100) / 100,
       spinRateRpm: 600,
-      batterHand: matchup.effectiveBatterHand,
+      batterHand,
       speedRating: speed
-    };
+    }, pitchDelivery, batter, swing);
   }
 
   // Compute per-Ball-In-Play (BIP) probabilities from the batter/pitcher platoon split
@@ -328,7 +331,7 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
   const totalHitPerBip = Math.min(0.54, ((matchup.combinedAvg || 0.275) / bipPerAb) * 0.97);
   const singlePerBip = Math.max(0.03, totalHitPerBip - hrPerBip - triplePerBip - doublePerBip);
 
-  const pullSign = matchup.effectiveBatterHand === 'L' ? 1 : -1;
+  const pullSign = batterHand === 'L' ? 1 : -1;
   const bipRoll = Math.random();
 
   let contactType = 'GROUNDER';
@@ -433,7 +436,7 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
   const vy = horizSpeedFps * Math.cos(sprayRad);
   const vz = exitVelocityFps * Math.sin(launchRad);
 
-  return {
+  return shapeBatBallContact({
     contactType,
     intendedResult,
     exitVelocityMph: Math.round(exitVelocityMph * 10) / 10,
@@ -444,9 +447,9 @@ export function generateBattedBallLaunchVector(batter = {}, pitcher = {}, matchu
     vx: Math.round(vx * 100) / 100,
     vy: Math.round(vy * 100) / 100,
     vz: Math.round(vz * 100) / 100,
-    batterHand: matchup.effectiveBatterHand,
+    batterHand,
     speedRating: speed
-  };
+  }, pitchDelivery, batter, swing);
 }
 
 /**
