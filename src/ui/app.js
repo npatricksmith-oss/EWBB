@@ -19,7 +19,16 @@ import { askEarlAdvisor } from '../engine/earlAI.js';
 import { EWBGameState } from '../engine/gameState.js';
 import { runStatisticalValidation } from '../engine/statsValidator.js';
 import { FieldRenderer1987 } from './fieldRenderer1987.js';
+import { HomeRunFireworks } from './fireworks.js';
 import { soundEngine } from './soundEngine.js';
+
+// Play-by-play lands after the field animation ends: first entry after this delay, then one per stagger step
+const NARRATION_DELAY_MS = 750;
+const NARRATION_STAGGER_MS = 420;
+// Pitch delivery runs before the ball is in play; the field tape starts after it
+const PITCH_DELIVERY_MS = 720;
+const FIELD_FPS = 60;
+const HOME_RUN_FIREWORKS_DELAY_MS = 1000;
 
 class EWBAppController {
   constructor() {
@@ -33,6 +42,11 @@ class EWBAppController {
 
     this.canvas = document.getElementById('ewbCanvas');
     this.renderer = new FieldRenderer1987(this.canvas);
+    this.fireworks = new HomeRunFireworks(this.canvas, { onBurst: () => soundEngine.playFireworkPop() });
+    // Play-by-play entries logged by a pitch but not yet narrated, and the queue that reveals them in order
+    this.hiddenLogEntries = new Set();
+    this.narrationQueue = [];
+    this.narrationTimer = null;
     this.isAnimating = false;
     this.lastPhysicsTelemetry = null;
     this.activeEditorParkId = 'fenway';
@@ -238,6 +252,7 @@ class EWBAppController {
     const awayManagerId = TEAMS[awayTeamId]?.defaultManagerId || 'weaver';
     const homeManagerId = TEAMS[homeTeamId]?.defaultManagerId || 'weaver';
 
+    this.flushNarration();
     this.gameState.resetGame({
       awayTeamId,
       homeTeamId,
@@ -267,7 +282,11 @@ class EWBAppController {
     this.isAnimating = true;
     this.updateActionButtonsState();
 
+    // Entries this pitch logs; hidden until the field animation finishes
+    let pitchLogEntries = [];
+
     try {
+      const logBeforePitch = new Set(this.gameState.playLog);
       const prePitchRenderState = {
         park: this.gameState.park,
         inning: this.gameState.inning,
@@ -295,6 +314,14 @@ class EWBAppController {
 
       if (physicsResult) {
         this.lastPhysicsTelemetry = physicsResult;
+      }
+
+      // stepPitch logs newest-first; hide them now and reveal oldest-first after the play lands on the field
+      pitchLogEntries = this.gameState.playLog.filter((entry) => !logBeforePitch.has(entry)).reverse();
+      pitchLogEntries.forEach((entry) => this.hiddenLogEntries.add(entry));
+
+      if (physicsResult?.outcome === 'HOME_RUN') {
+        this.scheduleHomeRunFireworks(physicsResult);
       }
 
       // Trigger authentic sound effects at plate arrival (~640ms into 720ms 5-stage windup)
@@ -326,12 +353,59 @@ class EWBAppController {
         if (offSelect) offSelect.value = this.gameState.offensePlay;
         if (defSelect) defSelect.value = this.gameState.defensePlay;
         this.refreshAllUI();
+        this.queueNarration(pitchLogEntries);
       });
     } catch (err) {
       console.error('Pitch execution error:', err);
       this.isAnimating = false;
       this.refreshAllUI();
+      this.queueNarration(pitchLogEntries);
     }
+  }
+
+  /**
+   * Reveals play-by-play entries after the field animation, one at a time.
+   * Entries queue in order, so back-to-back pitches narrate in sequence.
+   */
+  queueNarration(entries) {
+    if (!entries.length) return;
+    this.narrationQueue.push(...entries);
+    if (!this.narrationTimer) {
+      this.narrationTimer = setTimeout(() => this.revealNextNarrationEntry(), NARRATION_DELAY_MS);
+    }
+  }
+
+  revealNextNarrationEntry() {
+    this.narrationTimer = null;
+    const entry = this.narrationQueue.shift();
+    if (!entry) return;
+    this.hiddenLogEntries.delete(entry);
+    this.renderPlayLog();
+    if (this.narrationQueue.length) {
+      this.narrationTimer = setTimeout(() => this.revealNextNarrationEntry(), NARRATION_STAGGER_MS);
+    }
+  }
+
+  /** Reveals all queued narration at once. Headless sims and new games must not wait on it. */
+  flushNarration() {
+    clearTimeout(this.narrationTimer);
+    this.narrationTimer = null;
+    this.narrationQueue.forEach((entry) => this.hiddenLogEntries.delete(entry));
+    this.narrationQueue = [];
+  }
+
+  /**
+   * Starts the fireworks ~1 s after the ball clears the fence on the field tape.
+   * The tape starts after pitch delivery and plays at 60 fps.
+   */
+  scheduleHomeRunFireworks(physicsResult) {
+    const fenceFt = physicsResult.wallInfo?.distanceFt;
+    const frames = physicsResult.frames || [];
+    const clearIdx = fenceFt
+      ? frames.findIndex((f) => f.ball && Math.hypot(f.ball.x, f.ball.y) >= fenceFt)
+      : -1;
+    const clearMs = PITCH_DELIVERY_MS + ((clearIdx >= 0 ? clearIdx : frames.length) / FIELD_FPS) * 1000;
+    setTimeout(() => this.fireworks.play(), clearMs + HOME_RUN_FIREWORKS_DELAY_MS);
   }
 
   handleInstantReplay() {
@@ -351,6 +425,7 @@ class EWBAppController {
       return;
     }
     const maxPitches = mode === 'FULL_GAME' ? 900 : mode === 'HALF_INNING' ? 120 : 20;
+    this.flushNarration();
     const res = this.gameState.simulateHeadless({ mode, maxPitches });
     this.gameState.logPlay(
       `⚡ Headless Sim (${mode.replace('_', ' ')}): Simulated ${res.pitchesSimulated} pitches in ${res.elapsedMs} ms!`,
@@ -621,6 +696,7 @@ class EWBAppController {
     const listEl = document.getElementById('playByPlayList');
     if (!listEl) return;
     listEl.innerHTML = this.gameState.playLog
+      .filter((item) => !this.hiddenLogEntries.has(item))
       .slice(0, 35)
       .map(
         (item) => `
