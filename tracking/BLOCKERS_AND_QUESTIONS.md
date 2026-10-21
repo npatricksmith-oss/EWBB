@@ -14,11 +14,11 @@ Claude Opus 5.5 and the worker agents record blockers and open questions here. A
   - **Ratings:** derived from the stats by formula, plus Haiku scouting judgments for range, arm, durability, pitcher fielding and bunting, and pitch repertoires.
 - **To get authentic data:** if you have original EWB disk images (Amiga, IBM, or Apple II), put them in a new folder inside the project. We can then try to decode the team files and replace the reconstructed rosters and ratings.
 
-### Question 1: Should the 1986–1990 MLBPA season disks be in scope?
-- The 26 MLB team rosters came on separate, paid MLBPA Player Stat Disks, not in the base game. This milestone covers only the base game's teams. The same pipeline (`bin/build_team.py`) can build any real team-season in minutes per team.
+### Resolved: The 1986–1990 MLBPA season disks are out of scope
+- The user declined them (2026-10-21). We ship only the base game's teams.
 
-### Question 3: Era teams use a designated hitter
-- The engine never lets pitchers bat, so every team, including NL and pre-1973 teams, fields nine hitters with a DH. Keep this, or add pitcher batting for NL and pre-1973 teams?
+### Resolved: Era teams keep the designated hitter
+- The user chose not to add pitcher batting (2026-10-21). Every team, including NL and pre-1973 teams, bats nine hitters with a DH.
 
 ### Resolved: Ballparks and managers for the new teams
 - Added Anaheim Stadium, Atlanta-Fulton County Stadium, Gene Mauch, and Joe Torre (`58b9692`). The Angels default to Anaheim and Mauch; the Braves to Atlanta-Fulton County and Torre.
