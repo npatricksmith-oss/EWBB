@@ -26,6 +26,7 @@ import { getInitialFielderPositions } from '../engine/physicsEngine.js';
 import { getLastName } from '../data/rosters.js';
 import { drawPixelBaseball, getVisualBallSpin, visualSpinAngle } from './baseballSprite.js';
 import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses, getReleasePointOffset } from './pitcherStyles.js';
+import { getBatterStyle, getBatterSwingPose, BASE_BATTER_POSES } from './batterStyles.js';
 
 // ---------------------------------------------------------------------------
 // Pixel-art sprites for the isometric field (fielders, runners, coaches, umpires).
@@ -170,12 +171,12 @@ const PIXEL_SPRITES = {
     '..wggg.ggggjjoo'
   ],
   BATTING: [
-    '......B....',
-    '......B....',
-    '..cccB.....',
-    '.ccccBbb...',
-    '..sssB.....',
-    '..ssss.....',
+    '.....BB....',
+    '.....BB....',
+    '..ccc.B....',
+    '.ccccbbB...',
+    '..sss.sB...',
+    '..sssss....',
     '..jwwj.....',
     '.jwwwwj....',
     '.wwwwgg....',
@@ -243,27 +244,9 @@ const SKIN = '#f1c27d';
 // pitcher 100, feet at y = 0, up is negative. Batter +x points toward the plate;
 // pitcher (front view, RHP) throws with the arm on the viewer's left.
 // ---------------------------------------------------------------------------
-const BATTER_POSES = {
-  STANCE: {
-    nFoot: [0, 0], fFoot: [28, -10], nKnee: [18, -38], fKnee: [38, -46], pelvis: [8, -70],
-    neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-6, -98], fElbow: [30, -92], hands: [10, -114], batAng: -0.55, batLen: 62, twist: 0
-  },
-  LOAD: {
-    nFoot: [0, 0], fFoot: [38, -12], nKnee: [16, -38], fKnee: [44, -44], pelvis: [6, -69],
-    neck: [16, -114], head: [22, -125], nShoulder: [10, -106], fShoulder: [22, -108],
-    nElbow: [-10, -100], fElbow: [24, -96], hands: [4, -116], batAng: -0.8, batLen: 62, twist: 0
-  },
-  CONTACT: {
-    nFoot: [0, 0], fFoot: [38, -12], nKnee: [24, -36], fKnee: [44, -46], pelvis: [14, -68],
-    neck: [24, -110], head: [32, -120], nShoulder: [22, -101], fShoulder: [34, -105],
-    nElbow: [30, -84], fElbow: [52, -90], hands: [46, -86], batAng: 1.62, batLen: 52, twist: 0.6
-  },
-  FOLLOW: {
-    nFoot: [2, -2], nKnee: [26, -34], fFoot: [38, -12], fKnee: [44, -46], pelvis: [16, -68],
-    neck: [28, -110], head: [36, -120], nShoulder: [30, -102], fShoulder: [22, -104],
-    nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batAng: -1.9, batLen: 58, twist: 1
-  }
+export const BATTER_POSES = {
+  ...BASE_BATTER_POSES,
+  FOLLOW: BASE_BATTER_POSES.FOLLOW_TWO_HAND
 };
 
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -1863,33 +1846,26 @@ export class FieldRenderer1987 {
 
   /**
    * Batter in the box, side-on from behind the plate and filling the foreground.
-   * - Before release: crouched stance, bat cocked over the rear shoulder, rhythmic waggle.
-   * - 0.42–0.72 load: front foot strides, hands drift back.
-   * - Swing: 0.72–0.90 hips open and the bat drives through the zone; 0.90–1.00 wraps
-   *   into a high follow-through. A take eases back toward the stance instead.
+   * Kinetic multi-phase swing choreographies customized by player style:
+   * - 0.00–0.42 pre-pitch stance & idle waggle (arm flap, barrel circle, pump, twitch)
+   * - 0.42–0.58 load (hands drift back/up into slot, weight coils back, stride begins)
+   * - 0.58–0.72 stride plant (front foot plants, hips brace, elastic separation)
+   * - 0.72–0.90 swing acceleration (hips clear, elbow slots, violent snap to contact at p = 0.90)
+   * - 0.90–1.00 follow-through (one-hand high extension vs two-hand wrap)
+   * - !didSwing check-swing / take (wrists hold up before 90° or disciplined take)
    */
-  drawDuelBatter(ctx, x, footY, team, side, pitchProg, didSwing, isHome = false) {
-    const B = BATTER_POSES;
+  drawDuelBatter(ctx, x, footY, team, side, pitchProg, didSwing, isHome = false, batter = null) {
+    const batterObj = batter || this.lastGameState?.currentBatter;
+    const style = getBatterStyle(batterObj, side);
+    const tNow = performance.now();
+    const pose = getBatterSwingPose(style, pitchProg, didSwing, tNow);
+
     const f = side === 'R' ? 1 : -1; // RHB stands left of the plate and faces right
     const primary = team?.primaryColor || '#bd3039';
     const secondary = team?.secondaryColor || '#0c2340';
     const uni = isHome ? '#f4f5f7' : '#c4cad3';
     const uniShade = isHome ? '#97a0ae' : '#7a8391';
 
-    const poseAt = (p) => {
-      if (p < 0.42) {
-        const waggle = Math.sin(performance.now() * 0.0085);
-        const pose = { ...B.STANCE };
-        pose.batAng = B.STANCE.batAng + waggle * 0.12;
-        pose.hands = [B.STANCE.hands[0] + waggle * 1.5, B.STANCE.hands[1] + waggle];
-        return pose;
-      }
-      if (p < 0.72) return blendPose(B.STANCE, B.LOAD, smooth((p - 0.42) / 0.3));
-      if (!didSwing) return blendPose(B.LOAD, B.STANCE, smooth((p - 0.72) / 0.28) * 0.6);
-      if (p < 0.9) return blendPose(B.LOAD, B.CONTACT, smooth((p - 0.72) / 0.18));
-      return blendPose(B.CONTACT, B.FOLLOW, smooth((p - 0.9) / 0.1));
-    };
-    const pose = poseAt(pitchProg);
     const batTip = (pz) => [pz.hands[0] + Math.sin(pz.batAng) * pz.batLen, pz.hands[1] - Math.cos(pz.batAng) * pz.batLen];
 
     ctx.save();
@@ -1904,13 +1880,19 @@ export class FieldRenderer1987 {
     const shade = this.getDitherPattern(ctx, uni, uniShade);
     const farUni = this.getDitherPattern(ctx, uniShade, uni);
     const sleeveShade = this.getDitherPattern(ctx, primary, darken(primary, 0.45));
-    const drawFoot = (foot, knee) => {
+
+    const drawFoot = (foot, knee, isRear = false) => {
       const sx = lerp(foot[0], knee[0], 0.35);
       const sy = lerp(foot[1], knee[1], 0.35);
       this.strokeLimb(ctx, [[[sx, sy], [foot[0], foot[1] - 2], 9]], primary);
       ctx.fillStyle = FIGURE_OUTLINE;
       ctx.beginPath();
-      ctx.ellipse(foot[0] + 5, foot[1], 9, 4, 0, 0, Math.PI * 2);
+      if (isRear && foot[1] < -0.8) {
+        // Pivoted up on the ball of the rear foot
+        ctx.ellipse(foot[0] + 3, foot[1] + 1, 6, 6, Math.PI * 0.25, 0, Math.PI * 2);
+      } else {
+        ctx.ellipse(foot[0] + 5, foot[1], 9, 4, 0, 0, Math.PI * 2);
+      }
       ctx.fill();
       ctx.fillStyle = '#334155';
       ctx.fillRect(foot[0] - 1, foot[1] - 3, 8, 1.5);
@@ -1920,9 +1902,10 @@ export class FieldRenderer1987 {
     const fLeg = [[[pose.pelvis[0] + 4, pose.pelvis[1]], pose.fKnee, 16], [pose.fKnee, pose.fFoot, 12]];
     this.strokeLimb(ctx, fLeg, uniShade);
     this.shadeLimb(ctx, fLeg, farUni, 1);
-    drawFoot(pose.fFoot, pose.fKnee);
+    drawFoot(pose.fFoot, pose.fKnee, false);
 
-    const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, pose.hands, 9]];
+    const fHand = pose.fHand || pose.hands;
+    const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
     this.strokeLimb(ctx, fArm, darken(primary, 0.25));
 
     // Torso: spine from pelvis to neck, butt pushed back, chest forward
@@ -1972,7 +1955,7 @@ export class FieldRenderer1987 {
     ctx.lineTo(pose.nKnee[0] - 6, pose.nKnee[1]);
     ctx.lineTo(lerp(pose.nKnee[0], pose.nFoot[0], 0.6) - 5, lerp(pose.nKnee[1], pose.nFoot[1], 0.6));
     ctx.stroke();
-    drawFoot(pose.nFoot, pose.nKnee);
+    drawFoot(pose.nFoot, pose.nKnee, true);
 
     // Belt
     ctx.strokeStyle = '#1b2333';
@@ -2014,7 +1997,7 @@ export class FieldRenderer1987 {
     };
 
     if (didSwing && pitchProg > 0.74 && pitchProg < 0.97) {
-      const prev = poseAt(Math.max(0.72, pitchProg - 0.05));
+      const prev = getBatterSwingPose(style, Math.max(0.72, pitchProg - 0.05), didSwing, tNow);
       const p0 = batTip(prev);
       const p1 = batTip(pose);
       ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
@@ -2061,16 +2044,30 @@ export class FieldRenderer1987 {
     ctx.stroke();
 
     // Near (rear) arm in team undershirt sleeve, batting gloves on the grip
-    const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, pose.hands, 10]];
+    const nHand = pose.nHand || pose.hands;
+    const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, nHand, 10]];
     this.strokeLimb(ctx, nArm, primary);
     this.shadeLimb(ctx, nArm, sleeveShade, 1);
+
+    // Batting glove at rear hand
     ctx.fillStyle = '#f8fafc';
     ctx.strokeStyle = FIGURE_OUTLINE;
     ctx.lineWidth = 1.8;
     ctx.beginPath();
-    ctx.arc(pose.hands[0], pose.hands[1], 5, 0, Math.PI * 2);
+    ctx.arc(nHand[0], nHand[1], 5, 0, Math.PI * 2);
     ctx.stroke();
     ctx.fill();
+
+    // Batting glove at lead hand if separated during one-handed follow-through
+    if (pose.nHand) {
+      ctx.fillStyle = '#f8fafc';
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.arc(pose.hands[0], pose.hands[1], 4.8, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fill();
+    }
 
     if (batInFront) drawBat();
 
