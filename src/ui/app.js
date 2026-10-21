@@ -23,7 +23,7 @@ import { HomeRunFireworks } from './fireworks.js';
 import { soundEngine } from './soundEngine.js';
 
 // Play-by-play lands after the field animation ends: first entry after this delay, then one per stagger step
-const NARRATION_DELAY_MS = 750;
+const NARRATION_DELAY_MS = 300;
 const NARRATION_STAGGER_MS = 420;
 // Pitch delivery runs before the ball is in play; the field tape starts after it
 const PITCH_DELIVERY_MS = 720;
