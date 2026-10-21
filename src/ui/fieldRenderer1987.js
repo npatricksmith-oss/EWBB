@@ -24,6 +24,12 @@
 import { getWallAtAngle } from '../data/ballparks.js';
 import { getInitialFielderPositions } from '../engine/physicsEngine.js';
 import { getLastName } from '../data/rosters.js';
+import { drawPixelBaseball } from './baseballSprite.js';
+
+function pitchSpinRate(pitchType = 'FASTBALL') {
+  const rates = { FASTBALL: 0.18, CURVEBALL: -0.12, SLIDER: 0.1, CHANGEUP: 0.07 };
+  return rates[String(pitchType).toUpperCase()] ?? rates.FASTBALL;
+}
 
 // ---------------------------------------------------------------------------
 // Pixel-art sprites for the isometric field (fielders, runners, coaches, umpires).
@@ -985,15 +991,10 @@ export class FieldRenderer1987 {
       ctx.ellipse(bScreen.x, bScreen.groundY, 5, 2.6, 0, 0, Math.PI * 2);
       ctx.fill();
 
-      // Elevated baseball at z > 0
+      // Elevated pixel baseball at z > 0
       const ballRadius = Math.min(7.5, 3.8 + ball.z * 0.045);
-      ctx.fillStyle = '#ffffff';
-      ctx.strokeStyle = '#dc2626';
-      ctx.lineWidth = 1.2;
-      ctx.beginPath();
-      ctx.arc(bScreen.x, bScreen.y, ballRadius, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.stroke();
+      const spinDirection = ball.isThrow ? 1 : (ball.z > 4 ? 1 : -1);
+      drawPixelBaseball(ctx, bScreen.x, bScreen.y, ballRadius, performance.now() * 0.012 * spinDirection);
 
       // Wall carom flash effect (e.g. Green Monster hit)
       if (activeFrame.wallHitFlash) {
@@ -1528,6 +1529,7 @@ export class FieldRenderer1987 {
     //    creeps out of the windup, then grows fast and breaks late, as it does from behind the plate.
     const outcome = this.pitchAnim?.outcome;
     const wasHit = Boolean(this.pitchAnim?.swung) && (outcome === 'IN_PLAY' || outcome === 'FOUL');
+    const putInPlay = outcome === 'IN_PLAY';
     let target = null;
     if (this.pitchAnim) {
       const normZ = ((this.pitchAnim.plateZ ?? 2.5) - 1.55) / 2.0;
@@ -1555,7 +1557,7 @@ export class FieldRenderer1987 {
         };
       };
 
-      const contactReached = wasHit && t >= 0.97;
+      const contactReached = putInPlay && t >= 0.97;
       if (!contactReached) {
         // Ghost trail
         for (let i = 3; i >= 1; i--) {
@@ -1574,21 +1576,20 @@ export class FieldRenderer1987 {
         ctx.ellipse(b.x, shadowY, radius, radius * 0.4, 0, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = '#ffffff';
-        ctx.strokeStyle = '#0b0f17';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.arc(b.x, b.y, radius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-        if (radius > 3) {
-          ctx.strokeStyle = '#dc2626';
-          ctx.lineWidth = 0.9;
-          ctx.beginPath();
-          ctx.arc(b.x - radius * 0.9, b.y, radius * 0.6, -0.9, 0.9);
-          ctx.arc(b.x + radius * 0.9, b.y, radius * 0.6, Math.PI - 0.9, Math.PI + 0.9);
-          ctx.stroke();
-        }
+        drawPixelBaseball(ctx, b.x, b.y, radius, performance.now() * pitchSpinRate(this.pitchAnim.pitchType));
+      }
+
+      // On contact, send the ball briefly along its actual spray and launch angle before the field view opens.
+      if (putInPlay && t >= 0.94) {
+        const launch = this.pitchAnim.launchVector || {};
+        const contact = ballAt(1);
+        const travel = Math.min(1, (t - 0.94) / 0.06);
+        const spray = (launch.sprayAngleDeg || 0) * Math.PI / 180;
+        const lift = (launch.launchAngleDeg || 12) * Math.PI / 180;
+        const dx = Math.sin(spray) * Math.cos(lift);
+        const dy = -Math.sin(lift) - Math.cos(spray) * 0.15;
+        drawPixelBaseball(ctx, contact.x + dx * travel * 55, contact.y + dy * travel * 46,
+          4 + travel * 2.2, performance.now() * 0.12 * (launch.launchAngleDeg > 15 ? 1 : -1));
       }
     }
 
@@ -1624,14 +1625,20 @@ export class FieldRenderer1987 {
         ctx.stroke();
       } else {
         this.drawDuelCatcherMitt(ctx, target.x, target.y, pitchProg >= 0.92);
-        if (pitchProg >= 0.94) {
-          ctx.strokeStyle = this.pitchAnim.isStrike ? '#fde047' : '#60a5fa';
-          ctx.lineWidth = 2.2;
-          ctx.beginPath();
-          ctx.arc(target.x, target.y, 13, 0, Math.PI * 2);
-          ctx.stroke();
-        }
       }
+    }
+
+    if (this.pitchAnim && target && outcome !== 'IN_PLAY' && pitchProg >= 0.90) {
+      const isStrikeCall = ['CALLED_STRIKE', 'SWINGING_STRIKE', 'FOUL'].includes(outcome);
+      ctx.strokeStyle = isStrikeCall ? '#ef4444' : '#22c55e';
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.arc(target.x, target.y, 13, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = isStrikeCall ? '#ef4444' : '#22c55e';
+      ctx.font = 'bold 9px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(isStrikeCall ? 'STRIKE' : 'BALL', target.x, target.y - 17);
     }
 
     // 10. Batter/Pitcher stat box over the stands
@@ -2142,6 +2149,7 @@ export class FieldRenderer1987 {
       plateZ: pitchStep.plateZ ?? 2.5,
       breakX: pitchStep.curveBreakX ?? 0,
       breakZ: pitchStep.curveBreakZ ?? 0,
+      launchVector: pitchStep.launchVector || null,
       swung,
       isStrike: pitchStep.outcome !== 'BALL' && pitchStep.outcome !== 'HBP',
       callText: pitchStep.callText || pitchStep.outcome
