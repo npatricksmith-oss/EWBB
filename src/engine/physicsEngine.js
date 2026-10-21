@@ -1045,6 +1045,17 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     runsScored,
     fieldingError,
     launchVector,
+    // Replay/duel clients can read contact directly without unpacking Stage 1.
+    // Legacy hand-authored launch vectors receive useful metadata as well.
+    spin: launchVector.spin || {
+      backspinRpm: contactType === 'GROUNDER' || contactType === 'BUNT'
+        ? -(launchVector.spinRateRpm ?? 900) : (launchVector.spinRateRpm ?? 1800),
+      sidespinRpm: 0
+    },
+    contact: launchVector.contact || {
+      timing: 0, verticalOffset: 0, quality: 1,
+      sprayDeg: sprayAngleDeg, launchDeg: launchAngleDeg, exitMph: exitVelocityMph
+    },
     frames,
     description
   };
