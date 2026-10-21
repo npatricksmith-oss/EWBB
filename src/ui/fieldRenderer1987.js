@@ -34,6 +34,10 @@ export const PITCH_FLIGHT_MS = 420;
 export const PITCH_DELIVERY_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS;
 /** Milliseconds from pitch start until the ball reaches the plate (progress 0.92). */
 export const PITCH_PLATE_ARRIVAL_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS * (0.5 / 0.58);
+/** After a ball is put in play the duel view holds this long on the follow-through before the field view opens. */
+export const SWING_HOLD_MS = 900;
+/** The duel scene is drawn this much larger than its layout, anchored at the bottom, so the players fill the view. */
+const DUEL_ZOOM = 1.45;
 
 function pitchProgressAt(elapsedMs) {
   if (elapsedMs <= PITCH_WINDUP_MS) return 0.42 * Math.max(0, elapsedMs) / PITCH_WINDUP_MS;
@@ -1343,6 +1347,14 @@ export class FieldRenderer1987 {
     const isTurf = gameState.park?.surface === 'Artificial Turf';
 
     const cx = vp.x + vp.w * 0.5;
+    // Zoom the scene about the bottom center so the batter and pitcher fill the view below the
+    // stat box instead of sharing it with rows of seats. The stat box and call banner stay unzoomed.
+    const viewBottom = vp.y + vp.h;
+    ctx.save();
+    ctx.translate(cx, viewBottom);
+    ctx.scale(DUEL_ZOOM, DUEL_ZOOM);
+    ctx.translate(-cx, -viewBottom);
+
     const standsTop = vp.y + 104;
     const lowerStandsTop = vp.y + 262;
     const wallTop = vp.y + 316;
@@ -1545,7 +1557,7 @@ export class FieldRenderer1987 {
       if (putInPlay && t >= 0.94) {
         const launch = this.pitchAnim.launchVector || {};
         const contact = ballAt(1);
-        const travel = Math.min(1, (t - 0.94) / 0.06);
+        const travel = Math.min(1, (t - 0.94) / 0.06) + (this.pitchAnim.holdT || 0) * 4;
         const spray = (launch.sprayAngleDeg || 0) * Math.PI / 180;
         const lift = (launch.launchAngleDeg ?? 12) * Math.PI / 180;
         const dx = Math.sin(spray) * Math.cos(lift);
@@ -1630,6 +1642,8 @@ export class FieldRenderer1987 {
       ctx.textBaseline = 'middle';
       ctx.fillText(badgeText, x, badgeY - 1.5);
     }
+
+    ctx.restore();
 
     // 10. Batter/Pitcher stat box over the stands
     this.drawAmigaDuelStatBox(ctx, vp, gameState, batter, pitcher);
@@ -2214,23 +2228,18 @@ export class FieldRenderer1987 {
         this._rafId = requestAnimationFrame(stepPitch);
       } else {
         if (pitchStep.outcome === 'IN_PLAY' && physicsResult && physicsResult.frames?.length) {
-          this.lastPlayRecord = {
-            pitchStep,
-            physicsResult,
-            snapshotState: {
-              park: JSON.parse(JSON.stringify(gameState.park)),
-              inning: gameState.inning,
-              half: gameState.half,
-              outs: gameState.outs,
-              count: { ...gameState.count },
-              totals: JSON.parse(JSON.stringify(gameState.totals)),
-              homeTeam: gameState.homeTeam,
-              awayTeam: gameState.awayTeam,
-              bases: [...(gameState.bases || [null, null, null])],
-              defensePlay: gameState.defensePlay
+          // Hold on the follow-through while the ball leaves the bat, then open the field view
+          const holdStart = performance.now();
+          const holdSwing = (t) => {
+            this.pitchAnim.holdT = Math.min(1, (t - holdStart) / SWING_HOLD_MS);
+            this.render(gameState);
+            if (this.pitchAnim.holdT < 1) {
+              this._rafId = requestAnimationFrame(holdSwing);
+              return;
             }
+            this.startFieldPlay(pitchStep, physicsResult, gameState, onComplete);
           };
-          this.runFullFieldAnimation(physicsResult, gameState, false, onComplete);
+          this._rafId = requestAnimationFrame(holdSwing);
         } else {
           setTimeout(() => {
             this.pitchAnim = null;
@@ -2242,6 +2251,27 @@ export class FieldRenderer1987 {
     };
 
     this._rafId = requestAnimationFrame(stepPitch);
+  }
+
+  /** Records the play for Instant Replay and opens the full-field view. */
+  startFieldPlay(pitchStep, physicsResult, gameState, onComplete) {
+    this.lastPlayRecord = {
+      pitchStep,
+      physicsResult,
+      snapshotState: {
+        park: JSON.parse(JSON.stringify(gameState.park)),
+        inning: gameState.inning,
+        half: gameState.half,
+        outs: gameState.outs,
+        count: { ...gameState.count },
+        totals: JSON.parse(JSON.stringify(gameState.totals)),
+        homeTeam: gameState.homeTeam,
+        awayTeam: gameState.awayTeam,
+        bases: [...(gameState.bases || [null, null, null])],
+        defensePlay: gameState.defensePlay
+      }
+    };
+    this.runFullFieldAnimation(physicsResult, gameState, false, onComplete);
   }
 
   /**
