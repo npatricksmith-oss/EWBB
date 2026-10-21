@@ -49,6 +49,37 @@ export const smooth = (t) => {
 
 export const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
+const DEG = Math.PI / 180;
+
+/** Point part way from a to b, nudged down by sag (an elbow bent slightly under a straight arm). */
+const lerp2 = (a, b, t, sag = 0) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t) + sag];
+// Farther from the camera draws higher on screen (the field recedes up the duel view)
+const BAT_DEPTH_RISE = 0.3;
+// Stance bats point up and back, mostly away from the plate and a little toward the catcher
+const STANCE_BAT_YAW = -160;
+
+/**
+ * Projects a 3D bat direction onto the duel view.
+ * Returns the screen angle (0 = up, positive toward the plate), the screen length,
+ * and the depth (-1 toward the camera, +1 toward the pitcher).
+ */
+export function projectBat(yawDeg, pitchDeg, length) {
+  const cp = Math.cos(pitchDeg * DEG);
+  const dx = cp * Math.cos(yawDeg * DEG);
+  const dy = cp * Math.sin(yawDeg * DEG);
+  const up = Math.sin(pitchDeg * DEG) + dy * BAT_DEPTH_RISE;
+  return { batAng: Math.atan2(dx, up), batLen: length * Math.hypot(dx, up), batDepth: dy };
+}
+
+/** 3D stance bat that projects to a style's screen angle (negative = tipped back from the plate). */
+function stanceBat(screenAng) {
+  const ang = Math.min(-0.05, screenAng);
+  const c = Math.cos(STANCE_BAT_YAW * DEG);
+  const s = Math.sin(STANCE_BAT_YAW * DEG);
+  const tanPitch = c / Math.tan(ang) - s * BAT_DEPTH_RISE;
+  return { batYaw: STANCE_BAT_YAW, batPitch: Math.atan(tanPitch) / DEG };
+}
+
 /**
  * Fast deterministic 32-bit FNV-1a hash of a string.
  * @param {string} str
@@ -88,53 +119,63 @@ export function blendPose(a, b, t) {
 // ---------------------------------------------------------------------------
 // Canonical Base Figure Keyframes (150-unit tall batter beside home plate)
 // +x points toward home plate / pitcher; y = 0 at feet; negative y is up.
+// The bat is aimed in 3D so the swing sweeps around the body, as in Muybridge's
+// rear-view batting plates: barrel back toward the catcher in the slot, across the
+// plate at contact, away toward the pitcher at extension, then wrapped around the
+// lead shoulder. Axes: +x toward the plate, +y toward the pitcher (away from the
+// catcher's-eye camera), +z up.
+//   batYaw (degrees) turns the barrel about the vertical axis: 0 = over the plate,
+//     90 = toward the pitcher, 180 = away from the plate, -90 = toward the catcher.
+//   batPitch (degrees) tips the barrel up (+) or down (-).
+//   batLength is the true bat length; the screen length shrinks as the bat points
+//     into or out of the screen.
 // ---------------------------------------------------------------------------
 export const BASE_BATTER_POSES = {
   STANCE: {
     nFoot: [0, 0], fFoot: [28, -10], nKnee: [18, -38], fKnee: [38, -46], pelvis: [8, -70],
     neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-6, -98], fElbow: [30, -92], hands: [10, -114], batAng: -0.55, batLen: 62, twist: 0
+    nElbow: [-6, -98], fElbow: [30, -92], hands: [10, -114], batYaw: -160, batPitch: 58, batLength: 64, twist: 0
   },
   LOAD: {
     nFoot: [0, 0], fFoot: [32, -14], nKnee: [14, -38], fKnee: [40, -50], pelvis: [4, -69],
     neck: [14, -114], head: [20, -125], nShoulder: [8, -106], fShoulder: [20, -108],
-    nElbow: [-12, -102], fElbow: [22, -98], hands: [2, -118], batAng: -0.80, batLen: 62, twist: -0.08
+    nElbow: [-12, -102], fElbow: [22, -98], hands: [2, -118], batYaw: -160, batPitch: 47, batLength: 64, twist: -0.08
   },
   STRIDE_PLANT: {
     nFoot: [0, 0], fFoot: [36, -10], nKnee: [16, -38], fKnee: [46, -44], pelvis: [8, -68],
     neck: [18, -112], head: [24, -123], nShoulder: [12, -105], fShoulder: [26, -107],
-    nElbow: [-8, -98], fElbow: [26, -94], hands: [6, -115], batAng: -0.70, batLen: 62, twist: 0.08
+    nElbow: [-8, -98], fElbow: [26, -94], hands: [6, -115], batYaw: -160, batPitch: 52, batLength: 64, twist: 0.08
   },
   ROTATION: {
     nFoot: [0, -2], fFoot: [38, -11], nKnee: [20, -36], fKnee: [45, -45], pelvis: [12, -68],
     neck: [21, -111], head: [28, -122], nShoulder: [18, -103], fShoulder: [30, -106],
-    nElbow: [12, -88], fElbow: [40, -92], hands: [28, -96], batAng: 0.35, batLen: 56, twist: 0.35
+    nElbow: [12, -88], fElbow: [40, -92], hands: [28, -96], batYaw: -105, batPitch: 18, batLength: 64, twist: 0.35
   },
   CONTACT: {
     nFoot: [0, -3], fFoot: [38, -12], nKnee: [24, -36], fKnee: [44, -46], pelvis: [14, -68],
     neck: [24, -110], head: [32, -120], nShoulder: [22, -101], fShoulder: [34, -105],
-    nElbow: [30, -84], fElbow: [52, -90], hands: [46, -86], batAng: 1.62, batLen: 52, twist: 0.60
+    nElbow: [30, -84], fElbow: [52, -90], hands: [46, -86], batYaw: 15, batPitch: -12, batLength: 64, twist: 0.60
   },
   FOLLOW_TWO_HAND: {
     nFoot: [2, -3], fFoot: [38, -12], nKnee: [26, -34], fKnee: [44, -46], pelvis: [16, -68],
     neck: [28, -110], head: [36, -120], nShoulder: [30, -102], fShoulder: [22, -104],
-    nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batAng: -1.90, batLen: 58, twist: 1.0
+    nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batYaw: 195, batPitch: -25, batLength: 64, twist: 1.0
   },
   FOLLOW_ONE_HAND: {
     nFoot: [2, -3], fFoot: [38, -12], nKnee: [26, -34], fKnee: [44, -46], pelvis: [16, -68],
     neck: [28, -110], head: [36, -122], nShoulder: [28, -102], fShoulder: [22, -104],
     nElbow: [14, -92], fElbow: [48, -116], hands: [44, -138], nHand: [18, -96],
-    batAng: -2.35, batLen: 60, twist: 1.0
+    batYaw: 200, batPitch: -40, batLength: 64, twist: 1.0
   },
   CHECK_SWING: {
     nFoot: [0, -1], fFoot: [37, -11], nKnee: [20, -36], fKnee: [44, -45], pelvis: [11, -68],
     neck: [20, -112], head: [27, -122], nShoulder: [16, -104], fShoulder: [28, -106],
-    nElbow: [14, -92], fElbow: [38, -94], hands: [24, -98], batAng: 0.52, batLen: 58, twist: 0.28
+    nElbow: [14, -92], fElbow: [38, -94], hands: [24, -98], batYaw: -70, batPitch: 25, batLength: 64, twist: 0.28
   },
   TAKE: {
     nFoot: [0, 0], fFoot: [32, -10], nKnee: [18, -38], fKnee: [40, -45], pelvis: [8, -70],
     neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-4, -98], fElbow: [28, -94], hands: [10, -112], batAng: -0.50, batLen: 62, twist: 0.05
+    nElbow: [-4, -98], fElbow: [28, -94], hands: [10, -112], batYaw: -160, batPitch: 60, batLength: 64, twist: 0.05
   }
 };
 
@@ -613,8 +654,8 @@ export function generateBatterPoses(style) {
     hands: [B.STANCE.hands[0] + hx, B.STANCE.hands[1] + cr * 0.7 + hh],
     nElbow: [B.STANCE.nElbow[0] + hx * 0.5, B.STANCE.nElbow[1] + cr * 0.7 + hh * 0.6],
     fElbow: [B.STANCE.fElbow[0] + hx * 0.5, B.STANCE.fElbow[1] + cr * 0.7 + hh * 0.6],
-    batAng: ba,
-    batLen: bl,
+    ...stanceBat(ba),
+    batLength: bl,
     twist: 0
   };
 
@@ -637,8 +678,8 @@ export function generateBatterPoses(style) {
     hands: [B.LOAD.hands[0] + hx - 3, B.LOAD.hands[1] + cr * 0.7 + hh - 2],
     nElbow: [B.LOAD.nElbow[0] + hx * 0.5, B.LOAD.nElbow[1] + cr * 0.7 + hh * 0.6],
     fElbow: [B.LOAD.fElbow[0] + hx * 0.5, B.LOAD.fElbow[1] + cr * 0.7 + hh * 0.6],
-    batAng: ba - 0.22,
-    batLen: bl,
+    ...stanceBat(ba - 0.22),
+    batLength: bl,
     twist: -0.10
   };
 
@@ -652,12 +693,12 @@ export function generateBatterPoses(style) {
     neck: [B.STRIDE_PLANT.neck[0], B.STRIDE_PLANT.neck[1] + cr * 0.9],
     head: [B.STRIDE_PLANT.head[0], B.STRIDE_PLANT.head[1] + cr * 0.9],
     hands: [B.STRIDE_PLANT.hands[0] + hx * 0.5, B.STRIDE_PLANT.hands[1] + cr * 0.6 + hh * 0.7],
-    batAng: ba - 0.12,
-    batLen: bl,
+    ...stanceBat(ba - 0.12),
+    batLength: bl,
     twist: 0.10
   };
 
-  // 4. ROTATION & LAG
+  // 4. ROTATION & LAG: hands drop into the slot, barrel laid back toward the catcher
   const ROTATION = {
     ...B.ROTATION,
     fFoot: [B.ROTATION.fFoot[0] + sw + sl * 0.4, B.ROTATION.fFoot[1] + oc],
@@ -666,12 +707,12 @@ export function generateBatterPoses(style) {
     neck: [B.ROTATION.neck[0], B.ROTATION.neck[1] + cr * 0.8],
     head: [B.ROTATION.head[0], B.ROTATION.head[1] + cr * 0.8],
     hands: [B.ROTATION.hands[0] + hx * 0.3, B.ROTATION.hands[1] + cr * 0.5 + hh * 0.4],
-    batAng: B.ROTATION.batAng + aa * 0.4,
-    batLen: bl - 6,
+    batPitch: B.ROTATION.batPitch - aa * 0.4 / DEG,
+    batLength: bl,
     twist: 0.38
   };
 
-  // 5. CONTACT (Bat aligns with incoming ball at strike zone plane)
+  // 5. CONTACT: barrel squared up across the plate, dipped below the hands by the attack angle
   const CONTACT = {
     ...B.CONTACT,
     fFoot: [B.CONTACT.fFoot[0] + sw + sl * 0.4, B.CONTACT.fFoot[1] + oc],
@@ -680,8 +721,8 @@ export function generateBatterPoses(style) {
     neck: [B.CONTACT.neck[0], B.CONTACT.neck[1] + cr * 0.8],
     head: [B.CONTACT.head[0], B.CONTACT.head[1] + cr * 0.8],
     hands: [B.CONTACT.hands[0], B.CONTACT.hands[1] + cr * 0.5 - aa * 22],
-    batAng: B.CONTACT.batAng + aa,
-    batLen: bl - 10,
+    batPitch: B.CONTACT.batPitch - aa / DEG,
+    batLength: bl,
     twist: 0.62
   };
 
@@ -692,8 +733,8 @@ export function generateBatterPoses(style) {
     fKnee: [B.FOLLOW_TWO_HAND.fKnee[0] + sw * 0.5, B.FOLLOW_TWO_HAND.fKnee[1] + cr * 0.3],
     pelvis: [B.FOLLOW_TWO_HAND.pelvis[0] + 2, B.FOLLOW_TWO_HAND.pelvis[1] + cr * 0.8],
     hands: [B.FOLLOW_TWO_HAND.hands[0], B.FOLLOW_TWO_HAND.hands[1] - aa * 18],
-    batAng: B.FOLLOW_TWO_HAND.batAng - aa * 0.5,
-    batLen: bl - 4,
+    batPitch: B.FOLLOW_TWO_HAND.batPitch + aa * 0.5 / DEG,
+    batLength: bl,
     twist: 1.0
   };
 
@@ -705,8 +746,8 @@ export function generateBatterPoses(style) {
     pelvis: [B.FOLLOW_ONE_HAND.pelvis[0] + 2, B.FOLLOW_ONE_HAND.pelvis[1] + cr * 0.8],
     hands: [B.FOLLOW_ONE_HAND.hands[0] + 2, B.FOLLOW_ONE_HAND.hands[1] - aa * 24],
     nHand: [B.FOLLOW_ONE_HAND.nHand[0], B.FOLLOW_ONE_HAND.nHand[1] + cr * 0.5],
-    batAng: B.FOLLOW_ONE_HAND.batAng - aa * 0.6,
-    batLen: bl - 2,
+    batPitch: B.FOLLOW_ONE_HAND.batPitch + aa * 0.6 / DEG,
+    batLength: bl,
     twist: 1.0
   };
 
@@ -715,8 +756,9 @@ export function generateBatterPoses(style) {
     ...B.CHECK_SWING,
     fFoot: [B.CHECK_SWING.fFoot[0] + sw + sl * 0.3, B.CHECK_SWING.fFoot[1] + oc],
     hands: [B.CHECK_SWING.hands[0] + hx * 0.2, B.CHECK_SWING.hands[1] + cr * 0.5 + hh * 0.3],
-    batAng: clamp(0.52 + aa * 0.2, 0.35, 0.68), // wrists held firmly before breaking 90°
-    batLen: bl - 4,
+    // Wrists hold before the barrel crosses the front of the plate
+    batPitch: B.CHECK_SWING.batPitch - aa * 0.2 / DEG,
+    batLength: bl,
     twist: 0.28
   };
 
@@ -725,10 +767,21 @@ export function generateBatterPoses(style) {
     ...B.TAKE,
     fFoot: [B.TAKE.fFoot[0] + sw + sl * 0.2, B.TAKE.fFoot[1] + oc],
     hands: [B.TAKE.hands[0] + hx * 0.4, B.TAKE.hands[1] + cr * 0.6 + hh * 0.5],
-    batAng: ba + 0.05,
-    batLen: bl,
+    ...stanceBat(ba + 0.05),
+    batLength: bl,
     twist: 0.05
   };
+
+  // 10. EXTENSION: arms drive straight out after contact and the barrel points at the pitcher
+  const finish = style.followThrough === 'one_hand' ? FOLLOW_ONE_HAND : FOLLOW_TWO_HAND;
+  const EXTENSION = blendPose(CONTACT, finish, 0.3);
+  delete EXTENSION.nHand;
+  EXTENSION.hands = [CONTACT.hands[0] + 8, CONTACT.hands[1] - 6];
+  EXTENSION.nElbow = lerp2(EXTENSION.nShoulder, EXTENSION.hands, 0.5, 3);
+  EXTENSION.fElbow = lerp2(EXTENSION.fShoulder, EXTENSION.hands, 0.5, 2);
+  EXTENSION.batYaw = 80;
+  EXTENSION.batPitch = 4 - aa * 0.5 / DEG;
+  EXTENSION.twist = 0.8;
 
   return {
     STANCE,
@@ -736,6 +789,7 @@ export function generateBatterPoses(style) {
     STRIDE_PLANT,
     ROTATION,
     CONTACT,
+    EXTENSION,
     FOLLOW: style.followThrough === 'one_hand' ? FOLLOW_ONE_HAND : FOLLOW_TWO_HAND,
     FOLLOW_TWO_HAND,
     FOLLOW_ONE_HAND,
@@ -751,8 +805,10 @@ export function generateBatterPoses(style) {
  * - 0.00 to 0.42: Stance & waggle
  * - 0.42 to 0.58: Load
  * - 0.58 to 0.72: Stride plant
- * - 0.72 to 0.90: Rotation accelerating to CONTACT at exactly p = 0.90
- * - 0.90 to 1.00: Follow-through
+ * - 0.72 to 0.82: Launch, barrel dropping into the slot toward the catcher
+ * - 0.82 to 0.90: Barrel sweeping around to CONTACT at exactly p = 0.90
+ * - 0.90 to 0.94: Extension toward the pitcher
+ * - 0.94 to 1.00: Follow-through around the lead shoulder
  * - !didSwing: Check-swing / Take
  *
  * @param {Object} style - Batter style from getBatterStyle
@@ -781,7 +837,7 @@ export function getBatterSwingPose(style, pitchProg, didSwing, timeMs = 0) {
         // Joe Morgan iconic back-elbow flap
         const flap = Math.sin(tNow * rate * 1.35) * settle;
         pose.nElbow[1] += flap * 6.5;
-        pose.batAng = poses.STANCE.batAng + flap * 0.06;
+        pose.batPitch = poses.STANCE.batPitch + (flap * 0.06) / DEG;
         pose.hands[0] += flap * 0.8;
         break;
       }
@@ -791,7 +847,7 @@ export function getBatterSwingPose(style, pitchProg, didSwing, timeMs = 0) {
         const sy = Math.sin(tNow * rate) * settle;
         pose.hands[0] += cx * 2.2;
         pose.hands[1] += sy * 1.5;
-        pose.batAng = poses.STANCE.batAng + cx * 0.15;
+        pose.batPitch = poses.STANCE.batPitch + (cx * 0.15) / DEG;
         break;
       }
       case 'pump': {
@@ -799,7 +855,7 @@ export function getBatterSwingPose(style, pitchProg, didSwing, timeMs = 0) {
         const pump = Math.sin(tNow * rate * 1.15) * settle;
         pose.hands[0] += pump * 2.8;
         pose.hands[1] += pump * 0.9;
-        pose.batAng = poses.STANCE.batAng + pump * 0.18;
+        pose.batPitch = poses.STANCE.batPitch + (pump * 0.18) / DEG;
         break;
       }
       case 'twitch': {
@@ -807,12 +863,12 @@ export function getBatterSwingPose(style, pitchProg, didSwing, timeMs = 0) {
         const twitch = (Math.sin(tNow * rate * 1.6) * 0.7 + Math.sin(tNow * rate * 3.2) * 0.3) * settle;
         pose.hands[0] += twitch * 2.0;
         pose.hands[1] += twitch * 1.1;
-        pose.batAng = poses.STANCE.batAng + twitch * 0.22;
+        pose.batPitch = poses.STANCE.batPitch + (twitch * 0.22) / DEG;
         break;
       }
       case 'subtle': {
         const wag = Math.sin(tNow * rate * 0.85) * settle;
-        pose.batAng = poses.STANCE.batAng + wag * 0.08;
+        pose.batPitch = poses.STANCE.batPitch + (wag * 0.08) / DEG;
         pose.hands[0] += wag * 1.0;
         pose.hands[1] += wag * 0.6;
         break;
@@ -820,15 +876,31 @@ export function getBatterSwingPose(style, pitchProg, didSwing, timeMs = 0) {
       case 'standard':
       default: {
         const wag = Math.sin(tNow * rate) * settle;
-        pose.batAng = poses.STANCE.batAng + wag * 0.13;
+        pose.batPitch = poses.STANCE.batPitch + (wag * 0.13) / DEG;
         pose.hands[0] += wag * 1.6;
         pose.hands[1] += wag * 1.0;
         break;
       }
     }
-    return pose;
+    // Both arms ride along with the hands
+    const dhx = pose.hands[0] - poses.STANCE.hands[0];
+    const dhy = pose.hands[1] - poses.STANCE.hands[1];
+    pose.nElbow[0] += dhx * 0.6;
+    pose.nElbow[1] += dhy * 0.6;
+    pose.fElbow[0] += dhx * 0.6;
+    pose.fElbow[1] += dhy * 0.6;
+    return withScreenBat(pose);
   }
 
+  return withScreenBat(swingPhasePose(poses, style, pitchProg, didSwing));
+}
+
+/** Adds the bat's screen angle, screen length and depth to a pose aimed in 3D. */
+function withScreenBat(pose) {
+  return { ...pose, ...projectBat(pose.batYaw, pose.batPitch, pose.batLength) };
+}
+
+function swingPhasePose(poses, style, pitchProg, didSwing) {
   // 2. Load Phase (0.42 <= p < 0.58)
   if (pitchProg < 0.58) {
     const t = smooth((pitchProg - 0.42) / 0.16);
@@ -861,21 +933,26 @@ export function getBatterSwingPose(style, pitchProg, didSwing, timeMs = 0) {
     return blendPose(poses.STRIDE_PLANT, poses.TAKE, t * 0.9);
   }
 
-  // 5. Swing: Rotation & Lag (0.72 <= p < 0.82)
+  // The swing keeps moving through each keyframe instead of easing to a stop at it:
+  // it accelerates out of the stride, whips through the zone, and slows only at the finish.
+  // 5. Launch: barrel drops behind the hands into the slot (0.72 <= p < 0.82)
   if (pitchProg < 0.82) {
-    const t = smooth((pitchProg - 0.72) / 0.10);
-    return blendPose(poses.STRIDE_PLANT, poses.ROTATION, t);
+    const t = (pitchProg - 0.72) / 0.10;
+    return blendPose(poses.STRIDE_PLANT, poses.ROTATION, t * t);
   }
 
-  // 6. Swing: Drive to Contact (0.82 <= p < 0.90)
-  // Reaches EXACT CONTACT at p = 0.90!
+  // 6. Barrel sweeps around in front of the body to CONTACT at exactly p = 0.90
   if (pitchProg < 0.90) {
-    const t = smooth((pitchProg - 0.82) / 0.08);
-    return blendPose(poses.ROTATION, poses.CONTACT, t);
+    return blendPose(poses.ROTATION, poses.CONTACT, (pitchProg - 0.82) / 0.08);
   }
 
-  // 7. Follow-Through (0.90 <= p <= 1.00)
-  const followTarget = style.followThrough === 'one_hand' ? poses.FOLLOW_ONE_HAND : poses.FOLLOW_TWO_HAND;
-  const t = smooth((pitchProg - 0.90) / 0.10);
-  return blendPose(poses.CONTACT, followTarget, t);
+  // 7. Extension: barrel carries on away from the camera toward the pitcher
+  if (pitchProg < 0.94) {
+    return blendPose(poses.CONTACT, poses.EXTENSION, (pitchProg - 0.90) / 0.04);
+  }
+
+  // 8. Follow-through wraps the bat around the lead shoulder
+  const t = Math.min(1, (pitchProg - 0.94) / 0.06);
+  return blendPose(poses.EXTENSION, poses.FOLLOW, 1 - (1 - t) * (1 - t));
+
 }
