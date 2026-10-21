@@ -28,6 +28,18 @@ import { drawPixelBaseball, getVisualBallSpin, visualSpinAngle } from './basebal
 import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses, getReleasePointOffset } from './pitcherStyles.js';
 import { getBatterStyle, getBatterSwingPose, BASE_BATTER_POSES } from './batterStyles.js';
 
+/** Duel delivery timing: windup to release (progress 0.42), then ball flight to the end (1.0). */
+export const PITCH_WINDUP_MS = 800;
+export const PITCH_FLIGHT_MS = 420;
+export const PITCH_DELIVERY_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS;
+/** Milliseconds from pitch start until the ball reaches the plate (progress 0.92). */
+export const PITCH_PLATE_ARRIVAL_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS * (0.5 / 0.58);
+
+function pitchProgressAt(elapsedMs) {
+  if (elapsedMs <= PITCH_WINDUP_MS) return 0.42 * Math.max(0, elapsedMs) / PITCH_WINDUP_MS;
+  return Math.min(1, 0.42 + 0.58 * (elapsedMs - PITCH_WINDUP_MS) / PITCH_FLIGHT_MS);
+}
+
 // ---------------------------------------------------------------------------
 // Pixel-art sprites for the isometric field (fielders, runners, coaches, umpires).
 // Drawn facing right; mirrored when a player moves left.
@@ -1525,7 +1537,7 @@ export class FieldRenderer1987 {
         ctx.fill();
 
         const spin = getVisualBallSpin({ pitchType: this.pitchAnim.pitchType });
-        const tint = !putInPlay && t >= 0.85 ? (this.pitchAnim.isStrike ? '#ef4444' : '#22c55e') : null;
+        const tint = !putInPlay && t >= 0.65 ? (this.pitchAnim.isStrike ? '#ef4444' : '#22c55e') : null;
         drawPixelBaseball(ctx, b.x, b.y, radius, visualSpinAngle(spin.fps), { ...spin, tint });
       }
 
@@ -1593,11 +1605,30 @@ export class FieldRenderer1987 {
       const normZ = ((mark.plateZ ?? 2.5) - 1.55) / 2;
       const x = cx + (mark.plateX || 0) * (szW * 0.64);
       const y = szY + szH * (1 - Math.max(-0.35, Math.min(1.35, normZ)));
-      drawPixelBaseball(ctx, x, y, 3.5, 0, { axis: 'back', tint: mark.tint });
-      ctx.fillStyle = mark.tint;
+
+      // Subtle halo around crossing ball so it clearly pops against the catcher's mitt
+      ctx.fillStyle = 'rgba(7, 12, 24, 0.6)';
+      ctx.beginPath();
+      ctx.arc(x, y, 7.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      drawPixelBaseball(ctx, x, y, 5.5, 0, { axis: 'back', tint: mark.tint });
+
+      // Badge pill with label
+      const badgeText = mark.label;
       ctx.font = 'bold 9px monospace';
+      const textW = ctx.measureText(badgeText).width;
+      const badgeY = y - 11;
+      ctx.fillStyle = 'rgba(7, 12, 24, 0.88)';
+      ctx.fillRect(Math.round(x - textW / 2 - 3), Math.round(badgeY - 7), Math.round(textW + 6), 11);
+      ctx.strokeStyle = mark.tint;
+      ctx.lineWidth = 1;
+      ctx.strokeRect(Math.round(x - textW / 2 - 3), Math.round(badgeY - 7), Math.round(textW + 6), 11);
+
+      ctx.fillStyle = mark.tint;
       ctx.textAlign = 'center';
-      ctx.fillText(mark.label, x, y - 10);
+      ctx.textBaseline = 'middle';
+      ctx.fillText(badgeText, x, badgeY - 1.5);
     }
 
     // 10. Batter/Pitcher stat box over the stands
@@ -2138,13 +2169,11 @@ export class FieldRenderer1987 {
       callText: pitchStep.callText || pitchStep.outcome
     };
 
-    // Full 5-stage windup + pitch delivery takes ~720ms for smooth kinetic motion
-    const pitchDurationMs = 720;
+    // Windup (progress 0 -> 0.42) gets room to breathe; the pitch itself (0.42 -> 1) stays quick.
     const startTime = performance.now();
 
     const stepPitch = (now) => {
-      const elapsed = now - startTime;
-      this.pitchAnim.progress = Math.min(1, elapsed / pitchDurationMs);
+      this.pitchAnim.progress = pitchProgressAt(now - startTime);
       this.render(gameState);
 
       if (this.pitchAnim.progress < 1) {

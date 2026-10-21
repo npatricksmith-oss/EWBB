@@ -18,7 +18,7 @@ import { getEffectivePlatoonMatchup } from '../engine/statsMatrix.js';
 import { askEarlAdvisor } from '../engine/earlAI.js';
 import { EWBGameState } from '../engine/gameState.js';
 import { runStatisticalValidation } from '../engine/statsValidator.js';
-import { FieldRenderer1987 } from './fieldRenderer1987.js';
+import { FieldRenderer1987, PITCH_DELIVERY_MS, PITCH_PLATE_ARRIVAL_MS } from './fieldRenderer1987.js';
 import { HomeRunFireworks } from './fireworks.js';
 import { soundEngine } from './soundEngine.js';
 
@@ -26,7 +26,6 @@ import { soundEngine } from './soundEngine.js';
 const NARRATION_DELAY_MS = 300;
 const NARRATION_STAGGER_MS = 420;
 // Pitch delivery runs before the ball is in play; the field tape starts after it
-const PITCH_DELIVERY_MS = 720;
 const FIELD_FPS = 60;
 const HOME_RUN_FIREWORKS_DELAY_MS = 1000;
 
@@ -324,7 +323,7 @@ class EWBAppController {
         this.scheduleHomeRunFireworks(physicsResult);
       }
 
-      // Trigger authentic sound effects at plate arrival (~640ms into 720ms 5-stage windup)
+      // Trigger authentic sound effects at plate arrival
       setTimeout(() => {
         if (pitchStep.outcome === 'IN_PLAY') {
           const pwr = (pitchStep.launchVector?.exitVelocityMph || 90) / 105;
@@ -345,7 +344,7 @@ class EWBAppController {
         } else {
           soundEngine.playMittPop();
         }
-      }, 640);
+      }, PITCH_PLATE_ARRIVAL_MS);
 
       this.renderer.animatePlay(pitchStep, physicsResult, prePitchRenderState, () => {
         this.isAnimating = false;
