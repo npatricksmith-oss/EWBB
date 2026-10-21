@@ -111,6 +111,7 @@ EWBB/
     │   └── teams/             # Generated historical team datasets
     ├── engine/
     │   ├── statsMatrix.js     # Stage 1: Platoon matchup resolution & 3D launch vector generator
+    │   ├── batBallContact.js  # Shapes launch vectors from pitch and swing; adds spin/contact data
     │   ├── physicsEngine.js   # Stage 2: 3D ball flight, aerodynamics, wall collisions, fielding
     │   ├── earlAI.js          # "Ask Earl" advisory logic & automated manager decisions
     │   ├── gameState.js       # Rules state machine, box scores, substitutions, headless runner
@@ -118,6 +119,10 @@ EWBB/
     └── ui/
         ├── app.js             # UI controller, event handlers, Commissioner's Disk editor UI
         ├── fieldRenderer1987.js # HiDPI Canvas renderer (split-screen, full-field, sprites, replay)
+        ├── pitcherStyles.js   # Per-pitcher delivery styles and keyframes
+        ├── batterStyles.js    # Per-batter stances and swing phases
+        ├── baseballSprite.js  # Pixel baseball with rotating 3D seams
+        ├── fireworks.js       # Home run fireworks overlay
         └── soundEngine.js     # Web Audio API retro synthesizer
 ```
 

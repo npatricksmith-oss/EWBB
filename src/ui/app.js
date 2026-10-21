@@ -25,7 +25,7 @@ import { soundEngine } from './soundEngine.js';
 // Play-by-play lands after the field animation ends: first entry after this delay, then one per stagger step
 const NARRATION_DELAY_MS = 300;
 const NARRATION_STAGGER_MS = 420;
-// Pitch delivery runs before the ball is in play; the field tape starts after it
+// The field tape plays at this rate once the pitch delivery ends
 const FIELD_FPS = 60;
 const HOME_RUN_FIREWORKS_DELAY_MS = 1000;
 
