@@ -17,16 +17,11 @@ Claude Opus 5.5 and the worker agents record blockers and open questions here. A
 ### Question 1: Should the 1986–1990 MLBPA season disks be in scope?
 - The 26 MLB team rosters came on separate, paid MLBPA Player Stat Disks, not in the base game. This milestone covers only the base game's teams. The same pipeline (`bin/build_team.py`) can build any real team-season in minutes per team.
 
-### Question 2: Ballparks and managers for the new teams
-- `src/data/ballparks.js` has only Fenway, Memorial, Wrigley, and the Metrodome, and `src/data/managers.js` has only Weaver, Herzog, Anderson, and McNamara.
-- Current stand-ins:
-  - **Angels and Braves:** Memorial Stadium; the Angels get McNamara and the Braves get Herzog. Their real 1982 managers were Gene Mauch and Joe Torre.
-  - **AL era teams:** Fenway Park and Weaver.
-  - **NL era teams:** Wrigley Field and Herzog.
-- Add Anaheim Stadium, Atlanta-Fulton County Stadium, Mauch, and Torre?
-
 ### Question 3: Era teams use a designated hitter
 - The engine never lets pitchers bat, so every team, including NL and pre-1973 teams, fields nine hitters with a DH. Keep this, or add pitcher batting for NL and pre-1973 teams?
+
+### Resolved: Ballparks and managers for the new teams
+- Added Anaheim Stadium, Atlanta-Fulton County Stadium, Gene Mauch, and Joe Torre (`58b9692`). The Angels default to Anaheim and Mauch; the Braves to Atlanta-Fulton County and Torre.
 
 ### Resolved: Scope of "all teams included in the original 1987 game"
 - Built the 8 era all-star teams plus the 1982 Angels and Braves.
