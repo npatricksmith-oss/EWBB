@@ -1935,9 +1935,26 @@ export class FieldRenderer1987 {
     this.shadeLimb(ctx, fLeg, farUni, 1);
     drawFoot(pose.fFoot, pose.fKnee, false);
 
-    const fHand = pose.fHand || pose.hands;
-    const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
-    this.strokeLimb(ctx, fArm, darken(primary, 0.25));
+    // Two-handed grip: lead (far) hand at the bottom by the knob, rear (near) hand stacked above it.
+    // A one-handed follow-through releases the rear hand toward pose.nHand.
+    const gripAx = Math.sin(pose.batAng);
+    const gripAy = -Math.cos(pose.batAng);
+    const fHand = pose.fHand || [pose.hands[0] - gripAx * 4.5, pose.hands[1] - gripAy * 4.5];
+    const gripTop = [pose.hands[0] + gripAx * 4.5, pose.hands[1] + gripAy * 4.5];
+    let nHand = gripTop;
+    if (pose.nHand) {
+      const hold = Math.max(0, 1 - Math.hypot(pose.nHand[0] - pose.hands[0], pose.nHand[1] - pose.hands[1]) / 12);
+      nHand = [pose.nHand[0] + (gripTop[0] - pose.hands[0]) * hold, pose.nHand[1] + (gripTop[1] - pose.hands[1]) * hold];
+    }
+    const drawGlove = (hand, fill) => {
+      ctx.fillStyle = fill;
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.arc(hand[0], hand[1], 4.8, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fill();
+    };
 
     // Torso: spine from pelvis to neck, butt pushed back, chest forward
     const [px, py] = pose.pelvis;
@@ -1997,6 +2014,11 @@ export class FieldRenderer1987 {
     ctx.lineTo(px - bx * 11 + ux * 4, py - by * 11 + uy * 4);
     ctx.stroke();
 
+    // Far (lead) arm reaches across the chest to the bottom of the grip
+    const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
+    this.strokeLimb(ctx, fArm, darken(primary, 0.25));
+    this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, darken(primary, 0.25), darken(primary, 0.55)), 1);
+
     // Bat: tapered ash with a dark outline; motion smear while it whips through
     const drawBat = () => {
       const tip = batTip(pose);
@@ -2005,7 +2027,7 @@ export class FieldRenderer1987 {
       const len = Math.hypot(dx, dy) || 1;
       const ax = dx / len;
       const ay = dy / len;
-      const knob = [pose.hands[0] - ax * 7, pose.hands[1] - ay * 7];
+      const knob = [pose.hands[0] - ax * 11, pose.hands[1] - ay * 11];
       const nxp = -ay;
       const nyp = ax;
       ctx.fillStyle = '#d9b26a';
@@ -2074,33 +2096,19 @@ export class FieldRenderer1987 {
     ctx.arc(hx - 1, hy - 2, 8, Math.PI * 1.15, Math.PI * 1.45);
     ctx.stroke();
 
-    // Near (rear) arm in team undershirt sleeve, batting gloves on the grip
-    const nHand = pose.nHand || pose.hands;
+    // Near (rear) arm in team undershirt sleeve, then both batting gloves on the grip
     const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, nHand, 10]];
     this.strokeLimb(ctx, nArm, primary);
     this.shadeLimb(ctx, nArm, sleeveShade, 1);
+    drawGlove(fHand, '#d5dbe3');
+    drawGlove(nHand, '#f8fafc');
 
-    // Batting glove at rear hand
-    ctx.fillStyle = '#f8fafc';
-    ctx.strokeStyle = FIGURE_OUTLINE;
-    ctx.lineWidth = 1.8;
-    ctx.beginPath();
-    ctx.arc(nHand[0], nHand[1], 5, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.fill();
-
-    // Batting glove at lead hand if separated during one-handed follow-through
-    if (pose.nHand) {
-      ctx.fillStyle = '#f8fafc';
-      ctx.strokeStyle = FIGURE_OUTLINE;
-      ctx.lineWidth = 1.8;
-      ctx.beginPath();
-      ctx.arc(pose.hands[0], pose.hands[1], 4.8, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.fill();
+    if (batInFront) {
+      // Keep both hands wrapped over the handle
+      drawBat();
+      drawGlove(fHand, '#d5dbe3');
+      drawGlove(nHand, '#f8fafc');
     }
-
-    if (batInFront) drawBat();
 
     ctx.restore();
   }
