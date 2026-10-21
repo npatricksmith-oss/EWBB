@@ -37,7 +37,7 @@ export const PITCH_PLATE_ARRIVAL_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS * (0.5 /
 /** After a ball is put in play the duel view holds this long on the follow-through before the field view opens. */
 export const SWING_HOLD_MS = 900;
 /** The duel scene is drawn this much larger than its layout, anchored at the bottom, so the players fill the view. */
-const DUEL_ZOOM = 1.45;
+const DUEL_ZOOM = 1.35;
 
 function pitchProgressAt(elapsedMs) {
   if (elapsedMs <= PITCH_WINDUP_MS) return 0.42 * Math.max(0, elapsedMs) / PITCH_WINDUP_MS;
@@ -1282,6 +1282,59 @@ export class FieldRenderer1987 {
     return pat;
   }
 
+  /** Black spikes shoe in profile, toe toward +x, sole on the ground at `foot`. */
+  drawCleatSide(ctx, [fx, fy], onToe = false) {
+    ctx.save();
+    ctx.translate(fx, fy);
+    if (onToe) {
+      // Heel lifts as the back foot pivots on its toe
+      ctx.translate(12, 0);
+      ctx.rotate(-0.55);
+      ctx.translate(-12, 0);
+    }
+    ctx.fillStyle = '#111827';
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.moveTo(-6, 0.5);
+    ctx.lineTo(-6.5, -5.5);
+    ctx.quadraticCurveTo(-3, -9, 2, -8);
+    ctx.quadraticCurveTo(9, -6.5, 13, -2.5);
+    ctx.quadraticCurveTo(14.5, 0.5, 12, 0.5);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#9ca3af';
+    ctx.fillRect(-5.5, -1.2, 17.5, 1.4);
+    ctx.strokeStyle = '#f8fafc';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(-0.5, -2.6);
+    ctx.lineTo(4, -6.6);
+    ctx.moveTo(3, -2.6);
+    ctx.lineTo(7, -5.8);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  /** Black spikes shoe seen toe-on from the plate, sole on the ground at `foot`. */
+  drawCleatFront(ctx, [fx, fy]) {
+    ctx.fillStyle = '#111827';
+    ctx.strokeStyle = FIGURE_OUTLINE;
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    ctx.moveTo(fx - 5.5, fy + 2.5);
+    ctx.lineTo(fx - 5.5, fy - 0.5);
+    ctx.quadraticCurveTo(fx - 5, fy - 4.5, fx, fy - 5);
+    ctx.quadraticCurveTo(fx + 5, fy - 4.5, fx + 5.5, fy - 0.5);
+    ctx.lineTo(fx + 5.5, fy + 2.5);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = '#9ca3af';
+    ctx.fillRect(fx - 5, fy + 1, 10, 1.3);
+  }
+
   /**
    * Strokes a jointed limb: outline pass for every segment, then the fill pass,
    * so joints read as one shape. `segs` is [[from, to, width], ...].
@@ -1362,7 +1415,8 @@ export class FieldRenderer1987 {
     const dirtTop = vp.y + 404;
     const moundY = vp.y + 366;
     const plateY = vp.y + 428;
-    const batterFootY = vp.y + 474;
+    // The batter stands in the box level with the plate, just behind its front edge
+    const batterFootY = plateY + 22;
 
     // 1. Upper stands: speckled crowd, slightly dimmed so the players pop
     ctx.fillStyle = this.getCrowdPattern(ctx);
@@ -1479,11 +1533,11 @@ export class FieldRenderer1987 {
     ctx.closePath();
     ctx.fill();
 
-    // Faint strike-zone frame above the plate
+    // Faint strike-zone frame above the plate, from the batter's knees to mid-torso
     const szW = 34;
     const szH = 56;
     const szX = cx - szW / 2;
-    const szY = plateY - 54;
+    const szY = batterFootY - 96;
     ctx.strokeStyle = 'rgba(245, 185, 66, 0.3)';
     ctx.lineWidth = 1;
     ctx.setLineDash([4, 4]);
@@ -1560,11 +1614,13 @@ export class FieldRenderer1987 {
         const travel = Math.min(1, (t - 0.94) / 0.06) + (this.pitchAnim.holdT || 0) * 4;
         const spray = (launch.sprayAngleDeg || 0) * Math.PI / 180;
         const lift = (launch.launchAngleDeg ?? 12) * Math.PI / 180;
-        const dx = Math.sin(spray) * Math.cos(lift);
-        const dy = -Math.sin(lift) - Math.cos(spray) * 0.15;
+        // Perspective: the ball heads away from the camera, so it shrinks and climbs toward the
+        // horizon as it goes, lifted further by its launch angle.
+        const dist = 1 + travel * 1.8;
+        const bx = contact.x + (Math.sin(spray) * Math.cos(lift) * travel * 120) / dist;
+        const by = contact.y - (Math.sin(lift) * travel * 110 + travel * 30) / dist;
         const spin = getVisualBallSpin(this.pitchAnim.ballSpin);
-        drawPixelBaseball(ctx, contact.x + dx * travel * 55, contact.y + dy * travel * 46,
-          4 + travel * 2.2, visualSpinAngle(spin.fps), spin);
+        drawPixelBaseball(ctx, bx, by, Math.max(1, 5 / dist), visualSpinAngle(spin.fps), spin);
       }
     }
 
@@ -1573,7 +1629,7 @@ export class FieldRenderer1987 {
     if (batterSide === 'S') {
       batterSide = pitcher && pitcher.throws === 'L' ? 'R' : 'L';
     }
-    const batterX = batterSide === 'R' ? cx - 86 : cx + 86;
+    const batterX = batterSide === 'R' ? cx - 64 : cx + 64;
     this.drawDuelBatter(
       ctx,
       batterX,
@@ -1828,18 +1884,15 @@ export class FieldRenderer1987 {
     const hipW = pose.hipW ?? 1;
     const pelvisT = [pose.pelvis[0] - 6 * hipW, pose.pelvis[1]];
     const pelvisG = [pose.pelvis[0] + 6 * hipW, pose.pelvis[1]];
-    const tLeg = [[pelvisT, pose.tKnee, 12], [pose.tKnee, pose.tFoot, 10]];
-    const gLeg = [[pelvisG, pose.gKnee, 12], [pose.gKnee, pose.gFoot, 10]];
-    for (const [leg, foot, knee] of [[tLeg, pose.tFoot, pose.tKnee], [gLeg, pose.gFoot, pose.gKnee]]) {
+    for (const [hip, knee, foot] of [[pelvisT, pose.tKnee, pose.tFoot], [pelvisG, pose.gKnee, pose.gFoot]]) {
+      // Stirrup from the pant cuff to the ankle, then the shoe toe-on to the camera, then the pants
+      const ankle = [foot[0], foot[1] - 4];
+      const cuff = [lerp(knee[0], ankle[0], 0.5), lerp(knee[1], ankle[1], 0.5)];
+      this.strokeLimb(ctx, [[cuff, ankle, 6.5]], primary);
+      this.drawCleatFront(ctx, foot);
+      const leg = [[hip, knee, 12], [knee, cuff, 10]];
       this.strokeLimb(ctx, leg, uni);
       this.shadeLimb(ctx, leg, shade, 1);
-      const sx = lerp(foot[0], knee[0], 0.4);
-      const sy = lerp(foot[1], knee[1], 0.4);
-      this.strokeLimb(ctx, [[[sx, sy], foot, 7]], primary);
-      ctx.fillStyle = FIGURE_OUTLINE;
-      ctx.beginPath();
-      ctx.ellipse(foot[0], foot[1] + 1, 6, 3.2, 0, 0, Math.PI * 2);
-      ctx.fill();
     }
 
     // Torso: tapered jersey with dithered shadow side, team lettering and belt
@@ -1951,28 +2004,23 @@ export class FieldRenderer1987 {
     const farUni = this.getDitherPattern(ctx, uniShade, uni);
     const sleeveShade = this.getDitherPattern(ctx, primary, darken(primary, 0.45));
 
-    const drawFoot = (foot, knee, isRear = false) => {
-      const sx = lerp(foot[0], knee[0], 0.35);
-      const sy = lerp(foot[1], knee[1], 0.35);
-      this.strokeLimb(ctx, [[[sx, sy], [foot[0], foot[1] - 2], 9]], primary);
-      ctx.fillStyle = FIGURE_OUTLINE;
-      ctx.beginPath();
-      if (isRear && foot[1] < -0.8) {
-        // Pivoted up on the ball of the rear foot
-        ctx.ellipse(foot[0] + 3, foot[1] + 1, 6, 6, Math.PI * 0.25, 0, Math.PI * 2);
-      } else {
-        ctx.ellipse(foot[0] + 5, foot[1], 9, 4, 0, 0, Math.PI * 2);
-      }
-      ctx.fill();
-      ctx.fillStyle = '#334155';
-      ctx.fillRect(foot[0] - 1, foot[1] - 3, 8, 1.5);
+    // Pants end at a cuff below the knee; the team stirrup runs from the cuff to the ankle,
+    // where a spikes shoe in profile sits flat on the ground (or up on its toe as the back foot pivots).
+    const ankleOf = (foot) => [foot[0] + 1, foot[1] - 6];
+    const cuffOf = (foot, knee) => {
+      const a = ankleOf(foot);
+      return [lerp(knee[0], a[0], 0.55), lerp(knee[1], a[1], 0.55)];
+    };
+    const drawLowerLeg = (foot, knee, onToe) => {
+      this.strokeLimb(ctx, [[cuffOf(foot, knee), ankleOf(foot), 8]], primary);
+      this.drawCleatSide(ctx, foot, onToe);
     };
 
     // Far (front) leg and far arm sit behind the body, so they get the darker dither
-    const fLeg = [[[pose.pelvis[0] + 4, pose.pelvis[1]], pose.fKnee, 16], [pose.fKnee, pose.fFoot, 12]];
+    drawLowerLeg(pose.fFoot, pose.fKnee, false);
+    const fLeg = [[[pose.pelvis[0] + 4, pose.pelvis[1]], pose.fKnee, 16], [pose.fKnee, cuffOf(pose.fFoot, pose.fKnee), 12]];
     this.strokeLimb(ctx, fLeg, uniShade);
     this.shadeLimb(ctx, fLeg, farUni, 1);
-    drawFoot(pose.fFoot, pose.fKnee, false);
 
     // Two-handed grip: lead (far) hand at the bottom by the knob, rear (near) hand stacked above it.
     // A one-handed follow-through releases the rear hand toward pose.nHand.
@@ -2032,7 +2080,9 @@ export class FieldRenderer1987 {
     ctx.fill();
 
     // Near (rear) leg with pants piping
-    const nLeg = [[[px - 2, py], pose.nKnee, 18], [pose.nKnee, pose.nFoot, 13]];
+    const nCuff = cuffOf(pose.nFoot, pose.nKnee);
+    drawLowerLeg(pose.nFoot, pose.nKnee, pose.nFoot[1] < -0.8);
+    const nLeg = [[[px - 2, py], pose.nKnee, 18], [pose.nKnee, nCuff, 13]];
     this.strokeLimb(ctx, nLeg, uni);
     this.shadeLimb(ctx, nLeg, shade, -1);
     ctx.strokeStyle = primary;
@@ -2040,9 +2090,8 @@ export class FieldRenderer1987 {
     ctx.beginPath();
     ctx.moveTo(px - 2 - 6, py + 2);
     ctx.lineTo(pose.nKnee[0] - 6, pose.nKnee[1]);
-    ctx.lineTo(lerp(pose.nKnee[0], pose.nFoot[0], 0.6) - 5, lerp(pose.nKnee[1], pose.nFoot[1], 0.6));
+    ctx.lineTo(nCuff[0] - 5, nCuff[1]);
     ctx.stroke();
-    drawFoot(pose.nFoot, pose.nKnee, true);
 
     // Belt
     ctx.strokeStyle = '#1b2333';

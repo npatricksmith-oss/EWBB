@@ -678,7 +678,8 @@ export function generateBatterPoses(style) {
     hands: [B.LOAD.hands[0] + hx - 3, B.LOAD.hands[1] + cr * 0.7 + hh - 2],
     nElbow: [B.LOAD.nElbow[0] + hx * 0.5, B.LOAD.nElbow[1] + cr * 0.7 + hh * 0.6],
     fElbow: [B.LOAD.fElbow[0] + hx * 0.5, B.LOAD.fElbow[1] + cr * 0.7 + hh * 0.6],
-    ...stanceBat(ba - 0.22),
+    // Tipped back in the load, but not so far the barrel leaves the duel view
+    ...stanceBat(Math.max(ba - 0.22, -0.85)),
     batLength: bl,
     twist: -0.10
   };
