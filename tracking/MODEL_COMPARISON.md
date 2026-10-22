@@ -21,5 +21,7 @@ One row per worker run. Wall time runs from launch to exit. Quality is the coord
 | 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 2 min 56 s | 3.4 KB | Useful again: the stretch and the stride still read square to the plate, and the shoulders opened too early. Fixed with narrower side-on hips, overlapping stretch legs, and shoulders that stay closed until the layback. |
 | 2026-10-22 | Round 6: same review after the side-on fixes | codex (`-i` images) | `gpt-6-luna` (medium effort) | 21 s | 0.5 KB | One point, and agy agreed: the release arm stays bent beside the head instead of reaching toward the plate. Fixed. |
 | 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 5 min 45 s | 2.0 KB | Said the side-on fixes landed. The same single point as Codex, with per-slot detail (overhand, sidearm, submarine) and the missing forward torso drive. Fixed. |
+| 2026-10-22 | Round 7: same review after the release fix | codex (`-i` images) | `gpt-6-luna` (medium effort) | 29 s | 0.4 KB | One point, wrong: it took the back number at the top of the lift for a front number, as in rounds 1 and 3. |
+| 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 3 min 53 s | 2.9 KB | One useful point: the stride looked narrow and upright. Fixed with a deeper stride toward the camera and a lower pelvis. Two wrong: the hand "swap" again, and "square at 0.20", though the body is side-on by then. |
 
 The research runs used `research/pitching_agent_reports/prompt.md`. The review runs got real frames and video. The research runs had only web search.

@@ -1887,9 +1887,11 @@ export class FieldRenderer1987 {
 
     const k = DUEL_PITCHER_SCALE;
     ctx.save();
+    // The shadow stretches down the mound under a front foot that has landed nearer the plate
+    const reach = Math.max(0, pose.gFoot[1]) * k;
     ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
     ctx.beginPath();
-    ctx.ellipse(x, footY, 13, 3.5, 0, 0, Math.PI * 2);
+    ctx.ellipse(x, footY + reach / 2, 13, 3.5 + reach / 2, 0, 0, Math.PI * 2);
     ctx.fill();
 
     ctx.translate(x, footY);
