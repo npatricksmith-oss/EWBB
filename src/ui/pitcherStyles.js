@@ -240,7 +240,7 @@ export function buildPitcherPoses(style) {
       gElbow: at(f.gEl),
       tHand: at(f.tHa),
       gHand: at(f.gHa),
-      hipW: 0.55 + 0.45 * Math.abs(Math.cos(hipTurn)),
+      hipW: 0.25 + 0.75 * Math.abs(Math.cos(hipTurn)),
       // 1 while the throwing arm is behind the body (drawn before the torso)
       tArmBack: f.tArmBack || 0,
       // How much of the jersey's back faces the plate: none while square or side-on (the stretch
@@ -272,7 +272,7 @@ export function buildPitcherPoses(style) {
   // rubber, front foot toward the plate. Seen from the plate the feet are nearly in line, the
   // front one nearer the camera. The hands are apart: the glove rests on the front thigh and
   // the throwing hand hangs behind the hip.
-  const stretchLegs = { tFoot: [-2, -1], gFoot: [5, 3], tKnee: [-3, -27], gKnee: [5, -25] };
+  const stretchLegs = { tFoot: [-1, -1], gFoot: [2, 3], tKnee: [-1, -27], gKnee: [2, -25] };
   const signFrame = {
     ...setFrame,
     ...stretchLegs,
@@ -308,13 +308,13 @@ export function buildPitcherPoses(style) {
   // Stretch leg lift: lower than the windup's, about belt height, and the knee stays in front
   // instead of tucking back. The hands rise a little at the set.
   const stretchKneeY = -52 - 10 * k;
-  const stretchKneeX = 5 - 3 * k;
+  const stretchKneeX = 2 - 3 * k;
   const stretchLiftFrame = {
     ...stretchFrame,
     turn: 88,
     pelvis: [-1, -51],
-    tFoot: [-2, -1],
-    tKnee: [-3, -27],
+    tFoot: [-1, -1],
+    tKnee: [-1, -27],
     gKnee: [stretchKneeX, stretchKneeY],
     gFoot: [stretchKneeX + 3, stretchKneeY + 24],
     tEl: [-6, setY + 3],
@@ -438,8 +438,8 @@ export function buildPitcherPoses(style) {
     ...strideFrame,
     pelvis: [0, -47 + sink * 0.8],
     lean: lean * 0.45,
-    turn: 62,
-    hipTurn: 30,
+    turn: 82,
+    hipTurn: 40,
     ...sl,
     tEl: [11, -27],
     tHa: [15, -16],
@@ -460,8 +460,8 @@ export function buildPitcherPoses(style) {
     gFootSide: 0.2,
     pelvis: pelvisAt(1),
     lean: lean * 0.6,
-    turn: 45,
-    hipTurn: 10,
+    turn: 65,
+    hipTurn: 15,
     neck: [0, -32],
     head: [headTurn, -41],
     headR: 8,
@@ -478,7 +478,7 @@ export function buildPitcherPoses(style) {
   const laybackFrame = {
     ...cockFrame,
     lean: lean * 0.8,
-    turn: 15,
+    turn: 25,
     hipTurn: -5,
     tEl: [sh.tSh[0] - 9, sh.tSh[1] - 1 + 3 * slotDrop],
     tHa: [sh.tSh[0] - 5 - 4 * Math.min(slotDrop, 1), sh.tSh[1] - 11 + 12 * slotDrop],

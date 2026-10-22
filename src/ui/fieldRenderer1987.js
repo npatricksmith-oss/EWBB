@@ -1860,7 +1860,7 @@ export class FieldRenderer1987 {
         const tx = t * t;
         let y = lerp(from[1], to[1], t * (2 - t));
         if (to[1] < pose.neck[1]) {
-          const clearCap = pose.head[1] - pose.headR - 5;
+          const clearCap = pose.head[1] - pose.headR - 1;
           y -= Math.max(0, y - clearCap) * Math.sin(Math.PI * tx);
         }
         pose.tHand = [lerp(from[0], to[0], tx), y];
