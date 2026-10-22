@@ -39,7 +39,7 @@ const REACH = 20;
 const ARM_SLOT_PROFILES = {
   overhand: { angle: 0, lean: -2, drop: 0, sink: 0, follow: [18, 56] },
   'three-quarter': { angle: 34, lean: 6, drop: 3, sink: 2, follow: [22, 44] },
-  sidearm: { angle: 84, lean: 14, drop: 7, sink: 3, follow: [28, 26] },
+  sidearm: { angle: 84, lean: 14, drop: 7, sink: 3, follow: [40, 22] },
   submarine: { angle: 150, lean: 26, drop: 14, sink: 10, follow: [24, 18] }
 };
 
@@ -358,7 +358,8 @@ export function buildPitcherPoses(style) {
   };
 
   // Pivot: the pivot foot turns and slides into the slot in front of the rubber, the body
-  // turns side-on, and overhead hands start down toward the head.
+  // turns side-on, and overhead hands come down to the chin, so they meet at the chest as the
+  // knee starts up.
   const pivotFrame = {
     ...rockerFrame,
     tFootSide: 1,
@@ -368,7 +369,7 @@ export function buildPitcherPoses(style) {
     gFoot: [8, -2],
     gKnee: [8, -28],
     turn: 70,
-    ...(high ? { tEl: [-10, -36], tHa: [-2, -46], gEl: [9, -35], gHa: [2, -45] } : {})
+    ...(high ? { tEl: [-9, -22], tHa: [-2, -29], gEl: [8, -21], gHa: [2, -28] } : {})
   };
 
   // Leg lift: high kickers coil past side-on so the plate sees the back of the jersey (Tiant
@@ -462,10 +463,10 @@ export function buildPitcherPoses(style) {
     gHa: [-12, -20]
   };
 
-  // Cocked arm: hips have fired but the shoulders are still closed. The elbow is up at
-  // shoulder height and the hand is laid back behind the head, lower for lower arm slots
-  // (beside the shoulder for sidearm, below it for submarine). The glove pulls in in front
-  // of the chest.
+  // Cocked arm: hips have fired but the shoulders are still closed. The elbow leads at
+  // shoulder height and the hand trails behind the head, lower and out to the side for lower
+  // arm slots (beside the shoulder for sidearm, below it for submarine). The glove pulls in
+  // in front of the chest.
   const sh = shoulders(d);
   // 0 overhand, about 0.4 three-quarter, 0.9 sidearm, 1.7 submarine
   const slotDrop = clamp(style.releaseAngle / 90, 0, 1.7);
@@ -482,7 +483,7 @@ export function buildPitcherPoses(style) {
     headR: 8,
     ...sh,
     tEl: [sh.tSh[0] - 9, sh.tSh[1] - 2 + 3 * slotDrop],
-    tHa: [sh.tSh[0] - 4 - 5 * Math.min(slotDrop, 1), sh.tSh[1] - 16 + 12 * slotDrop],
+    tHa: [sh.tSh[0] + 6 - 12 * Math.min(slotDrop, 1), sh.tSh[1] - 10 + 12 * slotDrop],
     tArmBack: 1,
     gEl: [9, -21],
     gHa: [3, -19]
@@ -494,6 +495,7 @@ export function buildPitcherPoses(style) {
   const laybackFrame = {
     ...cockFrame,
     lean: lean * 0.8,
+    flex: 0.12,
     turn: 25,
     hipTurn: -5,
     tEl: [sh.tSh[0] - 8, sh.tSh[1] - 4 + 4 * slotDrop],
@@ -507,7 +509,7 @@ export function buildPitcherPoses(style) {
   // over the front knee and the pelvis carried forward. The arm is fully extended, tipped out
   // toward the throwing side (less for low slots) so it reads straight and clear of the head,
   // and a little short because it also reaches toward the plate.
-  const releaseFlex = 0.22;
+  const releaseFlex = 0.3;
   const releaseSh = [sh.tSh[0], sh.tSh[1] * (1 - releaseFlex)];
   const releaseTip = Math.max(0, 25 - 20 * slotDrop);
   const releaseHa = add(releaseSh, armOffset(style.releaseAngle + releaseTip, lean).map((v) => v * 0.85));

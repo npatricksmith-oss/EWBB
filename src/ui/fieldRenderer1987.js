@@ -1813,7 +1813,7 @@ export class FieldRenderer1987 {
    * - 0.30–0.33 stride toward the plate, shoulders closed, front foot still in the air; the
    *   glove arm leads toward third and the throwing hand swings down and back past the hip
    * - 0.33–0.355 the front foot lands, the hips open and the throwing elbow rises
-   * - 0.355–0.385 the hand comes up behind the head into the cocked position, glove pulling in
+   * - 0.355–0.385 the elbow leads up and the hand trails behind the head; the glove pulls in
    * - 0.385–0.40 layback: the shoulders square, the elbow leads and the hand drops behind the head
    * - 0.40–0.42 the arm snaps through to the release
    * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
@@ -1849,22 +1849,10 @@ export class FieldRenderer1987 {
       if (prog < 0.3) return blendPose(leadIn(prog), breakPose, smooth((prog - 0.27) / 0.03));
       if (prog < 0.33) return blendPose(breakPose, P.STRIDE, smooth((prog - 0.3) / 0.03));
       if (prog < 0.355) return blendPose(P.STRIDE, P.LOAD, smooth((prog - 0.33) / 0.025));
-      // The elbow leads, so the hand comes up late. It rises on the far side first, then
-      // crosses to the cocked position; when that position is up by the head, the ball arcs
-      // over the cap instead of vanishing behind the head on the way.
+      // The elbow leads and the hand trails behind the head into the cock
       if (prog < 0.385) {
         const t = (prog - 0.355) / 0.03;
-        const pose = blendPose(P.LOAD, P.COCK, t * t);
-        const from = P.LOAD.tHand;
-        const to = P.COCK.tHand;
-        const tx = t * t;
-        let y = lerp(from[1], to[1], t * (2 - t));
-        if (to[1] < pose.neck[1]) {
-          const clearCap = pose.head[1] - pose.headR - 1;
-          y -= Math.max(0, y - clearCap) * Math.sin(Math.PI * tx);
-        }
-        pose.tHand = [lerp(from[0], to[0], tx), y];
-        return pose;
+        return blendPose(P.LOAD, P.COCK, t * t);
       }
       if (prog < 0.4) return blendPose(P.COCK, P.LAYBACK, smooth((prog - 0.385) / 0.015));
       // The whip runs at full speed through the release instead of easing into it
