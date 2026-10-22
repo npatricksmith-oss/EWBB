@@ -39,9 +39,11 @@ export const SWING_HOLD_MS = 900;
 /** The duel scene is drawn this much larger than its layout, anchored at the bottom, so the players fill the view. */
 const DUEL_ZOOM = 1.3;
 
+const FLIGHT_PROGRESS_PER_MS = 0.58 / PITCH_FLIGHT_MS;
+
 function pitchProgressAt(elapsedMs) {
   if (elapsedMs <= PITCH_WINDUP_MS) return 0.42 * Math.max(0, elapsedMs) / PITCH_WINDUP_MS;
-  return Math.min(1, 0.42 + 0.58 * (elapsedMs - PITCH_WINDUP_MS) / PITCH_FLIGHT_MS);
+  return Math.min(1, 0.42 + FLIGHT_PROGRESS_PER_MS * (elapsedMs - PITCH_WINDUP_MS));
 }
 
 // ---------------------------------------------------------------------------
@@ -1636,13 +1638,15 @@ export class FieldRenderer1987 {
 
     // 8. Batter in the box, filling the foreground
     const batterX = plateX - awayFromBatter * 88;
+    // The batter's clock keeps running past the end of the pitch so the follow-through can finish
+    const batterProg = pitchProg + (this.pitchAnim?.finishMs || 0) * FLIGHT_PROGRESS_PER_MS;
     this.drawDuelBatter(
       ctx,
       batterX,
       batterFootY,
       battingTeam,
       batterSide,
-      pitchProg,
+      batterProg,
       Boolean(this.pitchAnim && this.pitchAnim.swung),
       battingTeam === gameState.homeTeam
     );
@@ -2011,6 +2015,42 @@ export class FieldRenderer1987 {
     ctx.ellipse(16, 0, 40, 8, 0, 0, Math.PI * 2);
     ctx.fill();
 
+    // Bat: tapered ash with a dark outline
+    const drawBat = () => {
+      const tip = batTip(pose);
+      const dx = tip[0] - pose.hands[0];
+      const dy = tip[1] - pose.hands[1];
+      const len = Math.hypot(dx, dy) || 1;
+      const ax = dx / len;
+      const ay = dy / len;
+      const knob = [pose.hands[0] - ax * 11, pose.hands[1] - ay * 11];
+      const nxp = -ay;
+      const nyp = ax;
+      ctx.fillStyle = '#d9b26a';
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.moveTo(knob[0] + nxp * 1.6, knob[1] + nyp * 1.6);
+      ctx.lineTo(tip[0] + nxp * 3.4, tip[1] + nyp * 3.4);
+      // Round the barrel end outward, past the tip, not back into the bat
+      ctx.arc(tip[0], tip[1], 3.4, Math.atan2(nyp, nxp), Math.atan2(-nyp, -nxp), true);
+      ctx.lineTo(knob[0] - nxp * 1.6, knob[1] - nyp * 1.6);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+      ctx.strokeStyle = '#f3dca0';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(lerp(pose.hands[0], tip[0], 0.35) + nxp, lerp(pose.hands[1], tip[1], 0.35) + nyp);
+      ctx.lineTo(tip[0] + nxp, tip[1] + nyp);
+      ctx.stroke();
+    };
+
+    // After contact the barrel wraps past the pitcher's side to the far side of the batter,
+    // so it passes behind the body and helmet; only the gloves on the handle show in front.
+    const batBehind = pose.batDepth > 0.3 && pose.batYaw > 100;
+    if (batBehind) drawBat();
+
     const shade = this.getDitherPattern(ctx, uni, uniShade);
     const farUni = this.getDitherPattern(ctx, uniShade, uni);
     const sleeveShade = this.getDitherPattern(ctx, primary, darken(primary, 0.45));
@@ -2121,39 +2161,9 @@ export class FieldRenderer1987 {
     this.strokeLimb(ctx, fArm, leadSleeve);
     this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, leadSleeve, darken(primary, 0.55)), 1);
 
-    // Bat: tapered ash with a dark outline; motion smear while it whips through
-    const drawBat = () => {
-      const tip = batTip(pose);
-      const dx = tip[0] - pose.hands[0];
-      const dy = tip[1] - pose.hands[1];
-      const len = Math.hypot(dx, dy) || 1;
-      const ax = dx / len;
-      const ay = dy / len;
-      const knob = [pose.hands[0] - ax * 11, pose.hands[1] - ay * 11];
-      const nxp = -ay;
-      const nyp = ax;
-      ctx.fillStyle = '#d9b26a';
-      ctx.strokeStyle = FIGURE_OUTLINE;
-      ctx.lineWidth = 1.8;
-      ctx.beginPath();
-      ctx.moveTo(knob[0] + nxp * 1.6, knob[1] + nyp * 1.6);
-      ctx.lineTo(tip[0] + nxp * 3.4, tip[1] + nyp * 3.4);
-      // Round the barrel end outward, past the tip, not back into the bat
-      ctx.arc(tip[0], tip[1], 3.4, Math.atan2(nyp, nxp), Math.atan2(-nyp, -nxp), true);
-      ctx.lineTo(knob[0] - nxp * 1.6, knob[1] - nyp * 1.6);
-      ctx.closePath();
-      ctx.stroke();
-      ctx.fill();
-      ctx.strokeStyle = '#f3dca0';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(lerp(pose.hands[0], tip[0], 0.35) + nxp, lerp(pose.hands[1], tip[1], 0.35) + nyp);
-      ctx.lineTo(tip[0] + nxp, tip[1] + nyp);
-      ctx.stroke();
-    };
-
-    if (didSwing && pitchProg > 0.74 && pitchProg < 0.97) {
-      const prev = getBatterSwingPose(style, Math.max(0.72, pitchProg - 0.05), didSwing, tNow);
+    // Motion smear while the bat whips through
+    if (didSwing && pitchProg > 0.72 && pitchProg < 1.02) {
+      const prev = getBatterSwingPose(style, Math.max(0.70, pitchProg - 0.05), didSwing, tNow);
       const p0 = batTip(prev);
       const p1 = batTip(pose);
       ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
@@ -2168,7 +2178,7 @@ export class FieldRenderer1987 {
 
     // The bat covers the body while its barrel swings on the catcher's side; an upright stance bat stays behind the helmet
     const batInFront = pose.batDepth < -0.2 && pose.batPitch < 40;
-    if (!batInFront) drawBat();
+    if (!batInFront && !batBehind) drawBat();
 
     // Head: skin, batting helmet with ear flap and brim
     ctx.fillStyle = SKIN;
@@ -2294,6 +2304,7 @@ export class FieldRenderer1987 {
           const holdStart = performance.now();
           const holdSwing = (t) => {
             this.pitchAnim.holdT = Math.min(1, (t - holdStart) / SWING_HOLD_MS);
+            this.pitchAnim.finishMs = t - holdStart;
             this.render(gameState);
             if (this.pitchAnim.holdT < 1) {
               this._rafId = requestAnimationFrame(holdSwing);
@@ -2303,11 +2314,20 @@ export class FieldRenderer1987 {
           };
           this._rafId = requestAnimationFrame(holdSwing);
         } else {
-          setTimeout(() => {
+          // Let a swing-and-miss or foul finish its follow-through before the duel resets
+          const settleStart = performance.now();
+          const settle = (t) => {
+            this.pitchAnim.finishMs = t - settleStart;
+            this.render(gameState);
+            if (this.pitchAnim.finishMs < 480) {
+              this._rafId = requestAnimationFrame(settle);
+              return;
+            }
             this.pitchAnim = null;
             this.render(gameState);
             if (onComplete) onComplete();
-          }, 480);
+          };
+          this._rafId = requestAnimationFrame(settle);
         }
       }
     };

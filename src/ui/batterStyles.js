@@ -29,14 +29,15 @@
  * - Reggie Jackson: "Mr. October" high hands, wide base, dramatic leg kick, violent
  *   rotational uppercut, towering one-handed follow-through holding the finish.
  *
- * Swing Phases & Timing Contract (pitchProg: 0.0 -> 1.0):
+ * Swing Phases & Timing Contract (pitchProg: 0.0 -> 1.0, then past 1 for the finish):
  * - 0.00 – 0.42: Stance & Idle Waggle (settles smoothly before pitch release)
- * - 0.42 – 0.58: Load (hands drift back/up into power slot, weight shifts to rear leg, stride begins)
- * - 0.58 – 0.72: Stride Plant (front foot plants, hips brace, elastic tension)
- * - 0.72 – 0.90: Swing Acceleration:
- *     0.72 – 0.82: Hip/shoulder rotation, rear knee drives down/in ("squish bug"), bat lags behind hands
- *     0.82 – 0.90: Violent wrist snap through zone reaching CONTACT at EXACTLY p = 0.90
- * - 0.90 – 1.00: Follow-Through (one-hand high extension vs two-hand wrap)
+ * - 0.42 – 0.54: Load (hands drift back/up into power slot, weight shifts to rear leg, stride begins)
+ * - 0.54 – 0.70: Stride Plant (front foot plants, hips brace, elastic tension)
+ * - 0.70 – 0.90: Swing Acceleration:
+ *     0.70 – 0.80: Hip/shoulder rotation, rear knee drives down/in ("squish bug"), bat lags behind hands
+ *     0.80 – 0.90: Violent wrist snap through zone reaching CONTACT at EXACTLY p = 0.90
+ * - 0.90 – 1.32: Extension toward the pitcher, then the wrap to the field side of the batter
+ *   (one-hand high finish vs two-hand wrap)
  * - !didSwing: Check-swing / Take (holds up wrists at check angle or disciplined take watching mitt)
  */
 
@@ -134,17 +135,17 @@ export const BASE_BATTER_POSES = {
   STANCE: {
     nFoot: [0, 0], fFoot: [28, -10], nKnee: [18, -38], fKnee: [38, -46], pelvis: [8, -70],
     neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-6, -98], fElbow: [32, -95], hands: [10, -114], batYaw: -160, batPitch: 58, batLength: 64, twist: 0
+    nElbow: [-4, -96], fElbow: [22, -95], hands: [6, -113], batYaw: -160, batPitch: 58, batLength: 64, twist: 0
   },
   LOAD: {
     nFoot: [0, 0], fFoot: [32, -14], nKnee: [14, -38], fKnee: [40, -50], pelvis: [4, -69],
     neck: [14, -114], head: [20, -125], nShoulder: [8, -106], fShoulder: [20, -108],
-    nElbow: [-12, -102], fElbow: [26, -99], hands: [2, -118], batYaw: -160, batPitch: 47, batLength: 64, twist: -0.08
+    nElbow: [-10, -100], fElbow: [16, -99], hands: [0, -117], batYaw: -160, batPitch: 47, batLength: 64, twist: -0.08
   },
   STRIDE_PLANT: {
     nFoot: [0, 0], fFoot: [36, -10], nKnee: [16, -38], fKnee: [46, -44], pelvis: [8, -68],
     neck: [18, -112], head: [24, -123], nShoulder: [12, -105], fShoulder: [26, -107],
-    nElbow: [-8, -98], fElbow: [30, -96], hands: [6, -115], batYaw: -160, batPitch: 52, batLength: 64, twist: 0.08
+    nElbow: [-6, -97], fElbow: [20, -96], hands: [3, -114], batYaw: -160, batPitch: 52, batLength: 64, twist: 0.08
   },
   ROTATION: {
     nFoot: [0, -2], fFoot: [38, -11], nKnee: [24, -35], fKnee: [45, -45], pelvis: [13, -68],
@@ -159,13 +160,13 @@ export const BASE_BATTER_POSES = {
   FOLLOW_TWO_HAND: {
     nFoot: [2, -3], fFoot: [38, -12], nKnee: [31, -32], fKnee: [44, -46], pelvis: [17, -67],
     neck: [24, -111], head: [30, -121], nShoulder: [30, -102], fShoulder: [22, -104],
-    nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batYaw: 195, batPitch: -25, batLength: 64, twist: 1.0
+    nElbow: [48, -112], fElbow: [30, -118], hands: [40, -130], batYaw: 155, batPitch: -15, batLength: 64, twist: 1.0
   },
   FOLLOW_ONE_HAND: {
     nFoot: [2, -3], fFoot: [38, -12], nKnee: [31, -32], fKnee: [44, -46], pelvis: [17, -67],
     neck: [24, -111], head: [30, -123], nShoulder: [28, -102], fShoulder: [22, -104],
     nElbow: [14, -92], fElbow: [48, -116], hands: [44, -138], nHand: [18, -96],
-    batYaw: 200, batPitch: -40, batLength: 64, twist: 1.0
+    batYaw: 165, batPitch: -25, batLength: 64, twist: 1.0
   },
   CHECK_SWING: {
     nFoot: [0, -1], fFoot: [37, -11], nKnee: [20, -36], fKnee: [44, -45], pelvis: [11, -68],
@@ -175,7 +176,7 @@ export const BASE_BATTER_POSES = {
   TAKE: {
     nFoot: [0, 0], fFoot: [32, -10], nKnee: [18, -38], fKnee: [40, -45], pelvis: [8, -70],
     neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-4, -98], fElbow: [31, -96], hands: [10, -112], batYaw: -160, batPitch: 60, batLength: 64, twist: 0.05
+    nElbow: [-2, -96], fElbow: [21, -96], hands: [6, -112], batYaw: -160, batPitch: 60, batLength: 64, twist: 0.05
   }
 };
 
@@ -679,7 +680,7 @@ export function generateBatterPoses(style) {
     nElbow: [B.LOAD.nElbow[0] + hx * 0.5, B.LOAD.nElbow[1] + cr * 0.7 + hh * 0.6],
     fElbow: [B.LOAD.fElbow[0] + hx * 0.5, B.LOAD.fElbow[1] + cr * 0.7 + hh * 0.6],
     // Tipped back in the load, but not so far the barrel leaves the duel view
-    ...stanceBat(Math.max(ba - 0.22, -0.85)),
+    ...stanceBat(Math.max(ba - 0.15, -0.8)),
     batLength: bl,
     twist: -0.10
   };
@@ -777,12 +778,22 @@ export function generateBatterPoses(style) {
   const finish = style.followThrough === 'one_hand' ? FOLLOW_ONE_HAND : FOLLOW_TWO_HAND;
   const EXTENSION = blendPose(CONTACT, finish, 0.3);
   delete EXTENSION.nHand;
-  EXTENSION.hands = [CONTACT.hands[0] + 8, CONTACT.hands[1] - 6];
+  EXTENSION.hands = [CONTACT.hands[0] + 10, CONTACT.hands[1] - 6];
   EXTENSION.nElbow = lerp2(EXTENSION.nShoulder, EXTENSION.hands, 0.5, 3);
   EXTENSION.fElbow = lerp2(EXTENSION.fShoulder, EXTENSION.hands, 0.5, 2);
-  EXTENSION.batYaw = 80;
+  EXTENSION.batYaw = 85;
   EXTENSION.batPitch = 4 - aa * 0.5 / DEG;
   EXTENSION.twist = 0.8;
+
+  // 11. WRAP: hands rise toward the lead shoulder as the barrel climbs past the pitcher's side
+  const WRAP = blendPose(EXTENSION, finish, 0.5);
+  delete WRAP.nHand;
+  WRAP.hands = [CONTACT.hands[0] + 2, CONTACT.hands[1] - 26];
+  WRAP.nElbow = lerp2(WRAP.nShoulder, WRAP.hands, 0.55, 4);
+  WRAP.fElbow = lerp2(WRAP.fShoulder, WRAP.hands, 0.45, -2);
+  WRAP.batYaw = 120;
+  WRAP.batPitch = 22;
+  WRAP.twist = 0.92;
 
   return {
     STANCE,
@@ -791,6 +802,7 @@ export function generateBatterPoses(style) {
     ROTATION,
     CONTACT,
     EXTENSION,
+    WRAP,
     FOLLOW: style.followThrough === 'one_hand' ? FOLLOW_ONE_HAND : FOLLOW_TWO_HAND,
     FOLLOW_TWO_HAND,
     FOLLOW_ONE_HAND,
@@ -804,12 +816,13 @@ export function generateBatterPoses(style) {
  *
  * Keeps the timing contract intact:
  * - 0.00 to 0.42: Stance & waggle
- * - 0.42 to 0.58: Load
- * - 0.58 to 0.72: Stride plant
- * - 0.72 to 0.82: Launch, barrel dropping into the slot toward the catcher
- * - 0.82 to 0.90: Barrel sweeping around to CONTACT at exactly p = 0.90
- * - 0.90 to 0.94: Extension toward the pitcher
- * - 0.94 to 1.00: Follow-through around the lead shoulder
+ * - 0.42 to 0.54: Load
+ * - 0.54 to 0.70: Stride plant
+ * - 0.70 to 0.80: Launch, barrel dropping into the slot toward the catcher
+ * - 0.80 to 0.90: Barrel sweeping around to CONTACT at exactly p = 0.90
+ * - 0.90 to 0.97: Extension toward the pitcher
+ * - 0.97 to 1.10: Wrap, hands rising as the barrel passes the pitcher's side
+ * - 1.10 to 1.32: Finish over the lead shoulder (p runs past 1 after the pitch ends)
  * - !didSwing: Check-swing / Take
  *
  * @param {Object} style - Batter style from getBatterStyle
@@ -902,26 +915,26 @@ function withScreenBat(pose) {
 }
 
 function swingPhasePose(poses, style, pitchProg, didSwing) {
-  // 2. Load Phase (0.42 <= p < 0.58)
-  if (pitchProg < 0.58) {
-    const t = smooth((pitchProg - 0.42) / 0.16);
+  // 2. Load Phase (0.42 <= p < 0.54)
+  if (pitchProg < 0.54) {
+    const t = smooth((pitchProg - 0.42) / 0.12);
     return blendPose(poses.STANCE, poses.LOAD, t);
   }
 
-  // 3. Stride Plant Phase (0.58 <= p < 0.72)
-  if (pitchProg < 0.72) {
-    const t = smooth((pitchProg - 0.58) / 0.14);
+  // 3. Stride Plant Phase (0.54 <= p < 0.70)
+  if (pitchProg < 0.70) {
+    const t = smooth((pitchProg - 0.54) / 0.16);
     return blendPose(poses.LOAD, poses.STRIDE_PLANT, t);
   }
 
-  // 4. Decision Point (p >= 0.72)
+  // 4. Decision Point (p >= 0.70)
   if (!didSwing) {
     // Check-swing vs Disciplined Take
     const agg = style.checkSwingAggression ?? 0.45;
     if (agg >= 0.42) {
       if (pitchProg < 0.84) {
         // Starts offering at pitch toward check-swing
-        const t = smooth((pitchProg - 0.72) / 0.12);
+        const t = smooth((pitchProg - 0.70) / 0.14);
         return blendPose(poses.STRIDE_PLANT, poses.CHECK_SWING, t);
       }
       // Wrists lock and ease back toward take posture while watching pitch into mitt
@@ -930,30 +943,36 @@ function swingPhasePose(poses, style, pitchProg, didSwing) {
     }
 
     // Straight disciplined take
-    const t = smooth((pitchProg - 0.72) / 0.28);
+    const t = smooth((pitchProg - 0.70) / 0.30);
     return blendPose(poses.STRIDE_PLANT, poses.TAKE, t * 0.9);
   }
 
   // The swing keeps moving through each keyframe instead of easing to a stop at it:
   // it accelerates out of the stride, whips through the zone, and slows only at the finish.
-  // 5. Launch: barrel drops behind the hands into the slot (0.72 <= p < 0.82)
-  if (pitchProg < 0.82) {
-    const t = (pitchProg - 0.72) / 0.10;
-    return blendPose(poses.STRIDE_PLANT, poses.ROTATION, t * t);
+  // 5. Launch: hips open, rear elbow slots, barrel drops behind the hands (0.70 <= p < 0.80)
+  if (pitchProg < 0.80) {
+    const t = (pitchProg - 0.70) / 0.10;
+    return blendPose(poses.STRIDE_PLANT, poses.ROTATION, Math.pow(t, 1.6));
   }
 
   // 6. Barrel sweeps around in front of the body to CONTACT at exactly p = 0.90
   if (pitchProg < 0.90) {
-    return blendPose(poses.ROTATION, poses.CONTACT, (pitchProg - 0.82) / 0.08);
+    return blendPose(poses.ROTATION, poses.CONTACT, (pitchProg - 0.80) / 0.10);
   }
 
-  // 7. Extension: barrel carries on away from the camera toward the pitcher
-  if (pitchProg < 0.94) {
-    return blendPose(poses.CONTACT, poses.EXTENSION, (pitchProg - 0.90) / 0.04);
+  // Past p = 1 the pitch is over and the caller keeps the clock running, so the
+  // follow-through gets about 300 ms from contact instead of the ball's last 70 ms.
+  // 7. Extension: arms lengthen after contact and the barrel heads toward the pitcher
+  if (pitchProg < 0.97) {
+    return blendPose(poses.CONTACT, poses.EXTENSION, (pitchProg - 0.90) / 0.07);
   }
 
-  // 8. Follow-through wraps the bat around the lead shoulder
-  const t = Math.min(1, (pitchProg - 0.94) / 0.06);
-  return blendPose(poses.EXTENSION, poses.FOLLOW, 1 - (1 - t) * (1 - t));
+  // 8. Wrap: hands rise and the barrel climbs past the pitcher's side of the batter
+  if (pitchProg < 1.10) {
+    return blendPose(poses.EXTENSION, poses.WRAP, (pitchProg - 0.97) / 0.13);
+  }
 
+  // 9. Finish: decelerate as the barrel settles over the lead shoulder on the field side
+  const t = Math.min(1, (pitchProg - 1.10) / 0.22);
+  return blendPose(poses.WRAP, poses.FOLLOW, 1 - (1 - t) * (1 - t));
 }
