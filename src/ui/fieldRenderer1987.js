@@ -25,7 +25,7 @@ import { getWallAtAngle } from '../data/ballparks.js';
 import { getInitialFielderPositions } from '../engine/physicsEngine.js';
 import { getLastName } from '../data/rosters.js';
 import { drawPixelBaseball, getVisualBallSpin, visualSpinAngle } from './baseballSprite.js';
-import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses, getReleasePointOffset } from './pitcherStyles.js';
+import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses, getReleasePointOffset, strideApproachScale } from './pitcherStyles.js';
 import { getBatterStyle, getBatterSwingPose, hashString, BASE_BATTER_POSES } from './batterStyles.js';
 
 /**
@@ -1817,7 +1817,7 @@ export class FieldRenderer1987 {
    * - 0.385–0.40 layback: the shoulders square, the elbow leads and the hand drops behind the head
    * - 0.40–0.42 the arm snaps through to the release
    * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
-   * - 0.42–0.70 follow-through across to the glove-side knee, the back leg lifts
+   * - 0.42–0.62 follow-through across to the glove-side knee, the torso folds, the back leg lifts
    */
   drawDuelPitcher(ctx, x, footY, team, pitcher, progress, isStretch = false, isHome = true) {
     const style = getPitcherStyle(pitcher);
@@ -1869,7 +1869,7 @@ export class FieldRenderer1987 {
       if (prog < 0.4) return blendPose(P.COCK, P.LAYBACK, smooth((prog - 0.385) / 0.015));
       // The whip runs at full speed through the release instead of easing into it
       if (prog < 0.42) return blendPose(P.LAYBACK, P.RELEASE, (prog - 0.4) / 0.02);
-      const t = Math.min(1, (prog - 0.42) / 0.28);
+      const t = Math.min(1, (prog - 0.42) / 0.2);
       return blendPose(P.RELEASE, P.FOLLOW, 1 - (1 - t) * (1 - t));
     };
     let pose;
@@ -1885,7 +1885,8 @@ export class FieldRenderer1987 {
       pose = poseAt(progress);
     }
 
-    const k = DUEL_PITCHER_SCALE;
+    // The figure grows a little as the stride carries the body toward the plate
+    const k = DUEL_PITCHER_SCALE * strideApproachScale(pose);
     ctx.save();
     // The shadow stretches down the mound under a front foot that has landed nearer the plate
     const reach = Math.max(0, pose.gFoot[1]) * k;

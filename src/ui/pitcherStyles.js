@@ -18,6 +18,16 @@
 /** Screen pixels per keyframe unit at the duel pitcher's scale. */
 export const DUEL_PITCHER_SCALE = 0.66;
 
+/**
+ * How much larger the pitcher draws once his front foot has landed down the mound: the body
+ * has moved toward the plate, and so toward the camera.
+ * @param {Object} pose a keyframe pose (or a blend of them)
+ * @returns {number} scale factor, 1 on the rubber up to 1.08 at full stride
+ */
+export function strideApproachScale(pose) {
+  return 1 + 0.08 * clamp(pose.gFoot[1] / 16, 0, 1);
+}
+
 /** Arm length from shoulder to hand, in keyframe units. */
 const REACH = 20;
 
@@ -528,14 +538,14 @@ export function buildPitcherPoses(style) {
   const followFrame = {
     ...releaseFrame,
     tFootSide: 0,
-    tFoot: [-14, -20 - 34 * backKick],
+    tFoot: [-14, -24 - 40 * backKick],
     gFoot: [4, 16],
     tKnee: [-9, -30],
     gKnee: [4, -12],
     pelvis: [2, -37 + sink * 0.6],
     turn: -40,
     hipTurn: -35,
-    flex: 0.36,
+    flex: 0.45,
     headR: 9.5,
     tEl: midpoint(sh.tSh, followHa, 5, -2),
     tHa: followHa,
@@ -589,7 +599,9 @@ export function getPitcherPoses(style) {
  */
 export function getReleasePointOffset(pitcher, unit = DUEL_PITCHER_SCALE) {
   const style = getPitcherStyle(pitcher);
-  const [hx, hy] = getPitcherPoses(style).RELEASE.tHand;
+  const release = getPitcherPoses(style).RELEASE;
+  const [hx, hy] = release.tHand;
+  const u = unit * strideApproachScale(release);
   const mirror = pitcher?.throws === 'L' ? -1 : 1;
-  return { dx: hx * unit * mirror, dy: hy * unit };
+  return { dx: hx * u * mirror, dy: hy * u };
 }

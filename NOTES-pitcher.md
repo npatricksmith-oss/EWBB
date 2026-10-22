@@ -57,7 +57,7 @@ The lead-in follows the windup vs. stretch research in `research/pitching_windup
 | 0.385–0.40 | `LAYBACK`: shoulders nearly square, the elbow leads beside the head and the ball drops behind it | same |
 | 0.40–0.42 | The whip into release, at full speed. | same |
 | 0.42 | `RELEASE`: the arm fully extended, tipped out to the throwing side (less for low slots), the chest driven out over a braced front leg. | same |
-| 0.42–0.70 | `FOLLOW`: the arm sweeps across to the glove-side knee and the torso folds deep; the back foot lifts on high-kick deliveries. | same |
+| 0.42–0.62 | `FOLLOW`: the arm sweeps across to the glove-side knee and the torso folds deep; the back foot lifts on high-kick deliveries. | same |
 
 Both deliveries use `tempo` as an ease exponent on their first phase. While a pose's `back` is above 0.5, the renderer draws both arms behind the jersey, shows the number, and swaps the hips. Whenever the body is side-on or coiled (`front` below 0.35), the head turns to profile, looking in over the glove shoulder. A knee lifted above the hip is drawn in front of the jersey. `tFootSide` and `gFootSide` (0 toe-on, 1 along the rubber) turn each cleat; the pivot foot lies along the rubber from the pivot (or the stretch) until it drags off at release.
 
