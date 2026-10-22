@@ -387,7 +387,9 @@ export function buildPitcherPoses(style) {
   // Stride: the front foot lands toward the plate while the shoulders stay closed (high kickers
   // still nearly side-on). The glove arm leads, out toward third base at shoulder height, and
   // the throwing hand has swung down and back toward second, peeking out past the far hip.
-  const strideLegs = { tFoot: [-9, 0], gFoot: [12, 6], tKnee: [-10, -22], gKnee: [12, -21] };
+  // The stride comes straight at the camera: the front foot lands nearer (lower on screen), not
+  // far out to the side, so the feet stay close together across the screen.
+  const strideLegs = { tFoot: [-4, -1], gFoot: [4, 8], tKnee: [-6, -23], gKnee: [5, -20] };
   const strideFrame = {
     ...strideLegs,
     tFootSide: 1,
@@ -484,17 +486,20 @@ export function buildPitcherPoses(style) {
     gHa: [6, -16]
   };
 
-  // Release: shoulders whip square and past, throwing shoulder forward, hand out front.
-  const releaseHa = add(sh.tSh, armOffset(style.releaseAngle, lean));
+  // Release: shoulders whip square and past, throwing shoulder forward, hand out front. The
+  // arm reaches toward the plate, so it reads shorter than its length, and the torso has
+  // started to fold forward.
+  const releaseHa = add(sh.tSh, armOffset(style.releaseAngle, lean).map((v) => v * 0.75));
   const releaseFrame = {
     ...cockFrame,
     tFootSide: 0.3,
     gFootSide: 0.1,
-    tFoot: [-9, -2],
-    gFoot: [12, 8],
-    tKnee: [-8, -24],
-    gKnee: [12, -20],
+    tFoot: [-4, -2],
+    gFoot: [4, 8],
+    tKnee: [-5, -24],
+    gKnee: [4, -20],
     lean,
+    flex: 0.08,
     turn: -15,
     hipTurn: -20,
     headR: 9,
@@ -512,13 +517,13 @@ export function buildPitcherPoses(style) {
     ...releaseFrame,
     tFootSide: 0,
     tFoot: [-14, -20 - 34 * backKick],
-    gFoot: [12, 8],
+    gFoot: [4, 8],
     tKnee: [-9, -30],
-    gKnee: [11, -19],
+    gKnee: [4, -19],
     pelvis: [2, -42 + sink * 0.6],
     turn: -40,
     hipTurn: -35,
-    flex: 0.18,
+    flex: 0.24,
     headR: 9.5,
     tEl: midpoint(sh.tSh, followHa, 5, -2),
     tHa: followHa,
