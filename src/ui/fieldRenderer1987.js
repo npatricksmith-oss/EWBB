@@ -1813,9 +1813,9 @@ export class FieldRenderer1987 {
    * - 0.30–0.33 stride toward the plate, shoulders closed, front foot still in the air; the
    *   glove arm leads toward third and the throwing hand swings down and back past the hip
    * - 0.33–0.355 the front foot lands, the hips open and the throwing elbow rises
-   * - 0.355–0.385 the elbow leads up and the hand trails behind the head; the glove pulls in
-   * - 0.385–0.40 layback: the shoulders square, the elbow leads and the hand drops behind the head
-   * - 0.40–0.42 the arm snaps through to the release
+   * - 0.355–0.385 still closed, the arm cocks behind the body on the far side, ball up by the head
+   * - 0.385–0.40 layback: the shoulders snap open, the elbow leads and the ball passes behind the head
+   * - 0.40–0.42 the arm whips across and through to the release
    * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
    * - 0.42–0.62 follow-through across to the glove-side knee, the torso folds, the back leg lifts
    */
@@ -1849,7 +1849,7 @@ export class FieldRenderer1987 {
       if (prog < 0.3) return blendPose(leadIn(prog), breakPose, smooth((prog - 0.27) / 0.03));
       if (prog < 0.33) return blendPose(breakPose, P.STRIDE, smooth((prog - 0.3) / 0.03));
       if (prog < 0.355) return blendPose(P.STRIDE, P.LOAD, smooth((prog - 0.33) / 0.025));
-      // The elbow leads and the hand trails behind the head into the cock
+      // Still closed, the arm cocks behind the body on the far side
       if (prog < 0.385) {
         const t = (prog - 0.355) / 0.03;
         return blendPose(P.LOAD, P.COCK, t * t);
@@ -1892,8 +1892,8 @@ export class FieldRenderer1987 {
     // comes through. A smear trails the hand through the whip.
     const armBehind = (pose.tArmBack ?? 0) > 0.5;
     const drawThrowingArm = () => {
-      if (progress > 0.36 && progress < 0.5) {
-        const prev = poseAt(Math.max(0.33, progress - 0.03));
+      if (progress > 0.405 && progress < 0.5) {
+        const prev = poseAt(Math.max(0.4, progress - 0.03));
         ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
         ctx.beginPath();
         ctx.moveTo(pose.tShoulder[0], pose.tShoulder[1]);

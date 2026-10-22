@@ -467,10 +467,10 @@ export function buildPitcherPoses(style) {
     gHa: [-12, -20]
   };
 
-  // Cocked arm: hips have fired but the shoulders are still closed. The elbow leads at
-  // shoulder height and the hand trails behind the head, lower and out to the side for lower
-  // arm slots (beside the shoulder for sidearm, below it for submarine). The glove pulls in
-  // in front of the chest.
+  // Cocked arm: the front foot is down and the hips have started, but the shoulders are still
+  // closed, so the arm cocks behind the body on the far (first-base) side: elbow at shoulder
+  // height, ball up beside the head, lower for lower arm slots (beside the shoulder for
+  // sidearm, below it for submarine). The glove arm still leads, starting to pull in.
   const sh = shoulders(d);
   // 0 overhand, about 0.4 three-quarter, 0.9 sidearm, 1.7 submarine
   const slotDrop = clamp(style.releaseAngle / 90, 0, 1.7);
@@ -480,28 +480,30 @@ export function buildPitcherPoses(style) {
     gFootSide: 0.2,
     pelvis: [0, -42 + sink],
     lean: lean * 0.6,
-    turn: 50,
-    hipTurn: 15,
+    turn: 75,
+    hipTurn: 25,
     neck: [0, -32],
     head: [headTurn, -41],
     headR: 8,
     ...sh,
-    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 2 + 3 * slotDrop],
-    tHa: [sh.tSh[0] + 6 - 12 * Math.min(slotDrop, 1), sh.tSh[1] - 10 + 12 * slotDrop],
+    tEl: [9, -29 + 4 * slotDrop],
+    tHa: [11 + 3 * Math.min(slotDrop, 1), -42 + 14 * slotDrop],
     tArmBack: 1,
-    gEl: [9, -21],
-    gHa: [3, -19]
+    gEl: [-3, -23],
+    gHa: [-9, -20]
   };
 
-  // Layback, just before release: the shoulders have nearly squared, the elbow leads beside
-  // the head and the forearm lies back, so the ball drops behind the head (behind the
-  // shoulder for low slots) before the whip brings it out in front.
+  // Layback, just before release: the shoulders snap open, the elbow leads forward beside the
+  // head and the forearm lies back, so the ball passes behind the head (behind the shoulder
+  // for low slots) before the whip brings it out in front. The trunk is already folding and
+  // the back heel has come up.
   const laybackFrame = {
     ...cockFrame,
     lean: lean * 0.8,
-    flex: 0.12,
-    turn: 25,
+    flex: 0.2,
+    turn: 35,
     hipTurn: -5,
+    tFoot: [-3, -2],
     tEl: [sh.tSh[0] - 8, sh.tSh[1] - 4 + 4 * slotDrop],
     tHa: [sh.tSh[0] + 3, sh.tSh[1] - 6 + 10 * slotDrop],
     tArmBack: 1,
@@ -519,9 +521,9 @@ export function buildPitcherPoses(style) {
   const releaseHa = add(releaseSh, armOffset(style.releaseAngle + releaseTip, lean).map((v) => v * 0.85));
   const releaseFrame = {
     ...cockFrame,
-    tFootSide: 0.3,
+    tFootSide: 0,
     gFootSide: 0.1,
-    tFoot: [-3, 0],
+    tFoot: [-2, -4],
     gFoot: [4, 16],
     tKnee: [-3, -19],
     gKnee: [4, -15],

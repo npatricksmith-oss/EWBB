@@ -53,9 +53,9 @@ The lead-in follows the windup vs. stretch research in `research/pitching_windup
 | 0.27–0.30 | `BREAK`: hands part at the belt as the knee starts down | `STRETCH_BREAK`: same, from the lower lift |
 | 0.30–0.33 | `STRIDE`: shoulders closed, front foot still in the air reaching down the mound; the glove arm leads toward third, the throwing hand swings down and back past the far hip | same |
 | 0.33–0.355 | `LOAD`: the front foot lands well down the mound (lower on screen), the hips open and the throwing elbow rises behind the body | same |
-| 0.355–0.385 | `COCK`: the elbow leads up and the hand trails behind the head. Cocked and layback hands drop and move out to the side with the arm slot (beside the shoulder for sidearm, below it for submarine). The glove pulls in. | same |
-| 0.385–0.40 | `LAYBACK`: shoulders nearly square, the elbow leads beside the head and the ball drops behind it | same |
-| 0.40–0.42 | The whip into release, at full speed. | same |
+| 0.355–0.385 | `COCK`: shoulders still closed, the arm cocks behind the body on the far (first-base) side, ball up by the head; lower for low slots (beside the shoulder for sidearm, below it for submarine). The glove arm still leads. | same |
+| 0.385–0.40 | `LAYBACK`: the shoulders snap open, the elbow leads beside the head and the ball passes behind it; the trunk folds and the back heel comes up | same |
+| 0.40–0.42 | The arm whips across and through to release, at full speed. | same |
 | 0.42 | `RELEASE`: the arm fully extended, tipped out to the throwing side (less for low slots), the chest driven out over a braced front leg. | same |
 | 0.42–0.62 | `FOLLOW`: the arm sweeps across to the glove-side knee and the torso folds deep; the back foot lifts on high-kick deliveries. | same |
 
