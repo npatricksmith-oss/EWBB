@@ -2029,25 +2029,37 @@ export class FieldRenderer1987 {
     ctx.arc(hx, hy, hr, 0, Math.PI * 2);
     ctx.stroke();
     ctx.fill();
+    // As the torso folds toward the plate the head bows: the crown and brim come down the face
+    const bow = Math.max(0, Math.min(1, ((pose.flex ?? 0) - 0.1) / 0.3)) * 3;
     ctx.fillStyle = secondary;
     ctx.beginPath();
-    ctx.arc(hx, hy - 1, hr + 0.8, Math.PI * 1.02, Math.PI * 1.98);
+    ctx.arc(hx, hy - 1 + bow, hr + 0.8, Math.PI * 1.02, Math.PI * 1.98);
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
-    if (coiled || (pose.front ?? 1) < 0.35) {
-      // Side-on or coiled away from the plate, he looks in over the glove shoulder: the head
-      // shows in profile, the brim and one eye toward third
+    const brimY = hy - 2.5 + bow;
+    const eyeY = hy + 1 + bow * 0.8;
+    if (coiled) {
+      // Coiled away from the plate, he looks in over the glove shoulder: the head shows in
+      // profile, the brim and one eye toward third
       ctx.fillStyle = darken(secondary, 0.3);
-      ctx.fillRect(hx - hr - 4, hy - 2.5, hr + 3, 3);
+      ctx.fillRect(hx - hr - 4, brimY, hr + 3, 3);
       ctx.fillStyle = FIGURE_OUTLINE;
-      ctx.fillRect(hx - hr + 1, hy + 1, 2, 2);
+      ctx.fillRect(hx - hr + 1, eyeY, 2, 2);
+    } else if ((pose.front ?? 1) < 0.35) {
+      // Side-on, his face turns in toward the catcher: a three-quarter head, brim and eyes
+      // shifted toward third
+      ctx.fillStyle = darken(secondary, 0.3);
+      ctx.fillRect(hx - hr - 3, brimY, hr * 2 - 1, 3);
+      ctx.fillStyle = FIGURE_OUTLINE;
+      ctx.fillRect(hx - 6, eyeY, 2, 2);
+      ctx.fillRect(hx - 1, eyeY, 2, 2);
     } else {
       ctx.fillStyle = darken(secondary, 0.3);
-      ctx.fillRect(hx - hr - 2, hy - 2.5, hr * 2 + 4, 3);
+      ctx.fillRect(hx - hr - 2, brimY, hr * 2 + 4, 3);
       ctx.fillStyle = FIGURE_OUTLINE;
-      ctx.fillRect(hx - 4, hy + 1, 2, 2);
-      ctx.fillRect(hx + 2, hy + 1, 2, 2);
+      ctx.fillRect(hx - 4, eyeY, 2, 2);
+      ctx.fillRect(hx + 2, eyeY, 2, 2);
     }
 
     if (!armBehind && !coiled) drawThrowingArm();

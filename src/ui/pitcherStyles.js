@@ -256,7 +256,9 @@ export function buildPitcherPoses(style) {
       // turns up to 88°), all of it once coiled to 105° or more
       back: clamp(((f.turn || 0) - 85) / 20, 0, 1),
       // How squarely the chest faces the plate: 1 square, 0 side-on or turned away
-      front: Math.max(0, Math.cos(turn))
+      front: Math.max(0, Math.cos(turn)),
+      // How far the torso folds toward the plate; the renderer bows the head with it
+      flex: f.flex || 0
     };
   };
 
@@ -351,7 +353,7 @@ export function buildPitcherPoses(style) {
   const rockerFrame = {
     ...windFrame,
     pelvis: [1, -49],
-    gFoot: [9, -4],
+    gFoot: [9, -6],
     gKnee: [9, -30],
     tKnee: [-7, -26],
     turn: 10
@@ -366,7 +368,7 @@ export function buildPitcherPoses(style) {
     pelvis: [0, -50],
     tFoot: [-3, 2],
     tKnee: [-4, -26],
-    gFoot: [8, -2],
+    gFoot: [8, -4],
     gKnee: [8, -28],
     turn: 70,
     ...(high ? { tEl: [-9, -22], tHa: [-2, -29], gEl: [8, -21], gHa: [2, -28] } : {})
