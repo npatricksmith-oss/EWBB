@@ -1415,6 +1415,16 @@ export class FieldRenderer1987 {
     const dirtTop = vp.y + 404;
     const moundY = vp.y + 366;
     const plateY = vp.y + 428;
+
+    let batterSide = batter ? batter.bats : 'R';
+    if (batterSide === 'S') {
+      batterSide = pitcher && pitcher.throws === 'L' ? 'R' : 'L';
+    }
+    // The camera sits a step off-center, away from the batter, like a TV camera behind the plate.
+    // Parallax then shifts the plate a little and the mound more, so the batter stays clear of the pitcher.
+    const awayFromBatter = batterSide === 'R' ? 1 : -1;
+    const plateX = cx + awayFromBatter * 10;
+    const moundX = plateX + awayFromBatter * 14;
     // The batter stands in the box level with the plate, just behind its front edge
     const batterFootY = plateY + 22;
 
@@ -1444,7 +1454,7 @@ export class FieldRenderer1987 {
 
     // Batter's eye: dark backdrop behind the pitcher
     ctx.fillStyle = '#070b12';
-    ctx.fillRect(cx - 42, lowerStandsTop + 6, 84, wallTop - lowerStandsTop - 6);
+    ctx.fillRect(moundX - 42, lowerStandsTop + 6, 84, wallTop - lowerStandsTop - 6);
 
     // 3. Outfield wall pad, warning track
     ctx.fillStyle = '#14532d';
@@ -1470,73 +1480,73 @@ export class FieldRenderer1987 {
     // Pitcher's mound and rubber
     ctx.fillStyle = '#a65f2a';
     ctx.beginPath();
-    ctx.ellipse(cx, moundY - 1, 44, 8, 0, 0, Math.PI * 2);
+    ctx.ellipse(moundX, moundY - 1, 44, 8, 0, 0, Math.PI * 2);
     ctx.fill();
     ctx.fillStyle = '#c27a3e';
     ctx.beginPath();
-    ctx.ellipse(cx, moundY - 3, 26, 4, 0, 0, Math.PI * 2);
+    ctx.ellipse(moundX, moundY - 3, 26, 4, 0, 0, Math.PI * 2);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(cx - 7, moundY - 3, 14, 2);
+    ctx.fillRect(moundX - 7, moundY - 3, 14, 2);
 
     // 5. Home plate dirt
     ctx.fillStyle = isTurf ? '#8b6a4a' : '#a65f2a';
     ctx.fillRect(vp.x, dirtTop, vp.w, vp.y + vp.h - dirtTop);
     ctx.fillStyle = 'rgba(255, 220, 170, 0.07)';
     ctx.beginPath();
-    ctx.ellipse(cx, plateY + 30, vp.w * 0.45, 46, 0, 0, Math.PI * 2);
+    ctx.ellipse(plateX, plateY + 30, vp.w * 0.45, 46, 0, 0, Math.PI * 2);
     ctx.fill();
 
     // Foul lines running off to either side, then the batter's boxes in perspective
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(cx - 22, plateY - 2);
+    ctx.moveTo(plateX - 22, plateY - 2);
     ctx.lineTo(vp.x, dirtTop + 10);
-    ctx.moveTo(cx + 22, plateY - 2);
+    ctx.moveTo(plateX + 22, plateY - 2);
     ctx.lineTo(vp.x + vp.w, dirtTop + 10);
     ctx.stroke();
 
     ctx.lineWidth = 1.8;
     for (const s of [-1, 1]) {
       ctx.beginPath();
-      ctx.moveTo(cx + s * 25, plateY - 10);
-      ctx.lineTo(cx + s * 60, plateY - 10);
-      ctx.lineTo(cx + s * 94, plateY + 50);
-      ctx.lineTo(cx + s * 31, plateY + 50);
+      ctx.moveTo(plateX + s * 25, plateY - 10);
+      ctx.lineTo(plateX + s * 60, plateY - 10);
+      ctx.lineTo(plateX + s * 94, plateY + 50);
+      ctx.lineTo(plateX + s * 31, plateY + 50);
       ctx.closePath();
       ctx.stroke();
       // Catcher's box lines trailing toward the camera
       ctx.beginPath();
-      ctx.moveTo(cx + s * 31, plateY + 50);
-      ctx.lineTo(cx + s * 36, vp.y + vp.h);
+      ctx.moveTo(plateX + s * 31, plateY + 50);
+      ctx.lineTo(plateX + s * 36, vp.y + vp.h);
       ctx.stroke();
     }
 
     // Home plate seen from behind: point toward the camera, black rubber bevel
     ctx.fillStyle = '#111827';
     ctx.beginPath();
-    ctx.moveTo(cx - 19, plateY - 3);
-    ctx.lineTo(cx + 19, plateY - 3);
-    ctx.lineTo(cx + 19, plateY + 3);
-    ctx.lineTo(cx, plateY + 9);
-    ctx.lineTo(cx - 19, plateY + 3);
+    ctx.moveTo(plateX - 19, plateY - 3);
+    ctx.lineTo(plateX + 19, plateY - 3);
+    ctx.lineTo(plateX + 19, plateY + 3);
+    ctx.lineTo(plateX, plateY + 9);
+    ctx.lineTo(plateX - 19, plateY + 3);
     ctx.closePath();
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
-    ctx.moveTo(cx - 17, plateY - 4);
-    ctx.lineTo(cx + 17, plateY - 4);
-    ctx.lineTo(cx + 17, plateY + 1);
-    ctx.lineTo(cx, plateY + 6);
-    ctx.lineTo(cx - 17, plateY + 1);
+    ctx.moveTo(plateX - 17, plateY - 4);
+    ctx.lineTo(plateX + 17, plateY - 4);
+    ctx.lineTo(plateX + 17, plateY + 1);
+    ctx.lineTo(plateX, plateY + 6);
+    ctx.lineTo(plateX - 17, plateY + 1);
     ctx.closePath();
     ctx.fill();
 
     // Faint strike-zone frame above the plate, from the batter's knees to mid-torso
     const szW = 34;
     const szH = 56;
-    const szX = cx - szW / 2;
+    const szX = plateX - szW / 2;
     const szY = batterFootY - 96;
     ctx.strokeStyle = 'rgba(245, 185, 66, 0.3)';
     ctx.lineWidth = 1;
@@ -1547,7 +1557,7 @@ export class FieldRenderer1987 {
     // 6. Pitcher on the mound
     const pitchProg = this.pitchAnim ? this.pitchAnim.progress : 0;
     const isLeftyP = pitcher && pitcher.throws === 'L';
-    this.drawDuelPitcher(ctx, cx, moundY, fieldingTeam, pitcher, pitchProg, hasRunnersOnBase, fieldingTeam === gameState.homeTeam);
+    this.drawDuelPitcher(ctx, moundX, moundY, fieldingTeam, pitcher, pitchProg, hasRunnersOnBase, fieldingTeam === gameState.homeTeam);
 
     // 7. Pitch flight. Depth runs from the release point (~55 ft out) to the plate, so the ball
     //    creeps out of the windup, then grows fast and breaks late, as it does from behind the plate.
@@ -1558,7 +1568,7 @@ export class FieldRenderer1987 {
     if (this.pitchAnim) {
       const normZ = ((this.pitchAnim.plateZ ?? 2.5) - 1.55) / 2.0;
       target = {
-        x: cx + (this.pitchAnim.plateX || 0) * (szW * 0.64),
+        x: plateX + (this.pitchAnim.plateX || 0) * (szW * 0.64),
         y: szY + szH * (1 - Math.max(-0.35, Math.min(1.35, normZ)))
       };
     }
@@ -1569,7 +1579,7 @@ export class FieldRenderer1987 {
       const d1 = 10;
       // Pitch leaves the throwing hand: per-pitcher arm slot, mirrored for LHP.
       const release = getReleasePointOffset(pitcher);
-      const startX = cx + release.dx;
+      const startX = moundX + release.dx;
       const startY = moundY + release.dy;
       const ballAt = (tt) => {
         const d = d0 + (d1 - d0) * tt;
@@ -1625,11 +1635,7 @@ export class FieldRenderer1987 {
     }
 
     // 8. Batter in the box, filling the foreground
-    let batterSide = batter ? batter.bats : 'R';
-    if (batterSide === 'S') {
-      batterSide = pitcher && pitcher.throws === 'L' ? 'R' : 'L';
-    }
-    const batterX = batterSide === 'R' ? cx - 64 : cx + 64;
+    const batterX = plateX - awayFromBatter * 74;
     this.drawDuelBatter(
       ctx,
       batterX,
@@ -1671,7 +1677,7 @@ export class FieldRenderer1987 {
     if (this.pitchBallMark) {
       const mark = this.pitchBallMark;
       const normZ = ((mark.plateZ ?? 2.5) - 1.55) / 2;
-      const x = cx + (mark.plateX || 0) * (szW * 0.64);
+      const x = plateX + (mark.plateX || 0) * (szW * 0.64);
       const y = szY + szH * (1 - Math.max(-0.35, Math.min(1.35, normZ)));
 
       // Subtle halo around crossing ball so it clearly pops against the catcher's mitt

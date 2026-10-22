@@ -33,7 +33,7 @@ Unlike purely statistical table-lookup games or purely arcade action games, EWB 
 Per project requirements, **we do not use the 1991 EWB II broadcast camera**. We strictly use the **1987 EWB 1.0 view**:
 - **Pre-Pitch & Pitch Delivery (Split-Screen):**
   - **Left 2/3 Viewport:** Isometric 1987 diamond showing custom outfield walls (with distance numbers painted on the wall and true-to-scale wall heights), mowed grass or turf, all 9 fielders (dynamically shifted by defensive strategy), and baserunners taking leads/stealing.
-  - **Right 1/3 Viewport:** Catcher's-eye pitcher/batter duel (matching the original's low camera): a large side-on batter fills the foreground beside the plate, the pitcher stands small on the mound against the batter's eye, and the pitch grows in depth perspective with late break into the catcher's mitt (or a contact flash on a swing).
+  - **Right 1/3 Viewport:** Catcher's-eye pitcher/batter duel (matching the original's low camera): a large side-on batter fills the foreground beside the plate, the pitcher stands small on the mound against the batter's eye (the camera sits off-center away from the batter, so the mound shifts to that side and the batter never hides the pitcher), and the pitch grows in depth perspective with late break into the catcher's mitt (or a contact flash on a swing).
 - **Ball in Play (Full-Field 1987 Isometric View):**
   - When contact is made, the right 1/3 partition opens up so the full isometric ballpark fills the canvas (matching [`amiga_01.jpg`](file:///var/home/natex/Projects/EWBB/research/images/amiga_01.jpg)), tracking the white baseball in 3D height $+z$ and its dark ground shadow at $(x, y, 0)$.
 
