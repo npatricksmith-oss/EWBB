@@ -317,7 +317,7 @@ export function buildPitcherPoses(style) {
   // Stretch leg lift: lower than the windup's, about belt height, and the knee stays in front
   // instead of tucking back. The hands rise a little at the set.
   const stretchKneeY = -52 - 10 * k;
-  const stretchKneeX = 2 - 3 * k;
+  const stretchKneeX = 2 - 7 * k;
   const stretchLiftFrame = {
     ...stretchFrame,
     turn: 88,
@@ -325,7 +325,7 @@ export function buildPitcherPoses(style) {
     tFoot: [-1, -1],
     tKnee: [-1, -27],
     gKnee: [stretchKneeX, stretchKneeY],
-    gFoot: [stretchKneeX + 3, stretchKneeY + 24],
+    gFoot: [stretchKneeX - 3 * k, stretchKneeY + 24],
     tEl: [-6, setY + 3],
     tHa: [-2, setY - 3],
     gEl: [7, setY + 3],
@@ -378,7 +378,9 @@ export function buildPitcherPoses(style) {
   // knee sits out to the side, so the number on the back stays in view.
   const liftTurn = style.windup === 'pivot' ? 130 : 86 + 22 * k;
   const kneeY = -50 - 36 * k;
-  const kneeX = 7 - 9 * k - 13 * clamp((liftTurn - 85) / 20, 0, 1);
+  // The leg kicks out toward third base (first base for a lefty, by the renderer's mirror):
+  // the knee swings out to that side and the foot flares further out past it.
+  const kneeX = 7 - 15 * k - 13 * clamp((liftTurn - 85) / 20, 0, 1);
   const liftFrame = {
     ...windFrame,
     tFootSide: 1,
@@ -387,8 +389,8 @@ export function buildPitcherPoses(style) {
     tFoot: [-3, 2],
     tKnee: [-5, -26],
     gKnee: [kneeX, kneeY],
-    // The shin hangs straight down from the knee, so the folded leg reads at the top of the kick
-    gFoot: [kneeX - 1, Math.min(-4, kneeY + 26)],
+    // The shin angles out from the knee rather than folding behind the thigh
+    gFoot: [kneeX - 1 - 10 * k, Math.min(-4, kneeY + 24)],
     tEl: [-7, -12],
     tHa: [0, -19],
     gEl: [8, -12],
