@@ -134,36 +134,36 @@ export const BASE_BATTER_POSES = {
   STANCE: {
     nFoot: [0, 0], fFoot: [28, -10], nKnee: [18, -38], fKnee: [38, -46], pelvis: [8, -70],
     neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-6, -98], fElbow: [30, -92], hands: [10, -114], batYaw: -160, batPitch: 58, batLength: 64, twist: 0
+    nElbow: [-6, -98], fElbow: [32, -95], hands: [10, -114], batYaw: -160, batPitch: 58, batLength: 64, twist: 0
   },
   LOAD: {
     nFoot: [0, 0], fFoot: [32, -14], nKnee: [14, -38], fKnee: [40, -50], pelvis: [4, -69],
     neck: [14, -114], head: [20, -125], nShoulder: [8, -106], fShoulder: [20, -108],
-    nElbow: [-12, -102], fElbow: [22, -98], hands: [2, -118], batYaw: -160, batPitch: 47, batLength: 64, twist: -0.08
+    nElbow: [-12, -102], fElbow: [26, -99], hands: [2, -118], batYaw: -160, batPitch: 47, batLength: 64, twist: -0.08
   },
   STRIDE_PLANT: {
     nFoot: [0, 0], fFoot: [36, -10], nKnee: [16, -38], fKnee: [46, -44], pelvis: [8, -68],
     neck: [18, -112], head: [24, -123], nShoulder: [12, -105], fShoulder: [26, -107],
-    nElbow: [-8, -98], fElbow: [26, -94], hands: [6, -115], batYaw: -160, batPitch: 52, batLength: 64, twist: 0.08
+    nElbow: [-8, -98], fElbow: [30, -96], hands: [6, -115], batYaw: -160, batPitch: 52, batLength: 64, twist: 0.08
   },
   ROTATION: {
-    nFoot: [0, -2], fFoot: [38, -11], nKnee: [20, -36], fKnee: [45, -45], pelvis: [12, -68],
-    neck: [21, -111], head: [28, -122], nShoulder: [18, -103], fShoulder: [30, -106],
-    nElbow: [12, -88], fElbow: [40, -92], hands: [28, -96], batYaw: -105, batPitch: 18, batLength: 64, twist: 0.35
+    nFoot: [0, -2], fFoot: [38, -11], nKnee: [24, -35], fKnee: [45, -45], pelvis: [13, -68],
+    neck: [20, -112], head: [26, -123], nShoulder: [18, -103], fShoulder: [30, -106],
+    nElbow: [12, -88], fElbow: [36, -95], hands: [26, -98], batYaw: -105, batPitch: 18, batLength: 64, twist: 0.35
   },
   CONTACT: {
-    nFoot: [0, -3], fFoot: [38, -12], nKnee: [24, -36], fKnee: [44, -46], pelvis: [14, -68],
-    neck: [24, -110], head: [32, -120], nShoulder: [22, -101], fShoulder: [34, -105],
-    nElbow: [30, -84], fElbow: [52, -90], hands: [46, -86], batYaw: 15, batPitch: -12, batLength: 64, twist: 0.60
+    nFoot: [0, -3], fFoot: [38, -12], nKnee: [30, -33], fKnee: [44, -46], pelvis: [16, -67],
+    neck: [22, -111], head: [28, -121], nShoulder: [22, -101], fShoulder: [32, -105],
+    nElbow: [30, -84], fElbow: [42, -96], hands: [52, -88], batYaw: 15, batPitch: -12, batLength: 64, twist: 0.60
   },
   FOLLOW_TWO_HAND: {
-    nFoot: [2, -3], fFoot: [38, -12], nKnee: [26, -34], fKnee: [44, -46], pelvis: [16, -68],
-    neck: [28, -110], head: [36, -120], nShoulder: [30, -102], fShoulder: [22, -104],
+    nFoot: [2, -3], fFoot: [38, -12], nKnee: [31, -32], fKnee: [44, -46], pelvis: [17, -67],
+    neck: [24, -111], head: [30, -121], nShoulder: [30, -102], fShoulder: [22, -104],
     nElbow: [46, -108], fElbow: [30, -116], hands: [38, -124], batYaw: 195, batPitch: -25, batLength: 64, twist: 1.0
   },
   FOLLOW_ONE_HAND: {
-    nFoot: [2, -3], fFoot: [38, -12], nKnee: [26, -34], fKnee: [44, -46], pelvis: [16, -68],
-    neck: [28, -110], head: [36, -122], nShoulder: [28, -102], fShoulder: [22, -104],
+    nFoot: [2, -3], fFoot: [38, -12], nKnee: [31, -32], fKnee: [44, -46], pelvis: [17, -67],
+    neck: [24, -111], head: [30, -123], nShoulder: [28, -102], fShoulder: [22, -104],
     nElbow: [14, -92], fElbow: [48, -116], hands: [44, -138], nHand: [18, -96],
     batYaw: 200, batPitch: -40, batLength: 64, twist: 1.0
   },
@@ -175,7 +175,7 @@ export const BASE_BATTER_POSES = {
   TAKE: {
     nFoot: [0, 0], fFoot: [32, -10], nKnee: [18, -38], fKnee: [40, -45], pelvis: [8, -70],
     neck: [18, -114], head: [24, -125], nShoulder: [12, -106], fShoulder: [24, -108],
-    nElbow: [-4, -98], fElbow: [28, -94], hands: [10, -112], batYaw: -160, batPitch: 60, batLength: 64, twist: 0.05
+    nElbow: [-4, -98], fElbow: [31, -96], hands: [10, -112], batYaw: -160, batPitch: 60, batLength: 64, twist: 0.05
   }
 };
 

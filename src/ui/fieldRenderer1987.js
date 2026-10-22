@@ -37,7 +37,7 @@ export const PITCH_PLATE_ARRIVAL_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS * (0.5 /
 /** After a ball is put in play the duel view holds this long on the follow-through before the field view opens. */
 export const SWING_HOLD_MS = 900;
 /** The duel scene is drawn this much larger than its layout, anchored at the bottom, so the players fill the view. */
-const DUEL_ZOOM = 1.35;
+const DUEL_ZOOM = 1.3;
 
 function pitchProgressAt(elapsedMs) {
   if (elapsedMs <= PITCH_WINDUP_MS) return 0.42 * Math.max(0, elapsedMs) / PITCH_WINDUP_MS;
@@ -1423,7 +1423,7 @@ export class FieldRenderer1987 {
     // The camera sits a step off-center, away from the batter, like a TV camera behind the plate.
     // Parallax then shifts the plate a little and the mound more, so the batter stays clear of the pitcher.
     const awayFromBatter = batterSide === 'R' ? 1 : -1;
-    const plateX = cx + awayFromBatter * 10;
+    const plateX = cx + awayFromBatter * 22;
     const moundX = plateX + awayFromBatter * 14;
     // The batter stands in the box level with the plate, just behind its front edge
     const batterFootY = plateY + 22;
@@ -1635,7 +1635,7 @@ export class FieldRenderer1987 {
     }
 
     // 8. Batter in the box, filling the foreground
-    const batterX = plateX - awayFromBatter * 74;
+    const batterX = plateX - awayFromBatter * 88;
     this.drawDuelBatter(
       ctx,
       batterX,
@@ -1671,8 +1671,13 @@ export class FieldRenderer1987 {
       this.pitchBallMark = {
         plateX: this.pitchAnim.plateX, plateZ: this.pitchAnim.plateZ,
         tint: this.pitchAnim.isStrike ? '#ef4444' : '#22c55e',
-        label: this.pitchAnim.isStrike ? 'STRIKE' : 'BALL'
+        label: this.pitchAnim.isStrike ? 'STRIKE' : 'BALL',
+        batter
       };
+    }
+    // The mark belongs to the batter who saw the pitch; a new batter starts with a clean zone
+    if (this.pitchBallMark && this.pitchBallMark.batter !== batter) {
+      this.pitchBallMark = null;
     }
     if (this.pitchBallMark) {
       const mark = this.pitchBallMark;
@@ -2108,10 +2113,13 @@ export class FieldRenderer1987 {
     ctx.lineTo(px - bx * 11 + ux * 4, py - by * 11 + uy * 4);
     ctx.stroke();
 
-    // Far (lead) arm reaches across the chest to the bottom of the grip
+    // Neck sits under the lead arm, which drapes across the chest and throat to the bottom of the grip
+    const [hx, hy] = pose.head;
+    this.strokeLimb(ctx, [[[nx, ny + 2], [hx - 2, hy + 6], 9]], SKIN);
+    const leadSleeve = darken(primary, 0.25);
     const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
-    this.strokeLimb(ctx, fArm, darken(primary, 0.25));
-    this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, darken(primary, 0.25), darken(primary, 0.55)), 1);
+    this.strokeLimb(ctx, fArm, leadSleeve);
+    this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, leadSleeve, darken(primary, 0.55)), 1);
 
     // Bat: tapered ash with a dark outline; motion smear while it whips through
     const drawBat = () => {
@@ -2130,7 +2138,8 @@ export class FieldRenderer1987 {
       ctx.beginPath();
       ctx.moveTo(knob[0] + nxp * 1.6, knob[1] + nyp * 1.6);
       ctx.lineTo(tip[0] + nxp * 3.4, tip[1] + nyp * 3.4);
-      ctx.arc(tip[0], tip[1], 3.4, Math.atan2(nyp, nxp), Math.atan2(-nyp, -nxp));
+      // Round the barrel end outward, past the tip, not back into the bat
+      ctx.arc(tip[0], tip[1], 3.4, Math.atan2(nyp, nxp), Math.atan2(-nyp, -nxp), true);
       ctx.lineTo(knob[0] - nxp * 1.6, knob[1] - nyp * 1.6);
       ctx.closePath();
       ctx.stroke();
@@ -2162,8 +2171,6 @@ export class FieldRenderer1987 {
     if (!batInFront) drawBat();
 
     // Head: skin, batting helmet with ear flap and brim
-    const [hx, hy] = pose.head;
-    this.strokeLimb(ctx, [[[nx, ny + 2], [hx - 2, hy + 6], 9]], SKIN);
     ctx.fillStyle = SKIN;
     ctx.strokeStyle = FIGURE_OUTLINE;
     ctx.lineWidth = 2.2;
