@@ -225,6 +225,9 @@ export function buildPitcherPoses(style) {
     return {
       tFoot: f.tFoot,
       gFoot: f.gFoot,
+      // 0 toe-on to the camera, 1 turned along the rubber toward third
+      tFootSide: f.tFootSide || 0,
+      gFootSide: f.gFootSide || 0,
       tKnee: f.tKnee,
       gKnee: f.gKnee,
       pelvis: f.pelvis,
@@ -273,6 +276,8 @@ export function buildPitcherPoses(style) {
   const signFrame = {
     ...setFrame,
     ...stretchLegs,
+    tFootSide: 1,
+    gFootSide: 0.4,
     turn: 80,
     tEl: [-9, -9],
     tHa: [-7, 5],
@@ -347,6 +352,7 @@ export function buildPitcherPoses(style) {
   // turns side-on, and overhead hands start down toward the head.
   const pivotFrame = {
     ...rockerFrame,
+    tFootSide: 1,
     pelvis: [0, -50],
     tFoot: [-3, 2],
     tKnee: [-4, -26],
@@ -363,6 +369,7 @@ export function buildPitcherPoses(style) {
   const kneeX = 7 - 9 * k;
   const liftFrame = {
     ...windFrame,
+    tFootSide: 1,
     turn: style.windup === 'pivot' ? 130 : 86 + 22 * k,
     pelvis: [-1, -52],
     tFoot: [-3, 2],
@@ -381,6 +388,8 @@ export function buildPitcherPoses(style) {
   const strideLegs = { tFoot: [-9, 0], gFoot: [12, 6], tKnee: [-10, -22], gKnee: [12, -21] };
   const strideFrame = {
     ...strideLegs,
+    tFootSide: 1,
+    gFootSide: 0.2,
     pelvis: [0, -46 + sink * 0.6],
     lean: lean * 0.3,
     turn: 78 + 14 * k,
@@ -443,6 +452,8 @@ export function buildPitcherPoses(style) {
   const slotDrop = clamp(style.releaseAngle / 90, 0, 1.7);
   const cockFrame = {
     ...strideLegs,
+    tFootSide: 0.7,
+    gFootSide: 0.2,
     pelvis: pelvisAt(1),
     lean: lean * 0.6,
     turn: 45,
@@ -475,6 +486,8 @@ export function buildPitcherPoses(style) {
   const releaseHa = add(sh.tSh, armOffset(style.releaseAngle, lean));
   const releaseFrame = {
     ...cockFrame,
+    tFootSide: 0.3,
+    gFootSide: 0.1,
     tFoot: [-9, -2],
     gFoot: [12, 8],
     tKnee: [-8, -24],
@@ -495,6 +508,7 @@ export function buildPitcherPoses(style) {
   const followHa = add(releaseHa, style.followVector.map((v) => v * 1.35));
   const followFrame = {
     ...releaseFrame,
+    tFootSide: 0,
     tFoot: [-14, -20 - 34 * backKick],
     gFoot: [12, 8],
     tKnee: [-9, -30],

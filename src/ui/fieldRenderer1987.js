@@ -1324,21 +1324,28 @@ export class FieldRenderer1987 {
   }
 
   /** Black spikes shoe seen toe-on from the plate, sole on the ground at `foot`. */
-  drawCleatFront(ctx, [fx, fy]) {
+  /**
+   * A cleat seen from the front. `side` (0..1) turns it toward profile, toe pointing to -x:
+   * a pivot foot laid along the rubber reads longer and flatter.
+   */
+  drawCleatFront(ctx, [fx, fy], side = 0) {
+    const l = fx - 5.5 - 5 * side;
+    const r = fx + 5.5 - side;
+    const top = fy - 5 + 1.5 * side;
     ctx.fillStyle = '#111827';
     ctx.strokeStyle = FIGURE_OUTLINE;
     ctx.lineWidth = 1.4;
     ctx.beginPath();
-    ctx.moveTo(fx - 5.5, fy + 2.5);
-    ctx.lineTo(fx - 5.5, fy - 0.5);
-    ctx.quadraticCurveTo(fx - 5, fy - 4.5, fx, fy - 5);
-    ctx.quadraticCurveTo(fx + 5, fy - 4.5, fx + 5.5, fy - 0.5);
-    ctx.lineTo(fx + 5.5, fy + 2.5);
+    ctx.moveTo(l, fy + 2.5);
+    ctx.lineTo(l, fy - 0.5);
+    ctx.quadraticCurveTo(l + 0.5, top + 0.5, (l + r) / 2, top);
+    ctx.quadraticCurveTo(r - 0.5, top + 0.5, r, fy - 0.5);
+    ctx.lineTo(r, fy + 2.5);
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
     ctx.fillStyle = '#9ca3af';
-    ctx.fillRect(fx - 5, fy + 1, 10, 1.3);
+    ctx.fillRect(l + 0.5, fy + 1, r - l - 1, 1.3);
   }
 
   /**
@@ -1798,9 +1805,9 @@ export class FieldRenderer1987 {
    * - 0.26–0.28 balance point
    * Runners on, the stretch:
    * - idle: side-on, hands apart, looking in for the sign (and glancing at the runner)
-   * - 0.00–0.10 come set: the hands meet at the chest, then settle at the belt
-   * - 0.10–0.19 the full stop
-   * - 0.19–0.28 a quicker, lower leg lift that stays in front
+   * - 0.00–0.09 come set: the hands meet at the chest, then settle at the belt
+   * - 0.09–0.21 the full stop (about 300 ms)
+   * - 0.21–0.28 a quicker, lower leg lift that stays in front
    * Both then finish the same way:
    * - 0.27–0.30 the hands break at the belt as the knee starts down
    * - 0.30–0.33 stride toward the plate, shoulders closed; the glove arm leads toward third and
@@ -1826,10 +1833,10 @@ export class FieldRenderer1987 {
     const breakPose = isStretch ? P.STRETCH_BREAK : P.BREAK;
     const leadIn = (prog) => {
       if (isStretch) {
-        if (prog < 0.05) return blendPose(P.SIGN, P.GATHER, smooth(Math.pow(prog / 0.05, style.tempo)));
-        if (prog < 0.1) return blendPose(P.GATHER, P.STRETCH, smooth((prog - 0.05) / 0.05));
-        if (prog < 0.19) return P.STRETCH;
-        return blendPose(P.STRETCH, P.STRETCH_LIFT, smooth((prog - 0.19) / 0.09));
+        if (prog < 0.045) return blendPose(P.SIGN, P.GATHER, smooth(Math.pow(prog / 0.045, style.tempo)));
+        if (prog < 0.09) return blendPose(P.GATHER, P.STRETCH, smooth((prog - 0.045) / 0.045));
+        if (prog < 0.21) return P.STRETCH;
+        return blendPose(P.STRETCH, P.STRETCH_LIFT, smooth((prog - 0.21) / 0.07));
       }
       if (prog < 0.05) return blendPose(P.SET, P.WIND, smooth(Math.pow(prog / 0.05, style.tempo)));
       if (prog < 0.11) return blendPose(P.WIND, P.ROCKER, smooth((prog - 0.05) / 0.06));
@@ -1944,20 +1951,21 @@ export class FieldRenderer1987 {
     const hipW = pose.hipW ?? 1;
     const pelvisT = [pose.pelvis[0] - 6 * hipW, pose.pelvis[1]];
     const pelvisG = [pose.pelvis[0] + 6 * hipW, pose.pelvis[1]];
-    const drawLeg = (hip, knee, foot) => {
-      // Stirrup from the pant cuff to the ankle, then the shoe toe-on to the camera, then the pants
+    const drawLeg = (hip, knee, foot, side) => {
+      // Stirrup from the pant cuff to the ankle, then the shoe (toe-on, or turned along the
+      // rubber), then the pants
       const ankle = [foot[0], foot[1] - 4];
       const cuff = [lerp(knee[0], ankle[0], 0.5), lerp(knee[1], ankle[1], 0.5)];
       this.strokeLimb(ctx, [[cuff, ankle, 6.5]], primary);
-      this.drawCleatFront(ctx, foot);
+      this.drawCleatFront(ctx, foot, side);
       const leg = [[hip, knee, 12], [knee, cuff, 10]];
       this.strokeLimb(ctx, leg, uni);
       this.shadeLimb(ctx, leg, shade, 1);
     };
     // A knee lifted well above the hip comes up in front of the jersey, toward the plate
     const kneeUp = pose.gKnee[1] < pose.pelvis[1] - 10;
-    drawLeg(pelvisT, pose.tKnee, pose.tFoot);
-    if (!kneeUp) drawLeg(pelvisG, pose.gKnee, pose.gFoot);
+    drawLeg(pelvisT, pose.tKnee, pose.tFoot, pose.tFootSide ?? 0);
+    if (!kneeUp) drawLeg(pelvisG, pose.gKnee, pose.gFoot, pose.gFootSide ?? 0);
 
     // Torso: tapered jersey with dithered shadow side, team lettering and belt
     const [tsx, tsy] = pose.tShoulder;
@@ -2013,7 +2021,7 @@ export class FieldRenderer1987 {
     }
     ctx.fillStyle = '#1b2333';
     ctx.fillRect(px - 9 * hipW, py - 3, 18 * hipW, 4);
-    if (kneeUp) drawLeg(pelvisG, pose.gKnee, pose.gFoot);
+    if (kneeUp) drawLeg(pelvisG, pose.gKnee, pose.gFoot, pose.gFootSide ?? 0);
 
     // Glove arm, then head and cap, then the throwing arm on top unless it is behind the body
     if (!coiled) drawGloveArm();

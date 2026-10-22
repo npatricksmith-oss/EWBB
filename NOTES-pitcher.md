@@ -45,10 +45,10 @@ The lead-in follows the windup vs. stretch research in `research/pitching_windup
 | Progress | Windup (bases empty) | Stretch (runners on) |
 |---|---|---|
 | idle | `SET`: square, hands at the chest | `SIGN`: side-on, hands apart, glancing at the runner |
-| 0.00–0.05 | `WIND`: hands rise overhead (stay at the chest for hidden-ball and drop windups) | `GATHER`: hands meet at the chest |
-| 0.05–0.11 | `ROCKER`: the glove-side foot steps back | `STRETCH`: hands settle at the belt |
-| 0.11–0.17 | `PIVOT`: pivot foot into the slot, body turns side-on | full stop (until 0.19) |
-| 0.17–0.26 | `LIFT`: knee to the chest; high kickers coil until the plate sees the back number | `STRETCH_LIFT` (0.19–0.28): knee to belt height, staying in front |
+| 0.00–0.05 | `WIND`: hands rise overhead (stay at the chest for hidden-ball and drop windups) | `GATHER` (0–0.045): hands meet at the chest |
+| 0.05–0.11 | `ROCKER`: the glove-side foot steps back | `STRETCH` (0.045–0.09): hands settle at the belt |
+| 0.11–0.17 | `PIVOT`: pivot foot into the slot, body turns side-on | full stop (0.09–0.21, about 300 ms) |
+| 0.17–0.26 | `LIFT`: knee to the chest; high kickers coil until the plate sees the back number | `STRETCH_LIFT` (0.21–0.28): knee to belt height, staying in front |
 | 0.26–0.27 | balance point | |
 | 0.27–0.30 | `BREAK`: hands part at the belt as the knee starts down | `STRETCH_BREAK`: same, from the lower lift |
 | 0.30–0.33 | `STRIDE`: shoulders closed; the glove arm leads toward third, the throwing hand swings down and back past the far hip | same |
@@ -59,7 +59,7 @@ The lead-in follows the windup vs. stretch research in `research/pitching_windup
 | 0.42 | Release. | same |
 | 0.42–0.70 | Follow-through. The back foot lifts on high-kick deliveries. | same |
 
-Both deliveries use `tempo` as an ease exponent on their first phase. While a pose's `back` is above 0.5, the renderer draws both arms behind the jersey and shows the number; a knee lifted above the hip is drawn in front of the jersey.
+Both deliveries use `tempo` as an ease exponent on their first phase. While a pose's `back` is above 0.5, the renderer draws both arms behind the jersey and shows the number; a knee lifted above the hip is drawn in front of the jersey. `tFootSide` and `gFootSide` (0 toe-on, 1 along the rubber) turn each cleat; the pivot foot lies along the rubber from the pivot (or the stretch) until it drags off at release.
 
 ## Arm slots and variation
 
