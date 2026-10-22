@@ -389,9 +389,12 @@ export function buildPitcherPoses(style) {
   // The stride comes straight at the camera: the front foot lands well down the mound (lower on
   // screen), not far out to the side, and the pelvis drops into the stride and stays low
   // through the release.
+  // `strideLegs` is the planted stride, from the load on; in the stride pose itself the front
+  // foot is still in the air, reaching down the mound, so it lands just before the arm cocks.
   const strideLegs = { tFoot: [-4, -1], gFoot: [4, 12], tKnee: [-6, -22], gKnee: [5, -16] };
+  const strideAir = { tFoot: [-4, -1], gFoot: [3, 2], tKnee: [-6, -23], gKnee: [4, -21] };
   const strideFrame = {
-    ...strideLegs,
+    ...strideAir,
     tFootSide: 1,
     gFootSide: 0.2,
     pelvis: [0, -44 + sink * 0.6],
@@ -413,8 +416,8 @@ export function buildPitcherPoses(style) {
   // out and the throwing hand starting down.
   const breakFrom = (lift) => {
     const toward = (key) => [
-      lift[key][0] + (strideLegs[key][0] - lift[key][0]) * 0.35,
-      lift[key][1] + (strideLegs[key][1] - lift[key][1]) * 0.35
+      lift[key][0] + (strideAir[key][0] - lift[key][0]) * 0.35,
+      lift[key][1] + (strideAir[key][1] - lift[key][1]) * 0.35
     ];
     return {
       ...lift,
@@ -436,6 +439,7 @@ export function buildPitcherPoses(style) {
   const sl = shoulders(d * 0.75);
   const loadFrame = {
     ...strideFrame,
+    ...strideLegs,
     pelvis: [0, -44 + sink * 0.8],
     lean: lean * 0.45,
     turn: 82,
@@ -489,7 +493,7 @@ export function buildPitcherPoses(style) {
   // Release: shoulders whip square and past, throwing shoulder forward, the chest driving out
   // over the front knee. The straight arm reaches toward the plate, at the camera, so it reads
   // short and the hand comes in front of the head (overhand) or the shoulder (lower slots).
-  const releaseFlex = 0.15;
+  const releaseFlex = 0.22;
   const releaseSh = [sh.tSh[0], sh.tSh[1] * (1 - releaseFlex)];
   const releaseHa = add(
     add(releaseSh, armOffset(style.releaseAngle, lean).map((v) => v * 0.6)),
@@ -499,10 +503,10 @@ export function buildPitcherPoses(style) {
     ...cockFrame,
     tFootSide: 0.3,
     gFootSide: 0.1,
-    tFoot: [-4, -2],
+    tFoot: [-3, 0],
     gFoot: [4, 12],
-    tKnee: [-5, -22],
-    gKnee: [4, -16],
+    tKnee: [-3, -19],
+    gKnee: [4, -18],
     lean,
     flex: releaseFlex,
     turn: -15,
@@ -528,7 +532,7 @@ export function buildPitcherPoses(style) {
     pelvis: [2, -40 + sink * 0.6],
     turn: -40,
     hipTurn: -35,
-    flex: 0.24,
+    flex: 0.3,
     headR: 9.5,
     tEl: midpoint(sh.tSh, followHa, 5, -2),
     tHa: followHa,

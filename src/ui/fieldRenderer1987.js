@@ -1810,9 +1810,9 @@ export class FieldRenderer1987 {
    * - 0.21–0.28 a quicker, lower leg lift that stays in front
    * Both then finish the same way:
    * - 0.27–0.30 the hands break at the belt as the knee starts down
-   * - 0.30–0.33 stride toward the plate, shoulders closed; the glove arm leads toward third and
-   *   the throwing hand swings down and back past the hip
-   * - 0.33–0.355 the hips open and the throwing elbow rises to shoulder height
+   * - 0.30–0.33 stride toward the plate, shoulders closed, front foot still in the air; the
+   *   glove arm leads toward third and the throwing hand swings down and back past the hip
+   * - 0.33–0.355 the front foot lands, the hips open and the throwing elbow rises
    * - 0.355–0.385 the hand comes up behind the head into the cocked position, glove pulling in
    * - 0.385–0.40 layback: the shoulders square, the elbow leads and the hand drops behind the head
    * - 0.40–0.42 the arm snaps through to the release
@@ -2046,9 +2046,9 @@ export class FieldRenderer1987 {
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
-    if (coiled) {
-      // Coiled away from the plate, he looks in over the glove shoulder: the head shows in
-      // profile, the brim and one eye toward third
+    if (coiled || (pose.front ?? 1) < 0.35) {
+      // Side-on or coiled away from the plate, he looks in over the glove shoulder: the head
+      // shows in profile, the brim and one eye toward third
       ctx.fillStyle = darken(secondary, 0.3);
       ctx.fillRect(hx - hr - 4, hy - 2.5, hr + 3, 3);
       ctx.fillStyle = FIGURE_OUTLINE;
