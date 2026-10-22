@@ -54,6 +54,7 @@ import { HISTORICAL_TEAMS } from './teams/index.js';
  * @typedef {Object} BatterPlayer
  * @property {string} id - Unique player ID
  * @property {string} name - Player display name
+ * @property {number} [uniform] - Jersey number, shown on the batter's back in the duel view
  * @property {'C'|'1B'|'2B'|'3B'|'SS'|'LF'|'CF'|'RF'|'DH'} pos - Primary defensive position
  * @property {string} [pos2] - Secondary defensive position (for Weaver platoons & double-switches)
  * @property {'L'|'R'|'S'} bats - Batting handedness (Left, Right, Switch)
@@ -76,6 +77,7 @@ import { HISTORICAL_TEAMS } from './teams/index.js';
  * @typedef {Object} PitcherPlayer
  * @property {string} id - Unique pitcher ID
  * @property {string} name - Pitcher display name
+ * @property {number} [uniform] - Jersey number
  * @property {'SP'|'RP'|'CL'} role - Starting Pitcher, Relief Pitcher, or Closer
  * @property {'L'|'R'} throws - Pitching handedness
  * @property {{ T: Object, L: Object, R: Object }} splits - Total season stats and L/R opponent batting splits
@@ -107,6 +109,7 @@ export const TEAMS = {
       {
         id: 'bal_bumbry',
         name: 'Al Bumbry',
+        uniform: 1,
         pos: 'LF',
         pos2: 'CF',
         bats: 'L',
@@ -122,6 +125,7 @@ export const TEAMS = {
       {
         id: 'bal_ripken',
         name: 'Cal Ripken Jr.',
+        uniform: 8,
         pos: 'SS',
         pos2: '3B',
         bats: 'R',
@@ -137,6 +141,7 @@ export const TEAMS = {
       {
         id: 'bal_frobinson',
         name: 'Frank Robinson',
+        uniform: 20,
         pos: 'RF',
         pos2: '1B',
         bats: 'R',
@@ -152,6 +157,7 @@ export const TEAMS = {
       {
         id: 'bal_murray',
         name: 'Eddie Murray',
+        uniform: 33,
         pos: '1B',
         pos2: 'DH',
         bats: 'S',
@@ -167,6 +173,7 @@ export const TEAMS = {
       {
         id: 'bal_powell',
         name: 'Boog Powell',
+        uniform: 26,
         pos: 'DH',
         pos2: '1B',
         bats: 'L',
@@ -182,6 +189,7 @@ export const TEAMS = {
       {
         id: 'bal_singleton',
         name: 'Ken Singleton',
+        uniform: 29,
         pos: 'CF',
         pos2: 'RF',
         bats: 'S',
@@ -197,6 +205,7 @@ export const TEAMS = {
       {
         id: 'bal_brobinson',
         name: 'Brooks Robinson',
+        uniform: 5,
         pos: '3B',
         pos2: '2B',
         bats: 'R',
@@ -212,6 +221,7 @@ export const TEAMS = {
       {
         id: 'bal_blair',
         name: 'Paul Blair',
+        uniform: 6,
         pos: '2B',
         pos2: 'CF',
         bats: 'R',
@@ -227,6 +237,7 @@ export const TEAMS = {
       {
         id: 'bal_dempsey',
         name: 'Rick Dempsey',
+        uniform: 24,
         pos: 'C',
         pos2: 'C',
         bats: 'R',
@@ -244,6 +255,7 @@ export const TEAMS = {
       {
         id: 'bal_lowenstein',
         name: 'John Lowenstein',
+        uniform: 39,
         pos: 'LF',
         pos2: 'RF',
         bats: 'L',
@@ -259,6 +271,7 @@ export const TEAMS = {
       {
         id: 'bal_dwyer',
         name: 'Jim Dwyer',
+        uniform: 9,
         pos: 'RF',
         pos2: 'LF',
         bats: 'L',
@@ -274,6 +287,7 @@ export const TEAMS = {
       {
         id: 'bal_crowley',
         name: 'Terry Crowley',
+        uniform: 10,
         pos: 'DH',
         pos2: '1B',
         bats: 'L',
@@ -289,6 +303,7 @@ export const TEAMS = {
       {
         id: 'bal_belanger',
         name: 'Mark Belanger',
+        uniform: 7,
         pos: 'SS',
         pos2: '2B',
         bats: 'R',
@@ -310,6 +325,7 @@ export const TEAMS = {
       {
         id: 'bal_palmer',
         name: 'Jim Palmer',
+        uniform: 22,
         role: 'SP',
         throws: 'R',
         splits: {
@@ -323,6 +339,7 @@ export const TEAMS = {
       {
         id: 'bal_flanagan',
         name: 'Mike Flanagan',
+        uniform: 46,
         role: 'SP',
         throws: 'L',
         splits: {
@@ -336,6 +353,7 @@ export const TEAMS = {
       {
         id: 'bal_cuellar',
         name: 'Mike Cuellar',
+        uniform: 35,
         role: 'SP',
         throws: 'L',
         splits: {
@@ -349,6 +367,7 @@ export const TEAMS = {
       {
         id: 'bal_mcnally',
         name: 'Dave McNally',
+        uniform: 19,
         role: 'SP',
         throws: 'L',
         splits: {
@@ -362,6 +381,7 @@ export const TEAMS = {
       {
         id: 'bal_martinez',
         name: 'Tippy Martinez',
+        uniform: 23,
         role: 'CL',
         throws: 'L',
         splits: {
@@ -393,6 +413,7 @@ export const TEAMS = {
       {
         id: 'bos_boggs',
         name: 'Wade Boggs',
+        uniform: 26,
         pos: '3B',
         pos2: '1B',
         bats: 'L',
@@ -408,6 +429,7 @@ export const TEAMS = {
       {
         id: 'bos_barrett',
         name: 'Marty Barrett',
+        uniform: 17,
         pos: '2B',
         pos2: 'SS',
         bats: 'R',
@@ -423,6 +445,7 @@ export const TEAMS = {
       {
         id: 'bos_yastrzemski',
         name: 'Carl Yastrzemski',
+        uniform: 8,
         pos: '1B',
         pos2: 'LF',
         bats: 'L',
@@ -438,6 +461,7 @@ export const TEAMS = {
       {
         id: 'bos_rice',
         name: 'Jim Rice',
+        uniform: 14,
         pos: 'LF',
         pos2: 'DH',
         bats: 'R',
@@ -453,6 +477,7 @@ export const TEAMS = {
       {
         id: 'bos_lynn',
         name: 'Fred Lynn',
+        uniform: 19,
         pos: 'CF',
         pos2: 'RF',
         bats: 'L',
@@ -468,6 +493,7 @@ export const TEAMS = {
       {
         id: 'bos_evans',
         name: 'Dwight Evans',
+        uniform: 24,
         pos: 'RF',
         pos2: '1B',
         bats: 'R',
@@ -483,6 +509,7 @@ export const TEAMS = {
       {
         id: 'bos_fisk',
         name: 'Carlton Fisk',
+        uniform: 27,
         pos: 'C',
         pos2: 'DH',
         bats: 'R',
@@ -498,6 +525,7 @@ export const TEAMS = {
       {
         id: 'bos_gedman',
         name: 'Rich Gedman',
+        uniform: 10,
         pos: 'DH',
         pos2: 'C',
         bats: 'L',
@@ -530,6 +558,7 @@ export const TEAMS = {
       {
         id: 'bos_baylor',
         name: 'Don Baylor',
+        uniform: 25,
         pos: 'DH',
         pos2: '1B',
         bats: 'R',
@@ -545,6 +574,7 @@ export const TEAMS = {
       {
         id: 'bos_buckner',
         name: 'Bill Buckner',
+        uniform: 6,
         pos: '1B',
         pos2: 'LF',
         bats: 'L',
@@ -575,6 +605,7 @@ export const TEAMS = {
       {
         id: 'bos_armas',
         name: 'Tony Armas',
+        uniform: 20,
         pos: 'RF',
         pos2: 'CF',
         bats: 'R',
@@ -596,6 +627,7 @@ export const TEAMS = {
       {
         id: 'bos_clemens',
         name: 'Roger Clemens',
+        uniform: 21,
         role: 'SP',
         throws: 'R',
         splits: {
@@ -609,6 +641,7 @@ export const TEAMS = {
       {
         id: 'bos_hurst',
         name: 'Bruce Hurst',
+        uniform: 47,
         role: 'SP',
         throws: 'L',
         splits: {
@@ -622,6 +655,7 @@ export const TEAMS = {
       {
         id: 'bos_tiant',
         name: 'Luis Tiant',
+        uniform: 23,
         role: 'SP',
         throws: 'R',
         splits: {
@@ -635,6 +669,7 @@ export const TEAMS = {
       {
         id: 'bos_boyd',
         name: 'Oil Can Boyd',
+        uniform: 23,
         role: 'SP',
         throws: 'R',
         splits: {
@@ -648,6 +683,7 @@ export const TEAMS = {
       {
         id: 'bos_stanley',
         name: 'Bob Stanley',
+        uniform: 46,
         role: 'CL',
         throws: 'R',
         splits: {

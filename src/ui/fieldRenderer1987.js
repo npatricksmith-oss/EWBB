@@ -26,7 +26,7 @@ import { getInitialFielderPositions } from '../engine/physicsEngine.js';
 import { getLastName } from '../data/rosters.js';
 import { drawPixelBaseball, getVisualBallSpin, visualSpinAngle } from './baseballSprite.js';
 import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses, getReleasePointOffset } from './pitcherStyles.js';
-import { getBatterStyle, getBatterSwingPose, BASE_BATTER_POSES } from './batterStyles.js';
+import { getBatterStyle, getBatterSwingPose, hashString, BASE_BATTER_POSES } from './batterStyles.js';
 
 /** Duel delivery timing: windup to release (progress 0.42), then ball flight to the end (1.0). */
 export const PITCH_WINDUP_MS = 800;
@@ -2087,25 +2087,45 @@ export class FieldRenderer1987 {
       ctx.fill();
     };
 
+    // Arms are layered a segment at a time. The lead forearm and bottom glove cover the rear
+    // forearm and top glove where they cross at the grip, so the rear ("back") arm never paints
+    // over the lead arm. The rear upper arm slips behind the torso once the shoulders open past
+    // twist 0.7; from the wrap on, everything above the shoulders goes behind the body.
     const leadSleeve = darken(primary, 0.25);
-    const drawLeadArm = () => {
-      const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
-      this.strokeLimb(ctx, fArm, leadSleeve);
-      this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, leadSleeve, darken(primary, 0.55)), 1);
+    const leadShade = this.getDitherPattern(ctx, leadSleeve, darken(primary, 0.55));
+    const drawLeadUpper = () => {
+      const seg = [[pose.fShoulder, pose.fElbow, 10]];
+      this.strokeLimb(ctx, seg, leadSleeve);
+      this.shadeLimb(ctx, seg, leadShade, 1);
     };
-    const drawRearArm = () => {
-      const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, nHand, 10]];
-      this.strokeLimb(ctx, nArm, primary);
-      this.shadeLimb(ctx, nArm, sleeveShade, 1);
+    const drawLeadFore = () => {
+      const seg = [[pose.fElbow, fHand, 9]];
+      this.strokeLimb(ctx, seg, leadSleeve);
+      this.shadeLimb(ctx, seg, leadShade, 1);
+    };
+    const drawRearUpper = () => {
+      const seg = [[pose.nShoulder, pose.nElbow, 11]];
+      this.strokeLimb(ctx, seg, primary);
+      this.shadeLimb(ctx, seg, sleeveShade, 1);
+    };
+    const drawRearFore = () => {
+      const seg = [[pose.nElbow, nHand, 10]];
+      this.strokeLimb(ctx, seg, primary);
+      this.shadeLimb(ctx, seg, sleeveShade, 1);
     };
     const drawGrip = () => {
-      drawGlove(fHand, '#d5dbe3');
       drawGlove(nHand, '#f8fafc');
+      drawGlove(fHand, '#d5dbe3');
     };
+    const rearUpperBehind = armsBehind || (pose.twist || 0) > 0.7;
     if (armsBehind) {
-      drawLeadArm();
-      drawRearArm();
+      drawRearUpper();
+      drawRearFore();
+      drawLeadUpper();
+      drawLeadFore();
       drawGrip();
+    } else if (rearUpperBehind) {
+      drawRearUpper();
     }
 
     // Torso: spine from pelvis to neck, butt pushed back, chest forward. As the shoulders and
@@ -2150,6 +2170,32 @@ export class FieldRenderer1987 {
     ctx.closePath();
     ctx.fill();
 
+    // Jersey number between the shoulder blades. It starts to come around as the shoulders open
+    // (twist 0.45), reads clearly by twist 0.8 and faces the camera in the finish.
+    // Players without a recorded number get a steady placeholder from their id.
+    const numberView = Math.max(0, Math.min(1, ((pose.twist || 0) - 0.45) / 0.45));
+    if (numberView > 0) {
+      const number = String(batterObj?.uniform ?? 2 + (hashString(batterObj?.id || batterObj?.name) % 58));
+      const [cx2, cy2] = [lerp(nx, px, 0.4) + bx * 8 * (1 - numberView), lerp(ny, py, 0.4)];
+      ctx.save();
+      ctx.clip(torsoPath);
+      ctx.translate(cx2, cy2);
+      ctx.rotate(Math.atan2(ux, -uy));
+      // Undo the left-handed mirror so the digits read correctly, and squeeze them while side-on
+      ctx.scale(f * (0.25 + 0.75 * numberView), 1);
+      ctx.globalAlpha = Math.min(1, numberView * 2.5);
+      ctx.font = 'bold 15px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = secondary;
+      ctx.strokeText(number, 0, 0);
+      ctx.fillStyle = primary;
+      ctx.fillText(number, 0, 0);
+      ctx.restore();
+    }
+
     // Near (rear) leg with pants piping
     const nCuff = cuffOf(pose.nFoot, pose.nKnee);
     drawLowerLeg(pose.nFoot, pose.nKnee, pose.nFoot[1] < -0.8);
@@ -2193,7 +2239,7 @@ export class FieldRenderer1987 {
     // Neck sits under the lead arm, which drapes across the chest and throat to the bottom of the grip
     const [hx, hy] = pose.head;
     this.strokeLimb(ctx, [[[nx, ny + 2], [hx - 2, hy + 6], 9]], SKIN);
-    if (!armsBehind) drawLeadArm();
+    if (!armsBehind) drawLeadUpper();
 
     // Motion smear while the bat whips through
     if (didSwing && pitchProg > 0.72 && pitchProg < 1.02) {
@@ -2262,9 +2308,11 @@ export class FieldRenderer1987 {
       ctx.stroke();
     }
 
-    // Near (rear) arm in team undershirt sleeve, then both batting gloves on the grip
+    // Rear arm in team undershirt sleeve, then the lead forearm across it, then both gloves
     if (!armsBehind) {
-      drawRearArm();
+      if (!rearUpperBehind) drawRearUpper();
+      drawRearFore();
+      drawLeadFore();
       drawGrip();
     }
 
