@@ -364,13 +364,15 @@ export function buildPitcherPoses(style) {
 
   // Leg lift: high kickers coil past side-on so the plate sees the back of the jersey (Tiant
   // turns furthest; low kickers stay about side-on), the knee comes up and across toward the
-  // throwing side, and the hands come down to the chest.
+  // throwing side, and the hands come down to the chest. The deeper the coil, the further the
+  // knee sits out to the side, so the number on the back stays in view.
+  const liftTurn = style.windup === 'pivot' ? 130 : 86 + 22 * k;
   const kneeY = -50 - 36 * k;
-  const kneeX = 7 - 9 * k;
+  const kneeX = 7 - 9 * k - 13 * clamp((liftTurn - 85) / 20, 0, 1);
   const liftFrame = {
     ...windFrame,
     tFootSide: 1,
-    turn: style.windup === 'pivot' ? 130 : 86 + 22 * k,
+    turn: liftTurn,
     pelvis: [-1, -52],
     tFoot: [-3, 2],
     tKnee: [-5, -26],

@@ -1949,8 +1949,10 @@ export class FieldRenderer1987 {
 
     // Legs, cleats and team stirrups
     const hipW = pose.hipW ?? 1;
-    const pelvisT = [pose.pelvis[0] - 6 * hipW, pose.pelvis[1]];
-    const pelvisG = [pose.pelvis[0] + 6 * hipW, pose.pelvis[1]];
+    // Hips swap sides as the pitcher coils his back to the plate
+    const hipSide = 1 - 2 * (pose.back ?? 0);
+    const pelvisT = [pose.pelvis[0] - 6 * hipW * hipSide, pose.pelvis[1]];
+    const pelvisG = [pose.pelvis[0] + 6 * hipW * hipSide, pose.pelvis[1]];
     const drawLeg = (hip, knee, foot, side) => {
       // Stirrup from the pant cuff to the ankle, then the shoe (toe-on, or turned along the
       // rubber), then the pants
@@ -2042,11 +2044,20 @@ export class FieldRenderer1987 {
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
-    ctx.fillStyle = darken(secondary, 0.3);
-    ctx.fillRect(hx - hr - 2, hy - 2.5, hr * 2 + 4, 3);
-    ctx.fillStyle = FIGURE_OUTLINE;
-    ctx.fillRect(hx - 4, hy + 1, 2, 2);
-    ctx.fillRect(hx + 2, hy + 1, 2, 2);
+    if (coiled) {
+      // Coiled away from the plate, he looks in over the glove shoulder: the head shows in
+      // profile, the brim and one eye toward third
+      ctx.fillStyle = darken(secondary, 0.3);
+      ctx.fillRect(hx - hr - 4, hy - 2.5, hr + 3, 3);
+      ctx.fillStyle = FIGURE_OUTLINE;
+      ctx.fillRect(hx - hr + 1, hy + 1, 2, 2);
+    } else {
+      ctx.fillStyle = darken(secondary, 0.3);
+      ctx.fillRect(hx - hr - 2, hy - 2.5, hr * 2 + 4, 3);
+      ctx.fillStyle = FIGURE_OUTLINE;
+      ctx.fillRect(hx - 4, hy + 1, 2, 2);
+      ctx.fillRect(hx + 2, hy + 1, 2, 2);
+    }
 
     if (!armBehind && !coiled) drawThrowingArm();
 

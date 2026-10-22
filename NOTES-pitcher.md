@@ -59,7 +59,7 @@ The lead-in follows the windup vs. stretch research in `research/pitching_windup
 | 0.42 | Release. | same |
 | 0.42–0.70 | Follow-through. The back foot lifts on high-kick deliveries. | same |
 
-Both deliveries use `tempo` as an ease exponent on their first phase. While a pose's `back` is above 0.5, the renderer draws both arms behind the jersey and shows the number; a knee lifted above the hip is drawn in front of the jersey. `tFootSide` and `gFootSide` (0 toe-on, 1 along the rubber) turn each cleat; the pivot foot lies along the rubber from the pivot (or the stretch) until it drags off at release.
+Both deliveries use `tempo` as an ease exponent on their first phase. While a pose's `back` is above 0.5, the renderer draws both arms behind the jersey, shows the number, swaps the hips and turns the head to profile (looking in over the glove shoulder); a knee lifted above the hip is drawn in front of the jersey. `tFootSide` and `gFootSide` (0 toe-on, 1 along the rubber) turn each cleat; the pivot foot lies along the rubber from the pivot (or the stretch) until it drags off at release.
 
 ## Arm slots and variation
 
