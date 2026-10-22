@@ -2047,8 +2047,10 @@ export class FieldRenderer1987 {
     };
 
     // After contact the barrel wraps past the pitcher's side to the far side of the batter,
-    // so it passes behind the body and helmet; only the gloves on the handle show in front.
-    const batBehind = pose.batDepth > 0.3 && pose.batYaw > 100;
+    // so it passes behind the body and helmet. From the wrap on, the chest faces the pitcher
+    // and the arms and hands finish on that far side too, drawn before the torso covers them.
+    const armsBehind = (pose.armsBehind || 0) > 0.5;
+    const batBehind = armsBehind || (pose.batDepth > 0.3 && pose.batYaw > 100);
     if (batBehind) drawBat();
 
     const shade = this.getDitherPattern(ctx, uni, uniShade);
@@ -2094,7 +2096,30 @@ export class FieldRenderer1987 {
       ctx.fill();
     };
 
-    // Torso: spine from pelvis to neck, butt pushed back, chest forward
+    const leadSleeve = darken(primary, 0.25);
+    const drawLeadArm = () => {
+      const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
+      this.strokeLimb(ctx, fArm, leadSleeve);
+      this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, leadSleeve, darken(primary, 0.55)), 1);
+    };
+    const drawRearArm = () => {
+      const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, nHand, 10]];
+      this.strokeLimb(ctx, nArm, primary);
+      this.shadeLimb(ctx, nArm, sleeveShade, 1);
+    };
+    const drawGrip = () => {
+      drawGlove(fHand, '#d5dbe3');
+      drawGlove(nHand, '#f8fafc');
+    };
+    if (armsBehind) {
+      drawLeadArm();
+      drawRearArm();
+      drawGrip();
+    }
+
+    // Torso: spine from pelvis to neck, butt pushed back, chest forward. As the hips and
+    // shoulders turn through the finish it widens into a back view, shoulders level.
+    const backView = Math.max(0, Math.min(1, ((pose.twist || 0) - 0.85) / 0.15));
     const [px, py] = pose.pelvis;
     const [nx, ny] = pose.neck;
     const sl = Math.hypot(nx - px, ny - py) || 1;
@@ -2104,8 +2129,10 @@ export class FieldRenderer1987 {
     const by = -ux;
     const backShoulder = [nx + bx * 14 - ux * 5, ny + by * 14 - uy * 5];
     const backHip = [px + bx * 16 + ux * 2, py + by * 16 + uy * 2];
-    const frontHip = [px - bx * 11, py - by * 11];
-    const frontChest = [nx - bx * 13 - ux * 12, ny - by * 13 - uy * 12];
+    const frontHip = [px - bx * lerp(11, 14, backView), py - by * lerp(11, 14, backView)];
+    const chestOut = lerp(13, 16, backView);
+    const chestDrop = lerp(12, 5, backView);
+    const frontChest = [nx - bx * chestOut - ux * chestDrop, ny - by * chestOut - uy * chestDrop];
     ctx.fillStyle = uni;
     ctx.strokeStyle = FIGURE_OUTLINE;
     ctx.lineWidth = 2.4;
@@ -2156,10 +2183,7 @@ export class FieldRenderer1987 {
     // Neck sits under the lead arm, which drapes across the chest and throat to the bottom of the grip
     const [hx, hy] = pose.head;
     this.strokeLimb(ctx, [[[nx, ny + 2], [hx - 2, hy + 6], 9]], SKIN);
-    const leadSleeve = darken(primary, 0.25);
-    const fArm = [[pose.fShoulder, pose.fElbow, 10], [pose.fElbow, fHand, 9]];
-    this.strokeLimb(ctx, fArm, leadSleeve);
-    this.shadeLimb(ctx, fArm, this.getDitherPattern(ctx, leadSleeve, darken(primary, 0.55)), 1);
+    if (!armsBehind) drawLeadArm();
 
     // Motion smear while the bat whips through
     if (didSwing && pitchProg > 0.72 && pitchProg < 1.02) {
@@ -2180,46 +2204,64 @@ export class FieldRenderer1987 {
     const batInFront = pose.batDepth < -0.2 && pose.batPitch < 40;
     if (!batInFront && !batBehind) drawBat();
 
-    // Head: skin, batting helmet with ear flap and brim
-    ctx.fillStyle = SKIN;
-    ctx.strokeStyle = FIGURE_OUTLINE;
-    ctx.lineWidth = 2.2;
-    ctx.beginPath();
-    ctx.arc(hx, hy, 10, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.fill();
-    ctx.fillStyle = FIGURE_OUTLINE;
-    ctx.fillRect(hx + 5, hy - 1, 2, 2.2);
-    ctx.fillStyle = secondary;
-    ctx.beginPath();
-    ctx.arc(hx - 0.5, hy - 1, 11.5, Math.PI * 0.62, Math.PI * 1.93);
-    ctx.lineTo(hx + 16, hy - 4);
-    ctx.lineTo(hx + 9, hy - 0.5);
-    ctx.closePath();
-    ctx.stroke();
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(hx - 2, hy + 3, 5.5, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
-    ctx.lineWidth = 1.6;
-    ctx.beginPath();
-    ctx.arc(hx - 1, hy - 2, 8, Math.PI * 1.15, Math.PI * 1.45);
-    ctx.stroke();
+    if (backView > 0.5) {
+      // Back of the helmet, ear flap on the lead side; the face is turned away toward the pitcher
+      ctx.fillStyle = secondary;
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.arc(hx - 7, hy + 3, 5.5, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(hx, hy - 1, 11.5, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.arc(hx, hy - 2, 8, Math.PI * 1.15, Math.PI * 1.45);
+      ctx.stroke();
+    } else {
+      // Head: skin, batting helmet with ear flap and brim
+      ctx.fillStyle = SKIN;
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.arc(hx, hy, 10, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fill();
+      ctx.fillStyle = FIGURE_OUTLINE;
+      ctx.fillRect(hx + 5, hy - 1, 2, 2.2);
+      ctx.fillStyle = secondary;
+      ctx.beginPath();
+      ctx.arc(hx - 0.5, hy - 1, 11.5, Math.PI * 0.62, Math.PI * 1.93);
+      ctx.lineTo(hx + 16, hy - 4);
+      ctx.lineTo(hx + 9, hy - 0.5);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(hx - 2, hy + 3, 5.5, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.arc(hx - 1, hy - 2, 8, Math.PI * 1.15, Math.PI * 1.45);
+      ctx.stroke();
+    }
 
     // Near (rear) arm in team undershirt sleeve, then both batting gloves on the grip
-    const nArm = [[pose.nShoulder, pose.nElbow, 11], [pose.nElbow, nHand, 10]];
-    this.strokeLimb(ctx, nArm, primary);
-    this.shadeLimb(ctx, nArm, sleeveShade, 1);
-    drawGlove(fHand, '#d5dbe3');
-    drawGlove(nHand, '#f8fafc');
+    if (!armsBehind) {
+      drawRearArm();
+      drawGrip();
+    }
 
-    if (batInFront) {
+    if (batInFront && !armsBehind) {
       // Keep both hands wrapped over the handle
       drawBat();
-      drawGlove(fHand, '#d5dbe3');
-      drawGlove(nHand, '#f8fafc');
+      drawGrip();
     }
 
     ctx.restore();
