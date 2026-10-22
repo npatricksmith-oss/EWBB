@@ -1842,10 +1842,22 @@ export class FieldRenderer1987 {
       if (prog < 0.3) return blendPose(leadIn(prog), breakPose, smooth((prog - 0.27) / 0.03));
       if (prog < 0.33) return blendPose(breakPose, P.STRIDE, smooth((prog - 0.3) / 0.03));
       if (prog < 0.355) return blendPose(P.STRIDE, P.LOAD, smooth((prog - 0.33) / 0.025));
-      // The elbow leads, so the hand comes up late behind the head
+      // The elbow leads, so the hand comes up late. It rises on the far side first, then
+      // crosses to the cocked position; when that position is up by the head, the ball arcs
+      // over the cap instead of vanishing behind the head on the way.
       if (prog < 0.385) {
         const t = (prog - 0.355) / 0.03;
-        return blendPose(P.LOAD, P.COCK, t * t);
+        const pose = blendPose(P.LOAD, P.COCK, t * t);
+        const from = P.LOAD.tHand;
+        const to = P.COCK.tHand;
+        const tx = t * t;
+        let y = lerp(from[1], to[1], t * (2 - t));
+        if (to[1] < pose.neck[1]) {
+          const clearCap = pose.head[1] - pose.headR - 5;
+          y -= Math.max(0, y - clearCap) * Math.sin(Math.PI * tx);
+        }
+        pose.tHand = [lerp(from[0], to[0], tx), y];
+        return pose;
       }
       if (prog < 0.4) return blendPose(P.COCK, P.LAYBACK, smooth((prog - 0.385) / 0.015));
       // The whip runs at full speed through the release instead of easing into it

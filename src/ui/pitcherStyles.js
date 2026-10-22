@@ -435,9 +435,12 @@ export function buildPitcherPoses(style) {
   };
 
   // Cocked arm: hips have fired but the shoulders are still closed. The elbow is up at
-  // shoulder height and the hand is laid back above and behind the head. The glove pulls in
-  // in front of the chest.
+  // shoulder height and the hand is laid back behind the head, lower for lower arm slots
+  // (beside the shoulder for sidearm, below it for submarine). The glove pulls in in front
+  // of the chest.
   const sh = shoulders(d);
+  // 0 overhand, about 0.4 three-quarter, 0.9 sidearm, 1.7 submarine
+  const slotDrop = clamp(style.releaseAngle / 90, 0, 1.7);
   const cockFrame = {
     ...strideLegs,
     pelvis: pelvisAt(1),
@@ -448,8 +451,8 @@ export function buildPitcherPoses(style) {
     head: [headTurn, -41],
     headR: 8,
     ...sh,
-    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 2],
-    tHa: [sh.tSh[0] - 4, sh.tSh[1] - 16],
+    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 2 + 3 * slotDrop],
+    tHa: [sh.tSh[0] - 4 - 5 * Math.min(slotDrop, 1), sh.tSh[1] - 16 + 12 * slotDrop],
     tArmBack: 1,
     gEl: [9, -21],
     gHa: [3, -19]
@@ -462,8 +465,8 @@ export function buildPitcherPoses(style) {
     lean: lean * 0.8,
     turn: 15,
     hipTurn: -5,
-    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 1],
-    tHa: [sh.tSh[0] - 5, sh.tSh[1] - 11],
+    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 1 + 3 * slotDrop],
+    tHa: [sh.tSh[0] - 5 - 4 * Math.min(slotDrop, 1), sh.tSh[1] - 11 + 12 * slotDrop],
     gEl: [11, -17],
     gHa: [6, -16]
   };
