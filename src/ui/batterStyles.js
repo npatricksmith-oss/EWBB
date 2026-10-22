@@ -158,19 +158,20 @@ export const BASE_BATTER_POSES = {
     nElbow: [30, -84], fElbow: [42, -96], hands: [52, -88], batYaw: 15, batPitch: -12, batLength: 64, twist: 0.60
   },
   // Finishes: the torso has turned to face the pitcher, so the camera sees the batter's back.
-  // The arms, hands and bat end on the far side of the body, over the lead shoulder
-  // (now on the side away from the plate); armsBehind = 1 draws them behind the torso.
+  // As in the original game's duel view, the hands finish at shoulder height just outside the
+  // lead shoulder (now on the side away from the plate) with the barrel pointing up and away.
+  // armsBehind = 1 draws the arms, hands and bat behind the torso.
   FOLLOW_TWO_HAND: {
     nFoot: [2, -3], fFoot: [38, -12], nKnee: [31, -32], fKnee: [44, -46], pelvis: [17, -67],
     neck: [22, -111], head: [23, -122], nShoulder: [38, -104], fShoulder: [8, -105],
-    nElbow: [22, -114], fElbow: [2, -114], hands: [10, -126], batYaw: 160, batPitch: -8, batLength: 64,
+    nElbow: [14, -106], fElbow: [-6, -104], hands: [-2, -112], batYaw: 165, batPitch: 35, batLength: 64,
     twist: 1.0, armsBehind: 1
   },
   FOLLOW_ONE_HAND: {
     nFoot: [2, -3], fFoot: [38, -12], nKnee: [31, -32], fKnee: [44, -46], pelvis: [17, -67],
     neck: [22, -111], head: [23, -123], nShoulder: [38, -104], fShoulder: [8, -105],
-    nElbow: [30, -96], fElbow: [2, -120], hands: [6, -136], nHand: [26, -100],
-    batYaw: 150, batPitch: 15, batLength: 64, twist: 1.0, armsBehind: 1
+    nElbow: [30, -96], fElbow: [-6, -112], hands: [-6, -124], nHand: [26, -100],
+    batYaw: 160, batPitch: 45, batLength: 64, twist: 1.0, armsBehind: 1
   },
   CHECK_SWING: {
     nFoot: [0, -1], fFoot: [37, -11], nKnee: [20, -36], fKnee: [44, -45], pelvis: [11, -68],
