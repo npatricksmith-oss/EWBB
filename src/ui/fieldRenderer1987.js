@@ -1802,9 +1802,13 @@ export class FieldRenderer1987 {
    * - 0.10–0.19 the full stop
    * - 0.19–0.28 a quicker, lower leg lift that stays in front
    * Both then finish the same way:
-   * - 0.28–0.33 stride toward the plate; hands break, throwing hand swings down behind the hip
-   * - 0.33–0.385 hips fire and the arm cocks, laid back behind the head
-   * - 0.385–0.42 the shoulders whip square and the arm snaps through to the release
+   * - 0.27–0.30 the hands break at the belt as the knee starts down
+   * - 0.30–0.33 stride toward the plate, shoulders closed; the glove arm leads toward third and
+   *   the throwing hand swings down and back past the hip
+   * - 0.33–0.355 the hips open and the throwing elbow rises to shoulder height
+   * - 0.355–0.385 the hand comes up behind the head into the cocked position, glove pulling in
+   * - 0.385–0.40 layback: the shoulders square, the elbow leads and the hand drops behind the head
+   * - 0.40–0.42 the arm snaps through to the release
    * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
    * - 0.42–0.70 follow-through across to the glove-side knee, the back leg lifts
    */
@@ -1819,6 +1823,7 @@ export class FieldRenderer1987 {
 
     const setPose = isStretch ? P.SIGN : P.SET;
     const liftPose = isStretch ? P.STRETCH_LIFT : P.LIFT;
+    const breakPose = isStretch ? P.STRETCH_BREAK : P.BREAK;
     const leadIn = (prog) => {
       if (isStretch) {
         if (prog < 0.05) return blendPose(P.SIGN, P.GATHER, smooth(Math.pow(prog / 0.05, style.tempo)));
@@ -1833,14 +1838,18 @@ export class FieldRenderer1987 {
       return P.LIFT;
     };
     const poseAt = (prog) => {
-      if (prog < 0.28) return leadIn(prog);
-      if (prog < 0.33) return blendPose(liftPose, P.STRIDE, smooth((prog - 0.28) / 0.05));
+      if (prog < 0.27) return leadIn(prog);
+      if (prog < 0.3) return blendPose(leadIn(prog), breakPose, smooth((prog - 0.27) / 0.03));
+      if (prog < 0.33) return blendPose(breakPose, P.STRIDE, smooth((prog - 0.3) / 0.03));
+      if (prog < 0.355) return blendPose(P.STRIDE, P.LOAD, smooth((prog - 0.33) / 0.025));
+      // The elbow leads, so the hand comes up late behind the head
       if (prog < 0.385) {
-        const t = (prog - 0.33) / 0.055;
-        return blendPose(P.STRIDE, P.COCK, t * (2 - t));
+        const t = (prog - 0.355) / 0.03;
+        return blendPose(P.LOAD, P.COCK, t * t);
       }
+      if (prog < 0.4) return blendPose(P.COCK, P.LAYBACK, smooth((prog - 0.385) / 0.015));
       // The whip runs at full speed through the release instead of easing into it
-      if (prog < 0.42) return blendPose(P.COCK, P.RELEASE, (prog - 0.385) / 0.035);
+      if (prog < 0.42) return blendPose(P.LAYBACK, P.RELEASE, (prog - 0.4) / 0.02);
       const t = Math.min(1, (prog - 0.42) / 0.28);
       return blendPose(P.RELEASE, P.FOLLOW, 1 - (1 - t) * (1 - t));
     };

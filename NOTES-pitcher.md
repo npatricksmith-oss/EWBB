@@ -49,9 +49,13 @@ The lead-in follows the windup vs. stretch research in `research/pitching_windup
 | 0.05–0.11 | `ROCKER`: the glove-side foot steps back | `STRETCH`: hands settle at the belt |
 | 0.11–0.17 | `PIVOT`: pivot foot into the slot, body turns side-on | full stop (until 0.19) |
 | 0.17–0.26 | `LIFT`: knee to the chest; high kickers coil until the plate sees the back number | `STRETCH_LIFT` (0.19–0.28): knee to belt height, staying in front |
-| 0.26–0.28 | balance point | |
-| 0.28–0.33 | Stride. The glove-side foot lands toward the plate. | same |
-| 0.33–0.42 | Arm cock, then the whip into release. | same |
+| 0.26–0.27 | balance point | |
+| 0.27–0.30 | `BREAK`: hands part at the belt as the knee starts down | `STRETCH_BREAK`: same, from the lower lift |
+| 0.30–0.33 | `STRIDE`: shoulders closed; the glove arm leads toward third, the throwing hand swings down and back past the far hip | same |
+| 0.33–0.355 | `LOAD`: hips open; the throwing elbow rises behind the body | same |
+| 0.355–0.385 | `COCK`: the hand comes up behind the head; the glove pulls in | same |
+| 0.385–0.40 | `LAYBACK`: shoulders nearly square, elbow leads, hand drops behind the head | same |
+| 0.40–0.42 | The whip into release, at full speed. | same |
 | 0.42 | Release. | same |
 | 0.42–0.70 | Follow-through. The back foot lifts on high-kick deliveries. | same |
 

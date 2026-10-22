@@ -197,7 +197,7 @@ export function getPitcherStyle(pitcher) {
  * pelvis, neck, head, headR, shoulders, elbows and hands.
  * @param {Object} style from `getPitcherStyle`
  * Windup: SET, WIND, ROCKER, PIVOT, LIFT. Stretch: SIGN, GATHER, STRETCH, STRETCH_LIFT.
- * Both finish through STRIDE, COCK, RELEASE and FOLLOW.
+ * Both finish through BREAK (or STRETCH_BREAK), STRIDE, LOAD, COCK, LAYBACK, RELEASE and FOLLOW.
  * @returns {Object<string, Object>} keyframes by phase name
  */
 export function buildPitcherPoses(style) {
@@ -375,28 +375,68 @@ export function buildPitcherPoses(style) {
     gHa: [2, -18]
   };
 
-  // Stride: the front foot lands toward the plate while the shoulders stay closed. The hands
-  // break: the glove reaches toward the plate and the throwing hand swings down behind the hip.
+  // Stride: the front foot lands toward the plate while the shoulders stay closed (high kickers
+  // still nearly side-on). The glove arm leads, out toward third base at shoulder height, and
+  // the throwing hand has swung down and back toward second, peeking out past the far hip.
   const strideLegs = { tFoot: [-9, 0], gFoot: [12, 6], tKnee: [-10, -22], gKnee: [12, -21] };
   const strideFrame = {
     ...strideLegs,
     pelvis: [0, -46 + sink * 0.6],
     lean: lean * 0.3,
-    turn: 72,
+    turn: 78 + 14 * k,
     hipTurn: 55,
     neck: [0, -32],
     head: [headTurn, -41],
     headR: 8,
     ...shoulders(d * 0.5),
-    tEl: [-12, -12],
-    tHa: [-15, -2],
+    tEl: [3, -17],
+    tHa: [12, -6],
     tArmBack: 1,
-    gEl: [17, -25],
-    gHa: [21, -22]
+    gEl: [-8, -26],
+    gHa: [-18, -23]
+  };
+
+  // Hand break, as the lifted knee starts down: the hands part at the belt, the glove turning
+  // out and the throwing hand starting down.
+  const breakFrom = (lift) => {
+    const toward = (key) => [
+      lift[key][0] + (strideLegs[key][0] - lift[key][0]) * 0.35,
+      lift[key][1] + (strideLegs[key][1] - lift[key][1]) * 0.35
+    ];
+    return {
+      ...lift,
+      tFoot: toward('tFoot'),
+      gFoot: toward('gFoot'),
+      tKnee: toward('tKnee'),
+      gKnee: toward('gKnee'),
+      tEl: [-8, -9],
+      tHa: [-5, -3],
+      tArmBack: 0,
+      gEl: [6, -13],
+      gHa: [0, -8]
+    };
+  };
+
+  // Arm load as the front foot lands: the hips open first, and behind the body the throwing
+  // elbow rises to shoulder height with the forearm still hanging. The glove arm still leads.
+  // From here the hand sweeps up behind the head into the cocked position.
+  const sl = shoulders(d * 0.75);
+  const loadFrame = {
+    ...strideFrame,
+    pelvis: [0, -47 + sink * 0.8],
+    lean: lean * 0.45,
+    turn: 62,
+    hipTurn: 30,
+    ...sl,
+    tEl: [11, -27],
+    tHa: [15, -16],
+    gEl: [-4, -23],
+    gHa: [-12, -20]
   };
 
   // Cocked arm: hips have fired but the shoulders are still closed. The elbow is up at
-  // shoulder height and the hand is laid back above and behind the head.
+  // shoulder height and the hand is laid back above and behind the head. The glove pulls in
+  // in front of the chest.
   const sh = shoulders(d);
   const cockFrame = {
     ...strideLegs,
@@ -409,10 +449,23 @@ export function buildPitcherPoses(style) {
     headR: 8,
     ...sh,
     tEl: [sh.tSh[0] - 9, sh.tSh[1] - 2],
-    tHa: [sh.tSh[0] - 4, sh.tSh[1] - 19],
+    tHa: [sh.tSh[0] - 4, sh.tSh[1] - 16],
     tArmBack: 1,
-    gEl: [15, -20],
-    gHa: [11, -18]
+    gEl: [9, -21],
+    gHa: [3, -19]
+  };
+
+  // Layback, just before release: the shoulders have nearly squared, the elbow leads at
+  // shoulder height and the forearm lies back, so the hand drops behind the head.
+  const laybackFrame = {
+    ...cockFrame,
+    lean: lean * 0.8,
+    turn: 15,
+    hipTurn: -5,
+    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 1],
+    tHa: [sh.tSh[0] - 5, sh.tSh[1] - 11],
+    gEl: [11, -17],
+    gHa: [6, -16]
   };
 
   // Release: shoulders whip square and past, throwing shoulder forward, hand out front.
@@ -464,8 +517,12 @@ export function buildPitcherPoses(style) {
     GATHER: frame(gatherFrame),
     STRETCH: frame(stretchFrame),
     STRETCH_LIFT: frame(stretchLiftFrame),
+    BREAK: frame(breakFrom(liftFrame)),
+    STRETCH_BREAK: frame(breakFrom(stretchLiftFrame)),
     STRIDE: frame(strideFrame),
+    LOAD: frame(loadFrame),
     COCK: frame(cockFrame),
+    LAYBACK: frame(laybackFrame),
     RELEASE: frame(releaseFrame),
     FOLLOW: frame(followFrame)
   };
