@@ -486,10 +486,15 @@ export function buildPitcherPoses(style) {
     gHa: [6, -16]
   };
 
-  // Release: shoulders whip square and past, throwing shoulder forward, hand out front. The
-  // arm reaches toward the plate, so it reads shorter than its length, and the torso has
-  // started to fold forward.
-  const releaseHa = add(sh.tSh, armOffset(style.releaseAngle, lean).map((v) => v * 0.75));
+  // Release: shoulders whip square and past, throwing shoulder forward, the chest driving out
+  // over the front knee. The straight arm reaches toward the plate, at the camera, so it reads
+  // short and the hand comes in front of the head (overhand) or the shoulder (lower slots).
+  const releaseFlex = 0.15;
+  const releaseSh = [sh.tSh[0], sh.tSh[1] * (1 - releaseFlex)];
+  const releaseHa = add(
+    add(releaseSh, armOffset(style.releaseAngle, lean).map((v) => v * 0.6)),
+    [4, 0]
+  );
   const releaseFrame = {
     ...cockFrame,
     tFootSide: 0.3,
@@ -499,11 +504,11 @@ export function buildPitcherPoses(style) {
     tKnee: [-5, -24],
     gKnee: [4, -20],
     lean,
-    flex: 0.08,
+    flex: releaseFlex,
     turn: -15,
     hipTurn: -20,
     headR: 9,
-    tEl: midpoint(sh.tSh, releaseHa, -3, 1),
+    tEl: midpoint(releaseSh, releaseHa, -1.5, 0.5),
     tHa: releaseHa,
     tArmBack: 0,
     gEl: [13, -14],
