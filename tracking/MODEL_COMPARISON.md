@@ -38,5 +38,14 @@ One row per worker run. Wall time runs from launch to exit. Quality is the coord
 | 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 5 min 57 s | 3.0 KB | The upright release, a rocker step that barely moved back, and a stretch head in full profile that should face the catcher (the reverse of its round 5 ask). Changed: a bigger rocker step and a three-quarter head when side-on; the full profile is kept for the coil. |
 | 2026-10-22 | Round 13: same review, adding a left-hander (Valenzuela) | codex (`-i` images) | `gpt-6-sol` (medium effort) | 1 min 1 s | 0.9 KB | The torso opens too early in the stride, and the drive and back-foot lift arrive after release. Both taken. |
 | 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 8 min 53 s | 3.0 KB | The same two problems in more detail: the arm should cock on the viewer's right while the shoulders are still closed, then whip across; the back heel should come up by release. Both fixed. It took the lefty's mirrored kick as correct. |
+| 2026-10-22 | Round 14: final review | codex (`-i` images) | `gpt-6-sol` (medium effort) | 1 min 7 s | 0.7 KB | One last point: the body stalls for a few frames as the front foot lands. Changed: the trunk keeps moving forward through the load and cock, and the glove draws in. Said nothing else remained. |
+| 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 6 min 57 s | 2.2 KB | "No significant mismatches remain", covering both deliveries, all three arm slots and the left-hander. |
+
+### Summary so far
+
+- **`gpt-6-luna`:** fastest (19–45 s) but the least reliable on images. It misread the deep coil (back number) five times and the arm crossing several times. Fine for text research.
+- **`gpt-6-sol`:** about twice luna's time (42–67 s), concise, and rarely wrong. The best value per minute for image review.
+- **agy `gemini-3.8-flash-medium`:** slowest (3–11 min, one failed run) but the most detailed eye. It caught problems no other model did (frozen layback, shin folding behind the thigh, arm double pump, the stride freeze). It also made a few confident errors and once reversed its own earlier advice.
+- None of them actually watched the `.webm` videos. All worked from the extracted frame sheets.
 
 The research runs used `research/pitching_agent_reports/prompt.md`. The review runs got real frames and video. The research runs had only web search.

@@ -460,11 +460,13 @@ export function buildPitcherPoses(style) {
     lean: lean * 0.45,
     turn: 82,
     hipTurn: 40,
+    // The body keeps moving toward the plate as the foot lands
+    flex: 0.05,
     ...sl,
     tEl: [11, -27],
     tHa: [15, -16],
     gEl: [-4, -23],
-    gHa: [-12, -20]
+    gHa: [-11, -20]
   };
 
   // Cocked arm: the front foot is down and the hips have started, but the shoulders are still
@@ -480,6 +482,7 @@ export function buildPitcherPoses(style) {
     gFootSide: 0.2,
     pelvis: [0, -42 + sink],
     lean: lean * 0.6,
+    flex: 0.12,
     turn: 75,
     hipTurn: 25,
     neck: [0, -32],
@@ -489,8 +492,8 @@ export function buildPitcherPoses(style) {
     tEl: [9, -29 + 4 * slotDrop],
     tHa: [11 + 3 * Math.min(slotDrop, 1), -42 + 14 * slotDrop],
     tArmBack: 1,
-    gEl: [-3, -23],
-    gHa: [-9, -20]
+    gEl: [-1, -22],
+    gHa: [-5, -19]
   };
 
   // Layback, just before release: the shoulders snap open, the elbow leads forward beside the
