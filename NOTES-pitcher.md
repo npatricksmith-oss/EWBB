@@ -38,18 +38,24 @@ const startY = moundY + rel.dy;
 
 ## Timeline
 
-Progress 0.42 is still the release frame: the ball leaves the hand there, and the throwing hand is at its release keyframe at that instant.
+Progress 0.42 is still the release frame: the ball leaves the hand there, and the throwing hand is at its release keyframe at that instant. `PITCH_WINDUP_MS` (1100 ms) covers progress 0 to 0.42 for both deliveries.
 
-| Progress | Phase |
-|---|---|
-| 0.00–0.16 | Windup. Hands rise overhead, or stay at the chest for hidden-ball and drop windups. Stretch: hands stay at the chest. |
-| 0.16–0.30 | Leg lift. Kick height comes from `legKick`. Stretch: half the kick. |
-| 0.30–0.36 | Stride. The glove-side foot lands toward the plate. |
-| 0.36–0.42 | Arm cock, then the whip into release. |
-| 0.42 | Release. |
-| 0.42–0.86 | Follow-through. The back foot lifts on high-kick deliveries. |
+The lead-in follows the windup vs. stretch research in `research/pitching_windup_vs_stretch.md`.
 
-The windup uses `tempo` as an ease exponent on the rise.
+| Progress | Windup (bases empty) | Stretch (runners on) |
+|---|---|---|
+| idle | `SET`: square, hands at the chest | `SIGN`: side-on, hands apart, glancing at the runner |
+| 0.00–0.05 | `WIND`: hands rise overhead (stay at the chest for hidden-ball and drop windups) | `GATHER`: hands meet at the chest |
+| 0.05–0.11 | `ROCKER`: the glove-side foot steps back | `STRETCH`: hands settle at the belt |
+| 0.11–0.17 | `PIVOT`: pivot foot into the slot, body turns side-on | full stop (until 0.19) |
+| 0.17–0.26 | `LIFT`: knee to the chest; high kickers coil until the plate sees the back number | `STRETCH_LIFT` (0.19–0.28): knee to belt height, staying in front |
+| 0.26–0.28 | balance point | |
+| 0.28–0.33 | Stride. The glove-side foot lands toward the plate. | same |
+| 0.33–0.42 | Arm cock, then the whip into release. | same |
+| 0.42 | Release. | same |
+| 0.42–0.70 | Follow-through. The back foot lifts on high-kick deliveries. | same |
+
+Both deliveries use `tempo` as an ease exponent on their first phase. While a pose's `back` is above 0.5, the renderer draws both arms behind the jersey and shows the number; a knee lifted above the hip is drawn in front of the jersey.
 
 ## Arm slots and variation
 

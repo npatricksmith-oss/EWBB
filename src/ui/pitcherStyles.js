@@ -196,7 +196,9 @@ export function getPitcherStyle(pitcher) {
  * limb and joint names the renderer reads: tFoot/gFoot (throwing and glove feet), knees,
  * pelvis, neck, head, headR, shoulders, elbows and hands.
  * @param {Object} style from `getPitcherStyle`
- * @returns {{ SET: Object, STRETCH: Object, WIND: Object, LIFT: Object, STRIDE: Object, COCK: Object, RELEASE: Object, FOLLOW: Object }}
+ * Windup: SET, WIND, ROCKER, PIVOT, LIFT. Stretch: SIGN, GATHER, STRETCH, STRETCH_LIFT.
+ * Both finish through STRIDE, COCK, RELEASE and FOLLOW.
+ * @returns {Object<string, Object>} keyframes by phase name
  */
 export function buildPitcherPoses(style) {
   const { lean, shoulderDrop: d, sink, legKick: k, backKick, headTurn } = style;
@@ -214,7 +216,7 @@ export function buildPitcherPoses(style) {
   // `flex` bends the torso toward the plate, shortening it on screen.
   const frame = (f) => {
     const turn = ((f.turn || 0) * Math.PI) / 180;
-    const w = 0.4 + 0.6 * Math.abs(Math.cos(turn));
+    const w = 0.3 + 0.7 * Math.abs(Math.cos(turn));
     const twist = ([x, y]) => [x * w, y + 0.15 * x * Math.sin(turn)];
     const flex = 1 - (f.flex || 0);
     const bend = ([x, y]) => [x, y * flex];
@@ -237,7 +239,12 @@ export function buildPitcherPoses(style) {
       gHand: at(f.gHa),
       hipW: 0.55 + 0.45 * Math.abs(Math.cos(hipTurn)),
       // 1 while the throwing arm is behind the body (drawn before the torso)
-      tArmBack: f.tArmBack || 0
+      tArmBack: f.tArmBack || 0,
+      // How much of the jersey's back faces the plate: none while square or side-on (the stretch
+      // turns up to 88°), all of it once coiled to 105° or more
+      back: clamp(((f.turn || 0) - 85) / 20, 0, 1),
+      // How squarely the chest faces the plate: 1 square, 0 side-on or turned away
+      front: Math.max(0, Math.cos(turn))
     };
   };
 
@@ -258,22 +265,61 @@ export function buildPitcherPoses(style) {
     gHa: [3, gy]
   };
 
-  // From the stretch the pitcher already stands side-on, hands together at the chest.
-  const stretchFrame = {
+  // Stretch, taking the sign: already side-on (chest to third base), pivot foot along the
+  // rubber, front foot toward the plate. Seen from the plate the feet are nearly in line, the
+  // front one nearer the camera. The hands are apart: the glove rests on the front thigh and
+  // the throwing hand hangs behind the hip.
+  const stretchLegs = { tFoot: [-2, -1], gFoot: [5, 3], tKnee: [-3, -27], gKnee: [5, -25] };
+  const signFrame = {
     ...setFrame,
+    ...stretchLegs,
     turn: 80,
-    tFoot: [-3, 0],
-    gFoot: [9, 2],
-    tKnee: [-4, -27],
-    gKnee: [9, -26],
-    tEl: [-6, -13],
-    tHa: [0, -19],
-    gEl: [8, -13],
-    gHa: [2, -18]
+    tEl: [-9, -9],
+    tHa: [-7, 5],
+    tArmBack: 1,
+    gEl: [11, -8],
+    gHa: [8, 6]
+  };
+
+  // Coming set: the hands meet at the chest, then settle at the belt (chest for high-glove
+  // pitchers) for the full stop.
+  const setY = Math.max(gy, -15);
+  const stretchFrame = {
+    ...signFrame,
+    tEl: [-6, setY + 6],
+    tHa: [-2, setY],
+    tArmBack: 0,
+    gEl: [7, setY + 6],
+    gHa: [0, setY + 1]
+  };
+  const gatherFrame = {
+    ...stretchFrame,
+    tEl: [-7, -12],
+    tHa: [-2, -19],
+    gEl: [7, -12],
+    gHa: [0, -18]
+  };
+
+  // Stretch leg lift: lower than the windup's, about belt height, and the knee stays in front
+  // instead of tucking back. The hands rise a little at the set.
+  const stretchKneeY = -52 - 10 * k;
+  const stretchKneeX = 5 - 3 * k;
+  const stretchLiftFrame = {
+    ...stretchFrame,
+    turn: 88,
+    pelvis: [-1, -51],
+    tFoot: [-2, -1],
+    tKnee: [-3, -27],
+    gKnee: [stretchKneeX, stretchKneeY],
+    gFoot: [stretchKneeX + 3, stretchKneeY + 24],
+    tEl: [-6, setY + 3],
+    tHa: [-2, setY - 3],
+    gEl: [7, setY + 3],
+    gHa: [0, setY - 2]
   };
 
   // Windup arms: overhead for the full windup, chest-high for hidden-ball and drop types.
-  // The rocker step starts the turn toward the pivot.
+  // The pitcher stays square to the plate while the hands go up.
   const high = style.windup === 'overhead' || style.windup === 'pivot';
   const windArms = high
     ? { tEl: [-14, -44], tHa: [-4, -54], gEl: [12, -42], gHa: [2, -52] }
@@ -281,21 +327,46 @@ export function buildPitcherPoses(style) {
   const windFrame = {
     ...setFrame,
     ...windArms,
-    turn: 20,
+    turn: 5,
     head: [headTurn, -41],
     ...shoulders(0, style.windup === 'pivot' ? 4 : 0)
   };
 
-  // Leg lift: the pitcher pivots side-on (Tiant turns his back to the plate), the knee comes
-  // up and across the body toward the throwing side, and the hands come down to the chest.
+  // Rocker step: the glove-side foot steps a few inches back (up the screen, away from the
+  // plate) and the weight rocks onto it, still square, hands still up.
+  const rockerFrame = {
+    ...windFrame,
+    pelvis: [1, -49],
+    gFoot: [9, -4],
+    gKnee: [9, -30],
+    tKnee: [-7, -26],
+    turn: 10
+  };
+
+  // Pivot: the pivot foot turns and slides into the slot in front of the rubber, the body
+  // turns side-on, and overhead hands start down toward the head.
+  const pivotFrame = {
+    ...rockerFrame,
+    pelvis: [0, -50],
+    tFoot: [-3, 2],
+    tKnee: [-4, -26],
+    gFoot: [8, -2],
+    gKnee: [8, -28],
+    turn: 70,
+    ...(high ? { tEl: [-10, -36], tHa: [-2, -46], gEl: [9, -35], gHa: [2, -45] } : {})
+  };
+
+  // Leg lift: high kickers coil past side-on so the plate sees the back of the jersey (Tiant
+  // turns furthest; low kickers stay about side-on), the knee comes up and across toward the
+  // throwing side, and the hands come down to the chest.
   const kneeY = -50 - 36 * k;
   const kneeX = 7 - 9 * k;
   const liftFrame = {
     ...windFrame,
-    turn: style.windup === 'pivot' ? 115 : 88,
+    turn: style.windup === 'pivot' ? 130 : 86 + 22 * k,
     pelvis: [-1, -52],
-    tFoot: [-3, 0],
-    tKnee: [-5, -27],
+    tFoot: [-3, 2],
+    tKnee: [-5, -26],
     gKnee: [kneeX, kneeY],
     gFoot: [kneeX + 6, Math.min(-4, kneeY + 26)],
     tEl: [-7, -12],
@@ -385,9 +456,14 @@ export function buildPitcherPoses(style) {
 
   return {
     SET: frame(setFrame),
-    STRETCH: frame(stretchFrame),
     WIND: frame(windFrame),
+    ROCKER: frame(rockerFrame),
+    PIVOT: frame(pivotFrame),
     LIFT: frame(liftFrame),
+    SIGN: frame(signFrame),
+    GATHER: frame(gatherFrame),
+    STRETCH: frame(stretchFrame),
+    STRETCH_LIFT: frame(stretchLiftFrame),
     STRIDE: frame(strideFrame),
     COCK: frame(cockFrame),
     RELEASE: frame(releaseFrame),

@@ -28,8 +28,12 @@ import { drawPixelBaseball, getVisualBallSpin, visualSpinAngle } from './basebal
 import { DUEL_PITCHER_SCALE, getPitcherStyle, getPitcherPoses, getReleasePointOffset } from './pitcherStyles.js';
 import { getBatterStyle, getBatterSwingPose, hashString, BASE_BATTER_POSES } from './batterStyles.js';
 
-/** Duel delivery timing: windup to release (progress 0.42), then ball flight to the end (1.0). */
-export const PITCH_WINDUP_MS = 800;
+/**
+ * Duel delivery timing: windup to release (progress 0.42), then ball flight to the end (1.0).
+ * The windup spans the hands rising, rocker step, pivot and leg lift; the stretch spans coming
+ * set and the full stop before its quicker leg lift. Both share this length.
+ */
+export const PITCH_WINDUP_MS = 1100;
 export const PITCH_FLIGHT_MS = 420;
 export const PITCH_DELIVERY_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS;
 /** Milliseconds from pitch start until the ball reaches the plate (progress 0.92). */
@@ -1785,11 +1789,20 @@ export class FieldRenderer1987 {
   /**
    * Pitcher on the mound, seen front-on from behind the plate. Each pitcher's arm slot,
    * leg kick, windup and follow-through come from `getPitcherStyle` (pitcherStyles.js).
-   * Bases empty: full windup, hands overhead (or hidden at the chest, or a Tiant-style pivot).
-   * Runners on: the pitcher starts side-on in the stretch with a shorter leg lift.
-   * - 0.00–0.14 windup: rocker step, hands rise (stretch: come set at the chest)
-   * - 0.14–0.27 pivot side-on and lift the knee up and across; hands come to the chest
-   * - 0.27–0.33 stride toward the plate; hands break, throwing hand swings down behind the hip
+   * Bases empty, the windup (hands overhead, or hidden at the chest, or a Tiant-style pivot):
+   * - idle: square to the plate, hands together at the chest
+   * - 0.00–0.05 hands rise, still square
+   * - 0.05–0.11 rocker step: the glove-side foot steps back
+   * - 0.11–0.17 pivot: the pivot foot turns into the slot and the body turns side-on
+   * - 0.17–0.26 the knee lifts to the chest as the body coils past side-on; hands to the chest
+   * - 0.26–0.28 balance point
+   * Runners on, the stretch:
+   * - idle: side-on, hands apart, looking in for the sign (and glancing at the runner)
+   * - 0.00–0.10 come set: the hands meet at the chest, then settle at the belt
+   * - 0.10–0.19 the full stop
+   * - 0.19–0.28 a quicker, lower leg lift that stays in front
+   * Both then finish the same way:
+   * - 0.28–0.33 stride toward the plate; hands break, throwing hand swings down behind the hip
    * - 0.33–0.385 hips fire and the arm cocks, laid back behind the head
    * - 0.385–0.42 the shoulders whip square and the arm snaps through to the release
    * - 0.42 release: the ball leaves the hand here, at the hand from `getReleasePointOffset`
@@ -1804,13 +1817,24 @@ export class FieldRenderer1987 {
     const uni = isHome ? '#f4f5f7' : '#c4cad3';
     const uniShade = isHome ? '#97a0ae' : '#7a8391';
 
-    const setPose = isStretch ? P.STRETCH : P.SET;
-    const windPose = isStretch ? P.STRETCH : P.WIND;
-    const liftPose = isStretch ? blendPose(P.STRETCH, P.LIFT, 0.55) : P.LIFT;
+    const setPose = isStretch ? P.SIGN : P.SET;
+    const liftPose = isStretch ? P.STRETCH_LIFT : P.LIFT;
+    const leadIn = (prog) => {
+      if (isStretch) {
+        if (prog < 0.05) return blendPose(P.SIGN, P.GATHER, smooth(Math.pow(prog / 0.05, style.tempo)));
+        if (prog < 0.1) return blendPose(P.GATHER, P.STRETCH, smooth((prog - 0.05) / 0.05));
+        if (prog < 0.19) return P.STRETCH;
+        return blendPose(P.STRETCH, P.STRETCH_LIFT, smooth((prog - 0.19) / 0.09));
+      }
+      if (prog < 0.05) return blendPose(P.SET, P.WIND, smooth(Math.pow(prog / 0.05, style.tempo)));
+      if (prog < 0.11) return blendPose(P.WIND, P.ROCKER, smooth((prog - 0.05) / 0.06));
+      if (prog < 0.17) return blendPose(P.ROCKER, P.PIVOT, smooth((prog - 0.11) / 0.06));
+      if (prog < 0.26) return blendPose(P.PIVOT, P.LIFT, smooth((prog - 0.17) / 0.09));
+      return P.LIFT;
+    };
     const poseAt = (prog) => {
-      if (prog < 0.14) return blendPose(setPose, windPose, smooth(Math.pow(prog / 0.14, style.tempo)));
-      if (prog < 0.27) return blendPose(windPose, liftPose, smooth((prog - 0.14) / 0.13));
-      if (prog < 0.33) return blendPose(liftPose, P.STRIDE, smooth((prog - 0.27) / 0.06));
+      if (prog < 0.28) return leadIn(prog);
+      if (prog < 0.33) return blendPose(liftPose, P.STRIDE, smooth((prog - 0.28) / 0.05));
       if (prog < 0.385) {
         const t = (prog - 0.33) / 0.055;
         return blendPose(P.STRIDE, P.COCK, t * (2 - t));
@@ -1877,13 +1901,29 @@ export class FieldRenderer1987 {
         ctx.stroke();
       }
     };
-    if (armBehind) drawThrowingArm();
+    const drawGloveArm = () => {
+      const gArm = [[pose.gShoulder, pose.gElbow, 8.5], [pose.gElbow, pose.gHand, 7.5]];
+      this.strokeLimb(ctx, gArm, primary);
+      this.shadeLimb(ctx, gArm, sleeveShade, 1);
+      ctx.fillStyle = '#7a3b12';
+      ctx.strokeStyle = FIGURE_OUTLINE;
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.ellipse(pose.gHand[0] + 1, pose.gHand[1], 6, 7, 0.3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    };
+    // Coiled with the back to the plate, both hands are in front of the chest, out of sight
+    // behind the jersey.
+    const coiled = (pose.back ?? 0) > 0.5;
+    if (armBehind || coiled) drawThrowingArm();
+    if (coiled) drawGloveArm();
 
     // Legs, cleats and team stirrups
     const hipW = pose.hipW ?? 1;
     const pelvisT = [pose.pelvis[0] - 6 * hipW, pose.pelvis[1]];
     const pelvisG = [pose.pelvis[0] + 6 * hipW, pose.pelvis[1]];
-    for (const [hip, knee, foot] of [[pelvisT, pose.tKnee, pose.tFoot], [pelvisG, pose.gKnee, pose.gFoot]]) {
+    const drawLeg = (hip, knee, foot) => {
       // Stirrup from the pant cuff to the ankle, then the shoe toe-on to the camera, then the pants
       const ankle = [foot[0], foot[1] - 4];
       const cuff = [lerp(knee[0], ankle[0], 0.5), lerp(knee[1], ankle[1], 0.5)];
@@ -1892,7 +1932,11 @@ export class FieldRenderer1987 {
       const leg = [[hip, knee, 12], [knee, cuff, 10]];
       this.strokeLimb(ctx, leg, uni);
       this.shadeLimb(ctx, leg, shade, 1);
-    }
+    };
+    // A knee lifted well above the hip comes up in front of the jersey, toward the plate
+    const kneeUp = pose.gKnee[1] < pose.pelvis[1] - 10;
+    drawLeg(pelvisT, pose.tKnee, pose.tFoot);
+    if (!kneeUp) drawLeg(pelvisG, pose.gKnee, pose.gFoot);
 
     // Torso: tapered jersey with dithered shadow side, team lettering and belt
     const [tsx, tsy] = pose.tShoulder;
@@ -1917,27 +1961,41 @@ export class FieldRenderer1987 {
     ctx.lineTo(px + 3 * hipW, py + 1);
     ctx.closePath();
     ctx.fill();
-    ctx.strokeStyle = primary;
-    ctx.lineWidth = 3;
-    ctx.beginPath();
+    // Team lettering across the chest while it faces the plate; side-on neither shows, and at
+    // the top of a deep coil the plate sees the number on the back instead.
+    const back = pose.back ?? 0;
     const chestY = lerp(tsy, py, 0.3);
-    ctx.moveTo(lerp(tsx, px, 0.3) + 3, chestY + 1);
-    ctx.lineTo(lerp(gsx, px, 0.3) - 3, chestY - 1);
-    ctx.stroke();
+    if ((pose.front ?? 1) > 0.35) {
+      ctx.strokeStyle = primary;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(lerp(tsx, px, 0.3) + 3, chestY + 1);
+      ctx.lineTo(lerp(gsx, px, 0.3) - 3, chestY - 1);
+      ctx.stroke();
+    } else if (back > 0.5) {
+      const number = String(pitcher?.uniform ?? 2 + (hashString(pitcher?.id || pitcher?.name) % 58));
+      ctx.save();
+      ctx.translate((tsx + gsx) / 2, lerp(tsy, py, 0.4));
+      // Undo the left-handed mirror so the digits read correctly, and squeeze them while side-on
+      ctx.scale((isLefty ? -1 : 1) * (0.4 + 0.6 * back), 1);
+      ctx.globalAlpha = Math.min(1, (back - 0.5) * 3);
+      ctx.font = 'bold 13px monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = secondary;
+      ctx.strokeText(number, 0, 0);
+      ctx.fillStyle = primary;
+      ctx.fillText(number, 0, 0);
+      ctx.restore();
+    }
     ctx.fillStyle = '#1b2333';
     ctx.fillRect(px - 9 * hipW, py - 3, 18 * hipW, 4);
+    if (kneeUp) drawLeg(pelvisG, pose.gKnee, pose.gFoot);
 
     // Glove arm, then head and cap, then the throwing arm on top unless it is behind the body
-    const gArm = [[pose.gShoulder, pose.gElbow, 8.5], [pose.gElbow, pose.gHand, 7.5]];
-    this.strokeLimb(ctx, gArm, primary);
-    this.shadeLimb(ctx, gArm, sleeveShade, 1);
-    ctx.fillStyle = '#7a3b12';
-    ctx.strokeStyle = FIGURE_OUTLINE;
-    ctx.lineWidth = 1.6;
-    ctx.beginPath();
-    ctx.ellipse(pose.gHand[0] + 1, pose.gHand[1], 6, 7, 0.3, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.stroke();
+    if (!coiled) drawGloveArm();
 
     const [hx, hy] = pose.head;
     const hr = pose.headR;
@@ -1961,7 +2019,7 @@ export class FieldRenderer1987 {
     ctx.fillRect(hx - 4, hy + 1, 2, 2);
     ctx.fillRect(hx + 2, hy + 1, 2, 2);
 
-    if (!armBehind) drawThrowingArm();
+    if (!armBehind && !coiled) drawThrowingArm();
 
     ctx.restore();
   }
