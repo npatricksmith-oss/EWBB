@@ -2242,8 +2242,9 @@ export class FieldRenderer1987 {
     if (!armsBehind) drawLeadUpper();
 
     // Motion smear while the bat whips through
-    if (didSwing && pitchProg > 0.72 && pitchProg < 1.02) {
-      const prev = getBatterSwingPose(style, Math.max(0.70, pitchProg - 0.05), didSwing, tNow);
+    // Only through the whip into contact, trailing the barrel's last few hundredths of a pitch
+    if (didSwing && pitchProg > 0.82 && pitchProg < 0.95) {
+      const prev = getBatterSwingPose(style, pitchProg - 0.025, didSwing, tNow);
       const p0 = batTip(prev);
       const p1 = batTip(pose);
       ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
@@ -2260,7 +2261,8 @@ export class FieldRenderer1987 {
     const batInFront = pose.batDepth < -0.2 && pose.batPitch < 40;
     if (!batInFront && !batBehind) drawBat();
 
-    if (backView > 0.5) {
+    // The head turns with the shoulders, so the helmet shows its back once they are mostly open
+    if ((pose.twist || 0) > 0.75) {
       // Back of the helmet, ear flap on the lead side; the face is turned away toward the pitcher
       ctx.fillStyle = secondary;
       ctx.strokeStyle = FIGURE_OUTLINE;
@@ -2314,6 +2316,25 @@ export class FieldRenderer1987 {
       drawRearFore();
       drawLeadFore();
       drawGrip();
+    }
+
+    // Behind the body, the forearms and gloves still show wherever they clear the torso and helmet,
+    // so the grip never floats free of the bat
+    if (armsBehind) {
+      const outsideTorso = new Path2D();
+      outsideTorso.rect(-200, -300, 400, 400);
+      outsideTorso.addPath(torsoPath);
+      const outsideHelmet = new Path2D();
+      outsideHelmet.rect(-200, -300, 400, 400);
+      outsideHelmet.moveTo(hx + 11.5, hy - 1);
+      outsideHelmet.arc(hx, hy - 1, 11.5, 0, Math.PI * 2);
+      ctx.save();
+      ctx.clip(outsideTorso, 'evenodd');
+      ctx.clip(outsideHelmet, 'evenodd');
+      drawRearFore();
+      drawLeadFore();
+      drawGrip();
+      ctx.restore();
     }
 
     if (batInFront && !armsBehind) {

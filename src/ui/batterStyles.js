@@ -154,7 +154,7 @@ export const BASE_BATTER_POSES = {
   ROTATION: {
     nFoot: [0, -2], fFoot: [38, -11], nKnee: [24, -35], fKnee: [45, -45], pelvis: [13, -68],
     neck: [20, -112], head: [26, -123], nShoulder: [18, -103], fShoulder: [30, -106],
-    nElbow: [16, -90], fElbow: [30, -99], hands: [24, -101], batYaw: -105, batPitch: 18, batLength: 64, twist: 0.35
+    nElbow: [16, -90], fElbow: [30, -99], hands: [24, -101], batYaw: -120, batPitch: 38, batLength: 64, twist: 0.35
   },
   CONTACT: {
     nFoot: [0, -3], fFoot: [38, -12], nKnee: [30, -33], fKnee: [44, -46], pelvis: [16, -67],
@@ -167,14 +167,14 @@ export const BASE_BATTER_POSES = {
   // armsBehind = 1 draws the arms, hands and bat behind the torso. The batter stands tall,
   // posted up on a firm front leg with the rear foot up on its toe.
   FOLLOW_TWO_HAND: {
-    nFoot: [2, -3], fFoot: [38, -12], nKnee: [28, -34], fKnee: [33, -41], pelvis: [17, -70],
-    neck: [22, -114], head: [23, -125], nShoulder: [38, -107], fShoulder: [8, -108],
-    nElbow: [14, -109], fElbow: [-6, -107], hands: [-2, -115], batYaw: 165, batPitch: 35, batLength: 64,
+    nFoot: [2, -3], fFoot: [38, -12], nKnee: [26, -36], fKnee: [33, -42], pelvis: [17, -72],
+    neck: [22, -115], head: [23, -126], nShoulder: [38, -108], fShoulder: [8, -109],
+    nElbow: [14, -102], fElbow: [-6, -101], hands: [-2, -110], batYaw: 165, batPitch: 35, batLength: 64,
     twist: 1.0, armsBehind: 1
   },
   FOLLOW_ONE_HAND: {
-    nFoot: [2, -3], fFoot: [38, -12], nKnee: [28, -34], fKnee: [33, -41], pelvis: [17, -70],
-    neck: [22, -114], head: [23, -126], nShoulder: [38, -107], fShoulder: [8, -108],
+    nFoot: [2, -3], fFoot: [38, -12], nKnee: [26, -36], fKnee: [33, -42], pelvis: [17, -72],
+    neck: [22, -115], head: [23, -127], nShoulder: [38, -108], fShoulder: [8, -109],
     nElbow: [30, -99], fElbow: [-6, -115], hands: [-6, -127], nHand: [26, -103],
     batYaw: 160, batPitch: 45, batLength: 64, twist: 1.0, armsBehind: 1
   },
@@ -800,8 +800,8 @@ export function generateBatterPoses(style) {
   EXTENSION.hands = [CONTACT.hands[0] + 10, CONTACT.hands[1] - 6];
   EXTENSION.nElbow = lerp2(EXTENSION.nShoulder, EXTENSION.hands, 0.5, 3);
   EXTENSION.fElbow = lerp2(EXTENSION.fShoulder, EXTENSION.hands, 0.5, 2);
-  EXTENSION.batYaw = 85;
-  EXTENSION.batPitch = 4 - aa * 0.5 / DEG;
+  EXTENSION.batYaw = 72;
+  EXTENSION.batPitch = 24 - aa * 0.5 / DEG;
   EXTENSION.twist = 0.8;
   EXTENSION.hipTwist = 0.92;
 
