@@ -376,7 +376,8 @@ export function buildPitcherPoses(style) {
     tFoot: [-3, 2],
     tKnee: [-5, -26],
     gKnee: [kneeX, kneeY],
-    gFoot: [kneeX + 6, Math.min(-4, kneeY + 26)],
+    // The shin hangs straight down from the knee, so the folded leg reads at the top of the kick
+    gFoot: [kneeX - 1, Math.min(-4, kneeY + 26)],
     tEl: [-7, -12],
     tHa: [0, -19],
     gEl: [8, -12],
@@ -391,7 +392,7 @@ export function buildPitcherPoses(style) {
   // through the release.
   // `strideLegs` is the planted stride, from the load on; in the stride pose itself the front
   // foot is still in the air, reaching down the mound, so it lands just before the arm cocks.
-  const strideLegs = { tFoot: [-4, -1], gFoot: [4, 12], tKnee: [-6, -22], gKnee: [5, -16] };
+  const strideLegs = { tFoot: [-4, -1], gFoot: [4, 16], tKnee: [-6, -22], gKnee: [5, -13] };
   const strideAir = { tFoot: [-4, -1], gFoot: [3, 2], tKnee: [-6, -23], gKnee: [4, -21] };
   const strideFrame = {
     ...strideAir,
@@ -462,9 +463,9 @@ export function buildPitcherPoses(style) {
     ...strideLegs,
     tFootSide: 0.7,
     gFootSide: 0.2,
-    pelvis: [0, -44 + sink],
+    pelvis: [0, -42 + sink],
     lean: lean * 0.6,
-    turn: 65,
+    turn: 50,
     hipTurn: 15,
     neck: [0, -32],
     head: [headTurn, -41],
@@ -477,42 +478,44 @@ export function buildPitcherPoses(style) {
     gHa: [3, -19]
   };
 
-  // Layback, just before release: the shoulders have nearly squared, the elbow leads at
-  // shoulder height and the forearm lies back, so the hand drops behind the head.
+  // Layback, just before release: the shoulders have nearly squared, the elbow leads beside
+  // the head and the forearm lies back, so the ball drops behind the head (behind the
+  // shoulder for low slots) before the whip brings it out in front.
   const laybackFrame = {
     ...cockFrame,
     lean: lean * 0.8,
     turn: 25,
     hipTurn: -5,
-    tEl: [sh.tSh[0] - 9, sh.tSh[1] - 1 + 3 * slotDrop],
-    tHa: [sh.tSh[0] - 5 - 4 * Math.min(slotDrop, 1), sh.tSh[1] - 11 + 12 * slotDrop],
+    tEl: [sh.tSh[0] - 8, sh.tSh[1] - 4 + 4 * slotDrop],
+    tHa: [sh.tSh[0] + 3, sh.tSh[1] - 6 + 10 * slotDrop],
+    tArmBack: 1,
     gEl: [11, -17],
     gHa: [6, -16]
   };
 
   // Release: shoulders whip square and past, throwing shoulder forward, the chest driving out
-  // over the front knee. The straight arm reaches toward the plate, at the camera, so it reads
-  // short and the hand comes in front of the head (overhand) or the shoulder (lower slots).
+  // over the front knee and the pelvis carried forward. The arm is fully extended, tipped out
+  // toward the throwing side (less for low slots) so it reads straight and clear of the head,
+  // and a little short because it also reaches toward the plate.
   const releaseFlex = 0.22;
   const releaseSh = [sh.tSh[0], sh.tSh[1] * (1 - releaseFlex)];
-  const releaseHa = add(
-    add(releaseSh, armOffset(style.releaseAngle, lean).map((v) => v * 0.6)),
-    [4, 0]
-  );
+  const releaseTip = Math.max(0, 25 - 20 * slotDrop);
+  const releaseHa = add(releaseSh, armOffset(style.releaseAngle + releaseTip, lean).map((v) => v * 0.85));
   const releaseFrame = {
     ...cockFrame,
     tFootSide: 0.3,
     gFootSide: 0.1,
     tFoot: [-3, 0],
-    gFoot: [4, 12],
+    gFoot: [4, 16],
     tKnee: [-3, -19],
-    gKnee: [4, -18],
+    gKnee: [4, -15],
+    pelvis: [1, -40 + sink],
     lean,
     flex: releaseFlex,
     turn: -15,
     hipTurn: -20,
     headR: 9,
-    tEl: midpoint(releaseSh, releaseHa, -1.5, 0.5),
+    tEl: midpoint(releaseSh, releaseHa),
     tHa: releaseHa,
     tArmBack: 0,
     gEl: [13, -14],
@@ -526,13 +529,13 @@ export function buildPitcherPoses(style) {
     ...releaseFrame,
     tFootSide: 0,
     tFoot: [-14, -20 - 34 * backKick],
-    gFoot: [4, 12],
+    gFoot: [4, 16],
     tKnee: [-9, -30],
-    gKnee: [4, -15],
-    pelvis: [2, -40 + sink * 0.6],
+    gKnee: [4, -12],
+    pelvis: [2, -37 + sink * 0.6],
     turn: -40,
     hipTurn: -35,
-    flex: 0.3,
+    flex: 0.36,
     headR: 9.5,
     tEl: midpoint(sh.tSh, followHa, 5, -2),
     tHa: followHa,
