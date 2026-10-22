@@ -2069,9 +2069,16 @@ export class FieldRenderer1987 {
       this.drawCleatSide(ctx, foot, onToe);
     };
 
+    // The hips turn toward the pitcher just ahead of the shoulders (hipTwist leads twist). As they
+    // open, the rear hip swings toward the plate, the lead hip away from it, and the seat squares
+    // up to the camera into a back view.
+    const hipView = Math.max(0, Math.min(1, ((pose.hipTwist || 0) - 0.7) / 0.3));
+    const nHipX = pose.pelvis[0] + lerp(-2, 5, hipView);
+    const fHipX = pose.pelvis[0] + lerp(4, -3, hipView);
+
     // Far (front) leg and far arm sit behind the body, so they get the darker dither
     drawLowerLeg(pose.fFoot, pose.fKnee, false);
-    const fLeg = [[[pose.pelvis[0] + 4, pose.pelvis[1]], pose.fKnee, 16], [pose.fKnee, cuffOf(pose.fFoot, pose.fKnee), 12]];
+    const fLeg = [[[fHipX, pose.pelvis[1]], pose.fKnee, 16], [pose.fKnee, cuffOf(pose.fFoot, pose.fKnee), 12]];
     this.strokeLimb(ctx, fLeg, uniShade);
     this.shadeLimb(ctx, fLeg, farUni, 1);
 
@@ -2117,8 +2124,8 @@ export class FieldRenderer1987 {
       drawGrip();
     }
 
-    // Torso: spine from pelvis to neck, butt pushed back, chest forward. As the hips and
-    // shoulders turn through the finish it widens into a back view, shoulders level.
+    // Torso: spine from pelvis to neck, butt pushed back, chest forward. As the shoulders and
+    // hips turn through the finish, each half widens into a back view: shoulders level, seat square.
     const backView = Math.max(0, Math.min(1, ((pose.twist || 0) - 0.85) / 0.15));
     const [px, py] = pose.pelvis;
     const [nx, ny] = pose.neck;
@@ -2128,8 +2135,10 @@ export class FieldRenderer1987 {
     const bx = uy; // perpendicular pointing backward (away from the plate)
     const by = -ux;
     const backShoulder = [nx + bx * 14 - ux * 5, ny + by * 14 - uy * 5];
-    const backHip = [px + bx * 16 + ux * 2, py + by * 16 + uy * 2];
-    const frontHip = [px - bx * lerp(11, 14, backView), py - by * lerp(11, 14, backView)];
+    const hipBack = lerp(16, 14, hipView);
+    const hipFront = lerp(11, 14, hipView);
+    const backHip = [px + bx * hipBack + ux * 2 * (1 - hipView), py + by * hipBack + uy * 2 * (1 - hipView)];
+    const frontHip = [px - bx * hipFront, py - by * hipFront];
     const chestOut = lerp(13, 16, backView);
     const chestDrop = lerp(12, 5, backView);
     const frontChest = [nx - bx * chestOut - ux * chestDrop, ny - by * chestOut - uy * chestDrop];
@@ -2139,7 +2148,7 @@ export class FieldRenderer1987 {
     ctx.beginPath();
     ctx.moveTo(nx, ny);
     ctx.quadraticCurveTo(backShoulder[0] + bx * 3, backShoulder[1] + by * 3, backShoulder[0], backShoulder[1]);
-    ctx.quadraticCurveTo(backHip[0] + bx * 4, (backShoulder[1] + backHip[1]) / 2, backHip[0], backHip[1]);
+    ctx.quadraticCurveTo(backHip[0] + bx * lerp(4, 1, hipView), (backShoulder[1] + backHip[1]) / 2, backHip[0], backHip[1]);
     ctx.quadraticCurveTo(px + bx * 4, py + 12, frontHip[0], frontHip[1] + 4);
     ctx.lineTo(frontChest[0], frontChest[1]);
     ctx.quadraticCurveTo(frontChest[0] - bx * 2, ny - by * 4, nx, ny);
@@ -2160,13 +2169,13 @@ export class FieldRenderer1987 {
     // Near (rear) leg with pants piping
     const nCuff = cuffOf(pose.nFoot, pose.nKnee);
     drawLowerLeg(pose.nFoot, pose.nKnee, pose.nFoot[1] < -0.8);
-    const nLeg = [[[px - 2, py], pose.nKnee, 18], [pose.nKnee, nCuff, 13]];
+    const nLeg = [[[nHipX, py], pose.nKnee, 18], [pose.nKnee, nCuff, 13]];
     this.strokeLimb(ctx, nLeg, uni);
     this.shadeLimb(ctx, nLeg, shade, -1);
     ctx.strokeStyle = primary;
     ctx.lineWidth = 1.6;
     ctx.beginPath();
-    ctx.moveTo(px - 2 - 6, py + 2);
+    ctx.moveTo(nHipX - 6, py + 2);
     ctx.lineTo(pose.nKnee[0] - 6, pose.nKnee[1]);
     ctx.lineTo(nCuff[0] - 5, nCuff[1]);
     ctx.stroke();
@@ -2176,9 +2185,19 @@ export class FieldRenderer1987 {
     ctx.lineWidth = 4.5;
     ctx.lineCap = 'butt';
     ctx.beginPath();
-    ctx.moveTo(px + bx * 15 + ux * 4, py + by * 15 + uy * 4);
-    ctx.lineTo(px - bx * 11 + ux * 4, py - by * 11 + uy * 4);
+    ctx.moveTo(px + bx * (hipBack - 1) + ux * 4, py + by * (hipBack - 1) + uy * 4);
+    ctx.lineTo(px - bx * hipFront + ux * 4, py - by * hipFront + uy * 4);
     ctx.stroke();
+
+    // Back pockets show once the seat faces the camera
+    if (hipView > 0.5) {
+      ctx.fillStyle = uniShade;
+      ctx.globalAlpha = (hipView - 0.5) * 2;
+      for (const side of [-1, 1]) {
+        ctx.fillRect(px + side * 7 - 3, py + 4, 6, 5);
+      }
+      ctx.globalAlpha = 1;
+    }
 
     // Neck sits under the lead arm, which drapes across the chest and throat to the bottom of the grip
     const [hx, hy] = pose.head;

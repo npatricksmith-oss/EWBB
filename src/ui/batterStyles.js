@@ -130,6 +130,9 @@ export function blendPose(a, b, t) {
 //   batPitch (degrees) tips the barrel up (+) or down (-).
 //   batLength is the true bat length; the screen length shrinks as the bat points
 //     into or out of the screen.
+//   twist turns the shoulders and hipTwist the hips from side-on (0) to facing the
+//     pitcher (1), which the renderer draws as a back view. The hips lead the torso
+//     through the swing by a little.
 // ---------------------------------------------------------------------------
 export const BASE_BATTER_POSES = {
   STANCE: {
@@ -662,7 +665,8 @@ export function generateBatterPoses(style) {
     fElbow: [B.STANCE.fElbow[0] + hx * 0.5, B.STANCE.fElbow[1] + cr * 0.7 + hh * 0.6],
     ...stanceBat(ba),
     batLength: bl,
-    twist: 0
+    twist: 0,
+    hipTwist: 0
   };
 
   // 2. LOAD
@@ -687,7 +691,8 @@ export function generateBatterPoses(style) {
     // Tipped back in the load, but not so far the barrel leaves the duel view
     ...stanceBat(Math.max(ba - 0.15, -0.8)),
     batLength: bl,
-    twist: -0.10
+    twist: -0.10,
+    hipTwist: -0.10
   };
 
   // 3. STRIDE PLANT
@@ -702,7 +707,8 @@ export function generateBatterPoses(style) {
     hands: [B.STRIDE_PLANT.hands[0] + hx * 0.5, B.STRIDE_PLANT.hands[1] + cr * 0.6 + hh * 0.7],
     ...stanceBat(ba - 0.12),
     batLength: bl,
-    twist: 0.10
+    twist: 0.10,
+    hipTwist: 0.12
   };
 
   // 4. ROTATION & LAG: hands drop into the slot, barrel laid back toward the catcher
@@ -716,7 +722,8 @@ export function generateBatterPoses(style) {
     hands: [B.ROTATION.hands[0] + hx * 0.3, B.ROTATION.hands[1] + cr * 0.5 + hh * 0.4],
     batPitch: B.ROTATION.batPitch - aa * 0.4 / DEG,
     batLength: bl,
-    twist: 0.38
+    twist: 0.38,
+    hipTwist: 0.50
   };
 
   // 5. CONTACT: barrel squared up across the plate, dipped below the hands by the attack angle
@@ -730,7 +737,8 @@ export function generateBatterPoses(style) {
     hands: [B.CONTACT.hands[0], B.CONTACT.hands[1] + cr * 0.5 - aa * 22],
     batPitch: B.CONTACT.batPitch - aa / DEG,
     batLength: bl,
-    twist: 0.62
+    twist: 0.62,
+    hipTwist: 0.72
   };
 
   // 6. FOLLOW-THROUGH (Two-hand classic wrap)
@@ -742,7 +750,8 @@ export function generateBatterPoses(style) {
     hands: [B.FOLLOW_TWO_HAND.hands[0], B.FOLLOW_TWO_HAND.hands[1] - aa * 18],
     batPitch: B.FOLLOW_TWO_HAND.batPitch + aa * 0.5 / DEG,
     batLength: bl,
-    twist: 1.0
+    twist: 1.0,
+    hipTwist: 1.0
   };
 
   // 7. FOLLOW-THROUGH (One-hand high extension finish)
@@ -755,7 +764,8 @@ export function generateBatterPoses(style) {
     nHand: [B.FOLLOW_ONE_HAND.nHand[0], B.FOLLOW_ONE_HAND.nHand[1] + cr * 0.5],
     batPitch: B.FOLLOW_ONE_HAND.batPitch + aa * 0.6 / DEG,
     batLength: bl,
-    twist: 1.0
+    twist: 1.0,
+    hipTwist: 1.0
   };
 
   // 8. CHECK SWING
@@ -766,7 +776,8 @@ export function generateBatterPoses(style) {
     // Wrists hold before the barrel crosses the front of the plate
     batPitch: B.CHECK_SWING.batPitch - aa * 0.2 / DEG,
     batLength: bl,
-    twist: 0.28
+    twist: 0.28,
+    hipTwist: 0.35
   };
 
   // 9. TAKE
@@ -776,7 +787,8 @@ export function generateBatterPoses(style) {
     hands: [B.TAKE.hands[0] + hx * 0.4, B.TAKE.hands[1] + cr * 0.6 + hh * 0.5],
     ...stanceBat(ba + 0.05),
     batLength: bl,
-    twist: 0.05
+    twist: 0.05,
+    hipTwist: 0.05
   };
 
   // 10. EXTENSION: arms drive straight out after contact and the barrel points at the pitcher
@@ -789,6 +801,7 @@ export function generateBatterPoses(style) {
   EXTENSION.batYaw = 85;
   EXTENSION.batPitch = 4 - aa * 0.5 / DEG;
   EXTENSION.twist = 0.8;
+  EXTENSION.hipTwist = 0.9;
 
   // 11. WRAP: hands rise toward the lead shoulder as the barrel climbs past the pitcher's side
   const WRAP = blendPose(EXTENSION, finish, 0.5);
@@ -799,6 +812,7 @@ export function generateBatterPoses(style) {
   WRAP.batYaw = 120;
   WRAP.batPitch = 22;
   WRAP.twist = 0.92;
+  WRAP.hipTwist = 1.0;
   WRAP.armsBehind = 1;
 
   return {
