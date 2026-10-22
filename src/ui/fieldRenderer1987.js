@@ -34,8 +34,8 @@ export const PITCH_FLIGHT_MS = 420;
 export const PITCH_DELIVERY_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS;
 /** Milliseconds from pitch start until the ball reaches the plate (progress 0.92). */
 export const PITCH_PLATE_ARRIVAL_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS * (0.5 / 0.58);
-/** After a ball is put in play the duel view holds this long on the follow-through before the field view opens. */
-export const SWING_HOLD_MS = 900;
+/** Milliseconds from pitch start until bat meets ball (progress 0.90); a ball put in play cuts to the field view here. */
+export const PITCH_CONTACT_MS = PITCH_WINDUP_MS + PITCH_FLIGHT_MS * (0.48 / 0.58);
 /** The duel scene is drawn this much larger than its layout, anchored at the bottom, so the players fill the view. */
 const DUEL_ZOOM = 1.3;
 
@@ -1618,22 +1618,6 @@ export class FieldRenderer1987 {
         const tint = !putInPlay && t >= 0.65 ? (this.pitchAnim.isStrike ? '#ef4444' : '#22c55e') : null;
         drawPixelBaseball(ctx, b.x, b.y, radius, visualSpinAngle(spin.fps), { ...spin, tint });
       }
-
-      // On contact, send the ball briefly along its actual spray and launch angle before the field view opens.
-      if (putInPlay && t >= 0.94) {
-        const launch = this.pitchAnim.launchVector || {};
-        const contact = ballAt(1);
-        const travel = Math.min(1, (t - 0.94) / 0.06) + (this.pitchAnim.holdT || 0) * 4;
-        const spray = (launch.sprayAngleDeg || 0) * Math.PI / 180;
-        const lift = (launch.launchAngleDeg ?? 12) * Math.PI / 180;
-        // Perspective: the ball heads away from the camera, so it shrinks and climbs toward the
-        // horizon as it goes, lifted further by its launch angle.
-        const dist = 1 + travel * 1.8;
-        const bx = contact.x + (Math.sin(spray) * Math.cos(lift) * travel * 120) / dist;
-        const by = contact.y - (Math.sin(lift) * travel * 110 + travel * 30) / dist;
-        const spin = getVisualBallSpin(this.pitchAnim.ballSpin);
-        drawPixelBaseball(ctx, bx, by, Math.max(1, 5 / dist), visualSpinAngle(spin.fps), spin);
-      }
     }
 
     // 8. Batter in the box, filling the foreground
@@ -2069,10 +2053,10 @@ export class FieldRenderer1987 {
       this.drawCleatSide(ctx, foot, onToe);
     };
 
-    // The hips turn toward the pitcher just ahead of the shoulders (hipTwist leads twist). As they
-    // open, the rear hip swings toward the plate, the lead hip away from it, and the seat squares
-    // up to the camera into a back view.
-    const hipView = Math.max(0, Math.min(1, ((pose.hipTwist || 0) - 0.7) / 0.3));
+    // The hips turn toward the pitcher ahead of the shoulders (hipTwist leads twist): they start
+    // opening in the launch and are mostly open at contact. As they open, the rear hip swings toward
+    // the plate, the lead hip away from it, and the seat squares up to the camera into a back view.
+    const hipView = Math.max(0, Math.min(1, ((pose.hipTwist || 0) - 0.1) / 0.9));
     const nHipX = pose.pelvis[0] + lerp(-2, 5, hipView);
     const fHipX = pose.pelvis[0] + lerp(4, -3, hipView);
 
@@ -2142,19 +2126,19 @@ export class FieldRenderer1987 {
     const chestOut = lerp(13, 16, backView);
     const chestDrop = lerp(12, 5, backView);
     const frontChest = [nx - bx * chestOut - ux * chestDrop, ny - by * chestOut - uy * chestDrop];
+    const torsoPath = new Path2D();
+    torsoPath.moveTo(nx, ny);
+    torsoPath.quadraticCurveTo(backShoulder[0] + bx * 3, backShoulder[1] + by * 3, backShoulder[0], backShoulder[1]);
+    torsoPath.quadraticCurveTo(backHip[0] + bx * lerp(4, 1, hipView), (backShoulder[1] + backHip[1]) / 2, backHip[0], backHip[1]);
+    torsoPath.quadraticCurveTo(px + bx * 4, py + 12, frontHip[0], frontHip[1] + 4);
+    torsoPath.lineTo(frontChest[0], frontChest[1]);
+    torsoPath.quadraticCurveTo(frontChest[0] - bx * 2, ny - by * 4, nx, ny);
+    torsoPath.closePath();
     ctx.fillStyle = uni;
     ctx.strokeStyle = FIGURE_OUTLINE;
     ctx.lineWidth = 2.4;
-    ctx.beginPath();
-    ctx.moveTo(nx, ny);
-    ctx.quadraticCurveTo(backShoulder[0] + bx * 3, backShoulder[1] + by * 3, backShoulder[0], backShoulder[1]);
-    ctx.quadraticCurveTo(backHip[0] + bx * lerp(4, 1, hipView), (backShoulder[1] + backHip[1]) / 2, backHip[0], backHip[1]);
-    ctx.quadraticCurveTo(px + bx * 4, py + 12, frontHip[0], frontHip[1] + 4);
-    ctx.lineTo(frontChest[0], frontChest[1]);
-    ctx.quadraticCurveTo(frontChest[0] - bx * 2, ny - by * 4, nx, ny);
-    ctx.closePath();
-    ctx.stroke();
-    ctx.fill();
+    ctx.stroke(torsoPath);
+    ctx.fill(torsoPath);
 
     // Dithered shadow down the back
     ctx.fillStyle = shade;
@@ -2172,12 +2156,15 @@ export class FieldRenderer1987 {
     const nLeg = [[[nHipX, py], pose.nKnee, 18], [pose.nKnee, nCuff, 13]];
     this.strokeLimb(ctx, nLeg, uni);
     this.shadeLimb(ctx, nLeg, shade, -1);
+    // The piping runs down the side of the leg facing the camera; as the hips open it rolls
+    // around to the leg's outer edge, toward the plate
+    const seam = lerp(-6, 6, hipView);
     ctx.strokeStyle = primary;
     ctx.lineWidth = 1.6;
     ctx.beginPath();
-    ctx.moveTo(nHipX - 6, py + 2);
-    ctx.lineTo(pose.nKnee[0] - 6, pose.nKnee[1]);
-    ctx.lineTo(nCuff[0] - 5, nCuff[1]);
+    ctx.moveTo(nHipX + seam, py + 2);
+    ctx.lineTo(pose.nKnee[0] + seam, pose.nKnee[1]);
+    ctx.lineTo(nCuff[0] + seam * 0.85, nCuff[1]);
     ctx.stroke();
 
     // Belt
@@ -2189,14 +2176,18 @@ export class FieldRenderer1987 {
     ctx.lineTo(px - bx * hipFront + ux * 4, py - by * hipFront + uy * 4);
     ctx.stroke();
 
-    // Back pockets show once the seat faces the camera
-    if (hipView > 0.5) {
+    // Back pockets come around into view as the seat turns toward the camera
+    if (hipView > 0.35) {
+      const seatX = px + bx * 7 * (1 - hipView);
+      const spread = lerp(2, 5.5, hipView);
+      ctx.save();
+      ctx.clip(torsoPath);
       ctx.fillStyle = uniShade;
-      ctx.globalAlpha = (hipView - 0.5) * 2;
+      ctx.globalAlpha = Math.min(1, (hipView - 0.35) / 0.35);
       for (const side of [-1, 1]) {
-        ctx.fillRect(px + side * 7 - 3, py + 4, 6, 5);
+        ctx.fillRect(seatX + side * spread - 3, py, 6, 4);
       }
-      ctx.globalAlpha = 1;
+      ctx.restore();
     }
 
     // Neck sits under the lead arm, which drapes across the chest and throat to the bottom of the grip
@@ -2357,40 +2348,31 @@ export class FieldRenderer1987 {
       this.pitchAnim.progress = pitchProgressAt(now - startTime);
       this.render(gameState);
 
+      // A ball put in play cuts straight to the field view the moment bat meets ball
+      if (pitchStep.outcome === 'IN_PLAY' && physicsResult && physicsResult.frames?.length && this.pitchAnim.progress >= 0.9) {
+        this.startFieldPlay(pitchStep, physicsResult, gameState, onComplete);
+        return;
+      }
+
       if (this.pitchAnim.progress < 1) {
         this._rafId = requestAnimationFrame(stepPitch);
-      } else {
-        if (pitchStep.outcome === 'IN_PLAY' && physicsResult && physicsResult.frames?.length) {
-          // Hold on the follow-through while the ball leaves the bat, then open the field view
-          const holdStart = performance.now();
-          const holdSwing = (t) => {
-            this.pitchAnim.holdT = Math.min(1, (t - holdStart) / SWING_HOLD_MS);
-            this.pitchAnim.finishMs = t - holdStart;
-            this.render(gameState);
-            if (this.pitchAnim.holdT < 1) {
-              this._rafId = requestAnimationFrame(holdSwing);
-              return;
-            }
-            this.startFieldPlay(pitchStep, physicsResult, gameState, onComplete);
-          };
-          this._rafId = requestAnimationFrame(holdSwing);
-        } else {
-          // Let a swing-and-miss or foul finish its follow-through before the duel resets
-          const settleStart = performance.now();
-          const settle = (t) => {
-            this.pitchAnim.finishMs = t - settleStart;
-            this.render(gameState);
-            if (this.pitchAnim.finishMs < 480) {
-              this._rafId = requestAnimationFrame(settle);
-              return;
-            }
-            this.pitchAnim = null;
-            this.render(gameState);
-            if (onComplete) onComplete();
-          };
-          this._rafId = requestAnimationFrame(settle);
-        }
+        return;
       }
+
+      // Let a swing-and-miss or foul finish its follow-through before the duel resets
+      const settleStart = performance.now();
+      const settle = (t) => {
+        this.pitchAnim.finishMs = t - settleStart;
+        this.render(gameState);
+        if (this.pitchAnim.finishMs < 480) {
+          this._rafId = requestAnimationFrame(settle);
+          return;
+        }
+        this.pitchAnim = null;
+        this.render(gameState);
+        if (onComplete) onComplete();
+      };
+      this._rafId = requestAnimationFrame(settle);
     };
 
     this._rafId = requestAnimationFrame(stepPitch);

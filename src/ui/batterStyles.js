@@ -131,8 +131,9 @@ export function blendPose(a, b, t) {
 //   batLength is the true bat length; the screen length shrinks as the bat points
 //     into or out of the screen.
 //   twist turns the shoulders and hipTwist the hips from side-on (0) to facing the
-//     pitcher (1), which the renderer draws as a back view. The hips lead the torso
-//     through the swing by a little.
+//     pitcher (1), which the renderer draws as a back view. As in a real swing the hips
+//     lead: they start opening in the launch and are mostly open at contact, while the
+//     shoulders stay closed until after contact.
 // ---------------------------------------------------------------------------
 export const BASE_BATTER_POSES = {
   STANCE: {
@@ -723,7 +724,7 @@ export function generateBatterPoses(style) {
     batPitch: B.ROTATION.batPitch - aa * 0.4 / DEG,
     batLength: bl,
     twist: 0.38,
-    hipTwist: 0.50
+    hipTwist: 0.55
   };
 
   // 5. CONTACT: barrel squared up across the plate, dipped below the hands by the attack angle
@@ -738,7 +739,7 @@ export function generateBatterPoses(style) {
     batPitch: B.CONTACT.batPitch - aa / DEG,
     batLength: bl,
     twist: 0.62,
-    hipTwist: 0.72
+    hipTwist: 0.80
   };
 
   // 6. FOLLOW-THROUGH (Two-hand classic wrap)
@@ -801,7 +802,7 @@ export function generateBatterPoses(style) {
   EXTENSION.batYaw = 85;
   EXTENSION.batPitch = 4 - aa * 0.5 / DEG;
   EXTENSION.twist = 0.8;
-  EXTENSION.hipTwist = 0.9;
+  EXTENSION.hipTwist = 0.92;
 
   // 11. WRAP: hands rise toward the lead shoulder as the barrel climbs past the pitcher's side
   const WRAP = blendPose(EXTENSION, finish, 0.5);

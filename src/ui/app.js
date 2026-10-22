@@ -18,7 +18,7 @@ import { getEffectivePlatoonMatchup } from '../engine/statsMatrix.js';
 import { askEarlAdvisor } from '../engine/earlAI.js';
 import { EWBGameState } from '../engine/gameState.js';
 import { runStatisticalValidation } from '../engine/statsValidator.js';
-import { FieldRenderer1987, PITCH_DELIVERY_MS, PITCH_PLATE_ARRIVAL_MS, SWING_HOLD_MS } from './fieldRenderer1987.js';
+import { FieldRenderer1987, PITCH_CONTACT_MS, PITCH_PLATE_ARRIVAL_MS } from './fieldRenderer1987.js';
 import { HomeRunFireworks } from './fireworks.js';
 import { soundEngine } from './soundEngine.js';
 
@@ -395,7 +395,7 @@ class EWBAppController {
 
   /**
    * Starts the fireworks ~1 s after the ball clears the fence on the field tape.
-   * The tape starts after the pitch delivery and the hold on the swing, and plays at 60 fps.
+   * The tape starts at bat-on-ball contact and plays at 60 fps.
    */
   scheduleHomeRunFireworks(physicsResult) {
     const fenceFt = physicsResult.wallInfo?.distanceFt;
@@ -403,7 +403,7 @@ class EWBAppController {
     const clearIdx = fenceFt
       ? frames.findIndex((f) => f.ball && Math.hypot(f.ball.x, f.ball.y) >= fenceFt)
       : -1;
-    const clearMs = PITCH_DELIVERY_MS + SWING_HOLD_MS + ((clearIdx >= 0 ? clearIdx : frames.length) / FIELD_FPS) * 1000;
+    const clearMs = PITCH_CONTACT_MS + ((clearIdx >= 0 ? clearIdx : frames.length) / FIELD_FPS) * 1000;
     setTimeout(() => this.fireworks.play(), clearMs + HOME_RUN_FIREWORKS_DELAY_MS);
   }
 
