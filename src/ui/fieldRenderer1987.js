@@ -1876,11 +1876,16 @@ export class FieldRenderer1987 {
     // The figure grows a little as the stride carries the body toward the plate
     const k = DUEL_PITCHER_SCALE * strideApproachScale(pose);
     ctx.save();
-    // The shadow stretches down the mound under a front foot that has landed nearer the plate
+    // The shadow stretches down the mound under a front foot that has landed nearer the plate,
+    // and follows the feet toward whichever end of the rubber he works from
     const reach = Math.max(0, pose.gFoot[1]) * k;
+    // A lifted front foot drops out, leaving the shadow under the pivot foot
+    const grounded = Math.max(0, Math.min(1, (pose.gFoot[1] + 12) / 8));
+    const footMidX = pose.tFoot[0] + ((pose.gFoot[0] - pose.tFoot[0]) / 2) * grounded;
+    const shadowX = x + footMidX * k * (isLefty ? -1 : 1);
     ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
     ctx.beginPath();
-    ctx.ellipse(x, footY + reach / 2, 13, 3.5 + reach / 2, 0, 0, Math.PI * 2);
+    ctx.ellipse(shadowX, footY + reach / 2, 13, 3.5 + reach / 2, 0, 0, Math.PI * 2);
     ctx.fill();
 
     ctx.translate(x, footY);

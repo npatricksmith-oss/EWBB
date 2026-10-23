@@ -281,12 +281,14 @@ export function buildPitcherPoses(style) {
 
   // Stretch, taking the sign: already side-on (chest to third base), pivot foot along the
   // rubber, front foot toward the plate. Seen from the plate the feet are nearly in line, the
-  // front one nearer the camera. The hands are apart: the glove rests on the front thigh and
-  // the throwing hand hangs behind the hip.
-  const stretchLegs = { tFoot: [-1, -1], gFoot: [2, 3], tKnee: [-1, -27], gKnee: [2, -25] };
+  // front one nearer the camera. He works from the throwing-arm end of the rubber (third-base
+  // end for a righty), so the whole stance sits off-center that way. The hands are apart: the
+  // glove rests on the front thigh and the throwing hand hangs behind the hip.
+  const stretchLegs = { tFoot: [-9, -1], gFoot: [-5, 3], tKnee: [-9, -27], gKnee: [-5, -25] };
   const signFrame = {
     ...setFrame,
     ...stretchLegs,
+    pelvis: [-7, -50],
     tFootSide: 1,
     gFootSide: 0.4,
     turn: 80,
@@ -319,13 +321,13 @@ export function buildPitcherPoses(style) {
   // Stretch leg lift: lower than the windup's, about belt height, and the knee stays in front
   // instead of tucking back. The hands rise a little at the set.
   const stretchKneeY = -52 - 10 * k;
-  const stretchKneeX = 2 - 7 * k;
+  const stretchKneeX = -5 - 7 * k;
   const stretchLiftFrame = {
     ...stretchFrame,
     turn: 88,
-    pelvis: [-1, -51],
-    tFoot: [-1, -1],
-    tKnee: [-1, -27],
+    pelvis: [-8, -51],
+    tFoot: [-9, -1],
+    tKnee: [-9, -27],
     gKnee: [stretchKneeX, stretchKneeY],
     gFoot: [stretchKneeX - 3 * k, stretchKneeY + 24],
     tEl: [-6, setY + 3],
@@ -359,15 +361,15 @@ export function buildPitcherPoses(style) {
     turn: 10
   };
 
-  // Pivot: the pivot foot turns and slides into the slot in front of the rubber, the body
-  // turns side-on, and overhead hands come down to the chin, so they meet at the chest as the
-  // knee starts up.
+  // Pivot: the pivot foot turns and slides into the slot in front of the rubber, out toward the
+  // throwing-arm end (third base for a righty), the body turns side-on over it, and overhead
+  // hands come down to the chin, so they meet at the chest as the knee starts up.
   const pivotFrame = {
     ...rockerFrame,
     tFootSide: 1,
-    pelvis: [0, -50],
-    tFoot: [-3, 2],
-    tKnee: [-4, -26],
+    pelvis: [-3, -50],
+    tFoot: [-10, 2],
+    tKnee: [-8, -26],
     gFoot: [8, -4],
     gKnee: [8, -28],
     turn: 70,
@@ -382,14 +384,15 @@ export function buildPitcherPoses(style) {
   const kneeY = -50 - 36 * k;
   // The leg kicks out toward third base (first base for a lefty, by the renderer's mirror):
   // the knee swings out to that side and the foot flares further out past it.
-  const kneeX = 7 - 15 * k - 13 * clamp((liftTurn - 85) / 20, 0, 1);
+  // He balances over the pivot foot, out at the throwing-arm end of the rubber.
+  const kneeX = 4 - 15 * k - 13 * clamp((liftTurn - 85) / 20, 0, 1);
   const liftFrame = {
     ...windFrame,
     tFootSide: 1,
     turn: liftTurn,
-    pelvis: [-1, -52],
-    tFoot: [-3, 2],
-    tKnee: [-5, -26],
+    pelvis: [-4, -52],
+    tFoot: [-10, 2],
+    tKnee: [-8, -26],
     gKnee: [kneeX, kneeY],
     // The shin angles out from the knee rather than folding behind the thigh
     gFoot: [kneeX - 1 - 10 * k, Math.min(-4, kneeY + 24)],
@@ -407,8 +410,9 @@ export function buildPitcherPoses(style) {
   // through the release.
   // `strideLegs` is the planted stride, from the load on; in the stride pose itself the front
   // foot is still in the air, reaching down the mound, so it lands just before the arm cocks.
-  const strideLegs = { tFoot: [-4, -1], gFoot: [4, 16], tKnee: [-6, -22], gKnee: [5, -13] };
-  const strideAir = { tFoot: [-4, -1], gFoot: [3, 2], tKnee: [-6, -23], gKnee: [4, -21] };
+  // The pivot foot stays out at the throwing-arm end of the rubber.
+  const strideLegs = { tFoot: [-10, -1], gFoot: [4, 16], tKnee: [-9, -22], gKnee: [5, -13] };
+  const strideAir = { tFoot: [-10, -1], gFoot: [1, 2], tKnee: [-9, -23], gKnee: [2, -21] };
   const strideFrame = {
     ...strideAir,
     tFootSide: 1,
@@ -506,7 +510,7 @@ export function buildPitcherPoses(style) {
     flex: 0.2,
     turn: 35,
     hipTurn: -5,
-    tFoot: [-3, -2],
+    tFoot: [-9, -2],
     tEl: [sh.tSh[0] - 8, sh.tSh[1] - 4 + 4 * slotDrop],
     tHa: [sh.tSh[0] + 3, sh.tSh[1] - 6 + 10 * slotDrop],
     tArmBack: 1,
@@ -526,9 +530,9 @@ export function buildPitcherPoses(style) {
     ...cockFrame,
     tFootSide: 0,
     gFootSide: 0.1,
-    tFoot: [-2, -4],
+    tFoot: [-7, -4],
     gFoot: [4, 16],
-    tKnee: [-3, -19],
+    tKnee: [-6, -19],
     gKnee: [4, -15],
     pelvis: [1, -40 + sink],
     lean,
