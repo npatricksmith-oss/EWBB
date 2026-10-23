@@ -1,0 +1,1369 @@
+{
+ "team": "cal_80s",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "cal_80s_pettiga01",
+   "name": "Gary Pettis",
+   "pos": "CF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.258,
+     "HR": 5,
+     "RBI": 58,
+     "BB": 69,
+     "SO": 132,
+     "AB": 539,
+     "H": 139,
+     "d2B": 23,
+     "d3B": 4,
+     "SB": 50,
+     "CS": 13,
+     "OBA": 0.339,
+     "SA": 0.343
+    },
+    "L": {
+     "BA": 0.278,
+     "HR": 2,
+     "RBI": 22,
+     "BB": 14,
+     "SO": 35,
+     "AB": 176,
+     "H": 49,
+     "d2B": 6,
+     "d3B": 2,
+     "SB": 10,
+     "CS": 5,
+     "OBA": 0.328,
+     "SA": 0.369
+    },
+    "R": {
+     "BA": 0.248,
+     "HR": 3,
+     "RBI": 36,
+     "BB": 55,
+     "SO": 97,
+     "AB": 363,
+     "H": 90,
+     "d2B": 17,
+     "d3B": 2,
+     "SB": 40,
+     "CS": 8,
+     "OBA": 0.344,
+     "SA": 0.331
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 4,
+    "bunt": 10,
+    "fbPct": 30,
+    "runs": 10,
+    "range": 10,
+    "arm": 5,
+    "durability": 9
+   },
+   "source": {
+    "bref": "pettiga01",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_carewro01",
+   "name": "Rod Carew",
+   "pos": "1B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.319,
+     "HR": 3,
+     "RBI": 44,
+     "BB": 67,
+     "SO": 49,
+     "AB": 523,
+     "H": 167,
+     "d2B": 25,
+     "d3B": 5,
+     "SB": 10,
+     "CS": 17,
+     "OBA": 0.396,
+     "SA": 0.403
+    },
+    "L": {
+     "BA": 0.241,
+     "HR": 1,
+     "RBI": 16,
+     "BB": 19,
+     "SO": 19,
+     "AB": 162,
+     "H": 39,
+     "d2B": 5,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 8,
+     "OBA": 0.321,
+     "SA": 0.315
+    },
+    "R": {
+     "BA": 0.355,
+     "HR": 2,
+     "RBI": 28,
+     "BB": 48,
+     "SO": 30,
+     "AB": 361,
+     "H": 128,
+     "d2B": 20,
+     "d3B": 3,
+     "SB": 10,
+     "CS": 9,
+     "OBA": 0.43,
+     "SA": 0.443
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 8,
+    "fbPct": 29,
+    "runs": 5,
+    "range": 7,
+    "arm": 4,
+    "durability": 8
+   },
+   "source": {
+    "bref": "carewro01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_grichbo01",
+   "name": "Bobby Grich",
+   "pos": "2B",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.304,
+     "HR": 22,
+     "RBI": 61,
+     "BB": 40,
+     "SO": 71,
+     "AB": 352,
+     "H": 107,
+     "d2B": 14,
+     "d3B": 2,
+     "SB": 2,
+     "CS": 4,
+     "OBA": 0.378,
+     "SA": 0.543
+    },
+    "L": {
+     "BA": 0.326,
+     "HR": 5,
+     "RBI": 11,
+     "BB": 12,
+     "SO": 15,
+     "AB": 92,
+     "H": 30,
+     "d2B": 2,
+     "d3B": 0,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.41,
+     "SA": 0.511
+    },
+    "R": {
+     "BA": 0.296,
+     "HR": 17,
+     "RBI": 50,
+     "BB": 28,
+     "SO": 56,
+     "AB": 260,
+     "H": 77,
+     "d2B": 12,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 3,
+     "OBA": 0.367,
+     "SA": 0.554
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 5,
+    "bunt": 4,
+    "fbPct": 54,
+    "runs": 4,
+    "range": 7,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "grichbo01",
+    "season": 1981,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_joynewa01",
+   "name": "Wally Joyner",
+   "pos": "DH",
+   "pos2": "1B",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.285,
+     "HR": 34,
+     "RBI": 117,
+     "BB": 72,
+     "SO": 64,
+     "AB": 564,
+     "H": 161,
+     "d2B": 33,
+     "d3B": 1,
+     "SB": 8,
+     "CS": 2,
+     "OBA": 0.366,
+     "SA": 0.528
+    },
+    "L": {
+     "BA": 0.284,
+     "HR": 8,
+     "RBI": 39,
+     "BB": 20,
+     "SO": 25,
+     "AB": 201,
+     "H": 57,
+     "d2B": 15,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.347,
+     "SA": 0.478
+    },
+    "R": {
+     "BA": 0.287,
+     "HR": 26,
+     "RBI": 78,
+     "BB": 52,
+     "SO": 39,
+     "AB": 363,
+     "H": 104,
+     "d2B": 18,
+     "d3B": 1,
+     "SB": 7,
+     "CS": 1,
+     "OBA": 0.376,
+     "SA": 0.556
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 8,
+    "bunt": 4,
+    "fbPct": 53,
+    "runs": 4,
+    "range": 6,
+    "arm": 4,
+    "durability": 9
+   },
+   "source": {
+    "bref": "joynewa01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_decindo01",
+   "name": "Doug DeCinces",
+   "pos": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.301,
+     "HR": 30,
+     "RBI": 97,
+     "BB": 66,
+     "SO": 80,
+     "AB": 575,
+     "H": 173,
+     "d2B": 42,
+     "d3B": 5,
+     "SB": 7,
+     "CS": 5,
+     "OBA": 0.369,
+     "SA": 0.548
+    },
+    "L": {
+     "BA": 0.344,
+     "HR": 13,
+     "RBI": 32,
+     "BB": 32,
+     "SO": 16,
+     "AB": 212,
+     "H": 73,
+     "d2B": 19,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 3,
+     "OBA": 0.429,
+     "SA": 0.627
+    },
+    "R": {
+     "BA": 0.275,
+     "HR": 17,
+     "RBI": 65,
+     "BB": 34,
+     "SO": 64,
+     "AB": 363,
+     "H": 100,
+     "d2B": 23,
+     "d3B": 4,
+     "SB": 4,
+     "CS": 2,
+     "OBA": 0.332,
+     "SA": 0.501
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 49,
+    "runs": 5,
+    "range": 8,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "decindo01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_downibr01",
+   "name": "Brian Downing",
+   "pos": "LF",
+   "pos2": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.281,
+     "HR": 28,
+     "RBI": 84,
+     "BB": 86,
+     "SO": 58,
+     "AB": 623,
+     "H": 175,
+     "d2B": 37,
+     "d3B": 2,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.368,
+     "SA": 0.482
+    },
+    "L": {
+     "BA": 0.318,
+     "HR": 9,
+     "RBI": 26,
+     "BB": 31,
+     "SO": 17,
+     "AB": 220,
+     "H": 70,
+     "d2B": 13,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.398,
+     "SA": 0.509
+    },
+    "R": {
+     "BA": 0.261,
+     "HR": 19,
+     "RBI": 58,
+     "BB": 55,
+     "SO": 41,
+     "AB": 403,
+     "H": 105,
+     "d2B": 24,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.352,
+     "SA": 0.467
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 9,
+    "bunt": 4,
+    "fbPct": 46,
+    "runs": 4,
+    "range": 6,
+    "arm": 5,
+    "durability": 9
+   },
+   "source": {
+    "bref": "downibr01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_whitede03",
+   "name": "Devon White",
+   "pos": "RF",
+   "pos2": "CF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.263,
+     "HR": 24,
+     "RBI": 87,
+     "BB": 39,
+     "SO": 135,
+     "AB": 639,
+     "H": 168,
+     "d2B": 33,
+     "d3B": 5,
+     "SB": 32,
+     "CS": 11,
+     "OBA": 0.306,
+     "SA": 0.443
+    },
+    "L": {
+     "BA": 0.246,
+     "HR": 11,
+     "RBI": 26,
+     "BB": 13,
+     "SO": 36,
+     "AB": 199,
+     "H": 49,
+     "d2B": 9,
+     "d3B": 2,
+     "SB": 8,
+     "CS": 2,
+     "OBA": 0.296,
+     "SA": 0.477
+    },
+    "R": {
+     "BA": 0.27,
+     "HR": 13,
+     "RBI": 61,
+     "BB": 26,
+     "SO": 99,
+     "AB": 440,
+     "H": 119,
+     "d2B": 24,
+     "d3B": 3,
+     "SB": 24,
+     "CS": 9,
+     "OBA": 0.311,
+     "SA": 0.427
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 4,
+    "bunt": 10,
+    "fbPct": 43,
+    "runs": 10,
+    "range": 10,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "whitede03",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_schofdi02",
+   "name": "Dick Schofield",
+   "pos": "SS",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.249,
+     "HR": 13,
+     "RBI": 57,
+     "BB": 48,
+     "SO": 55,
+     "AB": 458,
+     "H": 114,
+     "d2B": 17,
+     "d3B": 6,
+     "SB": 23,
+     "CS": 5,
+     "OBA": 0.321,
+     "SA": 0.397
+    },
+    "L": {
+     "BA": 0.294,
+     "HR": 4,
+     "RBI": 18,
+     "BB": 28,
+     "SO": 20,
+     "AB": 163,
+     "H": 48,
+     "d2B": 8,
+     "d3B": 3,
+     "SB": 7,
+     "CS": 2,
+     "OBA": 0.397,
+     "SA": 0.454
+    },
+    "R": {
+     "BA": 0.224,
+     "HR": 9,
+     "RBI": 39,
+     "BB": 20,
+     "SO": 35,
+     "AB": 295,
+     "H": 66,
+     "d2B": 9,
+     "d3B": 3,
+     "SB": 16,
+     "CS": 3,
+     "OBA": 0.276,
+     "SA": 0.366
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 8,
+    "bunt": 9,
+    "fbPct": 39,
+    "runs": 9,
+    "range": 7,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "schofdi02",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_boonebo01",
+   "name": "Bob Boone",
+   "pos": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.256,
+     "HR": 7,
+     "RBI": 58,
+     "BB": 39,
+     "SO": 34,
+     "AB": 472,
+     "H": 121,
+     "d2B": 17,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.31,
+     "SA": 0.337
+    },
+    "L": {
+     "BA": 0.284,
+     "HR": 3,
+     "RBI": 22,
+     "BB": 15,
+     "SO": 6,
+     "AB": 148,
+     "H": 42,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.348,
+     "SA": 0.372
+    },
+    "R": {
+     "BA": 0.244,
+     "HR": 4,
+     "RBI": 36,
+     "BB": 24,
+     "SO": 28,
+     "AB": 324,
+     "H": 79,
+     "d2B": 13,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.293,
+     "SA": 0.321
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 9,
+    "fbPct": 33,
+    "runs": 3,
+    "range": 9,
+    "arm": 9,
+    "durability": 8
+   },
+   "source": {
+    "bref": "boonebo01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_lynnfr01",
+   "name": "Fred Lynn",
+   "pos": "CF",
+   "pos2": "RF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.299,
+     "HR": 21,
+     "RBI": 86,
+     "BB": 58,
+     "SO": 72,
+     "AB": 472,
+     "H": 141,
+     "d2B": 38,
+     "d3B": 1,
+     "SB": 7,
+     "CS": 8,
+     "OBA": 0.374,
+     "SA": 0.517
+    },
+    "L": {
+     "BA": 0.25,
+     "HR": 7,
+     "RBI": 33,
+     "BB": 11,
+     "SO": 38,
+     "AB": 156,
+     "H": 39,
+     "d2B": 9,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.299,
+     "SA": 0.442
+    },
+    "R": {
+     "BA": 0.323,
+     "HR": 14,
+     "RBI": 53,
+     "BB": 47,
+     "SO": 34,
+     "AB": 316,
+     "H": 102,
+     "d2B": 29,
+     "d3B": 1,
+     "SB": 7,
+     "CS": 7,
+     "OBA": 0.41,
+     "SA": 0.554
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 7,
+    "bunt": 5,
+    "fbPct": 46,
+    "runs": 4,
+    "range": 6,
+    "arm": 5,
+    "durability": 7
+   },
+   "source": {
+    "bref": "lynnfr01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_jacksre01",
+   "name": "Reggie Jackson",
+   "pos": "RF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.275,
+     "HR": 39,
+     "RBI": 101,
+     "BB": 85,
+     "SO": 156,
+     "AB": 530,
+     "H": 146,
+     "d2B": 17,
+     "d3B": 1,
+     "SB": 4,
+     "CS": 5,
+     "OBA": 0.375,
+     "SA": 0.532
+    },
+    "L": {
+     "BA": 0.26,
+     "HR": 14,
+     "RBI": 29,
+     "BB": 18,
+     "SO": 75,
+     "AB": 204,
+     "H": 53,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.321,
+     "SA": 0.5
+    },
+    "R": {
+     "BA": 0.285,
+     "HR": 25,
+     "RBI": 72,
+     "BB": 67,
+     "SO": 81,
+     "AB": 326,
+     "H": 93,
+     "d2B": 12,
+     "d3B": 0,
+     "SB": 4,
+     "CS": 5,
+     "OBA": 0.406,
+     "SA": 0.552
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 2,
+    "bunt": 3,
+    "fbPct": 59,
+    "runs": 4,
+    "range": 1,
+    "arm": 4,
+    "durability": 8
+   },
+   "source": {
+    "bref": "jacksre01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_howelja02",
+   "name": "Jack Howell",
+   "pos": "3B",
+   "pos2": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.228,
+     "HR": 20,
+     "RBI": 52,
+     "BB": 52,
+     "SO": 125,
+     "AB": 474,
+     "H": 108,
+     "d2B": 19,
+     "d3B": 4,
+     "SB": 0,
+     "CS": 3,
+     "OBA": 0.308,
+     "SA": 0.411
+    },
+    "L": {
+     "BA": 0.14,
+     "HR": 2,
+     "RBI": 9,
+     "BB": 12,
+     "SO": 45,
+     "AB": 136,
+     "H": 19,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.22,
+     "SA": 0.235
+    },
+    "R": {
+     "BA": 0.263,
+     "HR": 18,
+     "RBI": 43,
+     "BB": 40,
+     "SO": 80,
+     "AB": 338,
+     "H": 89,
+     "d2B": 14,
+     "d3B": 3,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.342,
+     "SA": 0.482
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 2,
+    "bunt": 5,
+    "fbPct": 45,
+    "runs": 5,
+    "range": 7,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "howelja02",
+    "season": 1989,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "cal_80s_burleri01",
+   "name": "Rick Burleson",
+   "pos": "SS",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.293,
+     "HR": 5,
+     "RBI": 33,
+     "BB": 42,
+     "SO": 38,
+     "AB": 430,
+     "H": 126,
+     "d2B": 17,
+     "d3B": 1,
+     "SB": 4,
+     "CS": 6,
+     "OBA": 0.357,
+     "SA": 0.372
+    },
+    "L": {
+     "BA": 0.302,
+     "HR": 2,
+     "RBI": 13,
+     "BB": 8,
+     "SO": 7,
+     "AB": 116,
+     "H": 35,
+     "d2B": 3,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.336,
+     "SA": 0.379
+    },
+    "R": {
+     "BA": 0.29,
+     "HR": 3,
+     "RBI": 20,
+     "BB": 34,
+     "SO": 31,
+     "AB": 314,
+     "H": 91,
+     "d2B": 14,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 5,
+     "OBA": 0.365,
+     "SA": 0.369
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 7,
+    "fbPct": 31,
+    "runs": 4,
+    "range": 7,
+    "arm": 7,
+    "durability": 7
+   },
+   "source": {
+    "bref": "burleri01",
+    "season": 1981,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "cal_80s_wittmi01",
+   "name": "Mike Witt",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 18,
+     "L": 10,
+     "ERA": 2.84,
+     "GS": 34,
+     "SV": 0,
+     "IP": 269.0,
+     "H": 218,
+     "ER": 85,
+     "HR": 22,
+     "BB": 73,
+     "SO": 208,
+     "WP": 6,
+     "HB": 3,
+     "BALK": 0,
+     "BA": 0.221,
+     "OBA": 0.275,
+     "SA": 0.335
+    },
+    "L": {
+     "AB": 578,
+     "H": 124,
+     "HR": 15,
+     "BB": 43,
+     "SO": 104,
+     "BA": 0.215,
+     "OBA": 0.27,
+     "SA": 0.339,
+     "baMod": 0.973,
+     "hrMod": 1.165,
+     "bbMod": 1.006,
+     "soMod": 0.854
+    },
+    "R": {
+     "AB": 409,
+     "H": 94,
+     "HR": 7,
+     "BB": 30,
+     "SO": 104,
+     "BA": 0.23,
+     "OBA": 0.282,
+     "SA": 0.33,
+     "baMod": 1.041,
+     "hrMod": 0.768,
+     "bbMod": 0.991,
+     "soMod": 1.206
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 9,
+    "fatigue": 10,
+    "bunt": 3,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "wittmi01",
+    "season": 1986,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "cal_80s_zahnge01",
+   "name": "Geoff Zahn",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 13,
+     "L": 10,
+     "ERA": 3.12,
+     "GS": 27,
+     "SV": 0,
+     "IP": 199.1,
+     "H": 200,
+     "ER": 69,
+     "HR": 11,
+     "BB": 48,
+     "SO": 61,
+     "WP": 3,
+     "HB": 1,
+     "BALK": 0,
+     "BA": 0.263,
+     "OBA": 0.306,
+     "SA": 0.354
+    },
+    "L": {
+     "AB": 150,
+     "H": 39,
+     "HR": 2,
+     "BB": 6,
+     "SO": 12,
+     "BA": 0.26,
+     "OBA": 0.287,
+     "SA": 0.32,
+     "baMod": 0.989,
+     "hrMod": 0.933,
+     "bbMod": 0.641,
+     "soMod": 1.009
+    },
+    "R": {
+     "AB": 610,
+     "H": 161,
+     "HR": 9,
+     "BB": 42,
+     "SO": 49,
+     "BA": 0.264,
+     "OBA": 0.31,
+     "SA": 0.362,
+     "baMod": 1.004,
+     "hrMod": 1.016,
+     "bbMod": 1.087,
+     "soMod": 0.998
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 9,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "Curveball",
+    "Changeup",
+    "Slider"
+   ],
+   "source": {
+    "bref": "zahnge01",
+    "season": 1984,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "cal_80s_mccaski01",
+   "name": "Kirk McCaskill",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 15,
+     "L": 10,
+     "ERA": 2.93,
+     "GS": 32,
+     "SV": 0,
+     "IP": 212.0,
+     "H": 202,
+     "ER": 69,
+     "HR": 16,
+     "BB": 59,
+     "SO": 107,
+     "WP": 7,
+     "HB": 3,
+     "BALK": 2,
+     "BA": 0.254,
+     "OBA": 0.307,
+     "SA": 0.357
+    },
+    "L": {
+     "AB": 401,
+     "H": 101,
+     "HR": 10,
+     "BB": 26,
+     "SO": 52,
+     "BA": 0.252,
+     "OBA": 0.297,
+     "SA": 0.369,
+     "baMod": 0.992,
+     "hrMod": 1.262,
+     "bbMod": 0.89,
+     "soMod": 0.981
+    },
+    "R": {
+     "AB": 394,
+     "H": 101,
+     "HR": 6,
+     "BB": 33,
+     "SO": 55,
+     "BA": 0.256,
+     "OBA": 0.316,
+     "SA": 0.345,
+     "baMod": 1.008,
+     "hrMod": 0.743,
+     "bbMod": 1.108,
+     "soMod": 1.019
+    }
+   },
+   "ratings": {
+    "speed": 6,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 5
+   },
+   "pitches": [
+    "Curveball",
+    "4-Seam Fastball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "mccaski01",
+    "season": 1989,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "cal_80s_forscke01",
+   "name": "Ken Forsch",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 11,
+     "L": 12,
+     "ERA": 4.06,
+     "GS": 31,
+     "SV": 0,
+     "IP": 219.1,
+     "H": 226,
+     "ER": 99,
+     "HR": 21,
+     "BB": 61,
+     "SO": 81,
+     "WP": 6,
+     "HB": 4,
+     "BALK": 0,
+     "BA": 0.266,
+     "OBA": 0.317,
+     "SA": 0.399
+    },
+    "L": {
+     "AB": 457,
+     "H": 129,
+     "HR": 12,
+     "BB": 30,
+     "SO": 35,
+     "BA": 0.282,
+     "OBA": 0.33,
+     "SA": 0.431,
+     "baMod": 1.06,
+     "hrMod": 1.07,
+     "bbMod": 0.921,
+     "soMod": 0.809
+    },
+    "R": {
+     "AB": 392,
+     "H": 97,
+     "HR": 9,
+     "BB": 31,
+     "SO": 46,
+     "BA": 0.247,
+     "OBA": 0.303,
+     "SA": 0.362,
+     "baMod": 0.929,
+     "hrMod": 0.92,
+     "bbMod": 1.091,
+     "soMod": 1.219
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "2-Seam Fastball",
+    "Slider",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "forscke01",
+    "season": 1983,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "cal_80s_aasedo01",
+   "name": "Don Aase",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 4,
+     "L": 4,
+     "ERA": 2.34,
+     "GS": 0,
+     "SV": 11,
+     "IP": 65.1,
+     "H": 56,
+     "ER": 17,
+     "HR": 4,
+     "BB": 24,
+     "SO": 38,
+     "WP": 2,
+     "HB": 0,
+     "BALK": 0,
+     "BA": 0.234,
+     "OBA": 0.303,
+     "SA": 0.331
+    },
+    "L": {
+     "AB": 112,
+     "H": 28,
+     "HR": 2,
+     "BB": 16,
+     "SO": 16,
+     "BA": 0.25,
+     "OBA": 0.344,
+     "SA": 0.357,
+     "baMod": 1.068,
+     "hrMod": 1.035,
+     "bbMod": 1.38,
+     "soMod": 0.872
+    },
+    "R": {
+     "AB": 127,
+     "H": 28,
+     "HR": 2,
+     "BB": 8,
+     "SO": 22,
+     "BA": 0.22,
+     "OBA": 0.265,
+     "SA": 0.307,
+     "baMod": 0.94,
+     "hrMod": 0.967,
+     "bbMod": 0.645,
+     "soMod": 1.12
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 7,
+    "fatigue": 5,
+    "bunt": 3,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "aasedo01",
+    "season": 1981,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "cal_80s_mooredo01",
+   "name": "Donnie Moore",
+   "role": "CL",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 8,
+     "L": 8,
+     "ERA": 1.92,
+     "GS": 0,
+     "SV": 31,
+     "IP": 103.0,
+     "H": 91,
+     "ER": 22,
+     "HR": 9,
+     "BB": 21,
+     "SO": 72,
+     "WP": 2,
+     "HB": 0,
+     "BALK": 0,
+     "BA": 0.237,
+     "OBA": 0.275,
+     "SA": 0.336
+    },
+    "L": {
+     "AB": 200,
+     "H": 40,
+     "HR": 2,
+     "BB": 13,
+     "SO": 41,
+     "BA": 0.2,
+     "OBA": 0.247,
+     "SA": 0.27,
+     "baMod": 0.844,
+     "hrMod": 0.421,
+     "bbMod": 1.173,
+     "soMod": 1.079
+    },
+    "R": {
+     "AB": 184,
+     "H": 51,
+     "HR": 7,
+     "BB": 8,
+     "SO": 31,
+     "BA": 0.277,
+     "OBA": 0.307,
+     "SA": 0.408,
+     "baMod": 1.169,
+     "hrMod": 1.646,
+     "bbMod": 0.806,
+     "soMod": 0.911
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 10,
+    "fatigue": 5,
+    "bunt": 3,
+    "fielding": 5
+   },
+   "pitches": [
+    "Splitter",
+    "4-Seam Fastball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "mooredo01",
+    "season": 1985,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

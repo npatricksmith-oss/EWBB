@@ -1,0 +1,1371 @@
+{
+ "team": "bal_80s",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "bal_80s_bumbral01",
+   "name": "Al Bumbry",
+   "pos": "CF",
+   "pos2": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.318,
+     "HR": 9,
+     "RBI": 53,
+     "BB": 78,
+     "SO": 75,
+     "AB": 645,
+     "H": 205,
+     "d2B": 29,
+     "d3B": 9,
+     "SB": 44,
+     "CS": 11,
+     "OBA": 0.392,
+     "SA": 0.433
+    },
+    "L": {
+     "BA": 0.272,
+     "HR": 2,
+     "RBI": 15,
+     "BB": 24,
+     "SO": 28,
+     "AB": 206,
+     "H": 56,
+     "d2B": 6,
+     "d3B": 1,
+     "SB": 7,
+     "CS": 2,
+     "OBA": 0.349,
+     "SA": 0.34
+    },
+    "R": {
+     "BA": 0.339,
+     "HR": 7,
+     "RBI": 38,
+     "BB": 54,
+     "SO": 47,
+     "AB": 439,
+     "H": 149,
+     "d2B": 23,
+     "d3B": 8,
+     "SB": 37,
+     "CS": 9,
+     "OBA": 0.412,
+     "SA": 0.476
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 8,
+    "bunt": 9,
+    "fbPct": 32,
+    "runs": 9,
+    "range": 6,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "bumbral01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_singlke01",
+   "name": "Ken Singleton",
+   "pos": "DH",
+   "pos2": "RF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.304,
+     "HR": 24,
+     "RBI": 104,
+     "BB": 92,
+     "SO": 94,
+     "AB": 583,
+     "H": 177,
+     "d2B": 28,
+     "d3B": 3,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.397,
+     "SA": 0.485
+    },
+    "L": {
+     "BA": 0.299,
+     "HR": 8,
+     "RBI": 29,
+     "BB": 22,
+     "SO": 36,
+     "AB": 201,
+     "H": 60,
+     "d2B": 9,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.369,
+     "SA": 0.483
+    },
+    "R": {
+     "BA": 0.306,
+     "HR": 16,
+     "RBI": 75,
+     "BB": 70,
+     "SO": 58,
+     "AB": 382,
+     "H": 117,
+     "d2B": 19,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.411,
+     "SA": 0.487
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 4,
+    "fbPct": 45,
+    "runs": 4,
+    "range": 2,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "singlke01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_murraed02",
+   "name": "Eddie Murray",
+   "pos": "1B",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.306,
+     "HR": 29,
+     "RBI": 110,
+     "BB": 107,
+     "SO": 87,
+     "AB": 588,
+     "H": 180,
+     "d2B": 26,
+     "d3B": 3,
+     "SB": 10,
+     "CS": 2,
+     "OBA": 0.41,
+     "SA": 0.509
+    },
+    "L": {
+     "BA": 0.267,
+     "HR": 5,
+     "RBI": 20,
+     "BB": 29,
+     "SO": 19,
+     "AB": 150,
+     "H": 40,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 4,
+     "CS": 0,
+     "OBA": 0.392,
+     "SA": 0.413
+    },
+    "R": {
+     "BA": 0.32,
+     "HR": 24,
+     "RBI": 90,
+     "BB": 78,
+     "SO": 68,
+     "AB": 438,
+     "H": 140,
+     "d2B": 21,
+     "d3B": 2,
+     "SB": 6,
+     "CS": 2,
+     "OBA": 0.416,
+     "SA": 0.541
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 48,
+    "runs": 5,
+    "range": 7,
+    "arm": 6,
+    "durability": 10
+   },
+   "source": {
+    "bref": "murraed02",
+    "season": 1984,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_roeniga01",
+   "name": "Gary Roenicke",
+   "pos": "LF",
+   "pos2": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.27,
+     "HR": 21,
+     "RBI": 74,
+     "BB": 70,
+     "SO": 73,
+     "AB": 393,
+     "H": 106,
+     "d2B": 25,
+     "d3B": 1,
+     "SB": 6,
+     "CS": 7,
+     "OBA": 0.392,
+     "SA": 0.499
+    },
+    "L": {
+     "BA": 0.281,
+     "HR": 8,
+     "RBI": 24,
+     "BB": 33,
+     "SO": 29,
+     "AB": 153,
+     "H": 43,
+     "d2B": 11,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.424,
+     "SA": 0.523
+    },
+    "R": {
+     "BA": 0.263,
+     "HR": 13,
+     "RBI": 50,
+     "BB": 37,
+     "SO": 44,
+     "AB": 240,
+     "H": 63,
+     "d2B": 14,
+     "d3B": 0,
+     "SB": 5,
+     "CS": 5,
+     "OBA": 0.37,
+     "SA": 0.483
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 6,
+    "bunt": 5,
+    "fbPct": 50,
+    "runs": 4,
+    "range": 8,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "roeniga01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_ripkeca01",
+   "name": "Cal Ripken Jr.",
+   "pos": "SS",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.318,
+     "HR": 27,
+     "RBI": 102,
+     "BB": 58,
+     "SO": 97,
+     "AB": 663,
+     "H": 211,
+     "d2B": 47,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 4,
+     "OBA": 0.371,
+     "SA": 0.517
+    },
+    "L": {
+     "BA": 0.312,
+     "HR": 8,
+     "RBI": 31,
+     "BB": 22,
+     "SO": 28,
+     "AB": 218,
+     "H": 68,
+     "d2B": 17,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 3,
+     "OBA": 0.37,
+     "SA": 0.5
+    },
+    "R": {
+     "BA": 0.321,
+     "HR": 19,
+     "RBI": 71,
+     "BB": 36,
+     "SO": 69,
+     "AB": 445,
+     "H": 143,
+     "d2B": 30,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.371,
+     "SA": 0.526
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 44,
+    "runs": 4,
+    "range": 8,
+    "arm": 8,
+    "durability": 10
+   },
+   "source": {
+    "bref": "ripkeca01",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_lynnfr01",
+   "name": "Fred Lynn",
+   "pos": "RF",
+   "pos2": "CF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.287,
+     "HR": 23,
+     "RBI": 67,
+     "BB": 53,
+     "SO": 59,
+     "AB": 397,
+     "H": 114,
+     "d2B": 13,
+     "d3B": 1,
+     "SB": 2,
+     "CS": 2,
+     "OBA": 0.371,
+     "SA": 0.499
+    },
+    "L": {
+     "BA": 0.271,
+     "HR": 7,
+     "RBI": 21,
+     "BB": 7,
+     "SO": 24,
+     "AB": 96,
+     "H": 26,
+     "d2B": 3,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.333,
+     "SA": 0.521
+    },
+    "R": {
+     "BA": 0.292,
+     "HR": 16,
+     "RBI": 46,
+     "BB": 46,
+     "SO": 35,
+     "AB": 301,
+     "H": 88,
+     "d2B": 10,
+     "d3B": 1,
+     "SB": 2,
+     "CS": 2,
+     "OBA": 0.382,
+     "SA": 0.492
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 52,
+    "runs": 4,
+    "range": 4,
+    "arm": 5,
+    "durability": 6
+   },
+   "source": {
+    "bref": "lynnfr01",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_dempsri01",
+   "name": "Rick Dempsey",
+   "pos": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.262,
+     "HR": 9,
+     "RBI": 40,
+     "BB": 36,
+     "SO": 45,
+     "AB": 362,
+     "H": 95,
+     "d2B": 26,
+     "d3B": 3,
+     "SB": 3,
+     "CS": 1,
+     "OBA": 0.333,
+     "SA": 0.425
+    },
+    "L": {
+     "BA": 0.303,
+     "HR": 6,
+     "RBI": 20,
+     "BB": 14,
+     "SO": 18,
+     "AB": 178,
+     "H": 54,
+     "d2B": 10,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.356,
+     "SA": 0.483
+    },
+    "R": {
+     "BA": 0.223,
+     "HR": 3,
+     "RBI": 20,
+     "BB": 22,
+     "SO": 27,
+     "AB": 184,
+     "H": 41,
+     "d2B": 16,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 0,
+     "OBA": 0.312,
+     "SA": 0.37
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 7,
+    "bunt": 5,
+    "fbPct": 37,
+    "runs": 5,
+    "range": 7,
+    "arm": 7,
+    "durability": 6
+   },
+   "source": {
+    "bref": "dempsri01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_decindo01",
+   "name": "Doug DeCinces",
+   "pos": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.249,
+     "HR": 16,
+     "RBI": 64,
+     "BB": 49,
+     "SO": 83,
+     "AB": 489,
+     "H": 122,
+     "d2B": 23,
+     "d3B": 2,
+     "SB": 11,
+     "CS": 6,
+     "OBA": 0.319,
+     "SA": 0.403
+    },
+    "L": {
+     "BA": 0.31,
+     "HR": 11,
+     "RBI": 29,
+     "BB": 22,
+     "SO": 23,
+     "AB": 158,
+     "H": 49,
+     "d2B": 7,
+     "d3B": 2,
+     "SB": 4,
+     "CS": 1,
+     "OBA": 0.393,
+     "SA": 0.589
+    },
+    "R": {
+     "BA": 0.221,
+     "HR": 5,
+     "RBI": 35,
+     "BB": 27,
+     "SO": 60,
+     "AB": 331,
+     "H": 73,
+     "d2B": 16,
+     "d3B": 0,
+     "SB": 7,
+     "CS": 5,
+     "OBA": 0.282,
+     "SA": 0.314
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 5,
+    "bunt": 6,
+    "fbPct": 41,
+    "runs": 6,
+    "range": 8,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "decindo01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_dauerri01",
+   "name": "Rich Dauer",
+   "pos": "2B",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.284,
+     "HR": 2,
+     "RBI": 63,
+     "BB": 46,
+     "SO": 19,
+     "AB": 557,
+     "H": 158,
+     "d2B": 32,
+     "d3B": 0,
+     "SB": 3,
+     "CS": 2,
+     "OBA": 0.338,
+     "SA": 0.352
+    },
+    "L": {
+     "BA": 0.254,
+     "HR": 0,
+     "RBI": 20,
+     "BB": 13,
+     "SO": 6,
+     "AB": 185,
+     "H": 47,
+     "d2B": 7,
+     "d3B": 0,
+     "SB": 2,
+     "CS": 0,
+     "OBA": 0.3,
+     "SA": 0.292
+    },
+    "R": {
+     "BA": 0.298,
+     "HR": 2,
+     "RBI": 43,
+     "BB": 33,
+     "SO": 13,
+     "AB": 372,
+     "H": 111,
+     "d2B": 25,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.357,
+     "SA": 0.382
+    }
+   },
+   "ratings": {
+    "power": 2,
+    "hitAndRun": 10,
+    "bunt": 6,
+    "fbPct": 28,
+    "runs": 3,
+    "range": 7,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "dauerri01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_lowenjo01",
+   "name": "John Lowenstein",
+   "pos": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.32,
+     "HR": 24,
+     "RBI": 66,
+     "BB": 54,
+     "SO": 59,
+     "AB": 322,
+     "H": 103,
+     "d2B": 15,
+     "d3B": 2,
+     "SB": 7,
+     "CS": 6,
+     "OBA": 0.415,
+     "SA": 0.602
+    },
+    "L": {
+     "BA": 0.143,
+     "HR": 0,
+     "RBI": 1,
+     "BB": 0,
+     "SO": 4,
+     "AB": 7,
+     "H": 1,
+     "d2B": 0,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.143,
+     "SA": 0.143
+    },
+    "R": {
+     "BA": 0.324,
+     "HR": 24,
+     "RBI": 65,
+     "BB": 54,
+     "SO": 55,
+     "AB": 315,
+     "H": 102,
+     "d2B": 15,
+     "d3B": 2,
+     "SB": 7,
+     "CS": 6,
+     "OBA": 0.42,
+     "SA": 0.613
+    }
+   },
+   "ratings": {
+    "power": 9,
+    "hitAndRun": 6,
+    "bunt": 4,
+    "fbPct": 60,
+    "runs": 5,
+    "range": 4,
+    "arm": 4,
+    "durability": 6
+   },
+   "source": {
+    "bref": "lowenjo01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_youngmi01",
+   "name": "Mike Young",
+   "pos": "LF",
+   "pos2": "RF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.273,
+     "HR": 28,
+     "RBI": 81,
+     "BB": 48,
+     "SO": 104,
+     "AB": 450,
+     "H": 123,
+     "d2B": 22,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 5,
+     "OBA": 0.348,
+     "SA": 0.513
+    },
+    "L": {
+     "BA": 0.293,
+     "HR": 12,
+     "RBI": 30,
+     "BB": 12,
+     "SO": 34,
+     "AB": 181,
+     "H": 53,
+     "d2B": 8,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 3,
+     "OBA": 0.335,
+     "SA": 0.547
+    },
+    "R": {
+     "BA": 0.26,
+     "HR": 16,
+     "RBI": 51,
+     "BB": 36,
+     "SO": 70,
+     "AB": 269,
+     "H": 70,
+     "d2B": 14,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.356,
+     "SA": 0.491
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 4,
+    "bunt": 3,
+    "fbPct": 54,
+    "runs": 4,
+    "range": 5,
+    "arm": 4,
+    "durability": 6
+   },
+   "source": {
+    "bref": "youngmi01",
+    "season": 1985,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_tettlmi01",
+   "name": "Mickey Tettleton",
+   "pos": "C",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.258,
+     "HR": 26,
+     "RBI": 65,
+     "BB": 73,
+     "SO": 117,
+     "AB": 411,
+     "H": 106,
+     "d2B": 21,
+     "d3B": 2,
+     "SB": 3,
+     "CS": 2,
+     "OBA": 0.369,
+     "SA": 0.509
+    },
+    "L": {
+     "BA": 0.245,
+     "HR": 10,
+     "RBI": 20,
+     "BB": 22,
+     "SO": 47,
+     "AB": 139,
+     "H": 34,
+     "d2B": 10,
+     "d3B": 0,
+     "SB": 2,
+     "CS": 0,
+     "OBA": 0.346,
+     "SA": 0.532
+    },
+    "R": {
+     "BA": 0.265,
+     "HR": 16,
+     "RBI": 45,
+     "BB": 51,
+     "SO": 70,
+     "AB": 272,
+     "H": 72,
+     "d2B": 11,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.38,
+     "SA": 0.496
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 3,
+    "bunt": 4,
+    "fbPct": 54,
+    "runs": 5,
+    "range": 5,
+    "arm": 5,
+    "durability": 7
+   },
+   "source": {
+    "bref": "tettlmi01",
+    "season": 1989,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "bal_80s_sheetla01",
+   "name": "Larry Sheets",
+   "pos": "LF",
+   "pos2": "RF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.316,
+     "HR": 31,
+     "RBI": 94,
+     "BB": 31,
+     "SO": 67,
+     "AB": 469,
+     "H": 148,
+     "d2B": 23,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.358,
+     "SA": 0.563
+    },
+    "L": {
+     "BA": 0.303,
+     "HR": 10,
+     "RBI": 29,
+     "BB": 8,
+     "SO": 22,
+     "AB": 145,
+     "H": 44,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.348,
+     "SA": 0.538
+    },
+    "R": {
+     "BA": 0.321,
+     "HR": 21,
+     "RBI": 65,
+     "BB": 23,
+     "SO": 45,
+     "AB": 324,
+     "H": 104,
+     "d2B": 19,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.363,
+     "SA": 0.574
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 7,
+    "bunt": 3,
+    "fbPct": 56,
+    "runs": 3,
+    "range": 3,
+    "arm": 4,
+    "durability": 7
+   },
+   "source": {
+    "bref": "sheetla01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "bal_80s_boddimi01",
+   "name": "Mike Boddicker",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 20,
+     "L": 11,
+     "ERA": 2.79,
+     "GS": 34,
+     "SV": 0,
+     "IP": 261.1,
+     "H": 218,
+     "ER": 81,
+     "HR": 23,
+     "BB": 81,
+     "SO": 128,
+     "WP": 6,
+     "HB": 5,
+     "BALK": 1,
+     "BA": 0.228,
+     "OBA": 0.29,
+     "SA": 0.344
+    },
+    "L": {
+     "AB": 529,
+     "H": 126,
+     "HR": 11,
+     "BB": 44,
+     "SO": 57,
+     "BA": 0.238,
+     "OBA": 0.299,
+     "SA": 0.34,
+     "baMod": 1.044,
+     "hrMod": 0.861,
+     "bbMod": 0.978,
+     "soMod": 0.801
+    },
+    "R": {
+     "AB": 427,
+     "H": 92,
+     "HR": 12,
+     "BB": 37,
+     "SO": 71,
+     "BA": 0.215,
+     "OBA": 0.278,
+     "SA": 0.349,
+     "baMod": 0.943,
+     "hrMod": 1.174,
+     "bbMod": 1.028,
+     "soMod": 1.248
+    }
+   },
+   "ratings": {
+    "speed": 6,
+    "control": 8,
+    "fatigue": 10,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "Changeup",
+    "Curveball",
+    "4-Seam Fastball"
+   ],
+   "source": {
+    "bref": "boddimi01",
+    "season": 1984,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "bal_80s_mcgresc01",
+   "name": "Scott McGregor",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 18,
+     "L": 7,
+     "ERA": 3.18,
+     "GS": 36,
+     "SV": 0,
+     "IP": 260.0,
+     "H": 271,
+     "ER": 92,
+     "HR": 24,
+     "BB": 45,
+     "SO": 86,
+     "WP": 0,
+     "HB": 1,
+     "BALK": 0,
+     "BA": 0.269,
+     "OBA": 0.298,
+     "SA": 0.409
+    },
+    "L": {
+     "AB": 181,
+     "H": 38,
+     "HR": 3,
+     "BB": 7,
+     "SO": 20,
+     "BA": 0.21,
+     "OBA": 0.241,
+     "SA": 0.326,
+     "baMod": 0.781,
+     "hrMod": 0.694,
+     "bbMod": 0.864,
+     "soMod": 1.292
+    },
+    "R": {
+     "AB": 827,
+     "H": 233,
+     "HR": 21,
+     "BB": 38,
+     "SO": 66,
+     "BA": 0.282,
+     "OBA": 0.31,
+     "SA": 0.427,
+     "baMod": 1.048,
+     "hrMod": 1.067,
+     "bbMod": 1.03,
+     "soMod": 0.936
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 10,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 7
+   },
+   "pitches": [
+    "Changeup",
+    "Curveball",
+    "2-Seam Fastball"
+   ],
+   "source": {
+    "bref": "mcgresc01",
+    "season": 1983,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "bal_80s_davisst02",
+   "name": "Storm Davis",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 14,
+     "L": 9,
+     "ERA": 3.12,
+     "GS": 31,
+     "SV": 1,
+     "IP": 225.0,
+     "H": 205,
+     "ER": 78,
+     "HR": 7,
+     "BB": 71,
+     "SO": 105,
+     "WP": 6,
+     "HB": 5,
+     "BALK": 1,
+     "BA": 0.247,
+     "OBA": 0.307,
+     "SA": 0.32
+    },
+    "L": {
+     "AB": 409,
+     "H": 104,
+     "HR": 3,
+     "BB": 50,
+     "SO": 67,
+     "BA": 0.254,
+     "OBA": 0.33,
+     "SA": 0.33,
+     "baMod": 1.028,
+     "hrMod": 0.838,
+     "bbMod": 1.377,
+     "soMod": 1.248
+    },
+    "R": {
+     "AB": 422,
+     "H": 101,
+     "HR": 4,
+     "BB": 21,
+     "SO": 38,
+     "BA": 0.239,
+     "OBA": 0.282,
+     "SA": 0.31,
+     "baMod": 0.968,
+     "hrMod": 1.169,
+     "bbMod": 0.605,
+     "soMod": 0.741
+    }
+   },
+   "ratings": {
+    "speed": 6,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "davisst02",
+    "season": 1984,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "bal_80s_flanami01",
+   "name": "Mike Flanagan",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 16,
+     "L": 13,
+     "ERA": 4.12,
+     "GS": 37,
+     "SV": 0,
+     "IP": 251.1,
+     "H": 278,
+     "ER": 115,
+     "HR": 27,
+     "BB": 71,
+     "SO": 128,
+     "WP": 12,
+     "HB": 2,
+     "BALK": 1,
+     "BA": 0.287,
+     "OBA": 0.333,
+     "SA": 0.429
+    },
+    "L": {
+     "AB": 172,
+     "H": 45,
+     "HR": 6,
+     "BB": 13,
+     "SO": 34,
+     "BA": 0.262,
+     "OBA": 0.31,
+     "SA": 0.413,
+     "baMod": 0.913,
+     "hrMod": 1.259,
+     "bbMod": 1.037,
+     "soMod": 1.505
+    },
+    "R": {
+     "AB": 798,
+     "H": 233,
+     "HR": 21,
+     "BB": 58,
+     "SO": 94,
+     "BA": 0.292,
+     "OBA": 0.338,
+     "SA": 0.432,
+     "baMod": 1.017,
+     "hrMod": 0.945,
+     "bbMod": 0.992,
+     "soMod": 0.892
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "Curveball",
+    "Sinker",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "flanami01",
+    "season": 1980,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "bal_80s_stewasa01",
+   "name": "Sammy Stewart",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 4,
+     "L": 8,
+     "ERA": 2.32,
+     "GS": 3,
+     "SV": 4,
+     "IP": 112.1,
+     "H": 89,
+     "ER": 29,
+     "HR": 8,
+     "BB": 57,
+     "SO": 57,
+     "WP": 1,
+     "HB": 3,
+     "BALK": 2,
+     "BA": 0.225,
+     "OBA": 0.325,
+     "SA": 0.308
+    },
+    "L": {
+     "AB": 177,
+     "H": 46,
+     "HR": 4,
+     "BB": 30,
+     "SO": 24,
+     "BA": 0.26,
+     "OBA": 0.364,
+     "SA": 0.35,
+     "baMod": 1.156,
+     "hrMod": 1.097,
+     "bbMod": 1.155,
+     "soMod": 0.924
+    },
+    "R": {
+     "AB": 219,
+     "H": 43,
+     "HR": 4,
+     "BB": 27,
+     "SO": 33,
+     "BA": 0.196,
+     "OBA": 0.292,
+     "SA": 0.274,
+     "baMod": 0.871,
+     "hrMod": 0.919,
+     "bbMod": 0.87,
+     "soMod": 1.064
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 4,
+    "fatigue": 8,
+    "bunt": 3,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "stewasa01",
+    "season": 1981,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "bal_80s_martiti01",
+   "name": "Tippy Martinez",
+   "role": "CL",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 9,
+     "L": 3,
+     "ERA": 2.35,
+     "GS": 0,
+     "SV": 21,
+     "IP": 103.1,
+     "H": 76,
+     "ER": 27,
+     "HR": 10,
+     "BB": 37,
+     "SO": 81,
+     "WP": 6,
+     "HB": 0,
+     "BALK": 0,
+     "BA": 0.211,
+     "OBA": 0.28,
+     "SA": 0.332
+    },
+    "L": {
+     "AB": 112,
+     "H": 20,
+     "HR": 3,
+     "BB": 10,
+     "SO": 25,
+     "BA": 0.179,
+     "OBA": 0.242,
+     "SA": 0.286,
+     "baMod": 0.848,
+     "hrMod": 0.959,
+     "bbMod": 0.864,
+     "soMod": 0.987
+    },
+    "R": {
+     "AB": 249,
+     "H": 56,
+     "HR": 7,
+     "BB": 27,
+     "SO": 56,
+     "BA": 0.225,
+     "OBA": 0.297,
+     "SA": 0.353,
+     "baMod": 1.066,
+     "hrMod": 1.019,
+     "bbMod": 1.062,
+     "soMod": 1.006
+    }
+   },
+   "ratings": {
+    "speed": 9,
+    "control": 7,
+    "fatigue": 5,
+    "bunt": 3,
+    "fielding": 9
+   },
+   "pitches": [
+    "Curveball",
+    "4-Seam Fastball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "martiti01",
+    "season": 1983,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

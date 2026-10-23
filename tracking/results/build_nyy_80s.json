@@ -1,0 +1,1369 @@
+{
+ "team": "nyy_80s",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "nyy_80s_henderi01",
+   "name": "Rickey Henderson",
+   "pos": "LF",
+   "pos2": "CF",
+   "bats": "R",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.314,
+     "HR": 24,
+     "RBI": 72,
+     "BB": 99,
+     "SO": 65,
+     "AB": 547,
+     "H": 172,
+     "d2B": 28,
+     "d3B": 5,
+     "SB": 80,
+     "CS": 10,
+     "OBA": 0.419,
+     "SA": 0.516
+    },
+    "L": {
+     "BA": 0.361,
+     "HR": 12,
+     "RBI": 25,
+     "BB": 45,
+     "SO": 27,
+     "AB": 180,
+     "H": 65,
+     "d2B": 13,
+     "d3B": 2,
+     "SB": 26,
+     "CS": 7,
+     "OBA": 0.487,
+     "SA": 0.656
+    },
+    "R": {
+     "BA": 0.292,
+     "HR": 12,
+     "RBI": 47,
+     "BB": 54,
+     "SO": 38,
+     "AB": 367,
+     "H": 107,
+     "d2B": 15,
+     "d3B": 3,
+     "SB": 54,
+     "CS": 3,
+     "OBA": 0.383,
+     "SA": 0.447
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 8,
+    "bunt": 7,
+    "fbPct": 46,
+    "runs": 10,
+    "range": 8,
+    "arm": 4,
+    "durability": 8
+   },
+   "source": {
+    "bref": "henderi01",
+    "season": 1985,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_randowi01",
+   "name": "Willie Randolph",
+   "pos": "2B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.294,
+     "HR": 7,
+     "RBI": 46,
+     "BB": 119,
+     "SO": 45,
+     "AB": 513,
+     "H": 151,
+     "d2B": 23,
+     "d3B": 7,
+     "SB": 30,
+     "CS": 5,
+     "OBA": 0.427,
+     "SA": 0.407
+    },
+    "L": {
+     "BA": 0.333,
+     "HR": 6,
+     "RBI": 31,
+     "BB": 45,
+     "SO": 12,
+     "AB": 207,
+     "H": 69,
+     "d2B": 8,
+     "d3B": 3,
+     "SB": 10,
+     "CS": 2,
+     "OBA": 0.447,
+     "SA": 0.488
+    },
+    "R": {
+     "BA": 0.268,
+     "HR": 1,
+     "RBI": 15,
+     "BB": 74,
+     "SO": 33,
+     "AB": 306,
+     "H": 82,
+     "d2B": 15,
+     "d3B": 4,
+     "SB": 20,
+     "CS": 3,
+     "OBA": 0.414,
+     "SA": 0.353
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 9,
+    "bunt": 8,
+    "fbPct": 32,
+    "runs": 8,
+    "range": 6,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "randowi01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_jacksre01",
+   "name": "Reggie Jackson",
+   "pos": "DH",
+   "pos2": "RF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.3,
+     "HR": 41,
+     "RBI": 111,
+     "BB": 83,
+     "SO": 122,
+     "AB": 514,
+     "H": 154,
+     "d2B": 22,
+     "d3B": 4,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.398,
+     "SA": 0.597
+    },
+    "L": {
+     "BA": 0.291,
+     "HR": 19,
+     "RBI": 54,
+     "BB": 25,
+     "SO": 69,
+     "AB": 227,
+     "H": 66,
+     "d2B": 7,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.362,
+     "SA": 0.581
+    },
+    "R": {
+     "BA": 0.307,
+     "HR": 22,
+     "RBI": 57,
+     "BB": 58,
+     "SO": 53,
+     "AB": 287,
+     "H": 88,
+     "d2B": 15,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.424,
+     "SA": 0.61
+    }
+   },
+   "ratings": {
+    "power": 9,
+    "hitAndRun": 4,
+    "bunt": 3,
+    "fbPct": 62,
+    "runs": 4,
+    "range": 2,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "jacksre01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_mattido01",
+   "name": "Don Mattingly",
+   "pos": "1B",
+   "pos2": "RF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.324,
+     "HR": 35,
+     "RBI": 145,
+     "BB": 56,
+     "SO": 41,
+     "AB": 652,
+     "H": 211,
+     "d2B": 48,
+     "d3B": 3,
+     "SB": 2,
+     "CS": 2,
+     "OBA": 0.371,
+     "SA": 0.567
+    },
+    "L": {
+     "BA": 0.288,
+     "HR": 18,
+     "RBI": 66,
+     "BB": 18,
+     "SO": 16,
+     "AB": 264,
+     "H": 76,
+     "d2B": 20,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.328,
+     "SA": 0.568
+    },
+    "R": {
+     "BA": 0.348,
+     "HR": 17,
+     "RBI": 79,
+     "BB": 38,
+     "SO": 25,
+     "AB": 388,
+     "H": 135,
+     "d2B": 28,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.4,
+     "SA": 0.567
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 10,
+    "bunt": 4,
+    "fbPct": 50,
+    "runs": 4,
+    "range": 7,
+    "arm": 6,
+    "durability": 9
+   },
+   "source": {
+    "bref": "mattido01",
+    "season": 1985,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_winfida01",
+   "name": "Dave Winfield",
+   "pos": "RF",
+   "pos2": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.322,
+     "HR": 25,
+     "RBI": 107,
+     "BB": 69,
+     "SO": 88,
+     "AB": 559,
+     "H": 180,
+     "d2B": 37,
+     "d3B": 2,
+     "SB": 9,
+     "CS": 4,
+     "OBA": 0.398,
+     "SA": 0.53
+    },
+    "L": {
+     "BA": 0.331,
+     "HR": 11,
+     "RBI": 36,
+     "BB": 31,
+     "SO": 20,
+     "AB": 175,
+     "H": 58,
+     "d2B": 11,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.432,
+     "SA": 0.594
+    },
+    "R": {
+     "BA": 0.318,
+     "HR": 14,
+     "RBI": 71,
+     "BB": 38,
+     "SO": 68,
+     "AB": 384,
+     "H": 122,
+     "d2B": 26,
+     "d3B": 1,
+     "SB": 8,
+     "CS": 3,
+     "OBA": 0.381,
+     "SA": 0.5
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 46,
+    "runs": 5,
+    "range": 4,
+    "arm": 9,
+    "durability": 9
+   },
+   "source": {
+    "bref": "winfida01",
+    "season": 1988,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_wynegbu01",
+   "name": "Butch Wynegar",
+   "pos": "C",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.296,
+     "HR": 6,
+     "RBI": 42,
+     "BB": 52,
+     "SO": 29,
+     "AB": 301,
+     "H": 89,
+     "d2B": 18,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.399,
+     "SA": 0.429
+    },
+    "L": {
+     "BA": 0.242,
+     "HR": 2,
+     "RBI": 12,
+     "BB": 12,
+     "SO": 8,
+     "AB": 99,
+     "H": 24,
+     "d2B": 5,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.321,
+     "SA": 0.354
+    },
+    "R": {
+     "BA": 0.322,
+     "HR": 4,
+     "RBI": 30,
+     "BB": 40,
+     "SO": 21,
+     "AB": 202,
+     "H": 65,
+     "d2B": 13,
+     "d3B": 2,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.434,
+     "SA": 0.465
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 9,
+    "bunt": 5,
+    "fbPct": 35,
+    "runs": 4,
+    "range": 6,
+    "arm": 6,
+    "durability": 6
+   },
+   "source": {
+    "bref": "wynegbu01",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_mumphje01",
+   "name": "Jerry Mumphrey",
+   "pos": "CF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.307,
+     "HR": 6,
+     "RBI": 32,
+     "BB": 24,
+     "SO": 27,
+     "AB": 319,
+     "H": 98,
+     "d2B": 11,
+     "d3B": 5,
+     "SB": 14,
+     "CS": 9,
+     "OBA": 0.354,
+     "SA": 0.429
+    },
+    "L": {
+     "BA": 0.299,
+     "HR": 1,
+     "RBI": 5,
+     "BB": 9,
+     "SO": 8,
+     "AB": 117,
+     "H": 35,
+     "d2B": 2,
+     "d3B": 1,
+     "SB": 2,
+     "CS": 3,
+     "OBA": 0.346,
+     "SA": 0.359
+    },
+    "R": {
+     "BA": 0.312,
+     "HR": 5,
+     "RBI": 27,
+     "BB": 15,
+     "SO": 19,
+     "AB": 202,
+     "H": 63,
+     "d2B": 9,
+     "d3B": 4,
+     "SB": 12,
+     "CS": 6,
+     "OBA": 0.358,
+     "SA": 0.47
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 9,
+    "bunt": 9,
+    "fbPct": 34,
+    "runs": 9,
+    "range": 7,
+    "arm": 5,
+    "durability": 7
+   },
+   "source": {
+    "bref": "mumphje01",
+    "season": 1981,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_nettlgr01",
+   "name": "Graig Nettles",
+   "pos": "3B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.244,
+     "HR": 15,
+     "RBI": 46,
+     "BB": 47,
+     "SO": 49,
+     "AB": 349,
+     "H": 85,
+     "d2B": 7,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.333,
+     "SA": 0.398
+    },
+    "L": {
+     "BA": 0.234,
+     "HR": 5,
+     "RBI": 18,
+     "BB": 23,
+     "SO": 30,
+     "AB": 137,
+     "H": 32,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.341,
+     "SA": 0.372
+    },
+    "R": {
+     "BA": 0.25,
+     "HR": 10,
+     "RBI": 28,
+     "BB": 24,
+     "SO": 19,
+     "AB": 212,
+     "H": 53,
+     "d2B": 3,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.326,
+     "SA": 0.415
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 4,
+    "fbPct": 45,
+    "runs": 4,
+    "range": 7,
+    "arm": 7,
+    "durability": 8
+   },
+   "source": {
+    "bref": "nettlgr01",
+    "season": 1981,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_dentbu01",
+   "name": "Bucky Dent",
+   "pos": "SS",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.262,
+     "HR": 5,
+     "RBI": 52,
+     "BB": 48,
+     "SO": 37,
+     "AB": 489,
+     "H": 128,
+     "d2B": 26,
+     "d3B": 2,
+     "SB": 0,
+     "CS": 3,
+     "OBA": 0.327,
+     "SA": 0.354
+    },
+    "L": {
+     "BA": 0.305,
+     "HR": 1,
+     "RBI": 15,
+     "BB": 16,
+     "SO": 11,
+     "AB": 187,
+     "H": 57,
+     "d2B": 10,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.357,
+     "SA": 0.385
+    },
+    "R": {
+     "BA": 0.235,
+     "HR": 4,
+     "RBI": 37,
+     "BB": 32,
+     "SO": 26,
+     "AB": 302,
+     "H": 71,
+     "d2B": 16,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 3,
+     "OBA": 0.309,
+     "SA": 0.334
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 7,
+    "fbPct": 31,
+    "runs": 4,
+    "range": 8,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "dentbu01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_baylodo01",
+   "name": "Don Baylor",
+   "pos": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.303,
+     "HR": 21,
+     "RBI": 85,
+     "BB": 40,
+     "SO": 53,
+     "AB": 534,
+     "H": 162,
+     "d2B": 33,
+     "d3B": 3,
+     "SB": 17,
+     "CS": 7,
+     "OBA": 0.361,
+     "SA": 0.494
+    },
+    "L": {
+     "BA": 0.357,
+     "HR": 13,
+     "RBI": 47,
+     "BB": 25,
+     "SO": 16,
+     "AB": 249,
+     "H": 89,
+     "d2B": 18,
+     "d3B": 2,
+     "SB": 7,
+     "CS": 3,
+     "OBA": 0.423,
+     "SA": 0.602
+    },
+    "R": {
+     "BA": 0.256,
+     "HR": 8,
+     "RBI": 38,
+     "BB": 15,
+     "SO": 37,
+     "AB": 285,
+     "H": 73,
+     "d2B": 15,
+     "d3B": 1,
+     "SB": 10,
+     "CS": 4,
+     "OBA": 0.305,
+     "SA": 0.4
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 9,
+    "bunt": 6,
+    "fbPct": 44,
+    "runs": 7,
+    "range": 4,
+    "arm": 4,
+    "durability": 8
+   },
+   "source": {
+    "bref": "baylodo01",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_gamblos01",
+   "name": "Oscar Gamble",
+   "pos": "RF",
+   "pos2": "LF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.272,
+     "HR": 18,
+     "RBI": 57,
+     "BB": 58,
+     "SO": 47,
+     "AB": 316,
+     "H": 86,
+     "d2B": 21,
+     "d3B": 2,
+     "SB": 6,
+     "CS": 3,
+     "OBA": 0.387,
+     "SA": 0.522
+    },
+    "L": {
+     "BA": 0.382,
+     "HR": 3,
+     "RBI": 10,
+     "BB": 8,
+     "SO": 7,
+     "AB": 34,
+     "H": 13,
+     "d2B": 2,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.5,
+     "SA": 0.706
+    },
+    "R": {
+     "BA": 0.259,
+     "HR": 15,
+     "RBI": 47,
+     "BB": 50,
+     "SO": 40,
+     "AB": 282,
+     "H": 73,
+     "d2B": 19,
+     "d3B": 2,
+     "SB": 6,
+     "CS": 3,
+     "OBA": 0.373,
+     "SA": 0.5
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 7,
+    "bunt": 4,
+    "fbPct": 52,
+    "runs": 6,
+    "range": 3,
+    "arm": 4,
+    "durability": 6
+   },
+   "source": {
+    "bref": "gamblos01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_griffke01",
+   "name": "Ken Griffey",
+   "pos": "1B",
+   "pos2": "LF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.306,
+     "HR": 11,
+     "RBI": 46,
+     "BB": 34,
+     "SO": 45,
+     "AB": 458,
+     "H": 140,
+     "d2B": 21,
+     "d3B": 3,
+     "SB": 6,
+     "CS": 1,
+     "OBA": 0.355,
+     "SA": 0.437
+    },
+    "L": {
+     "BA": 0.287,
+     "HR": 5,
+     "RBI": 19,
+     "BB": 10,
+     "SO": 17,
+     "AB": 178,
+     "H": 51,
+     "d2B": 7,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.321,
+     "SA": 0.41
+    },
+    "R": {
+     "BA": 0.318,
+     "HR": 6,
+     "RBI": 27,
+     "BB": 24,
+     "SO": 28,
+     "AB": 280,
+     "H": 89,
+     "d2B": 14,
+     "d3B": 3,
+     "SB": 5,
+     "CS": 1,
+     "OBA": 0.376,
+     "SA": 0.454
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 9,
+    "bunt": 6,
+    "fbPct": 37,
+    "runs": 5,
+    "range": 5,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "griffke01",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "nyy_80s_smallro02",
+   "name": "Roy Smalley",
+   "pos": "SS",
+   "pos2": "3B",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.275,
+     "HR": 18,
+     "RBI": 62,
+     "BB": 58,
+     "SO": 68,
+     "AB": 451,
+     "H": 124,
+     "d2B": 24,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 3,
+     "OBA": 0.357,
+     "SA": 0.452
+    },
+    "L": {
+     "BA": 0.281,
+     "HR": 6,
+     "RBI": 23,
+     "BB": 19,
+     "SO": 15,
+     "AB": 196,
+     "H": 55,
+     "d2B": 14,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 2,
+     "OBA": 0.341,
+     "SA": 0.444
+    },
+    "R": {
+     "BA": 0.271,
+     "HR": 12,
+     "RBI": 39,
+     "BB": 39,
+     "SO": 53,
+     "AB": 255,
+     "H": 69,
+     "d2B": 10,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 1,
+     "OBA": 0.369,
+     "SA": 0.459
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 7,
+    "bunt": 5,
+    "fbPct": 44,
+    "runs": 4,
+    "range": 3,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "smallro02",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "nyy_80s_guidrro01",
+   "name": "Ron Guidry",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 21,
+     "L": 9,
+     "ERA": 3.42,
+     "GS": 31,
+     "SV": 0,
+     "IP": 250.1,
+     "H": 232,
+     "ER": 95,
+     "HR": 26,
+     "BB": 60,
+     "SO": 156,
+     "WP": 4,
+     "HB": 2,
+     "BALK": 2,
+     "BA": 0.244,
+     "OBA": 0.288,
+     "SA": 0.395
+    },
+    "L": {
+     "AB": 142,
+     "H": 32,
+     "HR": 2,
+     "BB": 9,
+     "SO": 23,
+     "BA": 0.225,
+     "OBA": 0.27,
+     "SA": 0.317,
+     "baMod": 0.922,
+     "hrMod": 0.515,
+     "bbMod": 1.004,
+     "soMod": 0.987
+    },
+    "R": {
+     "AB": 807,
+     "H": 200,
+     "HR": 24,
+     "BB": 51,
+     "SO": 133,
+     "BA": 0.248,
+     "OBA": 0.291,
+     "SA": 0.409,
+     "baMod": 1.016,
+     "hrMod": 1.085,
+     "bbMod": 0.999,
+     "soMod": 1.002
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 9,
+    "fatigue": 10,
+    "bunt": 5,
+    "fielding": 9
+   },
+   "pitches": [
+    "Slider",
+    "4-Seam Fastball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "guidrro01",
+    "season": 1983,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "nyy_80s_johnto01",
+   "name": "Tommy John",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 22,
+     "L": 9,
+     "ERA": 3.43,
+     "GS": 36,
+     "SV": 0,
+     "IP": 265.1,
+     "H": 270,
+     "ER": 101,
+     "HR": 13,
+     "BB": 56,
+     "SO": 78,
+     "WP": 5,
+     "HB": 6,
+     "BALK": 0,
+     "BA": 0.268,
+     "OBA": 0.309,
+     "SA": 0.38
+    },
+    "L": {
+     "AB": 234,
+     "H": 53,
+     "HR": 7,
+     "BB": 15,
+     "SO": 28,
+     "BA": 0.226,
+     "OBA": 0.279,
+     "SA": 0.38,
+     "baMod": 0.843,
+     "hrMod": 2.3,
+     "bbMod": 1.144,
+     "soMod": 1.533
+    },
+    "R": {
+     "AB": 773,
+     "H": 217,
+     "HR": 6,
+     "BB": 41,
+     "SO": 50,
+     "BA": 0.281,
+     "OBA": 0.318,
+     "SA": 0.38,
+     "baMod": 1.049,
+     "hrMod": 0.603,
+     "bbMod": 0.956,
+     "soMod": 0.837
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 9,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 8
+   },
+   "pitches": [
+    "Sinker",
+    "Curveball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "johnto01",
+    "season": 1980,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "nyy_80s_niekrph01",
+   "name": "Phil Niekro",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 16,
+     "L": 8,
+     "ERA": 3.09,
+     "GS": 31,
+     "SV": 0,
+     "IP": 215.2,
+     "H": 219,
+     "ER": 74,
+     "HR": 15,
+     "BB": 76,
+     "SO": 136,
+     "WP": 2,
+     "HB": 3,
+     "BALK": 0,
+     "BA": 0.267,
+     "OBA": 0.327,
+     "SA": 0.376
+    },
+    "L": {
+     "AB": 449,
+     "H": 117,
+     "HR": 11,
+     "BB": 44,
+     "SO": 57,
+     "BA": 0.261,
+     "OBA": 0.329,
+     "SA": 0.388,
+     "baMod": 0.978,
+     "hrMod": 1.335,
+     "bbMod": 1.054,
+     "soMod": 0.763
+    },
+    "R": {
+     "AB": 372,
+     "H": 102,
+     "HR": 4,
+     "BB": 32,
+     "SO": 79,
+     "BA": 0.274,
+     "OBA": 0.325,
+     "SA": 0.363,
+     "baMod": 1.026,
+     "hrMod": 0.591,
+     "bbMod": 0.934,
+     "soMod": 1.288
+    }
+   },
+   "ratings": {
+    "speed": 3,
+    "control": 7,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "Knuckleball",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "niekrph01",
+    "season": 1984,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "nyy_80s_rasmude01",
+   "name": "Dennis Rasmussen",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 18,
+     "L": 6,
+     "ERA": 3.88,
+     "GS": 31,
+     "SV": 0,
+     "IP": 202.0,
+     "H": 160,
+     "ER": 87,
+     "HR": 28,
+     "BB": 74,
+     "SO": 131,
+     "WP": 5,
+     "HB": 2,
+     "BALK": 0,
+     "BA": 0.217,
+     "OBA": 0.289,
+     "SA": 0.366
+    },
+    "L": {
+     "AB": 136,
+     "H": 25,
+     "HR": 2,
+     "BB": 12,
+     "SO": 23,
+     "BA": 0.184,
+     "OBA": 0.247,
+     "SA": 0.25,
+     "baMod": 0.848,
+     "hrMod": 0.387,
+     "bbMod": 0.88,
+     "soMod": 0.952
+    },
+    "R": {
+     "AB": 601,
+     "H": 135,
+     "HR": 26,
+     "BB": 62,
+     "SO": 108,
+     "BA": 0.225,
+     "OBA": 0.298,
+     "SA": 0.393,
+     "baMod": 1.037,
+     "hrMod": 1.138,
+     "bbMod": 1.027,
+     "soMod": 1.011
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 7,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "rasmude01",
+    "season": 1986,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "nyy_80s_gossari01",
+   "name": "Rich Gossage",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 4,
+     "L": 5,
+     "ERA": 2.23,
+     "GS": 0,
+     "SV": 30,
+     "IP": 93.0,
+     "H": 63,
+     "ER": 23,
+     "HR": 5,
+     "BB": 28,
+     "SO": 102,
+     "WP": 1,
+     "HB": 0,
+     "BALK": 0,
+     "BA": 0.196,
+     "OBA": 0.259,
+     "SA": 0.293
+    },
+    "L": {
+     "AB": 135,
+     "H": 29,
+     "HR": 2,
+     "BB": 19,
+     "SO": 34,
+     "BA": 0.215,
+     "OBA": 0.31,
+     "SA": 0.289,
+     "baMod": 1.097,
+     "hrMod": 0.913,
+     "bbMod": 1.549,
+     "soMod": 0.761
+    },
+    "R": {
+     "AB": 186,
+     "H": 34,
+     "HR": 3,
+     "BB": 9,
+     "SO": 68,
+     "BA": 0.183,
+     "OBA": 0.219,
+     "SA": 0.296,
+     "baMod": 0.934,
+     "hrMod": 1.068,
+     "bbMod": 0.572,
+     "soMod": 1.187
+    }
+   },
+   "ratings": {
+    "speed": 10,
+    "control": 8,
+    "fatigue": 5,
+    "bunt": 2,
+    "fielding": 4
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "gossari01",
+    "season": 1982,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "nyy_80s_righeda01",
+   "name": "Dave Righetti",
+   "role": "CL",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 8,
+     "L": 8,
+     "ERA": 2.45,
+     "GS": 0,
+     "SV": 46,
+     "IP": 106.2,
+     "H": 88,
+     "ER": 29,
+     "HR": 4,
+     "BB": 35,
+     "SO": 83,
+     "WP": 1,
+     "HB": 2,
+     "BALK": 0,
+     "BA": 0.226,
+     "OBA": 0.291,
+     "SA": 0.296
+    },
+    "L": {
+     "AB": 69,
+     "H": 21,
+     "HR": 1,
+     "BB": 8,
+     "SO": 16,
+     "BA": 0.304,
+     "OBA": 0.388,
+     "SA": 0.391,
+     "baMod": 1.345,
+     "hrMod": 1.343,
+     "bbMod": 1.228,
+     "soMod": 1.035
+    },
+    "R": {
+     "AB": 320,
+     "H": 67,
+     "HR": 3,
+     "BB": 27,
+     "SO": 67,
+     "BA": 0.209,
+     "OBA": 0.269,
+     "SA": 0.275,
+     "baMod": 0.925,
+     "hrMod": 0.922,
+     "bbMod": 0.948,
+     "soMod": 0.992
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 8,
+    "fatigue": 4,
+    "bunt": 3,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "righeda01",
+    "season": 1986,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

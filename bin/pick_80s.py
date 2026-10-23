@@ -87,6 +87,9 @@ HAND_PICKS = {
 # Closers by hand: Fingers's 1981 MVP and Cy Young season over Plesac, and Sutter's 1984
 # (45 saves, 1.54 ERA) over Worrell; Plesac and Worrell move to RP
 HAND_CLOSERS = {'MIL': 'fingero01', 'STL': 'suttebr01'}
+# Starters swapped by hand: Honeycutt's best Texas season (1983) also holds his Dodgers
+# starts after an August trade, so the user chose Ryan's 1989, next in line but for Guzman
+HAND_STARTERS = {'TEX': {'honeyri01': 'ryanno01'}}
 
 
 def num(v):
@@ -316,6 +319,7 @@ def pick_team(team):
     sps = sorted((pid for pid, p in pitchers.items()
                   if p['gs'] >= 0.5 * p['g'] and pid != closer and role_seasons(pid, 'SP')),
                  key=lambda pid: -score(pitchers[pid]))[:4]
+    sps = [HAND_STARTERS.get(team, {}).get(pid, pid) for pid in sps]
     rp = max((pid for pid in relievers if pid != closer and role_seasons(pid, 'RP')),
              key=lambda pid: score(pitchers[pid]))
     staff = []

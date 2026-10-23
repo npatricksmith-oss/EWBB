@@ -1,0 +1,1372 @@
+{
+ "team": "oak_80s",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "oak_80s_henderi01",
+   "name": "Rickey Henderson",
+   "pos": "LF",
+   "pos2": "CF",
+   "bats": "R",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.303,
+     "HR": 9,
+     "RBI": 53,
+     "BB": 117,
+     "SO": 54,
+     "AB": 591,
+     "H": 179,
+     "d2B": 22,
+     "d3B": 4,
+     "SB": 100,
+     "CS": 26,
+     "OBA": 0.42,
+     "SA": 0.399
+    },
+    "L": {
+     "BA": 0.35,
+     "HR": 5,
+     "RBI": 20,
+     "BB": 39,
+     "SO": 13,
+     "AB": 214,
+     "H": 75,
+     "d2B": 11,
+     "d3B": 1,
+     "SB": 30,
+     "CS": 10,
+     "OBA": 0.451,
+     "SA": 0.481
+    },
+    "R": {
+     "BA": 0.276,
+     "HR": 4,
+     "RBI": 33,
+     "BB": 78,
+     "SO": 41,
+     "AB": 377,
+     "H": 104,
+     "d2B": 11,
+     "d3B": 3,
+     "SB": 70,
+     "CS": 16,
+     "OBA": 0.403,
+     "SA": 0.353
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 10,
+    "fbPct": 33,
+    "runs": 10,
+    "range": 9,
+    "arm": 4,
+    "durability": 9
+   },
+   "source": {
+    "bref": "henderi01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_murphdw01",
+   "name": "Dwayne Murphy",
+   "pos": "CF",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.274,
+     "HR": 13,
+     "RBI": 68,
+     "BB": 102,
+     "SO": 96,
+     "AB": 573,
+     "H": 157,
+     "d2B": 18,
+     "d3B": 2,
+     "SB": 26,
+     "CS": 15,
+     "OBA": 0.384,
+     "SA": 0.38
+    },
+    "L": {
+     "BA": 0.251,
+     "HR": 4,
+     "RBI": 23,
+     "BB": 37,
+     "SO": 43,
+     "AB": 219,
+     "H": 55,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 5,
+     "CS": 4,
+     "OBA": 0.362,
+     "SA": 0.324
+    },
+    "R": {
+     "BA": 0.288,
+     "HR": 9,
+     "RBI": 45,
+     "BB": 65,
+     "SO": 53,
+     "AB": 354,
+     "H": 102,
+     "d2B": 14,
+     "d3B": 2,
+     "SB": 21,
+     "CS": 11,
+     "OBA": 0.398,
+     "SA": 0.415
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 6,
+    "bunt": 9,
+    "fbPct": 36,
+    "runs": 6,
+    "range": 10,
+    "arm": 7,
+    "durability": 9
+   },
+   "source": {
+    "bref": "murphdw01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_cansejo01",
+   "name": "Jose Canseco",
+   "pos": "DH",
+   "pos2": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.307,
+     "HR": 42,
+     "RBI": 124,
+     "BB": 78,
+     "SO": 128,
+     "AB": 610,
+     "H": 187,
+     "d2B": 34,
+     "d3B": 0,
+     "SB": 40,
+     "CS": 16,
+     "OBA": 0.391,
+     "SA": 0.569
+    },
+    "L": {
+     "BA": 0.34,
+     "HR": 10,
+     "RBI": 29,
+     "BB": 15,
+     "SO": 30,
+     "AB": 150,
+     "H": 51,
+     "d2B": 12,
+     "d3B": 0,
+     "SB": 18,
+     "CS": 6,
+     "OBA": 0.412,
+     "SA": 0.62
+    },
+    "R": {
+     "BA": 0.296,
+     "HR": 32,
+     "RBI": 95,
+     "BB": 63,
+     "SO": 98,
+     "AB": 460,
+     "H": 136,
+     "d2B": 22,
+     "d3B": 0,
+     "SB": 22,
+     "CS": 10,
+     "OBA": 0.384,
+     "SA": 0.552
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 6,
+    "bunt": 6,
+    "fbPct": 57,
+    "runs": 8,
+    "range": 5,
+    "arm": 8,
+    "durability": 9
+   },
+   "source": {
+    "bref": "cansejo01",
+    "season": 1988,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_mcgwima01",
+   "name": "Mark McGwire",
+   "pos": "1B",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.289,
+     "HR": 49,
+     "RBI": 118,
+     "BB": 71,
+     "SO": 131,
+     "AB": 557,
+     "H": 161,
+     "d2B": 28,
+     "d3B": 4,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.37,
+     "SA": 0.618
+    },
+    "L": {
+     "BA": 0.287,
+     "HR": 16,
+     "RBI": 38,
+     "BB": 35,
+     "SO": 40,
+     "AB": 171,
+     "H": 49,
+     "d2B": 10,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.4,
+     "SA": 0.626
+    },
+    "R": {
+     "BA": 0.29,
+     "HR": 33,
+     "RBI": 80,
+     "BB": 36,
+     "SO": 91,
+     "AB": 386,
+     "H": 112,
+     "d2B": 18,
+     "d3B": 4,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.355,
+     "SA": 0.614
+    }
+   },
+   "ratings": {
+    "power": 10,
+    "hitAndRun": 4,
+    "bunt": 3,
+    "fbPct": 65,
+    "runs": 5,
+    "range": 4,
+    "arm": 5,
+    "durability": 9
+   },
+   "source": {
+    "bref": "mcgwima01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_davismi02",
+   "name": "Mike Davis",
+   "pos": "RF",
+   "pos2": "CF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.287,
+     "HR": 24,
+     "RBI": 82,
+     "BB": 50,
+     "SO": 99,
+     "AB": 547,
+     "H": 157,
+     "d2B": 34,
+     "d3B": 1,
+     "SB": 24,
+     "CS": 10,
+     "OBA": 0.348,
+     "SA": 0.484
+    },
+    "L": {
+     "BA": 0.271,
+     "HR": 8,
+     "RBI": 24,
+     "BB": 13,
+     "SO": 37,
+     "AB": 155,
+     "H": 42,
+     "d2B": 9,
+     "d3B": 0,
+     "SB": 7,
+     "CS": 2,
+     "OBA": 0.335,
+     "SA": 0.484
+    },
+    "R": {
+     "BA": 0.293,
+     "HR": 16,
+     "RBI": 58,
+     "BB": 37,
+     "SO": 62,
+     "AB": 392,
+     "H": 115,
+     "d2B": 25,
+     "d3B": 1,
+     "SB": 17,
+     "CS": 8,
+     "OBA": 0.353,
+     "SA": 0.485
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 6,
+    "bunt": 7,
+    "fbPct": 46,
+    "runs": 8,
+    "range": 7,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "davismi02",
+    "season": 1985,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_lansfca01",
+   "name": "Carney Lansford",
+   "pos": "3B",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.289,
+     "HR": 19,
+     "RBI": 76,
+     "BB": 60,
+     "SO": 44,
+     "AB": 554,
+     "H": 160,
+     "d2B": 27,
+     "d3B": 4,
+     "SB": 27,
+     "CS": 8,
+     "OBA": 0.366,
+     "SA": 0.455
+    },
+    "L": {
+     "BA": 0.28,
+     "HR": 8,
+     "RBI": 22,
+     "BB": 17,
+     "SO": 16,
+     "AB": 175,
+     "H": 49,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 3,
+     "CS": 1,
+     "OBA": 0.352,
+     "SA": 0.44
+    },
+    "R": {
+     "BA": 0.293,
+     "HR": 11,
+     "RBI": 54,
+     "BB": 43,
+     "SO": 28,
+     "AB": 379,
+     "H": 111,
+     "d2B": 23,
+     "d3B": 4,
+     "SB": 24,
+     "CS": 7,
+     "OBA": 0.372,
+     "SA": 0.462
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 9,
+    "bunt": 7,
+    "fbPct": 41,
+    "runs": 8,
+    "range": 7,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "lansfca01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_heathmi02",
+   "name": "Mike Heath",
+   "pos": "C",
+   "pos2": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.25,
+     "HR": 13,
+     "RBI": 55,
+     "BB": 41,
+     "SO": 63,
+     "AB": 436,
+     "H": 109,
+     "d2B": 18,
+     "d3B": 6,
+     "SB": 7,
+     "CS": 7,
+     "OBA": 0.313,
+     "SA": 0.408
+    },
+    "L": {
+     "BA": 0.285,
+     "HR": 5,
+     "RBI": 22,
+     "BB": 14,
+     "SO": 23,
+     "AB": 151,
+     "H": 43,
+     "d2B": 10,
+     "d3B": 3,
+     "SB": 3,
+     "CS": 0,
+     "OBA": 0.341,
+     "SA": 0.49
+    },
+    "R": {
+     "BA": 0.232,
+     "HR": 8,
+     "RBI": 33,
+     "BB": 27,
+     "SO": 40,
+     "AB": 285,
+     "H": 66,
+     "d2B": 8,
+     "d3B": 3,
+     "SB": 4,
+     "CS": 7,
+     "OBA": 0.298,
+     "SA": 0.365
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 8,
+    "fbPct": 39,
+    "runs": 6,
+    "range": 6,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "heathmi02",
+    "season": 1985,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_phillto02",
+   "name": "Tony Phillips",
+   "pos": "2B",
+   "pos2": "SS",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.256,
+     "HR": 5,
+     "RBI": 52,
+     "BB": 76,
+     "SO": 82,
+     "AB": 441,
+     "H": 113,
+     "d2B": 14,
+     "d3B": 5,
+     "SB": 15,
+     "CS": 10,
+     "OBA": 0.367,
+     "SA": 0.345
+    },
+    "L": {
+     "BA": 0.321,
+     "HR": 3,
+     "RBI": 18,
+     "BB": 29,
+     "SO": 22,
+     "AB": 134,
+     "H": 43,
+     "d2B": 5,
+     "d3B": 2,
+     "SB": 6,
+     "CS": 2,
+     "OBA": 0.443,
+     "SA": 0.455
+    },
+    "R": {
+     "BA": 0.228,
+     "HR": 2,
+     "RBI": 34,
+     "BB": 47,
+     "SO": 60,
+     "AB": 307,
+     "H": 70,
+     "d2B": 9,
+     "d3B": 3,
+     "SB": 9,
+     "CS": 8,
+     "OBA": 0.331,
+     "SA": 0.296
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 6,
+    "bunt": 9,
+    "fbPct": 31,
+    "runs": 7,
+    "range": 8,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "phillto02",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_griffal01",
+   "name": "Alfredo Griffin",
+   "pos": "SS",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.285,
+     "HR": 4,
+     "RBI": 51,
+     "BB": 35,
+     "SO": 52,
+     "AB": 594,
+     "H": 169,
+     "d2B": 23,
+     "d3B": 6,
+     "SB": 33,
+     "CS": 16,
+     "OBA": 0.323,
+     "SA": 0.364
+    },
+    "L": {
+     "BA": 0.254,
+     "HR": 0,
+     "RBI": 6,
+     "BB": 8,
+     "SO": 24,
+     "AB": 205,
+     "H": 52,
+     "d2B": 7,
+     "d3B": 1,
+     "SB": 10,
+     "CS": 4,
+     "OBA": 0.282,
+     "SA": 0.298
+    },
+    "R": {
+     "BA": 0.301,
+     "HR": 4,
+     "RBI": 45,
+     "BB": 27,
+     "SO": 28,
+     "AB": 389,
+     "H": 117,
+     "d2B": 16,
+     "d3B": 5,
+     "SB": 23,
+     "CS": 12,
+     "OBA": 0.344,
+     "SA": 0.398
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 10,
+    "fbPct": 29,
+    "runs": 10,
+    "range": 6,
+    "arm": 8,
+    "durability": 10
+   },
+   "source": {
+    "bref": "griffal01",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_armasto01",
+   "name": "Tony Armas",
+   "pos": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.279,
+     "HR": 35,
+     "RBI": 109,
+     "BB": 29,
+     "SO": 128,
+     "AB": 628,
+     "H": 175,
+     "d2B": 18,
+     "d3B": 8,
+     "SB": 5,
+     "CS": 3,
+     "OBA": 0.31,
+     "SA": 0.5
+    },
+    "L": {
+     "BA": 0.301,
+     "HR": 10,
+     "RBI": 32,
+     "BB": 13,
+     "SO": 36,
+     "AB": 229,
+     "H": 69,
+     "d2B": 7,
+     "d3B": 4,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.335,
+     "SA": 0.498
+    },
+    "R": {
+     "BA": 0.266,
+     "HR": 25,
+     "RBI": 77,
+     "BB": 16,
+     "SO": 92,
+     "AB": 399,
+     "H": 106,
+     "d2B": 11,
+     "d3B": 4,
+     "SB": 4,
+     "CS": 1,
+     "OBA": 0.296,
+     "SA": 0.501
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 4,
+    "bunt": 5,
+    "fbPct": 51,
+    "runs": 6,
+    "range": 8,
+    "arm": 7,
+    "durability": 9
+   },
+   "source": {
+    "bref": "armasto01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_hendeda01",
+   "name": "Dave Henderson",
+   "pos": "CF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.304,
+     "HR": 24,
+     "RBI": 94,
+     "BB": 47,
+     "SO": 92,
+     "AB": 507,
+     "H": 154,
+     "d2B": 38,
+     "d3B": 1,
+     "SB": 2,
+     "CS": 4,
+     "OBA": 0.363,
+     "SA": 0.525
+    },
+    "L": {
+     "BA": 0.306,
+     "HR": 6,
+     "RBI": 20,
+     "BB": 15,
+     "SO": 21,
+     "AB": 147,
+     "H": 45,
+     "d2B": 12,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.372,
+     "SA": 0.524
+    },
+    "R": {
+     "BA": 0.303,
+     "HR": 18,
+     "RBI": 74,
+     "BB": 32,
+     "SO": 71,
+     "AB": 360,
+     "H": 109,
+     "d2B": 26,
+     "d3B": 0,
+     "SB": 2,
+     "CS": 4,
+     "OBA": 0.359,
+     "SA": 0.525
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 6,
+    "bunt": 5,
+    "fbPct": 47,
+    "runs": 4,
+    "range": 7,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "hendeda01",
+    "season": 1988,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_grosswa01",
+   "name": "Wayne Gross",
+   "pos": "3B",
+   "pos2": "1B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.281,
+     "HR": 14,
+     "RBI": 61,
+     "BB": 44,
+     "SO": 39,
+     "AB": 366,
+     "H": 103,
+     "d2B": 20,
+     "d3B": 3,
+     "SB": 5,
+     "CS": 3,
+     "OBA": 0.355,
+     "SA": 0.467
+    },
+    "L": {
+     "BA": 0.218,
+     "HR": 0,
+     "RBI": 5,
+     "BB": 1,
+     "SO": 9,
+     "AB": 55,
+     "H": 12,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.232,
+     "SA": 0.291
+    },
+    "R": {
+     "BA": 0.293,
+     "HR": 14,
+     "RBI": 56,
+     "BB": 43,
+     "SO": 30,
+     "AB": 311,
+     "H": 91,
+     "d2B": 16,
+     "d3B": 3,
+     "SB": 5,
+     "CS": 3,
+     "OBA": 0.374,
+     "SA": 0.498
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 8,
+    "bunt": 5,
+    "fbPct": 43,
+    "runs": 5,
+    "range": 5,
+    "arm": 5,
+    "durability": 7
+   },
+   "source": {
+    "bref": "grosswa01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "oak_80s_steinte01",
+   "name": "Terry Steinbach",
+   "pos": "C",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.284,
+     "HR": 16,
+     "RBI": 56,
+     "BB": 32,
+     "SO": 66,
+     "AB": 391,
+     "H": 111,
+     "d2B": 16,
+     "d3B": 3,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.349,
+     "SA": 0.463
+    },
+    "L": {
+     "BA": 0.292,
+     "HR": 5,
+     "RBI": 15,
+     "BB": 12,
+     "SO": 22,
+     "AB": 137,
+     "H": 40,
+     "d2B": 8,
+     "d3B": 3,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.359,
+     "SA": 0.504
+    },
+    "R": {
+     "BA": 0.28,
+     "HR": 11,
+     "RBI": 41,
+     "BB": 20,
+     "SO": 44,
+     "AB": 254,
+     "H": 71,
+     "d2B": 8,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.344,
+     "SA": 0.441
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 5,
+    "fbPct": 44,
+    "runs": 5,
+    "range": 6,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "steinte01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "oak_80s_stewada01",
+   "name": "Dave Stewart",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 21,
+     "L": 12,
+     "ERA": 3.23,
+     "GS": 37,
+     "SV": 0,
+     "IP": 275.2,
+     "H": 240,
+     "ER": 99,
+     "HR": 14,
+     "BB": 110,
+     "SO": 192,
+     "WP": 14,
+     "HB": 3,
+     "BALK": 16,
+     "BA": 0.234,
+     "OBA": 0.307,
+     "SA": 0.333
+    },
+    "L": {
+     "AB": 564,
+     "H": 127,
+     "HR": 9,
+     "BB": 67,
+     "SO": 111,
+     "BA": 0.225,
+     "OBA": 0.306,
+     "SA": 0.324,
+     "baMod": 0.962,
+     "hrMod": 1.161,
+     "bbMod": 1.1,
+     "soMod": 1.044
+    },
+    "R": {
+     "AB": 463,
+     "H": 113,
+     "HR": 5,
+     "BB": 43,
+     "SO": 81,
+     "BA": 0.244,
+     "OBA": 0.309,
+     "SA": 0.343,
+     "baMod": 1.043,
+     "hrMod": 0.8,
+     "bbMod": 0.876,
+     "soMod": 0.945
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 6,
+    "fatigue": 9,
+    "bunt": 3,
+    "fielding": 6
+   },
+   "pitches": [
+    "Splitter",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "stewada01",
+    "season": 1988,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "oak_80s_norrimi01",
+   "name": "Mike Norris",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 22,
+     "L": 9,
+     "ERA": 2.53,
+     "GS": 33,
+     "SV": 0,
+     "IP": 284.1,
+     "H": 215,
+     "ER": 80,
+     "HR": 18,
+     "BB": 83,
+     "SO": 180,
+     "WP": 9,
+     "HB": 6,
+     "BALK": 4,
+     "BA": 0.209,
+     "OBA": 0.27,
+     "SA": 0.302
+    },
+    "L": {
+     "AB": 552,
+     "H": 102,
+     "HR": 9,
+     "BB": 36,
+     "SO": 95,
+     "BA": 0.185,
+     "OBA": 0.236,
+     "SA": 0.268,
+     "baMod": 0.885,
+     "hrMod": 0.946,
+     "bbMod": 0.82,
+     "soMod": 0.998
+    },
+    "R": {
+     "AB": 478,
+     "H": 113,
+     "HR": 9,
+     "BB": 47,
+     "SO": 85,
+     "BA": 0.236,
+     "OBA": 0.308,
+     "SA": 0.341,
+     "baMod": 1.129,
+     "hrMod": 1.061,
+     "bbMod": 1.201,
+     "soMod": 1.002
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 8,
+    "fatigue": 10,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Screwball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "norrimi01",
+    "season": 1980,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "oak_80s_mccatst01",
+   "name": "Steve McCatty",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 14,
+     "L": 7,
+     "ERA": 2.33,
+     "GS": 22,
+     "SV": 0,
+     "IP": 185.2,
+     "H": 140,
+     "ER": 48,
+     "HR": 12,
+     "BB": 61,
+     "SO": 91,
+     "WP": 0,
+     "HB": 2,
+     "BALK": 0,
+     "BA": 0.211,
+     "OBA": 0.277,
+     "SA": 0.298
+    },
+    "L": {
+     "AB": 342,
+     "H": 72,
+     "HR": 4,
+     "BB": 38,
+     "SO": 44,
+     "BA": 0.211,
+     "OBA": 0.287,
+     "SA": 0.272,
+     "baMod": 1.0,
+     "hrMod": 0.637,
+     "bbMod": 1.19,
+     "soMod": 0.923
+    },
+    "R": {
+     "AB": 322,
+     "H": 68,
+     "HR": 8,
+     "BB": 23,
+     "SO": 47,
+     "BA": 0.211,
+     "OBA": 0.266,
+     "SA": 0.326,
+     "baMod": 1.0,
+     "hrMod": 1.399,
+     "bbMod": 0.791,
+     "soMod": 1.084
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 7,
+    "fatigue": 10,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "Slider",
+    "4-Seam Fastball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "mccatst01",
+    "season": 1981,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "oak_80s_welchbo01",
+   "name": "Bob Welch",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 17,
+     "L": 8,
+     "ERA": 3.0,
+     "GS": 33,
+     "SV": 0,
+     "IP": 209.2,
+     "H": 191,
+     "ER": 70,
+     "HR": 13,
+     "BB": 78,
+     "SO": 137,
+     "WP": 5,
+     "HB": 6,
+     "BALK": 0,
+     "BA": 0.241,
+     "OBA": 0.312,
+     "SA": 0.357
+    },
+    "L": {
+     "AB": 418,
+     "H": 88,
+     "HR": 3,
+     "BB": 51,
+     "SO": 67,
+     "BA": 0.211,
+     "OBA": 0.3,
+     "SA": 0.304,
+     "baMod": 0.876,
+     "hrMod": 0.429,
+     "bbMod": 1.217,
+     "soMod": 0.91
+    },
+    "R": {
+     "AB": 374,
+     "H": 103,
+     "HR": 10,
+     "BB": 27,
+     "SO": 70,
+     "BA": 0.275,
+     "OBA": 0.327,
+     "SA": 0.417,
+     "baMod": 1.141,
+     "hrMod": 1.663,
+     "bbMod": 0.748,
+     "soMod": 1.104
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 7,
+    "fatigue": 8,
+    "bunt": 3,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "welchbo01",
+    "season": 1989,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "oak_80s_nelsoge01",
+   "name": "Gene Nelson",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 6,
+     "L": 5,
+     "ERA": 3.93,
+     "GS": 6,
+     "SV": 3,
+     "IP": 123.2,
+     "H": 120,
+     "ER": 54,
+     "HR": 12,
+     "BB": 35,
+     "SO": 94,
+     "WP": 7,
+     "HB": 5,
+     "BALK": 0,
+     "BA": 0.249,
+     "OBA": 0.304,
+     "SA": 0.411
+    },
+    "L": {
+     "AB": 239,
+     "H": 62,
+     "HR": 4,
+     "BB": 15,
+     "SO": 43,
+     "BA": 0.259,
+     "OBA": 0.3,
+     "SA": 0.393,
+     "baMod": 1.04,
+     "hrMod": 0.682,
+     "bbMod": 0.877,
+     "soMod": 0.936
+    },
+    "R": {
+     "AB": 243,
+     "H": 58,
+     "HR": 8,
+     "BB": 20,
+     "SO": 51,
+     "BA": 0.239,
+     "OBA": 0.307,
+     "SA": 0.428,
+     "baMod": 0.96,
+     "hrMod": 1.304,
+     "bbMod": 1.118,
+     "soMod": 1.061
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 9,
+    "fatigue": 6,
+    "bunt": 3,
+    "fielding": 5
+   },
+   "pitches": [
+    "Slider",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "nelsoge01",
+    "season": 1987,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "oak_80s_eckerde01",
+   "name": "Dennis Eckersley",
+   "role": "CL",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 4,
+     "L": 2,
+     "ERA": 2.35,
+     "GS": 0,
+     "SV": 45,
+     "IP": 72.2,
+     "H": 52,
+     "ER": 19,
+     "HR": 5,
+     "BB": 11,
+     "SO": 70,
+     "WP": 0,
+     "HB": 1,
+     "BALK": 2,
+     "BA": 0.198,
+     "OBA": 0.23,
+     "SA": 0.27
+    },
+    "L": {
+     "AB": 126,
+     "H": 25,
+     "HR": 3,
+     "BB": 5,
+     "SO": 26,
+     "BA": 0.198,
+     "OBA": 0.229,
+     "SA": 0.286,
+     "baMod": 1.0,
+     "hrMod": 1.278,
+     "bbMod": 0.968,
+     "soMod": 0.791
+    },
+    "R": {
+     "AB": 137,
+     "H": 27,
+     "HR": 2,
+     "BB": 6,
+     "SO": 44,
+     "BA": 0.197,
+     "OBA": 0.231,
+     "SA": 0.255,
+     "baMod": 0.995,
+     "hrMod": 0.754,
+     "bbMod": 1.028,
+     "soMod": 1.185
+    }
+   },
+   "ratings": {
+    "speed": 10,
+    "control": 10,
+    "fatigue": 4,
+    "bunt": 4,
+    "fielding": 7
+   },
+   "pitches": [
+    "Slider",
+    "4-Seam Fastball",
+    "Sinker"
+   ],
+   "source": {
+    "bref": "eckerde01",
+    "season": 1988,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

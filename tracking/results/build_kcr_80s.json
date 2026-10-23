@@ -1,0 +1,1370 @@
+{
+ "team": "kcr_80s",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "kcr_80s_wilsowi02",
+   "name": "Willie Wilson",
+   "pos": "CF",
+   "pos2": "LF",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.326,
+     "HR": 3,
+     "RBI": 49,
+     "BB": 28,
+     "SO": 81,
+     "AB": 705,
+     "H": 230,
+     "d2B": 28,
+     "d3B": 15,
+     "SB": 79,
+     "CS": 10,
+     "OBA": 0.357,
+     "SA": 0.421
+    },
+    "L": {
+     "BA": 0.36,
+     "HR": 2,
+     "RBI": 21,
+     "BB": 10,
+     "SO": 34,
+     "AB": 275,
+     "H": 99,
+     "d2B": 17,
+     "d3B": 6,
+     "SB": 16,
+     "CS": 6,
+     "OBA": 0.385,
+     "SA": 0.487
+    },
+    "R": {
+     "BA": 0.305,
+     "HR": 1,
+     "RBI": 28,
+     "BB": 18,
+     "SO": 47,
+     "AB": 430,
+     "H": 131,
+     "d2B": 11,
+     "d3B": 9,
+     "SB": 63,
+     "CS": 4,
+     "OBA": 0.339,
+     "SA": 0.379
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 8,
+    "bunt": 9,
+    "fbPct": 28,
+    "runs": 10,
+    "range": 10,
+    "arm": 4,
+    "durability": 9
+   },
+   "source": {
+    "bref": "wilsowi02",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_seitzke01",
+   "name": "Kevin Seitzer",
+   "pos": "3B",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.323,
+     "HR": 15,
+     "RBI": 83,
+     "BB": 80,
+     "SO": 85,
+     "AB": 641,
+     "H": 207,
+     "d2B": 33,
+     "d3B": 8,
+     "SB": 12,
+     "CS": 7,
+     "OBA": 0.399,
+     "SA": 0.47
+    },
+    "L": {
+     "BA": 0.309,
+     "HR": 2,
+     "RBI": 13,
+     "BB": 22,
+     "SO": 20,
+     "AB": 175,
+     "H": 54,
+     "d2B": 6,
+     "d3B": 5,
+     "SB": 3,
+     "CS": 3,
+     "OBA": 0.386,
+     "SA": 0.434
+    },
+    "R": {
+     "BA": 0.328,
+     "HR": 13,
+     "RBI": 70,
+     "BB": 58,
+     "SO": 65,
+     "AB": 466,
+     "H": 153,
+     "d2B": 27,
+     "d3B": 3,
+     "SB": 9,
+     "CS": 4,
+     "OBA": 0.404,
+     "SA": 0.483
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 8,
+    "bunt": 6,
+    "fbPct": 37,
+    "runs": 6,
+    "range": 5,
+    "arm": 5,
+    "durability": 9
+   },
+   "source": {
+    "bref": "seitzke01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_brettge01",
+   "name": "George Brett",
+   "pos": "1B",
+   "pos2": "3B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.39,
+     "HR": 24,
+     "RBI": 118,
+     "BB": 58,
+     "SO": 22,
+     "AB": 449,
+     "H": 175,
+     "d2B": 33,
+     "d3B": 9,
+     "SB": 15,
+     "CS": 6,
+     "OBA": 0.454,
+     "SA": 0.664
+    },
+    "L": {
+     "BA": 0.318,
+     "HR": 8,
+     "RBI": 35,
+     "BB": 13,
+     "SO": 16,
+     "AB": 179,
+     "H": 57,
+     "d2B": 10,
+     "d3B": 2,
+     "SB": 2,
+     "CS": 2,
+     "OBA": 0.359,
+     "SA": 0.531
+    },
+    "R": {
+     "BA": 0.437,
+     "HR": 16,
+     "RBI": 83,
+     "BB": 45,
+     "SO": 6,
+     "AB": 270,
+     "H": 118,
+     "d2B": 23,
+     "d3B": 7,
+     "SB": 13,
+     "CS": 4,
+     "OBA": 0.512,
+     "SA": 0.752
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 10,
+    "bunt": 6,
+    "fbPct": 50,
+    "runs": 8,
+    "range": 6,
+    "arm": 5,
+    "durability": 6
+   },
+   "source": {
+    "bref": "brettge01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_tartada01",
+   "name": "Danny Tartabull",
+   "pos": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.274,
+     "HR": 26,
+     "RBI": 102,
+     "BB": 76,
+     "SO": 119,
+     "AB": 507,
+     "H": 139,
+     "d2B": 38,
+     "d3B": 3,
+     "SB": 8,
+     "CS": 5,
+     "OBA": 0.369,
+     "SA": 0.515
+    },
+    "L": {
+     "BA": 0.289,
+     "HR": 8,
+     "RBI": 27,
+     "BB": 29,
+     "SO": 29,
+     "AB": 149,
+     "H": 43,
+     "d2B": 13,
+     "d3B": 0,
+     "SB": 6,
+     "CS": 4,
+     "OBA": 0.404,
+     "SA": 0.537
+    },
+    "R": {
+     "BA": 0.268,
+     "HR": 18,
+     "RBI": 75,
+     "BB": 47,
+     "SO": 90,
+     "AB": 358,
+     "H": 96,
+     "d2B": 25,
+     "d3B": 3,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.354,
+     "SA": 0.506
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 4,
+    "bunt": 4,
+    "fbPct": 49,
+    "runs": 5,
+    "range": 3,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "tartada01",
+    "season": 1988,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_mcraeha01",
+   "name": "Hal McRae",
+   "pos": "DH",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.308,
+     "HR": 27,
+     "RBI": 133,
+     "BB": 55,
+     "SO": 61,
+     "AB": 613,
+     "H": 189,
+     "d2B": 46,
+     "d3B": 8,
+     "SB": 4,
+     "CS": 4,
+     "OBA": 0.369,
+     "SA": 0.542
+    },
+    "L": {
+     "BA": 0.312,
+     "HR": 14,
+     "RBI": 48,
+     "BB": 20,
+     "SO": 22,
+     "AB": 208,
+     "H": 65,
+     "d2B": 17,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.371,
+     "SA": 0.596
+    },
+    "R": {
+     "BA": 0.306,
+     "HR": 13,
+     "RBI": 85,
+     "BB": 35,
+     "SO": 39,
+     "AB": 405,
+     "H": 124,
+     "d2B": 29,
+     "d3B": 8,
+     "SB": 3,
+     "CS": 3,
+     "OBA": 0.368,
+     "SA": 0.514
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 9,
+    "bunt": 5,
+    "fbPct": 46,
+    "runs": 6,
+    "range": 4,
+    "arm": 3,
+    "durability": 9
+   },
+   "source": {
+    "bref": "mcraeha01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_wathajo01",
+   "name": "John Wathan",
+   "pos": "C",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.305,
+     "HR": 6,
+     "RBI": 58,
+     "BB": 50,
+     "SO": 42,
+     "AB": 453,
+     "H": 138,
+     "d2B": 14,
+     "d3B": 7,
+     "SB": 17,
+     "CS": 3,
+     "OBA": 0.377,
+     "SA": 0.406
+    },
+    "L": {
+     "BA": 0.316,
+     "HR": 1,
+     "RBI": 25,
+     "BB": 26,
+     "SO": 18,
+     "AB": 206,
+     "H": 65,
+     "d2B": 7,
+     "d3B": 5,
+     "SB": 9,
+     "CS": 3,
+     "OBA": 0.393,
+     "SA": 0.413
+    },
+    "R": {
+     "BA": 0.296,
+     "HR": 5,
+     "RBI": 33,
+     "BB": 24,
+     "SO": 24,
+     "AB": 247,
+     "H": 73,
+     "d2B": 7,
+     "d3B": 2,
+     "SB": 8,
+     "CS": 0,
+     "OBA": 0.363,
+     "SA": 0.401
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 8,
+    "fbPct": 32,
+    "runs": 7,
+    "range": 4,
+    "arm": 4,
+    "durability": 6
+   },
+   "source": {
+    "bref": "wathajo01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_smithlo01",
+   "name": "Lonnie Smith",
+   "pos": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.287,
+     "HR": 8,
+     "RBI": 44,
+     "BB": 46,
+     "SO": 78,
+     "AB": 508,
+     "H": 146,
+     "d2B": 25,
+     "d3B": 7,
+     "SB": 26,
+     "CS": 9,
+     "OBA": 0.357,
+     "SA": 0.411
+    },
+    "L": {
+     "BA": 0.309,
+     "HR": 2,
+     "RBI": 14,
+     "BB": 12,
+     "SO": 19,
+     "AB": 149,
+     "H": 46,
+     "d2B": 6,
+     "d3B": 4,
+     "SB": 11,
+     "CS": 3,
+     "OBA": 0.36,
+     "SA": 0.443
+    },
+    "R": {
+     "BA": 0.279,
+     "HR": 6,
+     "RBI": 30,
+     "BB": 34,
+     "SO": 59,
+     "AB": 359,
+     "H": 100,
+     "d2B": 19,
+     "d3B": 3,
+     "SB": 15,
+     "CS": 6,
+     "OBA": 0.356,
+     "SA": 0.398
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 7,
+    "bunt": 8,
+    "fbPct": 33,
+    "runs": 9,
+    "range": 5,
+    "arm": 3,
+    "durability": 8
+   },
+   "source": {
+    "bref": "smithlo01",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_whitefr01",
+   "name": "Frank White",
+   "pos": "2B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.271,
+     "HR": 17,
+     "RBI": 56,
+     "BB": 27,
+     "SO": 72,
+     "AB": 479,
+     "H": 130,
+     "d2B": 22,
+     "d3B": 5,
+     "SB": 5,
+     "CS": 5,
+     "OBA": 0.311,
+     "SA": 0.445
+    },
+    "L": {
+     "BA": 0.299,
+     "HR": 7,
+     "RBI": 16,
+     "BB": 7,
+     "SO": 13,
+     "AB": 127,
+     "H": 38,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 2,
+     "CS": 0,
+     "OBA": 0.336,
+     "SA": 0.52
+    },
+    "R": {
+     "BA": 0.261,
+     "HR": 10,
+     "RBI": 40,
+     "BB": 20,
+     "SO": 59,
+     "AB": 352,
+     "H": 92,
+     "d2B": 17,
+     "d3B": 4,
+     "SB": 3,
+     "CS": 5,
+     "OBA": 0.302,
+     "SA": 0.418
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 6,
+    "fbPct": 42,
+    "runs": 6,
+    "range": 9,
+    "arm": 8,
+    "durability": 9
+   },
+   "source": {
+    "bref": "whitefr01",
+    "season": 1984,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_washiu_01",
+   "name": "U L Washington",
+   "pos": "SS",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.286,
+     "HR": 10,
+     "RBI": 60,
+     "BB": 38,
+     "SO": 48,
+     "AB": 437,
+     "H": 125,
+     "d2B": 19,
+     "d3B": 3,
+     "SB": 23,
+     "CS": 7,
+     "OBA": 0.338,
+     "SA": 0.412
+    },
+    "L": {
+     "BA": 0.323,
+     "HR": 9,
+     "RBI": 24,
+     "BB": 12,
+     "SO": 12,
+     "AB": 155,
+     "H": 50,
+     "d2B": 8,
+     "d3B": 1,
+     "SB": 7,
+     "CS": 2,
+     "OBA": 0.367,
+     "SA": 0.561
+    },
+    "R": {
+     "BA": 0.266,
+     "HR": 1,
+     "RBI": 36,
+     "BB": 26,
+     "SO": 36,
+     "AB": 282,
+     "H": 75,
+     "d2B": 11,
+     "d3B": 2,
+     "SB": 16,
+     "CS": 5,
+     "OBA": 0.323,
+     "SA": 0.33
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 8,
+    "bunt": 8,
+    "fbPct": 36,
+    "runs": 8,
+    "range": 5,
+    "arm": 5,
+    "durability": 7
+   },
+   "source": {
+    "bref": "washiu_01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_aikenwi01",
+   "name": "Willie Aikens",
+   "pos": "1B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.302,
+     "HR": 23,
+     "RBI": 72,
+     "BB": 45,
+     "SO": 75,
+     "AB": 410,
+     "H": 124,
+     "d2B": 26,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.373,
+     "SA": 0.539
+    },
+    "L": {
+     "BA": 0.207,
+     "HR": 1,
+     "RBI": 7,
+     "BB": 6,
+     "SO": 21,
+     "AB": 82,
+     "H": 17,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.27,
+     "SA": 0.293
+    },
+    "R": {
+     "BA": 0.326,
+     "HR": 22,
+     "RBI": 65,
+     "BB": 39,
+     "SO": 54,
+     "AB": 328,
+     "H": 107,
+     "d2B": 22,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.398,
+     "SA": 0.601
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 6,
+    "bunt": 3,
+    "fbPct": 51,
+    "runs": 3,
+    "range": 3,
+    "arm": 4,
+    "durability": 7
+   },
+   "source": {
+    "bref": "aikenwi01",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_stillku01",
+   "name": "Kurt Stillwell",
+   "pos": "SS",
+   "bats": "S",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.251,
+     "HR": 10,
+     "RBI": 53,
+     "BB": 47,
+     "SO": 76,
+     "AB": 459,
+     "H": 115,
+     "d2B": 28,
+     "d3B": 5,
+     "SB": 6,
+     "CS": 5,
+     "OBA": 0.322,
+     "SA": 0.399
+    },
+    "L": {
+     "BA": 0.226,
+     "HR": 2,
+     "RBI": 12,
+     "BB": 12,
+     "SO": 19,
+     "AB": 124,
+     "H": 28,
+     "d2B": 6,
+     "d3B": 0,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.299,
+     "SA": 0.323
+    },
+    "R": {
+     "BA": 0.26,
+     "HR": 8,
+     "RBI": 41,
+     "BB": 35,
+     "SO": 57,
+     "AB": 335,
+     "H": 87,
+     "d2B": 22,
+     "d3B": 5,
+     "SB": 4,
+     "CS": 4,
+     "OBA": 0.331,
+     "SA": 0.427
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 6,
+    "bunt": 7,
+    "fbPct": 36,
+    "runs": 6,
+    "range": 5,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "stillku01",
+    "season": 1988,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_otisam01",
+   "name": "Amos Otis",
+   "pos": "CF",
+   "pos2": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.269,
+     "HR": 9,
+     "RBI": 57,
+     "BB": 31,
+     "SO": 59,
+     "AB": 372,
+     "H": 100,
+     "d2B": 22,
+     "d3B": 3,
+     "SB": 16,
+     "CS": 7,
+     "OBA": 0.321,
+     "SA": 0.417
+    },
+    "L": {
+     "BA": 0.286,
+     "HR": 5,
+     "RBI": 16,
+     "BB": 15,
+     "SO": 11,
+     "AB": 126,
+     "H": 36,
+     "d2B": 9,
+     "d3B": 1,
+     "SB": 5,
+     "CS": 1,
+     "OBA": 0.364,
+     "SA": 0.492
+    },
+    "R": {
+     "BA": 0.26,
+     "HR": 4,
+     "RBI": 41,
+     "BB": 16,
+     "SO": 48,
+     "AB": 246,
+     "H": 64,
+     "d2B": 13,
+     "d3B": 2,
+     "SB": 11,
+     "CS": 6,
+     "OBA": 0.299,
+     "SA": 0.378
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 6,
+    "bunt": 8,
+    "fbPct": 37,
+    "runs": 9,
+    "range": 6,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "otisam01",
+    "season": 1981,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "kcr_80s_jacksbo01",
+   "name": "Bo Jackson",
+   "pos": "LF",
+   "pos2": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.256,
+     "HR": 32,
+     "RBI": 105,
+     "BB": 39,
+     "SO": 172,
+     "AB": 515,
+     "H": 132,
+     "d2B": 15,
+     "d3B": 6,
+     "SB": 26,
+     "CS": 9,
+     "OBA": 0.31,
+     "SA": 0.495
+    },
+    "L": {
+     "BA": 0.266,
+     "HR": 7,
+     "RBI": 20,
+     "BB": 18,
+     "SO": 42,
+     "AB": 128,
+     "H": 34,
+     "d2B": 4,
+     "d3B": 2,
+     "SB": 6,
+     "CS": 2,
+     "OBA": 0.365,
+     "SA": 0.492
+    },
+    "R": {
+     "BA": 0.253,
+     "HR": 25,
+     "RBI": 85,
+     "BB": 21,
+     "SO": 130,
+     "AB": 387,
+     "H": 98,
+     "d2B": 11,
+     "d3B": 4,
+     "SB": 20,
+     "CS": 7,
+     "OBA": 0.291,
+     "SA": 0.496
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 1,
+    "bunt": 7,
+    "fbPct": 54,
+    "runs": 10,
+    "range": 5,
+    "arm": 10,
+    "durability": 7
+   },
+   "source": {
+    "bref": "jacksbo01",
+    "season": 1989,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "kcr_80s_saberbr01",
+   "name": "Bret Saberhagen",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 23,
+     "L": 6,
+     "ERA": 2.16,
+     "GS": 35,
+     "SV": 0,
+     "IP": 262.1,
+     "H": 209,
+     "ER": 63,
+     "HR": 13,
+     "BB": 43,
+     "SO": 193,
+     "WP": 8,
+     "HB": 2,
+     "BALK": 1,
+     "BA": 0.217,
+     "OBA": 0.251,
+     "SA": 0.317
+    },
+    "L": {
+     "AB": 524,
+     "H": 102,
+     "HR": 8,
+     "BB": 29,
+     "SO": 125,
+     "BA": 0.195,
+     "OBA": 0.236,
+     "SA": 0.29,
+     "baMod": 0.899,
+     "hrMod": 1.12,
+     "bbMod": 1.227,
+     "soMod": 1.179
+    },
+    "R": {
+     "AB": 437,
+     "H": 107,
+     "HR": 5,
+     "BB": 14,
+     "SO": 68,
+     "BA": 0.245,
+     "OBA": 0.27,
+     "SA": 0.35,
+     "baMod": 1.129,
+     "hrMod": 0.854,
+     "bbMod": 0.723,
+     "soMod": 0.782
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 10,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 8
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Changeup",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "saberbr01",
+    "season": 1989,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "kcr_80s_gubicma01",
+   "name": "Mark Gubicza",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 20,
+     "L": 8,
+     "ERA": 2.7,
+     "GS": 35,
+     "SV": 0,
+     "IP": 269.2,
+     "H": 237,
+     "ER": 81,
+     "HR": 11,
+     "BB": 83,
+     "SO": 183,
+     "WP": 12,
+     "HB": 6,
+     "BALK": 4,
+     "BA": 0.234,
+     "OBA": 0.294,
+     "SA": 0.32
+    },
+    "L": {
+     "AB": 523,
+     "H": 132,
+     "HR": 7,
+     "BB": 47,
+     "SO": 73,
+     "BA": 0.252,
+     "OBA": 0.318,
+     "SA": 0.34,
+     "baMod": 1.077,
+     "hrMod": 1.217,
+     "bbMod": 1.083,
+     "soMod": 0.763
+    },
+    "R": {
+     "AB": 489,
+     "H": 105,
+     "HR": 4,
+     "BB": 36,
+     "SO": 110,
+     "BA": 0.215,
+     "OBA": 0.269,
+     "SA": 0.299,
+     "baMod": 0.919,
+     "hrMod": 0.762,
+     "bbMod": 0.909,
+     "soMod": 1.26
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 8,
+    "fatigue": 10,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "gubicma01",
+    "season": 1988,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "kcr_80s_leibrch01",
+   "name": "Charlie Leibrandt",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 17,
+     "L": 9,
+     "ERA": 2.69,
+     "GS": 33,
+     "SV": 0,
+     "IP": 237.2,
+     "H": 223,
+     "ER": 71,
+     "HR": 17,
+     "BB": 68,
+     "SO": 108,
+     "WP": 4,
+     "HB": 2,
+     "BALK": 3,
+     "BA": 0.248,
+     "OBA": 0.301,
+     "SA": 0.356
+    },
+    "L": {
+     "AB": 204,
+     "H": 51,
+     "HR": 4,
+     "BB": 12,
+     "SO": 29,
+     "BA": 0.25,
+     "OBA": 0.294,
+     "SA": 0.348,
+     "baMod": 1.008,
+     "hrMod": 1.047,
+     "bbMod": 0.785,
+     "soMod": 1.194
+    },
+    "R": {
+     "AB": 696,
+     "H": 172,
+     "HR": 13,
+     "BB": 56,
+     "SO": 79,
+     "BA": 0.247,
+     "OBA": 0.303,
+     "SA": 0.358,
+     "baMod": 0.996,
+     "hrMod": 0.986,
+     "bbMod": 1.062,
+     "soMod": 0.944
+    }
+   },
+   "ratings": {
+    "speed": 6,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 7
+   },
+   "pitches": [
+    "Changeup",
+    "Slider",
+    "2-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "leibrch01",
+    "season": 1985,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "kcr_80s_blackbu02",
+   "name": "Bud Black",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 17,
+     "L": 12,
+     "ERA": 3.12,
+     "GS": 35,
+     "SV": 0,
+     "IP": 257.0,
+     "H": 226,
+     "ER": 89,
+     "HR": 22,
+     "BB": 64,
+     "SO": 140,
+     "WP": 2,
+     "HB": 4,
+     "BALK": 2,
+     "BA": 0.233,
+     "OBA": 0.283,
+     "SA": 0.347
+    },
+    "L": {
+     "AB": 205,
+     "H": 42,
+     "HR": 4,
+     "BB": 15,
+     "SO": 25,
+     "BA": 0.205,
+     "OBA": 0.265,
+     "SA": 0.298,
+     "baMod": 0.88,
+     "hrMod": 0.844,
+     "bbMod": 1.089,
+     "soMod": 0.829
+    },
+    "R": {
+     "AB": 764,
+     "H": 184,
+     "HR": 18,
+     "BB": 49,
+     "SO": 115,
+     "BA": 0.241,
+     "OBA": 0.288,
+     "SA": 0.36,
+     "baMod": 1.034,
+     "hrMod": 1.043,
+     "bbMod": 0.976,
+     "soMod": 1.047
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 9,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "blackbu02",
+    "season": 1984,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "kcr_80s_farrst01",
+   "name": "Steve Farr",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 5,
+     "L": 4,
+     "ERA": 2.5,
+     "GS": 1,
+     "SV": 20,
+     "IP": 82.2,
+     "H": 74,
+     "ER": 23,
+     "HR": 5,
+     "BB": 30,
+     "SO": 72,
+     "WP": 4,
+     "HB": 2,
+     "BALK": 2,
+     "BA": 0.24,
+     "OBA": 0.309,
+     "SA": 0.367
+    },
+    "L": {
+     "AB": 155,
+     "H": 43,
+     "HR": 2,
+     "BB": 17,
+     "SO": 37,
+     "BA": 0.277,
+     "OBA": 0.349,
+     "SA": 0.406,
+     "baMod": 1.154,
+     "hrMod": 0.786,
+     "bbMod": 1.114,
+     "soMod": 1.01
+    },
+    "R": {
+     "AB": 153,
+     "H": 31,
+     "HR": 3,
+     "BB": 13,
+     "SO": 35,
+     "BA": 0.203,
+     "OBA": 0.268,
+     "SA": 0.327,
+     "baMod": 0.846,
+     "hrMod": 1.221,
+     "bbMod": 0.882,
+     "soMod": 0.989
+    }
+   },
+   "ratings": {
+    "speed": 9,
+    "control": 7,
+    "fatigue": 4,
+    "bunt": 3,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Slider",
+    "Splitter"
+   ],
+   "source": {
+    "bref": "farrst01",
+    "season": 1988,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "kcr_80s_quiseda01",
+   "name": "Dan Quisenberry",
+   "role": "CL",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 5,
+     "L": 3,
+     "ERA": 1.94,
+     "GS": 0,
+     "SV": 45,
+     "IP": 139.0,
+     "H": 118,
+     "ER": 30,
+     "HR": 6,
+     "BB": 11,
+     "SO": 48,
+     "WP": 0,
+     "HB": 0,
+     "BALK": 0,
+     "BA": 0.229,
+     "OBA": 0.243,
+     "SA": 0.315
+    },
+    "L": {
+     "AB": 262,
+     "H": 68,
+     "HR": 3,
+     "BB": 7,
+     "SO": 20,
+     "BA": 0.26,
+     "OBA": 0.275,
+     "SA": 0.34,
+     "baMod": 1.135,
+     "hrMod": 0.971,
+     "bbMod": 1.236,
+     "soMod": 0.809
+    },
+    "R": {
+     "AB": 253,
+     "H": 50,
+     "HR": 3,
+     "BB": 4,
+     "SO": 28,
+     "BA": 0.198,
+     "OBA": 0.21,
+     "SA": 0.289,
+     "baMod": 0.865,
+     "hrMod": 1.031,
+     "bbMod": 0.75,
+     "soMod": 1.203
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 10,
+    "fatigue": 5,
+    "bunt": 3,
+    "fielding": 6
+   },
+   "pitches": [
+    "Sinker",
+    "Slider",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "quiseda01",
+    "season": 1983,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

@@ -5892,14 +5892,14 @@
     "line": "10-10, 3.68 ERA, 234.2 IP, 1 SV, 4.3 WAR"
    },
    {
-    "bref": "honeyri01",
-    "name": "Rick Honeycutt",
-    "year": 1983,
+    "bref": "ryanno01",
+    "name": "Nolan Ryan",
+    "year": 1989,
     "role": "SP",
-    "decadeWar": 5.5,
+    "decadeWar": 5.1,
     "decadeSv": 0,
-    "score": 6.6,
-    "line": "14-8, 2.42 ERA, 174.2 IP, 0 SV, 4.3 WAR"
+    "score": 6.4,
+    "line": "16-10, 3.20 ERA, 239.1 IP, 0 SV, 5.1 WAR"
    },
    {
     "bref": "schmida01",
@@ -6022,14 +6022,14 @@
    ],
    "starters": [
     {
+     "bref": "honeyri01",
+     "name": "Rick Honeycutt",
+     "score": 6.6
+    },
+    {
      "bref": "guzmajo01",
      "name": "Jos\u00e9 Guzm\u00e1n",
      "score": 6.5
-    },
-    {
-     "bref": "ryanno01",
-     "name": "Nolan Ryan",
-     "score": 6.4
     },
     {
      "bref": "masonmi01",

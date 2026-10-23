@@ -1,0 +1,1369 @@
+{
+ "team": "atl_80s",
+ "warnings": [],
+ "batters": [
+  {
+   "id": "atl_80s_smithlo01",
+   "name": "Lonnie Smith",
+   "pos": "LF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.315,
+     "HR": 21,
+     "RBI": 79,
+     "BB": 76,
+     "SO": 95,
+     "AB": 482,
+     "H": 152,
+     "d2B": 34,
+     "d3B": 4,
+     "SB": 25,
+     "CS": 12,
+     "OBA": 0.415,
+     "SA": 0.533
+    },
+    "L": {
+     "BA": 0.321,
+     "HR": 7,
+     "RBI": 28,
+     "BB": 29,
+     "SO": 29,
+     "AB": 165,
+     "H": 53,
+     "d2B": 13,
+     "d3B": 3,
+     "SB": 7,
+     "CS": 4,
+     "OBA": 0.429,
+     "SA": 0.564
+    },
+    "R": {
+     "BA": 0.312,
+     "HR": 14,
+     "RBI": 51,
+     "BB": 47,
+     "SO": 66,
+     "AB": 317,
+     "H": 99,
+     "d2B": 21,
+     "d3B": 1,
+     "SB": 18,
+     "CS": 8,
+     "OBA": 0.408,
+     "SA": 0.517
+    }
+   },
+   "ratings": {
+    "power": 7,
+    "hitAndRun": 6,
+    "bunt": 7,
+    "fbPct": 46,
+    "runs": 9,
+    "range": 9,
+    "arm": 4,
+    "durability": 7
+   },
+   "source": {
+    "bref": "smithlo01",
+    "season": 1989,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_jamesdi01",
+   "name": "Dion James",
+   "pos": "DH",
+   "pos2": "CF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.312,
+     "HR": 10,
+     "RBI": 61,
+     "BB": 70,
+     "SO": 63,
+     "AB": 494,
+     "H": 154,
+     "d2B": 37,
+     "d3B": 6,
+     "SB": 10,
+     "CS": 8,
+     "OBA": 0.397,
+     "SA": 0.472
+    },
+    "L": {
+     "BA": 0.303,
+     "HR": 1,
+     "RBI": 14,
+     "BB": 22,
+     "SO": 14,
+     "AB": 89,
+     "H": 27,
+     "d2B": 7,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 2,
+     "OBA": 0.442,
+     "SA": 0.438
+    },
+    "R": {
+     "BA": 0.314,
+     "HR": 9,
+     "RBI": 47,
+     "BB": 48,
+     "SO": 49,
+     "AB": 405,
+     "H": 127,
+     "d2B": 30,
+     "d3B": 5,
+     "SB": 9,
+     "CS": 6,
+     "OBA": 0.386,
+     "SA": 0.479
+    }
+   },
+   "ratings": {
+    "power": 5,
+    "hitAndRun": 8,
+    "bunt": 7,
+    "fbPct": 35,
+    "runs": 6,
+    "range": 3,
+    "arm": 4,
+    "durability": 6
+   },
+   "source": {
+    "bref": "jamesdi01",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_murphda05",
+   "name": "Dale Murphy",
+   "pos": "CF",
+   "pos2": "RF",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.302,
+     "HR": 36,
+     "RBI": 121,
+     "BB": 90,
+     "SO": 110,
+     "AB": 589,
+     "H": 178,
+     "d2B": 24,
+     "d3B": 4,
+     "SB": 30,
+     "CS": 4,
+     "OBA": 0.393,
+     "SA": 0.54
+    },
+    "L": {
+     "BA": 0.252,
+     "HR": 5,
+     "RBI": 21,
+     "BB": 20,
+     "SO": 36,
+     "AB": 159,
+     "H": 40,
+     "d2B": 8,
+     "d3B": 0,
+     "SB": 8,
+     "CS": 0,
+     "OBA": 0.33,
+     "SA": 0.396
+    },
+    "R": {
+     "BA": 0.321,
+     "HR": 31,
+     "RBI": 100,
+     "BB": 70,
+     "SO": 74,
+     "AB": 430,
+     "H": 138,
+     "d2B": 16,
+     "d3B": 4,
+     "SB": 22,
+     "CS": 4,
+     "OBA": 0.416,
+     "SA": 0.593
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 6,
+    "bunt": 5,
+    "fbPct": 54,
+    "runs": 7,
+    "range": 6,
+    "arm": 8,
+    "durability": 10
+   },
+   "source": {
+    "bref": "murphda05",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_hornebo01",
+   "name": "Bob Horner",
+   "pos": "3B",
+   "pos2": "1B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.268,
+     "HR": 35,
+     "RBI": 89,
+     "BB": 27,
+     "SO": 50,
+     "AB": 463,
+     "H": 124,
+     "d2B": 14,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 1,
+     "OBA": 0.307,
+     "SA": 0.529
+    },
+    "L": {
+     "BA": 0.258,
+     "HR": 6,
+     "RBI": 20,
+     "BB": 8,
+     "SO": 10,
+     "AB": 93,
+     "H": 24,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.311,
+     "SA": 0.495
+    },
+    "R": {
+     "BA": 0.27,
+     "HR": 29,
+     "RBI": 69,
+     "BB": 19,
+     "SO": 40,
+     "AB": 370,
+     "H": 100,
+     "d2B": 10,
+     "d3B": 1,
+     "SB": 3,
+     "CS": 1,
+     "OBA": 0.306,
+     "SA": 0.538
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 7,
+    "bunt": 3,
+    "fbPct": 60,
+    "runs": 4,
+    "range": 5,
+    "arm": 6,
+    "durability": 6
+   },
+   "source": {
+    "bref": "hornebo01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_washicl01",
+   "name": "Claudell Washington",
+   "pos": "RF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.286,
+     "HR": 17,
+     "RBI": 61,
+     "BB": 59,
+     "SO": 77,
+     "AB": 416,
+     "H": 119,
+     "d2B": 21,
+     "d3B": 2,
+     "SB": 21,
+     "CS": 9,
+     "OBA": 0.374,
+     "SA": 0.469
+    },
+    "L": {
+     "BA": 0.304,
+     "HR": 3,
+     "RBI": 14,
+     "BB": 16,
+     "SO": 22,
+     "AB": 115,
+     "H": 35,
+     "d2B": 7,
+     "d3B": 0,
+     "SB": 6,
+     "CS": 1,
+     "OBA": 0.389,
+     "SA": 0.443
+    },
+    "R": {
+     "BA": 0.279,
+     "HR": 14,
+     "RBI": 47,
+     "BB": 43,
+     "SO": 55,
+     "AB": 301,
+     "H": 84,
+     "d2B": 14,
+     "d3B": 2,
+     "SB": 15,
+     "CS": 8,
+     "OBA": 0.368,
+     "SA": 0.478
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 6,
+    "bunt": 6,
+    "fbPct": 44,
+    "runs": 8,
+    "range": 4,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "washicl01",
+    "season": 1984,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_chambch01",
+   "name": "Chris Chambliss",
+   "pos": "1B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.282,
+     "HR": 18,
+     "RBI": 72,
+     "BB": 49,
+     "SO": 73,
+     "AB": 602,
+     "H": 170,
+     "d2B": 37,
+     "d3B": 2,
+     "SB": 7,
+     "CS": 3,
+     "OBA": 0.338,
+     "SA": 0.44
+    },
+    "L": {
+     "BA": 0.223,
+     "HR": 3,
+     "RBI": 23,
+     "BB": 1,
+     "SO": 20,
+     "AB": 157,
+     "H": 35,
+     "d2B": 6,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 0,
+     "OBA": 0.23,
+     "SA": 0.318
+    },
+    "R": {
+     "BA": 0.303,
+     "HR": 15,
+     "RBI": 49,
+     "BB": 48,
+     "SO": 53,
+     "AB": 445,
+     "H": 135,
+     "d2B": 31,
+     "d3B": 2,
+     "SB": 6,
+     "CS": 3,
+     "OBA": 0.373,
+     "SA": 0.483
+    }
+   },
+   "ratings": {
+    "power": 6,
+    "hitAndRun": 7,
+    "bunt": 5,
+    "fbPct": 39,
+    "runs": 5,
+    "range": 6,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "chambch01",
+    "season": 1980,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_benedbr01",
+   "name": "Bruce Benedict",
+   "pos": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.264,
+     "HR": 5,
+     "RBI": 35,
+     "BB": 33,
+     "SO": 21,
+     "AB": 295,
+     "H": 78,
+     "d2B": 12,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.341,
+     "SA": 0.363
+    },
+    "L": {
+     "BA": 0.333,
+     "HR": 4,
+     "RBI": 12,
+     "BB": 8,
+     "SO": 3,
+     "AB": 60,
+     "H": 20,
+     "d2B": 2,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.412,
+     "SA": 0.567
+    },
+    "R": {
+     "BA": 0.247,
+     "HR": 1,
+     "RBI": 23,
+     "BB": 25,
+     "SO": 18,
+     "AB": 235,
+     "H": 58,
+     "d2B": 10,
+     "d3B": 1,
+     "SB": 1,
+     "CS": 1,
+     "OBA": 0.323,
+     "SA": 0.311
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 9,
+    "bunt": 6,
+    "fbPct": 34,
+    "runs": 4,
+    "range": 6,
+    "arm": 6,
+    "durability": 7
+   },
+   "source": {
+    "bref": "benedbr01",
+    "season": 1981,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_ramirra01",
+   "name": "Rafael Ramirez",
+   "pos": "SS",
+   "pos2": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.278,
+     "HR": 10,
+     "RBI": 52,
+     "BB": 36,
+     "SO": 49,
+     "AB": 609,
+     "H": 169,
+     "d2B": 24,
+     "d3B": 4,
+     "SB": 27,
+     "CS": 14,
+     "OBA": 0.319,
+     "SA": 0.379
+    },
+    "L": {
+     "BA": 0.338,
+     "HR": 4,
+     "RBI": 16,
+     "BB": 10,
+     "SO": 12,
+     "AB": 145,
+     "H": 49,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 8,
+     "CS": 3,
+     "OBA": 0.381,
+     "SA": 0.469
+    },
+    "R": {
+     "BA": 0.259,
+     "HR": 6,
+     "RBI": 36,
+     "BB": 26,
+     "SO": 37,
+     "AB": 464,
+     "H": 120,
+     "d2B": 19,
+     "d3B": 3,
+     "SB": 19,
+     "CS": 11,
+     "OBA": 0.299,
+     "SA": 0.351
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 9,
+    "bunt": 10,
+    "fbPct": 33,
+    "runs": 9,
+    "range": 5,
+    "arm": 8,
+    "durability": 9
+   },
+   "source": {
+    "bref": "ramirra01",
+    "season": 1982,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_hubbagl01",
+   "name": "Glenn Hubbard",
+   "pos": "2B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": true,
+   "splits": {
+    "T": {
+     "BA": 0.232,
+     "HR": 5,
+     "RBI": 39,
+     "BB": 56,
+     "SO": 54,
+     "AB": 439,
+     "H": 102,
+     "d2B": 21,
+     "d3B": 0,
+     "SB": 4,
+     "CS": 3,
+     "OBA": 0.321,
+     "SA": 0.314
+    },
+    "L": {
+     "BA": 0.229,
+     "HR": 1,
+     "RBI": 10,
+     "BB": 25,
+     "SO": 17,
+     "AB": 144,
+     "H": 33,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.335,
+     "SA": 0.278
+    },
+    "R": {
+     "BA": 0.234,
+     "HR": 4,
+     "RBI": 29,
+     "BB": 31,
+     "SO": 37,
+     "AB": 295,
+     "H": 69,
+     "d2B": 17,
+     "d3B": 0,
+     "SB": 4,
+     "CS": 2,
+     "OBA": 0.313,
+     "SA": 0.332
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 7,
+    "bunt": 7,
+    "fbPct": 31,
+    "runs": 4,
+    "range": 9,
+    "arm": 6,
+    "durability": 8
+   },
+   "source": {
+    "bref": "hubbagl01",
+    "season": 1985,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_oberkke01",
+   "name": "Ken Oberkfell",
+   "pos": "3B",
+   "pos2": "2B",
+   "bats": "L",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.27,
+     "HR": 5,
+     "RBI": 48,
+     "BB": 83,
+     "SO": 40,
+     "AB": 503,
+     "H": 136,
+     "d2B": 24,
+     "d3B": 3,
+     "SB": 7,
+     "CS": 4,
+     "OBA": 0.373,
+     "SA": 0.36
+    },
+    "L": {
+     "BA": 0.233,
+     "HR": 2,
+     "RBI": 20,
+     "BB": 19,
+     "SO": 17,
+     "AB": 129,
+     "H": 30,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 2,
+     "CS": 1,
+     "OBA": 0.333,
+     "SA": 0.31
+    },
+    "R": {
+     "BA": 0.283,
+     "HR": 3,
+     "RBI": 28,
+     "BB": 64,
+     "SO": 23,
+     "AB": 374,
+     "H": 106,
+     "d2B": 20,
+     "d3B": 3,
+     "SB": 5,
+     "CS": 3,
+     "OBA": 0.387,
+     "SA": 0.377
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 7,
+    "fbPct": 30,
+    "runs": 5,
+    "range": 6,
+    "arm": 5,
+    "durability": 8
+   },
+   "source": {
+    "bref": "oberkke01",
+    "season": 1986,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_virgioz02",
+   "name": "Ozzie Virgil",
+   "pos": "C",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.247,
+     "HR": 27,
+     "RBI": 72,
+     "BB": 47,
+     "SO": 81,
+     "AB": 429,
+     "H": 106,
+     "d2B": 13,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.331,
+     "SA": 0.471
+    },
+    "L": {
+     "BA": 0.218,
+     "HR": 7,
+     "RBI": 18,
+     "BB": 16,
+     "SO": 20,
+     "AB": 110,
+     "H": 24,
+     "d2B": 2,
+     "d3B": 0,
+     "SB": 0,
+     "CS": 0,
+     "OBA": 0.328,
+     "SA": 0.427
+    },
+    "R": {
+     "BA": 0.257,
+     "HR": 20,
+     "RBI": 54,
+     "BB": 31,
+     "SO": 61,
+     "AB": 319,
+     "H": 82,
+     "d2B": 11,
+     "d3B": 1,
+     "SB": 0,
+     "CS": 1,
+     "OBA": 0.331,
+     "SA": 0.486
+    }
+   },
+   "ratings": {
+    "power": 8,
+    "hitAndRun": 5,
+    "bunt": 3,
+    "fbPct": 54,
+    "runs": 3,
+    "range": 4,
+    "arm": 5,
+    "durability": 7
+   },
+   "source": {
+    "bref": "virgioz02",
+    "season": 1987,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_butlebr01",
+   "name": "Brett Butler",
+   "pos": "LF",
+   "pos2": "CF",
+   "bats": "L",
+   "throws": "L",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.281,
+     "HR": 5,
+     "RBI": 37,
+     "BB": 54,
+     "SO": 56,
+     "AB": 549,
+     "H": 154,
+     "d2B": 21,
+     "d3B": 13,
+     "SB": 39,
+     "CS": 23,
+     "OBA": 0.344,
+     "SA": 0.393
+    },
+    "L": {
+     "BA": 0.277,
+     "HR": 0,
+     "RBI": 5,
+     "BB": 10,
+     "SO": 18,
+     "AB": 101,
+     "H": 28,
+     "d2B": 5,
+     "d3B": 1,
+     "SB": 11,
+     "CS": 3,
+     "OBA": 0.345,
+     "SA": 0.347
+    },
+    "R": {
+     "BA": 0.281,
+     "HR": 5,
+     "RBI": 32,
+     "BB": 44,
+     "SO": 38,
+     "AB": 448,
+     "H": 126,
+     "d2B": 16,
+     "d3B": 12,
+     "SB": 28,
+     "CS": 20,
+     "OBA": 0.344,
+     "SA": 0.404
+    }
+   },
+   "ratings": {
+    "power": 4,
+    "hitAndRun": 8,
+    "bunt": 9,
+    "fbPct": 30,
+    "runs": 10,
+    "range": 8,
+    "arm": 4,
+    "durability": 9
+   },
+   "source": {
+    "bref": "butlebr01",
+    "season": 1983,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  },
+  {
+   "id": "atl_80s_johnsra04",
+   "name": "Randy Johnson",
+   "pos": "3B",
+   "bats": "R",
+   "throws": "R",
+   "isStarter": false,
+   "splits": {
+    "T": {
+     "BA": 0.279,
+     "HR": 5,
+     "RBI": 30,
+     "BB": 21,
+     "SO": 21,
+     "AB": 294,
+     "H": 82,
+     "d2B": 13,
+     "d3B": 0,
+     "SB": 4,
+     "CS": 7,
+     "OBA": 0.329,
+     "SA": 0.374
+    },
+    "L": {
+     "BA": 0.296,
+     "HR": 2,
+     "RBI": 9,
+     "BB": 7,
+     "SO": 9,
+     "AB": 98,
+     "H": 29,
+     "d2B": 4,
+     "d3B": 0,
+     "SB": 3,
+     "CS": 2,
+     "OBA": 0.343,
+     "SA": 0.398
+    },
+    "R": {
+     "BA": 0.27,
+     "HR": 3,
+     "RBI": 21,
+     "BB": 14,
+     "SO": 12,
+     "AB": 196,
+     "H": 53,
+     "d2B": 9,
+     "d3B": 0,
+     "SB": 1,
+     "CS": 5,
+     "OBA": 0.322,
+     "SA": 0.362
+    }
+   },
+   "ratings": {
+    "power": 3,
+    "hitAndRun": 9,
+    "bunt": 7,
+    "fbPct": 34,
+    "runs": 4,
+    "range": 7,
+    "arm": 5,
+    "durability": 5
+   },
+   "source": {
+    "bref": "johnsra04",
+    "season": 1984,
+    "splits": "platoon",
+    "csRecorded": true
+   }
+  }
+ ],
+ "pitchers": [
+  {
+   "id": "atl_80s_mahleri01",
+   "name": "Rick Mahler",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 17,
+     "L": 15,
+     "ERA": 3.48,
+     "GS": 39,
+     "SV": 0,
+     "IP": 266.2,
+     "H": 272,
+     "ER": 103,
+     "HR": 24,
+     "BB": 79,
+     "SO": 107,
+     "WP": 3,
+     "HB": 2,
+     "BALK": 1,
+     "BA": 0.268,
+     "OBA": 0.321,
+     "SA": 0.401
+    },
+    "L": {
+     "AB": 551,
+     "H": 144,
+     "HR": 7,
+     "BB": 38,
+     "SO": 55,
+     "BA": 0.261,
+     "OBA": 0.307,
+     "SA": 0.37,
+     "baMod": 0.974,
+     "hrMod": 0.54,
+     "bbMod": 0.89,
+     "soMod": 0.951
+    },
+    "R": {
+     "AB": 463,
+     "H": 128,
+     "HR": 17,
+     "BB": 41,
+     "SO": 52,
+     "BA": 0.276,
+     "OBA": 0.337,
+     "SA": 0.438,
+     "baMod": 1.03,
+     "hrMod": 1.542,
+     "bbMod": 1.13,
+     "soMod": 1.058
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 4,
+    "fielding": 5
+   },
+   "pitches": [
+    "Sinker",
+    "Slider",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "mahleri01",
+    "season": 1985,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "atl_80s_niekrph01",
+   "name": "Phil Niekro",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 15,
+     "L": 18,
+     "ERA": 3.63,
+     "GS": 38,
+     "SV": 1,
+     "IP": 275.0,
+     "H": 256,
+     "ER": 111,
+     "HR": 30,
+     "BB": 85,
+     "SO": 176,
+     "WP": 9,
+     "HB": 3,
+     "BALK": 1,
+     "BA": 0.249,
+     "OBA": 0.306,
+     "SA": 0.383
+    },
+    "L": {
+     "AB": 455,
+     "H": 113,
+     "HR": 16,
+     "BB": 40,
+     "SO": 69,
+     "BA": 0.248,
+     "OBA": 0.309,
+     "SA": 0.396,
+     "baMod": 0.996,
+     "hrMod": 1.201,
+     "bbMod": 1.06,
+     "soMod": 0.883
+    },
+    "R": {
+     "AB": 575,
+     "H": 143,
+     "HR": 14,
+     "BB": 45,
+     "SO": 107,
+     "BA": 0.249,
+     "OBA": 0.304,
+     "SA": 0.372,
+     "baMod": 1.0,
+     "hrMod": 0.84,
+     "bbMod": 0.952,
+     "soMod": 1.094
+    }
+   },
+   "ratings": {
+    "speed": 3,
+    "control": 8,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 7
+   },
+   "pitches": [
+    "Knuckleball",
+    "4-Seam Fastball",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "niekrph01",
+    "season": 1980,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "atl_80s_smithza01",
+   "name": "Zane Smith",
+   "role": "SP",
+   "throws": "L",
+   "splits": {
+    "T": {
+     "W": 15,
+     "L": 10,
+     "ERA": 4.09,
+     "GS": 36,
+     "SV": 0,
+     "IP": 242.0,
+     "H": 245,
+     "ER": 110,
+     "HR": 19,
+     "BB": 91,
+     "SO": 130,
+     "WP": 5,
+     "HB": 5,
+     "BALK": 1,
+     "BA": 0.266,
+     "OBA": 0.333,
+     "SA": 0.377
+    },
+    "L": {
+     "AB": 105,
+     "H": 27,
+     "HR": 1,
+     "BB": 8,
+     "SO": 22,
+     "BA": 0.257,
+     "OBA": 0.31,
+     "SA": 0.314,
+     "baMod": 0.966,
+     "hrMod": 0.474,
+     "bbMod": 0.791,
+     "soMod": 1.523
+    },
+    "R": {
+     "AB": 817,
+     "H": 218,
+     "HR": 18,
+     "BB": 83,
+     "SO": 108,
+     "BA": 0.267,
+     "OBA": 0.336,
+     "SA": 0.386,
+     "baMod": 1.004,
+     "hrMod": 1.066,
+     "bbMod": 1.026,
+     "soMod": 0.935
+    }
+   },
+   "ratings": {
+    "speed": 6,
+    "control": 7,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 6
+   },
+   "pitches": [
+    "Sinker",
+    "Slider",
+    "Changeup"
+   ],
+   "source": {
+    "bref": "smithza01",
+    "season": 1987,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "atl_80s_perezpa01",
+   "name": "Pascual Perez",
+   "role": "SP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 15,
+     "L": 8,
+     "ERA": 3.43,
+     "GS": 33,
+     "SV": 0,
+     "IP": 215.1,
+     "H": 213,
+     "ER": 82,
+     "HR": 20,
+     "BB": 51,
+     "SO": 144,
+     "WP": 7,
+     "HB": 4,
+     "BALK": 0,
+     "BA": 0.261,
+     "OBA": 0.306,
+     "SA": 0.367
+    },
+    "L": {
+     "AB": 398,
+     "H": 109,
+     "HR": 9,
+     "BB": 30,
+     "SO": 61,
+     "BA": 0.274,
+     "OBA": 0.325,
+     "SA": 0.387,
+     "baMod": 1.05,
+     "hrMod": 0.926,
+     "bbMod": 1.211,
+     "soMod": 0.872
+    },
+    "R": {
+     "AB": 419,
+     "H": 104,
+     "HR": 11,
+     "BB": 21,
+     "SO": 83,
+     "BA": 0.248,
+     "OBA": 0.288,
+     "SA": 0.348,
+     "baMod": 0.95,
+     "hrMod": 1.07,
+     "bbMod": 0.801,
+     "soMod": 1.121
+    }
+   },
+   "ratings": {
+    "speed": 8,
+    "control": 9,
+    "fatigue": 9,
+    "bunt": 5,
+    "fielding": 5
+   },
+   "pitches": [
+    "4-Seam Fastball",
+    "Curveball",
+    "Slider"
+   ],
+   "source": {
+    "bref": "perezpa01",
+    "season": 1983,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "atl_80s_campri01",
+   "name": "Rick Camp",
+   "role": "RP",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 6,
+     "L": 4,
+     "ERA": 1.91,
+     "GS": 0,
+     "SV": 22,
+     "IP": 108.1,
+     "H": 92,
+     "ER": 23,
+     "HR": 3,
+     "BB": 29,
+     "SO": 33,
+     "WP": 2,
+     "HB": 4,
+     "BALK": 0,
+     "BA": 0.235,
+     "OBA": 0.291,
+     "SA": 0.304
+    },
+    "L": {
+     "AB": 147,
+     "H": 35,
+     "HR": 0,
+     "BB": 15,
+     "SO": 13,
+     "BA": 0.238,
+     "OBA": 0.303,
+     "SA": 0.286,
+     "baMod": 1.013,
+     "hrMod": 0.0,
+     "bbMod": 1.355,
+     "soMod": 1.032
+    },
+    "R": {
+     "AB": 245,
+     "H": 57,
+     "HR": 3,
+     "BB": 14,
+     "SO": 20,
+     "BA": 0.233,
+     "OBA": 0.283,
+     "SA": 0.314,
+     "baMod": 0.991,
+     "hrMod": 1.618,
+     "bbMod": 0.781,
+     "soMod": 0.98
+    }
+   },
+   "ratings": {
+    "speed": 5,
+    "control": 8,
+    "fatigue": 4,
+    "bunt": 5,
+    "fielding": 5
+   },
+   "pitches": [
+    "Slider",
+    "Sinker",
+    "Curveball"
+   ],
+   "source": {
+    "bref": "campri01",
+    "season": 1980,
+    "splits": "platoon"
+   }
+  },
+  {
+   "id": "atl_80s_garbege01",
+   "name": "Gene Garber",
+   "role": "CL",
+   "throws": "R",
+   "splits": {
+    "T": {
+     "W": 8,
+     "L": 10,
+     "ERA": 2.34,
+     "GS": 0,
+     "SV": 30,
+     "IP": 119.1,
+     "H": 100,
+     "ER": 31,
+     "HR": 4,
+     "BB": 32,
+     "SO": 68,
+     "WP": 1,
+     "HB": 2,
+     "BALK": 0,
+     "BA": 0.231,
+     "OBA": 0.285,
+     "SA": 0.299
+    },
+    "L": {
+     "AB": 220,
+     "H": 52,
+     "HR": 2,
+     "BB": 17,
+     "SO": 30,
+     "BA": 0.236,
+     "OBA": 0.29,
+     "SA": 0.309,
+     "baMod": 1.022,
+     "hrMod": 0.976,
+     "bbMod": 1.037,
+     "soMod": 0.861
+    },
+    "R": {
+     "AB": 212,
+     "H": 48,
+     "HR": 2,
+     "BB": 15,
+     "SO": 38,
+     "BA": 0.226,
+     "OBA": 0.278,
+     "SA": 0.288,
+     "baMod": 0.978,
+     "hrMod": 1.026,
+     "bbMod": 0.962,
+     "soMod": 1.146
+    }
+   },
+   "ratings": {
+    "speed": 7,
+    "control": 8,
+    "fatigue": 5,
+    "bunt": 4,
+    "fielding": 6
+   },
+   "pitches": [
+    "Changeup",
+    "Slider",
+    "Sinker"
+   ],
+   "source": {
+    "bref": "garbege01",
+    "season": 1982,
+    "splits": "platoon"
+   }
+  }
+ ]
+}

@@ -23,27 +23,13 @@ The request is the Google Doc "Feature-add-teams" (file ID `1GLT7jcH54rToQhVUtVo
 - **Docs:** ARCHITECTURE.md, AGENTS.md and README.md are updated, and the 26 IDs are in `tracking/tasks/teams/order.json`.
 - **Built so far:** `atl_80s` builds and plays (30 headless games ran clean).
 
-## In progress (background, may need restarting)
+## Finished, 2026-10-23
 
-- `python3 bin/fetch_80s.py` caches each player's page and L/R split page, about 3.5 hours for 494 players. Cached pages are skipped, so rerunning it resumes. It needs network access to www.baseball-reference.com.
-- `python3 bin/build_80s.py` builds each team once its pages are cached and prints `ALL BUILT` at the end.
-
-## Left
-
-1. **Finish the builds.** Restart both scripts if they died. Check each build's `WARNING` lines (`tracking/results/build_<tm>_80s.json`):
-   - "split the season between clubs" means the season line includes another team. Pick that player's next-best season in the spec.
-   - "no scouting ratings" means a scouting file is missing a player.
-2. **Smoke test.** Run inside the ewbb toolbox, with the sandbox off:
-   - `toolbox run -c ewbb node bin/smoke_teams.mjs 1` must finish without errors.
-   - `python3 validate_stats_cli.py 10` checks run scoring.
-   - '80s teams playing each other should score roughly 4–4.5 runs a game.
-3. **Manifest.** Run `python3 bin/write_manifest.py`.
-4. **Model log.** Log the Codex runs in `tracking/MODEL_COMPARISON.md`, all `gpt-6.1-sol` via `codex --search exec`:
-   - Round 1, the method review: 150 s, 4.4 KB. Its useful points (DH ranking, bench rules, the manager-record bug) were all taken.
-   - Round 2, the 26-roster review: 298 s. Eight concrete errors, all fixed, including U L Washington missing (an ID-parsing bug), Foster and Paciorek out of position, and Monday's 156-PA season.
-   - Round 3, the ratings review: 199 s. It looked at ATL, BAL and BOS (the BOS build is in tracking/results/build_bos_80s.json). The Niekro speed point was already fixed. The formula points are open (see below).
-5. **Merge and push.** Commit, then merge `feat/teams-1980s` into `main` and push. `git push` needs the sandbox off. Stage files by explicit path: the worktree holds stray sandbox dotfiles (`.bashrc`, `.claude/...`) that must not be committed.
-6. **Google Doc.** Add a short status section to the doc. Include the open questions below.
+- **Builds:** all 26 teams build. The only warning was Honeycutt's 1983, split with the Dodgers; the user chose Nolan Ryan 1989 in his place (`HAND_STARTERS` in `bin/pick_80s.py`, scouting copied from the Astros file).
+- **Smoke test:** 1,332 games across all 37 teams, no errors.
+- **Run scoring:** 1,300 games among the '80s teams average 4.78 runs per team-game, a little above the 4-4.5 expected. All-decade lineups face all-decade staffs, so both sides are stronger than a real 1980s league (about 4.3). Royals score most (6.07), Mariners least (3.80).
+- **Manifest** written, and the Codex runs logged in `tracking/MODEL_COMPARISON.md`.
+- **Left:** the follow-ups, real 1980s parks (`tracking/tasks/task_04_parks_80s.md`) and multi-season league simulation.
 
 ## User decisions, 2026-10-23 (answers in the Google Doc)
 

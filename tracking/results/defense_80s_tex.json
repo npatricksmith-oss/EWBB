@@ -332,12 +332,12 @@
    "4-Seam Fastball"
   ]
  },
- "honeyri01": {
-  "name": "Rick Honeycutt",
-  "bunt": 3,
-  "fielding": 7,
+ "ryanno01": {
+  "name": "Nolan Ryan",
+  "bunt": 2,
+  "fielding": 4,
   "pitches": [
-   "Sinker",
+   "4-Seam Fastball",
    "Curveball",
    "Changeup"
   ]
