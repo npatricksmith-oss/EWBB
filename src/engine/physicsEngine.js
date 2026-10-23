@@ -16,7 +16,9 @@
 
 import { getWallAtAngle } from '../data/ballparks.js';
 import { normalizeOffensePlay, normalizeDefensePlay } from './statsMatrix.js';
-import { getLastName } from '../data/rosters.js';
+import { BASE_COORDS, getRunnerSpeedFps, planBaseRunning, buildRunnerSnapshots, lastRunnerArrivalSec } from './baseRunning.js';
+
+export { BASE_COORDS };
 
 const GRAVITY_FPS2 = 32.174;
 const DT = 1 / 60;
@@ -24,14 +26,6 @@ const MAX_TIME_SEC = 7.5;
 const DEG_TO_RAD = Math.PI / 180;
 const RAD_TO_DEG = 180 / Math.PI;
 const MPH_TO_FPS = 1.46667;
-
-export const BASE_COORDS = {
-  HOME: { x: 0, y: 0, z: 0 },
-  FIRST: { x: 63.64, y: 63.64, z: 0 },
-  SECOND: { x: 0, y: 127.28, z: 0 },
-  THIRD: { x: -63.64, y: 63.64, z: 0 },
-  MOUND: { x: 0, y: 60.5, z: 0.83 }
-};
 
 export const FIELDER_POSITIONS_LIST = ['P', 'C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF'];
 
@@ -160,37 +154,6 @@ function buildFielderAgents(defenseFielders = {}, initialCoords = {}) {
     };
   }
   return agents;
-}
-
-/**
- * Helper to compute baserunner sprint speed in ft/s:
- * runnerSpeedFps = 22.5 + runner.ratings.runs * 0.65
- */
-function getRunnerSpeedFps(player = {}) {
-  const runs = player?.ratings?.runs ?? player?.ratings?.speed ?? 6;
-  return 22.5 + runs * 0.65;
-}
-
-/**
- * Interpolates a baserunner's (x, y) position along the basepaths from baseIndex (0=Home, 1=1B, 2=2B, 3=3B, 4=Home)
- */
-function getCoordsAlongBasepath(progressFloat) {
-  const waypoints = [
-    BASE_COORDS.HOME,
-    BASE_COORDS.FIRST,
-    BASE_COORDS.SECOND,
-    BASE_COORDS.THIRD,
-    BASE_COORDS.HOME
-  ];
-  const clamped = Math.max(0, Math.min(4, progressFloat));
-  const idx = Math.min(3, Math.floor(clamped));
-  const frac = clamped - idx;
-  const p0 = waypoints[idx];
-  const p1 = waypoints[idx + 1];
-  return {
-    x: Math.round((p0.x + (p1.x - p0.x) * frac) * 100) / 100,
-    y: Math.round((p0.y + (p1.y - p0.y) * frac) * 100) / 100
-  };
 }
 
 /**
@@ -544,6 +507,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
   let basesReached = 0; // for batter: 0=out, 1=1B, 2=2B, 3=3B, 4=HR
   let runsScored = 0;
   let outsRecorded = 0;
+  let fieldedInInfield = false;
 
   if (isHomeRun) {
     outcome = 'HOME_RUN';
@@ -577,6 +541,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
       !isOutfielderPickup &&
       Math.hypot(interceptPoint.x, interceptPoint.y) < 160 &&
       !hitWallBeforeIntercept;
+    fieldedInInfield = isInfieldPickup;
 
     if (isInfieldPickup) {
       // Check for rare fielding error on hard-hit grounders
@@ -679,14 +644,33 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     }
   }
 
+  // The middle infielder covering second: the shortstop on balls to the right side, the second baseman on
+  // balls to the left, and always the one who did not field it
+  const secondBaseCover = () =>
+    primaryFielderPos === '2B' ? 'SS' : primaryFielderPos === 'SS' ? '2B' : interceptPoint.x >= 0 ? 'SS' : '2B';
+
   // Determine post-interception Throw & Relay choreography for 60fps animation
   let throwPlan = null;
+  // When the first baseman fields the ball, he tosses to the pitcher only once the pitcher reaches the bag
+  const tossToFirstAfter = (tStart, flightSec) => {
+    if (primaryFielderPos !== '1B') return tStart;
+    const p = fielders.P;
+    const coverSec = 0.22 + Math.hypot(BASE_COORDS.FIRST.x - 4 - p.startX, BASE_COORDS.FIRST.y - p.startY) / p.speedFps;
+    return Math.max(tStart, coverSec + 0.05 - flightSec);
+  };
+  // Likewise the feed to second waits for the pivot man to get to the bag
+  const feedToSecondAfter = (pivotPos, tStart, flightSec) => {
+    const f = fielders[pivotPos];
+    const coverSec = 0.22 + Math.hypot(BASE_COORDS.SECOND.x - f.startX, BASE_COORDS.SECOND.y - f.startY) / f.speedFps;
+    return Math.max(tStart, coverSec + 0.05 - flightSec);
+  };
   if (!isHomeRun) {
     if (outcome === 'DOUBLE_PLAY') {
-      const pivotPos = primaryFielderPos === '2B' ? 'SS' : '2B';
+      const pivotPos = secondBaseCover();
       const dist1 = Math.hypot(interceptPoint.x - BASE_COORDS.SECOND.x, interceptPoint.y - BASE_COORDS.SECOND.y);
-      const tStart1 = interceptTimeSec + 0.30;
-      const tEnd1 = tStart1 + Math.max(0.22, dist1 / primaryFielder.throwSpeedFps);
+      const flight1 = Math.max(0.22, dist1 / primaryFielder.throwSpeedFps);
+      const tStart1 = feedToSecondAfter(pivotPos, interceptTimeSec + 0.30, flight1);
+      const tEnd1 = tStart1 + flight1;
       const tStart2 = tEnd1 + 0.34;
       const dist2 = Math.hypot(BASE_COORDS.SECOND.x - BASE_COORDS.FIRST.x, BASE_COORDS.SECOND.y - BASE_COORDS.FIRST.y);
       const pivotSpeed = fielders[pivotPos]?.throwSpeedFps || 132;
@@ -701,10 +685,11 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
         callTime: tEnd2
       };
     } else if (outcome === 'FIELDERS_CHOICE') {
-      const pivotPos = primaryFielderPos === '2B' ? 'SS' : '2B';
+      const pivotPos = secondBaseCover();
       const dist1 = Math.hypot(interceptPoint.x - BASE_COORDS.SECOND.x, interceptPoint.y - BASE_COORDS.SECOND.y);
-      const tStart1 = interceptTimeSec + 0.32;
-      const tEnd1 = tStart1 + Math.max(0.24, dist1 / primaryFielder.throwSpeedFps);
+      const flight1 = Math.max(0.24, dist1 / primaryFielder.throwSpeedFps);
+      const tStart1 = feedToSecondAfter(pivotPos, interceptTimeSec + 0.32, flight1);
+      const tEnd1 = tStart1 + flight1;
       throwPlan = {
         legs: [
           { fromPos: primaryFielderPos, toPos: pivotPos, fromPt: interceptPoint, toPt: BASE_COORDS.SECOND, tStart: tStart1, tEnd: tEnd1, peakZ: 6.5 }
@@ -715,11 +700,12 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
       };
     } else if (outcome === 'OUT_GROUND' || outcome === 'SAC_BUNT_OUT') {
       const dist1 = Math.hypot(interceptPoint.x - BASE_COORDS.FIRST.x, interceptPoint.y - BASE_COORDS.FIRST.y);
-      const tStart1 = interceptTimeSec + 0.34;
-      const tEnd1 = tStart1 + Math.max(0.22, dist1 / primaryFielder.throwSpeedFps);
+      const flight1 = Math.max(0.22, dist1 / primaryFielder.throwSpeedFps);
+      const tStart1 = tossToFirstAfter(interceptTimeSec + 0.34, flight1);
+      const tEnd1 = tStart1 + flight1;
       throwPlan = {
         legs: [
-          { fromPos: primaryFielderPos, toPos: '1B', fromPt: interceptPoint, toPt: BASE_COORDS.FIRST, tStart: tStart1, tEnd: tEnd1, peakZ: 7.5 }
+          { fromPos: primaryFielderPos, toPos: primaryFielderPos === '1B' ? 'P' : '1B', fromPt: interceptPoint, toPt: BASE_COORDS.FIRST, tStart: tStart1, tEnd: tEnd1, peakZ: 7.5 }
         ],
         callBase: '1B',
         callType: 'OUT',
@@ -737,26 +723,20 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
         callType: 'SAFE',
         callTime: tEnd1
       };
-    } else if (!caughtInAir && (outcome === 'SINGLE' || outcome === 'DOUBLE' || outcome === 'TRIPLE' || outcome === 'ERROR')) {
-      // Outfielder or infielder fires throw into the target base (2B for single/double, 3B for triple, 1B for infield hit)
-      const targetCoords =
-        outcome === 'TRIPLE'
-          ? BASE_COORDS.THIRD
-          : outcome === 'DOUBLE' || Math.hypot(interceptPoint.x, interceptPoint.y) > 155
-          ? BASE_COORDS.SECOND
-          : BASE_COORDS.FIRST;
-      const receiverPos =
-        targetCoords === BASE_COORDS.THIRD ? '3B' : targetCoords === BASE_COORDS.SECOND ? 'SS' : '1B';
-      const distThrow = Math.hypot(interceptPoint.x - targetCoords.x, interceptPoint.y - targetCoords.y);
-      const tStart1 = interceptTimeSec + (hitWall ? 0.48 : 0.34);
-      const tEnd1 = tStart1 + Math.max(0.28, distThrow / primaryFielder.throwSpeedFps);
+    } else if (fieldedInInfield && (outcome === 'SINGLE' || outcome === 'ERROR')) {
+      // Infield hit: the throw to first is late (outfield hits are planned with the base runners below)
+      const receiverPos = primaryFielderPos === '1B' ? 'P' : '1B';
+      const distThrow = Math.hypot(interceptPoint.x - BASE_COORDS.FIRST.x, interceptPoint.y - BASE_COORDS.FIRST.y);
+      const flight1 = Math.max(0.28, distThrow / primaryFielder.throwSpeedFps);
+      const tStart1 = tossToFirstAfter(interceptTimeSec + 0.34, flight1);
+      const tEnd1 = tStart1 + flight1;
       throwPlan = {
         legs: [
-          { fromPos: primaryFielderPos, toPos: receiverPos, fromPt: interceptPoint, toPt: targetCoords, tStart: tStart1, tEnd: tEnd1, peakZ: Math.min(13, 5.5 + distThrow * 0.03) }
+          { fromPos: primaryFielderPos, toPos: receiverPos, fromPt: interceptPoint, toPt: BASE_COORDS.FIRST, tStart: tStart1, tEnd: tEnd1, peakZ: Math.min(13, 5.5 + distThrow * 0.03) }
         ],
-        callBase: outcome === 'TRIPLE' ? '3B' : outcome === 'DOUBLE' ? '2B' : '1B',
+        callBase: '1B',
         callType: 'SAFE',
-        callTime: Math.min(tEnd1, (basesReached * 90) / batterRunnerSpeedFps)
+        callTime: tEnd1
       };
     } else if (caughtInAir) {
       throwPlan = {
@@ -768,15 +748,59 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     }
   }
 
-  const lastThrowEndSec =
-    throwPlan && throwPlan.legs.length > 0
-      ? throwPlan.legs[throwPlan.legs.length - 1].tEnd
-      : interceptTimeSec;
+  // Decide every runner's fate once (dice + ratings); outfield hits also get their throws and cutoff men here
+  const baseRunning = planBaseRunning({
+    outcome,
+    bases,
+    outs,
+    offPlay,
+    defPlay,
+    aggressiveness: context.runAggressively,
+    runsToWin: context.runsToWin,
+    batter,
+    fielders,
+    primaryFielderPos,
+    interceptPoint,
+    interceptTimeSec,
+    caughtInAir,
+    isOutfieldHit: !isHomeRun && !caughtInAir && !fieldedInInfield,
+    hitWall,
+    wallCaromSec: wallCaromPoint ? wallCaromPoint.t : null,
+    ballAt: (t) => {
+      const step = ballSteps[Math.min(ballSteps.length - 1, Math.max(0, Math.round(t / DT)))];
+      return { x: step.x, y: step.y, z: step.z };
+    },
+    throwPlan
+  });
+  const { runnerPlan, fielderTargets } = baseRunning;
+  throwPlan = baseRunning.throwPlan;
 
-  // Build 60fps synchronized animation frames (`ball`, `fielders`, `runners`, `umpireCall`) for the 1987 Full-Field Canvas & Instant Replay
+  // On an extra-base hit the ball gets past the outfielder, who runs it down further along its roll
+  let primaryReactionSec = 0.14;
+  let missPoint = null;
+  if (baseRunning.pickup && baseRunning.pickup.t > interceptTimeSec) {
+    // Extra-base hits: he gets to where he would have cut the ball off, then chases it down
+    if (outcome === 'DOUBLE' || outcome === 'TRIPLE') missPoint = { ...interceptPoint, t: interceptTimeSec };
+    interceptTimeSec = baseRunning.pickup.t;
+    interceptedStepIndex = Math.min(ballSteps.length - 1, Math.round(interceptTimeSec / DT));
+    const step = ballSteps[interceptedStepIndex];
+    interceptPoint = { x: step.x, y: step.y, z: step.z };
+    hitWall = Boolean(wallCaromPoint && wallCaromPoint.t <= interceptTimeSec + 0.02);
+    const pf = fielders[primaryFielderPos];
+    primaryReactionSec = Math.max(0.14, interceptTimeSec - Math.hypot(interceptPoint.x - pf.startX, interceptPoint.y - pf.startY) / pf.speedFps);
+  }
+  const throwLegs = throwPlan?.legs || [];
+  const runnersOnPlay = [runnerPlan.batter, ...runnerPlan.runners];
+  runsScored = runnersOnPlay.filter((r) => r.scores).length;
+  outsRecorded = runnersOnPlay.filter((r) => r.out).length;
+
+  const lastThrowEndSec = throwLegs.length > 0 ? throwLegs[throwLegs.length - 1].tEnd : interceptTimeSec;
+
+  // Build 60fps synchronized animation frames (`ball`, `fielders`, `runners`, `umpireCall`) for the 1987 Full-Field Canvas & Instant Replay.
+  // The tape runs until the ball and every runner have stopped (a runner scoring from first takes ~10 s).
   const totalPlayFrames = isHomeRun
     ? Math.min(ballSteps.length + 45, 360)
-    : Math.min(360, Math.ceil((Math.max(lastThrowEndSec, interceptTimeSec) + 0.72) / DT));
+    : Math.min(900, Math.ceil((Math.max(lastThrowEndSec, interceptTimeSec, lastRunnerArrivalSec(runnerPlan)) + 0.72) / DT));
 
   const frames = [];
   for (let i = 0; i < totalPlayFrames; i++) {
@@ -788,7 +812,8 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     let activeThrowLeg = null;
     let ballHolderPos = null;
 
-    if (!isHomeRun && i >= interceptedStepIndex) {
+    // The fielder has the ball from the pickup on (a ball at rest waits for him to get there)
+    if (!isHomeRun && i >= interceptedStepIndex && frameTime >= interceptTimeSec - DT / 2) {
       if (throwPlan && throwPlan.legs.length > 0) {
         for (const leg of throwPlan.legs) {
           if (frameTime < leg.tStart) {
@@ -859,7 +884,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     }
 
     // 2. Position all 9 fielders with kinetic poses (`READY`, `RUNNING`, `FIELDING_GROUND`, `FIELDING_AIR`, `THROWING`, `RECEIVING`)
-    const secondBaseCoverPos = interceptPoint.x >= 0 ? 'SS' : '2B';
+    const secondBaseCoverPos = secondBaseCover();
     const fielderSnapshot = {};
     for (const pos of FIELDER_POSITIONS_LIST) {
       const f = fielders[pos];
@@ -869,6 +894,10 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
       if (pos === primaryFielderPos) {
         targetX = interceptPoint.x;
         targetY = interceptPoint.y;
+      } else if (fielderTargets[pos]) {
+        // Cutoff and relay men, the receiver of the throw, covering infielders and the backing-up pitcher
+        targetX = fielderTargets[pos].x;
+        targetY = fielderTargets[pos].y;
       } else if (pos === '1B' && !isHomeRun && !caughtInAir) {
         targetX = BASE_COORDS.FIRST.x;
         targetY = BASE_COORDS.FIRST.y;
@@ -887,30 +916,45 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
         targetY = f.startY + (interceptPoint.y - f.startY) * 0.45;
       }
 
-      const dx = targetX - f.startX;
-      const dy = targetY - f.startY;
+      let fromX = f.startX;
+      let fromY = f.startY;
+      let reactionDelay = pos === primaryFielderPos ? primaryReactionSec : 0.22;
+      if (pos === primaryFielderPos && missPoint) {
+        const toMiss = Math.hypot(missPoint.x - f.startX, missPoint.y - f.startY);
+        const atMiss = 0.14 + toMiss / f.speedFps;
+        const chase = Math.hypot(targetX - missPoint.x, targetY - missPoint.y);
+        const leaveMiss = Math.max(atMiss, interceptTimeSec - chase / f.speedFps);
+        if (frameTime < leaveMiss) {
+          targetX = missPoint.x;
+          targetY = missPoint.y;
+          reactionDelay = 0.14;
+        } else {
+          fromX = missPoint.x;
+          fromY = missPoint.y;
+          reactionDelay = leaveMiss;
+        }
+      }
+      const dx = targetX - fromX;
+      const dy = targetY - fromY;
       const dist = Math.hypot(dx, dy);
-      const reactionDelay = pos === primaryFielderPos ? 0.14 : 0.22;
       const maxMove = Math.max(0, frameTime - reactionDelay) * f.speedFps;
       const ratio = dist > 0.01 ? Math.min(1, maxMove / dist) : 1;
       const isMoving = dist > 1.5 && ratio > 0 && ratio < 1;
 
+      // Wind up just before each release and follow through just after it
+      const isReleasing = throwLegs.some((leg) => leg.fromPos === pos && frameTime >= leg.tStart - 0.22 && frameTime <= leg.tStart + 0.16);
       let pose = isMoving ? 'RUNNING' : 'READY';
-      if (!isHomeRun && pos === primaryFielderPos) {
-        if (Math.abs(frameTime - interceptTimeSec) <= 0.22) {
-          pose = caughtInAir ? 'FIELDING_AIR' : 'FIELDING_GROUND';
-        } else if (frameTime > interceptTimeSec && frameTime <= interceptTimeSec + 0.55 && throwPlan?.legs?.length) {
-          pose = 'THROWING';
-        }
-      } else if (activeThrowLeg && pos === activeThrowLeg.fromPos) {
+      if (!isHomeRun && pos === primaryFielderPos && Math.abs(frameTime - interceptTimeSec) <= 0.22) {
+        pose = caughtInAir ? 'FIELDING_AIR' : 'FIELDING_GROUND';
+      } else if (!isHomeRun && isReleasing) {
         pose = 'THROWING';
       } else if (activeThrowLeg && pos === activeThrowLeg.toPos) {
         pose = 'RECEIVING';
       }
 
       fielderSnapshot[pos] = {
-        x: Math.round((f.startX + dx * ratio) * 100) / 100,
-        y: Math.round((f.startY + dy * ratio) * 100) / 100,
+        x: Math.round((fromX + dx * ratio) * 100) / 100,
+        y: Math.round((fromY + dy * ratio) * 100) / 100,
         z: pose === 'FIELDING_AIR' && maxAltitudeFt > 7 ? 2.5 : 0,
         vx: isMoving ? (dx / dist) * f.speedFps : 0,
         vy: isMoving ? (dy / dist) * f.speedFps : 0,
@@ -921,83 +965,8 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
       };
     }
 
-    // 3. Position Baserunners with running stride cycles and head/feet-first slides into bases
-    const runnerSnapshot = [];
-    const targetBatterBase = isHomeRun ? 4 : Math.max(1, basesReached);
-    const rawBatterProg = (frameTime * batterRunnerSpeedFps) / 90;
-    const batterProgress = Math.min(targetBatterBase, rawBatterProg);
-    const batterCoords = getCoordsAlongBasepath(batterProgress);
-    const batterDistRemainingFt = (targetBatterBase - batterProgress) * 90;
-    const batterSliding =
-      !isHomeRun &&
-      targetBatterBase >= 2 &&
-      batterDistRemainingFt > 0 &&
-      batterDistRemainingFt <= 13;
-
-    runnerSnapshot.push({
-      id: batter.id || batter.name || 'batter',
-      name: batter.name || 'Batter',
-      label: getLastName(batter.name || 'BAT').slice(0, 3).toUpperCase(),
-      startBase: 0,
-      targetBase: basesReached,
-      x: batterCoords.x,
-      y: batterCoords.y,
-      isMoving: batterProgress < targetBatterBase,
-      stridePhase: Math.round(frameTime * batterRunnerSpeedFps * 0.68 * 100) / 100,
-      isSliding: batterSliding
-    });
-
-    for (let bIdx = 0; bIdx < 3; bIdx++) {
-      const r = bases[bIdx];
-      if (!r) continue;
-      const rSpeed = getRunnerSpeedFps(r);
-      const startBaseNum = bIdx + 1;
-      const leadOffset =
-        offPlay === 'RUN_AND_HIT' || offPlay === 'HIT_AND_RUN' || offPlay === 'STEAL'
-          ? 0.28
-          : 0.11;
-      const isForced = bIdx === 0 || (bIdx === 1 && bases[0]) || (bIdx === 2 && bases[0] && bases[1]);
-      let advanceBases = 0;
-      if (isHomeRun) {
-        advanceBases = 4 - startBaseNum;
-      } else if (basesReached >= 1) {
-        advanceBases = basesReached;
-      } else if (outcome === 'SAC_FLY' && startBaseNum === 3) {
-        advanceBases = 1;
-      } else if (outcome === 'SAC_BUNT_OUT' || isForced) {
-        advanceBases = 1;
-      }
-
-      const maxTargetBase = Math.min(4, startBaseNum + advanceBases);
-      const rProgress =
-        caughtInAir && outcome !== 'SAC_FLY'
-          ? startBaseNum + leadOffset * 0.5
-          : caughtInAir && outcome === 'SAC_FLY' && startBaseNum === 3
-          ? frameTime < interceptTimeSec
-            ? 3.04
-            : Math.min(4, 3.04 + ((frameTime - interceptTimeSec) * rSpeed) / 90)
-          : advanceBases === 0
-          ? startBaseNum + leadOffset * 0.75
-          : Math.min(maxTargetBase, startBaseNum + leadOffset + (frameTime * rSpeed) / 90);
-
-      const clampedProg = Math.min(maxTargetBase, rProgress);
-      const rCoords = getCoordsAlongBasepath(clampedProg);
-      const remFt = (maxTargetBase - clampedProg) * 90;
-      const isSliding = !isHomeRun && advanceBases > 0 && (!caughtInAir || outcome === 'SAC_FLY') && remFt > 0 && remFt <= 13;
-
-      runnerSnapshot.push({
-        id: r.id || r.name || `runner_${startBaseNum}`,
-        name: r.name || `Runner ${startBaseNum}B`,
-        label: getLastName(r.name || `R${startBaseNum}`).slice(0, 3).toUpperCase(),
-        startBase: startBaseNum,
-        targetBase: maxTargetBase,
-        x: rCoords.x,
-        y: rCoords.y,
-        isMoving: advanceBases > 0 && clampedProg < maxTargetBase && (!caughtInAir || outcome === 'SAC_FLY'),
-        stridePhase: Math.round(frameTime * rSpeed * 0.68 * 100) / 100,
-        isSliding
-      });
-    }
+    // 3. Baserunners follow the shared plan: rounding bases, holding, sliding, and jogging off once done
+    const runnerSnapshot = buildRunnerSnapshots(runnerPlan, frameTime);
 
     const wallHitFlash =
       hitWall && wallCaromPoint && Math.abs(frameTime - wallCaromPoint.t) <= 0.14;
@@ -1018,10 +987,11 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
   }
 
   const roundedDistanceFt = Math.round(playDistanceFt);
-  const description = buildPlayByPlayDescription({
+  const playCall = buildPlayByPlayDescription({
     batter,
     primaryFielder,
-    outcome,
+    // A game-ending play is called as what it goes in the book as
+    outcome: runnerPlan.creditedOutcome === 'FIELDERS_CHOICE' && outcome === 'OUT_GROUND' ? 'LATE_THROW_TO_FIRST' : runnerPlan.creditedOutcome || outcome,
     contactType,
     roundedDistanceFt,
     sprayAngleDeg,
@@ -1030,6 +1000,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     park,
     isTurf
   });
+  const description = [playCall, ...baseRunning.notes].join(' ');
 
   return {
     outcome,
@@ -1043,6 +1014,8 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
     basesReached,
     outsRecorded,
     runsScored,
+    runnerPlan,
+    throwPlan,
     fieldingError,
     launchVector,
     // Replay/duel clients can read contact directly without unpacking Stage 1.
@@ -1139,6 +1112,10 @@ function buildPlayByPlayDescription({
 
   if (outcome === 'SAC_BUNT_OUT') {
     return `${batter.name} lays down a sacrifice bunt fielded by ${primaryFielder.name}, who throws to first while the runners move up 90 feet.`;
+  }
+
+  if (outcome === 'LATE_THROW_TO_FIRST') {
+    return `Ground ball to ${primaryFielder.name} at ${primaryFielder.pos}, but the throw to first is too late.`;
   }
 
   if (outcome === 'OUT_GROUND') {

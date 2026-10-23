@@ -258,7 +258,10 @@ export class EWBGameState {
       pitcherPitchCount: pitcher.pitchCount || 0,
       fieldingTeam: this.fieldingTeam,
       battingTeam: this.battingTeam,
-      defenseFielders: this.getDefenseFieldersMap()
+      defenseFielders: this.getDefenseFieldersMap(),
+      runAggressively: (this.half === 'TOP' ? this.awayManager : this.homeManager)?.runAggressively ?? 5,
+      // Bottom of the 9th or later: the play ends when this many runs have scored
+      runsToWin: this.half === 'BOTTOM' && this.inning >= 9 ? this.awayScore - this.homeScore + 1 : null
     };
 
     const pitchStep = resolvePitchStep(context);
@@ -448,227 +451,89 @@ export class EWBGameState {
   }
 
   /**
-   * Translates the 3D physics outcome into official baseball scoring, base advancement, and box score updates
+   * Moves the runners exactly as the physics engine's `runnerPlan` shows them on the field:
+   * outs on the bases, runs, and the new base state. Returns the runs scored.
+   */
+  applyRunnerPlan(plan, batter) {
+    const before = [...this.bases];
+    const next = [null, null, null];
+    const pitcher = this.currentPitcher;
+    let runs = 0;
+    for (const r of [plan.batter, ...plan.runners]) {
+      const player = r.from === 0 ? batter : before[r.from - 1];
+      if (!player) continue;
+      if (r.out) {
+        if (this.outs < 3) {
+          this.outs += 1;
+          pitcher.gameStats.IP_OUTS += 1;
+        }
+      } else if (r.scores) {
+        // Every run on the plan crosses before any out on the same play (lead runners score first)
+        this.scoreRun(player, batter, r.rbi, r.earned);
+        runs += 1;
+      } else if (r.to >= 1 && r.to <= 3) {
+        next[r.to - 1] = player;
+      }
+    }
+    this.bases = next;
+    return runs;
+  }
+
+  /**
+   * Translates the 3D physics outcome into official baseball scoring and box score updates.
+   * Base advancement comes from `phys.runnerPlan`, the same plan the field animation plays.
    */
   applyPhysicsOutcome(batter, pitcher, phys) {
     const side = this.battingSide;
-    const outType = phys.outcome;
-    let runsOnPlay = 0;
+    const plan = phys.runnerPlan;
+    // A game-ending play goes in the book as only what the winning run needed
+    const outType = plan.creditedOutcome || phys.outcome;
+    const isHit = ['SINGLE', 'DOUBLE', 'TRIPLE', 'HOME_RUN'].includes(outType);
+
+    if (isHit || outType === 'ERROR') {
+      batter.gameStats.AB += 1;
+      if (isHit) {
+        batter.gameStats.H += 1;
+        this.totals[side].H += 1;
+        pitcher.gameStats.H += 1;
+      } else {
+        this.totals[this.fieldingSide].E += 1;
+      }
+      if (outType === 'DOUBLE') batter.gameStats.d2B += 1;
+      if (outType === 'TRIPLE') batter.gameStats.d3B += 1;
+      if (outType === 'HOME_RUN') {
+        batter.gameStats.HR += 1;
+        pitcher.gameStats.HR += 1;
+      }
+    } else if (outType !== 'SAC_FLY' && outType !== 'SAC_BUNT_OUT') {
+      // Sacrifices are not official at-bats
+      batter.gameStats.AB += 1;
+    }
+
+    const runsOnPlay = this.applyRunnerPlan(plan, batter);
+    const runNote = runsOnPlay > 0 ? ` (${runsOnPlay} R scored!)` : '';
 
     if (outType === 'HOME_RUN') {
-      batter.gameStats.AB += 1;
-      batter.gameStats.H += 1;
-      batter.gameStats.HR += 1;
-      this.totals[side].H += 1;
-      pitcher.gameStats.H += 1;
-      pitcher.gameStats.HR += 1;
-
-      for (let i = 2; i >= 0; i--) {
-        if (this.bases[i]) {
-          this.scoreRun(this.bases[i], batter, true, true);
-          runsOnPlay += 1;
-          this.bases[i] = null;
-        }
-      }
-      this.scoreRun(batter, batter, true, true);
-      runsOnPlay += 1;
-
       const hrLabel = runsOnPlay === 4 ? 'GRAND SLAM!' : runsOnPlay === 3 ? 'EARL WEAVER 3-RUN HOMER!' : `${runsOnPlay}-RUN HOME RUN!`;
       const msg = `🎆 ${hrLabel} ${phys.description || `${batter.name} launches it ${Math.round(phys.distanceFt)} ft!`}`;
       this.logPlay(msg, 'HR');
       return msg;
     }
 
-    if (outType === 'TRIPLE') {
-      batter.gameStats.AB += 1;
-      batter.gameStats.H += 1;
-      batter.gameStats.d3B += 1;
-      this.totals[side].H += 1;
-      pitcher.gameStats.H += 1;
-
-      for (let i = 2; i >= 0; i--) {
-        if (this.bases[i]) {
-          this.scoreRun(this.bases[i], batter, true, true);
-          runsOnPlay += 1;
-          this.bases[i] = null;
-        }
-      }
-      this.bases[2] = batter;
-      const msg = `🔥 TRIPLE! ${phys.description}${runsOnPlay > 0 ? ` (${runsOnPlay} R scored!)` : ''}`;
-      this.logPlay(msg, 'HIT');
-      return msg;
-    }
-
-    if (outType === 'DOUBLE') {
-      batter.gameStats.AB += 1;
-      batter.gameStats.H += 1;
-      batter.gameStats.d2B += 1;
-      this.totals[side].H += 1;
-      pitcher.gameStats.H += 1;
-
-      // Runners on 3rd and 2nd score; fast runner on 1st can score
-      if (this.bases[2]) {
-        this.scoreRun(this.bases[2], batter, true, true);
-        runsOnPlay += 1;
-        this.bases[2] = null;
-      }
-      if (this.bases[1]) {
-        this.scoreRun(this.bases[1], batter, true, true);
-        runsOnPlay += 1;
-        this.bases[1] = null;
-      }
-      if (this.bases[0]) {
-        const r1 = this.bases[0];
-        if ((r1.ratings?.runs || 6) >= 7) {
-          this.scoreRun(r1, batter, true, true);
-          runsOnPlay += 1;
-        } else {
-          this.bases[2] = r1;
-        }
-        this.bases[0] = null;
-      }
-      this.bases[1] = batter;
-      const msg = `⚡ DOUBLE! ${phys.description}${runsOnPlay > 0 ? ` (${runsOnPlay} R scored!)` : ''}`;
-      this.logPlay(msg, 'HIT');
-      return msg;
-    }
-
-    if (outType === 'SINGLE' || outType === 'ERROR') {
-      const isSingle = outType === 'SINGLE';
-      batter.gameStats.AB += 1;
-      if (isSingle) {
-        batter.gameStats.H += 1;
-        this.totals[side].H += 1;
-        pitcher.gameStats.H += 1;
-      } else {
-        const fSide = this.fieldingSide;
-        this.totals[fSide].E += 1;
-      }
-
-      if (this.bases[2]) {
-        this.scoreRun(this.bases[2], batter, isSingle, isSingle);
-        runsOnPlay += 1;
-        this.bases[2] = null;
-      }
-      if (this.bases[1]) {
-        const r2 = this.bases[1];
-        if ((r2.ratings?.runs || 6) >= 6 || this.outs === 2) {
-          this.scoreRun(r2, batter, isSingle, isSingle);
-          runsOnPlay += 1;
-        } else {
-          this.bases[2] = r2;
-        }
-        this.bases[1] = null;
-      }
-      if (this.bases[0]) {
-        const r1 = this.bases[0];
-        const extraBase = (this.offensePlay === 'RUN_AND_HIT' || this.offensePlay === 'HIT_AND_RUN') && !this.bases[2];
-        if (extraBase) {
-          this.bases[2] = r1;
-        } else {
-          this.bases[1] = r1;
-        }
-        this.bases[0] = null;
-      }
-      this.bases[0] = batter;
-      const tag = outType === 'ERROR' ? '⚠️ ERROR!' : '✅ SINGLE!';
-      const msg = `${tag} ${phys.description}${runsOnPlay > 0 ? ` (${runsOnPlay} R scored!)` : ''}`;
-      this.logPlay(msg, 'HIT');
-      return msg;
-    }
-
-    if (outType === 'DOUBLE_PLAY') {
-      batter.gameStats.AB += 1;
-      const outsAdded = Math.min(3 - this.outs, 2);
-      this.outs += outsAdded;
-      pitcher.gameStats.IP_OUTS += outsAdded;
-      this.bases[0] = null;
-      if (this.outs < 3) {
-        if (this.bases[2]) {
-          this.scoreRun(this.bases[2], batter, false, true);
-          this.bases[2] = null;
-        }
-        if (this.bases[1]) {
-          this.bases[2] = this.bases[1];
-          this.bases[1] = null;
-        }
-      }
-      const msg = `🛑 DOUBLE PLAY! ${phys.description}`;
-      this.logPlay(msg, 'OUT');
-      return msg;
-    }
-
-    if (outType === 'SAC_FLY') {
-      this.outs += 1;
-      pitcher.gameStats.IP_OUTS += 1;
-      if (this.outs < 3 && this.bases[2]) {
-        this.scoreRun(this.bases[2], batter, true, true);
-        runsOnPlay += 1;
-        this.bases[2] = null;
-      }
-      const msg = `✈️ SACRIFICE FLY! ${phys.description} (${runsOnPlay} run scores!)`;
-      this.logPlay(msg, 'OUT');
-      return msg;
-    }
-
-    if (outType === 'SAC_BUNT_OUT') {
-      this.outs += 1;
-      pitcher.gameStats.IP_OUTS += 1;
-      if (this.outs < 3) {
-        if (this.bases[2]) {
-          this.scoreRun(this.bases[2], batter, true, true);
-          this.bases[2] = null;
-        }
-        if (this.bases[1]) {
-          this.bases[2] = this.bases[1];
-          this.bases[1] = null;
-        }
-        if (this.bases[0]) {
-          this.bases[1] = this.bases[0];
-          this.bases[0] = null;
-        }
-      }
-      const msg = `⚾ SACRIFICE BUNT: ${phys.description}`;
-      this.logPlay(msg, 'OUT');
-      return msg;
-    }
-
-    // Standard Out (Fly Out, Line Out, Ground Out, Fielder's Choice)
-    batter.gameStats.AB += 1;
-    this.outs += 1;
-    pitcher.gameStats.IP_OUTS += 1;
-
-    if (outType === 'FIELDERS_CHOICE' && this.outs < 3) {
-      // Runner on 1st is forced out at 2nd; other runners advance if forced or able
-      if (this.bases[2]) {
-        this.scoreRun(this.bases[2], batter, true, true);
-        this.bases[2] = null;
-      }
-      if (this.bases[1]) {
-        this.bases[2] = this.bases[1];
-        this.bases[1] = null;
-      }
-      this.bases[0] = batter;
-    } else if (outType === 'OUT_GROUND' && this.outs < 3) {
-      // Batter is thrown out at 1st; forced runners or runner on 3rd (when infield is not in) advance
-      const hadFirst = Boolean(this.bases[0]);
-      const hadSecond = Boolean(this.bases[1]);
-      if (this.bases[2] && ((hadFirst && hadSecond) || this.defensePlay !== 'INFIELD_IN')) {
-        this.scoreRun(this.bases[2], batter, true, true);
-        this.bases[2] = null;
-      }
-      if (this.bases[1] && (hadFirst || !this.bases[2])) {
-        this.bases[2] = this.bases[1];
-        this.bases[1] = null;
-      }
-      if (this.bases[0]) {
-        this.bases[1] = this.bases[0];
-        this.bases[0] = null;
-      }
-    }
-
-    const msg = `🔴 OUT (${this.outs} Out): ${phys.description}`;
-    this.logPlay(msg, 'OUT');
+    const msgByOutcome = {
+      TRIPLE: [`🔥 TRIPLE! ${phys.description}${runNote}`, 'HIT'],
+      DOUBLE: [`⚡ DOUBLE! ${phys.description}${runNote}`, 'HIT'],
+      SINGLE: [`✅ SINGLE! ${phys.description}${runNote}`, 'HIT'],
+      ERROR: [`⚠️ ERROR! ${phys.description}${runNote}`, 'HIT'],
+      DOUBLE_PLAY: [`🛑 DOUBLE PLAY! ${phys.description}`, 'OUT'],
+      SAC_FLY: [`✈️ SACRIFICE FLY! ${phys.description} (${runsOnPlay} run scores!)`, 'OUT'],
+      SAC_BUNT_OUT: [`⚾ SACRIFICE BUNT: ${phys.description}`, 'OUT']
+    };
+    // A game-ending fielder's choice may leave no out on the play
+    if (plan.creditedOutcome === 'FIELDERS_CHOICE') msgByOutcome.FIELDERS_CHOICE = [`⚾ FIELDER'S CHOICE! ${phys.description}${runNote}`, 'PLAY'];
+    // Standard outs: fly out, line out, pop out, ground out, fielder's choice
+    const [msg, type] = msgByOutcome[outType] || [`🔴 OUT (${this.outs} Out): ${phys.description}`, 'OUT'];
+    this.logPlay(msg, type);
     return msg;
   }
 
