@@ -71,6 +71,32 @@
    }
   }
  },
+ "dawsoan01": {
+  "name": "Andre Dawson",
+  "range": 6,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -0.8,
+    "goldGlove": true,
+    "stat": 5.5,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 12.1,
+    "leagueOf": 10.9,
+    "stat": 5.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 161,
+    "stat": 9.6,
+    "scout": 8
+   }
+  }
+ },
  "durhale01": {
   "name": "Leon Durham",
   "range": 5,
@@ -88,32 +114,6 @@
     "teamGames": 161,
     "stat": 8.7,
     "scout": 7
-   }
-  }
- },
- "dawsoan01": {
-  "name": "Andre Dawson",
-  "range": 6,
-  "arm": 7,
-  "durability": 9,
-  "basis": {
-   "range": {
-    "fieldingRunsPer1350": 1.6,
-    "goldGlove": true,
-    "stat": 6.2,
-    "scout": 6
-   },
-   "arm": {
-    "assistsPer1350": 7.8,
-    "leagueOf": 9.1,
-    "stat": 4.5,
-    "scout": 8
-   },
-   "durability": {
-    "games": 157,
-    "teamGames": 162,
-    "stat": 9.7,
-    "scout": 8
    }
   }
  },

@@ -45,7 +45,13 @@ The request is the Google Doc "Feature-add-teams" (file ID `1GLT7jcH54rToQhVUtVo
 5. **Merge and push.** Commit, then merge `feat/teams-1980s` into `main` and push. `git push` needs the sandbox off. Stage files by explicit path: the worktree holds stray sandbox dotfiles (`.bashrc`, `.claude/...`) that must not be committed.
 6. **Google Doc.** Add a short status section to the doc. Include the open questions below.
 
-## Open questions for the user (from the Codex rating review; not changed, since they'd shift every existing team too)
+## User decisions, 2026-10-23 (answers in the Google Doc)
+
+- **Iconic seasons: hand-pick.** `HAND_PICKS` and `HAND_CLOSERS` in `bin/pick_80s.py` move seven players to their MVP or Cy Young season (Murphy 1983, Ripken 1983, Dawson 1987, Hoyt 1983, Valenzuela 1981, Viola 1988, Mattingly 1985) and make Fingers 1981 Milwaukee's closer, with Plesac (1986) as the reliever. `bin/iconic_80s.py` lists the evidence for every flagged pick in `tracking/results/iconic_80s.json`. Sutcliffe's 1984 Cy Young stays out: he split that season with Cleveland. Specs and the defense files for the eight affected teams are regenerated; atl and bal must be rebuilt.
+- **Ballparks: follow-up.** See `tracking/tasks/task_04_parks_80s.md`.
+- **Rating formulas: the user asked whether decimal ratings would fix them.** Answered in the doc: no. Decimals only separate the sluggers bunched just under 10. Unchanged until the user decides.
+
+## Rating questions (from the Codex rating review; not changed, since they'd shift every existing team too)
 
 - **Pitcher speed and control center on 7, not 5,** for a league-average pitcher. The shared `build_team.py` formulas do this.
 - **Batter speed counts steal attempts,** so caught-stealing-heavy runners rate fast (Rafael Ramírez 9).

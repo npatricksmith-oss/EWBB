@@ -53,26 +53,26 @@
  },
  "murphda05": {
   "name": "Dale Murphy",
-  "range": 7,
+  "range": 6,
   "arm": 7,
   "durability": 10,
   "basis": {
    "range": {
-    "fieldingRunsPer1350": 8.2,
-    "goldGlove": false,
-    "stat": 7.3,
+    "fieldingRunsPer1350": 0.8,
+    "goldGlove": true,
+    "stat": 6.0,
     "scout": 6
    },
    "arm": {
-    "assistsPer1350": 13.0,
-    "leagueOf": 10.9,
-    "stat": 5.9,
+    "assistsPer1350": 10.1,
+    "leagueOf": 11.6,
+    "stat": 4.4,
     "scout": 8
    },
    "durability": {
-    "games": 159,
-    "teamGames": 161,
-    "stat": 9.9,
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
     "scout": 10
    }
   }

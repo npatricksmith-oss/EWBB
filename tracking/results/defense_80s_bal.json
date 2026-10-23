@@ -99,14 +99,14 @@
  },
  "ripkeca01": {
   "name": "Cal Ripken Jr.",
-  "range": 9,
+  "range": 8,
   "arm": 8,
   "durability": 10,
   "basis": {
    "range": {
-    "fieldingRunsPer1350": 16.9,
+    "fieldingRunsPer1350": 8.0,
     "goldGlove": false,
-    "stat": 9.8,
+    "stat": 7.3,
     "scout": 8
    },
    "durability": {

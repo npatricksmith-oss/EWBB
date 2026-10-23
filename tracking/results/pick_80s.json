@@ -86,20 +86,20 @@
     "bref": "ripkeca01",
     "name": "Cal Ripken Jr.",
     "pos": "SS",
-    "year": 1984,
+    "year": 1983,
     "isStarter": true,
     "why": "best at position",
     "decadeWar": 50.5,
     "score": 53.0,
     "line": {
-     "avg": 0.304,
-     "obp": 0.374,
-     "slg": 0.51,
+     "avg": 0.318,
+     "obp": 0.371,
+     "slg": 0.517,
      "hr": 27.0,
-     "sb": 2.0,
-     "opsPlus": 146.0,
-     "pa": 716.0,
-     "war": 10.0
+     "sb": 0.0,
+     "opsPlus": 144.0,
+     "pa": 726.0,
+     "war": 8.2
     }
    },
    {
@@ -1687,12 +1687,12 @@
    {
     "bref": "hoytla01",
     "name": "LaMarr Hoyt",
-    "year": 1982,
+    "year": 1983,
     "role": "SP",
     "decadeWar": 11.2,
     "decadeSv": 10,
     "score": 12.5,
-    "line": "19-15, 3.53 ERA, 239.2 IP, 0 SV, 5.0 WAR"
+    "line": "24-10, 3.66 ERA, 260.2 IP, 0 SV, 3.7 WAR"
    },
    {
     "bref": "barojsa01",
@@ -3502,24 +3502,24 @@
     "line": "12-11, 4.24 ERA, 225.0 IP, 0 SV, 4.6 WAR"
    },
    {
+    "bref": "plesada01",
+    "name": "Dan Plesac",
+    "year": 1986,
+    "role": "RP",
+    "decadeWar": 10.0,
+    "decadeSv": 100,
+    "score": 10.8,
+    "line": "10-7, 2.97 ERA, 91.0 IP, 14 SV, 3.2 WAR"
+   },
+   {
     "bref": "fingero01",
     "name": "Rollie Fingers",
     "year": 1981,
-    "role": "RP",
+    "role": "CL",
     "decadeWar": 7.8,
     "decadeSv": 97,
     "score": 8.8,
     "line": "6-3, 1.04 ERA, 78.0 IP, 28 SV, 4.2 WAR"
-   },
-   {
-    "bref": "plesada01",
-    "name": "Dan Plesac",
-    "year": 1989,
-    "role": "CL",
-    "decadeWar": 10.0,
-    "decadeSv": 100,
-    "score": 10.8,
-    "line": "3-4, 2.35 ERA, 61.1 IP, 33 SV, 2.5 WAR"
    }
   ],
   "managers": [
@@ -3928,12 +3928,12 @@
    {
     "bref": "violafr01",
     "name": "Frank Viola",
-    "year": 1987,
+    "year": 1988,
     "role": "SP",
     "decadeWar": 27.1,
     "decadeSv": 0,
     "score": 29.1,
-    "line": "17-10, 2.90 ERA, 251.2 IP, 0 SV, 8.1 WAR"
+    "line": "24-7, 2.64 ERA, 255.1 IP, 0 SV, 7.7 WAR"
    },
    {
     "bref": "blylebe01",
@@ -4192,20 +4192,20 @@
     "bref": "mattido01",
     "name": "Don Mattingly",
     "pos": "1B",
-    "year": 1986,
+    "year": 1985,
     "isStarter": true,
     "why": "best at position",
     "decadeWar": 33.3,
     "score": 35.1,
     "line": {
-     "avg": 0.352,
-     "obp": 0.394,
-     "slg": 0.573,
-     "hr": 31.0,
-     "sb": 0.0,
-     "opsPlus": 161.0,
-     "pa": 742.0,
-     "war": 7.2
+     "avg": 0.324,
+     "obp": 0.371,
+     "slg": 0.567,
+     "hr": 35.0,
+     "sb": 2.0,
+     "opsPlus": 156.0,
+     "pa": 727.0,
+     "war": 6.4
     }
    },
    {
@@ -6559,20 +6559,20 @@
     "bref": "murphda05",
     "name": "Dale Murphy",
     "pos": "CF",
-    "year": 1987,
+    "year": 1983,
     "isStarter": true,
     "why": "best at position",
     "decadeWar": 47.0,
     "score": 48.9,
     "line": {
-     "avg": 0.295,
-     "obp": 0.417,
-     "slg": 0.58,
-     "hr": 44.0,
-     "sb": 16.0,
-     "opsPlus": 157.0,
-     "pa": 693.0,
-     "war": 7.7
+     "avg": 0.302,
+     "obp": 0.393,
+     "slg": 0.54,
+     "hr": 36.0,
+     "sb": 30.0,
+     "opsPlus": 149.0,
+     "pa": 687.0,
+     "war": 7.1
     }
    },
    {
@@ -7048,6 +7048,26 @@
     }
    },
    {
+    "bref": "dawsoan01",
+    "name": "Andre Dawson",
+    "pos": "RF",
+    "year": 1987,
+    "isStarter": true,
+    "why": "best at position",
+    "decadeWar": 10.9,
+    "score": 12.1,
+    "line": {
+     "avg": 0.287,
+     "obp": 0.328,
+     "slg": 0.568,
+     "hr": 49.0,
+     "sb": 11.0,
+     "opsPlus": 130.0,
+     "pa": 662.0,
+     "war": 4.0
+    }
+   },
+   {
     "bref": "durhale01",
     "name": "Leon Durham",
     "pos": "1B",
@@ -7065,26 +7085,6 @@
      "opsPlus": 136.0,
      "pa": 548.0,
      "war": 3.7
-    }
-   },
-   {
-    "bref": "dawsoan01",
-    "name": "Andre Dawson",
-    "pos": "RF",
-    "year": 1988,
-    "isStarter": true,
-    "why": "best at position",
-    "decadeWar": 10.9,
-    "score": 12.1,
-    "line": {
-     "avg": 0.303,
-     "obp": 0.344,
-     "slg": 0.504,
-     "hr": 24.0,
-     "sb": 12.0,
-     "opsPlus": 137.0,
-     "pa": 640.0,
-     "war": 4.9
     }
    },
    {
@@ -8672,12 +8672,12 @@
    {
     "bref": "valenfe01",
     "name": "Fernando Valenzuela",
-    "year": 1985,
+    "year": 1981,
     "role": "SP",
     "decadeWar": 33.4,
     "decadeSv": 2,
     "score": 34.8,
-    "line": "17-10, 2.45 ERA, 272.1 IP, 0 SV, 5.5 WAR"
+    "line": "13-7, 2.48 ERA, 192.1 IP, 0 SV, 4.8 WAR"
    },
    {
     "bref": "hershor01",

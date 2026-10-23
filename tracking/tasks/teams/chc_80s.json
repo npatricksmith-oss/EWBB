@@ -48,18 +48,18 @@
    "isStarter": true
   },
   {
+   "bref": "dawsoan01",
+   "name": "Andre Dawson",
+   "year": 1987,
+   "pos": "RF",
+   "isStarter": true
+  },
+  {
    "bref": "durhale01",
    "name": "Leon Durham",
    "year": 1984,
    "pos": "1B",
    "pos2": "RF",
-   "isStarter": true
-  },
-  {
-   "bref": "dawsoan01",
-   "name": "Andre Dawson",
-   "year": 1988,
-   "pos": "RF",
    "isStarter": true
   },
   {

@@ -75,18 +75,18 @@
   "name": "Don Mattingly",
   "range": 7,
   "arm": 6,
-  "durability": 10,
+  "durability": 9,
   "basis": {
    "range": {
-    "fieldingRunsPer1350": 0.7,
+    "fieldingRunsPer1350": 0.0,
     "goldGlove": true,
-    "stat": 6.0,
+    "stat": 5.8,
     "scout": 8
    },
    "durability": {
-    "games": 162,
-    "teamGames": 162,
-    "stat": 10.0,
+    "games": 159,
+    "teamGames": 161,
+    "stat": 9.9,
     "scout": 9
    }
   }

@@ -21,6 +21,8 @@ Rules (from the "Feature-add-teams" request):
 - Each player is rated on his best 1980s season with the franchise, preferring
   seasons spent mostly at his roster position.
 - Manager: whoever managed the franchise for the most games in the decade.
+- Hand picks (HAND_PICKS below) override the season rule for MVP and Cy Young winners
+  whose award season lost to a better WAR season, and name a club's signature closer.
 
 Usage: pick_80s.py [TM ...]   (default: all 26 franchises)
 """
@@ -68,6 +70,21 @@ INFO = {
     'SFG': ('San Francisco', 'Giants', '#fd5a1e', '#27251f', 'wrigley'),
     'STL': ('St. Louis', 'Cardinals', '#c41e3a', '#0c2340', 'metrodome'),
 }
+
+# Hand picks, chosen by the user over the rules: an MVP or Cy Young season with the club
+# replaces a better-WAR season unless the WAR gap tops 2.5 or the player split the award
+# season between clubs (Sutcliffe 1984). Evidence: bin/iconic_80s.py.
+HAND_PICKS = {
+    ('ATL', 'murphda05'): 1983,  # MVP 1983 (and 1982) over 1987
+    ('BAL', 'ripkeca01'): 1983,  # MVP over 1984
+    ('CHC', 'dawsoan01'): 1987,  # MVP, 49 HR, over 1988
+    ('CHW', 'hoytla01'): 1983,   # Cy Young over 1982
+    ('LAD', 'valenfe01'): 1981,  # Cy Young and Rookie of the Year over 1985
+    ('MIN', 'violafr01'): 1988,  # Cy Young over 1987
+    ('NYY', 'mattido01'): 1985,  # MVP over 1986
+}
+# Closer by hand: Fingers's 1981 MVP and Cy Young season over Plesac, who moves to RP
+HAND_CLOSERS = {'MIL': 'fingero01'}
 
 
 def num(v):
@@ -255,7 +272,7 @@ def pick_team(team):
 
     def add(pid, pos, starter, why):
         p = batters[pid]
-        year = best_season(p, pos)
+        year = HAND_PICKS.get((team, pid)) or best_season(p, pos)
         # A bench player is rated on his best season and labelled with that season's position
         pos = pos or most_played(p['seasons'][year]['games'])
         picks[pid] = {'pos': pos, 'year': year, 'isStarter': starter, 'why': why,
@@ -292,8 +309,8 @@ def pick_team(team):
     relievers = {pid: p for pid, p in pitchers.items() if p['gs'] < 0.2 * p['g']}
     closers = [pid for pid in relievers if role_seasons(pid, 'CL')]
     top_saves = max(pitchers[pid]['sv'] for pid in closers)
-    closer = max((pid for pid in closers if pitchers[pid]['sv'] >= 0.6 * top_saves),
-                 key=lambda pid: score(pitchers[pid]))
+    closer = HAND_CLOSERS.get(team) or max((pid for pid in closers if pitchers[pid]['sv'] >= 0.6 * top_saves),
+                                           key=lambda pid: score(pitchers[pid]))
     sps = sorted((pid for pid, p in pitchers.items()
                   if p['gs'] >= 0.5 * p['g'] and pid != closer and role_seasons(pid, 'SP')),
                  key=lambda pid: -score(pitchers[pid]))[:4]
@@ -302,6 +319,8 @@ def pick_team(team):
     staff = []
 
     def pitcher_season(pid, role):
+        if (team, pid) in HAND_PICKS:
+            return HAND_PICKS[team, pid]
         return max(role_seasons(pid, role),
                    key=lambda ys: ys[1]['war'] + (0.05 * ys[1]['sv'] if role == 'CL' else 0))[0]
 
