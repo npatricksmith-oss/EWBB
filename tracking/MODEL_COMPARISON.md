@@ -40,6 +40,9 @@ One row per worker run. Wall time runs from launch to exit. Quality is the coord
 | 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 8 min 53 s | 3.0 KB | The same two problems in more detail: the arm should cock on the viewer's right while the shoulders are still closed, then whip across; the back heel should come up by release. Both fixed. It took the lefty's mirrored kick as correct. |
 | 2026-10-22 | Round 14: final review | codex (`-i` images) | `gpt-6-sol` (medium effort) | 1 min 7 s | 0.7 KB | One last point: the body stalls for a few frames as the front foot lands. Changed: the trunk keeps moving forward through the load and cock, and the glove draws in. Said nothing else remained. |
 | 2026-10-22 | Same review | agy | `gemini-3.8-flash-medium` | 6 min 57 s | 2.2 KB | "No significant mismatches remain", covering both deliveries, all three arm slots and the left-hander. |
+| 2026-10-23 | 1980s teams round 1: review the roster-picking method | codex `--search` | `gpt-6.1-sol` | 2 min 30 s | 4.4 KB | All useful points taken: rank the DH by bat alone, tighter bench rules, and a bug that misread manager records. |
+| 2026-10-23 | Round 2: review all 26 '80s rosters | codex `--search` | `gpt-6.1-sol` | 4 min 58 s | | Eight concrete errors, all fixed: U L Washington missing (an ID-parsing bug), Foster and Paciorek out of position, Monday rated on a 156-PA season. |
+| 2026-10-23 | Round 3: review the first built ratings (ATL, BAL, BOS) | codex `--search` | `gpt-6.1-sol` | 3 min 19 s | | The Niekro speed point was already fixed. Four formula points went to the user, who changed three (steal success, power slope, outfield arms) and kept pitchers centered on 7. |
 
 ### Summary so far
 
