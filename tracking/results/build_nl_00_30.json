@@ -57,9 +57,9 @@
     }
    },
    "ratings": {
-    "power": 10,
+    "power": 9,
     "hitAndRun": 6,
-    "bunt": 2,
+    "bunt": 3,
     "fbPct": 59,
     "runs": 4,
     "range": 6,
@@ -129,9 +129,9 @@
     }
    },
    "ratings": {
-    "power": 8,
+    "power": 7,
     "hitAndRun": 10,
-    "bunt": 4,
+    "bunt": 5,
     "fbPct": 42,
     "runs": 6,
     "range": 6,
@@ -206,7 +206,7 @@
     "hitAndRun": 9,
     "bunt": 4,
     "fbPct": 61,
-    "runs": 6,
+    "runs": 5,
     "range": 6,
     "arm": 6,
     "durability": 7
@@ -276,9 +276,9 @@
    "ratings": {
     "power": 5,
     "hitAndRun": 10,
-    "bunt": 7,
+    "bunt": 6,
     "fbPct": 34,
-    "runs": 7,
+    "runs": 6,
     "range": 8,
     "arm": 8,
     "durability": 8
@@ -421,9 +421,9 @@
    "ratings": {
     "power": 10,
     "hitAndRun": 6,
-    "bunt": 3,
+    "bunt": 2,
     "fbPct": 65,
-    "runs": 5,
+    "runs": 4,
     "range": 3,
     "arm": 4,
     "durability": 6
@@ -563,9 +563,9 @@
     }
    },
    "ratings": {
-    "power": 8,
+    "power": 7,
     "hitAndRun": 7,
-    "bunt": 7,
+    "bunt": 8,
     "fbPct": 39,
     "runs": 10,
     "range": 8,
@@ -635,11 +635,11 @@
     }
    },
    "ratings": {
-    "power": 10,
+    "power": 9,
     "hitAndRun": 9,
     "bunt": 3,
     "fbPct": 54,
-    "runs": 5,
+    "runs": 4,
     "range": 4,
     "arm": 7,
     "durability": 6
@@ -855,9 +855,9 @@
    "ratings": {
     "power": 4,
     "hitAndRun": 10,
-    "bunt": 8,
+    "bunt": 7,
     "fbPct": 29,
-    "runs": 8,
+    "runs": 7,
     "range": 7,
     "arm": 6,
     "durability": 7
@@ -925,7 +925,7 @@
     }
    },
    "ratings": {
-    "power": 10,
+    "power": 9,
     "hitAndRun": 7,
     "bunt": 6,
     "fbPct": 52,

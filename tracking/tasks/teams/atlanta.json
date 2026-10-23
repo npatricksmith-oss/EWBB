@@ -6,8 +6,8 @@
  "league": "NL",
  "primaryColor": "#13274f",
  "secondaryColor": "#ce1141",
- "defaultParkId": "memorial",
- "defaultManagerId": "herzog",
+ "defaultParkId": "fulton",
+ "defaultManagerId": "torre",
  "source": "1982 Atlanta Braves (1982 NL West champions); IBM EWB 1.0 exhibition team per SABR review",
  "batters": [
   {

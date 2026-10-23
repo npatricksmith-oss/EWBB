@@ -49,12 +49,10 @@ The request is the Google Doc "Feature-add-teams" (file ID `1GLT7jcH54rToQhVUtVo
 
 - **Iconic seasons: hand-pick.** `HAND_PICKS` and `HAND_CLOSERS` in `bin/pick_80s.py` move seven players to their MVP or Cy Young season (Murphy 1983, Ripken 1983, Dawson 1987, Hoyt 1983, Valenzuela 1981, Viola 1988, Mattingly 1985) and make Fingers 1981 Milwaukee's closer, with Plesac (1986) as the reliever. `bin/iconic_80s.py` lists the evidence for every flagged pick in `tracking/results/iconic_80s.json`. Sutcliffe's 1984 Cy Young stays out: he split that season with Cleveland. Specs and the defense files for the eight affected teams are regenerated; atl and bal must be rebuilt.
 - **Ballparks: follow-up.** See `tracking/tasks/task_04_parks_80s.md`.
-- **Rating formulas: the user asked whether decimal ratings would fix them.** Answered in the doc: no. Decimals only separate the sluggers bunched just under 10. Unchanged until the user decides.
-
-## Rating questions (from the Codex rating review; not changed, since they'd shift every existing team too)
-
-- **Pitcher speed and control center on 7, not 5,** for a league-average pitcher. The shared `build_team.py` formulas do this.
-- **Batter speed counts steal attempts,** so caught-stealing-heavy runners rate fast (Rafael Ramírez 9).
-- **Power reaches 10 at about .250 ISO.** Elite seasons bunch at the top.
-- **Outfield arms rest mostly on scouting.** Dwight Evans rates 7; Codex says 9.
-- **Ballparks.** Only six parks exist. The other 20 teams default to the closest match.
+- **Rating formulas, decided in doc comments:**
+  - Pitcher speed and control stay centered on 7, the original game's scale.
+  - Batter speed weighs success. In `build_team.py`, a runner whose success rate trails his league's loses steal credit by the cube of the ratio, with 5 league-average attempts mixed in. Above-average success adds nothing. Rafael Ramírez stays 9: his 66% matched his league.
+  - Power's slope halves above 6. Only seasons with about .335 ISO and up reach 10: 12 of the 130 era-team batters (Ruth 1921, Maris 1961), down from 39.
+  - Outfield arms are the scouting judgment alone (`defense_80s.py`). Dwight Evans now rates 9. Catchers still blend caught-stealing rate at half weight.
+  - The ten existing era teams are rebuilt with these formulas, and only ratings changed. The atlanta and california specs had stale parks and managers, now fixed to match the committed modules. Smoke test, 1,100 games each: 6.66 runs per team-game before, 6.65 after.
+- **Close calls (Ozzie Smith 1987, Strawberry 1988, Henderson 1981, Gossage 1980, Sutter as closer):** the user wants to discuss these in a session. Raise them before the merge.

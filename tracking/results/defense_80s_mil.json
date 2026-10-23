@@ -62,7 +62,7 @@
  "oglivbe01": {
   "name": "Ben Oglivie",
   "range": 7,
-  "arm": 6,
+  "arm": 5,
   "durability": 9,
   "basis": {
    "range": {
@@ -108,7 +108,7 @@
  "thomago01": {
   "name": "Gorman Thomas",
   "range": 5,
-  "arm": 5,
+  "arm": 6,
   "durability": 9,
   "basis": {
    "range": {
@@ -207,7 +207,7 @@
  "moorech02": {
   "name": "Charlie Moore",
   "range": 5,
-  "arm": 7,
+  "arm": 9,
   "durability": 8,
   "basis": {
    "range": {

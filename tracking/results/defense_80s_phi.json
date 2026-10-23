@@ -2,7 +2,7 @@
  "smithlo01": {
   "name": "Lonnie Smith",
   "range": 5,
-  "arm": 4,
+  "arm": 5,
   "durability": 7,
   "basis": {
    "range": {
@@ -28,7 +28,7 @@
  "matthga01": {
   "name": "Gary Matthews",
   "range": 3,
-  "arm": 6,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -141,7 +141,7 @@
  "thompmi02": {
   "name": "Milt Thompson",
   "range": 7,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -233,7 +233,7 @@
  "maddoga01": {
   "name": "Garry Maddox",
   "range": 9,
-  "arm": 5,
+  "arm": 7,
   "durability": 7,
   "basis": {
    "range": {

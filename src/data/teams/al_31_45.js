@@ -9,6 +9,7 @@
 
 export const AL_31_45 = {
   id: 'al_31_45',
+  league: 'AL',
   city: 'AL',
   name: '31-45',
   abbrev: 'A31',
@@ -29,7 +30,7 @@ export const AL_31_45 = {
         L: { BA: 0.337, HR: 5, RBI: 31, BB: 9, SO: 5, AB: 92, H: 31, d2B: 7, d3B: 1, SB: 0, CS: 1, OBA: 0.402, SA: 0.598 },
         R: { BA: 0.369, HR: 17, RBI: 76, BB: 37, SO: 11, AB: 331, H: 122, d2B: 19, d3B: 7, SB: 0, CS: 1, OBA: 0.435, SA: 0.622 }
       },
-      ratings: { power: 9, hitAndRun: 10, bunt: 3, fbPct: 49, runs: 5, range: 6, arm: 7, durability: 7 },
+      ratings: { power: 8, hitAndRun: 10, bunt: 4, fbPct: 49, runs: 5, range: 6, arm: 7, durability: 7 },
       source: { bref: 'dickebi01', season: 1936, splits: 'platoon', csRecorded: true, splitCoverage: 0.99 }
     },
     {
@@ -75,7 +76,7 @@ export const AL_31_45 = {
         L: { BA: 0.300, HR: 4, RBI: 16, BB: 17, SO: 6, AB: 80, H: 24, d2B: 6, d3B: 0, SB: 5, CS: 0, OBA: 0.423, SA: 0.525 },
         R: { BA: 0.302, HR: 16, RBI: 58, BB: 98, SO: 62, AB: 496, H: 150, d2B: 34, d3B: 11, SB: 8, CS: 4, OBA: 0.424, SA: 0.512 }
       },
-      ratings: { power: 8, hitAndRun: 7, bunt: 6, fbPct: 42, runs: 8, range: 7, arm: 6, durability: 7 },
+      ratings: { power: 7, hitAndRun: 7, bunt: 6, fbPct: 42, runs: 8, range: 7, arm: 6, durability: 7 },
       source: { bref: 'cliftha01', season: 1936, splits: 'platoon', csRecorded: true, splitCoverage: 0.93 }
     },
     {
@@ -107,7 +108,7 @@ export const AL_31_45 = {
         L: { BA: 0.471, HR: 12, RBI: 36, BB: 25, SO: 8, AB: 119, H: 56, d2B: 15, d3B: 0, SB: 1, CS: 0, OBA: 0.562, SA: 0.899 },
         R: { BA: 0.306, HR: 29, RBI: 114, BB: 69, SO: 67, AB: 454, H: 139, d2B: 35, d3B: 8, SB: 5, CS: 3, OBA: 0.399, SA: 0.610 }
       },
-      ratings: { power: 10, hitAndRun: 7, bunt: 4, fbPct: 58, runs: 6, range: 5, arm: 6, durability: 8 },
+      ratings: { power: 9, hitAndRun: 7, bunt: 4, fbPct: 58, runs: 6, range: 5, arm: 6, durability: 8 },
       source: { bref: 'greenha01', season: 1940, splits: 'platoon', csRecorded: true, splitCoverage: 0.84 }
     },
     {
@@ -123,7 +124,7 @@ export const AL_31_45 = {
         L: { BA: 0.403, HR: 13, RBI: 46, BB: 22, SO: 7, AB: 154, H: 62, d2B: 14, d3B: 2, SB: 1, CS: 0, OBA: 0.475, SA: 0.773 },
         R: { BA: 0.370, HR: 17, RBI: 80, BB: 30, SO: 14, AB: 308, H: 114, d2B: 18, d3B: 4, SB: 2, CS: 0, OBA: 0.429, SA: 0.620 }
       },
-      ratings: { power: 10, hitAndRun: 10, bunt: 3, fbPct: 55, runs: 5, range: 9, arm: 9, durability: 8 },
+      ratings: { power: 9, hitAndRun: 10, bunt: 4, fbPct: 55, runs: 5, range: 9, arm: 9, durability: 8 },
       source: { bref: 'dimagjo01', season: 1939, splits: 'platoon', csRecorded: false }
     },
     {
@@ -139,7 +140,7 @@ export const AL_31_45 = {
         L: { BA: 0.390, HR: 13, RBI: 43, BB: 17, SO: 10, AB: 164, H: 64, d2B: 7, d3B: 4, SB: 1, CS: 1, OBA: 0.448, SA: 0.720 },
         R: { BA: 0.373, HR: 15, RBI: 84, BB: 48, SO: 25, AB: 450, H: 168, d2B: 32, d3B: 11, SB: 2, CS: 2, OBA: 0.435, SA: 0.593 }
       },
-      ratings: { power: 9, hitAndRun: 10, bunt: 4, fbPct: 47, runs: 6, range: 6, arm: 6, durability: 8 },
+      ratings: { power: 8, hitAndRun: 10, bunt: 5, fbPct: 47, runs: 6, range: 6, arm: 6, durability: 8 },
       source: { bref: 'averiea01', season: 1936, splits: 'platoon', csRecorded: true, splitCoverage: 0.99 }
     },
     {
@@ -218,7 +219,7 @@ export const AL_31_45 = {
         L: { BA: 0.314, HR: 9, RBI: 36, BB: 12, SO: 27, AB: 169, H: 53, d2B: 12, d3B: 1, SB: 1, CS: 2, OBA: 0.363, SA: 0.556 },
         R: { BA: 0.354, HR: 33, RBI: 127, BB: 24, SO: 32, AB: 460, H: 163, d2B: 33, d3B: 8, SB: 5, CS: 3, OBA: 0.389, SA: 0.676 }
       },
-      ratings: { power: 10, hitAndRun: 8, bunt: 5, fbPct: 56, runs: 7, range: 6, arm: 5, durability: 8 },
+      ratings: { power: 9, hitAndRun: 8, bunt: 4, fbPct: 56, runs: 6, range: 6, arm: 5, durability: 8 },
       source: { bref: 'troskha01', season: 1936, splits: 'platoon', csRecorded: true, splitCoverage: 0.99 }
     }
   ],

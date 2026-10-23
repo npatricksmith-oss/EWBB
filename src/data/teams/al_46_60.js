@@ -9,6 +9,7 @@
 
 export const AL_46_60 = {
   id: 'al_46_60',
+  league: 'AL',
   city: 'AL',
   name: '46-60',
   abbrev: 'A46',
@@ -30,7 +31,7 @@ export const AL_46_60 = {
         L: { BA: 0.262, HR: 5, RBI: 33, BB: 20, SO: 6, AB: 149, H: 39, d2B: 10, d3B: 2, SB: 0, CS: 0, OBA: 0.355, SA: 0.456 },
         R: { BA: 0.276, HR: 22, RBI: 75, BB: 40, SO: 14, AB: 392, H: 108, d2B: 10, d3B: 1, SB: 1, CS: 0, OBA: 0.347, SA: 0.474 }
       },
-      ratings: { power: 8, hitAndRun: 10, bunt: 3, fbPct: 48, runs: 4, range: 6, arm: 8, durability: 7 },
+      ratings: { power: 7, hitAndRun: 10, bunt: 4, fbPct: 48, runs: 4, range: 6, arm: 8, durability: 7 },
       source: { bref: 'berrayo01', season: 1955, splits: 'platoon', csRecorded: true }
     },
     {
@@ -45,7 +46,7 @@ export const AL_46_60 = {
         L: { BA: 0.269, HR: 2, RBI: 15, BB: 17, SO: 8, AB: 108, H: 29, d2B: 6, d3B: 0, SB: 0, CS: 0, OBA: 0.373, SA: 0.380 },
         R: { BA: 0.369, HR: 4, RBI: 42, BB: 64, SO: 12, AB: 317, H: 117, d2B: 24, d3B: 3, SB: 1, CS: 4, OBA: 0.478, SA: 0.502 }
       },
-      ratings: { power: 4, hitAndRun: 10, bunt: 6, fbPct: 32, runs: 5, range: 6, arm: 5, durability: 8 },
+      ratings: { power: 4, hitAndRun: 10, bunt: 5, fbPct: 32, runs: 4, range: 6, arm: 5, durability: 8 },
       source: { bref: 'fainfe01', season: 1951, splits: 'platoon', csRecorded: true, splitCoverage: 0.9 }
     },
     {
@@ -60,7 +61,7 @@ export const AL_46_60 = {
         L: { BA: 0.306, HR: 1, RBI: 16, BB: 13, SO: 2, AB: 160, H: 49, d2B: 6, d3B: 1, SB: 2, CS: 1, OBA: 0.367, SA: 0.375 },
         R: { BA: 0.306, HR: 1, RBI: 54, BB: 58, SO: 11, AB: 464, H: 142, d2B: 28, d3B: 5, SB: 3, CS: 5, OBA: 0.385, SA: 0.394 }
       },
-      ratings: { power: 3, hitAndRun: 10, bunt: 8, fbPct: 27, runs: 6, range: 7, arm: 5, durability: 9 },
+      ratings: { power: 3, hitAndRun: 10, bunt: 7, fbPct: 27, runs: 5, range: 7, arm: 5, durability: 9 },
       source: { bref: 'foxne01', season: 1959, splits: 'platoon', csRecorded: true }
     },
     {
@@ -76,7 +77,7 @@ export const AL_46_60 = {
         L: { BA: 0.335, HR: 16, RBI: 57, BB: 39, SO: 22, AB: 257, H: 86, d2B: 11, d3B: 2, SB: 4, CS: 2, OBA: 0.424, SA: 0.580 },
         R: { BA: 0.336, HR: 27, RBI: 88, BB: 46, SO: 26, AB: 342, H: 115, d2B: 16, d3B: 3, SB: 4, CS: 5, OBA: 0.419, SA: 0.637 }
       },
-      ratings: { power: 10, hitAndRun: 9, bunt: 4, fbPct: 58, runs: 7, range: 6, arm: 7, durability: 8 },
+      ratings: { power: 8, hitAndRun: 9, bunt: 5, fbPct: 58, runs: 7, range: 6, arm: 7, durability: 8 },
       source: { bref: 'rosenal01', season: 1953, splits: 'platoon', csRecorded: true }
     },
     {
@@ -107,7 +108,7 @@ export const AL_46_60 = {
         L: { BA: 0.323, HR: 5, RBI: 14, BB: 26, SO: 15, AB: 96, H: 31, d2B: 4, d3B: 0, SB: 0, CS: 0, OBA: 0.472, SA: 0.521 },
         R: { BA: 0.407, HR: 33, RBI: 73, BB: 94, SO: 29, AB: 324, H: 132, d2B: 24, d3B: 1, SB: 0, CS: 1, OBA: 0.542, SA: 0.793 }
       },
-      ratings: { power: 10, hitAndRun: 10, bunt: 2, fbPct: 65, runs: 4, range: 4, arm: 4, durability: 6 },
+      ratings: { power: 10, hitAndRun: 10, bunt: 2, fbPct: 65, runs: 3, range: 4, arm: 4, durability: 6 },
       source: { bref: 'willite01', season: 1957, splits: 'platoon', csRecorded: true, splitCoverage: 0.97 }
     },
     {
@@ -138,7 +139,7 @@ export const AL_46_60 = {
         L: { BA: 0.349, HR: 6, RBI: 18, BB: 27, SO: 18, AB: 149, H: 52, d2B: 7, d3B: 2, SB: 1, CS: 2, OBA: 0.444, SA: 0.544 },
         R: { BA: 0.337, HR: 21, RBI: 84, BB: 55, SO: 39, AB: 439, H: 148, d2B: 17, d3B: 6, SB: 5, CS: 6, OBA: 0.414, SA: 0.547 }
       },
-      ratings: { power: 8, hitAndRun: 9, bunt: 5, fbPct: 47, runs: 7, range: 7, arm: 9, durability: 8 },
+      ratings: { power: 7, hitAndRun: 9, bunt: 5, fbPct: 47, runs: 6, range: 7, arm: 9, durability: 8 },
       source: { bref: 'kalinal01', season: 1955, splits: 'platoon', csRecorded: true }
     },
     {
@@ -154,7 +155,7 @@ export const AL_46_60 = {
         L: { BA: 0.299, HR: 4, RBI: 34, BB: 27, SO: 16, AB: 187, H: 56, d2B: 8, d3B: 6, SB: 3, CS: 5, OBA: 0.391, SA: 0.471 },
         R: { BA: 0.331, HR: 15, RBI: 82, BB: 51, SO: 30, AB: 381, H: 126, d2B: 21, d3B: 12, SB: 15, CS: 8, OBA: 0.422, SA: 0.567 }
       },
-      ratings: { power: 8, hitAndRun: 9, bunt: 8, fbPct: 41, runs: 10, range: 7, arm: 6, durability: 8 },
+      ratings: { power: 7, hitAndRun: 9, bunt: 8, fbPct: 41, runs: 10, range: 7, arm: 6, durability: 8 },
       source: { bref: 'minosmi01', season: 1954, splits: 'platoon', csRecorded: true }
     },
     {
@@ -186,7 +187,7 @@ export const AL_46_60 = {
         L: { BA: 0.275, HR: 8, RBI: 26, BB: 18, SO: 31, AB: 240, H: 66, d2B: 10, d3B: 4, SB: 2, CS: 4, OBA: 0.333, SA: 0.450 },
         R: { BA: 0.245, HR: 7, RBI: 49, BB: 24, SO: 25, AB: 347, H: 85, d2B: 14, d3B: 2, SB: 4, CS: 3, OBA: 0.299, SA: 0.357 }
       },
-      ratings: { power: 5, hitAndRun: 8, bunt: 8, fbPct: 37, runs: 8, range: 6, arm: 5, durability: 6 },
+      ratings: { power: 5, hitAndRun: 8, bunt: 7, fbPct: 37, runs: 7, range: 6, arm: 5, durability: 6 },
       source: { bref: 'martibi02', season: 1953, splits: 'platoon', csRecorded: true, splitCoverage: 0.99 }
     },
     {
@@ -218,7 +219,7 @@ export const AL_46_60 = {
         L: { BA: 0.266, HR: 13, RBI: 46, BB: 38, SO: 56, AB: 192, H: 51, d2B: 8, d3B: 2, SB: 4, CS: 1, OBA: 0.387, SA: 0.531 },
         R: { BA: 0.281, HR: 19, RBI: 58, BB: 52, SO: 55, AB: 327, H: 92, d2B: 18, d3B: 6, SB: 1, CS: 1, OBA: 0.380, SA: 0.547 }
       },
-      ratings: { power: 10, hitAndRun: 4, bunt: 4, fbPct: 54, runs: 7, range: 6, arm: 6, durability: 7 },
+      ratings: { power: 8, hitAndRun: 4, bunt: 5, fbPct: 54, runs: 7, range: 6, arm: 6, durability: 7 },
       source: { bref: 'dobyla01', season: 1952, splits: 'platoon', csRecorded: true }
     }
   ],

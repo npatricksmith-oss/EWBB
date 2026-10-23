@@ -48,7 +48,7 @@
  "evansdw01": {
   "name": "Dwight Evans",
   "range": 9,
-  "arm": 7,
+  "arm": 9,
   "durability": 9,
   "basis": {
    "range": {
@@ -74,7 +74,7 @@
  "riceji01": {
   "name": "Jim Rice",
   "range": 6,
-  "arm": 6,
+  "arm": 5,
   "durability": 9,
   "basis": {
    "range": {

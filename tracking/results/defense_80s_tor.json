@@ -88,7 +88,7 @@
  "barfije01": {
   "name": "Jesse Barfield",
   "range": 9,
-  "arm": 9,
+  "arm": 10,
   "durability": 9,
   "basis": {
    "range": {
@@ -134,7 +134,7 @@
  "mosebll01": {
   "name": "Lloyd Moseby",
   "range": 8,
-  "arm": 5,
+  "arm": 6,
   "durability": 9,
   "basis": {
    "range": {
@@ -247,7 +247,7 @@
  "collida02": {
   "name": "Dave Collins",
   "range": 5,
-  "arm": 4,
+  "arm": 3,
   "durability": 8,
   "basis": {
    "range": {

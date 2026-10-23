@@ -120,7 +120,7 @@
  "brunato01": {
   "name": "Tom Brunansky",
   "range": 9,
-  "arm": 6,
+  "arm": 8,
   "durability": 9,
   "basis": {
    "range": {
@@ -233,7 +233,7 @@
  "gladdda01": {
   "name": "Dan Gladden",
   "range": 7,
-  "arm": 6,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -279,7 +279,7 @@
  "hatchmi01": {
   "name": "Mickey Hatcher",
   "range": 7,
-  "arm": 6,
+  "arm": 4,
   "durability": 8,
   "basis": {
    "range": {

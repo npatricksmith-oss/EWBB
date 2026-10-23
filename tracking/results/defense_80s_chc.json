@@ -2,7 +2,7 @@
  "dernibo01": {
   "name": "Bob Dernier",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 7,
   "basis": {
    "range": {
@@ -74,7 +74,7 @@
  "dawsoan01": {
   "name": "Andre Dawson",
   "range": 6,
-  "arm": 7,
+  "arm": 8,
   "durability": 9,
   "basis": {
    "range": {
@@ -120,7 +120,7 @@
  "morelke01": {
   "name": "Keith Moreland",
   "range": 3,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -253,7 +253,7 @@
  "lopesda01": {
   "name": "Davey Lopes",
   "range": 4,
-  "arm": 5,
+  "arm": 4,
   "durability": 6,
   "basis": {
    "range": {

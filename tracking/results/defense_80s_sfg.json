@@ -74,7 +74,7 @@
  "clarkja01": {
   "name": "Jack Clark",
   "range": 5,
-  "arm": 6,
+  "arm": 8,
   "durability": 7,
   "basis": {
    "range": {
@@ -213,7 +213,7 @@
  "butlebr01": {
   "name": "Brett Butler",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 9,
   "basis": {
    "range": {

@@ -2,7 +2,7 @@
  "smithlo01": {
   "name": "Lonnie Smith",
   "range": 6,
-  "arm": 5,
+  "arm": 4,
   "durability": 8,
   "basis": {
    "range": {
@@ -74,7 +74,7 @@
  "hendrge01": {
   "name": "George Hendrick",
   "range": 5,
-  "arm": 5,
+  "arm": 6,
   "durability": 9,
   "basis": {
    "range": {
@@ -273,7 +273,7 @@
  "colemvi01": {
   "name": "Vince Coleman",
   "range": 5,
-  "arm": 5,
+  "arm": 3,
   "durability": 9,
   "basis": {
    "range": {

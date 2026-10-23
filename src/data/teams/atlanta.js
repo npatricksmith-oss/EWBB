@@ -9,6 +9,7 @@
 
 export const ATLANTA = {
   id: 'atlanta',
+  league: 'NL',
   city: 'Atlanta',
   name: 'Braves',
   abbrev: 'ATL',
@@ -61,7 +62,7 @@ export const ATLANTA = {
         L: { BA: 0.351, HR: 11, RBI: 33, BB: 24, SO: 23, AB: 134, H: 47, d2B: 5, d3B: 1, SB: 5, CS: 2, OBA: 0.453, SA: 0.649 },
         R: { BA: 0.261, HR: 25, RBI: 76, BB: 69, SO: 111, AB: 464, H: 121, d2B: 18, d3B: 1, SB: 18, CS: 9, OBA: 0.356, SA: 0.466 }
       },
-      ratings: { power: 9, hitAndRun: 4, bunt: 5, fbPct: 53, runs: 7, range: 8, arm: 8, durability: 9 },
+      ratings: { power: 7, hitAndRun: 4, bunt: 5, fbPct: 53, runs: 7, range: 8, arm: 8, durability: 9 },
       source: { bref: 'murphda05', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -77,7 +78,7 @@ export const ATLANTA = {
         L: { BA: 0.274, HR: 7, RBI: 18, BB: 16, SO: 10, AB: 95, H: 26, d2B: 3, d3B: 0, SB: 0, CS: 1, OBA: 0.384, SA: 0.526 },
         R: { BA: 0.257, HR: 25, RBI: 79, BB: 50, SO: 65, AB: 404, H: 104, d2B: 21, d3B: 0, SB: 3, CS: 4, OBA: 0.341, SA: 0.495 }
       },
-      ratings: { power: 10, hitAndRun: 6, bunt: 2, fbPct: 55, runs: 4, range: 4, arm: 7, durability: 6 },
+      ratings: { power: 8, hitAndRun: 6, bunt: 3, fbPct: 55, runs: 3, range: 4, arm: 7, durability: 6 },
       source: { bref: 'hornebo01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -154,7 +155,7 @@ export const ATLANTA = {
         L: { BA: 0.243, HR: 2, RBI: 13, BB: 10, SO: 9, AB: 103, H: 25, d2B: 4, d3B: 1, SB: 1, CS: 0, OBA: 0.316, SA: 0.359 },
         R: { BA: 0.247, HR: 1, RBI: 31, BB: 27, SO: 31, AB: 283, H: 70, d2B: 7, d3B: 0, SB: 3, CS: 4, OBA: 0.314, SA: 0.283 }
       },
-      ratings: { power: 2, hitAndRun: 8, bunt: 8, fbPct: 29, runs: 5, range: 5, arm: 6, durability: 6 },
+      ratings: { power: 2, hitAndRun: 8, bunt: 7, fbPct: 29, runs: 4, range: 5, arm: 6, durability: 6 },
       source: { bref: 'benedbr01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -202,7 +203,7 @@ export const ATLANTA = {
         L: { BA: 0.244, HR: 5, RBI: 21, BB: 15, SO: 11, AB: 90, H: 22, d2B: 6, d3B: 1, SB: 0, CS: 0, OBA: 0.349, SA: 0.500 },
         R: { BA: 0.244, HR: 0, RBI: 4, BB: 2, SO: 9, AB: 41, H: 10, d2B: 0, d3B: 0, SB: 1, CS: 1, OBA: 0.273, SA: 0.244 }
       },
-      ratings: { power: 7, hitAndRun: 6, bunt: 4, fbPct: 43, runs: 5, range: 4, arm: 4, durability: 6 },
+      ratings: { power: 6, hitAndRun: 6, bunt: 5, fbPct: 43, runs: 5, range: 4, arm: 4, durability: 6 },
       source: { bref: 'watsobo01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {

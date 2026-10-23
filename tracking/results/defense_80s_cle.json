@@ -2,7 +2,7 @@
  "butlebr01": {
   "name": "Brett Butler",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 9,
   "basis": {
    "range": {
@@ -94,7 +94,7 @@
  "cartejo01": {
   "name": "Joe Carter",
   "range": 6,
-  "arm": 10,
+  "arm": 5,
   "durability": 10,
   "basis": {
    "range": {
@@ -247,7 +247,7 @@
  "hallme01": {
   "name": "Mel Hall",
   "range": 4,
-  "arm": 5,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {

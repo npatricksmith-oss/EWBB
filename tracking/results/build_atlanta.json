@@ -201,7 +201,7 @@
     }
    },
    "ratings": {
-    "power": 9,
+    "power": 7,
     "hitAndRun": 4,
     "bunt": 5,
     "fbPct": 53,
@@ -273,11 +273,11 @@
     }
    },
    "ratings": {
-    "power": 10,
+    "power": 8,
     "hitAndRun": 6,
-    "bunt": 2,
+    "bunt": 3,
     "fbPct": 55,
-    "runs": 4,
+    "runs": 3,
     "range": 4,
     "arm": 7,
     "durability": 6
@@ -632,9 +632,9 @@
    "ratings": {
     "power": 2,
     "hitAndRun": 8,
-    "bunt": 8,
+    "bunt": 7,
     "fbPct": 29,
-    "runs": 5,
+    "runs": 4,
     "range": 5,
     "arm": 6,
     "durability": 6
@@ -846,9 +846,9 @@
     }
    },
    "ratings": {
-    "power": 7,
+    "power": 6,
     "hitAndRun": 6,
-    "bunt": 4,
+    "bunt": 5,
     "fbPct": 43,
     "runs": 5,
     "range": 4,

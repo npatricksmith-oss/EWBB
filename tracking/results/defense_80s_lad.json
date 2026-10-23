@@ -49,7 +49,7 @@
  "guerrpe01": {
   "name": "Pedro Guerrero",
   "range": 6,
-  "arm": 10,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {
@@ -101,7 +101,7 @@
  "bakerdu01": {
   "name": "Dusty Baker",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 9,
   "basis": {
    "range": {
@@ -167,7 +167,7 @@
  "landrke01": {
   "name": "Ken Landreaux",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -259,7 +259,7 @@
  "smithre06": {
   "name": "Reggie Smith",
   "range": 7,
-  "arm": 9,
+  "arm": 8,
   "durability": 5,
   "basis": {
    "range": {

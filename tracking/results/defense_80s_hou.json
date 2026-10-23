@@ -28,7 +28,7 @@
  "basske01": {
   "name": "Kevin Bass",
   "range": 7,
-  "arm": 6,
+  "arm": 7,
   "durability": 9,
   "basis": {
    "range": {
@@ -134,7 +134,7 @@
  "puhlte01": {
   "name": "Terry Puhl",
   "range": 8,
-  "arm": 7,
+  "arm": 8,
   "durability": 8,
   "basis": {
    "range": {
@@ -247,7 +247,7 @@
  "cedence01": {
   "name": "C\u00e9sar Cede\u00f1o",
   "range": 5,
-  "arm": 5,
+  "arm": 6,
   "durability": 6,
   "basis": {
    "range": {
@@ -273,7 +273,7 @@
  "youngge02": {
   "name": "Gerald Young",
   "range": 8,
-  "arm": 6,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {

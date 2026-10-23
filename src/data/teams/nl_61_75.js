@@ -9,6 +9,7 @@
 
 export const NL_61_75 = {
   id: 'nl_61_75',
+  league: 'NL',
   city: 'NL',
   name: '61-75',
   abbrev: 'N61',
@@ -29,7 +30,7 @@ export const NL_61_75 = {
         L: { BA: 0.329, HR: 17, RBI: 49, BB: 9, SO: 24, AB: 152, H: 50, d2B: 12, d3B: 2, SB: 0, CS: 0, OBA: 0.360, SA: 0.770 },
         R: { BA: 0.280, HR: 28, RBI: 99, BB: 45, SO: 78, AB: 453, H: 127, d2B: 23, d3B: 2, SB: 5, CS: 2, OBA: 0.340, SA: 0.525 }
       },
-      ratings: { power: 10, hitAndRun: 6, bunt: 3, fbPct: 59, runs: 5, range: 7, arm: 10, durability: 8 },
+      ratings: { power: 9, hitAndRun: 6, bunt: 4, fbPct: 59, runs: 5, range: 7, arm: 10, durability: 8 },
       source: { bref: 'benchjo01', season: 1970, splits: 'platoon', csRecorded: true }
     },
     {
@@ -60,7 +61,7 @@ export const NL_61_75 = {
         L: { BA: 0.279, HR: 4, RBI: 24, BB: 37, SO: 17, AB: 147, H: 41, d2B: 9, d3B: 0, SB: 10, CS: 2, OBA: 0.426, SA: 0.422 },
         R: { BA: 0.348, HR: 13, RBI: 70, BB: 95, SO: 35, AB: 351, H: 122, d2B: 18, d3B: 6, SB: 57, CS: 8, OBA: 0.483, SA: 0.544 }
       },
-      ratings: { power: 7, hitAndRun: 9, bunt: 7, fbPct: 41, runs: 10, range: 9, arm: 6, durability: 8 },
+      ratings: { power: 6, hitAndRun: 9, bunt: 8, fbPct: 41, runs: 10, range: 9, arm: 6, durability: 8 },
       source: { bref: 'morgajo02', season: 1975, splits: 'platoon', csRecorded: true }
     },
     {
@@ -75,7 +76,7 @@ export const NL_61_75 = {
         L: { BA: 0.266, HR: 10, RBI: 38, BB: 36, SO: 29, AB: 192, H: 51, d2B: 10, d3B: 4, SB: 2, CS: 2, OBA: 0.378, SA: 0.516 },
         R: { BA: 0.335, HR: 20, RBI: 76, BB: 50, SO: 67, AB: 400, H: 134, d2B: 23, d3B: 9, SB: 1, CS: 2, OBA: 0.408, SA: 0.588 }
       },
-      ratings: { power: 9, hitAndRun: 7, bunt: 5, fbPct: 49, runs: 8, range: 8, arm: 8, durability: 8 },
+      ratings: { power: 8, hitAndRun: 7, bunt: 5, fbPct: 49, runs: 7, range: 8, arm: 8, durability: 8 },
       source: { bref: 'santoro01', season: 1964, splits: 'platoon', csRecorded: true }
     },
     {
@@ -122,7 +123,7 @@ export const NL_61_75 = {
         L: { BA: 0.290, HR: 2, RBI: 16, BB: 17, SO: 15, AB: 231, H: 67, d2B: 10, d3B: 3, SB: 3, CS: 3, OBA: 0.339, SA: 0.385 },
         R: { BA: 0.309, HR: 3, RBI: 47, BB: 25, SO: 42, AB: 431, H: 133, d2B: 24, d3B: 6, SB: 14, CS: 9, OBA: 0.348, SA: 0.413 }
       },
-      ratings: { power: 3, hitAndRun: 9, bunt: 10, fbPct: 29, runs: 10, range: 9, arm: 6, durability: 8 },
+      ratings: { power: 3, hitAndRun: 9, bunt: 9, fbPct: 29, runs: 9, range: 9, arm: 6, durability: 8 },
       source: { bref: 'floodcu01', season: 1963, splits: 'platoon', csRecorded: true }
     },
     {
@@ -169,7 +170,7 @@ export const NL_61_75 = {
         L: { BA: 0.273, HR: 2, RBI: 21, BB: 10, SO: 14, AB: 132, H: 36, d2B: 5, d3B: 1, SB: 0, CS: 4, OBA: 0.336, SA: 0.371 },
         R: { BA: 0.304, HR: 12, RBI: 48, BB: 44, SO: 18, AB: 339, H: 103, d2B: 21, d3B: 2, SB: 8, CS: 4, OBA: 0.382, SA: 0.484 }
       },
-      ratings: { power: 6, hitAndRun: 10, bunt: 6, fbPct: 39, runs: 7, range: 5, arm: 6, durability: 5 },
+      ratings: { power: 6, hitAndRun: 10, bunt: 6, fbPct: 39, runs: 6, range: 5, arm: 6, durability: 5 },
       source: { bref: 'mccarti01', season: 1967, splits: 'platoon', csRecorded: true }
     },
     {
@@ -185,7 +186,7 @@ export const NL_61_75 = {
         L: { BA: 0.272, HR: 0, RBI: 10, BB: 16, SO: 17, AB: 224, H: 61, d2B: 10, d3B: 3, SB: 1, CS: 3, OBA: 0.326, SA: 0.344 },
         R: { BA: 0.371, HR: 5, RBI: 54, BB: 49, SO: 25, AB: 456, H: 169, d2B: 26, d3B: 5, SB: 9, CS: 4, OBA: 0.436, SA: 0.482 }
       },
-      ratings: { power: 3, hitAndRun: 10, bunt: 7, fbPct: 29, runs: 7, range: 6, arm: 6, durability: 10 },
+      ratings: { power: 3, hitAndRun: 10, bunt: 7, fbPct: 29, runs: 6, range: 6, arm: 6, durability: 10 },
       source: { bref: 'rosepe01', season: 1973, splits: 'platoon', csRecorded: true }
     },
     {
@@ -201,7 +202,7 @@ export const NL_61_75 = {
         L: { BA: 0.308, HR: 6, RBI: 35, BB: 6, SO: 20, AB: 169, H: 52, d2B: 7, d3B: 1, SB: 0, CS: 0, OBA: 0.331, SA: 0.467 },
         R: { BA: 0.328, HR: 36, RBI: 94, BB: 66, SO: 45, AB: 467, H: 153, d2B: 27, d3B: 3, SB: 7, CS: 1, OBA: 0.410, SA: 0.630 }
       },
-      ratings: { power: 10, hitAndRun: 9, bunt: 3, fbPct: 56, runs: 5, range: 6, arm: 5, durability: 10 },
+      ratings: { power: 8, hitAndRun: 9, bunt: 4, fbPct: 56, runs: 5, range: 6, arm: 5, durability: 10 },
       source: { bref: 'willibi01', season: 1970, splits: 'platoon', csRecorded: true }
     },
     {

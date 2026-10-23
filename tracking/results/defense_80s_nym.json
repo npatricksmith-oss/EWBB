@@ -2,7 +2,7 @@
  "strawda01": {
   "name": "Darryl Strawberry",
   "range": 4,
-  "arm": 6,
+  "arm": 8,
   "durability": 8,
   "basis": {
    "range": {
@@ -95,7 +95,7 @@
  "mcreyke01": {
   "name": "Kevin McReynolds",
   "range": 5,
-  "arm": 8,
+  "arm": 7,
   "durability": 9,
   "basis": {
    "range": {

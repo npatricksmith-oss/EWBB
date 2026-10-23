@@ -82,7 +82,7 @@
  "bradlph01": {
   "name": "Phil Bradley",
   "range": 6,
-  "arm": 5,
+  "arm": 6,
   "durability": 9,
   "basis": {
    "range": {
@@ -108,7 +108,7 @@
  "griffke02": {
   "name": "Ken Griffey Jr.",
   "range": 7,
-  "arm": 7,
+  "arm": 8,
   "durability": 7,
   "basis": {
    "range": {

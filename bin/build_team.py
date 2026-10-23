@@ -129,6 +129,7 @@ def league_rates(row):
         'so': n['SO'] / n['PA'],
         'ba': n['H'] / n['AB'],
         'sh': n['SH'] / n['PA'],
+        'success': n['SB'] / steal_attempts(n['SB'], n['CS']) if n['SB'] else 1 / (1 + CS_PER_SB_UNRECORDED),
     }
 
 
@@ -156,9 +157,17 @@ def batter_ratings(c, line, scout, year):
     hr_ab = c['HR'] / ab
     singles = c['H'] - c['2B'] - c['3B'] - c['HR']
     on_first = max(singles + c['BB'] + c['HBP'], 1)
-    steal_rate = rel(steal_attempts(c['SB'], c['CS']) / on_first, 'steal')
+    attempts = steal_attempts(c['SB'], c['CS'])
+    steal_rate = rel(attempts / on_first, 'steal')
+    if c['CS']:
+        # Weigh success: a runner caught more often than his league loses steal credit
+        # (cubed, with 5 league-average attempts mixed in for small samples)
+        success = (c['SB'] + 5 * lg['success']) / (attempts + 5)
+        steal_rate *= min(1.0, (success / lg['success']) ** 3)
     triple_rate = rel(c['3B'] / max(ab - c['SO'] - c['HR'], 1), 'triple')
-    power = clamp(iso * 29 + hr_ab * 40)
+    # Above 6 the slope halves, so only the greatest slugging seasons (about .335 ISO and up) reach 10
+    raw_power = iso * 29 + hr_ab * 40
+    power = clamp(raw_power if raw_power <= 6 else 6 + (raw_power - 6) / 2)
     runs = clamp(3 + 20 * steal_rate + 120 * triple_rate)
     # Shrink part-time players' average and sacrifice rate toward typical values
     weight = pa / (pa + 250)

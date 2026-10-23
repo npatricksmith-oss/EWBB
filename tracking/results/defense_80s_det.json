@@ -42,7 +42,7 @@
  "gibsoki01": {
   "name": "Kirk Gibson",
   "range": 6,
-  "arm": 4,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {
@@ -115,7 +115,7 @@
  "kempst01": {
   "name": "Steve Kemp",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -141,7 +141,7 @@
  "herndla01": {
   "name": "Larry Herndon",
   "range": 5,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -167,7 +167,7 @@
  "lemonch01": {
   "name": "Chet Lemon",
   "range": 9,
-  "arm": 6,
+  "arm": 8,
   "durability": 9,
   "basis": {
    "range": {
@@ -287,7 +287,7 @@
  "pettiga01": {
   "name": "Gary Pettis",
   "range": 7,
-  "arm": 4,
+  "arm": 6,
   "durability": 7,
   "basis": {
    "range": {

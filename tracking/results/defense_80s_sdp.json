@@ -95,7 +95,7 @@
  "mcreyke01": {
   "name": "Kevin McReynolds",
   "range": 8,
-  "arm": 6,
+  "arm": 7,
   "durability": 9,
   "basis": {
    "range": {
@@ -121,7 +121,7 @@
  "richage01": {
   "name": "Gene Richards",
   "range": 6,
-  "arm": 5,
+  "arm": 4,
   "durability": 8,
   "basis": {
    "range": {
@@ -147,7 +147,7 @@
  "martica01": {
   "name": "Carmelo Mart\u00ednez",
   "range": 7,
-  "arm": 6,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -260,7 +260,7 @@
  "wiggial01": {
   "name": "Alan Wiggins",
   "range": 7,
-  "arm": 8,
+  "arm": 4,
   "durability": 8,
   "basis": {
    "range": {
@@ -286,7 +286,7 @@
  "jonesru01": {
   "name": "Ruppert Jones",
   "range": 7,
-  "arm": 5,
+  "arm": 6,
   "durability": 7,
   "basis": {
    "range": {

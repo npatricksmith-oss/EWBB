@@ -6,8 +6,8 @@
  "league": "AL",
  "primaryColor": "#ba0021",
  "secondaryColor": "#003263",
- "defaultParkId": "memorial",
- "defaultManagerId": "mcnamara",
+ "defaultParkId": "anaheim",
+ "defaultManagerId": "mauch",
  "source": "1982 California Angels (1982 AL West champions); IBM EWB 1.0 exhibition team per SABR review",
  "batters": [
   {

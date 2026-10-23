@@ -48,7 +48,7 @@
  "jacksre01": {
   "name": "Reggie Jackson",
   "range": 2,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -94,7 +94,7 @@
  "winfida01": {
   "name": "Dave Winfield",
   "range": 4,
-  "arm": 7,
+  "arm": 9,
   "durability": 9,
   "basis": {
    "range": {
@@ -213,7 +213,7 @@
  "baylodo01": {
   "name": "Don Baylor",
   "range": 4,
-  "arm": 5,
+  "arm": 4,
   "durability": 8,
   "basis": {
    "range": {
@@ -239,7 +239,7 @@
  "gamblos01": {
   "name": "Oscar Gamble",
   "range": 3,
-  "arm": 6,
+  "arm": 4,
   "durability": 6,
   "basis": {
    "range": {

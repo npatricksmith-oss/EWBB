@@ -6,9 +6,9 @@ Gold Gloves) is blended with what the decade scan measured for the player's seas
 - range: Total Zone fielding runs (baseball-reference "Rfield") per full season, plus a
   Gold Glove bonus. A DH is rated on his fielding at every position in the decade.
 - arm: catchers by caught-stealing rate against that season's league catchers (half the
-  rating); outfielders by assists per inning against that season's outfielders (40%, since
-  runners don't test the best arms). Infield arms
-  have no counting stat, so they stay with the scouting judgment.
+  rating). Outfield and infield arms are the scouting judgment alone: runners don't test
+  the best outfield arms, so assists understate them (Dwight Evans). Outfield assists are
+  still reported beside the rating.
 - durability: share of the team's games he played that season.
 Pitcher ratings (bunting, fielding, repertoire) come from the scouting JSON unchanged.
 
@@ -112,9 +112,9 @@ def batter_defense(pid, spec, seasons, norms, scout):
             parts['arm'] = {'assistsPer1350': round(per, 1), 'leagueOf': round(lg, 1)}
     if stat_arm is not None:
         parts['arm'].update({'stat': round(stat_arm, 1), 'scout': scout.get('arm')})
-        # Assists miss the arms runners won't test (Dwight Evans), so they count for less
-        # than a catcher's caught-stealing rate
-        w = 0.5 if 'csPct' in parts['arm'] else 0.4
+        # Assists miss the arms runners won't test (Dwight Evans), so outfield arms follow
+        # the scouting judgment; a catcher's caught-stealing rate counts for half
+        w = 0.5 if 'csPct' in parts['arm'] else 0.0
         arm = w * stat_arm + (1 - w) * scout['arm'] if 'arm' in scout else stat_arm
 
     team_games = sum(d['record'] or [162, 0]) or 162

@@ -48,7 +48,7 @@
  "parkeda01": {
   "name": "Dave Parker",
   "range": 3,
-  "arm": 7,
+  "arm": 8,
   "durability": 9,
   "basis": {
    "range": {
@@ -74,7 +74,7 @@
  "danieka01": {
   "name": "Kal Daniels",
   "range": 5,
-  "arm": 5,
+  "arm": 4,
   "durability": 7,
   "basis": {
    "range": {
@@ -233,7 +233,7 @@
  "fostege01": {
   "name": "George Foster",
   "range": 5,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -259,7 +259,7 @@
  "griffke01": {
   "name": "Ken Griffey",
   "range": 5,
-  "arm": 5,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {

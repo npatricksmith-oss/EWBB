@@ -9,6 +9,7 @@
 
 export const NL_00_30 = {
   id: 'nl_00_30',
+  league: 'NL',
   city: 'NL',
   name: '00-30',
   abbrev: 'N00',
@@ -29,7 +30,7 @@ export const NL_00_30 = {
         L: { BA: 0.333, HR: 7, RBI: 24, BB: 9, SO: 10, AB: 111, H: 37, d2B: 7, d3B: 0, SB: 0, CS: 2, OBA: 0.362, SA: 0.586 },
         R: { BA: 0.340, HR: 30, RBI: 100, BB: 46, SO: 52, AB: 397, H: 135, d2B: 26, d3B: 3, SB: 0, CS: 3, OBA: 0.405, SA: 0.647 }
       },
-      ratings: { power: 10, hitAndRun: 6, bunt: 2, fbPct: 59, runs: 4, range: 6, arm: 7, durability: 8 },
+      ratings: { power: 9, hitAndRun: 6, bunt: 3, fbPct: 59, runs: 4, range: 6, arm: 7, durability: 8 },
       source: { bref: 'hartnga01', season: 1930, splits: 'platoon', csRecorded: true, splitCoverage: 0.98 }
     },
     {
@@ -44,7 +45,7 @@ export const NL_00_30 = {
         L: { BA: 0.366, HR: 7, RBI: 38, BB: 7, SO: 13, AB: 164, H: 60, d2B: 11, d3B: 5, SB: 1, CS: 0, OBA: 0.384, SA: 0.622 },
         R: { BA: 0.414, HR: 16, RBI: 92, BB: 48, SO: 20, AB: 469, H: 194, d2B: 28, d3B: 10, SB: 7, CS: 3, OBA: 0.457, SA: 0.618 }
       },
-      ratings: { power: 8, hitAndRun: 10, bunt: 4, fbPct: 42, runs: 6, range: 6, arm: 5, durability: 8 },
+      ratings: { power: 7, hitAndRun: 10, bunt: 5, fbPct: 42, runs: 6, range: 6, arm: 5, durability: 8 },
       source: { bref: 'terrybi01', season: 1930, splits: 'platoon', csRecorded: true, splitCoverage: 0.98 }
     },
     {
@@ -60,7 +61,7 @@ export const NL_00_30 = {
         L: { BA: 0.423, HR: 10, RBI: 33, BB: 24, SO: 9, AB: 137, H: 58, d2B: 10, d3B: 4, SB: 2, CS: 2, OBA: 0.500, SA: 0.774 },
         R: { BA: 0.395, HR: 29, RBI: 110, BB: 59, SO: 30, AB: 367, H: 145, d2B: 31, d3B: 6, SB: 3, CS: 1, OBA: 0.473, SA: 0.749 }
       },
-      ratings: { power: 10, hitAndRun: 9, bunt: 4, fbPct: 61, runs: 6, range: 6, arm: 6, durability: 7 },
+      ratings: { power: 10, hitAndRun: 9, bunt: 4, fbPct: 61, runs: 5, range: 6, arm: 6, durability: 7 },
       source: { bref: 'hornsro01', season: 1925, splits: 'platoon', csRecorded: true, splitCoverage: 0.89 }
     },
     {
@@ -75,7 +76,7 @@ export const NL_00_30 = {
         L: { BA: 0.356, HR: 3, RBI: 31, BB: 19, SO: 4, AB: 177, H: 63, d2B: 9, d3B: 1, SB: 3, CS: 4, OBA: 0.408, SA: 0.469 },
         R: { BA: 0.372, HR: 6, RBI: 86, BB: 32, SO: 15, AB: 320, H: 119, d2B: 13, d3B: 10, SB: 5, CS: 3, OBA: 0.414, SA: 0.531 }
       },
-      ratings: { power: 5, hitAndRun: 10, bunt: 7, fbPct: 34, runs: 7, range: 8, arm: 8, durability: 8 },
+      ratings: { power: 5, hitAndRun: 10, bunt: 6, fbPct: 34, runs: 6, range: 8, arm: 8, durability: 8 },
       source: { bref: 'traynpi01', season: 1930, splits: 'platoon', csRecorded: true, splitCoverage: 0.99 }
     },
     {
@@ -107,7 +108,7 @@ export const NL_00_30 = {
         L: { BA: 0.350, HR: 15, RBI: 53, BB: 22, SO: 20, AB: 143, H: 50, d2B: 6, d3B: 1, SB: 1, CS: 0, OBA: 0.421, SA: 0.720 },
         R: { BA: 0.355, HR: 41, RBI: 138, BB: 83, SO: 64, AB: 442, H: 157, d2B: 29, d3B: 5, SB: 2, CS: 3, OBA: 0.448, SA: 0.722 }
       },
-      ratings: { power: 10, hitAndRun: 6, bunt: 3, fbPct: 65, runs: 5, range: 3, arm: 4, durability: 6 },
+      ratings: { power: 10, hitAndRun: 6, bunt: 2, fbPct: 65, runs: 4, range: 3, arm: 4, durability: 6 },
       source: { bref: 'wilsoha01', season: 1930, splits: 'platoon', csRecorded: true, splitCoverage: 0.98 }
     },
     {
@@ -138,7 +139,7 @@ export const NL_00_30 = {
         L: { BA: 0.368, HR: 5, RBI: 28, BB: 8, SO: 10, AB: 133, H: 49, d2B: 11, d3B: 7, SB: 6, CS: 0, OBA: 0.413, SA: 0.669 },
         R: { BA: 0.353, HR: 13, RBI: 77, BB: 50, SO: 46, AB: 484, H: 171, d2B: 32, d3B: 19, SB: 36, CS: 11, OBA: 0.423, SA: 0.579 }
       },
-      ratings: { power: 8, hitAndRun: 7, bunt: 7, fbPct: 39, runs: 10, range: 8, arm: 7, durability: 8 },
+      ratings: { power: 7, hitAndRun: 7, bunt: 8, fbPct: 39, runs: 10, range: 8, arm: 7, durability: 8 },
       source: { bref: 'cuyleki01', season: 1925, splits: 'platoon', csRecorded: true }
     },
     {
@@ -154,7 +155,7 @@ export const NL_00_30 = {
         L: { BA: 0.358, HR: 12, RBI: 50, BB: 19, SO: 26, AB: 193, H: 69, d2B: 17, d3B: 1, SB: 2, CS: 3, OBA: 0.411, SA: 0.642 },
         R: { BA: 0.397, HR: 28, RBI: 119, BB: 36, SO: 24, AB: 456, H: 181, d2B: 42, d3B: 7, SB: 2, CS: 3, OBA: 0.437, SA: 0.704 }
       },
-      ratings: { power: 10, hitAndRun: 9, bunt: 3, fbPct: 54, runs: 5, range: 4, arm: 7, durability: 6 },
+      ratings: { power: 9, hitAndRun: 9, bunt: 3, fbPct: 54, runs: 4, range: 4, arm: 7, durability: 6 },
       source: { bref: 'kleinch01', season: 1930, splits: 'platoon', csRecorded: true, splitCoverage: 0.89 }
     },
     {
@@ -202,7 +203,7 @@ export const NL_00_30 = {
         L: { BA: 0.333, HR: 2, RBI: 21, BB: 13, SO: 15, AB: 189, H: 63, d2B: 8, d3B: 5, SB: 7, CS: 8, OBA: 0.385, SA: 0.460 },
         R: { BA: 0.345, HR: 2, RBI: 40, BB: 14, SO: 9, AB: 333, H: 115, d2B: 11, d3B: 9, SB: 14, CS: 14, OBA: 0.373, SA: 0.450 }
       },
-      ratings: { power: 4, hitAndRun: 10, bunt: 8, fbPct: 29, runs: 8, range: 7, arm: 6, durability: 7 },
+      ratings: { power: 4, hitAndRun: 10, bunt: 7, fbPct: 29, runs: 7, range: 7, arm: 6, durability: 7 },
       source: { bref: 'roushed01', season: 1917, splits: 'platoon', csRecorded: true }
     },
     {
@@ -218,7 +219,7 @@ export const NL_00_30 = {
         L: { BA: 0.376, HR: 5, RBI: 33, BB: 15, SO: 14, AB: 133, H: 50, d2B: 15, d3B: 4, SB: 1, CS: 1, OBA: 0.437, SA: 0.662 },
         R: { BA: 0.316, HR: 21, RBI: 75, BB: 31, SO: 37, AB: 313, H: 99, d2B: 23, d3B: 8, SB: 10, CS: 3, OBA: 0.376, SA: 0.642 }
       },
-      ratings: { power: 10, hitAndRun: 7, bunt: 6, fbPct: 52, runs: 9, range: 4, arm: 4, durability: 5 },
+      ratings: { power: 9, hitAndRun: 7, bunt: 6, fbPct: 52, runs: 9, range: 4, arm: 4, durability: 5 },
       source: { bref: 'hafeych01', season: 1930, splits: 'platoon', csRecorded: true, splitCoverage: 0.97 }
     }
   ],

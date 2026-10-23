@@ -54,7 +54,7 @@
  "murphda05": {
   "name": "Dale Murphy",
   "range": 6,
-  "arm": 7,
+  "arm": 8,
   "durability": 10,
   "basis": {
    "range": {
@@ -100,7 +100,7 @@
  "washicl01": {
   "name": "Claudell Washington",
   "range": 4,
-  "arm": 5,
+  "arm": 6,
   "durability": 7,
   "basis": {
    "range": {
@@ -260,7 +260,7 @@
  "butlebr01": {
   "name": "Brett Butler",
   "range": 8,
-  "arm": 5,
+  "arm": 4,
   "durability": 9,
   "basis": {
    "range": {

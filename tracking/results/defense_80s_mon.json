@@ -115,7 +115,7 @@
  "dawsoan01": {
   "name": "Andre Dawson",
   "range": 9,
-  "arm": 6,
+  "arm": 8,
   "durability": 8,
   "basis": {
    "range": {
@@ -207,7 +207,7 @@
  "cromawa01": {
   "name": "Warren Cromartie",
   "range": 6,
-  "arm": 5,
+  "arm": 4,
   "durability": 8,
   "basis": {
    "range": {
@@ -253,7 +253,7 @@
  "valenel01": {
   "name": "Ellis Valentine",
   "range": 7,
-  "arm": 8,
+  "arm": 10,
   "durability": 6,
   "basis": {
    "range": {

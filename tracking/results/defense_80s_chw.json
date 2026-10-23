@@ -28,7 +28,7 @@
  "lemonch01": {
   "name": "Chet Lemon",
   "range": 5,
-  "arm": 6,
+  "arm": 7,
   "durability": 9,
   "basis": {
    "range": {
@@ -54,7 +54,7 @@
  "baineha01": {
   "name": "Harold Baines",
   "range": 5,
-  "arm": 5,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {
@@ -227,7 +227,7 @@
  "caldeiv01": {
   "name": "Iv\u00e1n Calder\u00f3n",
   "range": 5,
-  "arm": 5,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {

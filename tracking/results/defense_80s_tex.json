@@ -42,7 +42,7 @@
  "sierrru01": {
   "name": "Rub\u00e9n Sierra",
   "range": 5,
-  "arm": 8,
+  "arm": 9,
   "durability": 10,
   "basis": {
    "range": {
@@ -135,7 +135,7 @@
  "wardga01": {
   "name": "Gary Ward",
   "range": 7,
-  "arm": 6,
+  "arm": 7,
   "durability": 8,
   "basis": {
    "range": {
@@ -161,7 +161,7 @@
  "mcdowod01": {
   "name": "Oddibe McDowell",
   "range": 6,
-  "arm": 5,
+  "arm": 4,
   "durability": 9,
   "basis": {
    "range": {
@@ -253,7 +253,7 @@
  "rivermi01": {
   "name": "Mickey Rivers",
   "range": 3,
-  "arm": 5,
+  "arm": 3,
   "durability": 8,
   "basis": {
    "range": {

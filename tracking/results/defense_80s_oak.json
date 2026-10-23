@@ -2,7 +2,7 @@
  "henderi01": {
   "name": "Rickey Henderson",
   "range": 9,
-  "arm": 5,
+  "arm": 4,
   "durability": 9,
   "basis": {
    "range": {
@@ -28,7 +28,7 @@
  "murphdw01": {
   "name": "Dwayne Murphy",
   "range": 10,
-  "arm": 6,
+  "arm": 7,
   "durability": 9,
   "basis": {
    "range": {
@@ -54,7 +54,7 @@
  "cansejo01": {
   "name": "Jos\u00e9 Canseco",
   "range": 5,
-  "arm": 7,
+  "arm": 8,
   "durability": 9,
   "basis": {
    "range": {
@@ -100,7 +100,7 @@
  "davismi02": {
   "name": "Mike Davis",
   "range": 7,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -239,7 +239,7 @@
  "hendeda01": {
   "name": "Dave Henderson",
   "range": 7,
-  "arm": 5,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {

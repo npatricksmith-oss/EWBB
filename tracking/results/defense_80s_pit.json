@@ -2,7 +2,7 @@
  "lacyle01": {
   "name": "Lee Lacy",
   "range": 7,
-  "arm": 6,
+  "arm": 5,
   "durability": 6,
   "basis": {
    "range": {
@@ -68,7 +68,7 @@
  "vanslan01": {
   "name": "Andy Van Slyke",
   "range": 7,
-  "arm": 7,
+  "arm": 8,
   "durability": 9,
   "basis": {
    "range": {

@@ -2,7 +2,7 @@
  "bumbral01": {
   "name": "Al Bumbry",
   "range": 6,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -28,7 +28,7 @@
  "singlke01": {
   "name": "Ken Singleton",
   "range": 2,
-  "arm": 4,
+  "arm": 5,
   "durability": 8,
   "basis": {
    "range": {
@@ -120,7 +120,7 @@
  "lynnfr01": {
   "name": "Fred Lynn",
   "range": 4,
-  "arm": 4,
+  "arm": 5,
   "durability": 6,
   "basis": {
    "range": {
@@ -213,7 +213,7 @@
  "lowenjo01": {
   "name": "John Lowenstein",
   "range": 4,
-  "arm": 3,
+  "arm": 4,
   "durability": 6,
   "basis": {
    "range": {

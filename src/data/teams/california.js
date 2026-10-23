@@ -9,6 +9,7 @@
 
 export const CALIFORNIA = {
   id: 'california',
+  league: 'AL',
   city: 'California',
   name: 'Angels',
   abbrev: 'CAL',
@@ -30,7 +31,7 @@ export const CALIFORNIA = {
         L: { BA: 0.318, HR: 9, RBI: 26, BB: 31, SO: 17, AB: 220, H: 70, d2B: 13, d3B: 1, SB: 1, CS: 0, OBA: 0.398, SA: 0.509 },
         R: { BA: 0.261, HR: 19, RBI: 58, BB: 55, SO: 41, AB: 403, H: 105, d2B: 24, d3B: 1, SB: 1, CS: 1, OBA: 0.352, SA: 0.467 }
       },
-      ratings: { power: 8, hitAndRun: 9, bunt: 4, fbPct: 46, runs: 4, range: 5, arm: 5, durability: 8 },
+      ratings: { power: 7, hitAndRun: 9, bunt: 4, fbPct: 46, runs: 4, range: 5, arm: 5, durability: 8 },
       source: { bref: 'downibr01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -46,7 +47,7 @@ export const CALIFORNIA = {
         L: { BA: 0.241, HR: 1, RBI: 16, BB: 19, SO: 19, AB: 162, H: 39, d2B: 5, d3B: 2, SB: 0, CS: 8, OBA: 0.321, SA: 0.315 },
         R: { BA: 0.355, HR: 2, RBI: 28, BB: 48, SO: 30, AB: 361, H: 128, d2B: 20, d3B: 3, SB: 10, CS: 9, OBA: 0.430, SA: 0.443 }
       },
-      ratings: { power: 3, hitAndRun: 9, bunt: 10, fbPct: 29, runs: 7, range: 5, arm: 5, durability: 7 },
+      ratings: { power: 3, hitAndRun: 9, bunt: 8, fbPct: 29, runs: 5, range: 5, arm: 5, durability: 7 },
       source: { bref: 'carewro01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -62,7 +63,7 @@ export const CALIFORNIA = {
         L: { BA: 0.260, HR: 14, RBI: 29, BB: 18, SO: 75, AB: 204, H: 53, d2B: 5, d3B: 1, SB: 0, CS: 0, OBA: 0.321, SA: 0.500 },
         R: { BA: 0.285, HR: 25, RBI: 72, BB: 67, SO: 81, AB: 326, H: 93, d2B: 12, d3B: 0, SB: 4, CS: 5, OBA: 0.406, SA: 0.552 }
       },
-      ratings: { power: 10, hitAndRun: 2, bunt: 2, fbPct: 59, runs: 4, range: 4, arm: 6, durability: 6 },
+      ratings: { power: 8, hitAndRun: 2, bunt: 3, fbPct: 59, runs: 4, range: 4, arm: 6, durability: 6 },
       source: { bref: 'jacksre01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -78,7 +79,7 @@ export const CALIFORNIA = {
         L: { BA: 0.250, HR: 7, RBI: 33, BB: 11, SO: 38, AB: 156, H: 39, d2B: 9, d3B: 0, SB: 0, CS: 1, OBA: 0.299, SA: 0.442 },
         R: { BA: 0.323, HR: 14, RBI: 53, BB: 47, SO: 34, AB: 316, H: 102, d2B: 29, d3B: 1, SB: 7, CS: 7, OBA: 0.410, SA: 0.554 }
       },
-      ratings: { power: 8, hitAndRun: 7, bunt: 5, fbPct: 46, runs: 5, range: 7, arm: 6, durability: 5 },
+      ratings: { power: 7, hitAndRun: 7, bunt: 5, fbPct: 46, runs: 4, range: 7, arm: 6, durability: 5 },
       source: { bref: 'lynnfr01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -110,7 +111,7 @@ export const CALIFORNIA = {
         L: { BA: 0.344, HR: 13, RBI: 32, BB: 32, SO: 16, AB: 212, H: 73, d2B: 19, d3B: 1, SB: 3, CS: 3, OBA: 0.429, SA: 0.627 },
         R: { BA: 0.275, HR: 17, RBI: 65, BB: 34, SO: 64, AB: 363, H: 100, d2B: 23, d3B: 4, SB: 4, CS: 2, OBA: 0.332, SA: 0.501 }
       },
-      ratings: { power: 9, hitAndRun: 7, bunt: 5, fbPct: 49, runs: 6, range: 7, arm: 7, durability: 7 },
+      ratings: { power: 8, hitAndRun: 7, bunt: 4, fbPct: 49, runs: 5, range: 7, arm: 7, durability: 7 },
       source: { bref: 'decindo01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -126,7 +127,7 @@ export const CALIFORNIA = {
         L: { BA: 0.272, HR: 7, RBI: 22, BB: 30, SO: 39, AB: 195, H: 53, d2B: 13, d3B: 2, SB: 1, CS: 0, OBA: 0.370, SA: 0.467 },
         R: { BA: 0.254, HR: 12, RBI: 43, BB: 52, SO: 70, AB: 311, H: 79, d2B: 15, d3B: 3, SB: 2, CS: 3, OBA: 0.371, SA: 0.437 }
       },
-      ratings: { power: 7, hitAndRun: 4, bunt: 5, fbPct: 43, runs: 5, range: 8, arm: 7, durability: 6 },
+      ratings: { power: 6, hitAndRun: 4, bunt: 6, fbPct: 43, runs: 5, range: 8, arm: 7, durability: 6 },
       source: { bref: 'grichbo01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {
@@ -157,7 +158,7 @@ export const CALIFORNIA = {
         L: { BA: 0.240, HR: 1, RBI: 11, BB: 7, SO: 6, AB: 175, H: 42, d2B: 3, d3B: 0, SB: 1, CS: 2, OBA: 0.268, SA: 0.274 },
         R: { BA: 0.259, HR: 2, RBI: 45, BB: 7, SO: 16, AB: 305, H: 79, d2B: 11, d3B: 2, SB: 1, CS: 2, OBA: 0.276, SA: 0.328 }
       },
-      ratings: { power: 2, hitAndRun: 10, bunt: 10, fbPct: 29, runs: 5, range: 6, arm: 6, durability: 6 },
+      ratings: { power: 2, hitAndRun: 10, bunt: 10, fbPct: 29, runs: 4, range: 6, arm: 6, durability: 6 },
       source: { bref: 'foliti01', season: 1982, splits: 'platoon', csRecorded: true }
     },
     {

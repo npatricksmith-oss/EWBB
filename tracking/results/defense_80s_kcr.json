@@ -94,7 +94,7 @@
  "mcraeha01": {
   "name": "Hal McRae",
   "range": 4,
-  "arm": 4,
+  "arm": 3,
   "durability": 9,
   "basis": {
    "range": {
@@ -253,7 +253,7 @@
  "otisam01": {
   "name": "Amos Otis",
   "range": 6,
-  "arm": 5,
+  "arm": 6,
   "durability": 8,
   "basis": {
    "range": {
@@ -279,7 +279,7 @@
  "jacksbo01": {
   "name": "Bo Jackson",
   "range": 5,
-  "arm": 9,
+  "arm": 10,
   "durability": 7,
   "basis": {
    "range": {

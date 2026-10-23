@@ -9,6 +9,7 @@
 
 export const AL_61_75 = {
   id: 'al_61_75',
+  league: 'AL',
   city: 'AL',
   name: '61-75',
   abbrev: 'A61',
@@ -45,7 +46,7 @@ export const AL_61_75 = {
         L: { BA: 0.227, HR: 17, RBI: 36, BB: 63, SO: 30, AB: 185, H: 42, d2B: 1, d3B: 0, SB: 4, CS: 1, OBA: 0.423, SA: 0.508 },
         R: { BA: 0.300, HR: 32, RBI: 104, BB: 82, SO: 54, AB: 370, H: 111, d2B: 19, d3B: 2, SB: 4, CS: 1, OBA: 0.430, SA: 0.622 }
       },
-      ratings: { power: 10, hitAndRun: 7, bunt: 3, fbPct: 65, runs: 5, range: 4, arm: 5, durability: 9 },
+      ratings: { power: 9, hitAndRun: 7, bunt: 3, fbPct: 65, runs: 5, range: 4, arm: 5, durability: 9 },
       source: { bref: 'killeha01', season: 1969, splits: 'platoon', csRecorded: true }
     },
     {
@@ -76,7 +77,7 @@ export const AL_61_75 = {
         L: { BA: 0.328, HR: 8, RBI: 40, BB: 18, SO: 15, AB: 204, H: 67, d2B: 12, d3B: 3, SB: 0, CS: 0, OBA: 0.376, SA: 0.534 },
         R: { BA: 0.311, HR: 20, RBI: 78, BB: 33, SO: 49, AB: 408, H: 127, d2B: 23, d3B: 0, SB: 1, CS: 0, OBA: 0.364, SA: 0.515 }
       },
-      ratings: { power: 8, hitAndRun: 9, bunt: 4, fbPct: 47, runs: 4, range: 9, arm: 9, durability: 9 },
+      ratings: { power: 7, hitAndRun: 9, bunt: 5, fbPct: 47, runs: 4, range: 9, arm: 9, durability: 9 },
       source: { bref: 'robinbr01', season: 1964, splits: 'platoon', csRecorded: true }
     },
     {
@@ -107,7 +108,7 @@ export const AL_61_75 = {
         L: { BA: 0.338, HR: 6, RBI: 21, BB: 14, SO: 21, AB: 130, H: 44, d2B: 3, d3B: 0, SB: 0, CS: 2, OBA: 0.397, SA: 0.500 },
         R: { BA: 0.323, HR: 38, RBI: 100, BB: 77, SO: 48, AB: 449, H: 145, d2B: 28, d3B: 4, SB: 10, CS: 6, OBA: 0.424, SA: 0.657 }
       },
-      ratings: { power: 10, hitAndRun: 9, bunt: 4, fbPct: 60, runs: 7, range: 6, arm: 7, durability: 9 },
+      ratings: { power: 9, hitAndRun: 9, bunt: 4, fbPct: 60, runs: 6, range: 6, arm: 7, durability: 9 },
       source: { bref: 'yastrca01', season: 1967, splits: 'platoon', csRecorded: true }
     },
     {
@@ -155,7 +156,7 @@ export const AL_61_75 = {
         L: { BA: 0.304, HR: 10, RBI: 28, BB: 22, SO: 28, AB: 184, H: 56, d2B: 10, d3B: 0, SB: 2, CS: 1, OBA: 0.378, SA: 0.522 },
         R: { BA: 0.321, HR: 39, RBI: 94, BB: 65, SO: 62, AB: 392, H: 126, d2B: 24, d3B: 2, SB: 6, CS: 4, OBA: 0.425, SA: 0.691 }
       },
-      ratings: { power: 10, hitAndRun: 8, bunt: 3, fbPct: 64, runs: 5, range: 7, arm: 8, durability: 8 },
+      ratings: { power: 9, hitAndRun: 8, bunt: 3, fbPct: 64, runs: 5, range: 7, arm: 8, durability: 8 },
       source: { bref: 'robinfr02', season: 1966, splits: 'platoon', csRecorded: true }
     },
     {
@@ -186,7 +187,7 @@ export const AL_61_75 = {
         L: { BA: 0.286, HR: 15, RBI: 36, BB: 31, SO: 28, AB: 140, H: 40, d2B: 8, d3B: 0, SB: 8, CS: 4, OBA: 0.413, SA: 0.664 },
         R: { BA: 0.317, HR: 22, RBI: 77, BB: 68, SO: 98, AB: 366, H: 116, d2B: 20, d3B: 5, SB: 11, CS: 3, OBA: 0.423, SA: 0.579 }
       },
-      ratings: { power: 10, hitAndRun: 5, bunt: 5, fbPct: 59, runs: 9, range: 5, arm: 6, durability: 7 },
+      ratings: { power: 9, hitAndRun: 5, bunt: 6, fbPct: 59, runs: 9, range: 5, arm: 6, durability: 7 },
       source: { bref: 'allendi01', season: 1972, splits: 'platoon', csRecorded: true }
     },
     {
@@ -202,7 +203,7 @@ export const AL_61_75 = {
         L: { BA: 0.269, HR: 4, RBI: 18, BB: 4, SO: 20, AB: 167, H: 45, d2B: 6, d3B: 0, SB: 1, CS: 2, OBA: 0.299, SA: 0.377 },
         R: { BA: 0.341, HR: 28, RBI: 76, BB: 31, SO: 48, AB: 505, H: 172, d2B: 37, d3B: 9, SB: 11, CS: 4, OBA: 0.380, SA: 0.616 }
       },
-      ratings: { power: 9, hitAndRun: 9, bunt: 6, fbPct: 47, runs: 9, range: 6, arm: 9, durability: 6 },
+      ratings: { power: 7, hitAndRun: 9, bunt: 7, fbPct: 47, runs: 9, range: 6, arm: 9, durability: 6 },
       source: { bref: 'olivato01', season: 1964, splits: 'platoon', csRecorded: true }
     },
     {
@@ -217,7 +218,7 @@ export const AL_61_75 = {
         L: { BA: 0.273, HR: 12, RBI: 48, BB: 12, SO: 47, AB: 205, H: 56, d2B: 6, d3B: 1, SB: 3, CS: 2, OBA: 0.315, SA: 0.488 },
         R: { BA: 0.305, HR: 20, RBI: 69, BB: 64, SO: 64, AB: 334, H: 102, d2B: 22, d3B: 1, SB: 19, CS: 6, OBA: 0.420, SA: 0.557 }
       },
-      ratings: { power: 9, hitAndRun: 5, bunt: 5, fbPct: 53, runs: 8, range: 6, arm: 7, durability: 8 },
+      ratings: { power: 8, hitAndRun: 5, bunt: 6, fbPct: 53, runs: 8, range: 6, arm: 7, durability: 8 },
       source: { bref: 'jacksre01', season: 1973, splits: 'platoon', csRecorded: true }
     }
   ],
