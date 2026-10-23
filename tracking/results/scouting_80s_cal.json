@@ -1,0 +1,140 @@
+{
+ "pettiga01": {
+  "name": "Gary Pettis",
+  "range": 9,
+  "arm": 5,
+  "durability": 8
+ },
+ "carewro01": {
+  "name": "Rod Carew",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "grichbo01": {
+  "name": "Bobby Grich",
+  "range": 8,
+  "arm": 7,
+  "durability": 6
+ },
+ "joynewa01": {
+  "name": "Wally Joyner",
+  "range": 6,
+  "arm": 4,
+  "durability": 8
+ },
+ "decindo01": {
+  "name": "Doug DeCinces",
+  "range": 7,
+  "arm": 7,
+  "durability": 6
+ },
+ "downibr01": {
+  "name": "Brian Downing",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "whitede03": {
+  "name": "Devon White",
+  "range": 9,
+  "arm": 7,
+  "durability": 7
+ },
+ "schofdi02": {
+  "name": "Dick Schofield",
+  "range": 7,
+  "arm": 7,
+  "durability": 8
+ },
+ "boonebo01": {
+  "name": "Bob Boone",
+  "range": 7,
+  "arm": 8,
+  "durability": 8
+ },
+ "lynnfr01": {
+  "name": "Fred Lynn",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "jacksre01": {
+  "name": "Reggie Jackson",
+  "range": 3,
+  "arm": 4,
+  "durability": 7
+ },
+ "howelja02": {
+  "name": "Jack Howell",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "burleri01": {
+  "name": "Rick Burleson",
+  "range": 5,
+  "arm": 7,
+  "durability": 4
+ },
+ "wittmi01": {
+  "name": "Mike Witt",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "zahnge01": {
+  "name": "Geoff Zahn",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "mccaski01": {
+  "name": "Kirk McCaskill",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "forscke01": {
+  "name": "Ken Forsch",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "2-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "aasedo01": {
+  "name": "Don Aase",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "mooredo01": {
+  "name": "Donnie Moore",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

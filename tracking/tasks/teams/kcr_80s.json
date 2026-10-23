@@ -47,24 +47,9 @@
   {
    "bref": "brettge01",
    "name": "George Brett",
-   "year": 1988,
+   "year": 1980,
    "pos": "1B",
    "pos2": "3B",
-   "isStarter": true
-  },
-  {
-   "bref": "jacksbo01",
-   "name": "Bo Jackson",
-   "year": 1989,
-   "pos": "LF",
-   "pos2": "RF",
-   "isStarter": true
-  },
-  {
-   "bref": "mcraeha01",
-   "name": "Hal McRae",
-   "year": 1982,
-   "pos": "DH",
    "isStarter": true
   },
   {
@@ -72,6 +57,13 @@
    "name": "Danny Tartabull",
    "year": 1988,
    "pos": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "mcraeha01",
+   "name": "Hal McRae",
+   "year": 1982,
+   "pos": "DH",
    "isStarter": true
   },
   {
@@ -83,6 +75,13 @@
    "isStarter": true
   },
   {
+   "bref": "smithlo01",
+   "name": "Lonnie Smith",
+   "year": 1986,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
    "bref": "whitefr01",
    "name": "Frank White",
    "year": 1984,
@@ -90,9 +89,9 @@
    "isStarter": true
   },
   {
-   "bref": "stillku01",
-   "name": "Kurt Stillwell",
-   "year": 1988,
+   "bref": "washiu_01",
+   "name": "U L Washington",
+   "year": 1982,
    "pos": "SS",
    "isStarter": true
   },
@@ -104,6 +103,13 @@
    "isStarter": false
   },
   {
+   "bref": "stillku01",
+   "name": "Kurt Stillwell",
+   "year": 1988,
+   "pos": "SS",
+   "isStarter": false
+  },
+  {
    "bref": "otisam01",
    "name": "Amos Otis",
    "year": 1981,
@@ -112,17 +118,11 @@
    "isStarter": false
   },
   {
-   "bref": "balbost01",
-   "name": "Steve Balboni",
-   "year": 1984,
-   "pos": "1B",
-   "isStarter": false
-  },
-  {
-   "bref": "smithlo01",
-   "name": "Lonnie Smith",
-   "year": 1986,
+   "bref": "jacksbo01",
+   "name": "Bo Jackson",
+   "year": 1989,
    "pos": "LF",
+   "pos2": "RF",
    "isStarter": false
   }
  ],

@@ -105,7 +105,7 @@ def collect_batters(seasons):
             games = {pos: num(app.get(key)) for pos, key in APP_KEY.items()}
             for pos, g in games.items():
                 p['games'][pos] = p['games'].get(pos, 0) + g
-            p['seasons'][year] = {'war': war, 'pa': num(row.get('b_pa')), 'games': games,
+            p['seasons'][year] = {'year': year, 'war': war, 'pa': num(row.get('b_pa')), 'games': games,
                                   'opsPlus': num(row.get('b_onbase_plus_slugging_plus'))}
     return players
 
@@ -146,40 +146,50 @@ def bat_score(p):
 
 
 def pos_share(p, pos):
-    """Share of his games with the franchise played at `pos` (corners count together)."""
-    total = sum(p['games'][q] for q in FIELD_POS + ('DH',)) or 1
-    games = p['games']['LF'] + p['games']['RF'] if pos in ('LF', 'RF') else p['games'][pos]
-    return games / total
+    """Share of his games with the franchise played at `pos`, DH games included."""
+    return p['games'][pos] / (sum(p['games'][q] for q in FIELD_POS + ('DH',)) or 1)
 
 
 def eligible(p, pos):
     """Played the position in at least 30% of his games with the franchise, DH games
-    included (or 150 games); corner outfielders may play either corner."""
-    field_games = sum(p['games'][q] for q in FIELD_POS + ('DH',)) or 1
-    share = lambda q: p['games'][q] / field_games
-    if pos in ('LF', 'RF'):
-        return share('LF') + share('RF') >= 0.3 or p['games']['LF'] + p['games']['RF'] >= 150
-    return share(pos) >= 0.3 or p['games'][pos] >= 150
+    included, or in 150 games. A centre fielder can also play a corner."""
+    played = lambda q: pos_share(p, q) >= 0.3 or p['games'][q] >= 150
+    return played(pos) or (pos in ('LF', 'RF') and played('CF'))
+
+
+def most_played(games):
+    """The fielding position with the most games, or DH for a player who never took the field."""
+    pos = max(FIELD_POS, key=lambda q: games[q])
+    return pos if games[pos] else 'DH'
 
 
 def primary(p):
     """Usual fielding position; a pinch-hitter takes the lifted player's spot, so this is a label."""
-    return max(FIELD_POS, key=lambda q: p['games'][q])
+    return most_played(p['games'])
 
 
-def best_season(p, pos=None, min_pa=300):
-    """Best season by WAR with at least min_pa, preferring seasons mostly at `pos`. A DH is
-    rated on his best bat, ignoring his glove."""
-    seasons = [(y, s) for y, s in p['seasons'].items() if s['pa'] >= min_pa] or list(p['seasons'].items())
+def qualified(s):
+    """A full-time season: 300 plate appearances, or 200 in strike-shortened 1981."""
+    return s['pa'] >= (200 if s['year'] == 1981 else 300)
+
+
+def best_season(p, pos=None):
+    """Best qualifying season by WAR. A DH is rated on his best bat, ignoring his glove. For a
+    fielder, seasons spent mostly at `pos` win unless another is better by more than 2 WAR;
+    any outfield spot counts for an outfielder (Henderson's 1985 in centre for a left fielder)."""
+    seasons = [(y, s) for y, s in p['seasons'].items() if qualified(s)]
     if pos == 'DH':
         return max(seasons, key=lambda ys: bat_value(ys[1]))[0]
+    best = max(seasons, key=lambda ys: ys[1]['war'])
     if pos:
-        # Any outfield spot counts for an outfielder (Henderson's 1985 in centre for a left fielder)
         spots = ('LF', 'CF', 'RF') if pos in ('LF', 'CF', 'RF') else (pos,)
         at_pos = [(y, s) for y, s in seasons
                   if sum(s['games'][q] for q in spots) >= 0.5 * max(sum(s['games'][q] for q in FIELD_POS + ('DH',)), 1)]
-        seasons = at_pos or seasons
-    return max(seasons, key=lambda ys: ys[1]['war'])[0]
+        if at_pos:
+            best_at_pos = max(at_pos, key=lambda ys: ys[1]['war'])
+            if best[1]['war'] - best_at_pos[1]['war'] <= 2:
+                best = best_at_pos
+    return best[0]
 
 
 def assign_starters(batters):
@@ -196,14 +206,7 @@ def assign_starters(batters):
         total = sum(score(batters[c]) + 3 * pos_share(batters[c], pos) for pos, c in zip(FIELD_POS, combo) if c)
         if total > best_total:
             best, best_total = combo, total
-    starters = dict(zip(FIELD_POS, best))
-    # Corners are interchangeable for eligibility; put each corner man on his usual side
-    lf, rf = starters['LF'], starters['RF']
-    if lf and rf:
-        g = lambda pid, pos: batters[pid]['games'][pos]
-        if g(lf, 'RF') + g(rf, 'LF') > g(lf, 'LF') + g(rf, 'RF'):
-            starters['LF'], starters['RF'] = rf, lf
-    return starters
+    return dict(zip(FIELD_POS, best))
 
 
 def second_pos(p, pos):
@@ -247,9 +250,14 @@ def pick_team(team):
     pitchers = collect_pitchers(seasons)
     picks = {}
 
+    # Only players with a full-time season with the club can be rated fairly
+    batters = {pid: p for pid, p in batters.items() if any(qualified(s) for s in p['seasons'].values())}
+
     def add(pid, pos, starter, why):
         p = batters[pid]
         year = best_season(p, pos)
+        # A bench player is rated on his best season and labelled with that season's position
+        pos = pos or most_played(p['seasons'][year]['games'])
         picks[pid] = {'pos': pos, 'year': year, 'isStarter': starter, 'why': why,
                       'decadeWar': round(p['war'], 1), 'score': score(p),
                       'line': season_line(seasons, pid, year)}
@@ -264,33 +272,38 @@ def pick_team(team):
 
     for _ in range(4):
         pid = max(left, key=lambda pid: max(score(left[pid]), bat_score(left[pid])))
-        add(pid, primary(left[pid]), False, 'best remaining player')
+        add(pid, None, False, 'best remaining player')
         left.pop(pid)
 
     order = batting_order([starters[pos] for pos in FIELD_POS] + [dh], batters, picks)
     bench_ids = [pid for pid in picks if not picks[pid]['isStarter']]
 
-    # Pitchers
+    # Pitchers, each needing a full-time season in his role: a starter 120 IP (80 in 1981),
+    # a reliever 50 IP (35 in 1981), a closer 10 saves
+    def role_seasons(pid, role):
+        short = lambda y: y == 1981
+        ok = {
+            'SP': lambda y, s: s['ip'] >= (80 if short(y) else 120) and s['gs'] >= 0.5 * s['g'],
+            'RP': lambda y, s: s['ip'] >= (35 if short(y) else 50) and s['gs'] < 0.2 * max(s['g'], 1),
+            'CL': lambda y, s: s['sv'] >= 10,
+        }[role]
+        return [(y, s) for y, s in pitchers[pid]['seasons'].items() if ok(y, s)]
+
     relievers = {pid: p for pid, p in pitchers.items() if p['gs'] < 0.2 * p['g']}
-    top_saves = max(p['sv'] for p in relievers.values())
-    closer = max((pid for pid, p in relievers.items() if p['sv'] >= 0.6 * top_saves),
-                 key=lambda pid: score(relievers[pid]))
-    sps = sorted((pid for pid, p in pitchers.items() if p['gs'] >= 0.5 * p['g'] and pid != closer),
+    closers = [pid for pid in relievers if role_seasons(pid, 'CL')]
+    top_saves = max(pitchers[pid]['sv'] for pid in closers)
+    closer = max((pid for pid in closers if pitchers[pid]['sv'] >= 0.6 * top_saves),
+                 key=lambda pid: score(pitchers[pid]))
+    sps = sorted((pid for pid, p in pitchers.items()
+                  if p['gs'] >= 0.5 * p['g'] and pid != closer and role_seasons(pid, 'SP')),
                  key=lambda pid: -score(pitchers[pid]))[:4]
-    rp = max((pid for pid, p in pitchers.items() if p['gs'] < 0.2 * p['g'] and pid != closer),
+    rp = max((pid for pid in relievers if pid != closer and role_seasons(pid, 'RP')),
              key=lambda pid: score(pitchers[pid]))
     staff = []
 
     def pitcher_season(pid, role):
-        p = pitchers[pid]
-        if role == 'SP':
-            ok = [(y, s) for y, s in p['seasons'].items() if s['ip'] >= 120 and s['gs'] >= 0.5 * s['g']]
-        elif role == 'CL':
-            ok = [(y, s) for y, s in p['seasons'].items() if s['sv'] >= 10]
-        else:
-            ok = [(y, s) for y, s in p['seasons'].items() if s['ip'] >= 50 and s['gs'] < 0.2 * max(s['g'], 1)]
-        ok = ok or list(p['seasons'].items())
-        return max(ok, key=lambda ys: ys[1]['war'] + (0.05 * ys[1]['sv'] if role == 'CL' else 0))[0]
+        return max(role_seasons(pid, role),
+                   key=lambda ys: ys[1]['war'] + (0.05 * ys[1]['sv'] if role == 'CL' else 0))[0]
 
     for pid, role in [(s, 'SP') for s in sps] + [(rp, 'RP'), (closer, 'CL')]:
         p = pitchers[pid]

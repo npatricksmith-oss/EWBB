@@ -30,17 +30,18 @@
  "source": "Chicago White Sox 1980-1989 all-decade team: each player's best season with the club in the decade",
  "batters": [
   {
+   "bref": "lawru01",
+   "name": "Rudy Law",
+   "year": 1983,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
    "bref": "lemonch01",
    "name": "Chet Lemon",
    "year": 1980,
    "pos": "CF",
-   "isStarter": true
-  },
-  {
-   "bref": "luzingr01",
-   "name": "Greg Luzinski",
-   "year": 1982,
-   "pos": "DH",
    "isStarter": true
   },
   {
@@ -59,19 +60,18 @@
    "isStarter": true
   },
   {
-   "bref": "caldeiv01",
-   "name": "Iv\u00e1n Calder\u00f3n",
-   "year": 1987,
-   "pos": "LF",
-   "pos2": "RF",
-   "isStarter": true
-  },
-  {
    "bref": "fiskca01",
    "name": "Carlton Fisk",
    "year": 1983,
    "pos": "C",
    "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "luzingr01",
+   "name": "Greg Luzinski",
+   "year": 1982,
+   "pos": "DH",
    "isStarter": true
   },
   {
@@ -105,10 +105,10 @@
    "isStarter": false
   },
   {
-   "bref": "lawru01",
-   "name": "Rudy Law",
-   "year": 1983,
-   "pos": "CF",
+   "bref": "caldeiv01",
+   "name": "Iv\u00e1n Calder\u00f3n",
+   "year": 1987,
+   "pos": "RF",
    "pos2": "LF",
    "isStarter": false
   },

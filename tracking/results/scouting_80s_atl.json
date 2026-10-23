@@ -1,0 +1,140 @@
+{
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 6,
+  "arm": 4,
+  "durability": 5
+ },
+ "jamesdi01": {
+  "name": "Dion James",
+  "range": 5,
+  "arm": 4,
+  "durability": 4
+ },
+ "murphda05": {
+  "name": "Dale Murphy",
+  "range": 6,
+  "arm": 8,
+  "durability": 10
+ },
+ "hornebo01": {
+  "name": "Bob Horner",
+  "range": 4,
+  "arm": 6,
+  "durability": 4
+ },
+ "washicl01": {
+  "name": "Claudell Washington",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "chambch01": {
+  "name": "Chris Chambliss",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "benedbr01": {
+  "name": "Bruce Benedict",
+  "range": 5,
+  "arm": 6,
+  "durability": 5
+ },
+ "ramirra01": {
+  "name": "Rafael Ram\u00edrez",
+  "range": 6,
+  "arm": 8,
+  "durability": 9
+ },
+ "hubbagl01": {
+  "name": "Glenn Hubbard",
+  "range": 8,
+  "arm": 6,
+  "durability": 7
+ },
+ "oberkke01": {
+  "name": "Ken Oberkfell",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "virgioz02": {
+  "name": "Ozzie Virgil",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "butlebr01": {
+  "name": "Brett Butler",
+  "range": 8,
+  "arm": 4,
+  "durability": 9
+ },
+ "johnsra04": {
+  "name": "Randy Johnson",
+  "range": 5,
+  "arm": 5,
+  "durability": 3
+ },
+ "mahleri01": {
+  "name": "Rick Mahler",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "niekrph01": {
+  "name": "Phil Niekro",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "smithza01": {
+  "name": "Zane Smith",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "perezpa01": {
+  "name": "Pascual P\u00e9rez",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "campri01": {
+  "name": "Rick Camp",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "Sinker",
+   "Curveball"
+  ]
+ },
+ "garbege01": {
+  "name": "Gene Garber",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "Slider",
+   "Sinker"
+  ]
+ }
+}

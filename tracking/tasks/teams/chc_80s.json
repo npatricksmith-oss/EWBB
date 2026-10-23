@@ -33,6 +33,13 @@
    "isStarter": true
   },
   {
+   "bref": "matthga01",
+   "name": "Gary Matthews",
+   "year": 1984,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
    "bref": "sandbry01",
    "name": "Ryne Sandberg",
    "year": 1984,
@@ -43,9 +50,9 @@
   {
    "bref": "durhale01",
    "name": "Leon Durham",
-   "year": 1982,
-   "pos": "LF",
-   "pos2": "1B",
+   "year": 1984,
+   "pos": "1B",
+   "pos2": "RF",
    "isStarter": true
   },
   {
@@ -53,13 +60,6 @@
    "name": "Andre Dawson",
    "year": 1988,
    "pos": "RF",
-   "isStarter": true
-  },
-  {
-   "bref": "ceyro01",
-   "name": "Ron Cey",
-   "year": 1983,
-   "pos": "3B",
    "isStarter": true
   },
   {
@@ -71,11 +71,10 @@
    "isStarter": true
   },
   {
-   "bref": "bucknbi01",
-   "name": "Bill Buckner",
-   "year": 1982,
-   "pos": "1B",
-   "pos2": "LF",
+   "bref": "ceyro01",
+   "name": "Ron Cey",
+   "year": 1983,
+   "pos": "3B",
    "isStarter": true
   },
   {
@@ -93,17 +92,18 @@
    "isStarter": true
   },
   {
+   "bref": "bucknbi01",
+   "name": "Bill Buckner",
+   "year": 1982,
+   "pos": "1B",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
    "bref": "gracema01",
    "name": "Mark Grace",
    "year": 1989,
    "pos": "1B",
-   "isStarter": false
-  },
-  {
-   "bref": "matthga01",
-   "name": "Gary Matthews",
-   "year": 1984,
-   "pos": "LF",
    "isStarter": false
   },
   {

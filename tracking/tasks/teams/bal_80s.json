@@ -51,11 +51,11 @@
    "isStarter": true
   },
   {
-   "bref": "youngmi01",
-   "name": "Mike Young",
-   "year": 1985,
-   "pos": "RF",
-   "pos2": "LF",
+   "bref": "roeniga01",
+   "name": "Gary Roenicke",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "RF",
    "isStarter": true
   },
   {
@@ -67,11 +67,11 @@
    "isStarter": true
   },
   {
-   "bref": "roeniga01",
-   "name": "Gary Roenicke",
-   "year": 1982,
-   "pos": "LF",
-   "pos2": "RF",
+   "bref": "lynnfr01",
+   "name": "Fred Lynn",
+   "year": 1986,
+   "pos": "RF",
+   "pos2": "CF",
    "isStarter": true
   },
   {
@@ -104,10 +104,10 @@
    "isStarter": false
   },
   {
-   "bref": "lynnfr01",
-   "name": "Fred Lynn",
-   "year": 1986,
-   "pos": "CF",
+   "bref": "youngmi01",
+   "name": "Mike Young",
+   "year": 1985,
+   "pos": "LF",
    "pos2": "RF",
    "isStarter": false
   },

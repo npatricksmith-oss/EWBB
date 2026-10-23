@@ -26,11 +26,10 @@
  "source": "Seattle Mariners 1980-1989 all-decade team: each player's best season with the club in the decade",
  "batters": [
   {
-   "bref": "pacioto01",
-   "name": "Tom Paciorek",
-   "year": 1981,
-   "pos": "RF",
-   "pos2": "LF",
+   "bref": "reynoha01",
+   "name": "Harold Reynolds",
+   "year": 1989,
+   "pos": "2B",
    "isStarter": true
   },
   {
@@ -65,18 +64,18 @@
    "isStarter": true
   },
   {
-   "bref": "hendeda01",
-   "name": "Dave Henderson",
-   "year": 1982,
+   "bref": "griffke02",
+   "name": "Ken Griffey Jr.",
+   "year": 1989,
    "pos": "CF",
-   "pos2": "RF",
    "isStarter": true
   },
   {
-   "bref": "reynoha01",
-   "name": "Harold Reynolds",
-   "year": 1989,
-   "pos": "2B",
+   "bref": "hendeda01",
+   "name": "Dave Henderson",
+   "year": 1982,
+   "pos": "RF",
+   "pos2": "CF",
    "isStarter": true
   },
   {
@@ -116,10 +115,11 @@
    "isStarter": false
   },
   {
-   "bref": "ziskri01",
-   "name": "Richie Zisk",
-   "year": 1982,
-   "pos": "C",
+   "bref": "pacioto01",
+   "name": "Tom Paciorek",
+   "year": 1981,
+   "pos": "LF",
+   "pos2": "RF",
    "isStarter": false
   }
  ],

@@ -106,7 +106,7 @@
   {
    "bref": "readyra01",
    "name": "Randy Ready",
-   "year": 1988,
+   "year": 1987,
    "pos": "3B",
    "pos2": "2B",
    "isStarter": false
@@ -114,9 +114,9 @@
   {
    "bref": "wiggial01",
    "name": "Alan Wiggins",
-   "year": 1984,
-   "pos": "2B",
-   "pos2": "LF",
+   "year": 1983,
+   "pos": "LF",
+   "pos2": "2B",
    "isStarter": false
   },
   {

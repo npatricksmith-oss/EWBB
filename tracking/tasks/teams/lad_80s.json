@@ -114,18 +114,18 @@
    "isStarter": false
   },
   {
-   "bref": "mondari01",
-   "name": "Rick Monday",
-   "year": 1981,
-   "pos": "RF",
-   "pos2": "LF",
-   "isStarter": false
-  },
-  {
    "bref": "smithre06",
    "name": "Reggie Smith",
    "year": 1980,
    "pos": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "anderda02",
+   "name": "Dave Anderson",
+   "year": 1984,
+   "pos": "SS",
+   "pos2": "3B",
    "isStarter": false
   }
  ],

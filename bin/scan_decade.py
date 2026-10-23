@@ -48,7 +48,7 @@ def table_rows(page, table_id):
         cells = dict(re.findall(r'<t[hd][^>]*data-stat="([^"]+)"[^>]*>(.*?)</t[hd]>', row, re.S))
         if 'name_display' not in cells:
             continue
-        pid = re.search(r'/players/\w/([a-z0-9.\']+)\.shtml', cells['name_display'])
+        pid = re.search(r'/players/\w/([a-z0-9._\']+)\.shtml', cells['name_display'])
         cells = {k: bref._clean(v) for k, v in cells.items()}
         cells['bref'] = pid.group(1) if pid else None
         out.append(cells)

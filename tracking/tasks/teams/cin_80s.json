@@ -32,15 +32,16 @@
    "bref": "daviser01",
    "name": "Eric Davis",
    "year": 1987,
-   "pos": "CF",
-   "pos2": "LF",
+   "pos": "RF",
+   "pos2": "CF",
    "isStarter": true
   },
   {
-   "bref": "danieka01",
-   "name": "Kal Daniels",
-   "year": 1988,
-   "pos": "LF",
+   "bref": "oestero01",
+   "name": "Ron Oester",
+   "year": 1985,
+   "pos": "2B",
+   "pos2": "SS",
    "isStarter": true
   },
   {
@@ -52,11 +53,10 @@
    "isStarter": true
   },
   {
-   "bref": "fostege01",
-   "name": "George Foster",
-   "year": 1980,
-   "pos": "RF",
-   "pos2": "LF",
+   "bref": "danieka01",
+   "name": "Kal Daniels",
+   "year": 1988,
+   "pos": "LF",
    "isStarter": true
   },
   {
@@ -81,11 +81,11 @@
    "isStarter": true
   },
   {
-   "bref": "oestero01",
-   "name": "Ron Oester",
-   "year": 1985,
-   "pos": "2B",
-   "pos2": "SS",
+   "bref": "milneed01",
+   "name": "Eddie Milner",
+   "year": 1983,
+   "pos": "CF",
+   "pos2": "LF",
    "isStarter": true
   },
   {
@@ -96,19 +96,18 @@
    "isStarter": true
   },
   {
-   "bref": "milneed01",
-   "name": "Eddie Milner",
-   "year": 1983,
-   "pos": "CF",
-   "pos2": "LF",
-   "isStarter": false
-  },
-  {
    "bref": "conceda01",
    "name": "Dave Concepci\u00f3n",
    "year": 1981,
    "pos": "SS",
    "pos2": "2B",
+   "isStarter": false
+  },
+  {
+   "bref": "fostege01",
+   "name": "George Foster",
+   "year": 1980,
+   "pos": "LF",
    "isStarter": false
   },
   {
@@ -122,9 +121,9 @@
   {
    "bref": "benchjo01",
    "name": "Johnny Bench",
-   "year": 1983,
-   "pos": "3B",
-   "pos2": "C",
+   "year": 1980,
+   "pos": "C",
+   "pos2": "3B",
    "isStarter": false
   }
  ],
@@ -142,15 +141,15 @@
    "role": "SP"
   },
   {
-   "bref": "rijojo01",
-   "name": "Jos\u00e9 Rijo",
-   "year": 1988,
-   "role": "SP"
-  },
-  {
    "bref": "berenbr01",
    "name": "Bruce Berenyi",
    "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "seaveto01",
+   "name": "Tom Seaver",
+   "year": 1981,
    "role": "SP"
   },
   {

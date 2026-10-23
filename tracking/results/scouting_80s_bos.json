@@ -1,0 +1,142 @@
+{
+ "boggswa01": {
+  "name": "Wade Boggs",
+  "range": 5,
+  "arm": 5,
+  "durability": 9
+ },
+ "greenmi01": {
+  "name": "Mike Greenwell",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "evansdw01": {
+  "name": "Dwight Evans",
+  "range": 8,
+  "arm": 9,
+  "durability": 8
+ },
+ "riceji01": {
+  "name": "Jim Rice",
+  "range": 4,
+  "arm": 5,
+  "durability": 9
+ },
+ "esaskni01": {
+  "name": "Nick Esasky",
+  "range": 5,
+  "arm": 4,
+  "durability": 6
+ },
+ "burksel01": {
+  "name": "Ellis Burks",
+  "range": 7,
+  "arm": 6,
+  "durability": 7
+ },
+ "gedmari01": {
+  "name": "Rich Gedman",
+  "range": 5,
+  "arm": 4,
+  "durability": 7
+ },
+ "reedjo01": {
+  "name": "Jody Reed",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "barrema02": {
+  "name": "Marty Barrett",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "lansfca01": {
+  "name": "Carney Lansford",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "easlemi01": {
+  "name": "Mike Easler",
+  "range": 3,
+  "arm": 3,
+  "durability": 6
+ },
+ "lynnfr01": {
+  "name": "Fred Lynn",
+  "range": 7,
+  "arm": 6,
+  "durability": 5
+ },
+ "fiskca01": {
+  "name": "Carlton Fisk",
+  "range": 5,
+  "arm": 6,
+  "durability": 4
+ },
+ "clemero02": {
+  "name": "Roger Clemens",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "hurstbr01": {
+  "name": "Bruce Hurst",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Splitter"
+  ]
+ },
+ "boydoi01": {
+  "name": "Oil Can Boyd",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "ojedabo01": {
+  "name": "Bob Ojeda",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "burgmto01": {
+  "name": "Tom Burgmeier",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "stanlbo01": {
+  "name": "Bob Stanley",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ }
+}

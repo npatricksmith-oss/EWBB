@@ -45,7 +45,7 @@
    "bref": "cansejo01",
    "name": "Jos\u00e9 Canseco",
    "year": 1988,
-   "pos": "RF",
+   "pos": "DH",
    "pos2": "LF",
    "isStarter": true
   },
@@ -61,8 +61,8 @@
    "bref": "davismi02",
    "name": "Mike Davis",
    "year": 1985,
-   "pos": "DH",
-   "pos2": "RF",
+   "pos": "RF",
+   "pos2": "CF",
    "isStarter": true
   },
   {
