@@ -1,18 +1,54 @@
-# Handoff: 1980s franchise teams (branch feat/teams-1980s, worktree .worktrees/teams-1980s)
+# Handoff: 1980s franchise teams
 
-Request: Google Doc "Feature-add-teams" in Drive folder "Agent Inbox".
+Branch `feat/teams-1980s`, worktree `/var/home/natex/Projects/EWBB/.worktrees/teams-1980s`. Work only there. Another session works on gameplay in `/var/home/natex/Projects/EWBB` on `main`; don't touch that checkout until the merge step.
+
+The request is the Google Doc "Feature-add-teams" (file ID `1GLT7jcH54rToQhVUtVoWDG7WEmXP8smvwWJwgNApUhc`) in the Drive folder "Agent Inbox".
 
 ## Done
-- `bin/scan_decade.py`: all 260 team-seasons (26 franchises, 1980-89) cached in `tracking/results/bref_cache/team80/`. Tied-game manager records and the `washiu_01` (U L Washington) ID bug are fixed and refetched.
-- `bin/pick_80s.py`: all 26 roster specs in `tracking/tasks/teams/<tm>_80s.json`, revised after two Codex gpt-6.1-sol reviews (strict positions, CF can play corners, full-time seasons only, 2-WAR season rule, best closer among top savers).
-- `bin/defense_80s.py`, `bin/managers_80s.py`: written, not yet run end to end.
-- `tracking/results/manager_research_80s.json`: 19 manager profiles from a Sonnet research agent. Check quotes flagged in each `sources` (Corrales and Trebelhorn have no quote; Rose's is unverified).
-- `src/ui/app.js`, `index.html`: team pickers grouped by era, "'80s" scoreboard tag, player season shown in the editor.
-- Scouting for atl, bos, cal: `tracking/results/scouting_80s_<tm>.json`.
+
+- **Data:** `bin/scan_decade.py` cached all 260 team-seasons (26 franchises, 1980–89) in `tracking/results/bref_cache/team80/`.
+- **Rosters:** `bin/pick_80s.py` wrote all 26 roster specs to `tracking/tasks/teams/<tm>_80s.json`. Its docstring gives the rules. Codex gpt-6.1-sol reviewed the method and the rosters twice; the fixes are in.
+- **Ratings inputs:**
+  - Sonnet scouting for all 26 teams is in `tracking/results/scouting_80s_<tm>.json`.
+  - `bin/defense_80s.py` blends fielding stats with that scouting and writes `defense_80s_<tm>.json`. These are the files the build reads.
+- **Managers:**
+  - `bin/managers_80s.py` writes `src/data/managers80s.js`, which `managers.js` merges in. All 24 managers load.
+  - Each spec's `defaultManagerId` is set.
+  - The research behind the profiles is in `tracking/results/manager_research_80s.json`. Corrales and Trebelhorn have no sourced quote, so their first advice line stands in. Rose's quote is unverified.
+- **Knuckleballers:** `bin/build_team.py` rates their pitch speed at 3.
+- **UI:**
+  - `src/ui/app.js` groups the team pickers by era and shows an "'80s" tag on the scoreboard.
+  - The Commissioner's Disk editor shows each player's season.
+  - `index.html` styles the tag.
+- **Docs:** ARCHITECTURE.md, AGENTS.md and README.md are updated, and the 26 IDs are in `tracking/tasks/teams/order.json`.
+- **Built so far:** `atl_80s` builds and plays (30 headless games ran clean).
+
+## In progress (background, may need restarting)
+
+- `python3 bin/fetch_80s.py` caches each player's page and L/R split page, about 3.5 hours for 494 players. Cached pages are skipped, so rerunning it resumes. It needs network access to www.baseball-reference.com.
+- `python3 bin/build_80s.py` builds each team once its pages are cached and prints `ALL BUILT` at the end.
 
 ## Left
-1. Finish fetching player and split pages (a background fetch may have cached some in `bref_cache/`; rerun the same loop over all specs — cached pages are skipped).
-2. Scouting for the other 23 teams: `python3 bin/scouting_prompt.py tracking/tasks/teams/<tm>_80s.json | claude -p --model sonnet` (the 2026-10-23 run hit the usage limit).
-3. `python3 bin/defense_80s.py`, then `python3 bin/build_team.py tracking/tasks/teams/<tm>_80s.json tracking/results/defense_80s_<tm>.json` per team; append the 26 ids to `tracking/tasks/teams/order.json`; fix any "split the season between clubs" warnings.
-4. `python3 bin/managers_80s.py` -> `src/data/managers80s.js`; merge `MANAGERS_80S` into `MANAGERS` in `managers.js`; set each spec's `defaultManagerId` (existing ids: weaver, herzog, anderson, mauch, torre).
-5. `node bin/smoke_teams.mjs` (inside the ewbb toolbox), `python3 validate_stats_cli.py 10`, a Codex review of the built ratings, docs (ARCHITECTURE.md, write_manifest.py), log Codex runs in MODEL_COMPARISON.md (round 1: 150 s, 4.4 KB; round 2: 298 s), merge to main and push.
+
+1. **Finish the builds.** Restart both scripts if they died. Check each build's `WARNING` lines (`tracking/results/build_<tm>_80s.json`):
+   - "split the season between clubs" means the season line includes another team. Pick that player's next-best season in the spec.
+   - "no scouting ratings" means a scouting file is missing a player.
+2. **Smoke test.** Run inside the ewbb toolbox, with the sandbox off:
+   - `toolbox run -c ewbb node bin/smoke_teams.mjs 1` must finish without errors.
+   - `python3 validate_stats_cli.py 10` checks run scoring.
+   - '80s teams playing each other should score roughly 4–4.5 runs a game.
+3. **Manifest.** Run `python3 bin/write_manifest.py`.
+4. **Model log.** Log the Codex runs in `tracking/MODEL_COMPARISON.md`, all `gpt-6.1-sol` via `codex --search exec`:
+   - Round 1, the method review: 150 s, 4.4 KB. Its useful points (DH ranking, bench rules, the manager-record bug) were all taken.
+   - Round 2, the 26-roster review: 298 s. Eight concrete errors, all fixed, including U L Washington missing (an ID-parsing bug), Foster and Paciorek out of position, and Monday's 156-PA season.
+   - Round 3, the ratings review: 199 s. It looked at ATL, BAL and BOS (the BOS build is in tracking/results/build_bos_80s.json). The Niekro speed point was already fixed. The formula points are open (see below).
+5. **Merge and push.** Commit, then merge `feat/teams-1980s` into `main` and push. `git push` needs the sandbox off. Stage files by explicit path: the worktree holds stray sandbox dotfiles (`.bashrc`, `.claude/...`) that must not be committed.
+6. **Google Doc.** Add a short status section to the doc. Include the open questions below.
+
+## Open questions for the user (from the Codex rating review; not changed, since they'd shift every existing team too)
+
+- **Pitcher speed and control center on 7, not 5,** for a league-average pitcher. The shared `build_team.py` formulas do this.
+- **Batter speed counts steal attempts,** so caught-stealing-heavy runners rate fast (Rafael Ramírez 9).
+- **Power reaches 10 at about .250 ISO.** Elite seasons bunch at the top.
+- **Outfield arms rest mostly on scouting.** Dwight Evans rates 7; Codex says 9.
+- **Ballparks.** Only six parks exist. The other 20 teams default to the closest match.

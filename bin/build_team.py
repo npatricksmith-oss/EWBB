@@ -349,6 +349,9 @@ def build_pitcher(spec, scout, league, lg_avgs, warnings, franchise=None):
         'pitches': scout.get('pitches') or ['4-Seam Fastball', 'Curveball', 'Changeup'],
         'source': {'bref': pid, 'season': year, 'splits': source},
     }
+    # Knuckleballers strike batters out without velocity; rate the pitch speed, not the K/9
+    if pitcher['pitches'][0] == 'Knuckleball':
+        pitcher['ratings']['speed'] = 3
     if source != 'estimated' and coverage < 0.995:
         pitcher['source']['splitCoverage'] = round(coverage, 2)
     return pitcher
