@@ -1,0 +1,169 @@
+{
+ "id": "mil_80s",
+ "era": "1980s",
+ "city": "Milwaukee",
+ "name": "'80s Brewers",
+ "abbrev": "MIL",
+ "idPrefix": "mil_80s",
+ "league": "AL",
+ "franchise": "MIL",
+ "primaryColor": "#12284b",
+ "secondaryColor": "#ffc52f",
+ "defaultParkId": "memorial",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "trebeto99",
+  "name": "Tom Trebelhorn",
+  "g": 495,
+  "w": 265,
+  "l": 230,
+  "years": [
+   1986,
+   1987,
+   1988,
+   1989
+  ]
+ },
+ "source": "Milwaukee Brewers 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "molitpa01",
+   "name": "Paul Molitor",
+   "year": 1982,
+   "pos": "3B",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "coopece01",
+   "name": "Cecil Cooper",
+   "year": 1980,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "yountro01",
+   "name": "Robin Yount",
+   "year": 1982,
+   "pos": "SS",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "oglivbe01",
+   "name": "Ben Oglivie",
+   "year": 1980,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "moneydo01",
+   "name": "Don Money",
+   "year": 1982,
+   "pos": "DH",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "thomago01",
+   "name": "Gorman Thomas",
+   "year": 1982,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "simmote01",
+   "name": "Ted Simmons",
+   "year": 1983,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "deerro01",
+   "name": "Rob Deer",
+   "year": 1988,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "gantnji01",
+   "name": "Jim Gantner",
+   "year": 1983,
+   "pos": "2B",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "moorech02",
+   "name": "Charlie Moore",
+   "year": 1980,
+   "pos": "C",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "surhob.01",
+   "name": "B.J. Surhoff",
+   "year": 1987,
+   "pos": "C",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "sundbji01",
+   "name": "Jim Sundberg",
+   "year": 1984,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "brockgr01",
+   "name": "Greg Brock",
+   "year": 1987,
+   "pos": "1B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "higuete01",
+   "name": "Teddy Higuera",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "haasmo01",
+   "name": "Moose Haas",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "bosioch01",
+   "name": "Chris Bosio",
+   "year": 1989,
+   "role": "SP"
+  },
+  {
+   "bref": "wegmabi01",
+   "name": "Bill Wegman",
+   "year": 1987,
+   "role": "SP"
+  },
+  {
+   "bref": "fingero01",
+   "name": "Rollie Fingers",
+   "year": 1981,
+   "role": "RP"
+  },
+  {
+   "bref": "plesada01",
+   "name": "Dan Plesac",
+   "year": 1989,
+   "role": "CL"
+  }
+ ]
+}

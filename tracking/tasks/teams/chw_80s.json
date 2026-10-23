@@ -1,0 +1,169 @@
+{
+ "id": "chw_80s",
+ "era": "1980s",
+ "city": "Chicago",
+ "name": "'80s White Sox",
+ "abbrev": "CHW",
+ "idPrefix": "chw_80s",
+ "league": "AL",
+ "franchise": "CHW",
+ "primaryColor": "#0f2a5c",
+ "secondaryColor": "#c8102e",
+ "defaultParkId": "memorial",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "larusto01",
+  "name": "Tony La Russa",
+  "g": 978,
+  "w": 495,
+  "l": 483,
+  "years": [
+   1980,
+   1981,
+   1982,
+   1983,
+   1984,
+   1985,
+   1986
+  ]
+ },
+ "source": "Chicago White Sox 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "lemonch01",
+   "name": "Chet Lemon",
+   "year": 1980,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "luzingr01",
+   "name": "Greg Luzinski",
+   "year": 1982,
+   "pos": "DH",
+   "isStarter": true
+  },
+  {
+   "bref": "baineha01",
+   "name": "Harold Baines",
+   "year": 1984,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "walkegr01",
+   "name": "Greg Walker",
+   "year": 1984,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "caldeiv01",
+   "name": "Iv\u00e1n Calder\u00f3n",
+   "year": 1987,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "fiskca01",
+   "name": "Carlton Fisk",
+   "year": 1983,
+   "pos": "C",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "bernato01",
+   "name": "Tony Bernazard",
+   "year": 1981,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "lawva01",
+   "name": "Vance Law",
+   "year": 1983,
+   "pos": "3B",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "guilloz01",
+   "name": "Ozzie Guill\u00e9n",
+   "year": 1987,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "fletcsc01",
+   "name": "Scott Fletcher",
+   "year": 1983,
+   "pos": "SS",
+   "pos2": "2B",
+   "isStarter": false
+  },
+  {
+   "bref": "lawru01",
+   "name": "Rudy Law",
+   "year": 1983,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "kittlro01",
+   "name": "Ron Kittle",
+   "year": 1983,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "cruzju01",
+   "name": "Julio Cruz",
+   "year": 1984,
+   "pos": "2B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "burnsbr01",
+   "name": "Britt Burns",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "dotsori01",
+   "name": "Richard Dotson",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "bannifl01",
+   "name": "Floyd Bannister",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "hoytla01",
+   "name": "LaMarr Hoyt",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "barojsa01",
+   "name": "Salom\u00e9 Barojas",
+   "year": 1983,
+   "role": "RP"
+  },
+  {
+   "bref": "thigpbo01",
+   "name": "Bobby Thigpen",
+   "year": 1987,
+   "role": "CL"
+  }
+ ]
+}

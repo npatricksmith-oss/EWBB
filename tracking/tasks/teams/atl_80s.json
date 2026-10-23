@@ -1,0 +1,164 @@
+{
+ "id": "atl_80s",
+ "era": "1980s",
+ "city": "Atlanta",
+ "name": "'80s Braves",
+ "abbrev": "ATL",
+ "idPrefix": "atl_80s",
+ "league": "NL",
+ "franchise": "ATL",
+ "primaryColor": "#ce1141",
+ "secondaryColor": "#13274f",
+ "defaultParkId": "fulton",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "torrejo01",
+  "name": "Joe Torre",
+  "g": 486,
+  "w": 257,
+  "l": 229,
+  "years": [
+   1982,
+   1983,
+   1984
+  ]
+ },
+ "source": "Atlanta Braves 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "smithlo01",
+   "name": "Lonnie Smith",
+   "year": 1989,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "jamesdi01",
+   "name": "Dion James",
+   "year": 1987,
+   "pos": "DH",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "murphda05",
+   "name": "Dale Murphy",
+   "year": 1987,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "hornebo01",
+   "name": "Bob Horner",
+   "year": 1980,
+   "pos": "3B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "washicl01",
+   "name": "Claudell Washington",
+   "year": 1984,
+   "pos": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "chambch01",
+   "name": "Chris Chambliss",
+   "year": 1980,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "benedbr01",
+   "name": "Bruce Benedict",
+   "year": 1981,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "ramirra01",
+   "name": "Rafael Ram\u00edrez",
+   "year": 1982,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "hubbagl01",
+   "name": "Glenn Hubbard",
+   "year": 1985,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "oberkke01",
+   "name": "Ken Oberkfell",
+   "year": 1986,
+   "pos": "3B",
+   "pos2": "2B",
+   "isStarter": false
+  },
+  {
+   "bref": "virgioz02",
+   "name": "Ozzie Virgil",
+   "year": 1987,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "butlebr01",
+   "name": "Brett Butler",
+   "year": 1983,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": false
+  },
+  {
+   "bref": "johnsra04",
+   "name": "Randy Johnson",
+   "year": 1984,
+   "pos": "3B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "mahleri01",
+   "name": "Rick Mahler",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "niekrph01",
+   "name": "Phil Niekro",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "smithza01",
+   "name": "Zane Smith",
+   "year": 1987,
+   "role": "SP"
+  },
+  {
+   "bref": "perezpa01",
+   "name": "Pascual P\u00e9rez",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "campri01",
+   "name": "Rick Camp",
+   "year": 1980,
+   "role": "RP"
+  },
+  {
+   "bref": "garbege01",
+   "name": "Gene Garber",
+   "year": 1982,
+   "role": "CL"
+  }
+ ]
+}

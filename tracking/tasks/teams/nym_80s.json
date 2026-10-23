@@ -1,0 +1,170 @@
+{
+ "id": "nym_80s",
+ "era": "1980s",
+ "city": "New York",
+ "name": "'80s Mets",
+ "abbrev": "NYM",
+ "idPrefix": "nym_80s",
+ "league": "NL",
+ "franchise": "NYM",
+ "primaryColor": "#002d72",
+ "secondaryColor": "#ff5910",
+ "defaultParkId": "fulton",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "johnsda02",
+  "name": "Davey Johnson",
+  "g": 970,
+  "w": 575,
+  "l": 395,
+  "years": [
+   1984,
+   1985,
+   1986,
+   1987,
+   1988,
+   1989
+  ]
+ },
+ "source": "New York Mets 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "strawda01",
+   "name": "Darryl Strawberry",
+   "year": 1987,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "hernake01",
+   "name": "Keith Hernandez",
+   "year": 1984,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "johnsho01",
+   "name": "Howard Johnson",
+   "year": 1989,
+   "pos": "3B",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "cartega01",
+   "name": "Gary Carter",
+   "year": 1985,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "mcreyke01",
+   "name": "Kevin McReynolds",
+   "year": 1988,
+   "pos": "DH",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "dykstle01",
+   "name": "Lenny Dykstra",
+   "year": 1986,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "backmwa01",
+   "name": "Wally Backman",
+   "year": 1986,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "wilsomo01",
+   "name": "Mookie Wilson",
+   "year": 1984,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "elsteke01",
+   "name": "Kevin Elster",
+   "year": 1989,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "stearjo01",
+   "name": "John Stearns",
+   "year": 1982,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "teufeti01",
+   "name": "Tim Teufel",
+   "year": 1987,
+   "pos": "2B",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "magadda01",
+   "name": "Dave Magadan",
+   "year": 1989,
+   "pos": "1B",
+   "pos2": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "brookhu01",
+   "name": "Hubie Brooks",
+   "year": 1984,
+   "pos": "3B",
+   "pos2": "SS",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "goodedw01",
+   "name": "Dwight Gooden",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "darliro01",
+   "name": "Ron Darling",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "fernasi01",
+   "name": "Sid Fernandez",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "ojedabo01",
+   "name": "Bob Ojeda",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "leachte01",
+   "name": "Terry Leach",
+   "year": 1988,
+   "role": "RP"
+  },
+  {
+   "bref": "oroscje01",
+   "name": "Jesse Orosco",
+   "year": 1983,
+   "role": "CL"
+  }
+ ]
+}

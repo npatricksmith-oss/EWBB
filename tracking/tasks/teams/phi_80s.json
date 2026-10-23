@@ -1,0 +1,164 @@
+{
+ "id": "phi_80s",
+ "era": "1980s",
+ "city": "Philadelphia",
+ "name": "'80s Phillies",
+ "abbrev": "PHI",
+ "idPrefix": "phi_80s",
+ "league": "NL",
+ "franchise": "PHI",
+ "primaryColor": "#8c1d40",
+ "secondaryColor": "#6cace4",
+ "defaultParkId": "metrodome",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "felskjo01",
+  "name": "John Felske",
+  "g": 384,
+  "w": 190,
+  "l": 194,
+  "years": [
+   1985,
+   1986,
+   1987
+  ]
+ },
+ "source": "Philadelphia Phillies 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "smithlo01",
+   "name": "Lonnie Smith",
+   "year": 1980,
+   "pos": "DH",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "matthga01",
+   "name": "Gary Matthews",
+   "year": 1981,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "schmimi01",
+   "name": "Mike Schmidt",
+   "year": 1980,
+   "pos": "3B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "samueju01",
+   "name": "Juan Samuel",
+   "year": 1987,
+   "pos": "2B",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "hayesvo01",
+   "name": "Von Hayes",
+   "year": 1986,
+   "pos": "1B",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "diazbo01",
+   "name": "Bo D\u00edaz",
+   "year": 1982,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "thompmi02",
+   "name": "Milt Thompson",
+   "year": 1987,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "wilsogl01",
+   "name": "Glenn Wilson",
+   "year": 1986,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "dejesiv01",
+   "name": "Iv\u00e1n de Jes\u00fas",
+   "year": 1982,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "trillma01",
+   "name": "Manny Trillo",
+   "year": 1980,
+   "pos": "2B",
+   "isStarter": false
+  },
+  {
+   "bref": "maddoga01",
+   "name": "Garry Maddox",
+   "year": 1980,
+   "pos": "CF",
+   "isStarter": false
+  },
+  {
+   "bref": "virgioz02",
+   "name": "Ozzie Virgil",
+   "year": 1984,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "aguaylu01",
+   "name": "Luis Aguayo",
+   "year": 1985,
+   "pos": "SS",
+   "pos2": "2B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "carltst01",
+   "name": "Steve Carlton",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "dennyjo01",
+   "name": "John Denny",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "grosske01",
+   "name": "Kevin Gross",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "rawlesh01",
+   "name": "Shane Rawley",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "mcgratu01",
+   "name": "Tug McGraw",
+   "year": 1980,
+   "role": "RP"
+  },
+  {
+   "bref": "bedrost01",
+   "name": "Steve Bedrosian",
+   "year": 1987,
+   "role": "CL"
+  }
+ ]
+}

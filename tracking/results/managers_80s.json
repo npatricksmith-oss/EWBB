@@ -1,0 +1,735 @@
+{
+ "andersp01": {
+  "name": "Sparky Anderson",
+  "teams": [
+   "det_80s"
+  ],
+  "games": 1566,
+  "seasons": [
+   "DET 1980 (84-78)",
+   "DET 1981 (60-49)",
+   "DET 1982 (83-79)",
+   "DET 1983 (92-70)",
+   "DET 1984 (104-58)",
+   "DET 1985 (84-77)",
+   "DET 1986 (87-75)",
+   "DET 1987 (98-64)",
+   "DET 1988 (88-74)",
+   "DET 1989 (59-103)"
+  ],
+  "ratios": {
+   "steal": 0.92,
+   "sac": 0.97,
+   "ibb": 1.55,
+   "cg": 1.2
+  },
+  "baserunRunsPerSeason": 0.3,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 5,
+   "intentionalWalk": 8,
+   "relievePitcherAfter": 115,
+   "runAggressively": 5
+  },
+  "existingProfile": "anderson"
+ },
+ "corrapa01": {
+  "name": "Pat Corrales",
+  "teams": [
+   "cle_80s"
+  ],
+  "games": 1043,
+  "seasons": [
+   "CLE 1983 (30-32)",
+   "CLE 1984 (75-87)",
+   "CLE 1985 (60-102)",
+   "CLE 1986 (84-78)",
+   "CLE 1987 (31-56)",
+   "TEX 1980 (76-85)",
+   "PHI 1982 (89-73)",
+   "PHI 1983 (43-42)"
+  ],
+  "ratios": {
+   "steal": 1.09,
+   "sac": 0.99,
+   "ibb": 1.07,
+   "cg": 1.04
+  },
+  "baserunRunsPerSeason": -2.5,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 5,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 111,
+   "runAggressively": 4
+  },
+  "existingProfile": null
+ },
+ "coxbo01": {
+  "name": "Bobby Cox",
+  "teams": [
+   "tor_80s"
+  ],
+  "games": 914,
+  "seasons": [
+   "TOR 1982 (78-84)",
+   "TOR 1983 (89-73)",
+   "TOR 1984 (89-73)",
+   "TOR 1985 (99-62)",
+   "ATL 1980 (81-80)",
+   "ATL 1981 (50-56)"
+  ],
+  "ratios": {
+   "steal": 1.26,
+   "sac": 0.79,
+   "ibb": 0.82,
+   "cg": 1.08
+  },
+  "baserunRunsPerSeason": -5.3,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 4,
+   "intentionalWalk": 4,
+   "relievePitcherAfter": 112,
+   "runAggressively": 3
+  },
+  "existingProfile": null
+ },
+ "craigro01": {
+  "name": "Roger Craig",
+  "teams": [
+   "sfg_80s"
+  ],
+  "games": 666,
+  "seasons": [
+   "SFG 1985 (6-12)",
+   "SFG 1986 (83-79)",
+   "SFG 1987 (90-72)",
+   "SFG 1988 (83-79)",
+   "SFG 1989 (92-70)"
+  ],
+  "ratios": {
+   "steal": 0.95,
+   "sac": 1.11,
+   "ibb": 1.09,
+   "cg": 0.97
+  },
+  "baserunRunsPerSeason": -8.2,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 6,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 109,
+   "runAggressively": 2
+  },
+  "existingProfile": null
+ },
+ "felskjo01": {
+  "name": "John Felske",
+  "teams": [
+   "phi_80s"
+  ],
+  "games": 384,
+  "seasons": [
+   "PHI 1985 (75-87)",
+   "PHI 1986 (86-75)",
+   "PHI 1987 (29-32)"
+  ],
+  "ratios": {
+   "steal": 0.91,
+   "sac": 0.8,
+   "ibb": 1.05,
+   "cg": 1.08
+  },
+  "baserunRunsPerSeason": -0.3,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 4,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 112,
+   "runAggressively": 5
+  },
+  "existingProfile": null
+ },
+ "freyji99": {
+  "name": "Jim Frey",
+  "teams": [
+   "chc_80s"
+  ],
+  "games": 610,
+  "seasons": [
+   "KCR 1980 (97-65)",
+   "KCR 1981 (30-40)",
+   "CHC 1984 (96-65)",
+   "CHC 1985 (77-84)",
+   "CHC 1986 (23-33)"
+  ],
+  "ratios": {
+   "steal": 1.19,
+   "sac": 0.75,
+   "ibb": 1.15,
+   "cg": 0.92
+  },
+  "baserunRunsPerSeason": 11.6,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 4,
+   "intentionalWalk": 6,
+   "relievePitcherAfter": 108,
+   "runAggressively": 10
+  },
+  "existingProfile": null
+ },
+ "gardnbi02": {
+  "name": "Billy Gardner",
+  "teams": [
+   "min_80s"
+  ],
+  "games": 747,
+  "seasons": [
+   "KCR 1987 (62-64)",
+   "MIN 1981 (30-43)",
+   "MIN 1982 (60-102)",
+   "MIN 1983 (70-92)",
+   "MIN 1984 (81-81)",
+   "MIN 1985 (27-35)"
+  ],
+  "ratios": {
+   "steal": 0.59,
+   "sac": 0.64,
+   "ibb": 1.28,
+   "cg": 1.01
+  },
+  "baserunRunsPerSeason": 0.4,
+  "statSliders": {
+   "steal2nd": 3,
+   "sacBunt": 3,
+   "intentionalWalk": 6,
+   "relievePitcherAfter": 110,
+   "runAggressively": 5
+  },
+  "existingProfile": null
+ },
+ "herzowh01": {
+  "name": "Whitey Herzog",
+  "teams": [
+   "stl_80s"
+  ],
+  "games": 1470,
+  "seasons": [
+   "STL 1980 (38-35)",
+   "STL 1981 (59-43)",
+   "STL 1982 (92-70)",
+   "STL 1983 (79-83)",
+   "STL 1984 (84-78)",
+   "STL 1985 (101-61)",
+   "STL 1986 (79-82)",
+   "STL 1987 (95-67)",
+   "STL 1988 (76-86)",
+   "STL 1989 (86-76)"
+  ],
+  "ratios": {
+   "steal": 1.33,
+   "sac": 1.09,
+   "ibb": 1.22,
+   "cg": 0.99
+  },
+  "baserunRunsPerSeason": 11.1,
+  "statSliders": {
+   "steal2nd": 7,
+   "sacBunt": 5,
+   "intentionalWalk": 6,
+   "relievePitcherAfter": 110,
+   "runAggressively": 9
+  },
+  "existingProfile": "herzog"
+ },
+ "houkra01": {
+  "name": "Ralph Houk",
+  "teams": [
+   "bos_80s"
+  ],
+  "games": 594,
+  "seasons": [
+   "BOS 1981 (59-49)",
+   "BOS 1982 (89-73)",
+   "BOS 1983 (78-84)",
+   "BOS 1984 (86-76)"
+  ],
+  "ratios": {
+   "steal": 0.43,
+   "sac": 0.93,
+   "ibb": 0.98,
+   "cg": 0.96
+  },
+  "baserunRunsPerSeason": -7.2,
+  "statSliders": {
+   "steal2nd": 2,
+   "sacBunt": 5,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 109,
+   "runAggressively": 2
+  },
+  "existingProfile": null
+ },
+ "howsedi01": {
+  "name": "Dick Howser",
+  "teams": [
+   "kcr_80s"
+  ],
+  "games": 931,
+  "seasons": [
+   "KCR 1981 (20-13)",
+   "KCR 1982 (90-72)",
+   "KCR 1983 (79-83)",
+   "KCR 1984 (84-78)",
+   "KCR 1985 (91-71)",
+   "KCR 1986 (40-48)",
+   "NYY 1980 (103-59)"
+  ],
+  "ratios": {
+   "steal": 1.16,
+   "sac": 0.77,
+   "ibb": 0.77,
+   "cg": 0.73
+  },
+  "baserunRunsPerSeason": 3.0,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 4,
+   "intentionalWalk": 4,
+   "relievePitcherAfter": 103,
+   "runAggressively": 6
+  },
+  "existingProfile": null
+ },
+ "johnsda02": {
+  "name": "Davey Johnson",
+  "teams": [
+   "nym_80s"
+  ],
+  "games": 970,
+  "seasons": [
+   "NYM 1984 (90-72)",
+   "NYM 1985 (98-64)",
+   "NYM 1986 (108-54)",
+   "NYM 1987 (92-70)",
+   "NYM 1988 (100-60)",
+   "NYM 1989 (87-75)"
+  ],
+  "ratios": {
+   "steal": 0.92,
+   "sac": 0.94,
+   "ibb": 0.61,
+   "cg": 1.2
+  },
+  "baserunRunsPerSeason": 3.6,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 5,
+   "intentionalWalk": 3,
+   "relievePitcherAfter": 115,
+   "runAggressively": 6
+  },
+  "existingProfile": null
+ },
+ "larusto01": {
+  "name": "Tony La Russa",
+  "teams": [
+   "chw_80s",
+   "oak_80s"
+  ],
+  "games": 1543,
+  "seasons": [
+   "CHW 1980 (70-90)",
+   "CHW 1981 (54-52)",
+   "CHW 1982 (87-75)",
+   "CHW 1983 (99-63)",
+   "CHW 1984 (74-88)",
+   "CHW 1985 (85-77)",
+   "CHW 1986 (26-38)",
+   "OAK 1986 (45-34)",
+   "OAK 1987 (81-81)",
+   "OAK 1988 (104-58)",
+   "OAK 1989 (99-63)"
+  ],
+  "ratios": {
+   "steal": 1.14,
+   "sac": 1.05,
+   "ibb": 0.74,
+   "cg": 0.92
+  },
+  "baserunRunsPerSeason": 5.5,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 5,
+   "intentionalWalk": 4,
+   "relievePitcherAfter": 108,
+   "runAggressively": 7
+  },
+  "existingProfile": null
+ },
+ "lasorto01": {
+  "name": "Tommy Lasorda",
+  "teams": [
+   "lad_80s"
+  ],
+  "games": 1566,
+  "seasons": [
+   "LAD 1980 (92-71)",
+   "LAD 1981 (63-47)",
+   "LAD 1982 (88-74)",
+   "LAD 1983 (91-71)",
+   "LAD 1984 (79-83)",
+   "LAD 1985 (95-67)",
+   "LAD 1986 (73-89)",
+   "LAD 1987 (73-89)",
+   "LAD 1988 (94-67)",
+   "LAD 1989 (77-83)"
+  ],
+  "ratios": {
+   "steal": 0.91,
+   "sac": 1.21,
+   "ibb": 1.06,
+   "cg": 1.55
+  },
+  "baserunRunsPerSeason": 1.2,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 6,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 124,
+   "runAggressively": 5
+  },
+  "existingProfile": null
+ },
+ "lillibo01": {
+  "name": "Bob Lillis",
+  "teams": [
+   "hou_80s"
+  ],
+  "games": 537,
+  "seasons": [
+   "HOU 1982 (28-23)",
+   "HOU 1983 (85-77)",
+   "HOU 1984 (80-82)",
+   "HOU 1985 (83-79)"
+  ],
+  "ratios": {
+   "steal": 0.92,
+   "sac": 1.05,
+   "ibb": 0.81,
+   "cg": 1.04
+  },
+  "baserunRunsPerSeason": -6.8,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 5,
+   "intentionalWalk": 4,
+   "relievePitcherAfter": 111,
+   "runAggressively": 2
+  },
+  "existingProfile": null
+ },
+ "mauchge01": {
+  "name": "Gene Mauch",
+  "teams": [
+   "cal_80s"
+  ],
+  "games": 836,
+  "seasons": [
+   "CAL 1981 (29-34)",
+   "CAL 1982 (93-69)",
+   "CAL 1985 (90-72)",
+   "CAL 1986 (92-70)",
+   "CAL 1987 (75-87)",
+   "MIN 1980 (54-71)"
+  ],
+  "ratios": {
+   "steal": 0.82,
+   "sac": 1.79,
+   "ibb": 0.76,
+   "cg": 0.99
+  },
+  "baserunRunsPerSeason": 4.8,
+  "statSliders": {
+   "steal2nd": 4,
+   "sacBunt": 9,
+   "intentionalWalk": 4,
+   "relievePitcherAfter": 110,
+   "runAggressively": 7
+  },
+  "existingProfile": "mauch"
+ },
+ "pinielo01": {
+  "name": "Lou Piniella",
+  "teams": [
+   "nyy_80s"
+  ],
+  "games": 417,
+  "seasons": [
+   "NYY 1986 (90-72)",
+   "NYY 1987 (89-73)",
+   "NYY 1988 (45-48)"
+  ],
+  "ratios": {
+   "steal": 0.98,
+   "sac": 0.78,
+   "ibb": 0.83,
+   "cg": 0.62
+  },
+  "baserunRunsPerSeason": 6.2,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 4,
+   "intentionalWalk": 4,
+   "relievePitcherAfter": 100,
+   "runAggressively": 7
+  },
+  "existingProfile": null
+ },
+ "rodgebu01": {
+  "name": "Buck Rodgers",
+  "teams": [
+   "mon_80s"
+  ],
+  "games": 1034,
+  "seasons": [
+   "MIL 1980 (39-31)",
+   "MIL 1981 (62-47)",
+   "MIL 1982 (23-24)",
+   "MON 1985 (84-77)",
+   "MON 1986 (78-83)",
+   "MON 1987 (91-71)",
+   "MON 1988 (81-81)",
+   "MON 1989 (81-81)"
+  ],
+  "ratios": {
+   "steal": 1.19,
+   "sac": 0.85,
+   "ibb": 0.92,
+   "cg": 0.85
+  },
+  "baserunRunsPerSeason": -4.4,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 4,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 106,
+   "runAggressively": 3
+  },
+  "existingProfile": null
+ },
+ "rosepe01": {
+  "name": "Pete Rose",
+  "teams": [
+   "cin_80s"
+  ],
+  "games": 785,
+  "seasons": [
+   "CIN 1984 (19-22)",
+   "CIN 1985 (89-72)",
+   "CIN 1986 (86-76)",
+   "CIN 1987 (84-78)",
+   "CIN 1988 (75-59)",
+   "CIN 1989 (59-66)"
+  ],
+  "ratios": {
+   "steal": 1.1,
+   "sac": 0.9,
+   "ibb": 1.11,
+   "cg": 0.86
+  },
+  "baserunRunsPerSeason": 4.0,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 4,
+   "intentionalWalk": 6,
+   "relievePitcherAfter": 106,
+   "runAggressively": 7
+  },
+  "existingProfile": null
+ },
+ "tannech01": {
+  "name": "Chuck Tanner",
+  "teams": [
+   "pit_80s"
+  ],
+  "games": 1272,
+  "seasons": [
+   "ATL 1986 (72-89)",
+   "ATL 1987 (69-92)",
+   "ATL 1988 (12-27)",
+   "PIT 1980 (83-79)",
+   "PIT 1981 (46-56)",
+   "PIT 1982 (84-78)",
+   "PIT 1983 (84-78)",
+   "PIT 1984 (75-87)",
+   "PIT 1985 (57-104)"
+  ],
+  "ratios": {
+   "steal": 1.0,
+   "sac": 1.09,
+   "ibb": 0.96,
+   "cg": 0.95
+  },
+  "baserunRunsPerSeason": -4.9,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 5,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 109,
+   "runAggressively": 3
+  },
+  "existingProfile": null
+ },
+ "torrejo01": {
+  "name": "Joe Torre",
+  "teams": [
+   "atl_80s"
+  ],
+  "games": 751,
+  "seasons": [
+   "ATL 1982 (89-73)",
+   "ATL 1983 (88-74)",
+   "ATL 1984 (80-82)",
+   "NYM 1980 (67-95)",
+   "NYM 1981 (41-62)"
+  ],
+  "ratios": {
+   "steal": 1.07,
+   "sac": 0.98,
+   "ibb": 0.94,
+   "cg": 0.7
+  },
+  "baserunRunsPerSeason": -2.1,
+  "statSliders": {
+   "steal2nd": 5,
+   "sacBunt": 5,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 103,
+   "runAggressively": 4
+  },
+  "existingProfile": "torre"
+ },
+ "trebeto99": {
+  "name": "Tom Trebelhorn",
+  "teams": [
+   "mil_80s"
+  ],
+  "games": 495,
+  "seasons": [
+   "MIL 1986 (6-3)",
+   "MIL 1987 (91-71)",
+   "MIL 1988 (87-75)",
+   "MIL 1989 (81-81)"
+  ],
+  "ratios": {
+   "steal": 1.37,
+   "sac": 1.19,
+   "ibb": 1.01,
+   "cg": 1.03
+  },
+  "baserunRunsPerSeason": 6.2,
+  "statSliders": {
+   "steal2nd": 7,
+   "sacBunt": 6,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 111,
+   "runAggressively": 7
+  },
+  "existingProfile": null
+ },
+ "valenbo02": {
+  "name": "Bobby Valentine",
+  "teams": [
+   "tex_80s"
+  ],
+  "games": 776,
+  "seasons": [
+   "TEX 1985 (53-76)",
+   "TEX 1986 (87-75)",
+   "TEX 1987 (75-87)",
+   "TEX 1988 (70-91)",
+   "TEX 1989 (83-79)"
+  ],
+  "ratios": {
+   "steal": 1.13,
+   "sac": 0.92,
+   "ibb": 0.94,
+   "cg": 1.02
+  },
+  "baserunRunsPerSeason": -2.3,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 5,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 111,
+   "runAggressively": 4
+  },
+  "existingProfile": null
+ },
+ "weaveea99": {
+  "name": "Earl Weaver",
+  "teams": [
+   "bal_80s"
+  ],
+  "games": 696,
+  "seasons": [
+   "BAL 1980 (100-62)",
+   "BAL 1981 (59-46)",
+   "BAL 1982 (94-68)",
+   "BAL 1985 (53-52)",
+   "BAL 1986 (73-89)"
+  ],
+  "ratios": {
+   "steal": 0.68,
+   "sac": 0.75,
+   "ibb": 1.04,
+   "cg": 1.03
+  },
+  "baserunRunsPerSeason": -2.9,
+  "statSliders": {
+   "steal2nd": 3,
+   "sacBunt": 4,
+   "intentionalWalk": 5,
+   "relievePitcherAfter": 111,
+   "runAggressively": 4
+  },
+  "existingProfile": "weaver"
+ },
+ "willidi02": {
+  "name": "Dick Williams",
+  "teams": [
+   "sdp_80s",
+   "sea_80s"
+  ],
+  "games": 1242,
+  "seasons": [
+   "SEA 1986 (58-75)",
+   "SEA 1987 (78-84)",
+   "SEA 1988 (23-33)",
+   "MON 1980 (90-72)",
+   "MON 1981 (44-37)",
+   "SDP 1982 (81-81)",
+   "SDP 1983 (81-81)",
+   "SDP 1984 (92-70)",
+   "SDP 1985 (83-79)"
+  ],
+  "ratios": {
+   "steal": 1.12,
+   "sac": 1.01,
+   "ibb": 0.67,
+   "cg": 1.12
+  },
+  "baserunRunsPerSeason": 0.8,
+  "statSliders": {
+   "steal2nd": 6,
+   "sacBunt": 5,
+   "intentionalWalk": 3,
+   "relievePitcherAfter": 113,
+   "runAggressively": 5
+  },
+  "existingProfile": null
+ }
+}

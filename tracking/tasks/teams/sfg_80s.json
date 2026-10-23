@@ -1,0 +1,165 @@
+{
+ "id": "sfg_80s",
+ "era": "1980s",
+ "city": "San Francisco",
+ "name": "'80s Giants",
+ "abbrev": "SFG",
+ "idPrefix": "sfg_80s",
+ "league": "NL",
+ "franchise": "SFG",
+ "primaryColor": "#fd5a1e",
+ "secondaryColor": "#27251f",
+ "defaultParkId": "wrigley",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "craigro01",
+  "name": "Roger Craig",
+  "g": 666,
+  "w": 354,
+  "l": 312,
+  "years": [
+   1985,
+   1986,
+   1987,
+   1988,
+   1989
+  ]
+ },
+ "source": "San Francisco Giants 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "clarkwi02",
+   "name": "Will Clark",
+   "year": 1989,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "davisch01",
+   "name": "Chili Davis",
+   "year": 1984,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "mitchke01",
+   "name": "Kevin Mitchell",
+   "year": 1989,
+   "pos": "LF",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "clarkja01",
+   "name": "Jack Clark",
+   "year": 1980,
+   "pos": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "leonaje01",
+   "name": "Jeffrey Leonard",
+   "year": 1984,
+   "pos": "DH",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "brenlbo01",
+   "name": "Bob Brenly",
+   "year": 1984,
+   "pos": "C",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "evansda01",
+   "name": "Darrell Evans",
+   "year": 1980,
+   "pos": "3B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "thompro01",
+   "name": "Robby Thompson",
+   "year": 1989,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "uribejo01",
+   "name": "Jos\u00e9 Uribe",
+   "year": 1987,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "butlebr01",
+   "name": "Brett Butler",
+   "year": 1988,
+   "pos": "CF",
+   "isStarter": false
+  },
+  {
+   "bref": "gladdda01",
+   "name": "Dan Gladden",
+   "year": 1986,
+   "pos": "CF",
+   "isStarter": false
+  },
+  {
+   "bref": "morgajo02",
+   "name": "Joe Morgan",
+   "year": 1982,
+   "pos": "2B",
+   "isStarter": false
+  },
+  {
+   "bref": "maymi01",
+   "name": "Milt May",
+   "year": 1982,
+   "pos": "C",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "hammaat01",
+   "name": "Atlee Hammaker",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "bluevi01",
+   "name": "Vida Blue",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "krukomi01",
+   "name": "Mike Krukow",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "laskebi01",
+   "name": "Bill Laskey",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "garresc01",
+   "name": "Scott Garrelts",
+   "year": 1985,
+   "role": "RP"
+  },
+  {
+   "bref": "mintogr01",
+   "name": "Greg Minton",
+   "year": 1982,
+   "role": "CL"
+  }
+ ]
+}

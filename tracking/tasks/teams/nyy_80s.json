@@ -1,0 +1,165 @@
+{
+ "id": "nyy_80s",
+ "era": "1980s",
+ "city": "New York",
+ "name": "'80s Yankees",
+ "abbrev": "NYY",
+ "idPrefix": "nyy_80s",
+ "league": "AL",
+ "franchise": "NYY",
+ "primaryColor": "#0c2340",
+ "secondaryColor": "#c4ced3",
+ "defaultParkId": "memorial",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "pinielo01",
+  "name": "Lou Piniella",
+  "g": 417,
+  "w": 224,
+  "l": 193,
+  "years": [
+   1986,
+   1987,
+   1988
+  ]
+ },
+ "source": "New York Yankees 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "henderi01",
+   "name": "Rickey Henderson",
+   "year": 1985,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "randowi01",
+   "name": "Willie Randolph",
+   "year": 1980,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "jacksre01",
+   "name": "Reggie Jackson",
+   "year": 1980,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "mattido01",
+   "name": "Don Mattingly",
+   "year": 1986,
+   "pos": "1B",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "winfida01",
+   "name": "Dave Winfield",
+   "year": 1988,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "wynegbu01",
+   "name": "Butch Wynegar",
+   "year": 1983,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "mumphje01",
+   "name": "Jerry Mumphrey",
+   "year": 1981,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "nettlgr01",
+   "name": "Graig Nettles",
+   "year": 1981,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "dentbu01",
+   "name": "Bucky Dent",
+   "year": 1980,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "baylodo01",
+   "name": "Don Baylor",
+   "year": 1983,
+   "pos": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "gamblos01",
+   "name": "Oscar Gamble",
+   "year": 1982,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "griffke01",
+   "name": "Ken Griffey",
+   "year": 1985,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "smallro02",
+   "name": "Roy Smalley",
+   "year": 1983,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "guidrro01",
+   "name": "Ron Guidry",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "johnto01",
+   "name": "Tommy John",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "niekrph01",
+   "name": "Phil Niekro",
+   "year": 1984,
+   "role": "SP"
+  },
+  {
+   "bref": "rasmude01",
+   "name": "Dennis Rasmussen",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "gossari01",
+   "name": "Rich Gossage",
+   "year": 1982,
+   "role": "RP"
+  },
+  {
+   "bref": "righeda01",
+   "name": "Dave Righetti",
+   "year": 1986,
+   "role": "CL"
+  }
+ ]
+}

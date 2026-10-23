@@ -184,7 +184,19 @@ def season_rows(rows, year):
     return rows, (totals[0] if totals else (rows[0] if rows else None))
 
 
-def build_batter(spec, scout, league, warnings):
+def check_team(name, pid, year, rows, franchise, warnings):
+    """Warns when a franchise team's player did not play for it that season, or split the
+    season between clubs (his season line and splits then include the other club)."""
+    if not franchise:
+        return
+    teams = {r.get('team_name_abbr') for r in rows}
+    if franchise not in teams:
+        warnings.append(f'{name} ({pid}) {year}: played for {sorted(teams)}, not {franchise}')
+    elif any(re.fullmatch(r'\d+TM', t or '') for t in teams):
+        warnings.append(f'{name} ({pid}) {year}: split the season between clubs {sorted(teams)}')
+
+
+def build_batter(spec, scout, league, warnings, franchise=None):
     pid, year = spec['bref'], spec['year']
     info = dict(bref.player(pid))
     info['name'] = plain(info['name'])
@@ -192,6 +204,7 @@ def build_batter(spec, scout, league, warnings):
     leagues = {r.get('comp_name_abbr') for r in rows}
     if league and league not in leagues:
         warnings.append(f'{info["name"]} ({pid}) {year}: league {sorted(leagues)} is not {league}')
+    check_team(info['name'], pid, year, rows, franchise, warnings)
     page = bref.splits(pid, year, 'b')
     total_rows = [r for r in page.get('total', []) if r.get('split_name', '').endswith('Totals')]
     if not total_rows:
@@ -257,7 +270,7 @@ def pitcher_split(c, tot):
     }
 
 
-def build_pitcher(spec, scout, league, lg_avgs, warnings):
+def build_pitcher(spec, scout, league, lg_avgs, warnings, franchise=None):
     pid, year = spec['bref'], spec['year']
     info = dict(bref.player(pid))
     info['name'] = plain(info['name'])
@@ -267,6 +280,7 @@ def build_pitcher(spec, scout, league, lg_avgs, warnings):
     leagues = {r.get('comp_name_abbr') for r in rows}
     if league and league not in leagues:
         warnings.append(f'{info["name"]} ({pid}) {year}: league {sorted(leagues)} is not {league}')
+    check_team(info['name'], pid, year, rows, franchise, warnings)
     page = bref.splits(pid, year, 'p')
     total_rows = [r for r in page.get('total', []) if r.get('split_name', '').endswith('Totals')]
     tot = pit_counts(total_rows[0]) if total_rows else None
@@ -392,8 +406,8 @@ def const_name(team_id):
 
 
 def write_module(team, players, pitchers):
-    head = {k: team[k] for k in ('id', 'city', 'name', 'abbrev', 'primaryColor', 'secondaryColor',
-                                 'defaultParkId', 'defaultManagerId')}
+    head = {k: team[k] for k in ('id', 'era', 'league', 'city', 'name', 'abbrev', 'primaryColor', 'secondaryColor',
+                                 'defaultParkId', 'defaultManagerId') if k in team}
     body = [f'  {k}: {js_value(v)},' for k, v in head.items()]
     body.append('  lineup: [')
     body.append(',\n'.join(js_player(p) for p in players))
@@ -444,15 +458,16 @@ def main():
         scouting.update(json.load(open(path)))
     lg_avgs = bref.league_averages()['seasons']
     warnings = []
-    prefix = team['abbrev'].lower()
+    prefix = team.get('idPrefix', team['abbrev'].lower())
+    franchise = team.get('franchise')
     batters, pitchers = [], []
     for spec in team['batters']:
-        p = build_batter(spec, scouting.get(spec['bref'], {}), team.get('league'), warnings)
+        p = build_batter(spec, scouting.get(spec['bref'], {}), team.get('league'), warnings, franchise)
         if spec['bref'] not in scouting:
             warnings.append(f'{p["name"]}: no scouting ratings, used defaults')
         batters.append(p)
     for spec in team['pitchers']:
-        p = build_pitcher(spec, scouting.get(spec['bref'], {}), team.get('league'), lg_avgs, warnings)
+        p = build_pitcher(spec, scouting.get(spec['bref'], {}), team.get('league'), lg_avgs, warnings, franchise)
         if spec['bref'] not in scouting:
             warnings.append(f'{p["name"]}: no scouting ratings, used defaults')
         pitchers.append(p)

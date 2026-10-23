@@ -29,6 +29,28 @@ const NARRATION_STAGGER_MS = 420;
 const FIELD_FPS = 60;
 const HOME_RUN_FIREWORKS_DELAY_MS = 1000;
 
+// Team picker groups: the teams that shipped with EWB, then the 1980s franchise teams
+const TEAM_GROUPS = [
+  { label: 'Classic EWB Teams', test: (t) => !t.era },
+  { label: '1980s Franchise Teams (best of 1980–89)', test: (t) => t.era === '1980s' }
+];
+
+/** `<option>`s for every team in `TEAMS`, in `<optgroup>`s by era. */
+function teamOptionsHtml(selectedId, label) {
+  return TEAM_GROUPS.map((g) => {
+    const options = Object.values(TEAMS)
+      .filter(g.test)
+      .map((t) => `<option value="${t.id}" ${t.id === selectedId ? 'selected' : ''}>${label(t)}</option>`)
+      .join('');
+    return options ? `<optgroup label="${g.label}">${options}</optgroup>` : '';
+  }).join('');
+}
+
+/** Scoreboard badge marking a 1980s franchise team, e.g. BAL '80s. */
+function eraTag(team) {
+  return team.era === '1980s' ? ' <span class="era-tag">’80s</span>' : '';
+}
+
 class EWBAppController {
   constructor() {
     this.gameState = new EWBGameState({
@@ -64,12 +86,10 @@ class EWBAppController {
     for (const [selectId, selectedId] of [['selectAwayTeam', 'boston'], ['selectHomeTeam', 'baltimore']]) {
       const select = document.getElementById(selectId);
       if (!select) continue;
-      select.innerHTML = Object.values(TEAMS)
-        .map((t) => {
-          const mgr = MANAGERS[t.defaultManagerId] || MANAGERS.weaver;
-          return `<option value="${t.id}" ${t.id === selectedId ? 'selected' : ''}>${t.city} ${t.name} (${getLastName(mgr.name)})</option>`;
-        })
-        .join('');
+      select.innerHTML = teamOptionsHtml(selectedId, (t) => {
+        const mgr = MANAGERS[t.defaultManagerId] || MANAGERS.weaver;
+        return `${t.city} ${t.name} (${getLastName(mgr.name)})`;
+      });
     }
   }
 
@@ -471,8 +491,8 @@ class EWBAppController {
 
     if (headerRow && awayRow && homeRow) {
       let hHtml = '<th class="team-col">CLUB (MGR)</th>';
-      let aHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.awayTeam.primaryColor}"></span>${gs.awayTeam.abbrev} <small style="color:var(--muted)">(${getLastName(gs.awayManager.name)})</small></td>`;
-      let bHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.homeTeam.primaryColor}"></span>${gs.homeTeam.abbrev} <small style="color:var(--muted)">(${getLastName(gs.homeManager.name)})</small></td>`;
+      let aHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.awayTeam.primaryColor}"></span>${gs.awayTeam.abbrev}${eraTag(gs.awayTeam)} <small style="color:var(--muted)">(${getLastName(gs.awayManager.name)})</small></td>`;
+      let bHtml = `<td class="team-col"><span class="team-dot" style="background:${gs.homeTeam.primaryColor}"></span>${gs.homeTeam.abbrev}${eraTag(gs.homeTeam)} <small style="color:var(--muted)">(${getLastName(gs.homeManager.name)})</small></td>`;
 
       for (let i = 0; i < maxInnings; i++) {
         const isCurrent = !gs.isGameOver && gs.inning === i + 1;
@@ -1079,7 +1099,7 @@ class EWBAppController {
         <div class="comm-controls">
           <label>Team:
             <select id="commTeamSelect" class="ewb-select">
-              ${Object.values(TEAMS).map((t) => `<option value="${t.id}" ${this.activeEditorTeamId === t.id ? 'selected' : ''}>${t.city} ${t.name}</option>`).join('')}
+              ${teamOptionsHtml(this.activeEditorTeamId, (t) => `${t.city} ${t.name}`)}
             </select>
           </label>
           <label>Player:
@@ -1087,7 +1107,7 @@ class EWBAppController {
               ${baseTeam.lineup
                 .map(
                   (p, i) =>
-                    `<option value="${i}" ${i === this.activeEditorPlayerIdx ? 'selected' : ''}>${p.name} (${p.pos} · Bats ${p.bats})</option>`
+                    `<option value="${i}" ${i === this.activeEditorPlayerIdx ? 'selected' : ''}>${p.name} (${p.pos} · Bats ${p.bats}${p.source?.season ? ` · ${p.source.season}` : ''})</option>`
                 )
                 .join('')}
             </select>

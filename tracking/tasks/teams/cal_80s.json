@@ -1,0 +1,166 @@
+{
+ "id": "cal_80s",
+ "era": "1980s",
+ "city": "California",
+ "name": "'80s Angels",
+ "abbrev": "CAL",
+ "idPrefix": "cal_80s",
+ "league": "AL",
+ "franchise": "CAL",
+ "primaryColor": "#ba0021",
+ "secondaryColor": "#003263",
+ "defaultParkId": "anaheim",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "mauchge01",
+  "name": "Gene Mauch",
+  "g": 711,
+  "w": 379,
+  "l": 332,
+  "years": [
+   1981,
+   1982,
+   1985,
+   1986,
+   1987
+  ]
+ },
+ "source": "California Angels 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "pettiga01",
+   "name": "Gary Pettis",
+   "year": 1986,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "carewro01",
+   "name": "Rod Carew",
+   "year": 1982,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "grichbo01",
+   "name": "Bobby Grich",
+   "year": 1981,
+   "pos": "2B",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "joynewa01",
+   "name": "Wally Joyner",
+   "year": 1987,
+   "pos": "DH",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "decindo01",
+   "name": "Doug DeCinces",
+   "year": 1982,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "downibr01",
+   "name": "Brian Downing",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "whitede03",
+   "name": "Devon White",
+   "year": 1987,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "schofdi02",
+   "name": "Dick Schofield",
+   "year": 1986,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "boonebo01",
+   "name": "Bob Boone",
+   "year": 1982,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "lynnfr01",
+   "name": "Fred Lynn",
+   "year": 1982,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "jacksre01",
+   "name": "Reggie Jackson",
+   "year": 1982,
+   "pos": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "howelja02",
+   "name": "Jack Howell",
+   "year": 1989,
+   "pos": "3B",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "burleri01",
+   "name": "Rick Burleson",
+   "year": 1981,
+   "pos": "SS",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "wittmi01",
+   "name": "Mike Witt",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "zahnge01",
+   "name": "Geoff Zahn",
+   "year": 1984,
+   "role": "SP"
+  },
+  {
+   "bref": "mccaski01",
+   "name": "Kirk McCaskill",
+   "year": 1989,
+   "role": "SP"
+  },
+  {
+   "bref": "forscke01",
+   "name": "Ken Forsch",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "aasedo01",
+   "name": "Don Aase",
+   "year": 1981,
+   "role": "RP"
+  },
+  {
+   "bref": "mooredo01",
+   "name": "Donnie Moore",
+   "year": 1985,
+   "role": "CL"
+  }
+ ]
+}

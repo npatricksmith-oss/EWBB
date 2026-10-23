@@ -1,0 +1,166 @@
+{
+ "id": "cle_80s",
+ "era": "1980s",
+ "city": "Cleveland",
+ "name": "'80s Indians",
+ "abbrev": "CLE",
+ "idPrefix": "cle_80s",
+ "league": "AL",
+ "franchise": "CLE",
+ "primaryColor": "#c8102e",
+ "secondaryColor": "#0c2340",
+ "defaultParkId": "memorial",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "corrapa01",
+  "name": "Pat Corrales",
+  "g": 635,
+  "w": 280,
+  "l": 355,
+  "years": [
+   1983,
+   1984,
+   1985,
+   1986,
+   1987
+  ]
+ },
+ "source": "Cleveland Indians 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "butlebr01",
+   "name": "Brett Butler",
+   "year": 1987,
+   "pos": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "hargrmi01",
+   "name": "Mike Hargrove",
+   "year": 1980,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "harrato01",
+   "name": "Toby Harrah",
+   "year": 1982,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "snydeco02",
+   "name": "Cory Snyder",
+   "year": 1988,
+   "pos": "RF",
+   "pos2": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "cartejo01",
+   "name": "Joe Carter",
+   "year": 1986,
+   "pos": "LF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "thornan01",
+   "name": "Andre Thornton",
+   "year": 1982,
+   "pos": "DH",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "hassero01",
+   "name": "Ron Hassey",
+   "year": 1980,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "francju01",
+   "name": "Julio Franco",
+   "year": 1987,
+   "pos": "SS",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "brownje01",
+   "name": "Jerry Browne",
+   "year": 1989,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "jacobbr01",
+   "name": "Brook Jacoby",
+   "year": 1987,
+   "pos": "3B",
+   "isStarter": false
+  },
+  {
+   "bref": "tablepa01",
+   "name": "Pat Tabler",
+   "year": 1987,
+   "pos": "1B",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "hallme01",
+   "name": "Mel Hall",
+   "year": 1986,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "bernato01",
+   "name": "Tony Bernazard",
+   "year": 1986,
+   "pos": "2B",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "blylebe01",
+   "name": "Bert Blyleven",
+   "year": 1984,
+   "role": "SP"
+  },
+  {
+   "bref": "candito01",
+   "name": "Tom Candiotti",
+   "year": 1988,
+   "role": "SP"
+  },
+  {
+   "bref": "swindgr01",
+   "name": "Greg Swindell",
+   "year": 1988,
+   "role": "SP"
+  },
+  {
+   "bref": "barkele01",
+   "name": "Len Barker",
+   "year": 1982,
+   "role": "SP"
+  },
+  {
+   "bref": "camacer01",
+   "name": "Ernie Camacho",
+   "year": 1984,
+   "role": "RP"
+  },
+  {
+   "bref": "jonesdo01",
+   "name": "Doug Jones",
+   "year": 1988,
+   "role": "CL"
+  }
+ ]
+}

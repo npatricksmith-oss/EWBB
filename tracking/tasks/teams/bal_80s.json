@@ -1,0 +1,168 @@
+{
+ "id": "bal_80s",
+ "era": "1980s",
+ "city": "Baltimore",
+ "name": "'80s Orioles",
+ "abbrev": "BAL",
+ "idPrefix": "bal_80s",
+ "league": "AL",
+ "franchise": "BAL",
+ "primaryColor": "#df4601",
+ "secondaryColor": "#000000",
+ "defaultParkId": "memorial",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "weaveea99",
+  "name": "Earl Weaver",
+  "g": 696,
+  "w": 379,
+  "l": 317,
+  "years": [
+   1980,
+   1981,
+   1982,
+   1985,
+   1986
+  ]
+ },
+ "source": "Baltimore Orioles 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "bumbral01",
+   "name": "Al Bumbry",
+   "year": 1980,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "singlke01",
+   "name": "Ken Singleton",
+   "year": 1980,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "murraed02",
+   "name": "Eddie Murray",
+   "year": 1984,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "youngmi01",
+   "name": "Mike Young",
+   "year": 1985,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "ripkeca01",
+   "name": "Cal Ripken Jr.",
+   "year": 1984,
+   "pos": "SS",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "roeniga01",
+   "name": "Gary Roenicke",
+   "year": 1982,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "dempsri01",
+   "name": "Rick Dempsey",
+   "year": 1980,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "decindo01",
+   "name": "Doug DeCinces",
+   "year": 1980,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "dauerri01",
+   "name": "Rich Dauer",
+   "year": 1980,
+   "pos": "2B",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "lowenjo01",
+   "name": "John Lowenstein",
+   "year": 1982,
+   "pos": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "lynnfr01",
+   "name": "Fred Lynn",
+   "year": 1986,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": false
+  },
+  {
+   "bref": "tettlmi01",
+   "name": "Mickey Tettleton",
+   "year": 1989,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "sheetla01",
+   "name": "Larry Sheets",
+   "year": 1987,
+   "pos": "LF",
+   "pos2": "RF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "boddimi01",
+   "name": "Mike Boddicker",
+   "year": 1984,
+   "role": "SP"
+  },
+  {
+   "bref": "mcgresc01",
+   "name": "Scott McGregor",
+   "year": 1983,
+   "role": "SP"
+  },
+  {
+   "bref": "davisst02",
+   "name": "Storm Davis",
+   "year": 1984,
+   "role": "SP"
+  },
+  {
+   "bref": "flanami01",
+   "name": "Mike Flanagan",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "stewasa01",
+   "name": "Sammy Stewart",
+   "year": 1981,
+   "role": "RP"
+  },
+  {
+   "bref": "martiti01",
+   "name": "Tippy Martinez",
+   "year": 1983,
+   "role": "CL"
+  }
+ ]
+}

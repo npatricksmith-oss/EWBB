@@ -1,0 +1,170 @@
+{
+ "id": "lad_80s",
+ "era": "1980s",
+ "city": "Los Angeles",
+ "name": "'80s Dodgers",
+ "abbrev": "LAD",
+ "idPrefix": "lad_80s",
+ "league": "NL",
+ "franchise": "LAD",
+ "primaryColor": "#005a9c",
+ "secondaryColor": "#ef3e42",
+ "defaultParkId": "anaheim",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "lasorto01",
+  "name": "Tommy Lasorda",
+  "g": 1566,
+  "w": 825,
+  "l": 741,
+  "years": [
+   1980,
+   1981,
+   1982,
+   1983,
+   1984,
+   1985,
+   1986,
+   1987,
+   1988,
+   1989
+  ]
+ },
+ "source": "Los Angeles Dodgers 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "saxst01",
+   "name": "Steve Sax",
+   "year": 1986,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "sciosmi01",
+   "name": "Mike Scioscia",
+   "year": 1985,
+   "pos": "C",
+   "isStarter": true
+  },
+  {
+   "bref": "guerrpe01",
+   "name": "Pedro Guerrero",
+   "year": 1985,
+   "pos": "RF",
+   "pos2": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "marshmi02",
+   "name": "Mike Marshall",
+   "year": 1985,
+   "pos": "DH",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "bakerdu01",
+   "name": "Dusty Baker",
+   "year": 1980,
+   "pos": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "garvest01",
+   "name": "Steve Garvey",
+   "year": 1980,
+   "pos": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "ceyro01",
+   "name": "Ron Cey",
+   "year": 1980,
+   "pos": "3B",
+   "isStarter": true
+  },
+  {
+   "bref": "landrke01",
+   "name": "Ken Landreaux",
+   "year": 1982,
+   "pos": "CF",
+   "pos2": "RF",
+   "isStarter": true
+  },
+  {
+   "bref": "russebi01",
+   "name": "Bill Russell",
+   "year": 1982,
+   "pos": "SS",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "gibsoki01",
+   "name": "Kirk Gibson",
+   "year": 1988,
+   "pos": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "brockgr01",
+   "name": "Greg Brock",
+   "year": 1985,
+   "pos": "1B",
+   "isStarter": false
+  },
+  {
+   "bref": "mondari01",
+   "name": "Rick Monday",
+   "year": 1981,
+   "pos": "RF",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "smithre06",
+   "name": "Reggie Smith",
+   "year": 1980,
+   "pos": "RF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "valenfe01",
+   "name": "Fernando Valenzuela",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "hershor01",
+   "name": "Orel Hershiser",
+   "year": 1988,
+   "role": "SP"
+  },
+  {
+   "bref": "welchbo01",
+   "name": "Bob Welch",
+   "year": 1987,
+   "role": "SP"
+  },
+  {
+   "bref": "reussje01",
+   "name": "Jerry Reuss",
+   "year": 1980,
+   "role": "SP"
+  },
+  {
+   "bref": "howest01",
+   "name": "Steve Howe",
+   "year": 1983,
+   "role": "RP"
+  },
+  {
+   "bref": "niedeto01",
+   "name": "Tom Niedenfuer",
+   "year": 1983,
+   "role": "CL"
+  }
+ ]
+}

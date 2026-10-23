@@ -1,0 +1,168 @@
+{
+ "id": "sdp_80s",
+ "era": "1980s",
+ "city": "San Diego",
+ "name": "'80s Padres",
+ "abbrev": "SDP",
+ "idPrefix": "sdp_80s",
+ "league": "NL",
+ "franchise": "SDP",
+ "primaryColor": "#5c3a21",
+ "secondaryColor": "#f4a21e",
+ "defaultParkId": "fulton",
+ "defaultManagerId": null,
+ "manager": {
+  "bref": "willidi02",
+  "name": "Dick Williams",
+  "g": 648,
+  "w": 337,
+  "l": 311,
+  "years": [
+   1982,
+   1983,
+   1984,
+   1985
+  ]
+ },
+ "source": "San Diego Padres 1980-1989 all-decade team: each player's best season with the club in the decade",
+ "batters": [
+  {
+   "bref": "gwynnto01",
+   "name": "Tony Gwynn",
+   "year": 1987,
+   "pos": "RF",
+   "pos2": "CF",
+   "isStarter": true
+  },
+  {
+   "bref": "flannti01",
+   "name": "Tim Flannery",
+   "year": 1985,
+   "pos": "3B",
+   "pos2": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "krukjo01",
+   "name": "John Kruk",
+   "year": 1987,
+   "pos": "DH",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "kennete02",
+   "name": "Terry Kennedy",
+   "year": 1982,
+   "pos": "C",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "mcreyke01",
+   "name": "Kevin McReynolds",
+   "year": 1984,
+   "pos": "CF",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "richage01",
+   "name": "Gene Richards",
+   "year": 1980,
+   "pos": "LF",
+   "pos2": "1B",
+   "isStarter": true
+  },
+  {
+   "bref": "martica01",
+   "name": "Carmelo Mart\u00ednez",
+   "year": 1984,
+   "pos": "1B",
+   "pos2": "LF",
+   "isStarter": true
+  },
+  {
+   "bref": "alomaro01",
+   "name": "Roberto Alomar",
+   "year": 1989,
+   "pos": "2B",
+   "isStarter": true
+  },
+  {
+   "bref": "templga01",
+   "name": "Garry Templeton",
+   "year": 1985,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
+   "bref": "santibe01",
+   "name": "Benito Santiago",
+   "year": 1987,
+   "pos": "C",
+   "isStarter": false
+  },
+  {
+   "bref": "readyra01",
+   "name": "Randy Ready",
+   "year": 1988,
+   "pos": "3B",
+   "pos2": "2B",
+   "isStarter": false
+  },
+  {
+   "bref": "wiggial01",
+   "name": "Alan Wiggins",
+   "year": 1984,
+   "pos": "2B",
+   "pos2": "LF",
+   "isStarter": false
+  },
+  {
+   "bref": "jonesru01",
+   "name": "Ruppert Jones",
+   "year": 1982,
+   "pos": "CF",
+   "isStarter": false
+  }
+ ],
+ "pitchers": [
+  {
+   "bref": "shower01",
+   "name": "Eric Show",
+   "year": 1986,
+   "role": "SP"
+  },
+  {
+   "bref": "draveda01",
+   "name": "Dave Dravecky",
+   "year": 1985,
+   "role": "SP"
+  },
+  {
+   "bref": "whitsed01",
+   "name": "Ed Whitson",
+   "year": 1989,
+   "role": "SP"
+  },
+  {
+   "bref": "hurstbr01",
+   "name": "Bruce Hurst",
+   "year": 1989,
+   "role": "SP"
+  },
+  {
+   "bref": "mcculla01",
+   "name": "Lance McCullers",
+   "year": 1986,
+   "role": "RP"
+  },
+  {
+   "bref": "davisma01",
+   "name": "Mark Davis",
+   "year": 1989,
+   "role": "CL"
+  }
+ ]
+}
