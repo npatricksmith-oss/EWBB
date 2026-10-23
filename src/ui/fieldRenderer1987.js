@@ -882,7 +882,7 @@ export class FieldRenderer1987 {
     if (activeFrame && activeFrame.runners) {
       activeFrame.runners.forEach((r, idx) => {
         const rScreen = this.fieldToScreen(r.x, r.y, 0, vp);
-        const prevR = prevFrame?.runners?.find((pr) => pr.label === r.label) || prevFrame?.runners?.[idx];
+        const prevR = prevFrame?.runners?.find((pr) => pr.id === r.id) || prevFrame?.runners?.[idx];
         this.drawArticulatedFieldPlayer(ctx, rScreen.x, rScreen.groundY, {
           jerseyColor: battingTeam.primaryColor || '#bd3039',
           capColor: '#f5b942',
@@ -890,7 +890,7 @@ export class FieldRenderer1987 {
           pose: r.isSliding ? 'SLIDING' : r.isMoving ? 'RUNNING' : 'READY',
           stridePhase: r.stridePhase || 0,
           hasGlove: false,
-          facing: this.trackFacing(`R${r.label || idx}`, prevR ? r.x - prevR.x : 0),
+          facing: this.trackFacing(`R${r.id || idx}`, prevR ? r.x - prevR.x : 0),
           label: r.label || 'RUN',
           showLabel: isFullField,
           scale: isFullField ? 1.12 : 0.96
