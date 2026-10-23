@@ -1,0 +1,373 @@
+{
+ "daviser01": {
+  "name": "Eric Davis",
+  "range": 8,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.1,
+    "goldGlove": true,
+    "stat": 7.8,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 11.8,
+    "leagueOf": 10.9,
+    "stat": 5.4,
+    "scout": 6
+   },
+   "durability": {
+    "games": 129,
+    "teamGames": 162,
+    "stat": 8.2,
+    "scout": 6
+   }
+  }
+ },
+ "oestero01": {
+  "name": "Ron Oester",
+  "range": 7,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 11.0,
+    "goldGlove": false,
+    "stat": 8.1,
+    "scout": 5
+   },
+   "durability": {
+    "games": 152,
+    "teamGames": 161,
+    "stat": 9.5,
+    "scout": 7
+   }
+  }
+ },
+ "parkeda01": {
+  "name": "Dave Parker",
+  "range": 3,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.5,
+    "goldGlove": false,
+    "stat": 3.1,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 11.4,
+    "leagueOf": 10.7,
+    "stat": 5.3,
+    "scout": 8
+   },
+   "durability": {
+    "games": 160,
+    "teamGames": 161,
+    "stat": 9.9,
+    "scout": 8
+   }
+  }
+ },
+ "danieka01": {
+  "name": "Kal Daniels",
+  "range": 5,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.7,
+    "goldGlove": false,
+    "stat": 5.5,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 11.0,
+    "leagueOf": 9.1,
+    "stat": 5.7,
+    "scout": 4
+   },
+   "durability": {
+    "games": 140,
+    "teamGames": 161,
+    "stat": 8.8,
+    "scout": 5
+   }
+  }
+ },
+ "larkiba01": {
+  "name": "Barry Larkin",
+  "range": 8,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.8,
+    "goldGlove": false,
+    "stat": 7.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 161,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "driesda01": {
+  "name": "Dan Driessen",
+  "range": 5,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.6,
+    "goldGlove": false,
+    "stat": 5.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "saboch01": {
+  "name": "Chris Sabo",
+  "range": 8,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.3,
+    "goldGlove": false,
+    "stat": 9.7,
+    "scout": 6
+   },
+   "durability": {
+    "games": 137,
+    "teamGames": 161,
+    "stat": 8.7,
+    "scout": 8
+   }
+  }
+ },
+ "milneed01": {
+  "name": "Eddie Milner",
+  "range": 7,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.6,
+    "goldGlove": false,
+    "stat": 7.7,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 10.8,
+    "leagueOf": 11.6,
+    "stat": 4.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 7
+   }
+  }
+ },
+ "diazbo01": {
+  "name": "Bo D\u00edaz",
+  "range": 7,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.7,
+    "goldGlove": false,
+    "stat": 7.8,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.364,
+    "leagueCsPct": 0.303,
+    "attempts": 162,
+    "stat": 6.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 140,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 6
+   }
+  }
+ },
+ "conceda01": {
+  "name": "Dave Concepci\u00f3n",
+  "range": 6,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 2.0,
+    "goldGlove": false,
+    "stat": 5.6,
+    "scout": 7
+   },
+   "durability": {
+    "games": 106,
+    "teamGames": 108,
+    "stat": 9.8,
+    "scout": 7
+   }
+  }
+ },
+ "fostege01": {
+  "name": "George Foster",
+  "range": 5,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.0,
+    "goldGlove": false,
+    "stat": 6.4,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 7.9,
+    "leagueOf": 13.2,
+    "stat": 2.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 8
+   }
+  }
+ },
+ "griffke01": {
+  "name": "Ken Griffey",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.3,
+    "goldGlove": false,
+    "stat": 3.8,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 7.2,
+    "leagueOf": 13.2,
+    "stat": 2.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 6
+   }
+  }
+ },
+ "benchjo01": {
+  "name": "Johnny Bench",
+  "range": 5,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.291,
+    "leagueCsPct": 0.329,
+    "attempts": 117,
+    "stat": 4.2,
+    "scout": 6
+   },
+   "durability": {
+    "games": 114,
+    "teamGames": 162,
+    "stat": 7.3,
+    "scout": 5
+   }
+  }
+ },
+ "sotoma01": {
+  "name": "Mario Soto",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "brownto05": {
+  "name": "Tom Browning",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "berenbr01": {
+  "name": "Bruce Berenyi",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "seaveto01": {
+  "name": "Tom Seaver",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup",
+   "Curveball"
+  ]
+ },
+ "powerte01": {
+  "name": "Ted Power",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "francjo01": {
+  "name": "John Franco",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

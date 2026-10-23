@@ -1,0 +1,142 @@
+{
+ "trammal01": {
+  "name": "Alan Trammell",
+  "range": 8,
+  "arm": 8,
+  "durability": 9
+ },
+ "whitalo01": {
+  "name": "Lou Whitaker",
+  "range": 8,
+  "arm": 7,
+  "durability": 9
+ },
+ "gibsoki01": {
+  "name": "Kirk Gibson",
+  "range": 7,
+  "arm": 6,
+  "durability": 7
+ },
+ "parrila02": {
+  "name": "Lance Parrish",
+  "range": 7,
+  "arm": 9,
+  "durability": 8
+ },
+ "evansda01": {
+  "name": "Darrell Evans",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "kempst01": {
+  "name": "Steve Kemp",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "herndla01": {
+  "name": "Larry Herndon",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "lemonch01": {
+  "name": "Chet Lemon",
+  "range": 7,
+  "arm": 8,
+  "durability": 8
+ },
+ "brookto01": {
+  "name": "Tom Brookens",
+  "range": 6,
+  "arm": 7,
+  "durability": 6
+ },
+ "nokesma01": {
+  "name": "Matt Nokes",
+  "range": 4,
+  "arm": 5,
+  "durability": 6
+ },
+ "heathmi02": {
+  "name": "Mike Heath",
+  "range": 5,
+  "arm": 6,
+  "durability": 5
+ },
+ "wockejo01": {
+  "name": "John Wockenfuss",
+  "range": 3,
+  "arm": 4,
+  "durability": 5
+ },
+ "pettiga01": {
+  "name": "Gary Pettis",
+  "range": 9,
+  "arm": 6,
+  "durability": 6
+ },
+ "morrija02": {
+  "name": "Jack Morris",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "petryda01": {
+  "name": "Dan Petry",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "tananfr01": {
+  "name": "Frank Tanana",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Curveball",
+   "Slider",
+   "Changeup",
+   "4-Seam Fastball"
+  ]
+ },
+ "terrewa01": {
+  "name": "Walt Terrell",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "hennemi01": {
+  "name": "Mike Henneman",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Slider"
+  ]
+ },
+ "hernawi01": {
+  "name": "Willie Hern\u00e1ndez",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

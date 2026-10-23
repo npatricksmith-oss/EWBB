@@ -36,6 +36,7 @@ Released in 1987 for the Commodore Amiga (and later MS-DOS, Apple II, and Macint
 - **Rosters & Historical Teams:**
   - Baltimore Orioles and Boston Red Sox rosters with full batting and pitching L/R platoon splits and 1–10 player ratings (`POWER`, `H&R`, `BUNT`, `RUNS`, `RNGE`, `ARM`, `DUR`, `Control`, `Fatigue`).
   - Historical era all-star teams and 1982 Angels/Braves.
+  - All 26 franchises of the 1980s as "'80s" teams: each club's best players of 1980–89, rated from their best season with it, under its longest-serving 1980s manager.
 - **Instant Replay & Telemetry:**
   - Frame-by-frame 60 FPS replay playback tape generated from deterministic play results.
   - Live 3D physics telemetry readout detailing exit velocity, launch angle, distance, apex height, and hang time.
@@ -111,6 +112,7 @@ EWBB/
     ├── data/
     │   ├── ballparks.js       # 10-point fence distances, 9-segment wall heights, turf/grass
     │   ├── managers.js        # 19-parameter manager profiles (Weaver, Herzog, etc.)
+    │   ├── managers80s.js     # Generated profiles for the 1980s franchise managers
     │   ├── rosters.js         # L/R platoon splits, player ratings, active teams
     │   └── teams/             # Generated historical team datasets
     ├── engine/

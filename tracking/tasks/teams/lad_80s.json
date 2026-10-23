@@ -10,7 +10,7 @@
  "primaryColor": "#005a9c",
  "secondaryColor": "#ef3e42",
  "defaultParkId": "anaheim",
- "defaultManagerId": null,
+ "defaultManagerId": "lasorda",
  "manager": {
   "bref": "lasorto01",
   "name": "Tommy Lasorda",

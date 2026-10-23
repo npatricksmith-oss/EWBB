@@ -1,0 +1,372 @@
+{
+ "henderi01": {
+  "name": "Rickey Henderson",
+  "range": 9,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 13.5,
+    "goldGlove": false,
+    "stat": 8.9,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 14.2,
+    "leagueOf": 13.2,
+    "stat": 5.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "murphdw01": {
+  "name": "Dwayne Murphy",
+  "range": 10,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.5,
+    "goldGlove": true,
+    "stat": 10.5,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 12.6,
+    "leagueOf": 13.2,
+    "stat": 4.8,
+    "scout": 7
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 9
+   }
+  }
+ },
+ "cansejo01": {
+  "name": "Jos\u00e9 Canseco",
+  "range": 5,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.1,
+    "goldGlove": false,
+    "stat": 4.7,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 11.3,
+    "leagueOf": 9.1,
+    "stat": 5.9,
+    "scout": 8
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "mcgwima01": {
+  "name": "Mark McGwire",
+  "range": 4,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.7,
+    "goldGlove": false,
+    "stat": 3.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 9
+   }
+  }
+ },
+ "davismi02": {
+  "name": "Mike Davis",
+  "range": 7,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.8,
+    "goldGlove": false,
+    "stat": 7.5,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 7.1,
+    "leagueOf": 10.7,
+    "stat": 3.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "lansfca01": {
+  "name": "Carney Lansford",
+  "range": 7,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.6,
+    "goldGlove": false,
+    "stat": 6.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "heathmi02": {
+  "name": "Mike Heath",
+  "range": 6,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.6,
+    "goldGlove": false,
+    "stat": 6.0,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.378,
+    "leagueCsPct": 0.316,
+    "attempts": 74,
+    "stat": 6.0,
+    "scout": 6
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 6
+   }
+  }
+ },
+ "phillto02": {
+  "name": "Tony Phillips",
+  "range": 8,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 13.6,
+    "goldGlove": false,
+    "stat": 8.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 118,
+    "teamGames": 162,
+    "stat": 7.6,
+    "scout": 6
+   }
+  }
+ },
+ "griffal01": {
+  "name": "Alfredo Griffin",
+  "range": 6,
+  "arm": 8,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 7
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 9
+   }
+  }
+ },
+ "armasto01": {
+  "name": "Tony Armas",
+  "range": 8,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.3,
+    "goldGlove": false,
+    "stat": 9.7,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 15.6,
+    "leagueOf": 13.2,
+    "stat": 6.0,
+    "scout": 7
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 9
+   }
+  }
+ },
+ "hendeda01": {
+  "name": "Dave Henderson",
+  "range": 7,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.8,
+    "goldGlove": false,
+    "stat": 7.2,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 6.5,
+    "leagueOf": 9.1,
+    "stat": 4.0,
+    "scout": 6
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 7
+   }
+  }
+ },
+ "grosswa01": {
+  "name": "Wayne Gross",
+  "range": 5,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 113,
+    "teamGames": 162,
+    "stat": 7.3,
+    "scout": 7
+   }
+  }
+ },
+ "steinte01": {
+  "name": "Terry Steinbach",
+  "range": 6,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.2,
+    "goldGlove": false,
+    "stat": 5.9,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.376,
+    "leagueCsPct": 0.303,
+    "attempts": 101,
+    "stat": 6.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 122,
+    "teamGames": 162,
+    "stat": 7.8,
+    "scout": 6
+   }
+  }
+ },
+ "stewada01": {
+  "name": "Dave Stewart",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "norrimi01": {
+  "name": "Mike Norris",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Screwball",
+   "Slider"
+  ]
+ },
+ "mccatst01": {
+  "name": "Steve McCatty",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "welchbo01": {
+  "name": "Bob Welch",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "nelsoge01": {
+  "name": "Gene Nelson",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "eckerde01": {
+  "name": "Dennis Eckersley",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Sinker"
+  ]
+ }
+}

@@ -1,0 +1,357 @@
+{
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.7,
+    "goldGlove": false,
+    "stat": 6.6,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 16.3,
+    "leagueOf": 12.7,
+    "stat": 6.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "mcgeewi01": {
+  "name": "Willie McGee",
+  "range": 7,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.0,
+    "goldGlove": true,
+    "stat": 6.9,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 11.4,
+    "leagueOf": 10.7,
+    "stat": 5.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 152,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 9
+   }
+  }
+ },
+ "clarkja01": {
+  "name": "Jack Clark",
+  "range": 4,
+  "arm": 7,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -5.5,
+    "goldGlove": false,
+    "stat": 3.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 131,
+    "teamGames": 162,
+    "stat": 8.3,
+    "scout": 5
+   }
+  }
+ },
+ "hendrge01": {
+  "name": "George Hendrick",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.8,
+    "goldGlove": false,
+    "stat": 5.2,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 11.0,
+    "leagueOf": 13.2,
+    "stat": 4.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 8
+   }
+  }
+ },
+ "hernake01": {
+  "name": "Keith Hernandez",
+  "range": 9,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.2,
+    "goldGlove": true,
+    "stat": 8.4,
+    "scout": 9
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 9
+   }
+  }
+ },
+ "herrto01": {
+  "name": "Tom Herr",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.7,
+    "goldGlove": false,
+    "stat": 3.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 9
+   }
+  }
+ },
+ "porteda02": {
+  "name": "Darrell Porter",
+  "range": 6,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.6,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.432,
+    "leagueCsPct": 0.327,
+    "attempts": 111,
+    "stat": 7.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 145,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 6
+   }
+  }
+ },
+ "pendlte01": {
+  "name": "Terry Pendleton",
+  "range": 8,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 14.3,
+    "goldGlove": true,
+    "stat": 9.8,
+    "scout": 6
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 8
+   }
+  }
+ },
+ "smithoz01": {
+  "name": "Ozzie Smith",
+  "range": 10,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 24.9,
+    "goldGlove": true,
+    "stat": 12.9,
+    "scout": 10
+   },
+   "durability": {
+    "games": 155,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 9
+   }
+  }
+ },
+ "oberkke01": {
+  "name": "Ken Oberkfell",
+  "range": 7,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.2,
+    "goldGlove": false,
+    "stat": 7.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 102,
+    "teamGames": 102,
+    "stat": 10.0,
+    "scout": 6
+   }
+  }
+ },
+ "vanslan01": {
+  "name": "Andy Van Slyke",
+  "range": 7,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.6,
+    "goldGlove": false,
+    "stat": 7.5,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 15.8,
+    "leagueOf": 10.7,
+    "stat": 7.0,
+    "scout": 7
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 8
+   }
+  }
+ },
+ "oquenjo01": {
+  "name": "Jos\u00e9 Oquendo",
+  "range": 8,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 14.8,
+    "goldGlove": false,
+    "stat": 9.2,
+    "scout": 7
+   },
+   "durability": {
+    "games": 163,
+    "teamGames": 162,
+    "stat": 10.1,
+    "scout": 6
+   }
+  }
+ },
+ "colemvi01": {
+  "name": "Vince Coleman",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.1,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 15.3,
+    "leagueOf": 10.9,
+    "stat": 6.8,
+    "scout": 3
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 9
+   }
+  }
+ },
+ "tudorjo01": {
+  "name": "John Tudor",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "andujjo01": {
+  "name": "Joaqu\u00edn And\u00fajar",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Splitter"
+  ]
+ },
+ "magrajo01": {
+  "name": "Joe Magrane",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "coxda01": {
+  "name": "Danny Cox",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ },
+ "suttebr01": {
+  "name": "Bruce Sutter",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball"
+  ]
+ },
+ "worreto01": {
+  "name": "Todd Worrell",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "raineti01": {
+  "name": "Tim Raines",
+  "range": 8,
+  "arm": 4,
+  "durability": 8
+ },
+ "oliveal01": {
+  "name": "Al Oliver",
+  "range": 4,
+  "arm": 5,
+  "durability": 9
+ },
+ "brookhu01": {
+  "name": "Hubie Brooks",
+  "range": 5,
+  "arm": 7,
+  "durability": 5
+ },
+ "galaran01": {
+  "name": "Andr\u00e9s Galarraga",
+  "range": 7,
+  "arm": 5,
+  "durability": 9
+ },
+ "cartega01": {
+  "name": "Gary Carter",
+  "range": 8,
+  "arm": 8,
+  "durability": 9
+ },
+ "dawsoan01": {
+  "name": "Andre Dawson",
+  "range": 8,
+  "arm": 8,
+  "durability": 7
+ },
+ "lawva01": {
+  "name": "Vance Law",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "webstmi01": {
+  "name": "Mitch Webster",
+  "range": 6,
+  "arm": 5,
+  "durability": 7
+ },
+ "wallati01": {
+  "name": "Tim Wallach",
+  "range": 7,
+  "arm": 8,
+  "durability": 9
+ },
+ "cromawa01": {
+  "name": "Warren Cromartie",
+  "range": 4,
+  "arm": 4,
+  "durability": 8
+ },
+ "foleyto02": {
+  "name": "Tom Foley",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "valenel01": {
+  "name": "Ellis Valentine",
+  "range": 6,
+  "arm": 10,
+  "durability": 6
+ },
+ "speiech01": {
+  "name": "Chris Speier",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "rogerst01": {
+  "name": "Steve Rogers",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Sinker",
+   "Curveball"
+  ]
+ },
+ "smithbr01": {
+  "name": "Bryn Smith",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "gullibi01": {
+  "name": "Bill Gullickson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "martide01": {
+  "name": "Dennis Mart\u00ednez",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "burketi01": {
+  "name": "Tim Burke",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "reardje01": {
+  "name": "Jeff Reardon",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

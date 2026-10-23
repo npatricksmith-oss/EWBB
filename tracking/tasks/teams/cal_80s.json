@@ -10,7 +10,7 @@
  "primaryColor": "#ba0021",
  "secondaryColor": "#003263",
  "defaultParkId": "anaheim",
- "defaultManagerId": null,
+ "defaultManagerId": "mauch",
  "manager": {
   "bref": "mauchge01",
   "name": "Gene Mauch",

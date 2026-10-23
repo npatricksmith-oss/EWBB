@@ -10,7 +10,7 @@
  "primaryColor": "#12284b",
  "secondaryColor": "#ffc52f",
  "defaultParkId": "memorial",
- "defaultManagerId": null,
+ "defaultManagerId": "trebelhorn",
  "manager": {
   "bref": "trebeto99",
   "name": "Tom Trebelhorn",

@@ -10,7 +10,7 @@
  "primaryColor": "#c6011f",
  "secondaryColor": "#000000",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "rose",
  "manager": {
   "bref": "rosepe01",
   "name": "Pete Rose",

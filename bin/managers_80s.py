@@ -121,9 +121,20 @@ def main():
         sliders['steal3rd'] = clamp(sliders['steal2nd'] * 0.8 + res['sliders'].get('steal3rd', 5) * 0.2)
         sliders['doubleSteal'] = clamp(sliders['steal2nd'] * 0.7 + res['sliders'].get('doubleSteal', 5) * 0.3)
         profiles.append({'id': res['id'], 'name': name, 'team': res['team'], 'bio': res['bio'],
-                         'quote': res['quote'], 'quotes': res['quotes'],
+                         # No sourced quote found: lead with his first in-game advice line
+                         'quote': res['quote'] or res['quotes'][0], 'quotes': res['quotes'],
                          **{k: sliders[k] for k in SLIDERS}})
         report[mid]['profile'] = res['id']
+
+    # Point each franchise spec at its manager's profile
+    for mid, team_ids in picked.items():
+        profile = EXISTING.get(mid) or research.get(mid, {}).get('id')
+        for tid in team_ids:
+            path = os.path.join(TASKS, f'{tid}.json')
+            spec = json.load(open(path))
+            spec['defaultManagerId'] = profile
+            with open(path, 'w') as f:
+                json.dump(spec, f, indent=1)
 
     with open(os.path.join(RESULTS, 'managers_80s.json'), 'w') as f:
         json.dump(report, f, indent=1)

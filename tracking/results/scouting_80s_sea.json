@@ -1,0 +1,139 @@
+{
+ "reynoha01": {
+  "name": "Harold Reynolds",
+  "range": 9,
+  "arm": 6,
+  "durability": 9
+ },
+ "davisal01": {
+  "name": "Alvin Davis",
+  "range": 5,
+  "arm": 4,
+  "durability": 9
+ },
+ "phelpke01": {
+  "name": "Ken Phelps",
+  "range": 3,
+  "arm": 3,
+  "durability": 6
+ },
+ "preslji01": {
+  "name": "Jim Presley",
+  "range": 5,
+  "arm": 7,
+  "durability": 9
+ },
+ "bradlph01": {
+  "name": "Phil Bradley",
+  "range": 7,
+  "arm": 6,
+  "durability": 9
+ },
+ "griffke02": {
+  "name": "Ken Griffey Jr.",
+  "range": 8,
+  "arm": 8,
+  "durability": 6
+ },
+ "hendeda01": {
+  "name": "Dave Henderson",
+  "range": 7,
+  "arm": 6,
+  "durability": 6
+ },
+ "valleda01": {
+  "name": "Dave Valle",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "owensp01": {
+  "name": "Spike Owen",
+  "range": 7,
+  "arm": 6,
+  "durability": 8
+ },
+ "cruzju01": {
+  "name": "Julio Cruz",
+  "range": 7,
+  "arm": 5,
+  "durability": 7
+ },
+ "bochtbr01": {
+  "name": "Bruce Bochte",
+  "range": 6,
+  "arm": 4,
+  "durability": 7
+ },
+ "percoja01": {
+  "name": "Jack Perconte",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "pacioto01": {
+  "name": "Tom Paciorek",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "langsma01": {
+  "name": "Mark Langston",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "mooremi01": {
+  "name": "Mike Moore",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Slider"
+  ]
+ },
+ "beattji01": {
+  "name": "Jim Beattie",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "bannifl01": {
+  "name": "Floyd Bannister",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "vandeed01": {
+  "name": "Ed Vande Berg",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "caudibi01": {
+  "name": "Bill Caudill",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

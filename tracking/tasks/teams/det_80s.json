@@ -10,7 +10,7 @@
  "primaryColor": "#0c2340",
  "secondaryColor": "#fa4616",
  "defaultParkId": "memorial",
- "defaultManagerId": null,
+ "defaultManagerId": "anderson",
  "manager": {
   "bref": "andersp01",
   "name": "Sparky Anderson",

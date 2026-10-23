@@ -10,7 +10,7 @@
  "primaryColor": "#c41e3a",
  "secondaryColor": "#0c2340",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "herzog",
  "manager": {
   "bref": "herzowh01",
   "name": "Whitey Herzog",

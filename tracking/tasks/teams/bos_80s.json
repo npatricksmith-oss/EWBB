@@ -10,7 +10,7 @@
  "primaryColor": "#bd3039",
  "secondaryColor": "#0c2340",
  "defaultParkId": "fenway",
- "defaultManagerId": null,
+ "defaultManagerId": "houk",
  "manager": {
   "bref": "houkra01",
   "name": "Ralph Houk",

@@ -1,0 +1,141 @@
+{
+ "dernibo01": {
+  "name": "Bob Dernier",
+  "range": 7,
+  "arm": 5,
+  "durability": 6
+ },
+ "matthga01": {
+  "name": "Gary Matthews",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "sandbry01": {
+  "name": "Ryne Sandberg",
+  "range": 8,
+  "arm": 7,
+  "durability": 10
+ },
+ "durhale01": {
+  "name": "Leon Durham",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "dawsoan01": {
+  "name": "Andre Dawson",
+  "range": 6,
+  "arm": 8,
+  "durability": 8
+ },
+ "morelke01": {
+  "name": "Keith Moreland",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "ceyro01": {
+  "name": "Ron Cey",
+  "range": 4,
+  "arm": 5,
+  "durability": 6
+ },
+ "dunstsh01": {
+  "name": "Shawon Dunston",
+  "range": 7,
+  "arm": 10,
+  "durability": 6
+ },
+ "davisjo02": {
+  "name": "Jody Davis",
+  "range": 6,
+  "arm": 6,
+  "durability": 9
+ },
+ "bucknbi01": {
+  "name": "Bill Buckner",
+  "range": 4,
+  "arm": 4,
+  "durability": 8
+ },
+ "gracema01": {
+  "name": "Mark Grace",
+  "range": 7,
+  "arm": 5,
+  "durability": 8
+ },
+ "lopesda01": {
+  "name": "Davey Lopes",
+  "range": 5,
+  "arm": 4,
+  "durability": 5
+ },
+ "palmera01": {
+  "name": "Rafael Palmeiro",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "sutclri01": {
+  "name": "Rick Sutcliffe",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "sandesc01": {
+  "name": "Scott Sanderson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "troutst01": {
+  "name": "Steve Trout",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "eckerde01": {
+  "name": "Dennis Eckersley",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "lancale01": {
+  "name": "Les Lancaster",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Splitter"
+  ]
+ },
+ "smithle02": {
+  "name": "Lee Smith",
+  "bunt": 2,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

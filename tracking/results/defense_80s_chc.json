@@ -1,0 +1,366 @@
+{
+ "dernibo01": {
+  "name": "Bob Dernier",
+  "range": 6,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": true,
+    "stat": 5.8,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 6.8,
+    "leagueOf": 10.7,
+    "stat": 3.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 143,
+    "teamGames": 161,
+    "stat": 9.0,
+    "scout": 6
+   }
+  }
+ },
+ "matthga01": {
+  "name": "Gary Matthews",
+  "range": 3,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -11.5,
+    "goldGlove": false,
+    "stat": 1.7,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 8.9,
+    "leagueOf": 10.7,
+    "stat": 4.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 161,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "sandbry01": {
+  "name": "Ryne Sandberg",
+  "range": 8,
+  "arm": 7,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.2,
+    "goldGlove": true,
+    "stat": 8.4,
+    "scout": 8
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 161,
+    "stat": 9.7,
+    "scout": 10
+   }
+  }
+ },
+ "durhale01": {
+  "name": "Leon Durham",
+  "range": 5,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.9,
+    "goldGlove": false,
+    "stat": 5.3,
+    "scout": 4
+   },
+   "durability": {
+    "games": 137,
+    "teamGames": 161,
+    "stat": 8.7,
+    "scout": 7
+   }
+  }
+ },
+ "dawsoan01": {
+  "name": "Andre Dawson",
+  "range": 6,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.6,
+    "goldGlove": true,
+    "stat": 6.2,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 7.8,
+    "leagueOf": 9.1,
+    "stat": 4.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 8
+   }
+  }
+ },
+ "morelke01": {
+  "name": "Keith Moreland",
+  "range": 3,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -11.1,
+    "goldGlove": false,
+    "stat": 1.8,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 8.2,
+    "leagueOf": 11.6,
+    "stat": 3.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "ceyro01": {
+  "name": "Ron Cey",
+  "range": 3,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -11.6,
+    "goldGlove": false,
+    "stat": 1.7,
+    "scout": 4
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 6
+   }
+  }
+ },
+ "dunstsh01": {
+  "name": "Shawon Dunston",
+  "range": 5,
+  "arm": 10,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.6,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 7
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 6
+   }
+  }
+ },
+ "davisjo02": {
+  "name": "Jody Davis",
+  "range": 9,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 17.1,
+    "goldGlove": true,
+    "stat": 10.6,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.476,
+    "leagueCsPct": 0.33,
+    "attempts": 187,
+    "stat": 8.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 148,
+    "teamGames": 160,
+    "stat": 9.3,
+    "scout": 9
+   }
+  }
+ },
+ "bucknbi01": {
+  "name": "Bill Buckner",
+  "range": 5,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.7,
+    "goldGlove": false,
+    "stat": 6.1,
+    "scout": 4
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 8
+   }
+  }
+ },
+ "gracema01": {
+  "name": "Mark Grace",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.6,
+    "goldGlove": false,
+    "stat": 4.5,
+    "scout": 7
+   },
+   "durability": {
+    "games": 142,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 8
+   }
+  }
+ },
+ "lopesda01": {
+  "name": "Davey Lopes",
+  "range": 4,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -8.1,
+    "goldGlove": false,
+    "stat": 2.7,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 12.6,
+    "leagueOf": 10.7,
+    "stat": 5.7,
+    "scout": 4
+   },
+   "durability": {
+    "games": 99,
+    "teamGames": 161,
+    "stat": 6.5,
+    "scout": 5
+   }
+  }
+ },
+ "palmera01": {
+  "name": "Rafael Palmeiro",
+  "range": 4,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.0,
+    "goldGlove": false,
+    "stat": 3.9,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 11.1,
+    "leagueOf": 9.1,
+    "stat": 5.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 152,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 8
+   }
+  }
+ },
+ "sutclri01": {
+  "name": "Rick Sutcliffe",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "sandesc01": {
+  "name": "Scott Sanderson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "troutst01": {
+  "name": "Steve Trout",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "eckerde01": {
+  "name": "Dennis Eckersley",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "lancale01": {
+  "name": "Les Lancaster",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Splitter"
+  ]
+ },
+ "smithle02": {
+  "name": "Lee Smith",
+  "bunt": 2,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

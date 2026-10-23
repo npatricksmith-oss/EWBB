@@ -1,0 +1,139 @@
+{
+ "butlebr01": {
+  "name": "Brett Butler",
+  "range": 7,
+  "arm": 5,
+  "durability": 9
+ },
+ "hargrmi01": {
+  "name": "Mike Hargrove",
+  "range": 5,
+  "arm": 4,
+  "durability": 8
+ },
+ "harrato01": {
+  "name": "Toby Harrah",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "snydeco02": {
+  "name": "Cory Snyder",
+  "range": 6,
+  "arm": 9,
+  "durability": 7
+ },
+ "cartejo01": {
+  "name": "Joe Carter",
+  "range": 5,
+  "arm": 5,
+  "durability": 9
+ },
+ "thornan01": {
+  "name": "Andre Thornton",
+  "range": 4,
+  "arm": 4,
+  "durability": 8
+ },
+ "hassero01": {
+  "name": "Ron Hassey",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "francju01": {
+  "name": "Julio Franco",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "brownje01": {
+  "name": "Jerry Browne",
+  "range": 6,
+  "arm": 5,
+  "durability": 7
+ },
+ "jacobbr01": {
+  "name": "Brook Jacoby",
+  "range": 6,
+  "arm": 6,
+  "durability": 9
+ },
+ "tablepa01": {
+  "name": "Pat Tabler",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "hallme01": {
+  "name": "Mel Hall",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "bernato01": {
+  "name": "Tony Bernazard",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "blylebe01": {
+  "name": "Bert Blyleven",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "candito01": {
+  "name": "Tom Candiotti",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Knuckleball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "swindgr01": {
+  "name": "Greg Swindell",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "barkele01": {
+  "name": "Len Barker",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "camacer01": {
+  "name": "Ernie Camacho",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "jonesdo01": {
+  "name": "Doug Jones",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

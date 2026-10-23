@@ -1,0 +1,140 @@
+{
+ "bushra01": {
+  "name": "Randy Bush",
+  "range": 4,
+  "arm": 4,
+  "durability": 6
+ },
+ "hrbekke01": {
+  "name": "Kent Hrbek",
+  "range": 7,
+  "arm": 5,
+  "durability": 9
+ },
+ "puckeki01": {
+  "name": "Kirby Puckett",
+  "range": 9,
+  "arm": 7,
+  "durability": 10
+ },
+ "gaettga01": {
+  "name": "Gary Gaetti",
+  "range": 9,
+  "arm": 8,
+  "durability": 9
+ },
+ "wardga01": {
+  "name": "Gary Ward",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "brunato01": {
+  "name": "Tom Brunansky",
+  "range": 6,
+  "arm": 8,
+  "durability": 9
+ },
+ "harpebr01": {
+  "name": "Brian Harper",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "castijo01": {
+  "name": "John Castino",
+  "range": 6,
+  "arm": 6,
+  "durability": 5
+ },
+ "gagnegr01": {
+  "name": "Greg Gagne",
+  "range": 8,
+  "arm": 8,
+  "durability": 8
+ },
+ "smallro02": {
+  "name": "Roy Smalley",
+  "range": 4,
+  "arm": 6,
+  "durability": 8
+ },
+ "gladdda01": {
+  "name": "Dan Gladden",
+  "range": 6,
+  "arm": 5,
+  "durability": 7
+ },
+ "teufeti01": {
+  "name": "Tim Teufel",
+  "range": 4,
+  "arm": 4,
+  "durability": 6
+ },
+ "hatchmi01": {
+  "name": "Mickey Hatcher",
+  "range": 4,
+  "arm": 4,
+  "durability": 6
+ },
+ "violafr01": {
+  "name": "Frank Viola",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "Slider",
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "blylebe01": {
+  "name": "Bert Blyleven",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "anderal02": {
+  "name": "Allan Anderson",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "Sinker",
+   "Slider"
+  ]
+ },
+ "willial03": {
+  "name": "Albert Williams",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "corbedo01": {
+  "name": "Doug Corbett",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "reardje01": {
+  "name": "Jeff Reardon",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ }
+}

@@ -1,0 +1,366 @@
+{
+ "wilsowi02": {
+  "name": "Willie Wilson",
+  "range": 10,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 18.0,
+    "goldGlove": true,
+    "stat": 10.9,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 9.5,
+    "leagueOf": 13.2,
+    "stat": 3.5,
+    "scout": 4
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 8
+   }
+  }
+ },
+ "seitzke01": {
+  "name": "Kevin Seitzer",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.3,
+    "goldGlove": false,
+    "stat": 4.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 9
+   }
+  }
+ },
+ "brettge01": {
+  "name": "George Brett",
+  "range": 6,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.7,
+    "goldGlove": false,
+    "stat": 7.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 117,
+    "teamGames": 162,
+    "stat": 7.5,
+    "scout": 5
+   }
+  }
+ },
+ "tartada01": {
+  "name": "Danny Tartabull",
+  "range": 3,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -10.7,
+    "goldGlove": false,
+    "stat": 1.9,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 9.6,
+    "leagueOf": 9.1,
+    "stat": 5.2,
+    "scout": 6
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 161,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "mcraeha01": {
+  "name": "Hal McRae",
+  "range": 4,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.7,
+    "goldGlove": false,
+    "stat": 4.2,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 12.3,
+    "leagueOf": 12.7,
+    "stat": 4.9,
+    "scout": 3
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "wathajo01": {
+  "name": "John Wathan",
+  "range": 4,
+  "arm": 4,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.7,
+    "goldGlove": false,
+    "stat": 3.7,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.266,
+    "leagueCsPct": 0.329,
+    "attempts": 79,
+    "stat": 3.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 126,
+    "teamGames": 162,
+    "stat": 8.0,
+    "scout": 4
+   }
+  }
+ },
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 5,
+  "arm": 3,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 8.0,
+    "leagueOf": 11.1,
+    "stat": 3.7,
+    "scout": 3
+   },
+   "durability": {
+    "games": 134,
+    "teamGames": 162,
+    "stat": 8.4,
+    "scout": 7
+   }
+  }
+ },
+ "whitefr01": {
+  "name": "Frank White",
+  "range": 9,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.1,
+    "goldGlove": false,
+    "stat": 9.6,
+    "scout": 9
+   },
+   "durability": {
+    "games": 129,
+    "teamGames": 162,
+    "stat": 8.2,
+    "scout": 9
+   }
+  }
+ },
+ "washiu_01": {
+  "name": "U L Washington",
+  "range": 5,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.0,
+    "goldGlove": false,
+    "stat": 5.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 119,
+    "teamGames": 162,
+    "stat": 7.6,
+    "scout": 7
+   }
+  }
+ },
+ "aikenwi01": {
+  "name": "Willie Aikens",
+  "range": 3,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -9.6,
+    "goldGlove": false,
+    "stat": 2.3,
+    "scout": 4
+   },
+   "durability": {
+    "games": 125,
+    "teamGames": 162,
+    "stat": 7.9,
+    "scout": 6
+   }
+  }
+ },
+ "stillku01": {
+  "name": "Kurt Stillwell",
+  "range": 5,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.9,
+    "goldGlove": false,
+    "stat": 5.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 128,
+    "teamGames": 161,
+    "stat": 8.2,
+    "scout": 8
+   }
+  }
+ },
+ "otisam01": {
+  "name": "Amos Otis",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 2.1,
+    "goldGlove": false,
+    "stat": 5.6,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 9.9,
+    "leagueOf": 11.8,
+    "stat": 4.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 99,
+    "teamGames": 103,
+    "stat": 9.7,
+    "scout": 6
+   }
+  }
+ },
+ "jacksbo01": {
+  "name": "Bo Jackson",
+  "range": 5,
+  "arm": 9,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.0,
+    "goldGlove": false,
+    "stat": 3.9,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 14.4,
+    "leagueOf": 10.5,
+    "stat": 6.5,
+    "scout": 10
+   },
+   "durability": {
+    "games": 135,
+    "teamGames": 162,
+    "stat": 8.5,
+    "scout": 6
+   }
+  }
+ },
+ "saberbr01": {
+  "name": "Bret Saberhagen",
+  "bunt": 5,
+  "fielding": 8,
+  "pitches": [
+   "4-Seam Fastball",
+   "Changeup",
+   "Curveball"
+  ]
+ },
+ "gubicma01": {
+  "name": "Mark Gubicza",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "leibrch01": {
+  "name": "Charlie Leibrandt",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Changeup",
+   "Slider",
+   "2-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "blackbu02": {
+  "name": "Bud Black",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "farrst01": {
+  "name": "Steve Farr",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "quiseda01": {
+  "name": "Dan Quisenberry",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ }
+}

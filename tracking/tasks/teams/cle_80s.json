@@ -10,7 +10,7 @@
  "primaryColor": "#c8102e",
  "secondaryColor": "#0c2340",
  "defaultParkId": "memorial",
- "defaultManagerId": null,
+ "defaultManagerId": "corrales",
  "manager": {
   "bref": "corrapa01",
   "name": "Pat Corrales",

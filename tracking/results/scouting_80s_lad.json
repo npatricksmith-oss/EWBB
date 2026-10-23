@@ -1,0 +1,143 @@
+{
+ "saxst01": {
+  "name": "Steve Sax",
+  "range": 5,
+  "arm": 3,
+  "durability": 8
+ },
+ "sciosmi01": {
+  "name": "Mike Scioscia",
+  "range": 6,
+  "arm": 5,
+  "durability": 7
+ },
+ "guerrpe01": {
+  "name": "Pedro Guerrero",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "marshmi02": {
+  "name": "Mike Marshall",
+  "range": 4,
+  "arm": 5,
+  "durability": 6
+ },
+ "bakerdu01": {
+  "name": "Dusty Baker",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "garvest01": {
+  "name": "Steve Garvey",
+  "range": 5,
+  "arm": 6,
+  "durability": 10
+ },
+ "ceyro01": {
+  "name": "Ron Cey",
+  "range": 4,
+  "arm": 6,
+  "durability": 7
+ },
+ "landrke01": {
+  "name": "Ken Landreaux",
+  "range": 6,
+  "arm": 5,
+  "durability": 7
+ },
+ "russebi01": {
+  "name": "Bill Russell",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "gibsoki01": {
+  "name": "Kirk Gibson",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "brockgr01": {
+  "name": "Greg Brock",
+  "range": 5,
+  "arm": 4,
+  "durability": 7
+ },
+ "smithre06": {
+  "name": "Reggie Smith",
+  "range": 4,
+  "arm": 8,
+  "durability": 4
+ },
+ "anderda02": {
+  "name": "Dave Anderson",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "valenfe01": {
+  "name": "Fernando Valenzuela",
+  "bunt": 6,
+  "fielding": 7,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "hershor01": {
+  "name": "Orel Hershiser",
+  "bunt": 7,
+  "fielding": 8,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "welchbo01": {
+  "name": "Bob Welch",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "reussje01": {
+  "name": "Jerry Reuss",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "howest01": {
+  "name": "Steve Howe",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "niedeto01": {
+  "name": "Tom Niedenfuer",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

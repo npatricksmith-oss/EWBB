@@ -1,0 +1,371 @@
+{
+ "clarkwi02": {
+  "name": "Will Clark",
+  "range": 7,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.8,
+    "goldGlove": false,
+    "stat": 7.0,
+    "scout": 7
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "davisch01": {
+  "name": "Chili Davis",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -0.9,
+    "goldGlove": false,
+    "stat": 4.7,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 11.5,
+    "leagueOf": 10.7,
+    "stat": 5.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 137,
+    "teamGames": 162,
+    "stat": 8.6,
+    "scout": 8
+   }
+  }
+ },
+ "mitchke01": {
+  "name": "Kevin Mitchell",
+  "range": 4,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.4,
+    "goldGlove": false,
+    "stat": 3.2,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 10.5,
+    "leagueOf": 10.5,
+    "stat": 5.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 8
+   }
+  }
+ },
+ "clarkja01": {
+  "name": "Jack Clark",
+  "range": 5,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -0.9,
+    "goldGlove": false,
+    "stat": 4.7,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 9.8,
+    "leagueOf": 13.2,
+    "stat": 3.6,
+    "scout": 8
+   },
+   "durability": {
+    "games": 127,
+    "teamGames": 161,
+    "stat": 8.1,
+    "scout": 6
+   }
+  }
+ },
+ "leonaje01": {
+  "name": "Jeffrey Leonard",
+  "range": 4,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -5.5,
+    "goldGlove": false,
+    "stat": 3.4,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 15.3,
+    "leagueOf": 10.7,
+    "stat": 6.8,
+    "scout": 7
+   },
+   "durability": {
+    "games": 136,
+    "teamGames": 162,
+    "stat": 8.6,
+    "scout": 7
+   }
+  }
+ },
+ "brenlbo01": {
+  "name": "Bob Brenly",
+  "range": 4,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.7,
+    "goldGlove": false,
+    "stat": 3.1,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.352,
+    "leagueCsPct": 0.334,
+    "attempts": 159,
+    "stat": 5.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 145,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 7
+   }
+  }
+ },
+ "evansda01": {
+  "name": "Darrell Evans",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 161,
+    "stat": 9.6,
+    "scout": 8
+   }
+  }
+ },
+ "thompro01": {
+  "name": "Robby Thompson",
+  "range": 8,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 13.9,
+    "goldGlove": false,
+    "stat": 9.0,
+    "scout": 7
+   },
+   "durability": {
+    "games": 148,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "uribejo01": {
+  "name": "Jos\u00e9 Uribe",
+  "range": 8,
+  "arm": 7,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.2,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 7
+   },
+   "durability": {
+    "games": 95,
+    "teamGames": 162,
+    "stat": 6.3,
+    "scout": 8
+   }
+  }
+ },
+ "butlebr01": {
+  "name": "Brett Butler",
+  "range": 6,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.9,
+    "goldGlove": false,
+    "stat": 6.1,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 4.2,
+    "leagueOf": 9.1,
+    "stat": 3.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "gladdda01": {
+  "name": "Dan Gladden",
+  "range": 7,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.7,
+    "goldGlove": false,
+    "stat": 8.0,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 12.3,
+    "leagueOf": 11.1,
+    "stat": 5.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 102,
+    "teamGames": 162,
+    "stat": 6.7,
+    "scout": 6
+   }
+  }
+ },
+ "morgajo02": {
+  "name": "Joe Morgan",
+  "range": 5,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.8,
+    "goldGlove": false,
+    "stat": 4.2,
+    "scout": 5
+   },
+   "durability": {
+    "games": 134,
+    "teamGames": 162,
+    "stat": 8.4,
+    "scout": 8
+   }
+  }
+ },
+ "maymi01": {
+  "name": "Milt May",
+  "range": 6,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.2,
+    "goldGlove": false,
+    "stat": 6.8,
+    "scout": 4
+   },
+   "arm": {
+    "csPct": 0.346,
+    "leagueCsPct": 0.336,
+    "attempts": 179,
+    "stat": 5.2,
+    "scout": 4
+   },
+   "durability": {
+    "games": 114,
+    "teamGames": 162,
+    "stat": 7.3,
+    "scout": 5
+   }
+  }
+ },
+ "hammaat01": {
+  "name": "Atlee Hammaker",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "bluevi01": {
+  "name": "Vida Blue",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "krukomi01": {
+  "name": "Mike Krukow",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "laskebi01": {
+  "name": "Bill Laskey",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "garresc01": {
+  "name": "Scott Garrelts",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "mintogr01": {
+  "name": "Greg Minton",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider"
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "gwynnto01": {
+  "name": "Tony Gwynn",
+  "range": 7,
+  "arm": 6,
+  "durability": 9
+ },
+ "flannti01": {
+  "name": "Tim Flannery",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "krukjo01": {
+  "name": "John Kruk",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "kennete02": {
+  "name": "Terry Kennedy",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "mcreyke01": {
+  "name": "Kevin McReynolds",
+  "range": 7,
+  "arm": 7,
+  "durability": 8
+ },
+ "richage01": {
+  "name": "Gene Richards",
+  "range": 6,
+  "arm": 4,
+  "durability": 7
+ },
+ "martica01": {
+  "name": "Carmelo Mart\u00ednez",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "alomaro01": {
+  "name": "Roberto Alomar",
+  "range": 8,
+  "arm": 7,
+  "durability": 9
+ },
+ "templga01": {
+  "name": "Garry Templeton",
+  "range": 5,
+  "arm": 8,
+  "durability": 6
+ },
+ "santibe01": {
+  "name": "Benito Santiago",
+  "range": 7,
+  "arm": 10,
+  "durability": 8
+ },
+ "readyra01": {
+  "name": "Randy Ready",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "wiggial01": {
+  "name": "Alan Wiggins",
+  "range": 6,
+  "arm": 4,
+  "durability": 8
+ },
+ "jonesru01": {
+  "name": "Ruppert Jones",
+  "range": 7,
+  "arm": 6,
+  "durability": 6
+ },
+ "shower01": {
+  "name": "Eric Show",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "draveda01": {
+  "name": "Dave Dravecky",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "whitsed01": {
+  "name": "Ed Whitson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "hurstbr01": {
+  "name": "Bruce Hurst",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Curveball"
+  ]
+ },
+ "mcculla01": {
+  "name": "Lance McCullers",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "davisma01": {
+  "name": "Mark Davis",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ }
+}

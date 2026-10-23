@@ -10,7 +10,7 @@
  "primaryColor": "#0f2a5c",
  "secondaryColor": "#c8102e",
  "defaultParkId": "memorial",
- "defaultManagerId": null,
+ "defaultManagerId": "larussa",
  "manager": {
   "bref": "larusto01",
   "name": "Tony La Russa",

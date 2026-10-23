@@ -1,0 +1,372 @@
+{
+ "gwynnto01": {
+  "name": "Tony Gwynn",
+  "range": 7,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.5,
+    "goldGlove": true,
+    "stat": 7.3,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 12.8,
+    "leagueOf": 10.9,
+    "stat": 5.8,
+    "scout": 6
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "flannti01": {
+  "name": "Tim Flannery",
+  "range": 4,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.0,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 5
+   },
+   "durability": {
+    "games": 126,
+    "teamGames": 162,
+    "stat": 8.0,
+    "scout": 6
+   }
+  }
+ },
+ "krukjo01": {
+  "name": "John Kruk",
+  "range": 4,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.7,
+    "goldGlove": false,
+    "stat": 4.5,
+    "scout": 4
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 7
+   }
+  }
+ },
+ "kennete02": {
+  "name": "Terry Kennedy",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.4,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.265,
+    "leagueCsPct": 0.336,
+    "attempts": 136,
+    "stat": 3.5,
+    "scout": 6
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 8
+   }
+  }
+ },
+ "mcreyke01": {
+  "name": "Kevin McReynolds",
+  "range": 8,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 15.7,
+    "goldGlove": false,
+    "stat": 9.5,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 10.9,
+    "leagueOf": 10.7,
+    "stat": 5.1,
+    "scout": 7
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 8
+   }
+  }
+ },
+ "richage01": {
+  "name": "Gene Richards",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 2.3,
+    "goldGlove": false,
+    "stat": 5.6,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 19.2,
+    "leagueOf": 13.2,
+    "stat": 7.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 7
+   }
+  }
+ },
+ "martica01": {
+  "name": "Carmelo Mart\u00ednez",
+  "range": 7,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 14.9,
+    "goldGlove": false,
+    "stat": 9.2,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 15.3,
+    "leagueOf": 10.7,
+    "stat": 6.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 149,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 7
+   }
+  }
+ },
+ "alomaro01": {
+  "name": "Roberto Alomar",
+  "range": 6,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 8
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 9
+   }
+  }
+ },
+ "templga01": {
+  "name": "Garry Templeton",
+  "range": 5,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.6,
+    "goldGlove": false,
+    "stat": 5.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 148,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 6
+   }
+  }
+ },
+ "santibe01": {
+  "name": "Benito Santiago",
+  "range": 6,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.7,
+    "goldGlove": false,
+    "stat": 4.5,
+    "scout": 7
+   },
+   "arm": {
+    "csPct": 0.325,
+    "leagueCsPct": 0.303,
+    "attempts": 154,
+    "stat": 5.5,
+    "scout": 10
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 8
+   }
+  }
+ },
+ "readyra01": {
+  "name": "Randy Ready",
+  "range": 7,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 11.4,
+    "goldGlove": false,
+    "stat": 8.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 124,
+    "teamGames": 162,
+    "stat": 7.9,
+    "scout": 5
+   }
+  }
+ },
+ "wiggial01": {
+  "name": "Alan Wiggins",
+  "range": 7,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 11.2,
+    "goldGlove": false,
+    "stat": 8.2,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 34.5,
+    "leagueOf": 11.6,
+    "stat": 14.2,
+    "scout": 4
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 8
+   }
+  }
+ },
+ "jonesru01": {
+  "name": "Ruppert Jones",
+  "range": 7,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.7,
+    "goldGlove": false,
+    "stat": 6.6,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 6.0,
+    "leagueOf": 12.7,
+    "stat": 2.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 116,
+    "teamGames": 162,
+    "stat": 7.4,
+    "scout": 6
+   }
+  }
+ },
+ "shower01": {
+  "name": "Eric Show",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "draveda01": {
+  "name": "Dave Dravecky",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "whitsed01": {
+  "name": "Ed Whitson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "hurstbr01": {
+  "name": "Bruce Hurst",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Curveball"
+  ]
+ },
+ "mcculla01": {
+  "name": "Lance McCullers",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "davisma01": {
+  "name": "Mark Davis",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ }
+}

@@ -1,0 +1,375 @@
+{
+ "trammal01": {
+  "name": "Alan Trammell",
+  "range": 6,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 8
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 9
+   }
+  }
+ },
+ "whitalo01": {
+  "name": "Lou Whitaker",
+  "range": 7,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.1,
+    "goldGlove": true,
+    "stat": 6.6,
+    "scout": 8
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 9
+   }
+  }
+ },
+ "gibsoki01": {
+  "name": "Kirk Gibson",
+  "range": 6,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.6,
+    "goldGlove": false,
+    "stat": 5.5,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 2.9,
+    "leagueOf": 10.7,
+    "stat": 1.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 161,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "parrila02": {
+  "name": "Lance Parrish",
+  "range": 7,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.5,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 7
+   },
+   "arm": {
+    "csPct": 0.46,
+    "leagueCsPct": 0.336,
+    "attempts": 100,
+    "stat": 7.3,
+    "scout": 9
+   },
+   "durability": {
+    "games": 133,
+    "teamGames": 162,
+    "stat": 8.4,
+    "scout": 8
+   }
+  }
+ },
+ "evansda01": {
+  "name": "Darrell Evans",
+  "range": 7,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 12.7,
+    "goldGlove": false,
+    "stat": 8.6,
+    "scout": 4
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 7
+   }
+  }
+ },
+ "kempst01": {
+  "name": "Steve Kemp",
+  "range": 6,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.6,
+    "goldGlove": false,
+    "stat": 6.6,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 9.0,
+    "leagueOf": 13.2,
+    "stat": 3.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 135,
+    "teamGames": 162,
+    "stat": 8.5,
+    "scout": 8
+   }
+  }
+ },
+ "herndla01": {
+  "name": "Larry Herndon",
+  "range": 5,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.9,
+    "goldGlove": false,
+    "stat": 5.2,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 7.9,
+    "leagueOf": 11.6,
+    "stat": 3.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 6
+   }
+  }
+ },
+ "lemonch01": {
+  "name": "Chet Lemon",
+  "range": 9,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 17.1,
+    "goldGlove": false,
+    "stat": 9.9,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 7.4,
+    "leagueOf": 11.6,
+    "stat": 3.3,
+    "scout": 8
+   },
+   "durability": {
+    "games": 145,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 8
+   }
+  }
+ },
+ "brookto01": {
+  "name": "Tom Brookens",
+  "range": 6,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.4,
+    "goldGlove": false,
+    "stat": 6.0,
+    "scout": 6
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 6
+   }
+  }
+ },
+ "nokesma01": {
+  "name": "Matt Nokes",
+  "range": 4,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.3,
+    "goldGlove": false,
+    "stat": 3.2,
+    "scout": 4
+   },
+   "arm": {
+    "csPct": 0.202,
+    "leagueCsPct": 0.303,
+    "attempts": 89,
+    "stat": 3.2,
+    "scout": 5
+   },
+   "durability": {
+    "games": 135,
+    "teamGames": 162,
+    "stat": 8.5,
+    "scout": 6
+   }
+  }
+ },
+ "heathmi02": {
+  "name": "Mike Heath",
+  "range": 6,
+  "arm": 6,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.0,
+    "goldGlove": false,
+    "stat": 6.4,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.35,
+    "leagueCsPct": 0.317,
+    "attempts": 120,
+    "stat": 5.7,
+    "scout": 6
+   },
+   "durability": {
+    "games": 122,
+    "teamGames": 162,
+    "stat": 7.8,
+    "scout": 5
+   }
+  }
+ },
+ "wockejo01": {
+  "name": "John Wockenfuss",
+  "range": 2,
+  "arm": 4,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -10.4,
+    "goldGlove": false,
+    "stat": 2.0,
+    "scout": 3
+   },
+   "durability": {
+    "games": 126,
+    "teamGames": 162,
+    "stat": 8.0,
+    "scout": 5
+   }
+  }
+ },
+ "pettiga01": {
+  "name": "Gary Pettis",
+  "range": 7,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": true,
+    "stat": 5.8,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 3.4,
+    "leagueOf": 10.5,
+    "stat": 2.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 119,
+    "teamGames": 162,
+    "stat": 7.6,
+    "scout": 6
+   }
+  }
+ },
+ "morrija02": {
+  "name": "Jack Morris",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "petryda01": {
+  "name": "Dan Petry",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "tananfr01": {
+  "name": "Frank Tanana",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Curveball",
+   "Slider",
+   "Changeup",
+   "4-Seam Fastball"
+  ]
+ },
+ "terrewa01": {
+  "name": "Walt Terrell",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "hennemi01": {
+  "name": "Mike Henneman",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Slider"
+  ]
+ },
+ "hernawi01": {
+  "name": "Willie Hern\u00e1ndez",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

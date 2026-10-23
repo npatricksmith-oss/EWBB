@@ -46,7 +46,9 @@ This repository is developed collaboratively by multiple AI coding agents (**Ant
     ├── data/
     │   ├── ballparks.js       # 10-point fence distances, 9-segment wall heights, wind/surface
     │   ├── managers.js        # 19-parameter manager profiles (Weaver, Herzog, Anderson, McNamara)
-    │   └── rosters.js         # T/L/R platoon splits & 1-10 ratings (Orioles, Red Sox)
+    │   ├── managers80s.js     # Generated profiles for the 1980s franchise managers
+    │   ├── rosters.js         # T/L/R platoon splits & 1-10 ratings (Orioles, Red Sox)
+    │   └── teams/             # Generated team modules (era all-stars, 1982 clubs, 1980s franchises)
     ├── engine/
     │   ├── statsMatrix.js     # Stage 1: Platoon matchup matrix & 3D launch vector generator
     │   ├── physicsEngine.js   # Stage 2: 3D ball flight, wind, turf/grass bounce, wall caroms, fielding

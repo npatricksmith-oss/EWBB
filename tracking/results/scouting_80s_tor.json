@@ -1,0 +1,142 @@
+{
+ "garcida01": {
+  "name": "D\u00e1maso Garc\u00eda",
+  "range": 7,
+  "arm": 5,
+  "durability": 6
+ },
+ "fernato01": {
+  "name": "Tony Fern\u00e1ndez",
+  "range": 9,
+  "arm": 8,
+  "durability": 9
+ },
+ "mcgrifr01": {
+  "name": "Fred McGriff",
+  "range": 4,
+  "arm": 4,
+  "durability": 9
+ },
+ "bellge02": {
+  "name": "George Bell",
+  "range": 4,
+  "arm": 6,
+  "durability": 9
+ },
+ "barfije01": {
+  "name": "Jesse Barfield",
+  "range": 8,
+  "arm": 10,
+  "durability": 8
+ },
+ "upshawi01": {
+  "name": "Willie Upshaw",
+  "range": 5,
+  "arm": 4,
+  "durability": 8
+ },
+ "mosebll01": {
+  "name": "Lloyd Moseby",
+  "range": 7,
+  "arm": 6,
+  "durability": 9
+ },
+ "mullira01": {
+  "name": "Rance Mulliniks",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "whitter01": {
+  "name": "Ernie Whitt",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "grubeke01": {
+  "name": "Kelly Gruber",
+  "range": 8,
+  "arm": 8,
+  "durability": 8
+ },
+ "johnscl01": {
+  "name": "Cliff Johnson",
+  "range": 3,
+  "arm": 4,
+  "durability": 6
+ },
+ "collida02": {
+  "name": "Dave Collins",
+  "range": 6,
+  "arm": 3,
+  "durability": 7
+ },
+ "maybejo01": {
+  "name": "John Mayberry",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "stiebda01": {
+  "name": "Dave Stieb",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "clancji01": {
+  "name": "Jim Clancy",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "keyji01": {
+  "name": "Jimmy Key",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Curveball",
+   "2-Seam Fastball",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "alexado01": {
+  "name": "Doyle Alexander",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Splitter",
+   "2-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "eichhma01": {
+  "name": "Mark Eichhorn",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "henketo01": {
+  "name": "Tom Henke",
+  "bunt": 2,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter"
+  ]
+ }
+}

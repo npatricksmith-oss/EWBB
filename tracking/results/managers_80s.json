@@ -63,7 +63,8 @@
    "relievePitcherAfter": 111,
    "runAggressively": 4
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "corrales"
  },
  "coxbo01": {
   "name": "Bobby Cox",
@@ -85,7 +86,7 @@
    "ibb": 0.82,
    "cg": 1.08
   },
-  "baserunRunsPerSeason": -5.3,
+  "baserunRunsPerSeason": -5.4,
   "statSliders": {
    "steal2nd": 6,
    "sacBunt": 4,
@@ -93,7 +94,8 @@
    "relievePitcherAfter": 112,
    "runAggressively": 3
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "cox"
  },
  "craigro01": {
   "name": "Roger Craig",
@@ -122,7 +124,8 @@
    "relievePitcherAfter": 109,
    "runAggressively": 2
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "craig"
  },
  "felskjo01": {
   "name": "John Felske",
@@ -149,7 +152,8 @@
    "relievePitcherAfter": 112,
    "runAggressively": 5
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "felske"
  },
  "freyji99": {
   "name": "Jim Frey",
@@ -170,15 +174,16 @@
    "ibb": 1.15,
    "cg": 0.92
   },
-  "baserunRunsPerSeason": 11.6,
+  "baserunRunsPerSeason": 11.0,
   "statSliders": {
    "steal2nd": 6,
    "sacBunt": 4,
    "intentionalWalk": 6,
    "relievePitcherAfter": 108,
-   "runAggressively": 10
+   "runAggressively": 9
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "freyj"
  },
  "gardnbi02": {
   "name": "Billy Gardner",
@@ -200,7 +205,7 @@
    "ibb": 1.28,
    "cg": 1.01
   },
-  "baserunRunsPerSeason": 0.4,
+  "baserunRunsPerSeason": 0.3,
   "statSliders": {
    "steal2nd": 3,
    "sacBunt": 3,
@@ -208,7 +213,8 @@
    "relievePitcherAfter": 110,
    "runAggressively": 5
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "gardner"
  },
  "herzowh01": {
   "name": "Whitey Herzog",
@@ -262,7 +268,7 @@
    "ibb": 0.98,
    "cg": 0.96
   },
-  "baserunRunsPerSeason": -7.2,
+  "baserunRunsPerSeason": -7.3,
   "statSliders": {
    "steal2nd": 2,
    "sacBunt": 5,
@@ -270,7 +276,8 @@
    "relievePitcherAfter": 109,
    "runAggressively": 2
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "houk"
  },
  "howsedi01": {
   "name": "Dick Howser",
@@ -293,15 +300,16 @@
    "ibb": 0.77,
    "cg": 0.73
   },
-  "baserunRunsPerSeason": 3.0,
+  "baserunRunsPerSeason": 3.9,
   "statSliders": {
    "steal2nd": 6,
    "sacBunt": 4,
    "intentionalWalk": 4,
    "relievePitcherAfter": 103,
-   "runAggressively": 6
+   "runAggressively": 7
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "howser"
  },
  "johnsda02": {
   "name": "Davey Johnson",
@@ -331,7 +339,8 @@
    "relievePitcherAfter": 115,
    "runAggressively": 6
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "johnsond"
  },
  "larusto01": {
   "name": "Tony La Russa",
@@ -367,7 +376,8 @@
    "relievePitcherAfter": 108,
    "runAggressively": 7
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "larussa"
  },
  "lasorto01": {
   "name": "Tommy Lasorda",
@@ -401,7 +411,8 @@
    "relievePitcherAfter": 124,
    "runAggressively": 5
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "lasorda"
  },
  "lillibo01": {
   "name": "Bob Lillis",
@@ -429,7 +440,8 @@
    "relievePitcherAfter": 111,
    "runAggressively": 2
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "lillis"
  },
  "mauchge01": {
   "name": "Gene Mauch",
@@ -451,7 +463,7 @@
    "ibb": 0.76,
    "cg": 0.99
   },
-  "baserunRunsPerSeason": 4.8,
+  "baserunRunsPerSeason": 4.9,
   "statSliders": {
    "steal2nd": 4,
    "sacBunt": 9,
@@ -486,7 +498,8 @@
    "relievePitcherAfter": 100,
    "runAggressively": 7
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "piniella"
  },
  "rodgebu01": {
   "name": "Buck Rodgers",
@@ -510,7 +523,7 @@
    "ibb": 0.92,
    "cg": 0.85
   },
-  "baserunRunsPerSeason": -4.4,
+  "baserunRunsPerSeason": -4.6,
   "statSliders": {
    "steal2nd": 6,
    "sacBunt": 4,
@@ -518,7 +531,8 @@
    "relievePitcherAfter": 106,
    "runAggressively": 3
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "rodgers"
  },
  "rosepe01": {
   "name": "Pete Rose",
@@ -548,7 +562,8 @@
    "relievePitcherAfter": 106,
    "runAggressively": 7
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "rose"
  },
  "tannech01": {
   "name": "Chuck Tanner",
@@ -581,7 +596,8 @@
    "relievePitcherAfter": 109,
    "runAggressively": 3
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "tanner"
  },
  "torrejo01": {
   "name": "Joe Torre",
@@ -638,7 +654,8 @@
    "relievePitcherAfter": 111,
    "runAggressively": 7
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "trebelhorn"
  },
  "valenbo02": {
   "name": "Bobby Valentine",
@@ -667,7 +684,8 @@
    "relievePitcherAfter": 111,
    "runAggressively": 4
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "valentine"
  },
  "weaveea99": {
   "name": "Earl Weaver",
@@ -688,7 +706,7 @@
    "ibb": 1.04,
    "cg": 1.03
   },
-  "baserunRunsPerSeason": -2.9,
+  "baserunRunsPerSeason": -2.8,
   "statSliders": {
    "steal2nd": 3,
    "sacBunt": 4,
@@ -730,6 +748,7 @@
    "relievePitcherAfter": 113,
    "runAggressively": 5
   },
-  "existingProfile": null
+  "existingProfile": null,
+  "profile": "williamsd"
  }
 }

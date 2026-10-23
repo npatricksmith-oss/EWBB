@@ -1,0 +1,141 @@
+{
+ "wilsowi02": {
+  "name": "Willie Wilson",
+  "range": 9,
+  "arm": 4,
+  "durability": 8
+ },
+ "seitzke01": {
+  "name": "Kevin Seitzer",
+  "range": 5,
+  "arm": 5,
+  "durability": 9
+ },
+ "brettge01": {
+  "name": "George Brett",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "tartada01": {
+  "name": "Danny Tartabull",
+  "range": 4,
+  "arm": 6,
+  "durability": 7
+ },
+ "mcraeha01": {
+  "name": "Hal McRae",
+  "range": 3,
+  "arm": 3,
+  "durability": 8
+ },
+ "wathajo01": {
+  "name": "John Wathan",
+  "range": 5,
+  "arm": 5,
+  "durability": 4
+ },
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 4,
+  "arm": 3,
+  "durability": 7
+ },
+ "whitefr01": {
+  "name": "Frank White",
+  "range": 9,
+  "arm": 8,
+  "durability": 9
+ },
+ "washiu_01": {
+  "name": "U L Washington",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "aikenwi01": {
+  "name": "Willie Aikens",
+  "range": 4,
+  "arm": 4,
+  "durability": 6
+ },
+ "stillku01": {
+  "name": "Kurt Stillwell",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "otisam01": {
+  "name": "Amos Otis",
+  "range": 7,
+  "arm": 6,
+  "durability": 6
+ },
+ "jacksbo01": {
+  "name": "Bo Jackson",
+  "range": 6,
+  "arm": 10,
+  "durability": 6
+ },
+ "saberbr01": {
+  "name": "Bret Saberhagen",
+  "bunt": 5,
+  "fielding": 8,
+  "pitches": [
+   "4-Seam Fastball",
+   "Changeup",
+   "Curveball"
+  ]
+ },
+ "gubicma01": {
+  "name": "Mark Gubicza",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "leibrch01": {
+  "name": "Charlie Leibrandt",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Changeup",
+   "Slider",
+   "2-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "blackbu02": {
+  "name": "Bud Black",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "farrst01": {
+  "name": "Steve Farr",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ },
+ "quiseda01": {
+  "name": "Dan Quisenberry",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ }
+}

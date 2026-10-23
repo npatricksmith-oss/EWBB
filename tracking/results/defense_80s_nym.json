@@ -1,0 +1,361 @@
+{
+ "strawda01": {
+  "name": "Darryl Strawberry",
+  "range": 4,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -7.2,
+    "goldGlove": false,
+    "stat": 3.0,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 7.1,
+    "leagueOf": 10.9,
+    "stat": 3.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "hernake01": {
+  "name": "Keith Hernandez",
+  "range": 8,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.0,
+    "goldGlove": true,
+    "stat": 7.7,
+    "scout": 9
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 6
+   }
+  }
+ },
+ "johnsho01": {
+  "name": "Howard Johnson",
+  "range": 4,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -7.1,
+    "goldGlove": false,
+    "stat": 3.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 8
+   }
+  }
+ },
+ "cartega01": {
+  "name": "Gary Carter",
+  "range": 7,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.4,
+    "goldGlove": false,
+    "stat": 6.8,
+    "scout": 7
+   },
+   "arm": {
+    "csPct": 0.34,
+    "leagueCsPct": 0.316,
+    "attempts": 150,
+    "stat": 5.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 149,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 7
+   }
+  }
+ },
+ "mcreyke01": {
+  "name": "Kevin McReynolds",
+  "range": 5,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.9,
+    "goldGlove": false,
+    "stat": 4.2,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 17.4,
+    "leagueOf": 9.1,
+    "stat": 8.3,
+    "scout": 7
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 160,
+    "stat": 9.3,
+    "scout": 8
+   }
+  }
+ },
+ "dykstle01": {
+  "name": "Lenny Dykstra",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.0,
+    "goldGlove": false,
+    "stat": 6.1,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 11.2,
+    "leagueOf": 11.1,
+    "stat": 5.1,
+    "scout": 5
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "backmwa01": {
+  "name": "Wally Backman",
+  "range": 6,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.2,
+    "goldGlove": false,
+    "stat": 5.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 124,
+    "teamGames": 162,
+    "stat": 7.9,
+    "scout": 5
+   }
+  }
+ },
+ "wilsomo01": {
+  "name": "Mookie Wilson",
+  "range": 6,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 9.1,
+    "leagueOf": 10.7,
+    "stat": 4.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "elsteke01": {
+  "name": "Kevin Elster",
+  "range": 7,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.6,
+    "goldGlove": false,
+    "stat": 7.2,
+    "scout": 7
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "stearjo01": {
+  "name": "John Stearns",
+  "range": 6,
+  "arm": 6,
+  "durability": 4,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.8,
+    "goldGlove": false,
+    "stat": 6.9,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.405,
+    "leagueCsPct": 0.336,
+    "attempts": 121,
+    "stat": 6.4,
+    "scout": 6
+   },
+   "durability": {
+    "games": 98,
+    "teamGames": 162,
+    "stat": 6.4,
+    "scout": 2
+   }
+  }
+ },
+ "teufeti01": {
+  "name": "Tim Teufel",
+  "range": 3,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -7.7,
+    "goldGlove": false,
+    "stat": 2.8,
+    "scout": 4
+   },
+   "durability": {
+    "games": 97,
+    "teamGames": 162,
+    "stat": 6.4,
+    "scout": 6
+   }
+  }
+ },
+ "magadda01": {
+  "name": "Dave Magadan",
+  "range": 6,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.5,
+    "goldGlove": false,
+    "stat": 6.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 127,
+    "teamGames": 162,
+    "stat": 8.1,
+    "scout": 5
+   }
+  }
+ },
+ "brookhu01": {
+  "name": "Hubie Brooks",
+  "range": 4,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.6,
+    "goldGlove": false,
+    "stat": 3.7,
+    "scout": 4
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 8
+   }
+  }
+ },
+ "goodedw01": {
+  "name": "Dwight Gooden",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "darliro01": {
+  "name": "Ron Darling",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "fernasi01": {
+  "name": "Sid Fernandez",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "ojedabo01": {
+  "name": "Bob Ojeda",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "Changeup",
+   "2-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "leachte01": {
+  "name": "Terry Leach",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "oroscje01": {
+  "name": "Jesse Orosco",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ }
+}

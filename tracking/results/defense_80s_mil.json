@@ -1,0 +1,369 @@
+{
+ "molitpa01": {
+  "name": "Paul Molitor",
+  "range": 5,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.1,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 160,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 8
+   }
+  }
+ },
+ "coopece01": {
+  "name": "Cecil Cooper",
+  "range": 7,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.6,
+    "goldGlove": true,
+    "stat": 7.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 8
+   }
+  }
+ },
+ "yountro01": {
+  "name": "Robin Yount",
+  "range": 8,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.2,
+    "goldGlove": true,
+    "stat": 7.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "oglivbe01": {
+  "name": "Ben Oglivie",
+  "range": 7,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.1,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 17.3,
+    "leagueOf": 13.2,
+    "stat": 6.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 8
+   }
+  }
+ },
+ "moneydo01": {
+  "name": "Don Money",
+  "range": 5,
+  "arm": 5,
+  "durability": 5,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.5,
+    "goldGlove": false,
+    "stat": 5.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 96,
+    "teamGames": 162,
+    "stat": 6.3,
+    "scout": 4
+   }
+  }
+ },
+ "thomago01": {
+  "name": "Gorman Thomas",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.5,
+    "goldGlove": false,
+    "stat": 4.6,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 11.1,
+    "leagueOf": 12.7,
+    "stat": 4.4,
+    "scout": 6
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "simmote01": {
+  "name": "Ted Simmons",
+  "range": 4,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.2,
+    "goldGlove": false,
+    "stat": 4.7,
+    "scout": 4
+   },
+   "arm": {
+    "csPct": 0.293,
+    "leagueCsPct": 0.327,
+    "attempts": 116,
+    "stat": 4.3,
+    "scout": 4
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 7
+   }
+  }
+ },
+ "deerro01": {
+  "name": "Rob Deer",
+  "range": 6,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.5,
+    "goldGlove": false,
+    "stat": 6.0,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 11.2,
+    "leagueOf": 9.1,
+    "stat": 5.8,
+    "scout": 7
+   },
+   "durability": {
+    "games": 135,
+    "teamGames": 162,
+    "stat": 8.5,
+    "scout": 7
+   }
+  }
+ },
+ "gantnji01": {
+  "name": "Jim Gantner",
+  "range": 6,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.5,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 8
+   }
+  }
+ },
+ "moorech02": {
+  "name": "Charlie Moore",
+  "range": 5,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.4,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 10.5,
+    "leagueOf": 11.6,
+    "stat": 4.6,
+    "scout": 9
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "surhob.01": {
+  "name": "B.J. Surhoff",
+  "range": 6,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.4,
+    "goldGlove": false,
+    "stat": 6.5,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.353,
+    "leagueCsPct": 0.303,
+    "attempts": 102,
+    "stat": 5.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 115,
+    "teamGames": 162,
+    "stat": 7.4,
+    "scout": 6
+   }
+  }
+ },
+ "sundbji01": {
+  "name": "Jim Sundberg",
+  "range": 8,
+  "arm": 8,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 11.4,
+    "goldGlove": false,
+    "stat": 8.3,
+    "scout": 8
+   },
+   "arm": {
+    "csPct": 0.5,
+    "leagueCsPct": 0.334,
+    "attempts": 84,
+    "stat": 7.9,
+    "scout": 8
+   },
+   "durability": {
+    "games": 110,
+    "teamGames": 161,
+    "stat": 7.1,
+    "scout": 7
+   }
+  }
+ },
+ "brockgr01": {
+  "name": "Greg Brock",
+  "range": 4,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.2,
+    "goldGlove": false,
+    "stat": 3.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 141,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 7
+   }
+  }
+ },
+ "higuete01": {
+  "name": "Teddy Higuera",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "haasmo01": {
+  "name": "Moose Haas",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "bosioch01": {
+  "name": "Chris Bosio",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "wegmabi01": {
+  "name": "Bill Wegman",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "2-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "fingero01": {
+  "name": "Rollie Fingers",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "plesada01": {
+  "name": "Dan Plesac",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ }
+}

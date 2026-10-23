@@ -5,8 +5,9 @@ The scouting JSON (an LLM's judgment of range, arm and durability from reputatio
 Gold Gloves) is blended with what the decade scan measured for the player's season:
 - range: Total Zone fielding runs (baseball-reference "Rfield") per full season, plus a
   Gold Glove bonus. A DH is rated on his fielding at every position in the decade.
-- arm: catchers by caught-stealing rate against that season's league catchers;
-  outfielders by assists per inning against that season's outfielders. Infield arms
+- arm: catchers by caught-stealing rate against that season's league catchers (half the
+  rating); outfielders by assists per inning against that season's outfielders (40%, since
+  runners don't test the best arms). Infield arms
   have no counting stat, so they stay with the scouting judgment.
 - durability: share of the team's games he played that season.
 Pitcher ratings (bunting, fielding, repertoire) come from the scouting JSON unchanged.
@@ -104,12 +105,17 @@ def batter_defense(pid, spec, seasons, norms, scout):
     elif spec['pos'] in ('LF', 'CF', 'RF') or sum(games[k] for k in OF_KEYS) / field_games > 0.7:
         inn = innings(fld)
         if inn:
-            per = 1350 * num(fld.get('f_assists')) / (inn + 300)
-            stat_arm = 5 + (per - norms[year]['ofAssists']) / 2.5
-            parts['arm'] = {'assistsPer1350': round(per, 1), 'leagueOf': round(norms[year]['ofAssists'], 1)}
+            # Shrink toward the league rate with 300 innings of average play
+            lg = norms[year]['ofAssists']
+            per = 1350 * (num(fld.get('f_assists')) + lg * 300 / 1350) / (inn + 300)
+            stat_arm = 5 + (per - lg) / 2.5
+            parts['arm'] = {'assistsPer1350': round(per, 1), 'leagueOf': round(lg, 1)}
     if stat_arm is not None:
         parts['arm'].update({'stat': round(stat_arm, 1), 'scout': scout.get('arm')})
-        arm = 0.5 * stat_arm + 0.5 * scout['arm'] if 'arm' in scout else stat_arm
+        # Assists miss the arms runners won't test (Dwight Evans), so they count for less
+        # than a catcher's caught-stealing rate
+        w = 0.5 if 'csPct' in parts['arm'] else 0.4
+        arm = w * stat_arm + (1 - w) * scout['arm'] if 'arm' in scout else stat_arm
 
     team_games = sum(d['record'] or [162, 0]) or 162
     stat_dur = 1 + 9 * num(app.get('games_all')) / team_games

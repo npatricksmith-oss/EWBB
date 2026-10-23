@@ -377,7 +377,7 @@ def main():
         spec, report = pick_team(team)
         spec_path = os.path.join(TASKS, spec['id'] + '.json')
         if os.path.exists(spec_path):
-            # Keep hand edits to the manager profile id and rating overrides
+            # Keep the manager profile id set by bin/managers_80s.py
             old = json.load(open(spec_path))
             spec['defaultManagerId'] = old.get('defaultManagerId')
         with open(spec_path, 'w') as f:

@@ -10,7 +10,7 @@
  "primaryColor": "#fdb827",
  "secondaryColor": "#27251f",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "tanner",
  "manager": {
   "bref": "tannech01",
   "name": "Chuck Tanner",

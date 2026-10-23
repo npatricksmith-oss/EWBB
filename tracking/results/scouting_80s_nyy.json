@@ -1,0 +1,139 @@
+{
+ "henderi01": {
+  "name": "Rickey Henderson",
+  "range": 9,
+  "arm": 4,
+  "durability": 8
+ },
+ "randowi01": {
+  "name": "Willie Randolph",
+  "range": 7,
+  "arm": 6,
+  "durability": 6
+ },
+ "jacksre01": {
+  "name": "Reggie Jackson",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "mattido01": {
+  "name": "Don Mattingly",
+  "range": 8,
+  "arm": 6,
+  "durability": 9
+ },
+ "winfida01": {
+  "name": "Dave Winfield",
+  "range": 7,
+  "arm": 9,
+  "durability": 8
+ },
+ "wynegbu01": {
+  "name": "Butch Wynegar",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "mumphje01": {
+  "name": "Jerry Mumphrey",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "nettlgr01": {
+  "name": "Graig Nettles",
+  "range": 8,
+  "arm": 7,
+  "durability": 6
+ },
+ "dentbu01": {
+  "name": "Bucky Dent",
+  "range": 6,
+  "arm": 6,
+  "durability": 5
+ },
+ "baylodo01": {
+  "name": "Don Baylor",
+  "range": 3,
+  "arm": 4,
+  "durability": 8
+ },
+ "gamblos01": {
+  "name": "Oscar Gamble",
+  "range": 3,
+  "arm": 4,
+  "durability": 4
+ },
+ "griffke01": {
+  "name": "Ken Griffey",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "smallro02": {
+  "name": "Roy Smalley",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "guidrro01": {
+  "name": "Ron Guidry",
+  "bunt": 5,
+  "fielding": 9,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "johnto01": {
+  "name": "Tommy John",
+  "bunt": 4,
+  "fielding": 8,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "niekrph01": {
+  "name": "Phil Niekro",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "rasmude01": {
+  "name": "Dennis Rasmussen",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "gossari01": {
+  "name": "Rich Gossage",
+  "bunt": 2,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "righeda01": {
+  "name": "Dave Righetti",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ }
+}

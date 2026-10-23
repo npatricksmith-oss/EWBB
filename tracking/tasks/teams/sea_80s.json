@@ -10,7 +10,7 @@
  "primaryColor": "#0058a3",
  "secondaryColor": "#ffc72c",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "williamsd",
  "manager": {
   "bref": "willidi02",
   "name": "Dick Williams",

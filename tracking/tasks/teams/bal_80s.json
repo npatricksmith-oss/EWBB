@@ -10,7 +10,7 @@
  "primaryColor": "#df4601",
  "secondaryColor": "#000000",
  "defaultParkId": "memorial",
- "defaultManagerId": null,
+ "defaultManagerId": "weaver",
  "manager": {
   "bref": "weaveea99",
   "name": "Earl Weaver",

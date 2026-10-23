@@ -1,0 +1,141 @@
+{
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 6,
+  "arm": 5,
+  "durability": 7
+ },
+ "matthga01": {
+  "name": "Gary Matthews",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "schmimi01": {
+  "name": "Mike Schmidt",
+  "range": 8,
+  "arm": 9,
+  "durability": 9
+ },
+ "samueju01": {
+  "name": "Juan Samuel",
+  "range": 6,
+  "arm": 6,
+  "durability": 10
+ },
+ "hayesvo01": {
+  "name": "Von Hayes",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "diazbo01": {
+  "name": "Bo D\u00edaz",
+  "range": 6,
+  "arm": 7,
+  "durability": 7
+ },
+ "thompmi02": {
+  "name": "Milt Thompson",
+  "range": 7,
+  "arm": 5,
+  "durability": 7
+ },
+ "wilsogl01": {
+  "name": "Glenn Wilson",
+  "range": 5,
+  "arm": 9,
+  "durability": 7
+ },
+ "dejesiv01": {
+  "name": "Iv\u00e1n de Jes\u00fas",
+  "range": 6,
+  "arm": 7,
+  "durability": 10
+ },
+ "trillma01": {
+  "name": "Manny Trillo",
+  "range": 9,
+  "arm": 8,
+  "durability": 8
+ },
+ "maddoga01": {
+  "name": "Garry Maddox",
+  "range": 10,
+  "arm": 7,
+  "durability": 6
+ },
+ "virgioz02": {
+  "name": "Ozzie Virgil",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "morgajo02": {
+  "name": "Joe Morgan",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "carltst01": {
+  "name": "Steve Carlton",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "dennyjo01": {
+  "name": "John Denny",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "grosske01": {
+  "name": "Kevin Gross",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "rawlesh01": {
+  "name": "Shane Rawley",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "mcgratu01": {
+  "name": "Tug McGraw",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "bedrost01": {
+  "name": "Steve Bedrosian",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ }
+}

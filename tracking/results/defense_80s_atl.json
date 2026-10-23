@@ -1,0 +1,366 @@
+{
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 9,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 20.1,
+    "goldGlove": false,
+    "stat": 10.8,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 5.0,
+    "leagueOf": 10.5,
+    "stat": 2.8,
+    "scout": 4
+   },
+   "durability": {
+    "games": 134,
+    "teamGames": 160,
+    "stat": 8.5,
+    "scout": 5
+   }
+  }
+ },
+ "jamesdi01": {
+  "name": "Dion James",
+  "range": 3,
+  "arm": 4,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -10.6,
+    "goldGlove": false,
+    "stat": 2.0,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 6.4,
+    "leagueOf": 10.9,
+    "stat": 3.2,
+    "scout": 4
+   },
+   "durability": {
+    "games": 134,
+    "teamGames": 161,
+    "stat": 8.5,
+    "scout": 4
+   }
+  }
+ },
+ "murphda05": {
+  "name": "Dale Murphy",
+  "range": 7,
+  "arm": 7,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.2,
+    "goldGlove": false,
+    "stat": 7.3,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 13.0,
+    "leagueOf": 10.9,
+    "stat": 5.9,
+    "scout": 8
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 161,
+    "stat": 9.9,
+    "scout": 10
+   }
+  }
+ },
+ "hornebo01": {
+  "name": "Bob Horner",
+  "range": 5,
+  "arm": 6,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.0,
+    "goldGlove": false,
+    "stat": 6.1,
+    "scout": 4
+   },
+   "durability": {
+    "games": 124,
+    "teamGames": 161,
+    "stat": 7.9,
+    "scout": 4
+   }
+  }
+ },
+ "washicl01": {
+  "name": "Claudell Washington",
+  "range": 4,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.1,
+    "goldGlove": false,
+    "stat": 3.8,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 7.1,
+    "leagueOf": 10.7,
+    "stat": 3.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 120,
+    "teamGames": 162,
+    "stat": 7.7,
+    "scout": 6
+   }
+  }
+ },
+ "chambch01": {
+  "name": "Chris Chambliss",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.6,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 161,
+    "stat": 9.8,
+    "scout": 6
+   }
+  }
+ },
+ "benedbr01": {
+  "name": "Bruce Benedict",
+  "range": 6,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.9,
+    "goldGlove": false,
+    "stat": 7.0,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.366,
+    "leagueCsPct": 0.356,
+    "attempts": 131,
+    "stat": 5.2,
+    "scout": 6
+   },
+   "durability": {
+    "games": 90,
+    "teamGames": 106,
+    "stat": 8.6,
+    "scout": 5
+   }
+  }
+ },
+ "ramirra01": {
+  "name": "Rafael Ram\u00edrez",
+  "range": 5,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.0,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "hubbagl01": {
+  "name": "Glenn Hubbard",
+  "range": 9,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 14.9,
+    "goldGlove": false,
+    "stat": 9.3,
+    "scout": 8
+   },
+   "durability": {
+    "games": 142,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 7
+   }
+  }
+ },
+ "oberkke01": {
+  "name": "Ken Oberkfell",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.8,
+    "goldGlove": false,
+    "stat": 6.7,
+    "scout": 6
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 161,
+    "stat": 9.4,
+    "scout": 6
+   }
+  }
+ },
+ "virgioz02": {
+  "name": "Ozzie Virgil",
+  "range": 4,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.7,
+    "goldGlove": false,
+    "stat": 3.7,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.24,
+    "leagueCsPct": 0.303,
+    "attempts": 175,
+    "stat": 3.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 123,
+    "teamGames": 161,
+    "stat": 7.9,
+    "scout": 7
+   }
+  }
+ },
+ "butlebr01": {
+  "name": "Brett Butler",
+  "range": 8,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.3,
+    "goldGlove": false,
+    "stat": 8.0,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 14.3,
+    "leagueOf": 11.6,
+    "stat": 6.1,
+    "scout": 4
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 9
+   }
+  }
+ },
+ "johnsra04": {
+  "name": "Randy Johnson",
+  "range": 7,
+  "arm": 5,
+  "durability": 5,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.0,
+    "goldGlove": false,
+    "stat": 7.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 91,
+    "teamGames": 162,
+    "stat": 6.1,
+    "scout": 3
+   }
+  }
+ },
+ "mahleri01": {
+  "name": "Rick Mahler",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "niekrph01": {
+  "name": "Phil Niekro",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "smithza01": {
+  "name": "Zane Smith",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "perezpa01": {
+  "name": "Pascual P\u00e9rez",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "campri01": {
+  "name": "Rick Camp",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "Sinker",
+   "Curveball"
+  ]
+ },
+ "garbege01": {
+  "name": "Gene Garber",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "Slider",
+   "Sinker"
+  ]
+ }
+}

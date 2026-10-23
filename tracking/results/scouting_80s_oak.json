@@ -1,0 +1,140 @@
+{
+ "henderi01": {
+  "name": "Rickey Henderson",
+  "range": 8,
+  "arm": 4,
+  "durability": 8
+ },
+ "murphdw01": {
+  "name": "Dwayne Murphy",
+  "range": 9,
+  "arm": 7,
+  "durability": 9
+ },
+ "cansejo01": {
+  "name": "Jos\u00e9 Canseco",
+  "range": 6,
+  "arm": 8,
+  "durability": 8
+ },
+ "mcgwima01": {
+  "name": "Mark McGwire",
+  "range": 5,
+  "arm": 5,
+  "durability": 9
+ },
+ "davismi02": {
+  "name": "Mike Davis",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "lansfca01": {
+  "name": "Carney Lansford",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "heathmi02": {
+  "name": "Mike Heath",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "phillto02": {
+  "name": "Tony Phillips",
+  "range": 6,
+  "arm": 6,
+  "durability": 6
+ },
+ "griffal01": {
+  "name": "Alfredo Griffin",
+  "range": 7,
+  "arm": 8,
+  "durability": 9
+ },
+ "armasto01": {
+  "name": "Tony Armas",
+  "range": 5,
+  "arm": 7,
+  "durability": 9
+ },
+ "hendeda01": {
+  "name": "Dave Henderson",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "grosswa01": {
+  "name": "Wayne Gross",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "steinte01": {
+  "name": "Terry Steinbach",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "stewada01": {
+  "name": "Dave Stewart",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "norrimi01": {
+  "name": "Mike Norris",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Screwball",
+   "Slider"
+  ]
+ },
+ "mccatst01": {
+  "name": "Steve McCatty",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "welchbo01": {
+  "name": "Bob Welch",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "nelsoge01": {
+  "name": "Gene Nelson",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "eckerde01": {
+  "name": "Dennis Eckersley",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Sinker"
+  ]
+ }
+}

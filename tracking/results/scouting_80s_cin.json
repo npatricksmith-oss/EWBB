@@ -1,0 +1,141 @@
+{
+ "daviser01": {
+  "name": "Eric Davis",
+  "range": 9,
+  "arm": 6,
+  "durability": 6
+ },
+ "oestero01": {
+  "name": "Ron Oester",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "parkeda01": {
+  "name": "Dave Parker",
+  "range": 4,
+  "arm": 8,
+  "durability": 8
+ },
+ "danieka01": {
+  "name": "Kal Daniels",
+  "range": 4,
+  "arm": 4,
+  "durability": 5
+ },
+ "larkiba01": {
+  "name": "Barry Larkin",
+  "range": 8,
+  "arm": 8,
+  "durability": 7
+ },
+ "driesda01": {
+  "name": "Dan Driessen",
+  "range": 5,
+  "arm": 4,
+  "durability": 7
+ },
+ "saboch01": {
+  "name": "Chris Sabo",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "milneed01": {
+  "name": "Eddie Milner",
+  "range": 7,
+  "arm": 5,
+  "durability": 7
+ },
+ "diazbo01": {
+  "name": "Bo D\u00edaz",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "conceda01": {
+  "name": "Dave Concepci\u00f3n",
+  "range": 7,
+  "arm": 7,
+  "durability": 7
+ },
+ "fostege01": {
+  "name": "George Foster",
+  "range": 4,
+  "arm": 5,
+  "durability": 8
+ },
+ "griffke01": {
+  "name": "Ken Griffey",
+  "range": 6,
+  "arm": 6,
+  "durability": 6
+ },
+ "benchjo01": {
+  "name": "Johnny Bench",
+  "range": 5,
+  "arm": 6,
+  "durability": 5
+ },
+ "sotoma01": {
+  "name": "Mario Soto",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "brownto05": {
+  "name": "Tom Browning",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "berenbr01": {
+  "name": "Bruce Berenyi",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "seaveto01": {
+  "name": "Tom Seaver",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup",
+   "Curveball"
+  ]
+ },
+ "powerte01": {
+  "name": "Ted Power",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "francjo01": {
+  "name": "John Franco",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

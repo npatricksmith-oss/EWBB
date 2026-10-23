@@ -1,0 +1,142 @@
+{
+ "lawru01": {
+  "name": "Rudy Law",
+  "range": 6,
+  "arm": 4,
+  "durability": 7
+ },
+ "lemonch01": {
+  "name": "Chet Lemon",
+  "range": 7,
+  "arm": 7,
+  "durability": 8
+ },
+ "baineha01": {
+  "name": "Harold Baines",
+  "range": 4,
+  "arm": 6,
+  "durability": 7
+ },
+ "walkegr01": {
+  "name": "Greg Walker",
+  "range": 5,
+  "arm": 4,
+  "durability": 7
+ },
+ "fiskca01": {
+  "name": "Carlton Fisk",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "luzingr01": {
+  "name": "Greg Luzinski",
+  "range": 2,
+  "arm": 3,
+  "durability": 6
+ },
+ "bernato01": {
+  "name": "Tony Bernazard",
+  "range": 6,
+  "arm": 6,
+  "durability": 7
+ },
+ "lawva01": {
+  "name": "Vance Law",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "guilloz01": {
+  "name": "Ozzie Guill\u00e9n",
+  "range": 8,
+  "arm": 8,
+  "durability": 9
+ },
+ "fletcsc01": {
+  "name": "Scott Fletcher",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "caldeiv01": {
+  "name": "Iv\u00e1n Calder\u00f3n",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "kittlro01": {
+  "name": "Ron Kittle",
+  "range": 3,
+  "arm": 4,
+  "durability": 8
+ },
+ "cruzju01": {
+  "name": "Julio Cruz",
+  "range": 7,
+  "arm": 5,
+  "durability": 6
+ },
+ "burnsbr01": {
+  "name": "Britt Burns",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "dotsori01": {
+  "name": "Richard Dotson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "bannifl01": {
+  "name": "Floyd Bannister",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "hoytla01": {
+  "name": "LaMarr Hoyt",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "barojsa01": {
+  "name": "Salom\u00e9 Barojas",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Screwball",
+   "Slider"
+  ]
+ },
+ "thigpbo01": {
+  "name": "Bobby Thigpen",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Sinker"
+  ]
+ }
+}

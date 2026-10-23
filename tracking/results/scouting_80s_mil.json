@@ -1,0 +1,142 @@
+{
+ "molitpa01": {
+  "name": "Paul Molitor",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "coopece01": {
+  "name": "Cecil Cooper",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "yountro01": {
+  "name": "Robin Yount",
+  "range": 8,
+  "arm": 8,
+  "durability": 9
+ },
+ "oglivbe01": {
+  "name": "Ben Oglivie",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "moneydo01": {
+  "name": "Don Money",
+  "range": 5,
+  "arm": 5,
+  "durability": 4
+ },
+ "thomago01": {
+  "name": "Gorman Thomas",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "simmote01": {
+  "name": "Ted Simmons",
+  "range": 4,
+  "arm": 4,
+  "durability": 7
+ },
+ "deerro01": {
+  "name": "Rob Deer",
+  "range": 5,
+  "arm": 7,
+  "durability": 7
+ },
+ "gantnji01": {
+  "name": "Jim Gantner",
+  "range": 6,
+  "arm": 6,
+  "durability": 8
+ },
+ "moorech02": {
+  "name": "Charlie Moore",
+  "range": 7,
+  "arm": 9,
+  "durability": 7
+ },
+ "surhob.01": {
+  "name": "B.J. Surhoff",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "sundbji01": {
+  "name": "Jim Sundberg",
+  "range": 8,
+  "arm": 8,
+  "durability": 7
+ },
+ "brockgr01": {
+  "name": "Greg Brock",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "higuete01": {
+  "name": "Teddy Higuera",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "haasmo01": {
+  "name": "Moose Haas",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "bosioch01": {
+  "name": "Chris Bosio",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "wegmabi01": {
+  "name": "Bill Wegman",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "2-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "fingero01": {
+  "name": "Rollie Fingers",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "plesada01": {
+  "name": "Dan Plesac",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ }
+}

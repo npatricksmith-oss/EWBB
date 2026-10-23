@@ -10,7 +10,7 @@
  "primaryColor": "#002d72",
  "secondaryColor": "#ff5910",
  "defaultParkId": "fulton",
- "defaultManagerId": null,
+ "defaultManagerId": "johnsond",
  "manager": {
   "bref": "johnsda02",
   "name": "Davey Johnson",

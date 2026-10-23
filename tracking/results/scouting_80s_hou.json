@@ -1,0 +1,139 @@
+{
+ "cruzjo01": {
+  "name": "Jos\u00e9 Cruz",
+  "range": 5,
+  "arm": 5,
+  "durability": 7
+ },
+ "basske01": {
+  "name": "Kevin Bass",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "wallide01": {
+  "name": "Denny Walling",
+  "range": 4,
+  "arm": 4,
+  "durability": 6
+ },
+ "davisgl01": {
+  "name": "Glenn Davis",
+  "range": 5,
+  "arm": 4,
+  "durability": 9
+ },
+ "thondi01": {
+  "name": "Dickie Thon",
+  "range": 8,
+  "arm": 8,
+  "durability": 9
+ },
+ "doranbi02": {
+  "name": "Bill Doran",
+  "range": 7,
+  "arm": 6,
+  "durability": 9
+ },
+ "puhlte01": {
+  "name": "Terry Puhl",
+  "range": 6,
+  "arm": 8,
+  "durability": 7
+ },
+ "ashbyal01": {
+  "name": "Alan Ashby",
+  "range": 4,
+  "arm": 5,
+  "durability": 5
+ },
+ "garneph01": {
+  "name": "Phil Garner",
+  "range": 5,
+  "arm": 5,
+  "durability": 4
+ },
+ "reynocr01": {
+  "name": "Craig Reynolds",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "howear01": {
+  "name": "Art Howe",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "cedence01": {
+  "name": "C\u00e9sar Cede\u00f1o",
+  "range": 6,
+  "arm": 6,
+  "durability": 4
+ },
+ "youngge02": {
+  "name": "Gerald Young",
+  "range": 7,
+  "arm": 5,
+  "durability": 7
+ },
+ "ryanno01": {
+  "name": "Nolan Ryan",
+  "bunt": 2,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "scottmi03": {
+  "name": "Mike Scott",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "niekrjo01": {
+  "name": "Joe Niekro",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Knuckleball",
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ },
+ "kneppbo01": {
+  "name": "Bob Knepper",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "anderla02": {
+  "name": "Larry Andersen",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ },
+ "smithda02": {
+  "name": "Dave Smith",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Slider"
+  ]
+ }
+}

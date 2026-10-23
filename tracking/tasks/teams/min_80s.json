@@ -10,7 +10,7 @@
  "primaryColor": "#002b5c",
  "secondaryColor": "#d31145",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "gardner",
  "manager": {
   "bref": "gardnbi02",
   "name": "Billy Gardner",

@@ -1,0 +1,141 @@
+{
+ "strawda01": {
+  "name": "Darryl Strawberry",
+  "range": 6,
+  "arm": 8,
+  "durability": 7
+ },
+ "hernake01": {
+  "name": "Keith Hernandez",
+  "range": 9,
+  "arm": 7,
+  "durability": 6
+ },
+ "johnsho01": {
+  "name": "Howard Johnson",
+  "range": 5,
+  "arm": 6,
+  "durability": 8
+ },
+ "cartega01": {
+  "name": "Gary Carter",
+  "range": 7,
+  "arm": 8,
+  "durability": 7
+ },
+ "mcreyke01": {
+  "name": "Kevin McReynolds",
+  "range": 7,
+  "arm": 7,
+  "durability": 8
+ },
+ "dykstle01": {
+  "name": "Lenny Dykstra",
+  "range": 7,
+  "arm": 5,
+  "durability": 7
+ },
+ "backmwa01": {
+  "name": "Wally Backman",
+  "range": 6,
+  "arm": 5,
+  "durability": 5
+ },
+ "wilsomo01": {
+  "name": "Mookie Wilson",
+  "range": 7,
+  "arm": 4,
+  "durability": 7
+ },
+ "elsteke01": {
+  "name": "Kevin Elster",
+  "range": 7,
+  "arm": 7,
+  "durability": 7
+ },
+ "stearjo01": {
+  "name": "John Stearns",
+  "range": 5,
+  "arm": 6,
+  "durability": 2
+ },
+ "teufeti01": {
+  "name": "Tim Teufel",
+  "range": 4,
+  "arm": 5,
+  "durability": 6
+ },
+ "magadda01": {
+  "name": "Dave Magadan",
+  "range": 5,
+  "arm": 4,
+  "durability": 5
+ },
+ "brookhu01": {
+  "name": "Hubie Brooks",
+  "range": 4,
+  "arm": 6,
+  "durability": 8
+ },
+ "goodedw01": {
+  "name": "Dwight Gooden",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "darliro01": {
+  "name": "Ron Darling",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "4-Seam Fastball",
+   "Splitter",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "fernasi01": {
+  "name": "Sid Fernandez",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "ojedabo01": {
+  "name": "Bob Ojeda",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "Changeup",
+   "2-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "leachte01": {
+  "name": "Terry Leach",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "oroscje01": {
+  "name": "Jesse Orosco",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball"
+  ]
+ }
+}

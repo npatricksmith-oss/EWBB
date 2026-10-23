@@ -1,0 +1,368 @@
+{
+ "saxst01": {
+  "name": "Steve Sax",
+  "range": 3,
+  "arm": 3,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -11.5,
+    "goldGlove": false,
+    "stat": 1.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 8
+   }
+  }
+ },
+ "sciosmi01": {
+  "name": "Mike Scioscia",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.4,
+    "goldGlove": false,
+    "stat": 6.2,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.355,
+    "leagueCsPct": 0.316,
+    "attempts": 121,
+    "stat": 5.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 141,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 7
+   }
+  }
+ },
+ "guerrpe01": {
+  "name": "Pedro Guerrero",
+  "range": 6,
+  "arm": 10,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.4,
+    "goldGlove": false,
+    "stat": 6.0,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 115.4,
+    "leagueOf": 10.7,
+    "stat": 46.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 137,
+    "teamGames": 162,
+    "stat": 8.6,
+    "scout": 7
+   }
+  }
+ },
+ "marshmi02": {
+  "name": "Mike Marshall",
+  "range": 3,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.5,
+    "goldGlove": false,
+    "stat": 3.1,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 13.3,
+    "leagueOf": 10.7,
+    "stat": 6.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 135,
+    "teamGames": 162,
+    "stat": 8.5,
+    "scout": 6
+   }
+  }
+ },
+ "bakerdu01": {
+  "name": "Dusty Baker",
+  "range": 6,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.1,
+    "goldGlove": false,
+    "stat": 5.9,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 6.5,
+    "leagueOf": 13.2,
+    "stat": 2.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 163,
+    "stat": 9.4,
+    "scout": 8
+   }
+  }
+ },
+ "garvest01": {
+  "name": "Steve Garvey",
+  "range": 5,
+  "arm": 6,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.5,
+    "goldGlove": false,
+    "stat": 4.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 163,
+    "teamGames": 163,
+    "stat": 10.0,
+    "scout": 10
+   }
+  }
+ },
+ "ceyro01": {
+  "name": "Ron Cey",
+  "range": 6,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.5,
+    "goldGlove": false,
+    "stat": 7.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 163,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "landrke01": {
+  "name": "Ken Landreaux",
+  "range": 6,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.9,
+    "goldGlove": false,
+    "stat": 5.6,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 6.1,
+    "leagueOf": 12.7,
+    "stat": 2.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 129,
+    "teamGames": 162,
+    "stat": 8.2,
+    "scout": 7
+   }
+  }
+ },
+ "russebi01": {
+  "name": "Bill Russell",
+  "range": 7,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.6,
+    "goldGlove": false,
+    "stat": 7.7,
+    "scout": 6
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 8
+   }
+  }
+ },
+ "gibsoki01": {
+  "name": "Kirk Gibson",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.8,
+    "goldGlove": false,
+    "stat": 6.4,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 6.9,
+    "leagueOf": 9.1,
+    "stat": 4.1,
+    "scout": 5
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 161,
+    "stat": 9.4,
+    "scout": 6
+   }
+  }
+ },
+ "brockgr01": {
+  "name": "Greg Brock",
+  "range": 5,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 2.8,
+    "goldGlove": false,
+    "stat": 5.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 129,
+    "teamGames": 162,
+    "stat": 8.2,
+    "scout": 7
+   }
+  }
+ },
+ "smithre06": {
+  "name": "Reggie Smith",
+  "range": 7,
+  "arm": 9,
+  "durability": 5,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 12.2,
+    "goldGlove": false,
+    "stat": 8.5,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 24.0,
+    "leagueOf": 13.2,
+    "stat": 9.3,
+    "scout": 8
+   },
+   "durability": {
+    "games": 92,
+    "teamGames": 163,
+    "stat": 6.1,
+    "scout": 4
+   }
+  }
+ },
+ "anderda02": {
+  "name": "Dave Anderson",
+  "range": 5,
+  "arm": 5,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 2.0,
+    "goldGlove": false,
+    "stat": 5.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 121,
+    "teamGames": 162,
+    "stat": 7.7,
+    "scout": 5
+   }
+  }
+ },
+ "valenfe01": {
+  "name": "Fernando Valenzuela",
+  "bunt": 6,
+  "fielding": 7,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "hershor01": {
+  "name": "Orel Hershiser",
+  "bunt": 7,
+  "fielding": 8,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "welchbo01": {
+  "name": "Bob Welch",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "reussje01": {
+  "name": "Jerry Reuss",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "howest01": {
+  "name": "Steve Howe",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "niedeto01": {
+  "name": "Tom Niedenfuer",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

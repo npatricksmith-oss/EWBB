@@ -1,0 +1,359 @@
+{
+ "raineti01": {
+  "name": "Tim Raines",
+  "range": 7,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.6,
+    "goldGlove": false,
+    "stat": 6.6,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 8.8,
+    "leagueOf": 10.7,
+    "stat": 4.2,
+    "scout": 4
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 161,
+    "stat": 9.4,
+    "scout": 8
+   }
+  }
+ },
+ "oliveal01": {
+  "name": "Al Oliver",
+  "range": 4,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.8,
+    "goldGlove": false,
+    "stat": 3.6,
+    "scout": 4
+   },
+   "durability": {
+    "games": 160,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 9
+   }
+  }
+ },
+ "brookhu01": {
+  "name": "Hubie Brooks",
+  "range": 5,
+  "arm": 7,
+  "durability": 5,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.2,
+    "goldGlove": false,
+    "stat": 5.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 80,
+    "teamGames": 161,
+    "stat": 5.5,
+    "scout": 5
+   }
+  }
+ },
+ "galaran01": {
+  "name": "Andr\u00e9s Galarraga",
+  "range": 6,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.5,
+    "goldGlove": false,
+    "stat": 5.4,
+    "scout": 7
+   },
+   "durability": {
+    "games": 157,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "cartega01": {
+  "name": "Gary Carter",
+  "range": 8,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.8,
+    "goldGlove": true,
+    "stat": 8.8,
+    "scout": 8
+   },
+   "arm": {
+    "csPct": 0.405,
+    "leagueCsPct": 0.336,
+    "attempts": 173,
+    "stat": 6.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 9
+   }
+  }
+ },
+ "dawsoan01": {
+  "name": "Andre Dawson",
+  "range": 9,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 14.2,
+    "goldGlove": true,
+    "stat": 9.8,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 9.1,
+    "leagueOf": 12.7,
+    "stat": 3.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 148,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "lawva01": {
+  "name": "Vance Law",
+  "range": 5,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.5,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 161,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "webstmi01": {
+  "name": "Mitch Webster",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.0,
+    "goldGlove": false,
+    "stat": 6.2,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 12.4,
+    "leagueOf": 11.1,
+    "stat": 5.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 161,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "wallati01": {
+  "name": "Tim Wallach",
+  "range": 9,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 18.5,
+    "goldGlove": true,
+    "stat": 11.0,
+    "scout": 7
+   },
+   "durability": {
+    "games": 155,
+    "teamGames": 161,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "cromawa01": {
+  "name": "Warren Cromartie",
+  "range": 6,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.2,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 14.3,
+    "leagueOf": 12.7,
+    "stat": 5.6,
+    "scout": 4
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 8
+   }
+  }
+ },
+ "foleyto02": {
+  "name": "Tom Foley",
+  "range": 6,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.2,
+    "goldGlove": false,
+    "stat": 6.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 127,
+    "teamGames": 162,
+    "stat": 8.1,
+    "scout": 6
+   }
+  }
+ },
+ "valenel01": {
+  "name": "Ellis Valentine",
+  "range": 7,
+  "arm": 8,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.6,
+    "goldGlove": false,
+    "stat": 7.4,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 12.0,
+    "leagueOf": 13.2,
+    "stat": 4.5,
+    "scout": 10
+   },
+   "durability": {
+    "games": 86,
+    "teamGames": 162,
+    "stat": 5.8,
+    "scout": 6
+   }
+  }
+ },
+ "speiech01": {
+  "name": "Chris Speier",
+  "range": 5,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.9,
+    "goldGlove": false,
+    "stat": 5.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 128,
+    "teamGames": 162,
+    "stat": 8.1,
+    "scout": 7
+   }
+  }
+ },
+ "rogerst01": {
+  "name": "Steve Rogers",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Sinker",
+   "Curveball"
+  ]
+ },
+ "smithbr01": {
+  "name": "Bryn Smith",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "gullibi01": {
+  "name": "Bill Gullickson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "martide01": {
+  "name": "Dennis Mart\u00ednez",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "burketi01": {
+  "name": "Tim Burke",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "reardje01": {
+  "name": "Jeff Reardon",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "bumbral01": {
+  "name": "Al Bumbry",
+  "range": 7,
+  "arm": 5,
+  "durability": 6
+ },
+ "singlke01": {
+  "name": "Ken Singleton",
+  "range": 4,
+  "arm": 5,
+  "durability": 7
+ },
+ "murraed02": {
+  "name": "Eddie Murray",
+  "range": 6,
+  "arm": 6,
+  "durability": 10
+ },
+ "roeniga01": {
+  "name": "Gary Roenicke",
+  "range": 5,
+  "arm": 6,
+  "durability": 5
+ },
+ "ripkeca01": {
+  "name": "Cal Ripken Jr.",
+  "range": 8,
+  "arm": 8,
+  "durability": 10
+ },
+ "lynnfr01": {
+  "name": "Fred Lynn",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "dempsri01": {
+  "name": "Rick Dempsey",
+  "range": 6,
+  "arm": 6,
+  "durability": 4
+ },
+ "decindo01": {
+  "name": "Doug DeCinces",
+  "range": 7,
+  "arm": 7,
+  "durability": 6
+ },
+ "dauerri01": {
+  "name": "Rich Dauer",
+  "range": 7,
+  "arm": 6,
+  "durability": 7
+ },
+ "lowenjo01": {
+  "name": "John Lowenstein",
+  "range": 4,
+  "arm": 4,
+  "durability": 4
+ },
+ "youngmi01": {
+  "name": "Mike Young",
+  "range": 4,
+  "arm": 4,
+  "durability": 4
+ },
+ "tettlmi01": {
+  "name": "Mickey Tettleton",
+  "range": 5,
+  "arm": 5,
+  "durability": 6
+ },
+ "sheetla01": {
+  "name": "Larry Sheets",
+  "range": 3,
+  "arm": 4,
+  "durability": 5
+ },
+ "boddimi01": {
+  "name": "Mike Boddicker",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "mcgresc01": {
+  "name": "Scott McGregor",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Changeup",
+   "Curveball",
+   "2-Seam Fastball"
+  ]
+ },
+ "davisst02": {
+  "name": "Storm Davis",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "flanami01": {
+  "name": "Mike Flanagan",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "Sinker",
+   "Changeup"
+  ]
+ },
+ "stewasa01": {
+  "name": "Sammy Stewart",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "martiti01": {
+  "name": "Tippy Martinez",
+  "bunt": 3,
+  "fielding": 9,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

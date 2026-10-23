@@ -1,0 +1,365 @@
+{
+ "francju01": {
+  "name": "Julio Franco",
+  "range": 5,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 8
+   }
+  }
+ },
+ "bellbu01": {
+  "name": "Buddy Bell",
+  "range": 9,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 12.1,
+    "goldGlove": true,
+    "stat": 9.2,
+    "scout": 9
+   },
+   "durability": {
+    "games": 129,
+    "teamGames": 161,
+    "stat": 8.2,
+    "scout": 8
+   }
+  }
+ },
+ "sierrru01": {
+  "name": "Rub\u00e9n Sierra",
+  "range": 5,
+  "arm": 8,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 12.1,
+    "leagueOf": 10.5,
+    "stat": 5.6,
+    "scout": 9
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 9
+   }
+  }
+ },
+ "parrila01": {
+  "name": "Larry Parrish",
+  "range": 2,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -13.4,
+    "goldGlove": false,
+    "stat": 1.2,
+    "scout": 4
+   },
+   "durability": {
+    "games": 129,
+    "teamGames": 162,
+    "stat": 8.2,
+    "scout": 6
+   }
+  }
+ },
+ "o'bripe03": {
+  "name": "Pete O'Brien",
+  "range": 6,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.4,
+    "goldGlove": false,
+    "stat": 6.8,
+    "scout": 6
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 8
+   }
+  }
+ },
+ "sundbji01": {
+  "name": "Jim Sundberg",
+  "range": 8,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.5,
+    "goldGlove": true,
+    "stat": 8.2,
+    "scout": 8
+   },
+   "arm": {
+    "csPct": 0.481,
+    "leagueCsPct": 0.356,
+    "attempts": 79,
+    "stat": 7.1,
+    "scout": 8
+   },
+   "durability": {
+    "games": 102,
+    "teamGames": 105,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "wardga01": {
+  "name": "Gary Ward",
+  "range": 7,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 11.9,
+    "goldGlove": false,
+    "stat": 8.4,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 11.3,
+    "leagueOf": 10.7,
+    "stat": 5.2,
+    "scout": 7
+   },
+   "durability": {
+    "games": 155,
+    "teamGames": 161,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "mcdowod01": {
+  "name": "Oddibe McDowell",
+  "range": 6,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.3,
+    "goldGlove": false,
+    "stat": 6.0,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 13.7,
+    "leagueOf": 11.1,
+    "stat": 6.0,
+    "scout": 4
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 8
+   }
+  }
+ },
+ "fletcsc01": {
+  "name": "Scott Fletcher",
+  "range": 7,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.3,
+    "goldGlove": false,
+    "stat": 7.4,
+    "scout": 6
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 9
+   }
+  }
+ },
+ "buechst01": {
+  "name": "Steve Buechele",
+  "range": 7,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.6,
+    "goldGlove": false,
+    "stat": 7.5,
+    "scout": 6
+   },
+   "durability": {
+    "games": 155,
+    "teamGames": 161,
+    "stat": 9.7,
+    "scout": 8
+   }
+  }
+ },
+ "samplbi01": {
+  "name": "Billy Sample",
+  "range": 6,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.1,
+    "goldGlove": false,
+    "stat": 6.2,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 9.2,
+    "leagueOf": 11.6,
+    "stat": 4.1,
+    "scout": 5
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 5
+   }
+  }
+ },
+ "rivermi01": {
+  "name": "Mickey Rivers",
+  "range": 3,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -11.0,
+    "goldGlove": false,
+    "stat": 1.9,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 19.7,
+    "leagueOf": 13.2,
+    "stat": 7.6,
+    "scout": 3
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 161,
+    "stat": 9.2,
+    "scout": 6
+   }
+  }
+ },
+ "oliveal01": {
+  "name": "Al Oliver",
+  "range": 3,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.7,
+    "goldGlove": false,
+    "stat": 3.7,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 9.8,
+    "leagueOf": 13.2,
+    "stat": 3.6,
+    "scout": 4
+   },
+   "durability": {
+    "games": 163,
+    "teamGames": 161,
+    "stat": 10.1,
+    "scout": 8
+   }
+  }
+ },
+ "houghch01": {
+  "name": "Charlie Hough",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "tananfr01": {
+  "name": "Frank Tanana",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "matlajo01": {
+  "name": "Jon Matlack",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "honeyri01": {
+  "name": "Rick Honeycutt",
+  "bunt": 3,
+  "fielding": 7,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "schmida01": {
+  "name": "Dave Schmidt",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "harrigr01": {
+  "name": "Greg Harris",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

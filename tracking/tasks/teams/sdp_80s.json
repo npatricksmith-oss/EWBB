@@ -10,7 +10,7 @@
  "primaryColor": "#5c3a21",
  "secondaryColor": "#f4a21e",
  "defaultParkId": "fulton",
- "defaultManagerId": null,
+ "defaultManagerId": "williamsd",
  "manager": {
   "bref": "willidi02",
   "name": "Dick Williams",

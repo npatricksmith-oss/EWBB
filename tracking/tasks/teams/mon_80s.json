@@ -10,7 +10,7 @@
  "primaryColor": "#003087",
  "secondaryColor": "#e4002c",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "rodgers",
  "manager": {
   "bref": "rodgebu01",
   "name": "Buck Rodgers",

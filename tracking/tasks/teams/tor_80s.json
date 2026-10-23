@@ -10,7 +10,7 @@
  "primaryColor": "#134a8e",
  "secondaryColor": "#1d2d5c",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "cox",
  "manager": {
   "bref": "coxbo01",
   "name": "Bobby Cox",

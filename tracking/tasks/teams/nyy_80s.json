@@ -10,7 +10,7 @@
  "primaryColor": "#0c2340",
  "secondaryColor": "#c4ced3",
  "defaultParkId": "memorial",
- "defaultManagerId": null,
+ "defaultManagerId": "piniella",
  "manager": {
   "bref": "pinielo01",
   "name": "Lou Piniella",

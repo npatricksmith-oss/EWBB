@@ -10,7 +10,7 @@
  "primaryColor": "#ce1141",
  "secondaryColor": "#13274f",
  "defaultParkId": "fulton",
- "defaultManagerId": null,
+ "defaultManagerId": "torre",
  "manager": {
   "bref": "torrejo01",
   "name": "Joe Torre",

@@ -10,7 +10,7 @@
  "primaryColor": "#fd5a1e",
  "secondaryColor": "#27251f",
  "defaultParkId": "wrigley",
- "defaultManagerId": null,
+ "defaultManagerId": "craig",
  "manager": {
   "bref": "craigro01",
   "name": "Roger Craig",

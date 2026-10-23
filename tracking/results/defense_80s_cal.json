@@ -1,0 +1,359 @@
+{
+ "pettiga01": {
+  "name": "Gary Pettis",
+  "range": 10,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 17.2,
+    "goldGlove": true,
+    "stat": 10.7,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 9.5,
+    "leagueOf": 11.1,
+    "stat": 4.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 8
+   }
+  }
+ },
+ "carewro01": {
+  "name": "Rod Carew",
+  "range": 7,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 15.5,
+    "goldGlove": false,
+    "stat": 9.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 7
+   }
+  }
+ },
+ "grichbo01": {
+  "name": "Bobby Grich",
+  "range": 7,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.4,
+    "goldGlove": false,
+    "stat": 6.5,
+    "scout": 8
+   },
+   "durability": {
+    "games": 100,
+    "teamGames": 110,
+    "stat": 9.2,
+    "scout": 6
+   }
+  }
+ },
+ "joynewa01": {
+  "name": "Wally Joyner",
+  "range": 6,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.5,
+    "goldGlove": false,
+    "stat": 6.0,
+    "scout": 6
+   },
+   "durability": {
+    "games": 149,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 8
+   }
+  }
+ },
+ "decindo01": {
+  "name": "Doug DeCinces",
+  "range": 8,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.0,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 7
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 6
+   }
+  }
+ },
+ "downibr01": {
+  "name": "Brian Downing",
+  "range": 6,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.7,
+    "goldGlove": false,
+    "stat": 6.4,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 9.9,
+    "leagueOf": 12.7,
+    "stat": 3.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "whitede03": {
+  "name": "Devon White",
+  "range": 10,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 20.2,
+    "goldGlove": false,
+    "stat": 10.8,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 14.6,
+    "leagueOf": 10.9,
+    "stat": 6.5,
+    "scout": 7
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 7
+   }
+  }
+ },
+ "schofdi02": {
+  "name": "Dick Schofield",
+  "range": 7,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.3,
+    "goldGlove": false,
+    "stat": 7.7,
+    "scout": 7
+   },
+   "durability": {
+    "games": 139,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 8
+   }
+  }
+ },
+ "boonebo01": {
+  "name": "Bob Boone",
+  "range": 9,
+  "arm": 9,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.4,
+    "goldGlove": true,
+    "stat": 10.4,
+    "scout": 7
+   },
+   "arm": {
+    "csPct": 0.582,
+    "leagueCsPct": 0.336,
+    "attempts": 110,
+    "stat": 9.8,
+    "scout": 8
+   },
+   "durability": {
+    "games": 143,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 8
+   }
+  }
+ },
+ "lynnfr01": {
+  "name": "Fred Lynn",
+  "range": 6,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.9,
+    "goldGlove": false,
+    "stat": 5.3,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 8.4,
+    "leagueOf": 12.7,
+    "stat": 3.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 6
+   }
+  }
+ },
+ "jacksre01": {
+  "name": "Reggie Jackson",
+  "range": 1,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -16.3,
+    "goldGlove": false,
+    "stat": 0.3,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 8.6,
+    "leagueOf": 12.7,
+    "stat": 3.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 7
+   }
+  }
+ },
+ "howelja02": {
+  "name": "Jack Howell",
+  "range": 7,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.4,
+    "goldGlove": false,
+    "stat": 7.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 7
+   }
+  }
+ },
+ "burleri01": {
+  "name": "Rick Burleson",
+  "range": 7,
+  "arm": 7,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.0,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 109,
+    "teamGames": 110,
+    "stat": 9.9,
+    "scout": 4
+   }
+  }
+ },
+ "wittmi01": {
+  "name": "Mike Witt",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "zahnge01": {
+  "name": "Geoff Zahn",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "Changeup",
+   "Slider"
+  ]
+ },
+ "mccaski01": {
+  "name": "Kirk McCaskill",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "forscke01": {
+  "name": "Ken Forsch",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "2-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "aasedo01": {
+  "name": "Don Aase",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "mooredo01": {
+  "name": "Donnie Moore",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

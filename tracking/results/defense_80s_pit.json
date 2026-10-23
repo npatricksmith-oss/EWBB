@@ -1,0 +1,362 @@
+{
+ "lacyle01": {
+  "name": "Lee Lacy",
+  "range": 7,
+  "arm": 6,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.3,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 19.8,
+    "leagueOf": 13.2,
+    "stat": 7.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 109,
+    "teamGames": 162,
+    "stat": 7.1,
+    "scout": 5
+   }
+  }
+ },
+ "madlobi01": {
+  "name": "Bill Madlock",
+  "range": 6,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.1,
+    "goldGlove": false,
+    "stat": 6.2,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "thompja01": {
+  "name": "Jason Thompson",
+  "range": 5,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.5,
+    "goldGlove": false,
+    "stat": 4.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "vanslan01": {
+  "name": "Andy Van Slyke",
+  "range": 7,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.7,
+    "goldGlove": true,
+    "stat": 7.1,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 11.7,
+    "leagueOf": 9.1,
+    "stat": 6.0,
+    "scout": 8
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 160,
+    "stat": 9.7,
+    "scout": 9
+   }
+  }
+ },
+ "bonilbo01": {
+  "name": "Bobby Bonilla",
+  "range": 4,
+  "arm": 6,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.0,
+    "goldGlove": false,
+    "stat": 3.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 163,
+    "teamGames": 162,
+    "stat": 10.1,
+    "scout": 9
+   }
+  }
+ },
+ "bondsba01": {
+  "name": "Barry Bonds",
+  "range": 10,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 28.7,
+    "goldGlove": false,
+    "stat": 13.2,
+    "scout": 8
+   },
+   "arm": {
+    "assistsPer1350": 13.5,
+    "leagueOf": 10.5,
+    "stat": 6.2,
+    "scout": 6
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "penato01": {
+  "name": "Tony Pe\u00f1a",
+  "range": 8,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.5,
+    "goldGlove": true,
+    "stat": 8.8,
+    "scout": 8
+   },
+   "arm": {
+    "csPct": 0.399,
+    "leagueCsPct": 0.334,
+    "attempts": 158,
+    "stat": 6.4,
+    "scout": 9
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 8
+   }
+  }
+ },
+ "rayjo01": {
+  "name": "Johnny Ray",
+  "range": 8,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.1,
+    "goldGlove": false,
+    "stat": 9.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 9
+   }
+  }
+ },
+ "berrada01": {
+  "name": "Dale Berra",
+  "range": 6,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.5,
+    "goldGlove": false,
+    "stat": 7.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "easlemi01": {
+  "name": "Mike Easler",
+  "range": 4,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.1,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 10.0,
+    "leagueOf": 13.2,
+    "stat": 3.7,
+    "scout": 4
+   },
+   "durability": {
+    "games": 132,
+    "teamGames": 162,
+    "stat": 8.3,
+    "scout": 5
+   }
+  }
+ },
+ "morriji01": {
+  "name": "Jim Morrison",
+  "range": 5,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.4,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 6
+   }
+  }
+ },
+ "breamsi01": {
+  "name": "Sid Bream",
+  "range": 7,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.0,
+    "goldGlove": false,
+    "stat": 7.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 154,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 7
+   }
+  }
+ },
+ "lavalmi01": {
+  "name": "Mike LaValliere",
+  "range": 9,
+  "arm": 7,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.0,
+    "goldGlove": true,
+    "stat": 10.3,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.452,
+    "leagueCsPct": 0.303,
+    "attempts": 124,
+    "stat": 8.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 121,
+    "teamGames": 162,
+    "stat": 7.7,
+    "scout": 6
+   }
+  }
+ },
+ "rhoderi01": {
+  "name": "Rick Rhoden",
+  "bunt": 9,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "candejo01": {
+  "name": "John Candelaria",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "reuscri01": {
+  "name": "Rick Reuschel",
+  "bunt": 5,
+  "fielding": 8,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "mcwilla01": {
+  "name": "Larry McWilliams",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "scurrro01": {
+  "name": "Rod Scurry",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "tekulke01": {
+  "name": "Kent Tekulve",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider"
+  ]
+ }
+}

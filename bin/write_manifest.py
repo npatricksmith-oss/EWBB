@@ -23,6 +23,7 @@ lines = [
     '',
     'The base game shipped eight era all-star teams; the IBM version also had the 1982 Angels and Braves.',
     'No public source lists the original era rosters, so those are reconstructions (see `BLOCKERS_AND_QUESTIONS.md`).',
+    'The `_80s` teams are new: each 1980s franchise\'s best players of 1980-89, picked by `bin/pick_80s.py`.',
     'All season totals and L/R splits are real baseball-reference data; the 1–10 ratings are derived.',
     'The hand-built Orioles and Red Sox in `src/data/rosters.js` predate this pipeline and are not listed here.',
     '',

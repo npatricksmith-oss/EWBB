@@ -1,0 +1,140 @@
+{
+ "francju01": {
+  "name": "Julio Franco",
+  "range": 5,
+  "arm": 5,
+  "durability": 8
+ },
+ "bellbu01": {
+  "name": "Buddy Bell",
+  "range": 9,
+  "arm": 8,
+  "durability": 8
+ },
+ "sierrru01": {
+  "name": "Rub\u00e9n Sierra",
+  "range": 6,
+  "arm": 9,
+  "durability": 9
+ },
+ "parrila01": {
+  "name": "Larry Parrish",
+  "range": 4,
+  "arm": 6,
+  "durability": 6
+ },
+ "o'bripe03": {
+  "name": "Pete O'Brien",
+  "range": 6,
+  "arm": 5,
+  "durability": 8
+ },
+ "sundbji01": {
+  "name": "Jim Sundberg",
+  "range": 8,
+  "arm": 8,
+  "durability": 7
+ },
+ "wardga01": {
+  "name": "Gary Ward",
+  "range": 5,
+  "arm": 7,
+  "durability": 7
+ },
+ "mcdowod01": {
+  "name": "Oddibe McDowell",
+  "range": 7,
+  "arm": 4,
+  "durability": 8
+ },
+ "fletcsc01": {
+  "name": "Scott Fletcher",
+  "range": 6,
+  "arm": 6,
+  "durability": 9
+ },
+ "buechst01": {
+  "name": "Steve Buechele",
+  "range": 6,
+  "arm": 7,
+  "durability": 8
+ },
+ "samplbi01": {
+  "name": "Billy Sample",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "rivermi01": {
+  "name": "Mickey Rivers",
+  "range": 5,
+  "arm": 3,
+  "durability": 6
+ },
+ "oliveal01": {
+  "name": "Al Oliver",
+  "range": 3,
+  "arm": 4,
+  "durability": 8
+ },
+ "houghch01": {
+  "name": "Charlie Hough",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "tananfr01": {
+  "name": "Frank Tanana",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "matlajo01": {
+  "name": "Jon Matlack",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "honeyri01": {
+  "name": "Rick Honeycutt",
+  "bunt": 3,
+  "fielding": 7,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "schmida01": {
+  "name": "Dave Schmidt",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "harrigr01": {
+  "name": "Greg Harris",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ }
+}

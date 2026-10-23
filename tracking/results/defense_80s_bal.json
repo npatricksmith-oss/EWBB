@@ -1,0 +1,378 @@
+{
+ "bumbral01": {
+  "name": "Al Bumbry",
+  "range": 6,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.5,
+    "goldGlove": false,
+    "stat": 5.4,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 7.8,
+    "leagueOf": 13.2,
+    "stat": 2.9,
+    "scout": 5
+   },
+   "durability": {
+    "games": 160,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 6
+   }
+  }
+ },
+ "singlke01": {
+  "name": "Ken Singleton",
+  "range": 2,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -13.4,
+    "goldGlove": false,
+    "stat": 1.2,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 5.2,
+    "leagueOf": 13.2,
+    "stat": 1.8,
+    "scout": 5
+   },
+   "durability": {
+    "games": 156,
+    "teamGames": 162,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "murraed02": {
+  "name": "Eddie Murray",
+  "range": 7,
+  "arm": 6,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.4,
+    "goldGlove": true,
+    "stat": 7.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 10
+   }
+  }
+ },
+ "roeniga01": {
+  "name": "Gary Roenicke",
+  "range": 8,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 20.2,
+    "goldGlove": false,
+    "stat": 10.8,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 16.4,
+    "leagueOf": 12.7,
+    "stat": 6.5,
+    "scout": 6
+   },
+   "durability": {
+    "games": 137,
+    "teamGames": 162,
+    "stat": 8.6,
+    "scout": 5
+   }
+  }
+ },
+ "ripkeca01": {
+  "name": "Cal Ripken Jr.",
+  "range": 9,
+  "arm": 8,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 16.9,
+    "goldGlove": false,
+    "stat": 9.8,
+    "scout": 8
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 10
+   }
+  }
+ },
+ "lynnfr01": {
+  "name": "Fred Lynn",
+  "range": 4,
+  "arm": 4,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -8.2,
+    "goldGlove": false,
+    "stat": 2.6,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 5.0,
+    "leagueOf": 11.1,
+    "stat": 2.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 112,
+    "teamGames": 162,
+    "stat": 7.2,
+    "scout": 5
+   }
+  }
+ },
+ "dempsri01": {
+  "name": "Rick Dempsey",
+  "range": 7,
+  "arm": 7,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.3,
+    "goldGlove": false,
+    "stat": 7.4,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.459,
+    "leagueCsPct": 0.329,
+    "attempts": 98,
+    "stat": 7.4,
+    "scout": 6
+   },
+   "durability": {
+    "games": 119,
+    "teamGames": 162,
+    "stat": 7.6,
+    "scout": 4
+   }
+  }
+ },
+ "decindo01": {
+  "name": "Doug DeCinces",
+  "range": 8,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 15.3,
+    "goldGlove": false,
+    "stat": 9.4,
+    "scout": 7
+   },
+   "durability": {
+    "games": 145,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 6
+   }
+  }
+ },
+ "dauerri01": {
+  "name": "Rich Dauer",
+  "range": 7,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.7,
+    "goldGlove": false,
+    "stat": 6.4,
+    "scout": 7
+   },
+   "durability": {
+    "games": 152,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "lowenjo01": {
+  "name": "John Lowenstein",
+  "range": 4,
+  "arm": 3,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.3,
+    "goldGlove": false,
+    "stat": 4.4,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 6.0,
+    "leagueOf": 12.7,
+    "stat": 2.3,
+    "scout": 4
+   },
+   "durability": {
+    "games": 122,
+    "teamGames": 162,
+    "stat": 7.8,
+    "scout": 4
+   }
+  }
+ },
+ "youngmi01": {
+  "name": "Mike Young",
+  "range": 5,
+  "arm": 4,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.7,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 10.8,
+    "leagueOf": 10.7,
+    "stat": 5.0,
+    "scout": 4
+   },
+   "durability": {
+    "games": 139,
+    "teamGames": 161,
+    "stat": 8.8,
+    "scout": 4
+   }
+  }
+ },
+ "tettlmi01": {
+  "name": "Mickey Tettleton",
+  "range": 5,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.3,
+    "goldGlove": false,
+    "stat": 4.6,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.282,
+    "leagueCsPct": 0.317,
+    "attempts": 78,
+    "stat": 4.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 117,
+    "teamGames": 162,
+    "stat": 7.5,
+    "scout": 6
+   }
+  }
+ },
+ "sheetla01": {
+  "name": "Larry Sheets",
+  "range": 3,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -9.3,
+    "goldGlove": false,
+    "stat": 2.3,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 9.4,
+    "leagueOf": 10.9,
+    "stat": 4.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 135,
+    "teamGames": 162,
+    "stat": 8.5,
+    "scout": 5
+   }
+  }
+ },
+ "boddimi01": {
+  "name": "Mike Boddicker",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Changeup",
+   "Curveball",
+   "4-Seam Fastball"
+  ]
+ },
+ "mcgresc01": {
+  "name": "Scott McGregor",
+  "bunt": 4,
+  "fielding": 7,
+  "pitches": [
+   "Changeup",
+   "Curveball",
+   "2-Seam Fastball"
+  ]
+ },
+ "davisst02": {
+  "name": "Storm Davis",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "flanami01": {
+  "name": "Mike Flanagan",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "Sinker",
+   "Changeup"
+  ]
+ },
+ "stewasa01": {
+  "name": "Sammy Stewart",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "martiti01": {
+  "name": "Tippy Martinez",
+  "bunt": 3,
+  "fielding": 9,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}

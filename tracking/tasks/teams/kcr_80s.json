@@ -10,7 +10,7 @@
  "primaryColor": "#004687",
  "secondaryColor": "#7bb2dd",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "howser",
  "manager": {
   "bref": "howsedi01",
   "name": "Dick Howser",

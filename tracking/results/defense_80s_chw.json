@@ -1,0 +1,361 @@
+{
+ "lawru01": {
+  "name": "Rudy Law",
+  "range": 6,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.9,
+    "goldGlove": false,
+    "stat": 5.3,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 7.6,
+    "leagueOf": 11.6,
+    "stat": 3.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 141,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 7
+   }
+  }
+ },
+ "lemonch01": {
+  "name": "Chet Lemon",
+  "range": 5,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.6,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 12.7,
+    "leagueOf": 13.2,
+    "stat": 4.8,
+    "scout": 7
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 160,
+    "stat": 9.3,
+    "scout": 8
+   }
+  }
+ },
+ "baineha01": {
+  "name": "Harold Baines",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.8,
+    "goldGlove": false,
+    "stat": 5.2,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 8.8,
+    "leagueOf": 10.7,
+    "stat": 4.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 147,
+    "teamGames": 162,
+    "stat": 9.2,
+    "scout": 7
+   }
+  }
+ },
+ "walkegr01": {
+  "name": "Greg Walker",
+  "range": 4,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.6,
+    "goldGlove": false,
+    "stat": 3.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 136,
+    "teamGames": 162,
+    "stat": 8.6,
+    "scout": 7
+   }
+  }
+ },
+ "fiskca01": {
+  "name": "Carlton Fisk",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.6,
+    "goldGlove": false,
+    "stat": 3.7,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.287,
+    "leagueCsPct": 0.327,
+    "attempts": 108,
+    "stat": 4.2,
+    "scout": 6
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 8
+   }
+  }
+ },
+ "luzingr01": {
+  "name": "Greg Luzinski",
+  "range": 4,
+  "arm": 3,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 2
+   },
+   "durability": {
+    "games": 159,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 6
+   }
+  }
+ },
+ "bernato01": {
+  "name": "Tony Bernazard",
+  "range": 6,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.2,
+    "goldGlove": false,
+    "stat": 6.8,
+    "scout": 6
+   },
+   "durability": {
+    "games": 106,
+    "teamGames": 106,
+    "stat": 10.0,
+    "scout": 7
+   }
+  }
+ },
+ "lawva01": {
+  "name": "Vance Law",
+  "range": 7,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 13.1,
+    "goldGlove": false,
+    "stat": 8.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 145,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 7
+   }
+  }
+ },
+ "guilloz01": {
+  "name": "Ozzie Guill\u00e9n",
+  "range": 10,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 22.4,
+    "goldGlove": false,
+    "stat": 11.4,
+    "scout": 8
+   },
+   "durability": {
+    "games": 149,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 9
+   }
+  }
+ },
+ "fletcsc01": {
+  "name": "Scott Fletcher",
+  "range": 9,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 19.9,
+    "goldGlove": false,
+    "stat": 10.7,
+    "scout": 6
+   },
+   "durability": {
+    "games": 114,
+    "teamGames": 162,
+    "stat": 7.3,
+    "scout": 8
+   }
+  }
+ },
+ "caldeiv01": {
+  "name": "Iv\u00e1n Calder\u00f3n",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 2.5,
+    "goldGlove": false,
+    "stat": 5.7,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 9.2,
+    "leagueOf": 10.9,
+    "stat": 4.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 8
+   }
+  }
+ },
+ "kittlro01": {
+  "name": "Ron Kittle",
+  "range": 3,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -5.2,
+    "goldGlove": false,
+    "stat": 3.5,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 8.8,
+    "leagueOf": 11.6,
+    "stat": 3.9,
+    "scout": 4
+   },
+   "durability": {
+    "games": 145,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 8
+   }
+  }
+ },
+ "cruzju01": {
+  "name": "Julio Cruz",
+  "range": 9,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 20.1,
+    "goldGlove": false,
+    "stat": 10.7,
+    "scout": 7
+   },
+   "durability": {
+    "games": 143,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 6
+   }
+  }
+ },
+ "burnsbr01": {
+  "name": "Britt Burns",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "dotsori01": {
+  "name": "Richard Dotson",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "bannifl01": {
+  "name": "Floyd Bannister",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "hoytla01": {
+  "name": "LaMarr Hoyt",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "barojsa01": {
+  "name": "Salom\u00e9 Barojas",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Screwball",
+   "Slider"
+  ]
+ },
+ "thigpbo01": {
+  "name": "Bobby Thigpen",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Sinker"
+  ]
+ }
+}

@@ -1,0 +1,367 @@
+{
+ "smithlo01": {
+  "name": "Lonnie Smith",
+  "range": 5,
+  "arm": 4,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.0,
+    "goldGlove": false,
+    "stat": 4.4,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 7.3,
+    "leagueOf": 13.2,
+    "stat": 2.6,
+    "scout": 5
+   },
+   "durability": {
+    "games": 100,
+    "teamGames": 162,
+    "stat": 6.6,
+    "scout": 7
+   }
+  }
+ },
+ "matthga01": {
+  "name": "Gary Matthews",
+  "range": 3,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -9.8,
+    "goldGlove": false,
+    "stat": 2.2,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 16.1,
+    "leagueOf": 11.8,
+    "stat": 6.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 101,
+    "teamGames": 107,
+    "stat": 9.5,
+    "scout": 7
+   }
+  }
+ },
+ "schmimi01": {
+  "name": "Mike Schmidt",
+  "range": 8,
+  "arm": 9,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 8.7,
+    "goldGlove": true,
+    "stat": 8.2,
+    "scout": 8
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 9
+   }
+  }
+ },
+ "samueju01": {
+  "name": "Juan Samuel",
+  "range": 5,
+  "arm": 6,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.7,
+    "goldGlove": false,
+    "stat": 3.9,
+    "scout": 6
+   },
+   "durability": {
+    "games": 160,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 10
+   }
+  }
+ },
+ "hayesvo01": {
+  "name": "Von Hayes",
+  "range": 6,
+  "arm": 5,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.5,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 6
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 161,
+    "stat": 9.8,
+    "scout": 8
+   }
+  }
+ },
+ "diazbo01": {
+  "name": "Bo D\u00edaz",
+  "range": 6,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.8,
+    "goldGlove": false,
+    "stat": 5.2,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.318,
+    "leagueCsPct": 0.336,
+    "attempts": 179,
+    "stat": 4.6,
+    "scout": 7
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 7
+   }
+  }
+ },
+ "thompmi02": {
+  "name": "Milt Thompson",
+  "range": 7,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 6.2,
+    "goldGlove": false,
+    "stat": 6.8,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 6.1,
+    "leagueOf": 10.9,
+    "stat": 3.1,
+    "scout": 5
+   },
+   "durability": {
+    "games": 150,
+    "teamGames": 162,
+    "stat": 9.3,
+    "scout": 7
+   }
+  }
+ },
+ "wilsogl01": {
+  "name": "Glenn Wilson",
+  "range": 6,
+  "arm": 9,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 7.7,
+    "goldGlove": false,
+    "stat": 7.2,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 18.4,
+    "leagueOf": 11.1,
+    "stat": 7.9,
+    "scout": 9
+   },
+   "durability": {
+    "games": 155,
+    "teamGames": 161,
+    "stat": 9.7,
+    "scout": 7
+   }
+  }
+ },
+ "dejesiv01": {
+  "name": "Iv\u00e1n de Jes\u00fas",
+  "range": 5,
+  "arm": 7,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.5,
+    "goldGlove": false,
+    "stat": 4.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 10
+   }
+  }
+ },
+ "trillma01": {
+  "name": "Manny Trillo",
+  "range": 7,
+  "arm": 8,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.9,
+    "goldGlove": false,
+    "stat": 6.4,
+    "scout": 9
+   },
+   "durability": {
+    "games": 141,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 8
+   }
+  }
+ },
+ "maddoga01": {
+  "name": "Garry Maddox",
+  "range": 9,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 9.8,
+    "goldGlove": true,
+    "stat": 8.6,
+    "scout": 10
+   },
+   "arm": {
+    "assistsPer1350": 8.7,
+    "leagueOf": 13.2,
+    "stat": 3.2,
+    "scout": 7
+   },
+   "durability": {
+    "games": 143,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 6
+   }
+  }
+ },
+ "virgioz02": {
+  "name": "Ozzie Virgil",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.8,
+    "goldGlove": false,
+    "stat": 4.5,
+    "scout": 6
+   },
+   "arm": {
+    "csPct": 0.275,
+    "leagueCsPct": 0.334,
+    "attempts": 138,
+    "stat": 3.8,
+    "scout": 7
+   },
+   "durability": {
+    "games": 141,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 8
+   }
+  }
+ },
+ "morgajo02": {
+  "name": "Joe Morgan",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 6
+   },
+   "durability": {
+    "games": 123,
+    "teamGames": 162,
+    "stat": 7.8,
+    "scout": 8
+   }
+  }
+ },
+ "carltst01": {
+  "name": "Steve Carlton",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "dennyjo01": {
+  "name": "John Denny",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "grosske01": {
+  "name": "Kevin Gross",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "rawlesh01": {
+  "name": "Shane Rawley",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "mcgratu01": {
+  "name": "Tug McGraw",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "Screwball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "bedrost01": {
+  "name": "Steve Bedrosian",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Splitter"
+  ]
+ }
+}

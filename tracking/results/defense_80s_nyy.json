@@ -1,0 +1,364 @@
+{
+ "henderi01": {
+  "name": "Rickey Henderson",
+  "range": 8,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.8,
+    "goldGlove": false,
+    "stat": 8.1,
+    "scout": 9
+   },
+   "arm": {
+    "assistsPer1350": 8.3,
+    "leagueOf": 10.7,
+    "stat": 4.0,
+    "scout": 4
+   },
+   "durability": {
+    "games": 143,
+    "teamGames": 161,
+    "stat": 9.0,
+    "scout": 8
+   }
+  }
+ },
+ "randowi01": {
+  "name": "Willie Randolph",
+  "range": 6,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 1.7,
+    "goldGlove": false,
+    "stat": 5.5,
+    "scout": 7
+   },
+   "durability": {
+    "games": 138,
+    "teamGames": 162,
+    "stat": 8.7,
+    "scout": 6
+   }
+  }
+ },
+ "jacksre01": {
+  "name": "Reggie Jackson",
+  "range": 2,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -12.7,
+    "goldGlove": false,
+    "stat": 1.4,
+    "scout": 4
+   },
+   "arm": {
+    "assistsPer1350": 7.4,
+    "leagueOf": 13.2,
+    "stat": 2.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 143,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 7
+   }
+  }
+ },
+ "mattido01": {
+  "name": "Don Mattingly",
+  "range": 7,
+  "arm": 6,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.7,
+    "goldGlove": true,
+    "stat": 6.0,
+    "scout": 8
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 9
+   }
+  }
+ },
+ "winfida01": {
+  "name": "Dave Winfield",
+  "range": 4,
+  "arm": 7,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -8.1,
+    "goldGlove": false,
+    "stat": 2.7,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 4.3,
+    "leagueOf": 9.1,
+    "stat": 3.1,
+    "scout": 9
+   },
+   "durability": {
+    "games": 149,
+    "teamGames": 161,
+    "stat": 9.3,
+    "scout": 8
+   }
+  }
+ },
+ "wynegbu01": {
+  "name": "Butch Wynegar",
+  "range": 6,
+  "arm": 6,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 4.6,
+    "goldGlove": false,
+    "stat": 6.3,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.389,
+    "leagueCsPct": 0.327,
+    "attempts": 95,
+    "stat": 6.2,
+    "scout": 5
+   },
+   "durability": {
+    "games": 94,
+    "teamGames": 162,
+    "stat": 6.2,
+    "scout": 6
+   }
+  }
+ },
+ "mumphje01": {
+  "name": "Jerry Mumphrey",
+  "range": 7,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.0,
+    "goldGlove": false,
+    "stat": 7.9,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 10.5,
+    "leagueOf": 11.8,
+    "stat": 4.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 80,
+    "teamGames": 107,
+    "stat": 7.7,
+    "scout": 6
+   }
+  }
+ },
+ "nettlgr01": {
+  "name": "Graig Nettles",
+  "range": 7,
+  "arm": 7,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 3.3,
+    "goldGlove": false,
+    "stat": 5.9,
+    "scout": 8
+   },
+   "durability": {
+    "games": 103,
+    "teamGames": 107,
+    "stat": 9.7,
+    "scout": 6
+   }
+  }
+ },
+ "dentbu01": {
+  "name": "Bucky Dent",
+  "range": 8,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 15.6,
+    "goldGlove": false,
+    "stat": 9.4,
+    "scout": 6
+   },
+   "durability": {
+    "games": 141,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 5
+   }
+  }
+ },
+ "baylodo01": {
+  "name": "Don Baylor",
+  "range": 4,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.0,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 17.6,
+    "leagueOf": 11.6,
+    "stat": 7.4,
+    "scout": 4
+   },
+   "durability": {
+    "games": 144,
+    "teamGames": 162,
+    "stat": 9.0,
+    "scout": 8
+   }
+  }
+ },
+ "gamblos01": {
+  "name": "Oscar Gamble",
+  "range": 3,
+  "arm": 6,
+  "durability": 6,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -4.3,
+    "goldGlove": false,
+    "stat": 3.8,
+    "scout": 3
+   },
+   "arm": {
+    "assistsPer1350": 22.7,
+    "leagueOf": 12.7,
+    "stat": 9.0,
+    "scout": 4
+   },
+   "durability": {
+    "games": 108,
+    "teamGames": 162,
+    "stat": 7.0,
+    "scout": 4
+   }
+  }
+ },
+ "griffke01": {
+  "name": "Ken Griffey",
+  "range": 5,
+  "arm": 6,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.0,
+    "goldGlove": false,
+    "stat": 4.4,
+    "scout": 5
+   },
+   "durability": {
+    "games": 118,
+    "teamGames": 162,
+    "stat": 7.6,
+    "scout": 7
+   }
+  }
+ },
+ "smallro02": {
+  "name": "Roy Smalley",
+  "range": 3,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -8.2,
+    "goldGlove": false,
+    "stat": 2.7,
+    "scout": 4
+   },
+   "durability": {
+    "games": 130,
+    "teamGames": 162,
+    "stat": 8.2,
+    "scout": 7
+   }
+  }
+ },
+ "guidrro01": {
+  "name": "Ron Guidry",
+  "bunt": 5,
+  "fielding": 9,
+  "pitches": [
+   "Slider",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "johnto01": {
+  "name": "Tommy John",
+  "bunt": 4,
+  "fielding": 8,
+  "pitches": [
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "niekrph01": {
+  "name": "Phil Niekro",
+  "bunt": 5,
+  "fielding": 6,
+  "pitches": [
+   "Knuckleball",
+   "4-Seam Fastball",
+   "Curveball"
+  ]
+ },
+ "rasmude01": {
+  "name": "Dennis Rasmussen",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "gossari01": {
+  "name": "Rich Gossage",
+  "bunt": 2,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "righeda01": {
+  "name": "Dave Righetti",
+  "bunt": 3,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ }
+}

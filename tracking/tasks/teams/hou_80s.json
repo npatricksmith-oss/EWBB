@@ -10,7 +10,7 @@
  "primaryColor": "#eb6e1f",
  "secondaryColor": "#002d62",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "lillis",
  "manager": {
   "bref": "lillibo01",
   "name": "Bob Lillis",

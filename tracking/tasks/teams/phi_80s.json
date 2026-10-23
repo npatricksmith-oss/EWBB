@@ -10,7 +10,7 @@
  "primaryColor": "#8c1d40",
  "secondaryColor": "#6cace4",
  "defaultParkId": "metrodome",
- "defaultManagerId": null,
+ "defaultManagerId": "felske",
  "manager": {
   "bref": "felskjo01",
   "name": "John Felske",

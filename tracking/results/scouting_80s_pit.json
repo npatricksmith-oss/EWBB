@@ -1,0 +1,142 @@
+{
+ "lacyle01": {
+  "name": "Lee Lacy",
+  "range": 5,
+  "arm": 5,
+  "durability": 5
+ },
+ "madlobi01": {
+  "name": "Bill Madlock",
+  "range": 5,
+  "arm": 6,
+  "durability": 7
+ },
+ "thompja01": {
+  "name": "Jason Thompson",
+  "range": 5,
+  "arm": 4,
+  "durability": 9
+ },
+ "vanslan01": {
+  "name": "Andy Van Slyke",
+  "range": 8,
+  "arm": 8,
+  "durability": 9
+ },
+ "bonilbo01": {
+  "name": "Bobby Bonilla",
+  "range": 5,
+  "arm": 6,
+  "durability": 9
+ },
+ "bondsba01": {
+  "name": "Barry Bonds",
+  "range": 8,
+  "arm": 6,
+  "durability": 8
+ },
+ "penato01": {
+  "name": "Tony Pe\u00f1a",
+  "range": 8,
+  "arm": 9,
+  "durability": 8
+ },
+ "rayjo01": {
+  "name": "Johnny Ray",
+  "range": 5,
+  "arm": 5,
+  "durability": 9
+ },
+ "berrada01": {
+  "name": "Dale Berra",
+  "range": 4,
+  "arm": 6,
+  "durability": 7
+ },
+ "easlemi01": {
+  "name": "Mike Easler",
+  "range": 3,
+  "arm": 4,
+  "durability": 5
+ },
+ "morriji01": {
+  "name": "Jim Morrison",
+  "range": 5,
+  "arm": 6,
+  "durability": 6
+ },
+ "breamsi01": {
+  "name": "Sid Bream",
+  "range": 6,
+  "arm": 4,
+  "durability": 7
+ },
+ "lavalmi01": {
+  "name": "Mike LaValliere",
+  "range": 6,
+  "arm": 5,
+  "durability": 6
+ },
+ "rhoderi01": {
+  "name": "Rick Rhoden",
+  "bunt": 9,
+  "fielding": 6,
+  "pitches": [
+   "Slider",
+   "Sinker",
+   "Curveball",
+   "Changeup"
+  ]
+ },
+ "candejo01": {
+  "name": "John Candelaria",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "reuscri01": {
+  "name": "Rick Reuschel",
+  "bunt": 5,
+  "fielding": 8,
+  "pitches": [
+   "Sinker",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "mcwilla01": {
+  "name": "Larry McWilliams",
+  "bunt": 5,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Curveball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "scurrro01": {
+  "name": "Rod Scurry",
+  "bunt": 3,
+  "fielding": 4,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "tekulke01": {
+  "name": "Kent Tekulve",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Sinker",
+   "Slider"
+  ]
+ }
+}

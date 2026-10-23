@@ -1,0 +1,352 @@
+{
+ "butlebr01": {
+  "name": "Brett Butler",
+  "range": 6,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 7
+   },
+   "arm": {
+    "assistsPer1350": 5.9,
+    "leagueOf": 10.9,
+    "stat": 3.0,
+    "scout": 5
+   },
+   "durability": {
+    "games": 137,
+    "teamGames": 162,
+    "stat": 8.6,
+    "scout": 9
+   }
+  }
+ },
+ "hargrmi01": {
+  "name": "Mike Hargrove",
+  "range": 4,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.0,
+    "goldGlove": false,
+    "stat": 3.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 160,
+    "teamGames": 160,
+    "stat": 10.0,
+    "scout": 8
+   }
+  }
+ },
+ "harrato01": {
+  "name": "Toby Harrah",
+  "range": 5,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -3.1,
+    "goldGlove": false,
+    "stat": 4.1,
+    "scout": 6
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 8
+   }
+  }
+ },
+ "snydeco02": {
+  "name": "Cory Snyder",
+  "range": 5,
+  "arm": 9,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.7,
+    "goldGlove": false,
+    "stat": 4.5,
+    "scout": 6
+   },
+   "arm": {
+    "assistsPer1350": 16.2,
+    "leagueOf": 9.1,
+    "stat": 7.8,
+    "scout": 9
+   },
+   "durability": {
+    "games": 142,
+    "teamGames": 162,
+    "stat": 8.9,
+    "scout": 7
+   }
+  }
+ },
+ "cartejo01": {
+  "name": "Joe Carter",
+  "range": 6,
+  "arm": 10,
+  "durability": 10,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 5.2,
+    "goldGlove": false,
+    "stat": 6.5,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 45.2,
+    "leagueOf": 11.1,
+    "stat": 18.7,
+    "scout": 5
+   },
+   "durability": {
+    "games": 162,
+    "teamGames": 162,
+    "stat": 10.0,
+    "scout": 9
+   }
+  }
+ },
+ "thornan01": {
+  "name": "Andre Thornton",
+  "range": 3,
+  "arm": 4,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -10.7,
+    "goldGlove": false,
+    "stat": 2.0,
+    "scout": 4
+   },
+   "durability": {
+    "games": 161,
+    "teamGames": 162,
+    "stat": 9.9,
+    "scout": 8
+   }
+  }
+ },
+ "hassero01": {
+  "name": "Ron Hassey",
+  "range": 5,
+  "arm": 5,
+  "durability": 7,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 0.0,
+    "goldGlove": false,
+    "stat": 5.0,
+    "scout": 5
+   },
+   "arm": {
+    "csPct": 0.345,
+    "leagueCsPct": 0.329,
+    "attempts": 113,
+    "stat": 5.3,
+    "scout": 5
+   },
+   "durability": {
+    "games": 130,
+    "teamGames": 160,
+    "stat": 8.3,
+    "scout": 6
+   }
+  }
+ },
+ "francju01": {
+  "name": "Julio Franco",
+  "range": 4,
+  "arm": 6,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -8.6,
+    "goldGlove": false,
+    "stat": 2.5,
+    "scout": 5
+   },
+   "durability": {
+    "games": 128,
+    "teamGames": 162,
+    "stat": 8.1,
+    "scout": 8
+   }
+  }
+ },
+ "brownje01": {
+  "name": "Jerry Browne",
+  "range": 5,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -1.6,
+    "goldGlove": false,
+    "stat": 4.6,
+    "scout": 6
+   },
+   "durability": {
+    "games": 153,
+    "teamGames": 162,
+    "stat": 9.5,
+    "scout": 7
+   }
+  }
+ },
+ "jacobbr01": {
+  "name": "Brook Jacoby",
+  "range": 4,
+  "arm": 6,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -6.4,
+    "goldGlove": false,
+    "stat": 3.2,
+    "scout": 6
+   },
+   "durability": {
+    "games": 155,
+    "teamGames": 162,
+    "stat": 9.6,
+    "scout": 9
+   }
+  }
+ },
+ "tablepa01": {
+  "name": "Pat Tabler",
+  "range": 4,
+  "arm": 4,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -2.5,
+    "goldGlove": false,
+    "stat": 4.3,
+    "scout": 4
+   },
+   "durability": {
+    "games": 151,
+    "teamGames": 162,
+    "stat": 9.4,
+    "scout": 7
+   }
+  }
+ },
+ "hallme01": {
+  "name": "Mel Hall",
+  "range": 4,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -8.1,
+    "goldGlove": false,
+    "stat": 2.7,
+    "scout": 5
+   },
+   "arm": {
+    "assistsPer1350": 10.3,
+    "leagueOf": 11.1,
+    "stat": 4.7,
+    "scout": 6
+   },
+   "durability": {
+    "games": 140,
+    "teamGames": 162,
+    "stat": 8.8,
+    "scout": 7
+   }
+  }
+ },
+ "bernato01": {
+  "name": "Tony Bernazard",
+  "range": 4,
+  "arm": 5,
+  "durability": 8,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": -10.6,
+    "goldGlove": false,
+    "stat": 2.0,
+    "scout": 6
+   },
+   "durability": {
+    "games": 146,
+    "teamGames": 162,
+    "stat": 9.1,
+    "scout": 6
+   }
+  }
+ },
+ "blylebe01": {
+  "name": "Bert Blyleven",
+  "bunt": 4,
+  "fielding": 6,
+  "pitches": [
+   "Curveball",
+   "4-Seam Fastball",
+   "Changeup"
+  ]
+ },
+ "candito01": {
+  "name": "Tom Candiotti",
+  "bunt": 5,
+  "fielding": 7,
+  "pitches": [
+   "Knuckleball",
+   "Curveball",
+   "Slider"
+  ]
+ },
+ "swindgr01": {
+  "name": "Greg Swindell",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Changeup"
+  ]
+ },
+ "barkele01": {
+  "name": "Len Barker",
+  "bunt": 4,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider",
+   "Curveball"
+  ]
+ },
+ "camacer01": {
+  "name": "Ernie Camacho",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ },
+ "jonesdo01": {
+  "name": "Doug Jones",
+  "bunt": 3,
+  "fielding": 5,
+  "pitches": [
+   "Changeup",
+   "4-Seam Fastball",
+   "Slider"
+  ]
+ }
+}
