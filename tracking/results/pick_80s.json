@@ -11730,6 +11730,26 @@
     }
    },
    {
+    "bref": "smithoz01",
+    "name": "Ozzie Smith",
+    "pos": "SS",
+    "year": 1987,
+    "isStarter": true,
+    "why": "best at position",
+    "decadeWar": 46.2,
+    "score": 48.0,
+    "line": {
+     "avg": 0.303,
+     "obp": 0.392,
+     "slg": 0.383,
+     "hr": 0.0,
+     "sb": 43.0,
+     "opsPlus": 105.0,
+     "pa": 706.0,
+     "war": 6.4
+    }
+   },
+   {
     "bref": "pendlte01",
     "name": "Terry Pendleton",
     "pos": "3B",
@@ -11747,26 +11767,6 @@
      "opsPlus": 98.0,
      "pa": 661.0,
      "war": 4.5
-    }
-   },
-   {
-    "bref": "smithoz01",
-    "name": "Ozzie Smith",
-    "pos": "SS",
-    "year": 1989,
-    "isStarter": true,
-    "why": "best at position",
-    "decadeWar": 46.2,
-    "score": 48.0,
-    "line": {
-     "avg": 0.273,
-     "obp": 0.335,
-     "slg": 0.361,
-     "hr": 2.0,
-     "sb": 29.0,
-     "opsPlus": 97.0,
-     "pa": 664.0,
-     "war": 7.3
     }
    },
    {
@@ -11892,24 +11892,24 @@
     "line": "18-9, 2.88 ERA, 241.0 IP, 0 SV, 3.2 WAR"
    },
    {
-    "bref": "suttebr01",
-    "name": "Bruce Sutter",
-    "year": 1984,
-    "role": "RP",
-    "decadeWar": 6.3,
-    "decadeSv": 127,
-    "score": 7.4,
-    "line": "5-7, 1.54 ERA, 122.2 IP, 45 SV, 4.5 WAR"
-   },
-   {
     "bref": "worreto01",
     "name": "Todd Worrell",
     "year": 1987,
-    "role": "CL",
+    "role": "RP",
     "decadeWar": 7.6,
     "decadeSv": 126,
     "score": 8.4,
     "line": "8-6, 2.66 ERA, 94.2 IP, 33 SV, 3.2 WAR"
+   },
+   {
+    "bref": "suttebr01",
+    "name": "Bruce Sutter",
+    "year": 1984,
+    "role": "CL",
+    "decadeWar": 6.3,
+    "decadeSv": 127,
+    "score": 7.4,
+    "line": "5-7, 1.54 ERA, 122.2 IP, 45 SV, 4.5 WAR"
    }
   ],
   "managers": [

@@ -55,4 +55,4 @@ The request is the Google Doc "Feature-add-teams" (file ID `1GLT7jcH54rToQhVUtVo
   - Power's slope halves above 6. Only seasons with about .335 ISO and up reach 10: 12 of the 130 era-team batters (Ruth 1921, Maris 1961), down from 39.
   - Outfield arms are the scouting judgment alone (`defense_80s.py`). Dwight Evans now rates 9. Catchers still blend caught-stealing rate at half weight.
   - The ten existing era teams are rebuilt with these formulas, and only ratings changed. The atlanta and california specs had stale parks and managers, now fixed to match the committed modules. Smoke test, 1,100 games each: 6.66 runs per team-game before, 6.65 after.
-- **Close calls (Ozzie Smith 1987, Strawberry 1988, Henderson 1981, Gossage 1980, Sutter as closer):** the user wants to discuss these in a session. Raise them before the merge.
+- **Close calls, settled with the user:** Ozzie Smith 1987 replaces 1989, and Sutter (1984) closes for the Cardinals with Worrell (1987) as the reliever. Strawberry 1987, Henderson 1980 and Gossage 1982 stay on the rules.

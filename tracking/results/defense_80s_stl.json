@@ -164,6 +164,26 @@
    }
   }
  },
+ "smithoz01": {
+  "name": "Ozzie Smith",
+  "range": 9,
+  "arm": 8,
+  "durability": 9,
+  "basis": {
+   "range": {
+    "fieldingRunsPer1350": 10.8,
+    "goldGlove": true,
+    "stat": 8.8,
+    "scout": 10
+   },
+   "durability": {
+    "games": 158,
+    "teamGames": 162,
+    "stat": 9.8,
+    "scout": 9
+   }
+  }
+ },
  "pendlte01": {
   "name": "Terry Pendleton",
   "range": 8,
@@ -181,26 +201,6 @@
     "teamGames": 162,
     "stat": 10.0,
     "scout": 8
-   }
-  }
- },
- "smithoz01": {
-  "name": "Ozzie Smith",
-  "range": 10,
-  "arm": 8,
-  "durability": 9,
-  "basis": {
-   "range": {
-    "fieldingRunsPer1350": 24.9,
-    "goldGlove": true,
-    "stat": 12.9,
-    "scout": 10
-   },
-   "durability": {
-    "games": 155,
-    "teamGames": 162,
-    "stat": 9.6,
-    "scout": 9
    }
   }
  },
@@ -336,15 +336,6 @@
    "4-Seam Fastball"
   ]
  },
- "suttebr01": {
-  "name": "Bruce Sutter",
-  "bunt": 2,
-  "fielding": 5,
-  "pitches": [
-   "Splitter",
-   "4-Seam Fastball"
-  ]
- },
  "worreto01": {
   "name": "Todd Worrell",
   "bunt": 2,
@@ -352,6 +343,15 @@
   "pitches": [
    "4-Seam Fastball",
    "Slider"
+  ]
+ },
+ "suttebr01": {
+  "name": "Bruce Sutter",
+  "bunt": 2,
+  "fielding": 5,
+  "pitches": [
+   "Splitter",
+   "4-Seam Fastball"
   ]
  }
 }

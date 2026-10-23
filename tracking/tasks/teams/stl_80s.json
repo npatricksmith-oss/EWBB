@@ -85,17 +85,17 @@
    "isStarter": true
   },
   {
+   "bref": "smithoz01",
+   "name": "Ozzie Smith",
+   "year": 1987,
+   "pos": "SS",
+   "isStarter": true
+  },
+  {
    "bref": "pendlte01",
    "name": "Terry Pendleton",
    "year": 1989,
    "pos": "3B",
-   "isStarter": true
-  },
-  {
-   "bref": "smithoz01",
-   "name": "Ozzie Smith",
-   "year": 1989,
-   "pos": "SS",
    "isStarter": true
   },
   {
@@ -157,15 +157,15 @@
    "role": "SP"
   },
   {
-   "bref": "suttebr01",
-   "name": "Bruce Sutter",
-   "year": 1984,
-   "role": "RP"
-  },
-  {
    "bref": "worreto01",
    "name": "Todd Worrell",
    "year": 1987,
+   "role": "RP"
+  },
+  {
+   "bref": "suttebr01",
+   "name": "Bruce Sutter",
+   "year": 1984,
    "role": "CL"
   }
  ]

@@ -82,9 +82,11 @@ HAND_PICKS = {
     ('LAD', 'valenfe01'): 1981,  # Cy Young and Rookie of the Year over 1985
     ('MIN', 'violafr01'): 1988,  # Cy Young over 1987
     ('NYY', 'mattido01'): 1985,  # MVP over 1986
+    ('STL', 'smithoz01'): 1987,  # MVP runner-up, .303 and 43 SB, over 1989's glove-heavy WAR
 }
-# Closer by hand: Fingers's 1981 MVP and Cy Young season over Plesac, who moves to RP
-HAND_CLOSERS = {'MIL': 'fingero01'}
+# Closers by hand: Fingers's 1981 MVP and Cy Young season over Plesac, and Sutter's 1984
+# (45 saves, 1.54 ERA) over Worrell; Plesac and Worrell move to RP
+HAND_CLOSERS = {'MIL': 'fingero01', 'STL': 'suttebr01'}
 
 
 def num(v):

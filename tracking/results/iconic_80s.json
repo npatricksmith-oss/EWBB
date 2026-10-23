@@ -1,47 +1,6 @@
 {
  "atl_80s": {
-  "flags": [
-   {
-    "name": "Dale Murphy",
-    "slot": "CF",
-    "rated": 1987,
-    "ratedLine": {
-     "war": "7.7",
-     "pa": "693",
-     "avg": ".295",
-     "obp": ".417",
-     "slg": ".580",
-     "hr": "44",
-     "sb": "16",
-     "ops+": "157",
-     "awards": "AS,MVP-11"
-    },
-    "iconic": {
-     "1982": {
-      "war": "6.1",
-      "pa": "698",
-      "avg": ".281",
-      "obp": ".378",
-      "slg": ".507",
-      "hr": "36",
-      "sb": "23",
-      "ops+": "142",
-      "awards": "AS,MVP-1,GG,SS"
-     },
-     "1983": {
-      "war": "7.1",
-      "pa": "687",
-      "avg": ".302",
-      "obp": ".393",
-      "slg": ".540",
-      "hr": "36",
-      "sb": "30",
-      "ops+": "149",
-      "awards": "AS,MVP-1,GG,SS"
-     }
-    }
-   }
-  ],
+  "flags": [],
   "closer": "Gene Garber 1982",
   "topSaves": [
    "Gene Garber 1982: 30 SV",
@@ -90,57 +49,6 @@
       "sb": "5",
       "ops+": "156",
       "awards": "AS,MVP-2,GG,SS"
-     }
-    }
-   },
-   {
-    "name": "Cal Ripken Jr.",
-    "slot": "SS",
-    "rated": 1984,
-    "ratedLine": {
-     "war": "10.0",
-     "pa": "716",
-     "avg": ".304",
-     "obp": ".374",
-     "slg": ".510",
-     "hr": "27",
-     "sb": "2",
-     "ops+": "146",
-     "awards": "AS,MVP-27,SS"
-    },
-    "iconic": {
-     "1982": {
-      "war": "4.7",
-      "pa": "655",
-      "avg": ".264",
-      "obp": ".317",
-      "slg": ".475",
-      "hr": "28",
-      "sb": "3",
-      "ops+": "115",
-      "awards": "MVP-30,ROY-1"
-     },
-     "1983": {
-      "war": "8.2",
-      "pa": "726",
-      "avg": ".318",
-      "obp": ".371",
-      "slg": ".517",
-      "hr": "27",
-      "sb": "0",
-      "ops+": "144",
-      "awards": "AS,MVP-1,SS"
-     },
-     "1989": {
-      "war": "6.7",
-      "pa": "712",
-      "avg": ".257",
-      "obp": ".317",
-      "slg": ".401",
-      "hr": "21",
-      "sb": "3",
-      "ops+": "105",
-      "awards": "AS,MVP-3,SS"
      }
     }
    }
@@ -207,37 +115,7 @@
   ]
  },
  "chc_80s": {
-  "flags": [
-   {
-    "name": "Andre Dawson",
-    "slot": "RF",
-    "rated": 1988,
-    "ratedLine": {
-     "war": "4.9",
-     "pa": "640",
-     "avg": ".303",
-     "obp": ".344",
-     "slg": ".504",
-     "hr": "24",
-     "sb": "12",
-     "ops+": "137",
-     "awards": "AS,MVP-15,GG"
-    },
-    "iconic": {
-     "1987": {
-      "war": "4.0",
-      "pa": "662",
-      "avg": ".287",
-      "obp": ".328",
-      "slg": ".568",
-      "hr": "49",
-      "sb": "11",
-      "ops+": "130",
-      "awards": "AS,MVP-1,GG,SS"
-     }
-    }
-   }
-  ],
+  "flags": [],
   "closer": "Lee Smith 1983",
   "topSaves": [
    "Mitch Williams 1989: 36 SV",
@@ -275,35 +153,6 @@
       "sb": "7",
       "ops+": "74",
       "awards": "ROY-1"
-     }
-    }
-   },
-   {
-    "name": "LaMarr Hoyt",
-    "slot": "SP",
-    "rated": 1982,
-    "ratedLine": {
-     "war": "5.0",
-     "ip": "239.2",
-     "w": "19",
-     "l": "15",
-     "era": "3.53",
-     "era+": "115",
-     "sv": "0",
-     "so": "124",
-     "awards": ""
-    },
-    "iconic": {
-     "1983": {
-      "war": "3.7",
-      "ip": "260.2",
-      "w": "24",
-      "l": "10",
-      "era": "3.66",
-      "era+": "115",
-      "sv": "0",
-      "so": "148",
-      "awards": "CYA-1,MVP-13"
      }
     }
    }
@@ -534,57 +383,6 @@
     }
    },
    {
-    "name": "Fernando Valenzuela",
-    "slot": "SP",
-    "rated": 1985,
-    "ratedLine": {
-     "war": "5.5",
-     "ip": "272.1",
-     "w": "17",
-     "l": "10",
-     "era": "2.45",
-     "era+": "141",
-     "sv": "0",
-     "so": "208",
-     "awards": "AS,CYA-5,MVP-23"
-    },
-    "iconic": {
-     "1981": {
-      "war": "4.8",
-      "ip": "192.1",
-      "w": "13",
-      "l": "7",
-      "era": "2.48",
-      "era+": "135",
-      "sv": "0",
-      "so": "180",
-      "awards": "AS,CYA-1,MVP-5,ROY-1,SS"
-     },
-     "1982": {
-      "war": "5.0",
-      "ip": "285.0",
-      "w": "19",
-      "l": "13",
-      "era": "2.87",
-      "era+": "122",
-      "sv": "0",
-      "so": "199",
-      "awards": "AS,CYA-3,MVP-21"
-     },
-     "1986": {
-      "war": "5.5",
-      "ip": "269.1",
-      "w": "21",
-      "l": "11",
-      "era": "3.14",
-      "era+": "110",
-      "sv": "0",
-      "so": "242",
-      "awards": "AS,CYA-2,MVP-19,GG"
-     }
-    }
-   },
-   {
     "name": "Steve Howe",
     "slot": "RP",
     "rated": 1983,
@@ -625,7 +423,7 @@
  },
  "mil_80s": {
   "flags": [],
-  "closer": "Dan Plesac 1989",
+  "closer": "Rollie Fingers 1981",
   "topSaves": [
    "Dan Plesac 1989: 33 SV",
    "Dan Plesac 1988: 30 SV",
@@ -636,35 +434,6 @@
  },
  "min_80s": {
   "flags": [
-   {
-    "name": "Frank Viola",
-    "slot": "SP",
-    "rated": 1987,
-    "ratedLine": {
-     "war": "8.1",
-     "ip": "251.2",
-     "w": "17",
-     "l": "10",
-     "era": "2.90",
-     "era+": "159",
-     "sv": "0",
-     "so": "197",
-     "awards": "CYA-6"
-    },
-    "iconic": {
-     "1988": {
-      "war": "7.7",
-      "ip": "255.1",
-      "w": "24",
-      "l": "7",
-      "era": "2.64",
-      "era+": "154",
-      "sv": "0",
-      "so": "193",
-      "awards": "AS,CYA-1,MVP-10"
-     }
-    }
-   },
    {
     "name": "Bert Blyleven",
     "slot": "SP",
@@ -1164,35 +933,6 @@
  "stl_80s": {
   "flags": [
    {
-    "name": "Ozzie Smith",
-    "slot": "SS",
-    "rated": 1989,
-    "ratedLine": {
-     "war": "7.3",
-     "pa": "664",
-     "avg": ".273",
-     "obp": ".335",
-     "slg": ".361",
-     "hr": "2",
-     "sb": "29",
-     "ops+": "97",
-     "awards": "AS,GG"
-    },
-    "iconic": {
-     "1987": {
-      "war": "6.4",
-      "pa": "706",
-      "avg": ".303",
-      "obp": ".392",
-      "slg": ".383",
-      "hr": "0",
-      "sb": "43",
-      "ops+": "105",
-      "awards": "AS,MVP-2,GG,SS"
-     }
-    }
-   },
-   {
     "name": "Vince Coleman",
     "slot": "LF",
     "rated": 1987,
@@ -1223,7 +963,7 @@
    },
    {
     "name": "Todd Worrell",
-    "slot": "CL",
+    "slot": "RP",
     "rated": 1987,
     "ratedLine": {
      "war": "3.2",
@@ -1251,7 +991,7 @@
     }
    }
   ],
-  "closer": "Todd Worrell 1987",
+  "closer": "Bruce Sutter 1984",
   "topSaves": [
    "Bruce Sutter 1984: 45 SV",
    "Todd Worrell 1986: 36 SV",
