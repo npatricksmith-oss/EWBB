@@ -876,6 +876,7 @@ export function simulateBattedBall(launchVector = {}, context = {}) {
         x: Math.round(step.x * 100) / 100,
         y: Math.round(step.y * 100) / 100,
         z: Math.round(Math.max(0, step.z) * 100) / 100,
+        bounceCount: step.bounceCount,
         vx: Math.round(step.vx * 10) / 10,
         vy: Math.round(step.vy * 10) / 10,
         vz: Math.round(step.vz * 10) / 10,

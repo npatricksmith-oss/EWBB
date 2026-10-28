@@ -21,6 +21,7 @@
  *      and animated Umpire "SAFE!" / "OUT!" calls.
  */
 
+import { soundEngine } from './soundEngine.js';
 import { getWallAtAngle } from '../data/ballparks.js';
 import { getInitialFielderPositions } from '../engine/physicsEngine.js';
 import { getLastName } from '../data/rosters.js';
@@ -2518,9 +2519,20 @@ export class FieldRenderer1987 {
 
     // Windup (progress 0 -> 0.42) gets room to breathe; the pitch itself (0.42 -> 1) stays quick.
     const startTime = performance.now();
+    let released = false;
+    let contacted = false;
 
     const stepPitch = (now) => {
       this.pitchAnim.progress = pitchProgressAt(now - startTime);
+      if (!released && this.pitchAnim.progress >= 0.42) {
+        released = true;
+        soundEngine.playPitchWhoosh();
+      }
+      const arrival = swung && pitchStep.outcome !== 'SWINGING_STRIKE' ? 0.90 : 0.92;
+      if (!contacted && this.pitchAnim.progress >= arrival) {
+        contacted = true;
+        soundEngine.playPitchResult(pitchStep, gameState);
+      }
       this.render(gameState);
 
       // A ball put in play cuts straight to the field view the moment bat meets ball
@@ -2586,6 +2598,7 @@ export class FieldRenderer1987 {
     const startTime = performance.now();
     // Play Instant Replays at 0.85x speed for classic broadcast examination
     const playbackRateFps = isReplay ? 51 : 60;
+    if (isReplay) soundEngine.playBatCrack((physicsResult.launchVector?.exitVelocityMph || 90) / 105);
 
     this._facing = {};
     this.playAnim = {
@@ -2597,10 +2610,15 @@ export class FieldRenderer1987 {
       bannerText: null
     };
     const resultBanner = physicsResult.description || physicsResult.outcome;
+    const audioState = { previous: null, nextStep: 0, outs: new Set(), celebrated: false };
 
     const stepField = (now) => {
       const elapsedSec = Math.max(0, (now - startTime) / 1000);
       const targetIdx = Math.floor(elapsedSec * playbackRateFps);
+
+      // Read the same tape position as the picture, including slowed Instant Replay.
+      const audioFrame = frames[Math.min(targetIdx, frames.length - 1)];
+      if (audioFrame) soundEngine.playFieldFrame(audioFrame, physicsResult, audioState);
 
       if (targetIdx < frames.length) {
         for (let idx = lastProcessedIdx + 1; idx <= targetIdx; idx++) {

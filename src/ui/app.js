@@ -18,7 +18,7 @@ import { getEffectivePlatoonMatchup } from '../engine/statsMatrix.js';
 import { askEarlAdvisor } from '../engine/earlAI.js';
 import { EWBGameState } from '../engine/gameState.js';
 import { runStatisticalValidation } from '../engine/statsValidator.js';
-import { FieldRenderer1987, PITCH_CONTACT_MS, PITCH_PLATE_ARRIVAL_MS } from './fieldRenderer1987.js';
+import { FieldRenderer1987, PITCH_CONTACT_MS } from './fieldRenderer1987.js';
 import { HomeRunFireworks } from './fireworks.js';
 import { soundEngine } from './soundEngine.js';
 
@@ -324,7 +324,7 @@ class EWBAppController {
         fieldingTeam: this.gameState.fieldingTeam
       };
 
-      soundEngine.playPitchWhoosh();
+      soundEngine.init();
       const { pitchStep, physicsResult } = this.gameState.stepPitch({
         offensePlay,
         defensePlay,
@@ -342,29 +342,6 @@ class EWBAppController {
       if (physicsResult?.outcome === 'HOME_RUN') {
         this.scheduleHomeRunFireworks(physicsResult);
       }
-
-      // Trigger authentic sound effects at plate arrival
-      setTimeout(() => {
-        if (pitchStep.outcome === 'IN_PLAY') {
-          const pwr = (pitchStep.launchVector?.exitVelocityMph || 90) / 105;
-          soundEngine.playBatCrack(pwr);
-          if (physicsResult?.hitWall) {
-            setTimeout(() => soundEngine.playWallCarom(), 650);
-          }
-          if (physicsResult?.outcome === 'HOME_RUN') {
-            setTimeout(() => {
-              soundEngine.playCrowdRoar(2.2, 0.35);
-              soundEngine.playOrganCharge();
-            }, 450);
-          } else if (['SINGLE', 'DOUBLE', 'TRIPLE'].includes(physicsResult?.outcome)) {
-            setTimeout(() => soundEngine.playCrowdRoar(1.4, 0.22), 400);
-          }
-        } else if (pitchStep.outcome === 'FOUL') {
-          soundEngine.playBatCrack(0.5);
-        } else {
-          soundEngine.playMittPop();
-        }
-      }, PITCH_PLATE_ARRIVAL_MS);
 
       this.renderer.animatePlay(pitchStep, physicsResult, prePitchRenderState, () => {
         this.isAnimating = false;

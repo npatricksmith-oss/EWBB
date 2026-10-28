@@ -5,6 +5,7 @@
  * - Catcher's mitt pop (low-pass thump)
  * - Crowd roar / groan (bandpass filtered pink/white noise swell)
  * - Ballpark organ fanfare ("Charge!" / Home Run rally)
+ * - Bundled umpire speech, ground bounces, and runner footsteps synchronized to playback
  * - Wall bang (metallic/wood thud when ball hits the Green Monster)
  */
 
@@ -12,6 +13,8 @@ class SoundEngine {
   constructor() {
     this.ctx = null;
     this.enabled = true;
+    this.output = null;
+    this.calls = {};
   }
 
   init() {
@@ -19,16 +22,137 @@ class SoundEngine {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
       if (AudioCtx) {
         this.ctx = new AudioCtx();
+        this.output = this.ctx.createGain();
+        this.output.gain.value = this.enabled ? 1 : 0;
+        this.output.connect(this.ctx.destination);
+        // Bundled phonetic speech works offline, without installed browser voices.
+        for (const call of ['strike', 'out']) {
+          this.calls[call] = fetch(new URL(`./audio/umpire-${call}.wav`, import.meta.url))
+            .then((res) => {
+              if (!res.ok) throw new Error(`Umpire audio: ${res.status}`);
+              return res.arrayBuffer();
+            })
+            .then((data) => this.ctx.decodeAudioData(data))
+            .catch((err) => { console.warn('Could not load umpire call', err); return null; });
+        }
       }
     }
     if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume();
+      this.ctx.resume().catch(() => {});
     }
   }
 
   toggle() {
     this.enabled = !this.enabled;
+    this.init();
+    if (this.output) this.output.gain.value = this.enabled ? 1 : 0;
     return this.enabled;
+  }
+
+  async playUmpireCall(call) {
+    if (!this.enabled) return;
+    this.init();
+    const buffer = await this.calls[call];
+    if (!buffer || !this.enabled || !this.ctx) return;
+    const source = this.ctx.createBufferSource();
+    const gain = this.ctx.createGain();
+    source.buffer = buffer;
+    gain.gain.value = 0.8;
+    source.connect(gain);
+    gain.connect(this.output);
+    source.start();
+  }
+
+  /** Called at the visible bat contact or catcher's reception, never by a wall-clock timer. */
+  playPitchResult(pitch, prePitchState) {
+    const contact = pitch.outcome === 'IN_PLAY' || pitch.outcome === 'FOUL';
+    if (contact) this.playBatCrack(pitch.outcome === 'FOUL' ? 0.5 : (pitch.launchVector?.exitVelocityMph || 90) / 105);
+    else if (['BALL', 'CALLED_STRIKE', 'SWINGING_STRIKE', 'WILD_PITCH'].includes(pitch.outcome)) this.playMittPop();
+
+    if (['CALLED_STRIKE', 'SWINGING_STRIKE'].includes(pitch.outcome)) {
+      this.playUmpireCall(prePitchState.count.strikes === 2 ? 'out' : 'strike');
+    } else if (pitch.outcome === 'FOUL' && prePitchState.count.strikes === 2 &&
+        ['SACRIFICE_BUNT', 'BUNT_FOR_HIT', 'SQUEEZE_BUNT'].includes(prePitchState.offensePlay)) {
+      this.playUmpireCall('out');
+    }
+  }
+
+  /** Per-play state belongs to the renderer so replays restart every sound cue. */
+  playFieldFrame(frame, result, state) {
+    const previous = state.previous;
+    if (previous === frame) return;
+    const ball = frame.ball;
+    if (ball?.bounceCount > (previous?.ball?.bounceCount || 0)) {
+      this.playGroundBounce(Math.min(1, Math.abs(previous?.ball?.vz || ball.vz || 10) / 45));
+    }
+    // The flash spans several frames; only its leading edge makes a bang.
+    if (frame.wallHitFlash && !previous?.wallHitFlash) this.playWallCarom();
+
+    const moving = (frame.runners || []).filter((r) => r.isMoving && !r.isSliding);
+    if (moving.length && frame.t >= state.nextStep) {
+      this.playFootstep(Math.min(3, moving.length));
+      state.nextStep = frame.t + 0.21;
+    }
+
+    const plan = result.runnerPlan;
+    if (plan) {
+      [plan.batter, ...plan.runners].forEach((runner, index) => {
+        if (runner.out && frame.t >= (runner.outTime ?? runner.endTime) && !state.outs.has(index)) {
+          state.outs.add(index);
+          this.playUmpireCall('out');
+        }
+      });
+    } else if (frame.umpireCall?.call === 'OUT' && previous?.umpireCall?.call !== 'OUT') {
+      this.playUmpireCall('out');
+    }
+    // Celebrate a home run once it clears the fence, or a hit once it is fielded.
+    const homeRun = result.outcome === 'HOME_RUN';
+    const celebrate = homeRun
+      ? Math.hypot(ball?.x || 0, ball?.y || 0) >= (result.wallInfo?.distanceFt || Infinity)
+      : ['SINGLE', 'DOUBLE', 'TRIPLE'].includes(result.outcome) && Object.values(frame.fielders || {}).some((f) => f.hasBall);
+    if (celebrate && !state.celebrated) {
+      state.celebrated = true;
+      this.playCrowdRoar(homeRun ? 2.2 : 1.4, homeRun ? 0.35 : 0.22);
+      if (homeRun) this.playOrganCharge();
+    }
+    state.previous = frame;
+  }
+
+  /** Short leather-on-earth thud plus dirt grit, distinct from the sharper wood crack. */
+  playGroundBounce(strength = 0.6) {
+    this.playImpact(180, 0.065, 0.10 + 0.16 * strength, 850);
+  }
+
+  playFootstep(runners = 1) {
+    this.playImpact(95, 0.045, 0.045 + runners * 0.018, 1800);
+  }
+
+  playImpact(frequency, duration, volume, cutoff) {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    const buffer = this.ctx.createBuffer(1, Math.ceil(this.ctx.sampleRate * duration), this.ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.exp(-6 * i / data.length);
+    const source = this.ctx.createBufferSource();
+    source.buffer = buffer;
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = cutoff;
+    const gain = this.ctx.createGain();
+    gain.gain.setValueAtTime(volume, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+    source.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.output);
+    source.start(now);
+    const body = this.ctx.createOscillator();
+    body.frequency.setValueAtTime(frequency, now);
+    body.frequency.exponentialRampToValueAtTime(45, now + duration);
+    body.connect(gain);
+    body.start(now);
+    body.stop(now + duration);
   }
 
   playPitchWhoosh() {
@@ -47,7 +171,7 @@ class SoundEngine {
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
 
     osc.connect(gain);
-    gain.connect(this.ctx.destination);
+    gain.connect(this.output);
     osc.start(now);
     osc.stop(now + 0.17);
   }
@@ -68,7 +192,7 @@ class SoundEngine {
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
 
     osc.connect(gain);
-    gain.connect(this.ctx.destination);
+    gain.connect(this.output);
     osc.start(now);
     osc.stop(now + 0.1);
   }
@@ -90,7 +214,7 @@ class SoundEngine {
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
 
     osc.connect(gain);
-    gain.connect(this.ctx.destination);
+    gain.connect(this.output);
     osc.start(now);
     osc.stop(now + 0.2);
   }
@@ -114,9 +238,9 @@ class SoundEngine {
     noise.buffer = buffer;
 
     const filter = this.ctx.createBiquadFilter();
-    filter.type = 'bandpass';
-    filter.frequency.setValueAtTime(1450 + powerRatio * 400, now);
-    filter.Q.setValueAtTime(2.5, now);
+    filter.type = 'highpass';
+    filter.frequency.setValueAtTime(700 + powerRatio * 250, now);
+    filter.Q.setValueAtTime(0.7, now);
 
     const gain = this.ctx.createGain();
     gain.gain.setValueAtTime(0.45 * Math.max(0.5, powerRatio), now);
@@ -124,20 +248,20 @@ class SoundEngine {
 
     noise.connect(filter);
     filter.connect(gain);
-    gain.connect(this.ctx.destination);
+    gain.connect(this.output);
     noise.start(now);
 
     // 2. Wood knock resonance
     const osc = this.ctx.createOscillator();
     const oscGain = this.ctx.createGain();
     osc.type = 'triangle';
-    osc.frequency.setValueAtTime(620, now);
+    osc.frequency.setValueAtTime(920, now);
     osc.frequency.exponentialRampToValueAtTime(180, now + 0.055);
     oscGain.gain.setValueAtTime(0.3, now);
     oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.055);
 
     osc.connect(oscGain);
-    oscGain.connect(this.ctx.destination);
+    oscGain.connect(this.output);
     osc.start(now);
     osc.stop(now + 0.06);
   }
@@ -159,7 +283,7 @@ class SoundEngine {
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
 
     osc.connect(gain);
-    gain.connect(this.ctx.destination);
+    gain.connect(this.output);
     osc.start(now);
     osc.stop(now + 0.19);
   }
@@ -198,7 +322,7 @@ class SoundEngine {
 
     source.connect(filter);
     filter.connect(gain);
-    gain.connect(this.ctx.destination);
+    gain.connect(this.output);
     source.start(now);
   }
 
@@ -228,7 +352,7 @@ class SoundEngine {
       gain.gain.exponentialRampToValueAtTime(0.005, now + n.t + n.d);
 
       osc.connect(gain);
-      gain.connect(this.ctx.destination);
+      gain.connect(this.output);
       osc.start(now + n.t);
       osc.stop(now + n.t + n.d + 0.01);
     }
