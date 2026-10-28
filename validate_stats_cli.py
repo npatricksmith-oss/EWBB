@@ -65,13 +65,20 @@ def run_in_chrome(num_games):
 
     # Inside a toolbox/distrobox, Flatpak Chrome lives on the host; containers share the host network
     host_prefix = ["flatpak-spawn", "--host"] if os.path.exists("/run/.containerenv") else []
+    url = f"http://127.0.0.1:{port}/__bench__"
     proc = subprocess.Popen(
-        host_prefix + ["flatpak", "run", "com.google.Chrome", "--headless", "--no-sandbox", "--disable-gpu", f"http://127.0.0.1:{port}/__bench__"],
+        host_prefix + ["flatpak", "run", "com.google.Chrome", "--headless", "--no-sandbox", "--disable-gpu", url],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
     )
-    done_event.wait(timeout=30)
-    proc.terminate()
+    try:
+        done_event.wait(timeout=30)
+    finally:
+        # terminate() only stops the flatpak wrapper; Chrome keeps running inside the sandbox,
+        # so kill it by its unique URL (its renderer processes exit with it)
+        proc.terminate()
+        subprocess.run(host_prefix + ["pkill", "-f", "--", url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        server.shutdown()
     return result_data
 
 def main():
